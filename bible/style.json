@@ -1,0 +1,13 @@
+{
+  "id": "cfg-documentary",
+  "note": "Style chung của kênh — mọi prompt đều mở bằng khối này để các ảnh cùng một 'máy quay'.",
+  "style": "nature documentary wildlife photograph, realistic organic textures (skin, moisture, leaves, petals), natural light, telephoto lens, shallow depth of field, subtle film grain, color graded like a nature documentary",
+  "creatureTreatment": "the creature is a real living animal but keeps its exact recognizable Pokémon silhouette, proportions, colors and markings",
+  "plateStyle": "natural history reference photograph, full body, plain soft neutral grey-beige backdrop, even soft studio light, sharp focus on the whole body",
+  "output": "16:9 landscape, 2K or higher, no text",
+  "forbidden": [
+    "cartoon", "anime", "3D render", "plush toy", "figurine", "cute chibi proportions",
+    "humans", "Poké Ball", "trainers", "text", "captions", "watermark", "logo",
+    "extra limbs", "wrong markings"
+  ]
+}

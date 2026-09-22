@@ -1,0 +1,61 @@
+{
+  "episode": "kanto-001-bulbasaur",
+  "outDir": "public/img/kanto-001",
+  "shots": [
+    {"id": "s01-kanto-vista", "beat": "01", "kind": "scene", "creatures": [],
+     "scene": "wide aerial view at golden sunrise over a temperate countryside: open woodland, rolling meadows, a winding dirt road connecting two small villages with red roofs, morning mist in the valleys, distant low mountains",
+     "framing": "very wide establishing shot, horizon in upper third, lots of empty sky on the left"},
+
+    {"id": "s02-bulbasaur-plate", "beat": "00,02", "kind": "plate", "creatures": ["bulbasaur"],
+     "scene": "adult Bulbasaur standing in three-quarter side view facing right",
+     "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"},
+
+    {"id": "s03-bulbasaur-hatch", "beat": "02", "kind": "scene", "creatures": ["bulbasaur"],
+     "scene": "a newly hatched tiny Bulbasaur, wet and wrinkled, sitting among broken cream-colored eggshell fragments in a nest of dry leaves on the forest floor; the bulb on its back is only a small green seed",
+     "framing": "low macro angle at ground level, soft dappled morning light"},
+
+    {"id": "s04-bulbasaur-sunbath", "beat": "03", "kind": "scene", "creatures": ["bulbasaur"],
+     "scene": "a Bulbasaur asleep, lying flat on warm short grass in a sunny forest clearing, eyes closed, the bulb on its back catching bright sunlight, dust particles glowing in the sunbeams",
+     "framing": "medium-wide shot from slightly above, subject on the right third, sunbeams from upper left"},
+
+    {"id": "s05-elysia", "beat": "03", "kind": "real", "creatures": [],
+     "scene": "real-life emerald green sea slug Elysia chlorotica, leaf-shaped body with visible fine veins, resting on a rock in clear shallow seawater, sunlight rippling through the water",
+     "framing": "macro underwater photograph, subject centered"},
+
+    {"id": "s06-egg-nest-shade", "beat": "04", "kind": "scene", "creatures": [],
+     "scene": "a clutch of five cream-colored eggs with small green spots in a shallow ground nest under dense forest shade, ferns around, one narrow beam of light falling on a single egg",
+     "framing": "medium shot at ground level, moody shadow, the lit egg on the left third"},
+
+    {"id": "s07-ivysaur-bud", "beat": "05", "kind": "scene", "creatures": ["ivysaur"],
+     "scene": "an Ivysaur walking slowly through tall summer meadow grass, the heavy pink bud on its back slightly swollen, faint pollen drifting from the bud into the warm air",
+     "framing": "telephoto side view, subject walking left to right, meadow background softly blurred"},
+
+    {"id": "s08-venusaur-pair-plate", "beat": "05,short-outro", "kind": "plate", "creatures": ["venusaur:male", "venusaur:female"],
+     "scene": "two adult Venusaur standing side by side in the same pose, viewed from slightly above so the center of each flower is clearly visible; LEFT is male (flower center open and empty), RIGHT is female (a distinct seed-like pistil standing in the flower center)",
+     "framing": "both full bodies in frame with equal size and spacing, symmetrical composition"},
+
+    {"id": "s09-venusaur-rain", "beat": "05", "kind": "scene", "creatures": ["venusaur:female"],
+     "scene": "a Venusaur standing in a wet meadow just after rain, raindrops beading on the big flower and leaves, low clouds breaking, two Butterfree drifting toward the flower",
+     "framing": "medium-wide shot, subject lower center, Butterfree in the upper right, soft grey-gold light"},
+
+    {"id": "s10-bulbasaur-vine-tree", "beat": "06", "kind": "scene", "creatures": ["bulbasaur"],
+     "scene": "a Bulbasaur at the foot of a fruit tree, two long green vines extended from under its bulb, reaching up and gently picking round red berries from a branch",
+     "framing": "vertical action in a 16:9 frame: subject at bottom left, vines leading to berries at upper right"},
+
+    {"id": "s11-bulbasaur-vine-comfort", "beat": "06", "kind": "scene", "creatures": ["bulbasaur"],
+     "scene": "an adult Bulbasaur gently wrapping one vine around a much smaller frightened young Bulbasaur in tall grass at dusk, calming it, the small one leaning against the adult",
+     "framing": "close medium shot at their eye level, warm backlight"},
+
+    {"id": "s12-bulbasaur-fishing", "beat": "06", "kind": "scene", "creatures": ["bulbasaur"],
+     "scene": "a Bulbasaur crouched on a mossy rock at the edge of a calm forest pond, one vine dipped into the water, ripples spreading, a small silver fish near the vine tip",
+     "framing": "wide shot, reflection of the Bulbasaur in the still water, subject on the left third"},
+
+    {"id": "s13-charmander-rain", "beat": "07", "kind": "scene", "creatures": ["charmander"],
+     "scene": "at night in light rain, a small orange lizard-like Charmander sheltering under a rock ledge, the flame on the tip of its tail still burning, steam rising where raindrops hit the flame",
+     "framing": "dark moody shot, the tail flame is the main light source, subject small on the right, lots of darkness"}
+  ],
+  "extraCreatures": {
+    "charmander": "Charmander, a small bipedal orange lizard-like creature about 0.6 m tall with a cream belly and a burning flame on the tip of its tail",
+    "butterfree": "Butterfree, a butterfly-like creature with large white wings with black veins and a purple body"
+  }
+}

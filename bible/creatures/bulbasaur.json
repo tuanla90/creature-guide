@@ -1,0 +1,21 @@
+{
+  "id": "bulbasaur",
+  "dex": "0001",
+  "name": "Bulbasaur",
+  "anchor": "Bulbasaur, a small squat quadrupedal amphibian-like creature about 0.7 m long",
+  "appearance": [
+    "blue-green skin with darker teal patches",
+    "wide head with large red eyes and small pointed ear-like nubs",
+    "wide mouth, short sturdy legs, three short white claws on each foot",
+    "a single green plant bulb on its back, tightly closed, like a large onion bulb with visible leaf layers"
+  ],
+  "sexDifferences": { "note": "không có khác biệt nhìn thấy được (Bulbapedia)", "female": [], "male": [] },
+  "canon": [
+    {"fact": "sinh ra đã mang hạt giống trên lưng; hạt lớn cùng con vật", "src": "Pokédex Red/Blue, FireRed, Silver"},
+    {"fact": "hay ngủ dưới nắng; hạt hấp thụ nắng mà lớn dần", "src": "Pokédex Ruby/Sapphire/Emerald"},
+    {"fact": "nhịn ăn nhiều ngày; năng lượng dự trữ trong củ", "src": "Pokédex Yellow"},
+    {"fact": "tỉ lệ 87,5% đực / 12,5% cái; nhóm trứng Monster + Grass; tiến hoá cấp 16", "src": "Bulbapedia"}
+  ],
+  "invariants": ["one closed green bulb on the back", "blue-green skin with darker patches", "red eyes", "three claws per foot"],
+  "forbidden": ["flower on the back", "open petals", "standing on two legs"]
+}

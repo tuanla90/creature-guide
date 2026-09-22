@@ -1,0 +1,11 @@
+node_modules/
+out/
+public/lottie/
+public/audio/
+src/videos.gen.ts
+.env
+.venv*/
+__pycache__/
+*.pyc
+public/img/**/*.jpg
+!public/img/**/.keep

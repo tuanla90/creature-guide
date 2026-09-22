@@ -1,0 +1,20 @@
+{
+  "id": "ivysaur",
+  "dex": "0002",
+  "name": "Ivysaur",
+  "anchor": "Ivysaur, a sturdy quadrupedal amphibian-like creature about 1 m long",
+  "appearance": [
+    "blue-green skin with darker patches",
+    "pointed ears with black insides, narrow red eyes",
+    "a large closed pink flower bud on its back, supported by a short brown trunk and surrounded by four broad leafy green fronds",
+    "the bud looks heavy, the body braced under its weight"
+  ],
+  "sexDifferences": { "note": "không có khác biệt nhìn thấy được (Bulbapedia)", "female": [], "male": [] },
+  "canon": [
+    {"fact": "tiến hoá từ Bulbasaur ở cấp 16, lên Venusaur ở cấp 32", "src": "Bulbapedia"},
+    {"fact": "nụ hoa lớn dần theo năng lượng; toả hương khi sắp nở", "src": "Pokédex Yellow"},
+    {"fact": "càng tắm nắng càng khoẻ, nụ càng lớn", "src": "Pokédex Scarlet/Shield"}
+  ],
+  "invariants": ["closed pink bud, never open", "four leafy fronds around the bud", "short brown trunk under the bud"],
+  "forbidden": ["open flower", "bulb instead of bud"]
+}

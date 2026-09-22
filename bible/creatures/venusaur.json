@@ -1,0 +1,29 @@
+{
+  "id": "venusaur",
+  "dex": "0003",
+  "name": "Venusaur",
+  "anchor": "Venusaur, a massive squat quadrupedal amphibian-like creature about 2 m long and 100 kg",
+  "appearance": [
+    "bumpy blue-green skin with darker patches",
+    "a huge fully open pink flower with white spots on its back, five broad petals",
+    "a thick brown palm-like trunk under the flower, large green leaves draping over the flanks",
+    "heavy wide-set legs, small red eyes"
+  ],
+  "sexDifferences": {
+    "note": "Bulbapedia: Venusaur cái có nhụy (gynoecium) ở giữa hoa",
+    "female": ["a distinct seed-like pistil (gynoecium) standing in the center of the flower"],
+    "male": ["the center of the flower is open and empty, no pistil"]
+  },
+  "canon": [
+    {"fact": "hoa nở khi hấp thụ năng lượng mặt trời; luôn di chuyển để tìm nắng", "src": "Pokédex"},
+    {"fact": "chuyển nắng thành năng lượng nên mạnh nhất vào mùa hè", "src": "Pokédex"},
+    {"fact": "sau ngày mưa hoa thơm hơn; mùi hương thu hút các Pokémon khác", "src": "Pokédex"},
+    {"fact": "cao 2,0 m, nặng 100 kg; 87,5% đực", "src": "Bulbapedia"}
+  ],
+  "states": {
+    "female": "female Venusaur, pistil clearly visible in the flower center",
+    "male": "male Venusaur, flower center open with no pistil"
+  },
+  "invariants": ["huge open pink flower with white spots", "thick brown trunk under the flower", "draping green leaves"],
+  "forbidden": ["closed bud", "red flower", "more than one flower on one body"]
+}

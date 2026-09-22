@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/blog2video/video.config.schema.json",
+  "fps": 30,
+  "brand": {
+    "name": "Creature Field Guide",
+    "label": "CREATURE FIELD GUIDE",
+    "sig": "Creature Field Guide",
+    "accent": "#A3C95A",
+    "bubble": "#E3F0C7",
+    "wordmark": {
+      "pre": "Creature ",
+      "em": "Field",
+      "post": " Guide"
+    },
+    "tagline": "SỔ TAY THỰC ĐỊA · TỪNG TRANG POKÉDEX"
+  },
+  "audio": {
+    "bed": null,
+    "bedVolume": 0.15,
+    "sfxDir": "audio/sfx",
+    "whoosh": null
+  },
+  "pacing": {
+    "introPad": 2.2,
+    "sectionGap": 0.8,
+    "outroPad": 4.5,
+    "shortGap": 0.33,
+    "shortTail": 1.2,
+    "leadIn": 0.4,
+    "whooshLead": 0.89
+  },
+  "thumb": {
+    "person": "thumb/person.png",
+    "logo": "thumb/logo.svg",
+    "logoWhite": "thumb/logo-white.png"
+  },
+  "categories": [
+    {
+      "name": "Kanto",
+      "accT": "#D9F99D",
+      "acc": "#A3C95A",
+      "acc2": "#4D7C0F"
+    },
+    {
+      "name": "Johto",
+      "accT": "#FDE68A",
+      "acc": "#F59E0B",
+      "acc2": "#B45309"
+    }
+  ],
+  "paths": {
+    "videos": "videos",
+    "out": "out",
+    "public": "public",
+    "src": "src",
+    "thumbSrc": "thumb-src"
+  }
+}
