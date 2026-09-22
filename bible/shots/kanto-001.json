@@ -130,10 +130,199 @@
       ],
       "scene": "at night in light rain, a small orange lizard-like Charmander sheltering under a rock ledge, the flame on the tip of its tail still burning, steam rising where raindrops hit the flame",
       "framing": "dark moody shot, the tail flame is the main light source, subject small on the right, lots of darkness"
+    },
+    {
+      "id": "n01-forest-edge-dawn",
+      "kind": "scene",
+      "creatures": [],
+      "scene": "the edge where an old broadleaf forest meets an open meadow at first light, long grass wet with dew, a narrow animal trail pressed into the grass, mist between the trunks",
+      "framing": "wide establishing shot from ground level, trail leading from lower left into the trees",
+      "beat": "tbd"
+    },
+    {
+      "id": "n02-population-scatter",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "five Bulbasaur of different sizes scattered across a sunlit clearing, each lying in its own patch of sunlight, well spaced apart, one in the foreground sharp and the rest softly out of focus",
+      "framing": "long telephoto shot compressing the clearing, foreground subject on the left third",
+      "beat": "tbd"
+    },
+    {
+      "id": "n03-nest-guarded",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:female"
+      ],
+      "scene": "a Venusaur lying beside a shallow ground nest of cream-colored eggs in deep forest shade, its big flower spread above the nest like a roof, watchful eyes half closed",
+      "framing": "low medium-wide shot, nest in the lower left, flower filling the upper frame",
+      "beat": "tbd"
+    },
+    {
+      "id": "n04-sun-patch-dispute",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "two Bulbasaur pressing shoulder to shoulder inside one small patch of sunlight on the forest floor, both trying to keep their bulbs in the light, mouths open in a low warning",
+      "framing": "eye-level medium shot, hard shaft of light isolating them against dark undergrowth",
+      "beat": "tbd"
+    },
+    {
+      "id": "n05-sunbathing-group",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "four Bulbasaur lying in a loose ring in a warm clearing at midday, all asleep, bulbs turned toward the sun, dust and pollen floating in the air",
+      "framing": "slightly high wide shot looking down on the ring",
+      "beat": "tbd"
+    },
+    {
+      "id": "n06-vine-touch",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "two Bulbasaur facing each other, a single vine from each one meeting and curling together in the air between them, like two elephants touching trunks",
+      "framing": "close shot centered on the two vines meeting, faces softly blurred behind",
+      "beat": "tbd"
+    },
+    {
+      "id": "n07-creche",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur",
+        "bulbasaur"
+      ],
+      "scene": "one adult Ivysaur resting in tall grass with three very small Bulbasaur gathered against its flank and under its leaves, late afternoon light",
+      "framing": "medium-wide shot at their eye level",
+      "beat": "tbd"
+    },
+    {
+      "id": "n08-raptor-strike",
+      "kind": "scene",
+      "creatures": [
+        "fearow",
+        "bulbasaur"
+      ],
+      "scene": "a Fearow diving out of a bright sky with wings half folded toward a Bulbasaur that is flattening itself against the ground under a fern, motion blur on the wings",
+      "framing": "dynamic wide shot, bird in the upper right, prey in the lower left, dramatic backlight",
+      "beat": "tbd"
+    },
+    {
+      "id": "n09-sleep-powder",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "a Bulbasaur with its bulb open at the top releasing a dense cloud of fine pale spores into the air, the spores drifting and catching low sunlight, a large bird silhouette unsteady in the haze behind",
+      "framing": "backlit medium shot so the spore cloud glows, subject on the left",
+      "beat": "tbd"
+    },
+    {
+      "id": "n10-leech-seed",
+      "kind": "scene",
+      "creatures": [],
+      "scene": "extreme close-up of small green barbed seeds hooked into coarse animal fur, tiny root threads just starting to grip, shallow focus",
+      "framing": "macro shot, seeds filling the frame",
+      "beat": "tbd"
+    },
+    {
+      "id": "n11-tracks-mud",
+      "kind": "scene",
+      "creatures": [],
+      "scene": "a line of four-toed footprints pressed into wet grey mud beside a pond, each print about the size of a human palm, water slowly seeping into the freshest one, a faint drag mark between prints",
+      "framing": "high angle looking straight down, prints running diagonally across the frame",
+      "beat": "tbd"
+    },
+    {
+      "id": "n12-ivysaur-plate",
+      "kind": "plate",
+      "creatures": [
+        "ivysaur"
+      ],
+      "scene": "adult Ivysaur standing in three-quarter side view facing right, body low and braced, thick sturdy legs clearly visible under the heavy bud",
+      "framing": "whole body centered, generous margin around it, legs and bud clearly visible",
+      "beat": "tbd"
+    },
+    {
+      "id": "n13-ivysaur-strain",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "scene": "an Ivysaur with the heavy bud on its back trying to rise, front legs braced wide, belly close to the ground, muscles of the shoulders bunched, churned earth under its feet",
+      "framing": "low front-quarter shot, emphasising the weight pressing it down",
+      "beat": "tbd"
+    },
+    {
+      "id": "n14-bud-aroma-insects",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "scene": "close shot of the swollen pink bud of an Ivysaur, the seams between petals just parting, small insects and one Butterfree-like creature hovering close to the scent",
+      "framing": "tight shot on the bud, body out of focus below",
+      "beat": "tbd"
+    },
+    {
+      "id": "n15-sun-shift",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "scene": "an Ivysaur lying stretched out in an open patch of sun in the middle of the day, eyes shut, while the shadow of the forest edge creeps toward it",
+      "framing": "wide shot with a strong diagonal line between sunlight and shadow",
+      "beat": "tbd"
+    },
+    {
+      "id": "n16-evolution-gathering",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "ivysaur"
+      ],
+      "scene": "at dusk in a hidden hollow ringed by old trees, about a dozen Bulbasaur and Ivysaur standing in a loose circle, a soft green light rising from their bulbs and buds, one huge Venusaur silhouetted at the edge",
+      "framing": "wide shot from slightly above, warm green glow as the only light",
+      "beat": "tbd"
+    },
+    {
+      "id": "n17-venusaur-march",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:male"
+      ],
+      "scene": "three Venusaur walking in single file across an open autumn grassland toward low sun, flowers tilted toward the light, long shadows behind them",
+      "framing": "very wide shot, the line of animals small in the lower third",
+      "beat": "tbd"
+    },
+    {
+      "id": "n18-scent-truce",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:female"
+      ],
+      "scene": "a resting Venusaur in a meadow with two smaller creatures that had been fighting now sitting quietly a few steps away in the drifting scent, petals releasing a faint visible haze",
+      "framing": "medium-wide shot, Venusaur on the right, the two small creatures on the left",
+      "beat": "tbd"
+    },
+    {
+      "id": "n19-old-venusaur",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:male"
+      ],
+      "scene": "a very old Venusaur resting at the forest edge, its trunk gone woody and cracked with moss and small ferns growing on its back and shell, the flower huge and slightly faded",
+      "framing": "close medium shot, texture of moss and bark clearly readable, soft rainy light",
+      "beat": "tbd"
     }
   ],
   "extraCreatures": {
     "charmander": "Charmander, a small bipedal orange lizard-like creature about 0.6 m tall with a cream belly and a burning flame on the tip of its tail",
-    "butterfree": "Butterfree, a butterfly-like creature with large white wings with black veins and a purple body"
+    "butterfree": "Butterfree, a butterfly-like creature with large white wings with black veins and a purple body",
+    "fearow": "Fearow, a large brown bird-like creature with a very long thin beak, a red crest and broad wings",
+    "caterpie": "Caterpie, a small green caterpillar-like creature with a yellow underside and a red antenna on its head"
   }
 }

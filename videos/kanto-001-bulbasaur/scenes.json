@@ -1,52 +1,52 @@
 {
-  "_note": "Ảnh Flow chỉ 1376x768 -> zoom specimen tối đa ~1.8 cho khỏi vỡ. Ảnh ở public/img/kanto-001/ — tên khớp prompts/kanto-001.jsonl. Toạ độ callout đã đo trên ảnh Flow lượt 1 (2026-09-22); sinh lại ảnh thì đo lại.",
+  "_note": "Theo docs/EPISODE-FRAME.md — 10 chặng, bám một cá thể (K7). Ảnh Flow 1376x768 nên zoom specimen <= 1.8. Toạ độ callout của s02/s08 đo trên ảnh thật; ảnh mới (n*) phải đo lại sau khi có batch 2.",
 
   "00": {
     "bg": "KANTO · #0001",
     "holdSec": 0.6,
     "moments": [
       {"w": 1, "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s03-bulbasaur-hatch.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.52, "y": 0.55, "zoom": 1.2}}},
+        {"el": "world", "src": "img/kanto-001/n02-population-scatter.jpg", "camera": {"from": {"x": 0.35, "zoom": 1.1}, "to": {"x": 0.5, "zoom": 1.25}}},
         {"el": "text", "value": "[accent:7] đực · [warn:1] cái", "size": 7, "at": 6}
       ]},
-      {"w": 1.2, "place": "top", "stack": [
+      {"w": 1.2, "atWord": "nở", "place": "top", "stack": [
         {"el": "world", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "camera": {"from": {"zoom": 1}, "to": {"y": 0.38, "zoom": 1.25}},
           "portrait": {"camera": {"from": {"x": 0.72, "zoom": 1}, "to": {"x": 0.72, "y": 0.35, "zoom": 1.15}}}},
-        {"el": "text", "value": "…cho tới ngày nó [accent:nở hoa]", "size": 5.5, "at": 10}
+        {"el": "text", "value": "…chờ nó [accent:nở hoa]", "size": 5.5, "at": 8}
       ]}
     ]
   },
 
   "01": {
-    "bg": "KANTO · #0001",
-    "holdSec": 0.8,
+    "bg": "CHẶNG 1 · VÙNG ĐẤT",
+    "holdSec": 0.9,
     "moments": [
-      {"w": 2, "place": "top", "stack": [
-        {"el": "world", "src": "img/kanto-001/s01-kanto-vista.jpg", "fx": "dust",
-          "camera": {"from": {"x": 0.35, "zoom": 1.08}, "to": {"x": 0.62, "zoom": 1.2}}},
-        {"el": "label", "text": "VÙNG ĐẤT", "at": 8},
-        {"el": "text", "value": "Kanto", "size": 8, "at": 14}
+      {"w": 1.6, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n01-forest-edge-dawn.jpg", "fx": "dust", "camera": {"from": {"x": 0.35, "zoom": 1.05}, "to": {"x": 0.55, "zoom": 1.2}}},
+        {"el": "label", "text": "GHI CHÉP THỰC ĐỊA · KANTO · NGÀY 3", "at": 6}
       ]},
-      {"w": 1.4, "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s02-bulbasaur-plate.jpg", "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1}}},
-        {"el": "label", "text": "TRANG ĐẦU TIÊN CỦA POKÉDEX", "at": 6},
-        {"el": "text", "value": "#0001 · [accent:Bulbasaur]", "size": 6, "at": 12}
+      {"w": 1.4, "atWord": "trảng", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/s01-kanto-vista.jpg", "camera": {"from": {"x": 0.4, "zoom": 1.15}, "to": {"x": 0.6, "zoom": 1.05}}},
+        {"el": "caption", "text": "Rừng thưa · trảng trống · lối mòn", "size": 3, "at": 8}
       ]},
-      {"w": 1.2, "atWord": "nếu", "stack": [
-        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.15}, "to": {"zoom": 1.25}}},
-        {"el": "text", "value": "Nếu nó [accent:có thật]…[br]thì nó sống thế nào?", "size": 5.5, "at": 8}
+      {"w": 1.4, "atWord": "đếm", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n02-population-scatter.jpg", "camera": {"from": {"zoom": 1}, "to": {"x": 0.4, "zoom": 1.2}}},
+        {"el": "caption", "text": "[warn:5 cá thể] · nằm rất xa nhau", "size": 3.2, "at": 8}
+      ]},
+      {"w": 1.2, "atWord": "K7", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s02-bulbasaur-plate.jpg", "camera": {"from": {"zoom": 1.15}, "to": {"zoom": 1.02}}},
+        {"el": "text", "value": "Cá thể [accent:K7]", "size": 6, "at": 6}
       ]}
     ]
   },
 
   "02": {
-    "bg": "CÂU HỎI 1 · HẠT GIỐNG",
-    "holdSec": 0.8,
+    "bg": "CHẶNG 2 · TỔ VÀ LÚC CHÀO ĐỜI",
+    "holdSec": 0.9,
     "moments": [
-      {"w": 1, "stack": [
-        {"el": "world", "src": "img/kanto-001/s03-bulbasaur-hatch.jpg", "vignette": 0.65, "camera": {"from": {"zoom": 1.3}, "to": {"zoom": 1.2}}},
-        {"el": "chip", "text": "CÂU HỎI 1", "color": "accent", "icon": "circle-question-mark", "at": 4},
-        {"el": "text", "value": "Ai đã [accent:gieo] hạt giống?", "size": 6, "at": 10}
+      {"w": 1.6, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n03-nest-guarded.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.4, "y": 0.6, "zoom": 1.3}}},
+        {"el": "caption", "text": "Tổ trong bóng râm · [warn:5 quả trứng] · mẹ nằm che", "size": 3.2, "at": 10}
       ]},
       {"w": 1.6, "atWord": "Pokédex", "stack": [
         {"el": "specimen", "src": "img/kanto-001/s02-bulbasaur-plate.jpg", "outro": "hold", "introW": 0.5, "callouts": [
@@ -67,141 +67,318 @@
   },
 
   "03": {
-    "bg": "CÂU HỎI 2 · CÁI CÂY TRÊN LƯNG",
+    "bg": "CHẶNG 2 · GIỚI TÍNH",
     "holdSec": 0.8,
     "moments": [
-      {"w": 1, "stack": [
-        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "vignette": 0.6, "fx": "dust", "camera": {"from": {"zoom": 1.2}, "to": {"zoom": 1.1}}},
-        {"el": "chip", "text": "CÂU HỎI 2", "color": "accent", "icon": "circle-question-mark", "at": 4},
-        {"el": "text", "value": "Sao lại cần [accent:một cái cây] trên lưng?", "size": 5.5, "at": 10}
+      {"w": 1.2, "stack": [
+        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "vignette": 0.8, "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1.15}}},
+        {"el": "chip", "text": "DỮ LIỆU GAME", "color": "warn", "icon": "database", "at": 4},
+        {"el": "bars", "at": 8, "maxH": 20, "bars": [
+          {"label": "Đực", "value": 87.5, "display": "87,5%", "color": "accent"},
+          {"label": "Cái", "value": 12.5, "display": "12,5%", "color": "warn"}]}
+      ]},
+      {"w": 1.6, "atWord": "rùa", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "camera": {"from": {"x": 0.35, "y": 0.6, "zoom": 1.3}, "to": {"x": 0.33, "y": 0.62, "zoom": 1.6}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Rùa: trứng ấp [warn:ấm] → cái · [accent:mát] → đực", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.2, "atWord": "bóng", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n03-nest-guarded.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.25}, "to": {"zoom": 1.1}}},
+        {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
+        {"el": "caption", "text": "Tổ trong [accent:bóng râm] → nở ra nhiều con đực", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "04": {
+    "bg": "CHẶNG 3 · ĂN GÌ",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.4, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "fx": "dust", "camera": {"from": {"x": 0.4, "zoom": 1.05}, "to": {"x": 0.62, "zoom": 1.25}}},
+        {"el": "label", "text": "NGÀY 9 · K7", "at": 6}
       ]},
       {"w": 1.8, "atWord": "Pokédex", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "fx": "dust", "camera": {"from": {"x": 0.4, "zoom": 1}, "to": {"x": 0.65, "y": 0.5, "zoom": 1.2}}},
+        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "fx": "dust", "camera": {"from": {"x": 0.62, "zoom": 1.2}, "to": {"x": 0.68, "y": 0.45, "zoom": 1.5}}},
         {"el": "chip", "text": "POKÉDEX · R/S/E · YELLOW", "color": "warn", "icon": "book-open", "at": 4},
         {"el": "caption", "text": "Ngủ dưới nắng · [warn:nhịn ăn nhiều ngày]", "size": 3.2, "at": 10}
       ]},
-      {"w": 1.6, "atWord": "ghép", "place": "top", "stack": [
-        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "fx": "dust", "camera": {"from": {"x": 0.65, "y": 0.5, "zoom": 1.3}, "to": {"x": 0.72, "y": 0.35, "zoom": 1.6}}},
+      {"w": 1.4, "atWord": "dạ", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/s04-bulbasaur-sunbath.jpg", "camera": {"from": {"x": 0.68, "y": 0.45, "zoom": 1.5}, "to": {"x": 0.7, "y": 0.4, "zoom": 1.7}}},
         {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
         {"el": "text", "value": "Một dạ dày thứ hai[br][accent:chạy bằng ánh nắng]", "size": 5, "at": 10}
       ]},
       {"w": 1.6, "atWord": "Elysia", "place": "bottom", "stack": [
         {"el": "world", "src": "img/kanto-001/s05-elysia.jpg", "camera": {"from": {"zoom": 1.25}, "to": {"zoom": 1.05}}},
         {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
-        {"el": "caption", "text": "Sên biển Elysia: giữ lục lạp của tảo, [good:sống nhờ quang hợp]", "size": 3.2, "at": 10}
-      ]}
-    ]
-  },
-
-  "04": {
-    "bg": "CÂU HỎI 3 · TỈ LỆ ĐỰC CÁI",
-    "holdSec": 0.8,
-    "moments": [
-      {"w": 1, "stack": [
-        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1}, "to": {"zoom": 1.1}}},
-        {"el": "chip", "text": "CÂU HỎI 3", "color": "accent", "icon": "circle-question-mark", "at": 4},
-        {"el": "text", "value": "Vì sao [accent:7 : 1]?", "size": 7, "at": 10}
-      ]},
-      {"w": 1.4, "atWord": "Không", "stack": [
-        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "vignette": 0.8, "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1.15}}},
-        {"el": "chip", "text": "DỮ LIỆU GAME", "color": "warn", "icon": "database", "at": 4},
-        {"el": "bars", "at": 8, "maxH": 22, "bars": [
-          {"label": "Đực", "value": 87.5, "display": "87,5%", "color": "accent"},
-          {"label": "Cái", "value": 12.5, "display": "12,5%", "color": "warn"}]},
-        {"el": "caption", "text": "Mọi Pokémon khởi đầu · và cả Eevee", "size": 2.8, "at": 20}
-      ]},
-      {"w": 1.6, "atWord": "nhiệt", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "camera": {"from": {"x": 0.35, "y": 0.6, "zoom": 1.3}, "to": {"x": 0.33, "y": 0.62, "zoom": 1.7}}},
-        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
-        {"el": "caption", "text": "Nhiều loài rùa: trứng ấp [warn:ấm] → cái · [accent:mát] → đực", "size": 3.2, "at": 10}
-      ]},
-      {"w": 1.4, "atWord": "bóng", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"zoom": 1}}},
-        {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
-        {"el": "caption", "text": "Làm tổ trong [accent:bóng râm] → nở ra nhiều con đực", "size": 3.2, "at": 10}
-      ]},
-      {"w": 1, "atWord": "phòng", "stack": [
-        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "vignette": 0.85, "camera": {"from": {"zoom": 1}, "to": {"zoom": 1}}},
-        {"el": "text", "value": "…hoặc do [muted:người làm game].", "size": 4.5, "at": 6}
+        {"el": "caption", "text": "Sên biển Elysia: giữ lục lạp của tảo, [good:sống bằng quang hợp]", "size": 3.2, "at": 10}
       ]}
     ]
   },
 
   "05": {
-    "bg": "CÂU HỎI 4 · NHẬN RA NHAU",
-    "holdSec": 0.8,
+    "bg": "CHẶNG 4 · ĐÀN · TRANH NẮNG",
+    "holdSec": 0.9,
     "moments": [
-      {"w": 1, "stack": [
-        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.15}, "to": {"zoom": 1.05}}},
-        {"el": "chip", "text": "CÂU HỎI 4", "color": "accent", "icon": "circle-question-mark", "at": 4},
-        {"el": "text", "value": "Nhìn không ra,[br]thì [accent:nhận ra nhau] bằng gì?", "size": 5.5, "at": 10}
+      {"w": 1.2, "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n05-sunbathing-group.jpg", "camera": {"from": {"zoom": 1.2}, "to": {"zoom": 1.05}}},
+        {"el": "text", "value": "Nắng là thức ăn.[br]Vệt nắng là [accent:lãnh thổ].", "size": 5, "at": 8}
       ]},
-      {"w": 1.8, "atWord": "Ivysaur", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "fx": "dust", "camera": {"from": {"x": 0.35, "zoom": 1.05}, "to": {"x": 0.6, "zoom": 1.25}}},
-        {"el": "chip", "text": "POKÉDEX · YELLOW", "color": "warn", "icon": "book-open", "at": 4},
-        {"el": "caption", "text": "Cấp 16 · Ivysaur — nụ hoa [warn:toả hương] khi sắp nở", "size": 3.2, "at": 10}
+      {"w": 1.8, "atWord": "chen", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n04-sun-patch-dispute.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.55, "zoom": 1.35}}},
+        {"el": "caption", "text": "Không cắn nhau · chỉ [warn:ép vai] để giữ củ trong sáng", "size": 3.2, "at": 10}
       ]},
-      {"w": 2.2, "atWord": "ba", "stack": [
-        {"el": "specimen", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "introW": 0.6, "callouts": [
-          {"x": 0.725, "y": 0.22, "zoom": 1.8, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa bông hoa", "tag": "♀ · BULBAPEDIA", "color": "warn", "atWord": "cái"},
-          {"x": 0.276, "y": 0.22, "zoom": 1.8, "label": "Venusaur đực", "sub": "Tâm hoa để trống", "tag": "♂", "color": "accent", "atWord": "đực"}
-        ]}
-      ]},
-      {"w": 1, "atWord": "ngửi", "stack": [
-        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "vignette": 0.7, "fx": "dust", "camera": {"from": {"x": 0.6, "zoom": 1.4}, "to": {"x": 0.6, "zoom": 1.5}}},
-        {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
-        {"el": "text", "value": "Chúng không nhìn.[br]Chúng [accent:ngửi].", "size": 5.5, "at": 10}
-      ]},
-      {"w": 2, "atWord": "mưa", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s09-venusaur-rain.jpg", "camera": {"from": {"zoom": 1.2}, "to": {"x": 0.55, "y": 0.45, "zoom": 1.05}}},
-        {"el": "chip", "text": "POKÉDEX", "color": "warn", "icon": "book-open", "at": 4},
-        {"el": "caption", "text": "Sau mưa, hương hoa đậm hơn · [warn:kéo Pokémon khác tới gần]", "size": 3.2, "at": 10},
-        {"el": "text", "value": "Mùa mưa = [accent:mùa tỏ tình]?", "size": 4.5, "at": 70}
+      {"w": 1.4, "atWord": "cây", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n01-forest-edge-dawn.jpg", "vignette": 0.6, "camera": {"from": {"y": 0.4, "zoom": 1.2}, "to": {"y": 0.35, "zoom": 1.4}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Cây trong rừng cũng đánh nhau như vậy — [good:chỉ chậm hơn]", "size": 3.2, "at": 10}
       ]}
     ]
   },
 
   "06": {
-    "bg": "CÂU HỎI 5 · ĐÒN ĐÁNH NGOÀI ĐỜI",
-    "holdSec": 0.8,
+    "bg": "CHẶNG 4 · GIAO TIẾP",
+    "holdSec": 0.9,
     "moments": [
-      {"w": 1, "stack": [
-        {"el": "world", "src": "img/kanto-001/s10-bulbasaur-vine-tree.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.15}, "to": {"zoom": 1.05}}},
-        {"el": "chip", "text": "CÂU HỎI 5", "color": "accent", "icon": "circle-question-mark", "at": 4},
-        {"el": "text", "value": "Ngoài tự nhiên,[br][accent:đòn đánh] dùng để làm gì?", "size": 5.5, "at": 10}
+      {"w": 1.6, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n06-vine-touch.jpg", "camera": {"from": {"zoom": 1.3}, "to": {"zoom": 1.1}}},
+        {"el": "caption", "text": "Hai dây leo gặp nhau · cuộn lại · rồi thả", "size": 3.2, "at": 10}
       ]},
-      {"w": 1.6, "atWord": "Roi", "place": "top", "stack": [
-        {"el": "world", "src": "img/kanto-001/s10-bulbasaur-vine-tree.jpg", "camera": {"from": {"x": 0.3, "y": 0.75, "zoom": 1.3}, "to": {"x": 0.7, "y": 0.3, "zoom": 1.3}, "ease": "inOut"}},
-        {"el": "chip", "text": "ROI DÂY · ANIME", "color": "warn", "icon": "tv", "at": 4},
-        {"el": "caption", "text": "Trèo cây hái quả · ru Pokémon nhỏ đang hoảng sợ", "size": 3.2, "at": 10}
+      {"w": 1.6, "atWord": "hoạt", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/s10-bulbasaur-vine-tree.jpg", "camera": {"from": {"x": 0.3, "y": 0.75, "zoom": 1.25}, "to": {"x": 0.7, "y": 0.3, "zoom": 1.25}, "ease": "inOut"}},
+        {"el": "chip", "text": "ANIME", "color": "warn", "icon": "tv", "at": 4},
+        {"el": "caption", "text": "Trèo cây hái quả · ru con non đang hoảng sợ", "size": 3.2, "at": 10}
       ]},
-      {"w": 1.6, "atWord": "vòi", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s11-bulbasaur-vine-comfort.jpg", "camera": {"from": {"zoom": 1}, "to": {"zoom": 1.2}}},
+      {"w": 1.4, "atWord": "vòi", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s11-bulbasaur-vine-comfort.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"zoom": 1.25}}},
         {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
-        {"el": "caption", "text": "Giống [accent:vòi voi] hơn cây roi: cầm nắm · chạm · chào hỏi", "size": 3.2, "at": 10}
+        {"el": "caption", "text": "Gần với [accent:vòi voi] hơn là cây roi: cầm · chạm · chào", "size": 3.2, "at": 10}
       ]},
-      {"w": 1.2, "atWord": "câu", "place": "bottom", "stack": [
-        {"el": "world", "src": "img/kanto-001/s12-bulbasaur-fishing.jpg", "camera": {"from": {"x": 0.4, "zoom": 1.05}, "to": {"x": 0.35, "y": 0.55, "zoom": 1.3}}},
-        {"el": "caption", "text": "…và có khi [accent:để câu cá]", "size": 3.4, "at": 8}
-      ]},
-      {"w": 2, "atWord": "Bột", "stack": [
-        {"el": "world", "src": "img/kanto-001/s11-bulbasaur-vine-comfort.jpg", "vignette": 0.85, "camera": {"from": {"zoom": 1.25}, "to": {"zoom": 1.3}}},
-        {"el": "chips", "at": 6, "stagger": 40, "dir": "col", "items": [
-          ["BỘT NGỦ → phòng vệ", "purple", "moon"],
-          ["HẠT KÝ SINH → phát tán hạt, như cây ké", "good", "sprout"]]}
+      {"w": 1.4, "atWord": "trẻ", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n07-creche.jpg", "camera": {"from": {"zoom": 1.2}, "to": {"x": 0.45, "zoom": 1.05}}},
+        {"el": "caption", "text": "Trông trẻ chung — [good:cả đàn giữ được nhiều con non hơn]", "size": 3.2, "at": 10}
       ]}
     ]
   },
 
   "07": {
-    "bg": "TRANG TIẾP THEO",
-    "holdSec": 1.2,
+    "bg": "CHẶNG 5 · KẺ ĐỊCH",
+    "holdSec": 0.9,
     "moments": [
-      {"w": 1, "place": "bottom", "stack": [
+      {"w": 1.2, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n02-population-scatter.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1.2}}},
+        {"el": "label", "text": "NGÀY 22", "at": 6}
+      ]},
+      {"w": 1.8, "atWord": "Fearow", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n08-raptor-strike.jpg", "camera": {"from": {"x": 0.65, "y": 0.3, "zoom": 1.35}, "to": {"x": 0.35, "y": 0.6, "zoom": 1.15}, "ease": "in"}},
+        {"el": "caption", "text": "K7 không chạy — nó [warn:ép sát đất] và đứng im", "size": 3.2, "at": 14}
+      ]},
+      {"w": 1.8, "atWord": "bào", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n09-sleep-powder.jpg", "fx": "dust", "fxCount": 110, "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.55, "zoom": 1.3}}},
+        {"el": "chip", "text": "BỘT NGỦ", "color": "purple", "icon": "moon", "at": 4},
+        {"el": "caption", "text": "Một con mồi làm [accent:kẻ săn mình] ngủ gật", "size": 3.2, "at": 12}
+      ]}
+    ]
+  },
+
+  "08": {
+    "bg": "CHẶNG 5 · VŨ KHÍ",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.4, "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/s02-bulbasaur-plate.jpg", "vignette": 0.6, "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1.25}}},
+        {"el": "chips", "at": 6, "items": [["HỆ CỎ", "good", "leaf"], ["HỆ ĐỘC", "purple", "skull"]]},
+        {"el": "caption", "text": "Ăn nắng, chậm chạp — vậy [accent:độc ở đâu ra]?", "size": 3.2, "at": 16}
+      ]},
+      {"w": 1.6, "atWord": "ếch", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n09-sleep-powder.jpg", "vignette": 0.7, "camera": {"from": {"x": 0.55, "zoom": 1.3}, "to": {"x": 0.5, "zoom": 1.45}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Ếch phi tiêu [good:không tự tạo độc] — chúng lấy từ thức ăn", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.6, "atWord": "Ký", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n10-leech-seed.jpg", "camera": {"from": {"zoom": 1.25}, "to": {"x": 0.45, "zoom": 1.05}}},
+        {"el": "chip", "text": "HẠT KÝ SINH", "color": "good", "icon": "sprout", "at": 4},
+        {"el": "caption", "text": "Hạt có gai, móc vào lông — [good:cây ké ngoài đời làm y hệt]", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "09": {
+    "bg": "CHẶNG 6 · LÁNG GIỀNG",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.4, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n01-forest-edge-dawn.jpg", "fx": "dust", "camera": {"from": {"x": 0.6, "zoom": 1.1}, "to": {"x": 0.4, "zoom": 1.25}}},
+        {"el": "caption", "text": "Trảng cỏ này [warn:không của riêng chúng]", "size": 3.2, "at": 8}
+      ]},
+      {"w": 2, "atWord": "Butterfree", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n14-bud-aroma-insects.jpg", "fx": "dust", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.55, "y": 0.45, "zoom": 1.35}}},
+        {"el": "caption", "text": "Chúng không lượn quanh hoa dại — chúng lượn quanh [accent:cái nụ]", "size": 3.2, "at": 12}
+      ]},
+      {"w": 1.4, "atWord": "phấn", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "camera": {"from": {"x": 0.45, "zoom": 1.2}, "to": {"x": 0.6, "zoom": 1.05}}},
+        {"el": "chip", "text": "GIẢ THUYẾT", "color": "purple", "icon": "flask-conical", "at": 4},
+        {"el": "caption", "text": "Trả công cho [accent:kẻ đưa phấn] — đúng việc một bông hoa vẫn làm", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "10": {
+    "bg": "CHẶNG 7 · ĐIỀU KIỆN TIẾN HOÁ",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.6, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n15-sun-shift.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.6, "zoom": 1.3}}},
+        {"el": "label", "text": "THÁNG 4 · K7", "at": 6},
+        {"el": "caption", "text": "Nằm ngoài nắng [warn:lâu hơn hẳn] · bỏ nhịp trú trưa", "size": 3.2, "at": 12}
+      ]},
+      {"w": 1.8, "atWord": "Ruby", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n15-sun-shift.jpg", "camera": {"from": {"x": 0.6, "zoom": 1.3}, "to": {"x": 0.62, "zoom": 1.5}}},
+        {"el": "chip", "text": "POKÉDEX · RUBY · SCARLET", "color": "warn", "icon": "book-open", "at": 4},
+        {"el": "caption", "text": "Phơi nắng nhiều hơn = [warn:sắp tới lúc nở]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.4, "atWord": "tích", "stack": [
+        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "vignette": 0.7, "camera": {"from": {"zoom": 1.2}, "to": {"zoom": 1.3}}},
+        {"el": "text", "value": "Không phải chuyện [muted:tuổi tác].[br]Là chuyện [accent:tích luỹ đủ].", "size": 5, "at": 8}
+      ]}
+    ]
+  },
+
+  "11": {
+    "bg": "CHẶNG 7 · CẢ ĐÀN CÙNG LÚC",
+    "holdSec": 1,
+    "moments": [
+      {"w": 2, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n16-evolution-gathering.jpg", "fx": "dust", "camera": {"from": {"zoom": 1.25}, "to": {"x": 0.55, "zoom": 1.05}}},
+        {"el": "chip", "text": "ANIME", "color": "warn", "icon": "tv", "at": 6},
+        {"el": "caption", "text": "Mỗi năm một lần · khu vườn bí mật · [warn:cùng nhau tiến hoá]", "size": 3.2, "at": 12}
+      ]},
+      {"w": 1.8, "atWord": "ve", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n16-evolution-gathering.jpg", "vignette": 0.7, "camera": {"from": {"x": 0.55, "zoom": 1.15}, "to": {"x": 0.5, "zoom": 1.35}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Ve sầu 17 năm · san hô đẻ cùng một đêm trăng", "size": 3.2, "at": 10},
+        {"el": "text", "value": "Cùng lúc thì [accent:kẻ săn mồi ăn không xuể]", "size": 4.2, "at": 60}
+      ]}
+    ]
+  },
+
+  "12": {
+    "bg": "CHẶNG 8 · CÁI GIÁ CỦA SỨC NẶNG",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.2, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n12-ivysaur-plate.jpg", "camera": {"from": {"zoom": 1.15}, "to": {"zoom": 1.02}}},
+        {"el": "text", "value": "K7 · giai đoạn [accent:Ivysaur]", "size": 5.5, "at": 8}
+      ]},
+      {"w": 2.2, "atWord": "đứng", "stack": [
+        {"el": "specimen", "src": "img/kanto-001/n12-ivysaur-plate.jpg", "introW": 0.5, "outro": "hold", "callouts": [
+          {"x": 0.5, "y": 0.25, "zoom": 1.8, "label": "Nụ nặng dần", "sub": "Mất khả năng đứng bằng hai chân sau", "tag": "POKÉDEX · RED", "color": "warn", "atWord": "nụ"},
+          {"x": 0.42, "y": 0.78, "zoom": 1.8, "label": "Chân thành cột", "sub": "Chân và thân dày lên để đỡ sức nặng", "tag": "POKÉDEX · RUBY", "color": "accent", "atWord": "dày"}
+        ]}
+      ]},
+      {"w": 1.4, "atWord": "voi", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n13-ivysaur-strain.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.55, "zoom": 1.3}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Voi · rùa khổng lồ: [good:mang nặng thì chân phải thành cột]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.4, "atWord": "bùn", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n11-tracks-mud.jpg", "camera": {"from": {"zoom": 1.25}, "to": {"x": 0.45, "y": 0.55, "zoom": 1.05}}},
+        {"el": "caption", "text": "Dấu chân [warn:sâu hơn] · có vệt kéo lê phía sau", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "13": {
+    "bg": "CHẶNG 8 · AI NUÔI AI",
+    "holdSec": 1,
+    "moments": [
+      {"w": 1.8, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s07-ivysaur-bud.jpg", "camera": {"from": {"x": 0.5, "zoom": 1.1}, "to": {"x": 0.58, "y": 0.4, "zoom": 1.45}}},
+        {"el": "chip", "text": "POKÉDEX · YELLOW", "color": "warn", "icon": "book-open", "at": 4},
+        {"el": "caption", "text": "Cái nụ hút năng lượng [warn:từ chính cơ thể nó]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.4, "atWord": "nuôi", "stack": [
+        {"el": "world", "src": "img/kanto-001/n13-ivysaur-strain.jpg", "vignette": 0.75, "camera": {"from": {"zoom": 1.2}, "to": {"zoom": 1.3}}},
+        {"el": "text", "value": "Vậy suốt từ đầu tới giờ,[br][accent:ai đang nuôi ai]?", "size": 5.2, "at": 8}
+      ]},
+      {"w": 1.8, "atWord": "Địa", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n14-bud-aroma-insects.jpg", "camera": {"from": {"zoom": 1.3}, "to": {"zoom": 1.1}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Địa y: [good:cùng có lợi] · Tầm gửi: [bad:rút dần cây chủ]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.4, "atWord": "chậm", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n15-sun-shift.jpg", "vignette": 0.7, "camera": {"from": {"zoom": 1.1}, "to": {"zoom": 1.25}}},
+        {"el": "caption", "text": "Chưa biết nó nuôi [good:một người bạn] hay [bad:một kẻ ăn bám]", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "14": {
+    "bg": "CHẶNG 9 · NỞ HOA",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.2, "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "camera": {"from": {"x": 0.72, "zoom": 1.4}, "to": {"x": 0.6, "zoom": 1.1}}},
+        {"el": "label", "text": "MÙA HÈ NĂM SAU", "at": 6}
+      ]},
+      {"w": 2.4, "atWord": "cái", "stack": [
+        {"el": "specimen", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "introW": 0.4, "callouts": [
+          {"x": 0.725, "y": 0.22, "zoom": 1.8, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa bông hoa", "tag": "♀ · BULBAPEDIA", "color": "warn", "atWord": "cái"},
+          {"x": 0.276, "y": 0.22, "zoom": 1.8, "label": "Venusaur đực", "sub": "Tâm hoa để trống", "tag": "♂", "color": "accent", "atWord": "đực"}
+        ]}
+      ]},
+      {"w": 1.8, "atWord": "nắng", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n17-venusaur-march.jpg", "camera": {"from": {"x": 0.35, "zoom": 1.15}, "to": {"x": 0.62, "zoom": 1.05}}},
+        {"el": "chip", "text": "POKÉDEX · RED/BLUE · SILVER", "color": "warn", "icon": "book-open", "at": 4},
+        {"el": "caption", "text": "Luôn di chuyển để tìm nắng · [warn:mạnh nhất vào mùa hè]", "size": 3.2, "at": 10}
+      ]}
+    ]
+  },
+
+  "15": {
+    "bg": "CHẶNG 9 · MÙA MƯA",
+    "holdSec": 0.9,
+    "moments": [
+      {"w": 1.8, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s09-venusaur-rain.jpg", "camera": {"from": {"zoom": 1.2}, "to": {"x": 0.55, "y": 0.45, "zoom": 1.05}}},
+        {"el": "chip", "text": "POKÉDEX", "color": "warn", "icon": "book-open", "at": 4},
+        {"el": "caption", "text": "Sau mưa hương đậm hơn · [warn:kéo Pokémon khác tới gần]", "size": 3.2, "at": 10},
+        {"el": "text", "value": "Mùa mưa = [accent:mùa tỏ tình]?", "size": 4.5, "at": 60}
+      ]},
+      {"w": 2, "atWord": "dịu", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n18-scent-truce.jpg", "fx": "dust", "camera": {"from": {"x": 0.35, "zoom": 1.1}, "to": {"x": 0.6, "zoom": 1.3}}},
+        {"el": "chip", "text": "POKÉDEX · R/S · FIRERED", "color": "warn", "icon": "book-open", "at": 4},
+        {"el": "caption", "text": "Hương làm dịu cảm xúc · [warn:làm nguôi kẻ đang giao chiến]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.4, "atWord": "tạ", "stack": [
+        {"el": "world", "src": "img/kanto-001/n18-scent-truce.jpg", "vignette": 0.75, "camera": {"from": {"x": 0.6, "zoom": 1.3}, "to": {"x": 0.62, "zoom": 1.45}}},
+        {"el": "text", "value": "Vũ khí đắt nhất của nó[br]là khả năng làm [accent:mọi thứ bình tĩnh lại]", "size": 4.6, "at": 8}
+      ]}
+    ]
+  },
+
+  "16": {
+    "bg": "KHÉP VÒNG · TRANG SAU",
+    "holdSec": 1.4,
+    "moments": [
+      {"w": 1.6, "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/s06-egg-nest-shade.jpg", "camera": {"from": {"zoom": 1.25}, "to": {"x": 0.4, "zoom": 1.05}}},
+        {"el": "caption", "text": "Lại có [good:trứng] dưới vòm dương xỉ", "size": 3.2, "at": 10}
+      ]},
+      {"w": 2, "atWord": "già", "place": "top", "stack": [
+        {"el": "world", "src": "img/kanto-001/n19-old-venusaur.jpg", "camera": {"from": {"zoom": 1.05}, "to": {"x": 0.55, "y": 0.45, "zoom": 1.3}}},
+        {"el": "caption", "text": "Thân hoá gỗ · rêu và dương xỉ mọc trên lưng", "size": 3.2, "at": 10}
+      ]},
+      {"w": 1.6, "atWord": "Galápagos", "place": "bottom", "stack": [
+        {"el": "world", "src": "img/kanto-001/n19-old-venusaur.jpg", "vignette": 0.7, "camera": {"from": {"x": 0.55, "y": 0.45, "zoom": 1.3}, "to": {"x": 0.5, "zoom": 1.45}}},
+        {"el": "chip", "text": "NGOÀI ĐỜI", "color": "good", "icon": "globe", "at": 4},
+        {"el": "caption", "text": "Rùa Galápagos sống quá trăm năm · [good:đếm tuổi cây bằng vòng gỗ]", "size": 3.2, "at": 10}
+      ]},
+      {"w": 2, "atWord": "lửa", "place": "bottom", "stack": [
         {"el": "world", "src": "img/kanto-001/s13-charmander-rain.jpg", "fx": "embers", "fxCount": 25,
-          "camera": {"from": {"x": 0.6, "zoom": 1}, "to": {"x": 0.72, "y": 0.55, "zoom": 1.35}}},
+          "camera": {"from": {"x": 0.6, "zoom": 1}, "to": {"x": 0.72, "y": 0.55, "zoom": 1.3}}},
         {"el": "caption", "text": "Khi trời mưa, [warn:ngọn lửa] sống sót bằng cách nào?", "size": 3.2, "at": 20},
-        {"el": "text", "value": "#0004 · [warn:Charmander]", "size": 6, "at": 90}
+        {"el": "text", "value": "#0004 · [warn:Charmander]", "size": 6, "at": 80}
       ]}
     ]
   },
