@@ -3,7 +3,8 @@
 //   node tools/build-prompts.mjs kanto-001
 //
 // Ra 3 file trong prompts/:
-//   <ep>.txt    — MỖI DÒNG MỘT PROMPT, đúng thứ tự shot (dán thẳng vào công cụ gen hàng loạt)
+//   <ep>.txt    — MỖI DÒNG MỘT PROMPT, đúng thứ tự shot
+//   <ep>.flow.txt — prompt cách nhau bằng DÒNG TRỐNG: định dạng của "Batch Image Studio" trong Flow
 //   <ep>.jsonl  — {id, file, prompt} từng dòng, để đối chiếu tên file khi tải ảnh về
 //   <ep>.md     — bảng đọc được cho người duyệt
 import fs from "node:fs";
@@ -57,6 +58,7 @@ md.push("", ...shots.shots.map((s, i) => `**${i + 1}. ${s.id}**\n\n${lines[i]}\n
 
 fs.mkdirSync(path.join(root, "prompts"), {recursive: true});
 fs.writeFileSync(path.join(root, `prompts/${ep}.txt`), lines.join("\n") + "\n");
+fs.writeFileSync(path.join(root, `prompts/${ep}.flow.txt`), lines.join("\n\n") + "\n");
 fs.writeFileSync(path.join(root, `prompts/${ep}.jsonl`), jsonl.join("\n") + "\n");
 fs.writeFileSync(path.join(root, `prompts/${ep}.md`), md.join("\n"));
-console.log(`${lines.length} prompt -> prompts/${ep}.{txt,jsonl,md}`);
+console.log(`${lines.length} prompt -> prompts/${ep}.{txt,flow.txt,jsonl,md}`);
