@@ -1,5 +1,5 @@
 {
-  "_note": "Theo docs/EPISODE-FRAME.md — 10 chặng, bám một cá thể (K7). Ảnh Flow 1376x768 nên zoom specimen <= 1.8. Toạ độ callout của s02/s08 đo trên ảnh thật; ảnh mới (n*) phải đo lại sau khi có batch 2.",
+  "_note": "Theo docs/EPISODE-FRAME.md — 10 chặng, bám một cá thể (K7). Ảnh Flow 1376x768 nên zoom specimen <= 1.8. Toạ độ callout của s02/s08 đo trên ảnh thật; toạ độ n12 đã đo trên ảnh Flow batch 2 (2026-09-23).",
 
   "00": {
     "bg": "KANTO · #0001",
@@ -272,8 +272,8 @@
       ]},
       {"w": 2.2, "atWord": "đứng", "stack": [
         {"el": "specimen", "src": "img/kanto-001/n12-ivysaur-plate.jpg", "introW": 0.5, "outro": "hold", "callouts": [
-          {"x": 0.5, "y": 0.25, "zoom": 1.8, "label": "Nụ nặng dần", "sub": "Mất khả năng đứng bằng hai chân sau", "tag": "POKÉDEX · RED", "color": "warn", "atWord": "nụ"},
-          {"x": 0.42, "y": 0.78, "zoom": 1.8, "label": "Chân thành cột", "sub": "Chân và thân dày lên để đỡ sức nặng", "tag": "POKÉDEX · RUBY", "color": "accent", "atWord": "dày"}
+          {"x": 0.44, "y": 0.22, "zoom": 1.8, "label": "Nụ nặng dần", "sub": "Mất khả năng đứng bằng hai chân sau", "tag": "POKÉDEX · RED", "color": "warn", "atWord": "nụ"},
+          {"x": 0.5, "y": 0.81, "zoom": 1.8, "label": "Chân thành cột", "sub": "Chân và thân dày lên để đỡ sức nặng", "tag": "POKÉDEX · RUBY", "color": "accent", "atWord": "dày"}
         ]}
       ]},
       {"w": 1.4, "atWord": "voi", "place": "bottom", "stack": [
