@@ -58,7 +58,15 @@ md.push("", ...shots.shots.map((s, i) => `**${i + 1}. ${s.id}**\n\n${lines[i]}\n
 
 fs.mkdirSync(path.join(root, "prompts"), {recursive: true});
 fs.writeFileSync(path.join(root, `prompts/${ep}.txt`), lines.join("\n") + "\n");
-fs.writeFileSync(path.join(root, `prompts/${ep}.flow.txt`), lines.join("\n\n") + "\n");
+// Batch Image Studio: mỗi block mở bằng [id: …] (tên ảnh/tên file) và [ref: …] — cảnh có sinh vật
+// đã có ảnh mẫu (plate) thì lấy ảnh mẫu ấy làm tham chiếu, để con vật giống nhau giữa các cảnh.
+const plateOf = {};
+shots.shots.forEach((s) => s.kind === "plate" && s.creatures.forEach((r) => (plateOf[r.split(":")[0]] ??= s.id)));
+const blocks = shots.shots.map((s, i) => {
+  const refs = s.kind === "plate" ? [] : [...new Set(s.creatures.map((r) => plateOf[r.split(":")[0]]).filter(Boolean))];
+  return [`[id: ${s.id}]`, refs.length ? `[ref: ${refs.join(", ")}]` : null, lines[i]].filter(Boolean).join("\n");
+});
+fs.writeFileSync(path.join(root, `prompts/${ep}.flow.txt`), blocks.join("\n\n") + "\n");
 fs.writeFileSync(path.join(root, `prompts/${ep}.jsonl`), jsonl.join("\n") + "\n");
 fs.writeFileSync(path.join(root, `prompts/${ep}.md`), md.join("\n"));
 console.log(`${lines.length} prompt -> prompts/${ep}.{txt,flow.txt,jsonl,md}`);

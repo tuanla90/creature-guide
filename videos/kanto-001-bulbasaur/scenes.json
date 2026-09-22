@@ -1,5 +1,5 @@
 {
-  "_note": "Ảnh ở public/img/kanto-001/ — tên khớp prompts/kanto-001.jsonl. Toạ độ callout (x,y) đang ƯỚC cho ảnh giữ chỗ: sửa lại theo ảnh thật (ảnh giữ chỗ có lưới 10%).",
+  "_note": "Ảnh Flow chỉ 1376x768 -> zoom specimen tối đa ~1.8 cho khỏi vỡ. Ảnh ở public/img/kanto-001/ — tên khớp prompts/kanto-001.jsonl. Toạ độ callout (x,y) đang ƯỚC cho ảnh giữ chỗ: sửa lại theo ảnh thật (ảnh giữ chỗ có lưới 10%).",
 
   "00": {
     "bg": "KANTO · #0001",
@@ -49,7 +49,7 @@
       ]},
       {"w": 1.6, "atWord": "Pokédex", "stack": [
         {"el": "specimen", "src": "img/kanto-001/s02-bulbasaur-plate.jpg", "outro": "hold", "introW": 0.5, "callouts": [
-          {"x": 0.5, "y": 0.35, "zoom": 2.2, "label": "Hạt giống trên lưng", "sub": "“được gieo ngay từ lúc chào đời”", "tag": "POKÉDEX · RED/BLUE", "color": "warn"}
+          {"x": 0.5, "y": 0.35, "zoom": 1.8, "label": "Hạt giống trên lưng", "sub": "“được gieo ngay từ lúc chào đời”", "tag": "POKÉDEX · RED/BLUE", "color": "warn"}
         ]}
       ]},
       {"w": 1.4, "atWord": "Giả", "place": "bottom", "stack": [
@@ -142,8 +142,8 @@
       ]},
       {"w": 2.2, "atWord": "ba", "stack": [
         {"el": "specimen", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "introW": 0.6, "callouts": [
-          {"x": 0.72, "y": 0.3, "zoom": 2.4, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa bông hoa", "tag": "♀ · BULBAPEDIA", "color": "warn", "atWord": "cái"},
-          {"x": 0.28, "y": 0.3, "zoom": 2.4, "label": "Venusaur đực", "sub": "Tâm hoa để trống", "tag": "♂", "color": "accent", "atWord": "đực"}
+          {"x": 0.72, "y": 0.3, "zoom": 1.8, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa bông hoa", "tag": "♀ · BULBAPEDIA", "color": "warn", "atWord": "cái"},
+          {"x": 0.28, "y": 0.3, "zoom": 1.8, "label": "Venusaur đực", "sub": "Tâm hoa để trống", "tag": "♂", "color": "accent", "atWord": "đực"}
         ]}
       ]},
       {"w": 1, "atWord": "ngửi", "stack": [
@@ -210,8 +210,8 @@
     "moments": [
       {"w": 1, "stack": [
         {"el": "specimen", "src": "img/kanto-001/s08-venusaur-pair-plate.jpg", "introW": 0.4, "outroW": 0.6, "callouts": [
-          {"x": 0.72, "y": 0.3, "zoom": 2.4, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa", "tag": "♀", "color": "warn"},
-          {"x": 0.28, "y": 0.3, "zoom": 2.4, "label": "Venusaur đực", "sub": "Không có", "tag": "♂", "color": "accent"}
+          {"x": 0.72, "y": 0.3, "zoom": 1.8, "label": "Venusaur cái", "sub": "Nhụy hoa ở chính giữa", "tag": "♀", "color": "warn"},
+          {"x": 0.28, "y": 0.3, "zoom": 1.8, "label": "Venusaur đực", "sub": "Không có", "tag": "♂", "color": "accent"}
         ]}
       ]}
     ]
