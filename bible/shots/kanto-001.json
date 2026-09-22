@@ -29,7 +29,10 @@
       ],
       "scene": "a NEWLY HATCHED baby Bulbasaur, far smaller and rounder than an adult, wet glistening skin, eyes half open, sitting among broken cream-colored eggshell fragments in a nest of dry leaves on the forest floor; on its back there is NO bulb yet, only a single tiny green seed the size of a pea",
       "framing": "low macro angle at ground level, soft dappled morning light",
-      "refNote": "ref s02 để giữ màu da/đốm, nhưng prompt phải nói rõ là con non — lần thử đầu ra con trưởng thành vì bám ref quá sát"
+      "refNote": "ref s02 để giữ màu da/đốm, nhưng prompt phải nói rõ là con non — lần thử đầu ra con trưởng thành vì bám ref quá sát",
+      "dropAppearance": [
+        "plant bulb"
+      ]
     },
     {
       "id": "s04-bulbasaur-sunbath",

@@ -16,14 +16,15 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf-8"));
 const style = read("bible/style.json");
 const shots = read(`bible/shots/${ep}.json`);
 
-const creature = (ref) => {
+const creature = (ref, drop = []) => {
   const [id, state] = ref.split(":");
   const f = path.join(root, "bible/creatures", `${id}.json`);
   if (!fs.existsSync(f)) return {text: shots.extraCreatures?.[id] || id, forbidden: []};
   const b = JSON.parse(fs.readFileSync(f, "utf-8"));
   const sex = state && b.sexDifferences?.[state]?.length ? b.sexDifferences[state] : [];
   return {
-    text: [b.anchor, ...b.appearance, ...sex].join(", "),
+    // dropAppearance: bỏ dòng mô tả chung chọi với cảnh (vd con non chưa có củ)
+    text: [b.anchor, ...b.appearance.filter((a) => !drop.some((d) => a.includes(d))), ...sex].join(", "),
     forbidden: b.forbidden || [],
   };
 };
@@ -36,9 +37,9 @@ shots.shots.forEach((s, i) => {
     const id = r.split(":")[0];
     if (seen.has(id)) return null;
     seen.add(id);
-    return creature(s.creatures.filter((x) => x.split(":")[0] === id).length > 1 ? id : r);
+    return creature(s.creatures.filter((x) => x.split(":")[0] === id).length > 1 ? id : r, s.dropAppearance);
   }).filter(Boolean);
-  const look = s.kind === "plate" ? style.plateStyle : style.style;
+  const look = s.kind === "plate" ? style.plateStyle : s.kind === "scene" && !cs.length ? style.sceneStyle : style.style;
   const parts = [
     look,
     s.kind === "real" ? "real living animal, scientifically accurate" : cs.length ? style.creatureTreatment : "",
