@@ -43,6 +43,7 @@ Trạng thái: ✅ đã dùng · ⏸ hoãn · ⬜ chưa dùng
 
 ## Ghi chú luật
 
-- Không làm giải phẫu/mổ xẻ (chủ dự án không thích).
+- Giải phẫu bàn được, vẽ được — nhưng theo lối nghiên cứu: X-quang mô phỏng, nền xanh, xương, mạch
+  năng lượng, vết thương nhỏ. Không máu me, không nội tạng, không mổ xẻ.
 - Cảnh tỏ tình, ghép đôi giữ ở mức phô diễn, làm tổ, chăm con. Không mô tả giao phối.
 - Ý nào chỉ có trong anime thì gắn nhãn 🎬 và nói rõ là phim, không phải danh lục.

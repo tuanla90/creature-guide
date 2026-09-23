@@ -2,14 +2,17 @@
 
 Kênh phim tài liệu tự nhiên về sinh vật hư cấu (dòng Pokédex), dựng bằng Remotion, làm **hai bản
 Việt và Anh**. Đọc [README.md](README.md) để biết cửa vào, [docs/PIPELINE.md](docs/PIPELINE.md) để
-biết mười chặng làm một tập, [docs/BUSINESS-FLOW.md](docs/BUSINESS-FLOW.md) để biết toàn cảnh 33 bước
+biết mười một chặng làm một tập, [docs/BUSINESS-FLOW.md](docs/BUSINESS-FLOW.md) để biết toàn cảnh 52 bước
 nghiệp vụ và chỗ nào còn làm tay.
 
 ## Trước khi làm gì
 
 - Viết lời → skill `creature-field-guide-scriptwriter`. Dựng hình → `creature-field-guide-production`.
-  Cho ảnh thở → `creature-motion`. Cả ba nằm trong `.claude/skills/`.
+  Cho ảnh thở → `creature-motion`.
+- Lên lịch, xem tập nào tới đâu → `episode-plan`. Soát kịch bản trước khi sinh ảnh → `episode-review`
+  (gọi `stop-slop`). Soạn gói đăng → `episode-publish`. Tất cả nằm trong `.claude/skills/`.
 - Mở tập mới → `/tap-moi <loài>`. Soát trước khi thu giọng/render → `/soat-tap <slug>`.
+- Xem bản dựng và ghi chú tại chỗ → `PYTHONUTF8=1 python tools/review.py <slug>`.
 - **Luôn** chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` trước khi thu giọng hoặc render.
 
 ## Luật của kênh, không thương lượng
@@ -23,7 +26,9 @@ nghiệp vụ và chỗ nào còn làm tay.
 - Mọi khả năng phải nêu **cái giá** của nó.
 - Tên nhân vật là **danh từ chỉ một dấu tích nhìn thấy được** (Búp Lệch, Vai Rách, Mắt Tro, Lưng Rêu),
   và chỉ được gọi **sau khi** khán giả đã thấy cái dấu ấy. Mã thực địa (K7) là neo giữa bản VI và EN.
-- Không làm giải phẫu, mổ xẻ. Cảnh ghép đôi dừng ở phô diễn, làm tổ, chăm con.
+- **Giải phẫu**: được bàn và được vẽ, nhưng theo lối nghiên cứu — dạng X-quang mô phỏng, nền xanh,
+  xương, mạch năng lượng chạy trong thân; vết thương nhỏ trên da thì được. Không máu me, không nội
+  tạng, không mổ xẻ. Cảnh ghép đôi dừng ở phô diễn, làm tổ, chăm con.
 
 ## Bố cục
 
@@ -32,8 +37,8 @@ videos/<slug>/     content.py (lời) · scenes.json (hình) · thumb.json · ti
 bible/             style.json · creatures/<loài>.json · shots/<ep>.json
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
-docs/              PIPELINE · BUSINESS-FLOW · CREATURE-LENS · IDEA-BANK · CAST · SOUND · EPISODE-FRAME
-tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py · check-episode.py
+docs/              PIPELINE · BUSINESS-FLOW · CREATURE-LENS · IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SLATE
+tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py · check-episode.py · review.py
 experiments/       ghi chép những thứ đã thử và giới hạn của chúng
 ```
 
