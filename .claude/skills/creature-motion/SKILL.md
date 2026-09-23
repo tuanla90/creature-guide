@@ -56,3 +56,26 @@ Dáng số ĐÚNG: vùng phải-động lệch **gấp vài lần** vùng phải
 |---|---|---|---|---|---|
 | sai (`face_side` thiếu) | 2,78 | 1,23 | 0,18 | 1,01 | 5,23 |
 | đúng | **0,58** | **0,59** | **0,20** | **4,16** | **2,22** |
+
+## Khoanh vùng bằng chuột thay vì đoán số
+
+```bash
+PYTHONUTF8=1 python tools/motion-studio.py public/img/<ep>/<shot>.jpg
+```
+
+Kéo chuột khoanh elip → tâm và sigma. Kéo từ tâm ra → hướng và biên độ. Chọn kiểu, kéo thanh cắt,
+bấm **Render thử**, xem mp4 ngay trong trang. Ưng thì **Lưu spec**.
+
+Đặt toạ độ bằng cách đoán số trong JSON rồi render lại để xem là vòng lặp rất chậm, và **người nhìn
+ảnh thì biết ngay chỗ nào phải thở, chỗ nào phải đứng yên — máy thì không**. Spec lưu kèm khoá
+`_studio` để mở lại còn sửa tiếp đúng những hình đã vẽ.
+
+## Cổng màu là con dao hai lưỡi
+
+`color_gate: "green"` tính theo `(G−R)` và `(G−B)`. Phần lá **đang cháy nắng** ngả vàng-trắng nên
+`R ≈ G`, cổng trả về gần 0 và **loại mất đúng nửa đó** — kết quả là củ chỉ lắc nửa bên trong bóng
+râm, nhìn rất sai. Đã dính thật ở `s04-bulbasaur-sunbath`: bỏ cổng màu thì nửa củ ăn nắng từ ~0
+lên 21,0.
+
+Tương tự, `"bright"` bắt **mọi** thứ sáng — kể cả cái mặt con vật đang được nắng chiếu. Dùng `fade`
+khoanh biên thì chắc hơn cổng màu; cổng màu chỉ nên dùng khi màu thật sự tách bạch.

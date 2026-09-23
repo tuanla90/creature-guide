@@ -13,6 +13,7 @@ nghiệp vụ và chỗ nào còn làm tay.
   (gọi `stop-slop`). Soạn gói đăng → `episode-publish`. Tất cả nằm trong `.claude/skills/`.
 - Mở tập mới → `/tap-moi <loài>`. Soát trước khi thu giọng/render → `/soat-tap <slug>`.
 - Xem bản dựng và ghi chú tại chỗ → `PYTHONUTF8=1 python tools/review.py <slug>`.
+- Khoanh vùng ảnh thở bằng chuột → `PYTHONUTF8=1 python tools/motion-studio.py <ảnh>`.
 - Đăng xong thì sao lưu → `PYTHONUTF8=1 python tools/backup-episode.py <slug> --to "<Drive>"`.
 - **Luôn** chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` trước khi thu giọng hoặc render.
 
@@ -44,7 +45,7 @@ public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip
 docs/              PIPELINE · BUSINESS-FLOW · CHANNEL-SETUP · SLATE · CREATURE-LENS
                    IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SCENE-TYPES
 tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py
-                   check-episode.py · review.py · backup-episode.py
+                   check-episode.py · review.py · backup-episode.py · motion-studio.py
 experiments/       ghi chép những thứ đã thử và giới hạn của chúng
 ```
 

@@ -71,9 +71,14 @@ def color_gates(rgb: np.ndarray) -> dict[str, np.ndarray]:
     green *= np.clip((values[:, :, 1] - values[:, :, 2]) / 24, 0, 1)
     pink = np.clip((values[:, :, 0] - values[:, :, 1] - 10) / 32, 0, 1)
     pink *= np.clip((values[:, :, 0] - values[:, :, 2]) / 32, 0, 1)
+    # "bright": chỉ những mảng SÁNG — đốm nắng lọt qua tán lá, bokeh hậu cảnh.
+    # Thân cây tối và đất thì bị loại, nên `drift` chỉ làm trôi ánh sáng chứ không trôi cả khu rừng.
+    luma = values @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
+    bright = np.clip((luma - 118) / 82, 0, 1) ** 1.5
     return {
         "green": cv2.GaussianBlur(green.astype(np.float32), (0, 0), 5),
         "pink": cv2.GaussianBlur(pink.astype(np.float32), (0, 0), 5),
+        "bright": cv2.GaussianBlur(bright.astype(np.float32), (0, 0), 9),
     }
 
 
@@ -86,8 +91,25 @@ def build_region(motion: dict, xx: np.ndarray, yy: np.ndarray, gates: dict, spec
     cx, cy, sx, sy = cx * width, cy * height, sx * width, sy * height
     weight = np.exp(-.5 * (((xx - cx) / sx) ** 2 + ((yy - cy) / sy) ** 2)).astype(np.float32)
 
+    # fade: mặt nạ biên dùng chung cho MỌI kind. breath có anchors riêng từ trước; sway và drift
+    # thì trước đây không có gì chặn, nên cú lay củ lan xuống đầu và đốm sáng làm trôi cả cỏ.
+    #   {"top":[a,b]}    -> 0 ở phía trên a, đầy từ b xuống
+    #   {"bottom":[a,b]} -> đầy tới a, tắt hẳn dưới b
+    #   "left"/"right"   -> y hệt nhưng theo trục x
+    fade = motion.get("fade")
+    if isinstance(fade, dict):
+        for side, axis, flip in (("top", yy / height, False), ("bottom", yy / height, True),
+                                 ("left", xx / width, False), ("right", xx / width, True)):
+            if side not in fade:
+                continue
+            a, b = normalized_pair(fade[side], f"{motion['name']}.fade.{side}")
+            if a >= b:
+                raise ValueError(f"{motion['name']}.fade.{side}: phải tăng dần")
+            ramp = np.clip((axis - a) / (b - a), 0, 1)
+            weight = weight * ((1 - ramp) if flip else ramp)
+
     gate = motion.get("color_gate")
-    if isinstance(gate, str) and gate not in ("none", "green", "pink"):
+    if isinstance(gate, str) and gate not in ("none", "green", "pink", "bright"):
         raise ValueError(f"Unknown color_gate: {gate}")
     if isinstance(gate, str) and gate in gates:
         weight *= gates[gate]
@@ -167,6 +189,13 @@ def add_motion(region: dict, progress: float, mode: str, breath_skew: float, xx:
         dx += (-theta * (yy - py) + shift_x * oscillation) * weight
         vertical_oscillation = oscillation if mode == "boomerang" else math.cos(phase)
         dy += (theta * (xx - px) + shift_y * vertical_oscillation) * weight
+    elif kind == "drift":
+        # Quỹ đạo elip: dx theo sin, dy theo cos -> hết một vòng là về đúng chỗ cũ, lặp khít.
+        # Dùng cho đốm nắng hậu cảnh và bokeh: cành lá trên cao lay thì mảng sáng dưới đất trôi theo.
+        phase = (2 * math.pi * travel if mode == "boomerang" else angle) + float(motion.get("phase", 0))
+        ax, ay = normalized_pair(motion.get("amplitude_px", [0, 0]), f"{motion['name']}.amplitude_px")
+        dx += ax * math.sin(phase) * weight
+        dy += ay * (math.sin(phase) if mode == "boomerang" else math.cos(phase)) * weight
     else:
         raise ValueError(f"Unknown motion kind in {motion['name']}: {kind}")
 
