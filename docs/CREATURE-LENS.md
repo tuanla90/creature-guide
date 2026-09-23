@@ -4,7 +4,7 @@ File này trả lời một câu: **đứng trước một loài mới, ta quan 
 Dùng chung cho mọi Pokémon và mọi sinh vật hư cấu khác.
 
 Liên quan: [EPISODE-FRAME.md](EPISODE-FRAME.md) (sắp các trục này thành một tập) ·
-[IDEA-BANK.md](IDEA-BANK.md) (ý tưởng cụ thể) · `skills/creature-field-guide-scriptwriter/` (luật viết lời).
+[IDEA-BANK.md](IDEA-BANK.md) (ý tưởng cụ thể) · `.claude/skills/creature-field-guide-scriptwriter/` (luật viết lời).
 
 ---
 

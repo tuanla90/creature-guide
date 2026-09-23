@@ -5,7 +5,7 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 1. **Mã thực địa là cái neo.** `K7`, `B-02`… giữ nguyên ở cả hai bản. Người xem bản này nhảy sang bản
    kia vẫn nhận ra nhân vật, và mã số là thứ duy nhất không bao giờ phải dịch.
 2. **Tên gọi thì dịch theo nghĩa, không phiên âm.** Vì mọi tên đều đặt theo *hành vi* hoặc *vết tích*
-   (xem `skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md`),
+   (xem `.claude/skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md`),
    nên nghĩa mới là thứ phải giữ, không phải âm.
 3. **Tên đến sau quan sát.** Trong cả hai bản, nhân vật chỉ được đặt tên sau khi khán giả đã thấy
    cái hành vi hoặc vết tích ấy trên màn hình. Mắt Tro chỉ được gọi là Mắt Tro sau câu tả cái mắt; Búp Lệch sau câu tả cái củ nghẹo.

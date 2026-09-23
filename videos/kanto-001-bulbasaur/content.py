@@ -2,7 +2,7 @@
 #
 # Người kể: xưng "tôi", KHÔNG bao giờ nói tên mình. Tên "Tuấn La" chỉ nằm ở bìa sổ thực địa và credit.
 # Người kể là nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Rừng Gió Gập ở Kanto.
-# Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem skills/.../subject-naming-and-evidence.md):
+# Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem .claude/skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md):
 #   K7 "Búp Lệch" — vết tích: cái củ trên lưng mọc nghẹo một bên (hệ quả của việc luôn vặn theo nắng)
 #                   · vai: KẺ YẾU THẾ VƯƠN LÊN · trả bài ở beat 12 (hướng dương) và beat 13 (thôi là Búp Lệch)
 #   "Vai Rách"     — đặt theo vết tích: mảng da rách bên sườn · vai: HÀNG XÓM
@@ -10,7 +10,7 @@
 #   "Lưng Rêu"     — đặt theo vết tích: rêu và dương xỉ mọc trên lưng · con cái già · vai: BÀ LÃO CỦA VÙNG
 # Bí ẩn xuyên suốt: cái hạt trên lưng là ký sinh hay cộng sinh? -> trả bài ở beat 15.
 #
-# Luật (docs/CREATURE-LENS.md + skills/creature-field-guide-scriptwriter):
+# Luật (docs/CREATURE-LENS.md + .claude/skills/creature-field-guide-scriptwriter):
 #   - Không nhắc game. Pokédex = cuốn danh lục của người bản xứ; tên đòn đánh = tên người ta đặt.
 #   - Ba nhãn không trộn: 📖 danh lục (có nguồn) · 👁 quan sát · 🔬 giả thuyết (kèm loài có thật).
 #   - CẢNH TIẾN HOÁ: không có lột da. Chỉ dùng sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
