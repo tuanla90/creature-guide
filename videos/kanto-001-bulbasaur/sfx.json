@@ -1,0 +1,200 @@
+{
+  "_note": "Công thức tiếng của tập — luật ở docs/SOUND.md. Mỗi cue ba lớp (thân / giọng / chi tiết), MỖI LỚP MỘT LOÀI THẬT, và cả ba lớp bắt đầu cùng một khoảnh khắc. Sửa file này rồi chạy lại tools/build-sfx.py. File wav làm lại được; công thức thì sáu tháng nữa không nhớ nổi.",
+  "ep": "kanto-001",
+  "sr": 48000,
+  "source_rule": "Chỉ Pixabay (Content License) và Freesound lọc CC0. Không BBC SFX, không xeno-canto, không Macaulay.",
+  "cues": {
+    "amb-edge-day": {
+      "desc": "rừng chạm đồng cỏ, trưa",
+      "beat": ["nền"],
+      "sec": 24.0,
+      "loop": true,
+      "volume": 0.08,
+      "layers": [
+        { "role": "voice",   "species": "ve sầu (xa)",     "query": "cicada distant summer field", "source": "pixabay",       "gain": 0.35, "synth": "cicada_far" },
+        { "role": "texture", "species": "gió qua cỏ khô",  "query": "wind dry grass rustle",       "source": "freesound-cc0", "gain": 1.00, "synth": "grass_wind" }
+      ],
+      "fx": [["lowpass", 4000], ["loop", 2.0]]
+    },
+    "amb-edge-dawn": {
+      "desc": "bìa rừng lúc rạng — tối hơn ban trưa",
+      "beat": ["01", "12"],
+      "sec": 24.0,
+      "loop": true,
+      "volume": 0.07,
+      "layers": [
+        { "role": "voice",   "species": "chim rừng thưa",    "query": "dawn birds sparse forest",  "source": "pixabay",       "gain": 0.30, "synth": "birds_sparse_dawn" },
+        { "role": "texture", "species": "sương rơi trên lá", "query": "water drip leaves quiet",   "source": "freesound-cc0", "gain": 0.55, "synth": "dew_drip" }
+      ],
+      "fx": [["lowpass", 3200], ["loop", 2.0]]
+    },
+    "call-k7-soft": {
+      "desc": "tiếng thở của K7 lúc nằm",
+      "beat": ["00", "03"],
+      "sec": 1.8,
+      "volume": 0.34,
+      "layers": [
+        { "role": "body",    "species": "bò rống",                 "query": "cow moo low single",    "source": "pixabay",       "gain": 0.30, "synth": "cow_bellow" },
+        { "role": "voice",   "species": "ếch ương",                "query": "frog croak single low", "source": "freesound-cc0", "gain": 1.00, "synth": "frog_uong" },
+        { "role": "texture", "species": "hơi thở qua lỗ mũi ướt",  "query": "breath nose wet close", "source": "freesound-cc0", "gain": 0.45, "synth": "breath_nostril_wet" }
+      ],
+      "fx": [["rate", 0.55], ["tremolo", 17, 0.30], ["lowpass", 2200], ["fade", 0.03, 0.35]]
+    },
+    "call-contact": {
+      "desc": "tiếng gọi giữ khoảng cách — hai tiếng cách 1.2 s",
+      "beat": ["06"],
+      "sec": 0.4,
+      "volume": 0.32,
+      "layers": [
+        { "role": "body",  "species": "lợn grunt", "query": "pig grunt short", "source": "pixabay",       "gain": 0.45, "synth": "pig_grunt" },
+        { "role": "voice", "species": "cóc trầm",  "query": "toad call low",   "source": "freesound-cc0", "gain": 1.00, "synth": "toad_low" }
+      ],
+      "fx": [["rate", 0.55], ["trim", 0.4], ["repeat", 2, 1.2], ["lowpass", 2600]]
+    },
+    "call-alarm": {
+      "desc": "lúc Mắt Tro bổ nhào — attack gắt, cắt đuôi vang",
+      "beat": ["08"],
+      "sec": 0.6,
+      "volume": 0.40,
+      "layers": [
+        { "role": "voice",   "species": "vạc (hạ 4 bán cung)", "query": "night heron squawk", "source": "freesound-cc0", "gain": 1.00, "synth": "night_heron" },
+        { "role": "texture", "species": "cỏ bật",              "query": "grass snap quick",   "source": "freesound-cc0", "gain": 0.40, "synth": "leaf_dry_crush" }
+      ],
+      "fx": [["semitones", -4], ["env", 0.004, 0.25], ["highpass", 180]]
+    },
+    "bulb-creak": {
+      "desc": "củ vặn theo mặt trời — mô thực vật, không phải mô thịt",
+      "beat": ["12"],
+      "sec": 2.2,
+      "volume": 0.30,
+      "layers": [
+        { "role": "texture", "species": "bẻ cần tây",  "query": "celery snap wet vegetable", "source": "freesound-cc0", "gain": 1.00, "synth": "celery_snap_wet" },
+        { "role": "texture", "species": "vặn vải ướt", "query": "wet cloth twist",           "source": "freesound-cc0", "gain": 0.70, "synth": "wood_tension" }
+      ],
+      "fx": [["rate", 0.7], ["bandpass", 1600, 1.1], ["echo", 0.08, 0.22], ["fade", 0.02, 0.3]]
+    },
+    "bulb-open": {
+      "desc": "củ hé ra ở đỉnh — kéo dài bằng paulstretch",
+      "beat": ["08"],
+      "sec": 1.0,
+      "volume": 0.36,
+      "layers": [
+        { "role": "texture", "species": "tách vỏ măng",     "query": "bamboo shoot peel crack", "source": "freesound-cc0", "gain": 1.00, "synth": "bamboo_split" },
+        { "role": "texture", "species": "lá tươi xé chậm",  "query": "leaf tear slow",          "source": "freesound-cc0", "gain": 0.65, "synth": "leaf_tear_slow" }
+      ],
+      "fx": [["stretch", 1.5], ["bandpass", 2200, 0.8], ["fade", 0.05, 0.25]]
+    },
+    "powder-burst": {
+      "desc": "màn bào tử bung",
+      "beat": ["08"],
+      "sec": 1.6,
+      "volume": 0.35,
+      "atWord": "bào",
+      "layers": [
+        { "role": "texture", "species": "nhiễu trắng",                     "query": "air hiss burst",  "source": "synth",         "gain": 1.00, "synth": "powder_hiss" },
+        { "role": "texture", "species": "thổi miệng (đã lọc hơi người)",   "query": "mouth blow puff", "source": "freesound-cc0", "gain": 0.55, "synth": "breath_puff" }
+      ],
+      "fx": [["bandpass", 4000, 0.6], ["fade", 0.015, 0.30]]
+    },
+    "vine-touch": {
+      "desc": "hai dây leo cuộn nhau — rất khẽ, gần mic, không vang",
+      "beat": ["07"],
+      "sec": 1.2,
+      "volume": 0.26,
+      "layers": [
+        { "role": "texture", "species": "vải ướt trượt", "query": "wet cloth slide slow", "source": "freesound-cc0", "gain": 1.00, "synth": "wet_cloth_slide" },
+        { "role": "texture", "species": "dây thừng mềm", "query": "rope creak soft",      "source": "freesound-cc0", "gain": 0.50, "synth": "rope_soft" }
+      ],
+      "fx": [["bandpass", 1400, 0.7], ["fade", 0.08, 0.25]]
+    },
+    "vine-whip": {
+      "desc": "dây leo quật — cắt ngay đuôi vút, đây là mô thực vật không phải roi da",
+      "beat": ["09", "10"],
+      "sec": 0.7,
+      "volume": 0.42,
+      "layers": [
+        { "role": "body",    "species": "gỗ gãy trầm",       "query": "wood crack low", "source": "freesound-cc0", "gain": 0.55, "synth": "wood_low_snap" },
+        { "role": "texture", "species": "roi vút (hạ tông)", "query": "whip swoosh",    "source": "pixabay",       "gain": 1.00, "synth": "rope_whip" }
+      ],
+      "fx": [["semitones", -3], ["env", 0.006, 0.16], ["lowpass", 5200]]
+    },
+    "mud-suck": {
+      "desc": "rút chân khỏi bùn",
+      "beat": ["04"],
+      "sec": 1.0,
+      "volume": 0.33,
+      "layers": [
+        { "role": "texture", "species": "bùn / đất nhão", "query": "mud squelch boot", "source": "freesound-cc0", "gain": 1.00, "synth": "mud_suck" }
+      ],
+      "fx": [["semitones", -2], ["fade", 0.01, 0.2]]
+    },
+    "step-soft": {
+      "desc": "bước chân K7 — ba lớp, tổng dưới 0.25 s",
+      "beat": ["nhiều"],
+      "sec": 0.25,
+      "volume": 0.28,
+      "layers": [
+        { "role": "body",    "species": "sine 45 Hz", "query": "—",               "source": "synth",         "gain": 0.60, "synth": "thump_45" },
+        { "role": "texture", "species": "lá khô vò",  "query": "dry leaves step", "source": "freesound-cc0", "gain": 1.00, "synth": "leaf_dry_crush" }
+      ],
+      "fx": [["trim", 0.25], ["lowpass", 7000]]
+    },
+    "step-heavy": {
+      "desc": "bước chân Venusaur — thêm rung đất 0.6 s sau",
+      "beat": ["15"],
+      "sec": 1.1,
+      "volume": 0.40,
+      "layers": [
+        { "role": "body",    "species": "sine 38 Hz",         "query": "—",                 "source": "synth",         "gain": 0.85, "synth": "thump_38" },
+        { "role": "texture", "species": "lá + cành nhỏ gãy",  "query": "leaves twig break", "source": "freesound-cc0", "gain": 0.80, "synth": "leaf_dry_crush" },
+        { "role": "body",    "species": "rung đất",           "query": "earth rumble low",  "source": "freesound-cc0", "gain": 0.45, "synth": "earth_settle", "at": 0.06 }
+      ],
+      "fx": [["lowpass", 6000], ["fade", 0.002, 0.5]]
+    },
+    "raptor-dive": {
+      "desc": "Mắt Tro lao xuống — TRÁNH tiếng chim ưng đuôi đỏ kinh điển",
+      "beat": ["08"],
+      "sec": 1.2,
+      "volume": 0.38,
+      "layers": [
+        { "role": "voice",   "species": "quạ (hạ 5 bán cung)", "query": "crow caw single",      "source": "freesound-cc0", "gain": 1.00, "synth": "crow_caw" },
+        { "role": "texture", "species": "gió qua lông cánh",   "query": "wing flap air whoosh", "source": "freesound-cc0", "gain": 0.65, "synth": "wing_wind" }
+      ],
+      "fx": [["semitones", -5], ["highpass", 200], ["fade", 0.02, 0.3]]
+    },
+    "rain-leaves": {
+      "desc": "mưa trên tán lá",
+      "beat": ["15"],
+      "sec": 20.0,
+      "loop": true,
+      "volume": 0.10,
+      "layers": [
+        { "role": "texture", "species": "mưa rơi trên lá rộng", "query": "rain broad leaves canopy", "source": "pixabay", "gain": 1.00, "synth": "rain_on_leaves" }
+      ],
+      "fx": [["lowpass", 7000], ["loop", 1.5]]
+    },
+    "arena-crowd": {
+      "desc": "trận đấu của trainer — đẩy ra xa, mono, −24 dB",
+      "beat": ["10", "11"],
+      "sec": 14.0,
+      "loop": true,
+      "volume": 0.09,
+      "layers": [
+        { "role": "voice", "species": "đám đông xa", "query": "crowd murmur distant outdoor", "source": "pixabay", "gain": 1.00, "synth": "crowd_distant" }
+      ],
+      "fx": [["lowpass", 1000], ["mono"], ["gain_db", -24], ["loop", 1.5]]
+    },
+    "swell-change": {
+      "desc": "đêm cả đàn tụ về — KHÔNG có tiếng biến hình, chỉ căng và nín",
+      "beat": ["13", "14"],
+      "sec": 6.0,
+      "volume": 0.30,
+      "layers": [
+        { "role": "body",    "species": "gió hút trầm", "query": "low wind rumble drone", "source": "freesound-cc0", "gain": 1.00, "synth": "wind_suck_low" },
+        { "role": "texture", "species": "mô gỗ căng",   "query": "wood tension creak",    "source": "freesound-cc0", "gain": 0.55, "synth": "wood_tension" },
+        { "role": "texture", "species": "đất lún",      "query": "soil settle low",       "source": "freesound-cc0", "gain": 0.40, "synth": "earth_settle", "at": 3.4 }
+      ],
+      "fx": [["lowpass", 2600], ["fade", 1.2, 1.6]]
+    }
+  }
+}

@@ -2,13 +2,16 @@ node_modules/
 out/
 public/lottie/
 public/audio/
+# nguyên liệu tải về (sfx, nhạc): nặng, giấy phép riêng — nguồn ghi ở docs/SOUND.md
+assets/
 src/videos.gen.ts
 .env
 .venv*/
 __pycache__/
 *.pyc
 public/img/**/*.jpg
-!public/img/**/layers/*.jpg   # lớp tách nền cắt tay, không sinh lại được
+# lớp tách nền cắt tay, không sinh lại được
+!public/img/**/layers/*.jpg
 !public/img/**/.keep
 public/video/**/*.mp4
 experiments/**/*.gif

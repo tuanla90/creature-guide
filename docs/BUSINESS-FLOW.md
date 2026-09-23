@@ -40,8 +40,8 @@ Cột **Ghi chú của bạn** để trống cho chủ dự án điền kinh ngh
 | C4 | Clip quay thật / video AI | `public/video/<ep>/*.mp4` | người | Veo trong Flow — **chưa thử** | 🔴 | |
 | C5 | Tách lớp cho parallax | `layers/*.png` | người | cắt tay | 🔴 | |
 | C6 | Đo toạ độ callout trên ảnh thật | số trong `scenes.json` | người | đọc toạ độ bằng mắt | 🔴 | |
-| C7 | Nhạc nền | `public/audio/music/` | người bấm | Gemini → Create music (Lyria 3.5) · YouTube Audio Library | 🟡 | |
-| C8 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | máy | [SOUND.md](SOUND.md): Pixabay/Freesound CC0 + ghép lớp | 🔴 | |
+| C7 | Nhạc nền | `public/audio/music/` | máy | `tools/build-music.py` — 20 đoạn cùng tông La thứ theo 10 chặng của khung tập · `import-music.py` cho nhạc sinh bằng Lyria / YouTube Audio Library | 🟢 | |
+| C8 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | máy + người đi tìm | `sfx.json` + `tools/build-sfx.py` — máy dựng bản tổng hợp ngay, người thay dần lớp giọng bằng Pixabay/Freesound CC0 ([SOUND.md](SOUND.md)) | 🟡 | |
 | C9 | Giọng đọc VI | mp3 theo beat | người | VBee Pro | 🟡 | |
 | C10 | Giọng đọc EN | *chưa có* | — | **chưa chọn nhà cung cấp** | 🔴 | |
 

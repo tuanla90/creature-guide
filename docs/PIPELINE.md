@@ -101,7 +101,22 @@ Chi tiết và giới hạn: [experiments/creature-motion](../experiments/creatu
 [SOUND.md](SOUND.md): ghép ba lớp (thân / giọng / chi tiết), mỗi lớp một loài thật.
 Nguồn chỉ Pixabay và Freesound CC0.
 
-> **Cổng:** mọi cue có trong `sfx.json` đều có file thật, và không cue nào đè lên một câu quan trọng.
+```bash
+PYTHONUTF8=1 python tools/build-sfx.py <slug>     # công thức trong sfx.json -> public/audio/sfx/<ep>/
+PYTHONUTF8=1 python tools/build-music.py          # nhạc nền -> public/audio/music/
+```
+
+Lớp nào chưa có file thật thì tool dựng tạm một tiếng tổng hợp, đủ để dựng hình và canh nhịp.
+Tải được file thật về `assets/sfx-src/<cue>/<lớp>.wav` thì chạy lại, công thức giữ nguyên.
+
+Nhạc đi theo hai trục: **hai mươi bối cảnh** (từ khung tập) × **bộ tiếng của loài** (vật liệu cơ
+thể chọn nhạc cụ, nhịp sống chọn tempo). Loài mới thì chọn bộ tiếng trước, đừng dùng lại bộ của
+loài trước. Chặng nào trong kịch bản không có đoạn nhạc hợp thì **thêm đoạn mới**, đừng ép đoạn
+có sẵn — vòng lặp ấy ở [SOUND.md](SOUND.md).
+
+> **Cổng:** mọi cue trong `sfx.json` đều có file, không cue nào đè lên một câu quan trọng,
+> **lớp giọng đã là loài thật** (tiếng tổng hợp dùng để dựng thì được, để đăng thì không), và
+> mỗi chặng trong `ORDER` đều có một đoạn nhạc thuộc về nó — không có chặng nào đang mượn tạm.
 
 ## 8 · Giọng ✋
 

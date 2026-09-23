@@ -13,7 +13,8 @@ chặng một cổng.
 | [IDEA-BANK.md](docs/IDEA-BANK.md) | tập này kể chuyện gì, tập sau kể chuyện gì |
 | [EPISODE-FRAME.md](docs/EPISODE-FRAME.md) | một tập có mấy chương, mỗi chương làm gì |
 | [CAST.md](docs/CAST.md) | nhân vật tên gì ở bản VI và bản EN, đặt theo luật nào |
-| [SOUND.md](docs/SOUND.md) | tiếng kêu ghép từ những loài thật nào |
+| [SOUND.md](docs/SOUND.md) | tiếng kêu ghép từ những loài thật nào, nhạc nền theo tông nào |
+| [MUSIC-PROMPTS.md](docs/MUSIC-PROMPTS.md) | hai mươi câu lệnh sinh nhạc, theo mười chặng của khung tập |
 
 Máy làm được phần nào thì nằm ở `.claude/`:
 
@@ -31,6 +32,9 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 node tools/build-prompts.mjs <ep>          # bible -> prompt cho Google Flow
 python tools/import-flow.py <ep>           # ZIP tải về -> public/img/
 python tools/unwatermark.py <ep>           # gỡ watermark Gemini
+python tools/build-sfx.py <slug>           # sfx.json -> tiếng của tập
+python tools/build-music.py                # 20 đoạn nhạc, cùng tông La thứ
+python tools/import-music.py <file>        # nhạc tải về -> bản nền lặp được
 npm run scaffold -- <slug>                 # timing ước lượng + audio câm
 npm run studio                             # xem thử
 python tools/check-episode.py <slug>       # soát trước khi thu giọng / render
