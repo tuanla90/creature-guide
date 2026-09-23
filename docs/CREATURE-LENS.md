@@ -1,7 +1,10 @@
 # Ống kính quan sát — quy tắc chung cho mọi sinh vật
 
 File này trả lời một câu: **đứng trước một loài mới, ta quan sát được những gì, và mỗi thứ đẻ ra nội dung kiểu nào.**
-Dùng chung cho mọi Pokémon và mọi sinh vật hư cấu khác.
+
+Dùng cho **mọi sinh vật đã có trong văn hoá** — Pokémon, thần thoại, cổ tích, quái vật dân gian,
+sinh vật trong Harry Potter / Trung Địa / Game of Thrones. Ống kính không đổi theo nguồn; chỉ có
+**mục C** (quy đổi dữ liệu) là chia theo loại nguồn.
 
 Liên quan: [EPISODE-FRAME.md](EPISODE-FRAME.md) (sắp các trục này thành một tập) ·
 [IDEA-BANK.md](IDEA-BANK.md) (ý tưởng cụ thể) · `.claude/skills/creature-field-guide-scriptwriter/` (luật viết lời).
@@ -44,20 +47,24 @@ Với mỗi loài, đi lần lượt. Trục nào không có tư liệu thì b�
 | 9 | **Con non & lớn lên** | trứng/đẻ con, ai chăm, điều kiện để đổi hình | Cái gì phải tích đủ thì bước chuyển mới xảy ra? |
 | 10 | **Tuổi thọ & già** | dấu hiệu già, vết sẹo, cơ thể mòn đi | Làm sao đoán tuổi một cá thể? |
 | 11 | **Vùng đất & láng giềng** | khí hậu, địa hình, loài sống cùng, ai ăn ai | Nó giữ vai trò gì trong chuỗi thức ăn? |
-| 12 | **Với con người** | được nuôi, được dùng trong các trận đấu, bị săn, sống gần thị trấn | Cùng một cơ quan, hoang dã dùng kiểu gì, con người bắt dùng kiểu gì? |
+| 12 | **Với con người** | được nuôi, bị săn, bị thờ, bị lấy làm điềm, sống gần thị trấn; *với Pokémon:* được dùng trong các trận đấu | Cùng một cơ quan, hoang dã dùng kiểu gì, con người bắt dùng kiểu gì? Con người kể sai về nó ở chỗ nào? |
 | 13 | **Dấu vết & tiếng** | tiếng thở, tiếng rít, tiếng cọ vảy, siêu âm; dấu cào trên thân cây, bãi phân, mùi xạ, vết cháy sém hoặc đóng băng trên cỏ | Khi con vật chưa xuất hiện, khu rừng báo trước bằng dấu gì? |
 | 14 | **Ký sinh & vệ sinh** | bọ, ve, nấm trên da hoặc vảy; tắm cát, ngâm bùn, liếm, cọ lưng vào vách đá, nhờ loài khác nhặt hộ | Nó giữ sạch cơ thể bằng cách nào, và ai được lợi từ việc đó? |
 | 15 | **Nguỵ trang hay cảnh báo** | màu tiệp cảnh quan, hay sặc sỡ nổi bật (màu cảnh báo độc) | Nó muốn biến mất, hay muốn được nhìn thấy? |
 | 16 | **Cái chết & di sản sinh thái** | xác một cá thể để lại gì: kẻ ăn xác, cây mọc trên đó, khoáng trả lại đất | Loài này biến mất thì cái gì sụp theo? |
 
 > Trục 16 kể bằng **dấu vết**: xương phủ rêu, một vạt cây mọc tốt bất thường, loài ăn xác lui tới.
-> Không quay cảnh xác chết cận, không mô tả nội tạng (xem luật ở IDEA-BANK).
+> Không quay cảnh xác chết cận, không mô tả nội tạng. Xương và mạch năng lượng dạng X-quang mô phỏng
+> thì được — xem ranh giới giải phẫu trong [IDEA-BANK.md](IDEA-BANK.md).
 
 ---
 
-## C. Bảng quy đổi — dữ liệu game thành nghĩa sinh học
+## C. Bảng quy đổi — nguồn thành nghĩa sinh học
 
-Đây là chỗ tạo ra phần lớn nội dung. **Không bao giờ nói tên cơ chế game trong lời thoại**, chỉ nói nghĩa sinh học của nó.
+Đây là chỗ tạo ra phần lớn nội dung: lấy thứ nguồn nói, đọc lại thành thứ một nhà sinh vật học quan
+sát được. **Không bao giờ nói tên cơ chế của nguồn trong lời thoại**, chỉ nói nghĩa sinh học của nó.
+
+### C1. Dữ liệu game *(chỉ Pokémon)*
 
 | Dữ liệu | Đọc thành | Ví dụ đã dùng |
 |---|---|---|
@@ -95,11 +102,18 @@ Dùng khi làm loài ngoài Pokémon (Harry Potter, Trung Địa, D&D, quái v�
 
 ## D. Quy trình áp cho một loài mới
 
-1. **Gom canon**: Bulbapedia — mọi mục Pokédex, đặc tính, chỉ số, tỉ lệ giới tính, nhóm trứng, dị hình giới tính, nơi bắt gặp. Ghi nguồn từng câu.
-2. **Đổ vào 12 trục** ở mục B. Trục nào có từ hai mẩu canon trở lên thì gần như chắc chắn thành một chặng.
+1. **Gom canon, ghi nguồn từng câu.** Nguồn có **hai tầng**, và tầng quyết định độ tự do:
+   - *IP còn sống* (Pokémon, Harry Potter, Trung Địa, Game of Thrones): bám canon chặt. Pokémon thì
+     Bulbapedia — mọi mục Pokédex, đặc tính, chỉ số, tỉ lệ giới tính, nhóm trứng, dị hình giới tính,
+     nơi bắt gặp.
+   - *Phạm vi công cộng* (thần thoại, cổ tích, dân gian): lỏng hơn, nhưng **nhiều dị bản** — phải ghi
+     rõ **chọn bản nào và vì sao**. Bản xưa nhất, bản phổ biến nhất, và bản khác chúng nhiều nhất
+     thường là ba bản đáng ghi.
+2. **Đổ vào 16 trục** ở mục B. Trục nào có từ hai mẩu canon trở lên thì gần như chắc chắn thành một chặng.
 3. **Tìm mâu thuẫn hoặc chỗ trống** — đó là chỗ hay nhất. Ví dụ: ăn nắng mà lại có độc; nụ hút năng lượng từ chính cơ thể.
 4. **Mỗi chặng gắn một loài có thật** làm đối chứng. Không tìm được loài nào thì hạ xuống thành câu hỏi để ngỏ.
-5. **Chọn một cá thể** và một dấu nhận dạng nhìn thấy được, rồi bám theo nó (xem EPISODE-FRAME).
+5. **Chọn khung và chọn cá thể.** Khung A thì một cá thể, có một dấu nhận dạng nhìn thấy được, bám
+   theo nó. Khung B thì 2–3 chủ thể trên một trục so sánh — xem [EPISODE-FRAME.md](EPISODE-FRAME.md).
 6. **Rà cái giá**: đọc lại từng chặng, chỗ nào nêu khả năng mà chưa nêu cái giá thì viết thêm.
 
 ---
@@ -149,6 +163,10 @@ Loài: #____ ________        Tập: ________
 | thanh máu, hồi máu | sức chịu đựng, lành lại, tái tạo mô |
 | bùa chú, ma thuật | phản ứng hoá sinh, độc tố, cơ chế chưa rõ |
 | người chơi, trainer | người nuôi, người bản xứ, nhà huấn luyện |
+| phù thuỷ, pháp sư, thầy phù thuỷ | người bản xứ, người ghi chép, người nuôi |
+| thần thú, linh vật, quái vật | loài này, con vật, cá thể |
+| lời nguyền, phép | cơ chế chưa rõ, độc tố, phản ứng hoá sinh |
+| truyền thuyết kể rằng… (kể như thật) | bản chép ở ___ nói ___, bản ở ___ nói khác |
 
 **Bẫy kể chuyện**
 - **Đừng dựng trận đánh như phim siêu anh hùng.** Không phải màn biểu diễn võ thuật, mà là hai khối
@@ -165,6 +183,10 @@ Loài: #____ ________        Tập: ________
 - **Tập dài tới 20 phút là chấp nhận được** nếu mỗi chặng đều có quan sát thật, không phải kể lể.
   Quá 20 phút thì **tách tập**, thường theo hai cách:
   - *Cắt theo giai đoạn đời*: phần 1 con non và đời thường, phần 2 trưởng thành, sinh sản, già.
-  - *Cắt theo góc nhìn*: phần 1 hoang dã, phần 2 khi sống cạnh con người và trong các trận đấu.
+  - *Cắt theo góc nhìn*: phần 1 hoang dã, phần 2 khi sống cạnh con người (với Pokémon là trong các
+    trận đấu; với thần thoại là lúc nó bước vào chuyện kể của người).
+- **Khung B lấy ít trục hơn: 3–5.** So sánh cần *cùng một trục ở mọi chủ thể*, nên mỗi trục thêm vào
+  là nhân với số chủ thể. Trục 1, 2, 5 so sánh tốt nhất; trục 8, 9 hay nhất khi hai loài giải cùng
+  một bài toán sinh sản bằng hai cách.
 - **Ship đoạn hay nhất trước.** Một chặng mạnh (kiểu "ai đang nuôi ai", "đếm tuổi bằng vòng gỗ") cắt
   thành Short 60 giây đăng trước, rồi mới ra tập dài. Beat hook `00` của tập luôn là ứng viên đầu tiên.

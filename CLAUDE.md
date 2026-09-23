@@ -13,6 +13,7 @@ nghiệp vụ và chỗ nào còn làm tay.
   (gọi `stop-slop`). Soạn gói đăng → `episode-publish`. Tất cả nằm trong `.claude/skills/`.
 - Mở tập mới → `/tap-moi <loài>`. Soát trước khi thu giọng/render → `/soat-tap <slug>`.
 - Xem bản dựng và ghi chú tại chỗ → `PYTHONUTF8=1 python tools/review.py <slug>`.
+- Đăng xong thì sao lưu → `PYTHONUTF8=1 python tools/backup-episode.py <slug> --to "<Drive>"`.
 - **Luôn** chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` trước khi thu giọng hoặc render.
 
 ## Luật của kênh, không thương lượng
@@ -37,8 +38,10 @@ videos/<slug>/     content.py (lời) · scenes.json (hình) · thumb.json · ti
 bible/             style.json · creatures/<loài>.json · shots/<ep>.json
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
-docs/              PIPELINE · BUSINESS-FLOW · CREATURE-LENS · IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SLATE
-tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py · check-episode.py · review.py
+docs/              PIPELINE · BUSINESS-FLOW · CHANNEL-SETUP · SLATE · CREATURE-LENS
+                   IDEA-BANK · CAST · SOUND · EPISODE-FRAME
+tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py
+                   check-episode.py · review.py · backup-episode.py
 experiments/       ghi chép những thứ đã thử và giới hạn của chúng
 ```
 

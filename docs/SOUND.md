@@ -83,6 +83,52 @@ Engine đã dùng được ngay, không phải sửa gì: element `sfx` lấy fi
 `volume` mặc định 0.1 — hợp cho whoosh giao diện, quá nhỏ cho tiếng sinh vật; cue thật nên 0.3–0.5,
 tiếng nền 0.06–0.1. `lead` đẩy cue bắt đầu sớm hơn từ được neo (cho tiếng có đà, vd bào tử bung).
 
+## Nhạc nền — thư viện dựng một lần, không sinh mới mỗi tập
+
+Nhạc **không** làm lại từ đầu mỗi tập. Dựng một thư viện nhỏ ở `public/audio/music/`, rồi mỗi tập chỉ
+chọn và chuyển đoạn. Được hai thứ: bớt một thuế mỗi tập, và kênh có âm sắc nhận ra được sau vài tập.
+
+### Luật
+
+1. **Nhạc không được kể hộ.** Phim tài liệu thiên nhiên dùng nhạc để giữ nhịp, không để bảo khán giả
+   nên thấy thế nào. Cảnh con vật sắp chết không cần nhạc buồn — cần im lặng.
+2. **Không có giai điệu bám tai.** Bất cứ đoạn nào bạn hát theo được là đoạn đang tranh chỗ với lời dẫn.
+3. **Mỗi bản phải loop được** và phải có bản *bed* (chỉ nền, không lớp trên) để chui xuống dưới lời dẫn.
+4. **Im lặng là một track.** Chặng mạnh nhất của tập thường nên không có nhạc.
+
+### Bảy bản cần có
+
+| Tên file | Dùng ở chặng | Tính chất |
+|---|---|---|
+| `open-question.wav` | 0 · câu hỏi mở màn | thưa, một nốt treo không giải quyết |
+| `land-wide.wav` | 1 · vùng đất | dàn trải, chậm, không nhịp rõ |
+| `daily.wav` | 2–4 · ăn, đàn, thường nhật | nhịp nhẹ đều, gần như nền |
+| `tension.wav` | 5 · kẻ địch | trầm, dồn, **không** cao trào kiểu phim hành động |
+| `threshold.wav` | 7–8 · điều kiện đổi hình, trưởng thành | căng và nín, hợp với luật "không lột da" |
+| `close-circle.wav` | 9 · khép vòng | giải quyết, ấm, ngắn |
+| `sting-note.wav` | chấm câu | 2–4 giây, đánh dấu một phát hiện |
+
+Mỗi bản xuất hai lớp: `<tên>.wav` (đầy đủ) và `<tên>-bed.wav` (chỉ nền, −6 dB, đã lọc bớt dải giọng
+người 1–4 kHz để không tranh chỗ với lời dẫn).
+
+### Sinh bằng Gemini (Lyria)
+
+Khung prompt dùng chung — đổi phần in nghiêng:
+
+> Instrumental score for a wildlife documentary. *(tính chất của bản)*. Sparse arrangement, no melody
+> that draws attention, no drums, no vocals, no orchestral swell. Room for a narrator to speak over it.
+> Seamless loop. *(khoảng 60–90 giây)*.
+
+Sinh xong nghe thử **cùng lúc với một đoạn lời dẫn thật** trước khi giữ lại. Nghe một mình thì bản nào
+cũng hay; đặt dưới giọng đọc mới biết bản nào tranh chỗ.
+
+### Giấy phép — phải chốt trước khi đăng
+
+Điều khoản của Lyria/Gemini cho **video có kiếm tiền** hay đổi. Kiểm một lần, ghi ngày kiểm và kết
+luận vào sổ tài sản của tập. Không chắc thì lùi về YouTube Audio Library (rõ ràng, miễn phí, dùng
+thương mại được) cho tới khi kiểm xong.
+
 ## Chưa làm
 
 - `sfx.json` (bảng công thức máy đọc được) — dựng sau khi chốt bảng cue này.
+- Thư viện nhạc: bảy bản ở trên **chưa sinh**. Đây là việc một lần, làm trước tập thứ hai.

@@ -49,15 +49,15 @@ Làm sai thứ tự thì phát hiện lúc sắp đăng tập đầu.
 
 | # | Bước | Ra cái gì | Công nghệ | Auto | Nhịp |
 |---|---|---|---|---|---|
-| 0.1 | Lập kênh: tên, handle, avatar, banner, mô tả, ngôn ngữ kênh | kênh sống | YouTube Studio | ✋ | 1× |
-| 0.2 | Xác minh số điện thoại → **bật Advanced features** | multi-audio dùng được | YouTube Studio | ✋ | 1× |
+| 0.1 | Lập kênh: tên, handle, avatar, banner, mô tả, ngôn ngữ kênh | kênh sống | [CHANNEL-SETUP.md](CHANNEL-SETUP.md) | ✋ | 1× |
+| 0.2 | Xác minh danh tính → **bật Advanced features** | multi-audio dùng được | [CHANNEL-SETUP.md](CHANNEL-SETUP.md) | ✋ | 1× |
 | 0.3 | Chốt track gốc VI hay EN | quyết định | — | ✋ | 1× |
 | 0.4 | ✅ Khung tập thứ hai (so sánh 2–3 chủ thể) | `EPISODE-FRAME.md` khung B | markdown | 🟢 | 1× |
-| 0.5 | Viết `CREATURE-LENS.md` trung lập với Pokémon | tài liệu dùng được cho mọi sinh vật | markdown | 🟢 | 1× |
-| 0.6 | Thư viện nhạc mẫu + kỹ thuật chuyển đoạn | `public/audio/music/` | Gemini (Lyria) | 🟡 | 1× |
+| 0.5 | ✅ `CREATURE-LENS.md` trung lập với Pokémon | nguồn hai tầng · trục 12 · bẫy từ vựng kỳ ảo | 🟢 | 1× |
+| 0.6 | Thư viện nhạc mẫu — **đã có quy cách, chưa sinh** | 7 bản, xem [SOUND.md](SOUND.md) | 🟡 | 1× |
 | 0.7 | ✅ Bê 3 skill từ `semantix-docs`, cắt 3 luật của `stop-slop` | `episode-plan` · `episode-review` · `episode-publish` · `stop-slop` | 🟢 | 1× |
 | 0.8 | ✅ Công cụ xem-và-ghi-chú trên bản dựng | `tools/review.py` → `review-notes.json` | 🟢 | 1× |
-| 0.9 | Dựng nơi sao lưu một chiều trên Drive | thư mục đích + script đẩy | Google Drive | 🟡 | 1× |
+| 0.9 | ✅ Script sao lưu một chiều — *còn phải chọn thư mục Drive* | `tools/backup-episode.py` | 🟡 | 1× |
 
 > **Cổng:** 0.2 xong thì mới có nghĩa để làm tiếp cụm D và E.
 
@@ -69,9 +69,9 @@ Làm sai thứ tự thì phát hiện lúc sắp đăng tập đầu.
 |---|---|---|---|---|---|
 | A1 | Định vị kênh | tuyên bố định vị (đã có, xem dưới) | markdown | ✋ | 1× |
 | A2 | Kho ý tưởng | `docs/IDEA-BANK.md` | markdown + máy đề xuất | 🟡 | kỳ |
-| A3 | Lịch: tập nào ở chặng nào, phát ngày nào | file trạng thái máy đọc/ghi được | port `content-plan` | 🔴 | kỳ |
+| A3 | Lịch: tập nào ở chặng nào, phát ngày nào | [SLATE.md](SLATE.md) | skill `episode-plan` | 🟢 | kỳ |
 | A4 | Hạn mức mỗi chu kỳ | biết một tháng làm được mấy tập | đo thử 1 tháng | 🔴 | kỳ |
-| A5 | **Theo dõi tín hiệu IP + ngưỡng rẽ nhánh** | quyết định rẽ hay đi tiếp | chưa có | 🔴 | kỳ |
+| A5 | **Theo dõi tín hiệu IP + ngưỡng rẽ nhánh** | sổ rà trong [SLATE.md](SLATE.md) | ✋ | kỳ |
 
 **A1 · Định vị.** Phim tài liệu sinh học giả định (*speculative biology documentary*) kết hợp ký hoạ
 thực địa. Khán giả: ban đầu fan Pokémon, sau là cộng đồng fantasy & sci-fi hardcore, 15–40 tuổi.
@@ -188,7 +188,7 @@ trong `experiments/` làm ghi chép, không làm nữa.
 | D7 | Render Long | mp4 | Remotion | 🟢 | tập |
 | D8 | **Short làm riêng**: hook riêng, tiêu đề riêng | mp4 dọc | Remotion | 🟡 | tập |
 | D9 | Thumbnail — **vài phương án**, hai ngôn ngữ | 1280×720 × 2 | `npm run thumb` | 🟡 | tập |
-| D10 | Gói đăng: 3 tiêu đề, mô tả SEO, chapters, comment ghim, hashtag — hai ngôn ngữ | `<slug>.PUBLISH.md` | port `content-publish` | 🔴 | tập |
+| D10 | Gói đăng: 3 tiêu đề, mô tả SEO, chapters, comment ghim, hashtag — hai ngôn ngữ | `videos/<slug>/PUBLISH.md` | skill `episode-publish` | 🟡 | tập |
 | D11 | Sổ tài sản: ghi **từng file**, xem **theo tập** | manifest tập | sinh từ `prompts/<ep>.jsonl` | 🔴 | tập |
 
 **D6 · Bước quan trọng nhất của cả cụm.** Nút thắt của kênh là duyệt, nên chỗ này đáng đầu tư công
@@ -216,7 +216,7 @@ ngữ** — nên ảnh bìa Short phải không chữ, hoặc chọn một thứ
 |---|---|---|---|---|---|
 | E1 | Đăng video, **khai báo nội dung tổng hợp bằng AI** | video công khai | YouTube Studio | ✋ | tập |
 | E2 | Nạp track giọng thứ hai + tiêu đề/mô tả/thumbnail bản địa hoá | video hai thứ tiếng | YouTube multi-audio | ✋ | tập |
-| E3 | Sao lưu một chiều lên Drive | bản sao ngoài máy | Google Drive | 🔴 | tập |
+| E3 | Sao lưu một chiều lên Drive | bản sao ngoài máy | `backup-episode.py` | 🟡 | tập |
 | E4 | Đọc số → ra hành động (bảng dưới) | việc cần làm cho tập sau | YouTube Analytics | 🔴 | kỳ |
 | E5 | Đính chính sau khi đăng | comment ghim | YouTube Studio | ✋ | — |
 | E6 | **Quét mã nguồn mở xem có gì dùng được** | ghi chú công nghệ | tìm kiếm | 🔴 | kỳ |
@@ -244,24 +244,32 @@ chiều theo tập. Nhóm cần cứu nhỏ hơn bạn tưởng — chỉ nhữn
 
 ## Nợ, xếp theo loại — vì mỗi loại xử lý khác nhau
 
+Cập nhật sau đợt dựng cụm 0. Việc đã xong đánh ~~gạch~~.
+
 **Rủi ro mất trắng · vá một lần, rẻ**
-1. `E3` sao lưu Drive. Một tập ~40 ảnh đã trả credit, đang chỉ nằm trên một cái máy.
-2. `D11` sổ tài sản. Kênh có kiếm tiền thì phải trả lời được "file này ở đâu ra, ai cho phép dùng".
-3. `A5` theo dõi tín hiệu IP. Không có nó thì điều kiện rẽ nhánh chỉ là câu nói.
+1. ~~`E3` script sao lưu~~ — đã có `tools/backup-episode.py`. **Còn lại:** chọn thư mục Drive, đặt
+   `CFG_BACKUP_DIR`, chạy thử một lần. Tới lúc đó ảnh vẫn chỉ nằm trên một cái máy.
+2. `D11` **sổ tài sản** — vẫn trống. Máy sinh được gần hết từ `prompts/<ep>.jsonl`; phần phải điền tay
+   là giấy phép của nhạc và tiếng.
+3. ~~`A5` chỗ ghi việc theo dõi IP~~ — đã có sổ rà trong `SLATE.md`. **Còn lại:** thật sự rà, và tự
+   đặt ngưỡng sub để rẽ nhánh.
 
 **Thuế mỗi tập · quyết định kênh có scale nổi không**
-4. `D10` gói đăng — tiêu đề và mô tả quyết định lượt xem, đang không lưu, không soát, không có phiên bản.
-5. `C7` tiếng động.
-6. `C4` `C5` hai loại cảnh mới chưa có khối style.
+4. ~~`D10` gói đăng~~ — skill `episode-publish` soạn được. Chưa chạy thật lần nào.
+5. `C7` **tiếng động** — vẫn hoàn toàn làm tay, và `sfx.json` chưa dựng.
+6. `C4` `C5` **hai loại cảnh mới** — cảnh giải phẫu và trang sổ thực địa đã có luật, **chưa có khối
+   style trong `bible/style.json`**. Đây là việc chặn tập tiếp theo nếu muốn dùng hai loại cảnh đó.
+7. `0.6` **thư viện nhạc** — quy cách và prompt đã có, bảy bản chưa sinh.
 
 **Nợ chiến lược · cần quyết, không cần code**
-7. `C8` giọng EN — con số 10.700 ký tự/tập chưa có lời giải.
-8. `A3` lịch. Một tập thì nhớ được; năm tập song song thì không.
-9. `0.3` track gốc VI hay EN.
+8. `C8` **giọng EN** — 10.700 ký tự/tập, gói free ElevenLabs đọc được một tập/tháng. Chưa có lời giải.
+   Đây là thứ đang chặn tập 001 ở chặng 9.
+9. `0.3` **track gốc VI hay EN** — khó đổi sau, phải quyết trước tập đầu.
+10. `0.1`–`0.2` **lập kênh và bật Advanced features** — chưa làm. Xem `CHANNEL-SETUP.md`.
 
 **Đo lường · chưa có thì mọi ưu tiên đều là cảm tính**
-10. `A4` giờ người mỗi tập và token đã tiêu. Với kênh một người, **chi phí lớn nhất là giờ của bạn**,
-    và nó đang hoàn toàn không được đo.
+11. `A4` **giờ người mỗi tập và token đã tiêu.** Với kênh một người, chi phí lớn nhất là giờ của bạn,
+    và nó vẫn đang hoàn toàn không được đo. Kế hoạch: chạy vài tập trong một tháng rồi đánh giá lại.
 
 ---
 
