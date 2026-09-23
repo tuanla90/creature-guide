@@ -9,6 +9,7 @@ Chỉ kiểm thứ máy kiểm được. Những thứ thuộc về thẩm mỹ 
 """
 
 import importlib.util
+import statistics
 import json
 import re
 import sys
@@ -42,6 +43,16 @@ SIZE_CAP = {"text": 4.2, "caption": 2.7}
 
 MIN_MIN, MAX_MIN = 8, 25          # thời lượng hợp lý của một tập Long
 FPS = 30
+LEAD_IN = 0.4                     # pacing.leadIn trong video.config.json
+
+# Cảnh ngắn quá thì khán giả chưa kịp nhìn đã bị cắt. Ngưỡng đo bằng giây.
+# Một moment phải nuốt được XFADE 12 khung (0.4s) hoà vào cảnh sau, cộng nhịp vào/ra của Moment.
+MOMENT_BAD, MOMENT_THIN = 1.2, 2.5
+# Ngưỡng tuyệt đối chưa đủ: một tập có nhịp trung vị 15s thì cảnh 3s vẫn là hẫng, dù 3s nghe không
+# ngắn. Nên soát thêm theo nhịp của CHÍNH tập đó — dưới ngần này lần trung vị là lệch nhịp.
+MOMENT_REL = 0.25
+# Callout của specimen còn cần camera đẩy tới nơi rồi thẻ mới hiện (T = 40% đoạn, tối đa 26 khung).
+CALLOUT_BAD, CALLOUT_THIN = 1.2, 2.0
 
 err, warn, ok = [], [], []
 def E(m): err.append(m)
@@ -54,6 +65,56 @@ def load_content(d: Path):
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
+
+
+def anchored_steps(moments, dur_frames, words):
+    """Dựng lại useAnchoredSteps() của engine: moment có atSec/atWord thì neo cứng, moment
+    không neo thì chia phần còn lại theo trọng số w. Trả về [(start, end)] tính bằng khung."""
+    lead = round(LEAD_IN * FPS)
+    cursor = 0
+    anchor = []
+    for m in moments:
+        if isinstance(m.get("atSec"), (int, float)):
+            anchor.append(round(m["atSec"] * FPS)); continue
+        key = str(m.get("atWord") or "").lower()
+        hit = None
+        if key:
+            for i in range(cursor, len(words)):
+                if key in str(words[i].get("w", "")).lower():
+                    cursor = i + 1
+                    hit = lead + round(words[i].get("s", 0) * FPS)
+                    break
+        anchor.append(hit)
+    if anchor and anchor[0] is None:
+        anchor[0] = 0
+    weights = [m.get("w") or 1 for m in moments]
+    starts = [0] * len(moments)
+    i = 0
+    while i < len(moments):
+        seg_start = anchor[i] if anchor[i] is not None else 0
+        if i > 0:
+            seg_start = max(seg_start, starts[i - 1] + 1)
+        j = i + 1
+        while j < len(moments) and anchor[j] is None:
+            j += 1
+        seg_end = anchor[j] if j < len(moments) else dur_frames
+        seg_end = min(dur_frames, max(seg_end, seg_start + (j - i)))
+        span, tot, acc = seg_end - seg_start, sum(weights[i:j]) or 1, 0
+        for k in range(i, j):
+            starts[k] = seg_start + round(span * acc / tot)
+            acc += weights[k]
+        i = j
+    return [(starts[k], starts[k + 1] if k + 1 < len(moments) else dur_frames)
+            for k in range(len(moments))]
+
+
+def split_weights(span, items):
+    """segments() của engine, bản rút gọn cho callout không neo từ: chia span theo trọng số."""
+    tot, acc, out = sum(items) or 1, 0, []
+    for w in items:
+        a = round(span * acc / tot); acc += w
+        out.append(round(span * acc / tot) - a)
+    return out
 
 
 def walk(node, fn):
@@ -254,6 +315,61 @@ def main(slug: str) -> int:
     for foreign in set(re.findall(r"\b[A-Z][a-z]{3,}(?:saur|chu|mander|tle)\b", body)):
         if foreign not in pron:
             W(f"“{foreign}” chưa có phiên âm trong PRON — VBee sẽ đọc sai")
+
+    # ---- cảnh ngắn quá ------------------------------------------------------
+    beats_f = d / "beats.json"
+    timings_f = d / "timings.json"
+    if not beats_f.exists():
+        W("chưa có beats.json — chưa soát được cảnh nào bị ngắt sớm (chạy npm run scaffold)")
+    else:
+        dur = {b["id"]: b["durationInFrames"] for b in json.loads(beats_f.read_text(encoding="utf-8"))}
+        tim = json.loads(timings_f.read_text(encoding="utf-8")) if timings_f.exists() else {}
+        short_bad, short_thin, spans = [], [], []
+        for bid in order:
+            sc = scenes.get(bid)
+            if not isinstance(sc, dict) or not sc.get("moments") or bid not in dur:
+                continue
+            total = dur[bid] + round(float(sc.get("holdSec") or 0) * FPS)
+            words = [w for ln in tim.get(bid, []) for w in ln.get("words", [])]
+            for i, (a, b) in enumerate(anchored_steps(sc["moments"], total, words)):
+                secs = (b - a) / FPS
+                where = f"{bid}/moment {i}"
+                spans.append((secs, where))
+                if secs < MOMENT_BAD:
+                    short_bad.append(f"{where} chỉ {secs:.2f}s")
+                elif secs < MOMENT_THIN:
+                    short_thin.append(f"{where} {secs:.2f}s")
+                # callout của specimen chia tiếp đoạn của moment
+                for e in sc["moments"][i].get("stack", []):
+                    calls = e.get("callouts") if isinstance(e, dict) else None
+                    if e.get("el") != "specimen" or not calls:
+                        continue
+                    ws = ([e.get("introW", 0.8)] + [c.get("w", 1) for c in calls]
+                          + ([e.get("outroW", 0.8)] if (e.get("outro", "overview") == "overview") else []))
+                    parts = split_weights(b - a, ws)
+                    for ci, c in enumerate(calls):
+                        cs = parts[ci + 1] / FPS
+                        lbl = c.get("label") or f"#{ci}"
+                        if cs < CALLOUT_BAD:
+                            short_bad.append(f"{bid}/moment {i} callout “{lbl}” chỉ {cs:.2f}s")
+                        elif cs < CALLOUT_THIN:
+                            short_thin.append(f"{bid}/moment {i} callout “{lbl}” {cs:.2f}s")
+        # lệch nhịp: ngắn hơn hẳn so với chính tập này, dù con số tuyệt đối nghe không ngắn
+        off = []
+        if len(spans) >= 6:
+            med = statistics.median(s for s, _ in spans)
+            floor = med * MOMENT_REL
+            seen = {w for w in short_bad + short_thin}
+            off = [f"{w} {s:.2f}s (trung vị tập là {med:.1f}s)"
+                   for s, w in sorted(spans) if s < floor and not any(w in m for m in seen)]
+        for m in short_bad:
+            E(f"cảnh bị ngắt sớm: {m} — tăng w, hoặc bỏ bớt một moment trong beat")
+        for m in short_thin:
+            W(f"cảnh mỏng: {m} — xem lại có kịp nhìn không")
+        for m in off:
+            W(f"cảnh lệch nhịp: {m} — không ngắn tuyệt đối, nhưng hẫng so với các cảnh quanh nó")
+        if not short_bad and not short_thin and not off:
+            K(f"không cảnh nào dưới {MOMENT_THIN}s hay lệch nhịp")
 
     # ---- in kết quả ---------------------------------------------------------
     for m in ok:

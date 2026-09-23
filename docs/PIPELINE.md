@@ -197,7 +197,15 @@ PYTHONUTF8=1 python tools/check-episode.py <slug>
 
 Máy soát được: khung tập, chữ làm lộ khung, nguồn canon, tên nhân vật khớp CAST.md, chữ tràn, file
 hình/tiếng thiếu, ảnh sinh ra mà không dùng, timing và phụ đề cũ, thumbnail thiếu field, phiên âm
-thiếu, beat VI lệch thời lượng so với EN.
+thiếu, beat VI lệch thời lượng so với EN, và **cảnh bị ngắt sớm**.
+
+Luật cảnh ngắn đo **hai kiểu**, vì một kiểu không đủ:
+
+- **Tuyệt đối** — dưới 1,2s là ✗, dưới 2,5s là ⚠. Moment còn phải nuốt 12 khung hoà vào cảnh sau.
+- **Tương đối** — dưới 25% trung vị của **chính tập đó** là ⚠. Tập có nhịp trung vị 15s thì cảnh 3s
+  vẫn hẫng, dù 3s nghe chẳng ngắn. Ngưỡng tuyệt đối không bắt được cái đó.
+
+Sửa bằng cách tăng `w` của moment hoặc bỏ bớt một moment trong beat — đừng kéo dài lời dẫn cho vừa hình.
 
 Rồi **người xem một lượt trên bản dựng, có tiếng, không tua** — ghi chú ngay tại chỗ:
 

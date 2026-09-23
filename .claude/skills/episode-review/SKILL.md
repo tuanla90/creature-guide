@@ -51,7 +51,14 @@ Rồi đọc tay những thứ linter chưa bắt được:
       đã thấy dấu ấy — tức là dấu ấy phải có **một shot cận cảnh riêng**.
 - [ ] Khớp `docs/CAST.md`, cả VI lẫn EN, và mã thực địa neo được hai bản.
 
-### 1.5 Cấu trúc kỹ thuật
+### 1.5 Nhịp cảnh
+- [ ] `check-episode.py` không báo **cảnh bị ngắt sớm**, **cảnh mỏng**, hay **cảnh lệch nhịp**.
+- [ ] Máy chỉ đo được *thời lượng*. Người phải xem cảnh đó có **cần** lâu không: một cảnh cận dấu
+      tích dùng để đặt tên thì phải đủ để nhìn ra cái dấu; một cảnh chuyển thì ngắn là đúng.
+- [ ] Sửa bằng cách tăng `w` của moment, hoặc **bỏ bớt một moment** trong beat — chứ không phải kéo
+      dài lời dẫn cho vừa hình.
+
+### 1.6 Cấu trúc kỹ thuật
 - [ ] Có `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản Short).
 - [ ] `PRON` có mọi tên loài và tên riêng khó đọc (chỉ cần cho bản VI).
 
