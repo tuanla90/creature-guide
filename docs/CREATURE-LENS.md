@@ -27,7 +27,7 @@ Liên quan: [EPISODE-FRAME.md](EPISODE-FRAME.md) (sắp các trục này thành 
 
 ---
 
-## B. Mười hai trục quan sát
+## B. Mười sáu trục quan sát
 
 Với mỗi loài, đi lần lượt. Trục nào không có tư liệu thì bỏ, **không bịa**.
 
