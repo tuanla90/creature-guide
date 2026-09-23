@@ -135,6 +135,7 @@ Nên tả `scene` kỹ hơn bình thường để bù.
 ## 8 · Dựng hình và chuyển động 🤖
 
 Skill: **`creature-field-guide-production`** (phần "Dựng cảnh").
+Bảng tra đầy đủ các loại cảnh và tuỳ chọn: [SCENE-TYPES.md](SCENE-TYPES.md).
 
 `scenes.json`: `world` cho cảnh tràn khung, `specimen` cho cảnh soi từng điểm, `clip` cho video.
 Chữ lower-third: `text` ≤ 4.2, `caption` ≤ 2.7.

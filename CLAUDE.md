@@ -39,7 +39,7 @@ bible/             style.json · creatures/<loài>.json · shots/<ep>.json
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
 docs/              PIPELINE · BUSINESS-FLOW · CHANNEL-SETUP · SLATE · CREATURE-LENS
-                   IDEA-BANK · CAST · SOUND · EPISODE-FRAME
+                   IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SCENE-TYPES
 tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py
                    check-episode.py · review.py · backup-episode.py
 experiments/       ghi chép những thứ đã thử và giới hạn của chúng
