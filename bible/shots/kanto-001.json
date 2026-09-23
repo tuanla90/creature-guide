@@ -412,7 +412,7 @@
       "id": "m03-heliotropism",
       "kind": "scene",
       "creatures": [
-        "bulbasaur"
+        "bulbasaur:K7"
       ],
       "beat": "12",
       "scene": "a Bulbasaur lying still with its head turned clearly to one side while the bulb on its back is twisted the other way, tilted toward the low morning sun, a visible mismatch between the animal's axis and the plant's axis",
@@ -435,6 +435,16 @@
       "beat": "14",
       "scene": "across a misty meadow at dawn, the large dark silhouette of an Ivysaur standing at the treeline, details lost in the fog, only the heavy bud shape readable against the pale sky",
       "framing": "very wide telephoto shot, subject small and off-centre, heavy atmospheric haze"
+    },
+    {
+      "id": "m06-crooked-bulb",
+      "beat": "02",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K7"
+      ],
+      "scene": "a single small young Bulbasaur lying on dry grass in a patch of midday sun, seen from behind and slightly above, the bulb on its back clearly leaning over to one side instead of sitting upright on the spine, the rest of the body straight and symmetrical so the lean reads as a real deformity of the plant and not a turn of the body",
+      "framing": "close three-quarter rear view centred on the bulb, shallow depth of field, the tilt unmistakable against the straight line of the back"
     }
   ],
   "extraCreatures": {
