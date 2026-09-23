@@ -9,3 +9,4 @@ __pycache__/
 *.pyc
 public/img/**/*.jpg
 !public/img/**/.keep
+public/video/**/*.mp4
