@@ -22,9 +22,11 @@ const creature = (ref, drop = []) => {
   if (!fs.existsSync(f)) return {text: shots.extraCreatures?.[id] || id, forbidden: []};
   const b = JSON.parse(fs.readFileSync(f, "utf-8"));
   const sex = state && b.sexDifferences?.[state]?.length ? b.sexDifferences[state] : [];
+  // individuals: dấu riêng của MỘT cá thể có tên trong tập (vd bulbasaur:K7 -> củ mọc nghẹo)
+  const mark = state && b.individuals?.[state]?.marks ? b.individuals[state].marks : [];
   return {
     // dropAppearance: bỏ dòng mô tả chung chọi với cảnh (vd con non chưa có củ)
-    text: [b.anchor, ...b.appearance.filter((a) => !drop.some((d) => a.includes(d))), ...sex].join(", "),
+    text: [b.anchor, ...b.appearance.filter((a) => !drop.some((d) => a.includes(d))), ...sex, ...mark].join(", "),
     forbidden: b.forbidden || [],
   };
 };

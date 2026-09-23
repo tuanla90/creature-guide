@@ -9,13 +9,48 @@
     "wide mouth, short sturdy legs, three short white claws on each foot",
     "a single green plant bulb on its back, tightly closed, like a large onion bulb with visible leaf layers"
   ],
-  "sexDifferences": { "note": "không có khác biệt nhìn thấy được (Bulbapedia)", "female": [], "male": [] },
+  "sexDifferences": {
+    "note": "không có khác biệt nhìn thấy được (Bulbapedia)",
+    "female": [],
+    "male": []
+  },
+  "individuals": {
+    "K7": {
+      "name": "Búp Lệch",
+      "nameEn": "Crookedbud",
+      "marks": [
+        "the bulb on its back grows noticeably tilted, leaning to one side instead of sitting upright"
+      ],
+      "note": "cá thể trung tâm của tập kanto-001; cái củ nghẹo là vết của việc vặn theo mặt trời mỗi ngày"
+    }
+  },
   "canon": [
-    {"fact": "sinh ra đã mang hạt giống trên lưng; hạt lớn cùng con vật", "src": "Pokédex Red/Blue, FireRed, Silver"},
-    {"fact": "hay ngủ dưới nắng; hạt hấp thụ nắng mà lớn dần", "src": "Pokédex Ruby/Sapphire/Emerald"},
-    {"fact": "nhịn ăn nhiều ngày; năng lượng dự trữ trong củ", "src": "Pokédex Yellow"},
-    {"fact": "tỉ lệ 87,5% đực / 12,5% cái; nhóm trứng Monster + Grass; tiến hoá cấp 16", "src": "Bulbapedia"}
+    {
+      "fact": "sinh ra đã mang hạt giống trên lưng; hạt lớn cùng con vật",
+      "src": "Pokédex Red/Blue, FireRed, Silver"
+    },
+    {
+      "fact": "hay ngủ dưới nắng; hạt hấp thụ nắng mà lớn dần",
+      "src": "Pokédex Ruby/Sapphire/Emerald"
+    },
+    {
+      "fact": "nhịn ăn nhiều ngày; năng lượng dự trữ trong củ",
+      "src": "Pokédex Yellow"
+    },
+    {
+      "fact": "tỉ lệ 87,5% đực / 12,5% cái; nhóm trứng Monster + Grass; tiến hoá cấp 16",
+      "src": "Bulbapedia"
+    }
   ],
-  "invariants": ["one closed green bulb on the back", "blue-green skin with darker patches", "red eyes", "three claws per foot"],
-  "forbidden": ["flower on the back", "open petals", "standing on two legs"]
+  "invariants": [
+    "one closed green bulb on the back",
+    "blue-green skin with darker patches",
+    "red eyes",
+    "three claws per foot"
+  ],
+  "forbidden": [
+    "flower on the back",
+    "open petals",
+    "standing on two legs"
+  ]
 }

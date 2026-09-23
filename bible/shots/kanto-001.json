@@ -15,7 +15,7 @@
       "beat": "00,02",
       "kind": "plate",
       "creatures": [
-        "bulbasaur"
+        "bulbasaur:K7"
       ],
       "scene": "adult Bulbasaur standing in three-quarter side view facing right",
       "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"
