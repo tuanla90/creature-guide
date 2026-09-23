@@ -32,8 +32,23 @@ Một shot:
   "framing": "góc máy, ánh sáng, khoảng cách" }
 ```
 
-- `kind`: `plate` (ảnh mẫu, nền trơn, cả thân) · `scene` (cảnh thật) · `real` (động vật Trái Đất, để
-  đối chiếu — prompt sẽ bỏ phần "giữ dáng sinh vật hư cấu").
+- `kind` chọn khối style trong `bible/style.json`:
+
+  | `kind` | Là gì | Ghi chú |
+  |---|---|---|
+  | `plate` | ảnh mẫu, nền trơn, cả thân | sinh **trước**, mọi cảnh khác lấy nó làm `[ref]` |
+  | `scene` | cảnh thật | mặc định |
+  | `real` | động vật Trái Đất để đối chiếu | bỏ phần "giữ dáng sinh vật hư cấu" |
+  | `anatomy` | X-quang mô phỏng, nền xanh, xương và mạch năng lượng | thân **nguyên vẹn, khép kín** — không máu me, nội tạng, mổ xẻ |
+  | `fieldnote` | trang sổ thực địa: giấy + hình vẽ chì/mực | chừa trống **một phần ba bên phải** |
+
+  `anatomy` và `fieldnote` **không lấy `[ref]`** từ ảnh mẫu — ref là ảnh chụp, nó sẽ kéo bản x-quang
+  và bản vẽ tay ngược về thành ảnh chụp. Cái giá: hai kind này dễ lệch hình hơn, nên tả `scene` kỹ hơn.
+
+  **`fieldnote` không có một chữ nào, cũng không có một mũi tên nào.** Chữ và mũi tên đều do Remotion
+  vẽ lên sau. AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn), còn mũi tên AI vẽ thì chỉ
+  sai chỗ mà không sửa được. Đổi lại được ba thứ: chữ luôn đọc được, sửa lời không phải sinh lại ảnh,
+  và bản EN dùng chung y hệt tấm giấy — chỉ đổi lớp chữ.
 - `creatures`: `"<loài>"`, `"<loài>:male|female"` (lấy `sexDifferences`), `"<loài>:<mã cá thể>"`
   (lấy thêm `individuals[mã].marks` — dấu riêng của cá thể có tên trong tập).
 - `dropAppearance`: bỏ vài dòng mô tả chung chọi với cảnh (vd con non chưa có củ).

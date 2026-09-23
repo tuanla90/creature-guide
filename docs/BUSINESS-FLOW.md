@@ -143,8 +143,8 @@ dịch lại là xoá sạch phần bạn đã chỉnh — phải sửa tay cả
 | C1 | Sinh ảnh | `public/img/<ep>/*.jpg` | Google Flow (Nano Banana Pro) + Batch Studio | 🟡 | tập |
 | C2 | Nhập ảnh, gỡ watermark | ảnh sạch | `import-flow.py`, `unwatermark.py` | 🟢 | tập |
 | C3 | Chuyển động — **ba tầng, xem bảng dưới** | mp4 | tuỳ tầng | 🟡 | tập |
-| C4 | Cảnh giải phẫu *(loại cảnh mới)* | ảnh nền xanh, xương, mạch năng lượng | cần khối style mới | 🔴 | tập |
-| C5 | Trang sổ thực địa *(loại cảnh mới)* | giấy + nét phác hoạ, **chữ để trống** | Flow sinh giấy, Remotion vẽ chữ | 🔴 | tập |
+| C4 | Cảnh giải phẫu | ảnh nền xanh, xương, mạch năng lượng | `kind: "anatomy"` trong shot bible | 🟢 | tập |
+| C5 | Trang sổ thực địa | giấy + hình vẽ, **chữ để trống** | `kind: "fieldnote"` + Remotion vẽ chữ | 🟡 | tập |
 | C6 | Nhạc: ghép từ thư viện mẫu | nhạc nền tập | thư viện dựng ở 0.6 | 🟡 | tập |
 | C7 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | [SOUND.md](SOUND.md), Pixabay/Freesound CC0 | 🔴 | tập |
 | C8 | Giọng EN | mp3 theo beat | **chưa chốt nhà cung cấp** | 🔴 | tập |
@@ -257,8 +257,9 @@ Cập nhật sau đợt dựng cụm 0. Việc đã xong đánh ~~gạch~~.
 **Thuế mỗi tập · quyết định kênh có scale nổi không**
 4. ~~`D10` gói đăng~~ — skill `episode-publish` soạn được. Chưa chạy thật lần nào.
 5. `C7` **tiếng động** — vẫn hoàn toàn làm tay, và `sfx.json` chưa dựng.
-6. `C4` `C5` **hai loại cảnh mới** — cảnh giải phẫu và trang sổ thực địa đã có luật, **chưa có khối
-   style trong `bible/style.json`**. Đây là việc chặn tập tiếp theo nếu muốn dùng hai loại cảnh đó.
+6. ~~`C4` `C5` khối style cho hai loại cảnh mới~~ — đã có `kind: "anatomy"` và `kind: "fieldnote"`.
+   **Còn lại:** lớp chữ viết tay của Remotion cho `fieldnote` chưa dựng, và chưa sinh thử tấm nào để
+   biết Flow có chịu chừa trống một phần ba bên phải hay không.
 7. `0.6` **thư viện nhạc** — quy cách và prompt đã có, bảy bản chưa sinh.
 
 **Nợ chiến lược · cần quyết, không cần code**

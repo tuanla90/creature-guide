@@ -27,5 +27,54 @@
     "smooth vinyl skin"
   ],
   "note2": "Thử Flow 2026-09-22: plate kiểu 'studio, phông trơn' ra ảnh như mô hình đồ chơi -> chuyển sang chụp ngoài trời, nền mờ.",
-  "sceneStyle": "candid nature documentary photograph, natural light, telephoto lens, shallow depth of field, subtle film grain, no animals"
+  "sceneStyle": "candid nature documentary photograph, natural light, telephoto lens, shallow depth of field, subtle film grain, no animals",
+  "anatomyStyle": "scientific x-ray style study plate for a field research notebook, deep desaturated teal-green backdrop, the animal rendered as a translucent luminous silhouette with the skeleton and the internal energy pathways glowing softly inside it, clean even study lighting, faint anatomical grid behind the subject, no photographic skin detail",
+  "anatomyTreatment": "the creature keeps its exact recognizable Pokémon silhouette, proportions and markings; only the outer body is made translucent so the structure underneath reads, the body stays whole and intact and closed",
+  "fieldNoteStyle": "a single page from a naturalist field notebook photographed flat from directly above, aged off-white paper with visible fibre and a faint ruled grid, one graphite and ink study drawing of the animal occupying the LEFT TWO THIRDS of the page, the RIGHT THIRD of the page left completely empty and blank, soft even daylight, slight paper curl, one pressed leaf at a corner",
+  "fieldNoteTreatment": "the drawing keeps the creature's exact recognizable Pokémon silhouette, proportions and markings, rendered as a hand drawn pencil and ink naturalist study with visible construction lines and light hatching, not a photograph",
+  "kindForbidden": {
+    "anatomy": {
+      "add": [
+        "blood",
+        "gore",
+        "viscera",
+        "entrails",
+        "exposed organs",
+        "dissection",
+        "cut open body",
+        "scalpel",
+        "autopsy",
+        "surgical",
+        "wound cavity",
+        "photographic skin texture"
+      ],
+      "drop": []
+    },
+    "fieldnote": {
+      "add": [
+        "handwriting",
+        "handwritten notes",
+        "lettering",
+        "letters",
+        "words",
+        "numbers",
+        "labels",
+        "annotations",
+        "printed type",
+        "colour photograph of the animal",
+        "photorealistic animal",
+        "multiple drawings",
+        "full page drawing",
+        "drawing covering the whole page",
+        "arrows",
+        "pointer lines",
+        "leader lines",
+        "diagram callouts",
+        "measurement marks",
+        "scale bar"
+      ],
+      "drop": []
+    }
+  },
+  "note3": "anatomy và fieldnote là hai kind riêng, mỗi cái có style + treatment + forbidden của nó. fieldnote CỐ Ý chừa trống một phần ba bên phải và cấm mọi thứ giống chữ VÀ mọi mũi tên — chữ và mũi tên đều do Remotion vẽ lên, vì AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn) và mũi tên AI vẽ thì chỉ sai chỗ mà không sửa được. Ảnh chỉ là giấy và hình vẽ."
 }

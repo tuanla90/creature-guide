@@ -41,17 +41,26 @@ shots.shots.forEach((s, i) => {
     seen.add(id);
     return creature(s.creatures.filter((x) => x.split(":")[0] === id).length > 1 ? id : r, s.dropAppearance);
   }).filter(Boolean);
-  const look = s.kind === "plate" ? style.plateStyle : s.kind === "scene" && !cs.length ? style.sceneStyle : style.style;
+  // mỗi kind có khối style riêng; không khai thì rơi về style chung
+  const LOOK = {plate: style.plateStyle, anatomy: style.anatomyStyle, fieldnote: style.fieldNoteStyle};
+  const look = LOOK[s.kind] || (s.kind === "scene" && !cs.length ? style.sceneStyle : style.style);
+  // anatomy và fieldnote không phải "con vật thật đang sống" nên cần cách xử lý sinh vật riêng
+  const TREAT = {anatomy: style.anatomyTreatment, fieldnote: style.fieldNoteTreatment};
+  const treatment = s.kind === "real" ? "real living animal, scientifically accurate"
+    : cs.length ? (TREAT[s.kind] || style.creatureTreatment) : "";
+  // kindForbidden: thêm/bớt so với danh sách cấm chung, theo từng kind
+  const kf = style.kindForbidden?.[s.kind] || {};
+  const drop = new Set([...(s.allow || []), ...(kf.drop || [])]);
   const parts = [
     look,
-    s.kind === "real" ? "real living animal, scientifically accurate" : cs.length ? style.creatureTreatment : "",
+    treatment,
     ...cs.map((c) => c.text),
     s.scene,
     s.framing,
     style.output,
     // shot.allow: bỏ vài mục khỏi danh sách cấm chung (vd cảnh trận đấu cần bóng người xem)
-    "avoid: " + [...new Set([...style.forbidden, ...cs.flatMap((c) => c.forbidden)])]
-      .filter((x) => !(s.allow || []).includes(x)).join(", "),
+    "avoid: " + [...new Set([...style.forbidden, ...(kf.add || []), ...cs.flatMap((c) => c.forbidden)])]
+      .filter((x) => !drop.has(x)).join(", "),
   ].filter(Boolean);
   const prompt = parts.join(". ").replace(/\s+/g, " ").replace(/\.\./g, ".");
   const file = `${shots.outDir}/${s.id}.jpg`;
@@ -68,7 +77,10 @@ fs.writeFileSync(path.join(root, `prompts/${ep}.txt`), lines.join("\n") + "\n");
 const plateOf = {};
 shots.shots.forEach((s) => s.kind === "plate" && s.creatures.forEach((r) => (plateOf[r.split(":")[0]] ??= s.id)));
 const blocks = shots.shots.map((s, i) => {
-  const refs = s.kind === "plate" ? [] : [...new Set(s.creatures.map((r) => plateOf[r.split(":")[0]]).filter(Boolean))];
+  // plate không tự tham chiếu. anatomy/fieldnote cũng không: lấy một ảnh CHỤP làm ref sẽ kéo bản
+  // x-quang và bản vẽ tay ngược về thành ảnh chụp, đúng thứ ta không muốn.
+  const noRef = s.kind === "plate" || s.kind === "anatomy" || s.kind === "fieldnote";
+  const refs = noRef ? [] : [...new Set(s.creatures.map((r) => plateOf[r.split(":")[0]]).filter(Boolean))];
   return [`[id: ${s.id}]`, refs.length ? `[ref: ${refs.join(", ")}]` : null, lines[i]].filter(Boolean).join("\n");
 });
 fs.writeFileSync(path.join(root, `prompts/${ep}.flow.txt`), blocks.join("\n\n") + "\n");

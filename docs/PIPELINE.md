@@ -121,11 +121,13 @@ Tải ZIP về → `python tools/import-flow.py <ep>` → `python tools/unwaterm
 
 **Hai loại cảnh có luật riêng:**
 
-- **Cảnh giải phẫu** — dạng X-quang mô phỏng phục vụ nghiên cứu: nền xanh, xương, mạch năng lượng
-  chạy trong thân; vết thương nhỏ trên da thì được. Không máu me, không nội tạng, không mổ xẻ.
-- **Trang sổ thực địa** — Flow chỉ sinh **giấy và nét phác hoạ, chừa chỗ trống**; chữ viết tay do
-  Remotion vẽ lên. AI sinh chữ ra ký tự méo, tiếng Việt có dấu thì méo nặng hơn. Tách như vậy còn
-  được hai cái lợi: sửa lời không phải sinh lại ảnh, và bản EN dùng chung y hệt tấm giấy.
+- **`kind: "anatomy"`** — X-quang mô phỏng phục vụ nghiên cứu: nền xanh, xương, mạch năng lượng chạy
+  trong thân. Thân **nguyên vẹn, khép kín**. Không máu me, không nội tạng, không mổ xẻ.
+- **`kind: "fieldnote"`** — trang sổ thực địa: Flow chỉ sinh **giấy và hình vẽ, chừa trống một phần
+  ba bên phải**; chữ và mũi tên do Remotion vẽ lên sau.
+
+Cả hai **không lấy `[ref]`** từ ảnh mẫu — ref là ảnh chụp, nó kéo bản vẽ ngược về thành ảnh chụp.
+Nên tả `scene` kỹ hơn bình thường để bù.
 
 > **Cổng:** ảnh nào định zoom ≥ 2× phải từ 2000 px trở lên, và watermark đã sạch. Zoom vào ảnh vỡ
 > thì cả cảnh hỏng, mà lúc đó bạn đã đo toạ độ callout xong rồi.
