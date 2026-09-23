@@ -63,8 +63,22 @@ Dáng số ĐÚNG: vùng phải-động lệch **gấp vài lần** vùng phải
 PYTHONUTF8=1 python tools/motion-studio.py public/img/<ep>/<shot>.jpg
 ```
 
-Kéo chuột khoanh elip → tâm và sigma. Kéo từ tâm ra → hướng và biên độ. Chọn kiểu, kéo thanh cắt,
-bấm **Render thử**, xem mp4 ngay trong trang. Ưng thì **Lưu spec**.
+Kéo chuột khoanh elip → tâm và sigma. Kéo từ tâm ra → hướng và biên độ. **Space** render nháp
+(520px · 2 giây · ~8 giây chờ), **Enter** render chuẩn. Ưng thì **Lưu**.
+
+Ba thứ làm vòng lặp nhanh lại:
+
+| | |
+|---|---|
+| **Nháp** | dựng nhỏ và ngắn — nhanh hơn bản chuẩn khoảng mười lần |
+| **Lớp nhiệt** | sau render, phủ lên ảnh đúng chỗ đã động (đỏ = mạnh). Thấy ngay "cái đầu cũng động theo" mà không phải chạy script đo |
+| **Solo** | tắt mọi vùng khác, xem một vùng làm gì — cách duy nhất chắc chắn để biết vùng nào gây lỗi |
+
+Cột số bên phải mỗi vùng là lệch trung bình trong elip đó: **xanh ≥ 1,5** là động thấy được,
+**đỏ < 1,5** là gần như đứng yên. Vùng đáng lẽ phải đứng yên mà lên số cao là dấu hiệu lan sai chỗ.
+
+**Bám biên** (phím `S`): vẽ đại một elip, GrabCut tự tách vật khỏi nền rồi ghi mask vào
+`region_mask`. Không cần vẽ chính xác.
 
 Đặt toạ độ bằng cách đoán số trong JSON rồi render lại để xem là vòng lặp rất chậm, và **người nhìn
 ảnh thì biết ngay chỗ nào phải thở, chỗ nào phải đứng yên — máy thì không**. Spec lưu kèm khoá
