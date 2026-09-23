@@ -317,6 +317,76 @@
       "scene": "a very old Venusaur resting at the forest edge, its trunk gone woody and cracked with moss and small ferns growing on its back and shell, the flower huge and slightly faded",
       "framing": "close medium shot, texture of moss and bark clearly readable, soft rainy light",
       "beat": "tbd"
+    },
+    {
+      "id": "b01-arena-dusk",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "scene": "a packed dirt ring in a small town square at dusk, worn white boundary line, a Bulbasaur standing braced at one end facing an unseen opponent, blurred silhouettes of people watching from the edge of the light",
+      "framing": "low wide shot from behind the ring line, subject small in the middle, warm lamps behind the crowd",
+      "beat": "tbd"
+    },
+    {
+      "id": "b02-vine-whip-battle",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "scene": "a Bulbasaur in the dirt ring lashing both vines forward in a hard strike, dust kicked up, the vines taut and straight instead of curled, blurred spectators behind",
+      "framing": "side-on action shot, motion blur on the vine tips, evening light",
+      "beat": "tbd"
+    },
+    {
+      "id": "b03-solarbeam-charge",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "scene": "an Ivysaur standing still in the dirt ring with its bud glowing from inside, thin threads of light bending in toward the bud from the air around it, the ground lit faintly, opponent out of frame",
+      "framing": "medium shot slightly below eye level, the glow as the main light source, dark blue dusk behind",
+      "beat": "tbd"
+    },
+    {
+      "id": "b04-powder-arena",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "scene": "a low cloud of fine pale spores spreading across the dirt ring at knee height, a Bulbasaur at the edge of the cloud, the opposing creature barely visible inside it with its head dropping",
+      "framing": "wide shot from the ring side, backlit spores glowing, shallow focus on the near animal",
+      "beat": "tbd"
+    },
+    {
+      "id": "b05-last-stand",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "beat": "11b",
+      "scene": "a battered Bulbasaur low on the dirt ring, one eye half shut, scratches on its flank, the bulb on its back swollen and glowing hard from within, fresh vines pushing out thicker than before, dust settling around it",
+      "framing": "low close shot from the front, the bulb glow lighting its face from behind, dark ring and blurred spectators behind"
     }
   ],
   "extraCreatures": {

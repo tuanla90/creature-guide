@@ -7,11 +7,17 @@ nó kể **một con vật cụ thể**, và kiến thức về loài được g
 
 1. **Một cá thể, có mã số.** Người kể đặt cho nó một mã thực địa (K7, B-02…) và bám theo nó.
    Mọi thông tin về loài xuất hiện vì *con này* vừa làm gì đó, không phải vì tới lượt trình bày.
-2. **Người kể là nhà sinh vật học đang quan sát**, không phải người thuyết minh biết hết.
-   Được phép sai, được phép chờ, được phép không biết. Ngôi thứ nhất, có ngày tháng, có địa điểm.
+2. **Người kể là một nhà sinh vật học của thế giới chúng ta, đang khảo sát vùng đất ấy.**
+   Ngôi thứ nhất, có ngày tháng, có địa điểm. Được phép sai, được phép chờ, được phép không biết.
+   ⛔ **Không bao giờ nhắc tới game.** Mọi thứ phải có mặt như một sự vật trong thế giới đó:
+   - Pokédex → **cuốn danh lục** của người bản xứ (nhắc tên Pokédex đúng một lần ở tập đầu).
+   - Tên đòn đánh → **cái tên các nhà huấn luyện đặt cho nó trong các trận đấu**.
+   - Con số cơ chế (cấp 16, 87,5%) → **con số người ta ghi chép được**: sổ trại ấp, thống kê của
+     người bản xứ. Không nói "cấp", không nói "hệ", không nói "dữ liệu game".
+   - Đối chiếu Trái Đất là **kiến thức của chính người kể**: *"ở chỗ tôi, loài cóc Surinam…"*
 3. **Ba nhãn trên màn hình, không trộn lẫn:**
-   📖 POKÉDEX (canon, ghi rõ bản game) · 🎬 ANIME (canon phim) · 🔬 GIẢ THUYẾT (suy luận của kênh)
-   Mỗi giả thuyết phải kèm **một loài có thật** làm đối chứng.
+   📖 DANH LỤC (Pokédex) · ⚔ TRẬN ĐẤU (cách các nhà huấn luyện dùng) · 🔬 ĐỐI CHIẾU (loài có thật ở Trái Đất)
+   Giả thuyết của kênh luôn nói rõ là phỏng đoán, và phải kèm một loài có thật.
 
 ## Mười chặng (bỏ chặng nào không có tư liệu, đừng bịa)
 
@@ -22,7 +28,8 @@ nó kể **một con vật cụ thể**, và kiến thức về loài được g
 | 2 | **Tổ và lúc chào đời** | Trứng/ổ, ai chăm, giới tính được quyết định thế nào |
 | 3 | **Ăn gì, sống bằng gì** | Nguồn năng lượng, nhịp ngày đêm, cái nó làm cả ngày |
 | 4 | **Sống trong đàn** | Giao tiếp, cạnh tranh tài nguyên, nuôi con chung, thứ bậc |
-| 5 | **Kẻ địch** | Ai săn nó, nó phòng vệ bằng gì (đòn đánh trong game = vũ khí sinh học) |
+| 5 | **Kẻ địch** | Ai săn nó, nó phòng vệ bằng gì (tên đòn đánh = tên người ta đặt cho một vũ khí sinh học) |
+| 5b | **Trong các trận đấu** | Người bản xứ dùng khả năng ấy thế nào; cùng một cơ quan, hoang dã dùng một kiểu, trong trận dùng một kiểu khác |
 | 6 | **Láng giềng** | Các loài sống cùng: cạnh tranh, cộng sinh, ăn ké |
 | 7 | **Điều kiện tiến hoá** | Cần tích luỹ gì, dấu hiệu báo trước, tiến hoá một mình hay cả đàn |
 | 8 | **Trưởng thành** | Cơ thể đổi ra sao, cái giá phải trả, vai trò mới trong đàn |

@@ -47,7 +47,9 @@ shots.shots.forEach((s, i) => {
     s.scene,
     s.framing,
     style.output,
-    "avoid: " + [...new Set([...style.forbidden, ...cs.flatMap((c) => c.forbidden)])].join(", "),
+    // shot.allow: bỏ vài mục khỏi danh sách cấm chung (vd cảnh trận đấu cần bóng người xem)
+    "avoid: " + [...new Set([...style.forbidden, ...cs.flatMap((c) => c.forbidden)])]
+      .filter((x) => !(s.allow || []).includes(x)).join(", "),
   ].filter(Boolean);
   const prompt = parts.join(". ").replace(/\s+/g, " ").replace(/\.\./g, ".");
   const file = `${shots.outDir}/${s.id}.jpg`;
