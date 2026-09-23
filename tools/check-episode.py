@@ -199,8 +199,14 @@ def main(slug: str) -> int:
                 continue
             n = m.group(1).strip()
             checked += 1
-            if n not in body:
+            where = [b for b in order if n in beats.get(b, "")]
+            if not where:
                 W(f"tên “{n}” có trong bảng CAST.md nhưng không thấy trong lời dẫn")
+            elif len(where) == 1 and len(order) > 6 and where[0] not in order[-2:]:
+                # Một nhân vật được ĐẶT TÊN là một lời hứa với khán giả. Xuất hiện đúng một beat
+                # rồi biến mất là tuyến bỏ dở — người xem vẫn đợi nó quay lại tới hết tập.
+                W(f"tuyến bỏ dở: “{n}” chỉ xuất hiện ở beat {where[0]} rồi mất hẳn — "
+                  f"cho nó quay lại một lần, hoặc đừng đặt tên")
         K(f"đã đối chiếu {checked} tên trong CAST.md")
     else:
         W("chưa có docs/CAST.md")
@@ -312,6 +318,27 @@ def main(slug: str) -> int:
             E(f"thumb.json thiếu field: {need}")
         else:
             K("thumb.json đủ field bắt buộc")
+
+        # Thumbnail là lời hứa, và là đòn bẩy lượt xem lớn nhất. Hứa một câu hỏi mà tập không trả
+        # lời thì người bấm vào sẽ bỏ đi ở giây thứ ba mươi — và số liệu sẽ đổ lỗi cho cái hook.
+        hook = f"{tj.get('pre', '')} {tj.get('em', '')}".strip()
+        if hook:
+            STOP = {"vì", "sao", "cứ", "thì", "là", "của", "một", "cái", "con", "nó", "có", "không",
+                    "này", "kia", "và", "mà", "ở", "cho", "khi", "được", "bao", "nhiêu", "làm"}
+            toks = [w for w in re.findall(r"[0-9]+|[^\W\d_]{3,}", hook.lower()) if w not in STOP]
+            low = body.lower()
+            # khớp theo BIÊN TỪ trên văn bản gốc: mã thực địa K7 không được tính là đã trả lời
+            # con số 7 của hook. Tách token thường sẽ cắt K7 thành k + 7 và bỏ lọt đúng chỗ này.
+            def said(w):
+                return re.search(rf"(?<![\w]){re.escape(w)}(?![\w])", low) is not None
+            miss = [w for w in toks if not said(w)]
+            if toks and len(miss) / len(toks) >= 0.5:
+                E(f"thumbnail hứa một câu hỏi lời dẫn không trả lời: “{hook}” — "
+                  f"không tìm thấy trong lời: {miss}")
+            elif miss:
+                W(f"thumbnail có từ không xuất hiện trong lời dẫn: {miss} (hook: “{hook}”)")
+            else:
+                K("hook của thumbnail có trong lời dẫn")
 
     # ---- 9. phiên âm cho TTS ------------------------------------------------
     pron = getattr(c, "PRON", {})

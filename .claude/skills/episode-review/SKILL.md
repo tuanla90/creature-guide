@@ -58,7 +58,17 @@ Rồi đọc tay những thứ linter chưa bắt được:
 - [ ] Sửa bằng cách tăng `w` của moment, hoặc **bỏ bớt một moment** trong beat — chứ không phải kéo
       dài lời dẫn cho vừa hình.
 
-### 1.6 Cấu trúc kỹ thuật
+### 1.6 Lời hứa và tuyến nhân vật
+- [ ] **Hook của thumbnail phải được tập trả lời.** Đây là lỗi đắt nhất: người bấm vào vì một câu
+      hỏi rồi không thấy câu trả lời sẽ bỏ đi ở giây thứ ba mươi, và số liệu sẽ đổ lỗi cho cái hook.
+      Sửa lời hoặc sửa `thumb.json` — đừng để hai thứ nói hai đằng.
+- [ ] **Mọi nhân vật được đặt tên đều phải quay lại.** Đặt tên là một lời hứa; tên xuất hiện một beat
+      rồi mất hẳn thì khán giả vẫn đợi nó tới hết tập. Hoặc cho quay lại một lần, hoặc đừng đặt tên.
+- [ ] **Cá thể trung tâm không nên vắng cả một beat.** Vắng thì phải là lựa chọn có lý do, và beat
+      ấy phải kéo được về chủ thể ở câu cuối.
+- [ ] `docs/IDEA-BANK.md` đánh ✅ đúng beat — ý đã đổi chỗ hoặc bị bỏ thì sửa lại, không để ✅ sai.
+
+### 1.7 Cấu trúc kỹ thuật
 - [ ] Có `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản Short).
 - [ ] `PRON` có mọi tên loài và tên riêng khó đọc (chỉ cần cho bản VI).
 
