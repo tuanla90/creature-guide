@@ -1,6 +1,7 @@
 # Kho ý tưởng
 
-Mỗi dòng là một câu hỏi có thể dựng thành một chặng trong tập (khung: [EPISODE-FRAME.md](EPISODE-FRAME.md)).
+Mỗi dòng là một câu hỏi có thể dựng thành một chặng trong tập.
+Khung tập: [EPISODE-FRAME.md](EPISODE-FRAME.md) · Trục quan sát dùng chung cho mọi loài: [CREATURE-LENS.md](CREATURE-LENS.md).
 Luật: **📖 canon phải ghi nguồn · 🔬 giả thuyết phải kèm một loài có thật ở Trái Đất**.
 
 Trạng thái: ✅ đã dùng · ⏸ hoãn · ⬜ chưa dùng
