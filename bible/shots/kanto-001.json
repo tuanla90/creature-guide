@@ -387,6 +387,54 @@
       "beat": "11b",
       "scene": "a battered Bulbasaur low on the dirt ring, one eye half shut, scratches on its flank, the bulb on its back swollen and glowing hard from within, fresh vines pushing out thicker than before, dust settling around it",
       "framing": "low close shot from the front, the bulb glow lighting its face from behind, dark ring and blurred spectators behind"
+    },
+    {
+      "id": "m01-mud-soak",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "beat": "04",
+      "scene": "a Bulbasaur standing motionless at the muddy edge of a forest pond in late afternoon, both front feet sunk into soft grey mud, belly almost touching the wet ground, not drinking, reflection broken by small ripples",
+      "framing": "low side view close to the water line, warm low sun from the left"
+    },
+    {
+      "id": "m02-vine-groom",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "beat": "07",
+      "scene": "a Bulbasaur flicking one vine back over its own shoulder to sweep a small caterpillar off the leaf edge of its bulb, the vine caught mid-flick, the insect tumbling away",
+      "framing": "close three-quarter shot from behind the shoulder so both the bulb and the vine are readable"
+    },
+    {
+      "id": "m03-heliotropism",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "beat": "12",
+      "scene": "a Bulbasaur lying still with its head turned clearly to one side while the bulb on its back is twisted the other way, tilted toward the low morning sun, a visible mismatch between the animal's axis and the plant's axis",
+      "framing": "high three-quarter shot from behind so both the head direction and the bulb tilt are obvious, long dawn shadows"
+    },
+    {
+      "id": "m04-hollow-empty",
+      "kind": "scene",
+      "creatures": [],
+      "beat": "14",
+      "scene": "an empty hollow in the ground at dawn ringed by old trees: grass pressed flat in a wide circle, short furrows clawed into the earth, and a scatter of dry curled leaf sheaths like onion skin at the centre, mist still lying low",
+      "framing": "slightly high wide shot looking down into the hollow, cold morning light"
+    },
+    {
+      "id": "m05-silhouette-mist",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "beat": "14",
+      "scene": "across a misty meadow at dawn, the large dark silhouette of an Ivysaur standing at the treeline, details lost in the fog, only the heavy bud shape readable against the pale sky",
+      "framing": "very wide telephoto shot, subject small and off-centre, heavy atmospheric haze"
     }
   ],
   "extraCreatures": {

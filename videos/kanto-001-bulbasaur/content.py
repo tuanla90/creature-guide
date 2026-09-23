@@ -1,241 +1,225 @@
-# Creature Field Guide — Kanto #001–003: theo chân một cá thể (mã thực địa K7)
+# Creature Field Guide — Kanto #001–003 · "Chọn Nắng"
 #
-# Khung: docs/EPISODE-FRAME.md — 10 chặng, kể theo MỘT cá thể.
-# Người kể: một nhà sinh vật học của thế giới chúng ta, đang khảo sát vùng đất ấy.
-#   ⛔ Không bao giờ nhắc tới game. Pokédex = "cuốn danh lục" của người bản xứ.
-#      Tên đòn đánh = tên các nhà huấn luyện đặt cho nó trong các trận đấu.
-#      Con số = thứ người ta ghi chép được (sổ trại ấp), không phải "cấp" hay "hệ".
-#      Đối chiếu Trái Đất là kiến thức của chính người kể: "ở chỗ tôi…".
-# Giọng đọc VBee ghép sau -> không dùng [tag] kiểu ElevenLabs. "\n" = một nhịp ngắt.
+# Người kể: An, nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Rừng Gió Gập ở Kanto.
+# Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem skills/.../subject-naming-and-evidence.md):
+#   K7 "Chọn Nắng" — đặt theo hành vi: luôn chiếm vệt nắng sáng nhất · vai: KẺ YẾU THẾ VƯƠN LÊN
+#   "Vai Rách"     — đặt theo vết tích: mảng da rách bên sườn · vai: HÀNG XÓM
+#   "Mắt Xám"      — đặt theo vết tích: con mắt xám · vai: KẺ SĂN CHUYÊN MỘT CON MỒI
+#   "Rêu"          — đặt theo vết tích: rêu mọc trên lưng · con cái già · vai: BÀ LÃO CỦA VÙNG
+# Bí ẩn xuyên suốt: cái hạt trên lưng là ký sinh hay cộng sinh? -> trả bài ở beat 15.
+#
+# Luật (docs/CREATURE-LENS.md + skills/creature-field-guide-scriptwriter):
+#   - Không nhắc game. Pokédex = cuốn danh lục của người bản xứ; tên đòn đánh = tên người ta đặt.
+#   - Ba nhãn không trộn: 📖 danh lục (có nguồn) · 👁 quan sát · 🔬 giả thuyết (kèm loài có thật).
+#   - CẢNH TIẾN HOÁ: không có lột da. Chỉ dùng sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
+#   - Mọi khả năng phải nêu CÁI GIÁ.
+# Giọng đọc VBee ghép sau -> không dùng [tag]. "\n" = một nhịp ngắt.
 
-ORDER = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "11b", "12", "13", "14", "15", "16", "17"]
+ORDER = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"]
 
 BEATS = {
-# ---- 0. câu hỏi mở màn ------------------------------------------------------
+# ---- mở đầu ------------------------------------------------------------------
 "00":
-"Cứ tám con chào đời thì bảy con là đực.\n"
-"Và trong suốt hai giai đoạn đầu đời, không ai phân biệt nổi con nào là cái.\n"
-"Kể cả tôi, sau mười bốn tháng ngồi ngoài đồng.\n"
-"Muốn biết, chỉ có một cách. Chờ nó nở hoa.",
+"Ngày đầu tiên tôi gặp Chọn Nắng, nó đang nằm giữa lối mòn, bất động dưới nắng trưa.\n"
+"Tôi tưởng nó đã chết.\n"
+"Rồi cái hạt trên lưng nó khẽ co lại.\n"
+"Nó đang thở. Và không phải chỉ bằng phổi.",
 
-# ---- 1. vùng đất ------------------------------------------------------------
 "01":
-"Ghi chép thực địa. Kanto, chỗ rừng già gặp đồng cỏ. Ngày thứ ba.\n"
-"Tôi tới vùng đất này để làm một việc mà ở quê tôi người ta làm với sói và với voi:\n"
-"chọn một con, đặt cho nó một cái tên, rồi đi theo nó cho tới khi nó già.\n"
-"Đây là kiểu địa hình tôi tìm suốt mùa xuân. Một dải rừng thưa, phía trước là trảng trống,\n"
-"và giữa hai thứ đó là một lối mòn nhỏ, cỏ bị đè rạp. Lối mòn ấy do chúng đi.\n"
-"Ở trảng này tôi đếm được năm cá thể, và chúng nằm cách nhau rất xa.\n"
-"Con nằm gần bìa rừng nhất, trong sổ tôi ghi là K7.",
+"Tôi là An. Tôi tới Rừng Gió Gập để làm một việc mà ở quê tôi người ta làm với sói và với voi:\n"
+"chọn một con, đi theo nó đủ lâu, rồi xem cái gì thay đổi.\n"
+"Trong sổ của người bản xứ, con vật này được ghi là Bulbasaur. Trong sổ của tôi, nó là cá thể K7.\n"
+"Suốt mấy tuần đầu, nó chỉ có chừng ấy: một chữ và một con số.",
 
-# ---- 2. tổ và lúc chào đời --------------------------------------------------
+# ---- chương 1: con yếu nhất --------------------------------------------------
 "02":
-"Tôi tìm được cái tổ vào tuần thứ hai. Nó nằm trong bóng râm, dưới một vòm dương xỉ.\n"
-"Năm quả trứng, và một con trưởng thành nằm ngay cạnh, xoè bông hoa trên lưng ra che phía trên.\n"
-"Người bản xứ có một cuốn danh lục ghi chép mọi loài ở đây. Họ gọi nó là Pokédex.\n"
-"Trong đó, ở trang đầu tiên, có một câu mà tôi đọc mãi vẫn thấy lạ:\n"
-"một hạt giống đã được gieo trên lưng nó, ngay từ lúc chào đời.\n"
-"Được gieo. Tức là phải có ai đó gieo.\n"
-"Tôi thì nghĩ đơn giản hơn. Hạt không đến từ bên ngoài. Nó đã nằm sẵn trong trứng.\n"
-"Ở chỗ tôi có một loài còn kỳ lạ hơn thế. Cóc Surinam ấp trứng ngay trong lớp da trên lưng mẹ,\n"
-"và cóc con chui thẳng ra từ đó.",
+"Rừng Gió Gập là chỗ rừng già chạm vào đồng cỏ. Giữa hai thứ đó có một lối mòn nhỏ, cỏ bị đè rạp,\n"
+"và lối mòn ấy do chúng đi.\n"
+"Ở trảng này tôi đếm được bảy cá thể. Chọn Nắng là con nhỏ nhất, và lúc nào cũng đi sau.\n"
+"Nếu chỉ nhìn qua, nó là con yếu nhất trong bảy con.\n"
+"Nhưng suốt một tuần đầu tiên, tôi ghi lại chỗ nằm của từng con vào mỗi buổi trưa.\n"
+"Và K7 luôn nằm đúng vệt nắng sáng nhất trong trảng. Không phải một hôm. Là cả bảy hôm.\n"
+"Ở đây người ta không gọi con vật bằng số. Họ gọi theo cái nó hay làm, hoặc theo dấu nó mang trên người.\n"
+"Từ hôm ấy, trong sổ tôi, K7 thành Chọn Nắng.",
 
+# ---- chương 2: cái hạt không phải vật trang trí -------------------------------
 "03":
-"Còn chuyện bảy đực một cái, tôi nghĩ câu trả lời nằm ở chính cái tổ này.\n"
-"Sổ của những người ấp trứng ở đây ghi lại hàng nghìn lứa, và con số lúc nào cũng vậy.\n"
-"Ở quê tôi, nhiều loài rùa để nhiệt độ quyết định giới tính. Trứng ấp chỗ ấm nở ra con cái,\n"
-"chỗ mát nở ra con đực.\n"
-"Nếu loài này cũng thế, thì một cái tổ đặt trong bóng râm của rừng già sẽ nở ra rất nhiều con đực.\n"
-"Đó mới là phỏng đoán. Nhưng nó khớp với thứ tôi đếm được ngoài đồng.",
+"Mỗi buổi trưa, Chọn Nắng bỏ ăn.\n"
+"Nó nằm yên tới mức có hôm tôi tưởng mình đã mất dấu, và bò vòng qua bụi dương xỉ để tìm.\n"
+"Nhưng sau vài giờ, cái hạt trên lưng nó căng lên, còn cái bụng thì vẫn phẳng.\n"
+"Nó không nhịn đói. Nó đang ăn một thứ khác.\n"
+"Cuốn danh lục ghi hai dòng rời nhau, và tôi mất gần một tháng mới ghép được chúng lại:\n"
+"cái hạt lớn lên nhờ hút ánh mặt trời, và con vật này nhịn ăn được nhiều ngày liền\n"
+"nhờ phần dự trữ nằm trong củ.\n"
+"Nói cách khác, thứ trên lưng nó không phải đồ trang trí, mà là một cái dạ dày thứ hai.",
 
-# ---- 3. ăn gì, sống bằng gì -------------------------------------------------
 "04":
-"Ngày thứ chín. K7 giờ đã bằng bắp chân tôi.\n"
-"Phần lớn thời gian trong ngày, nó không làm gì cả. Nó nằm trong một vệt nắng và nhắm mắt.\n"
-"Danh lục ghi hai chi tiết, và khi ghép lại thì ý nghĩa đổi hẳn.\n"
-"Một: nó hay ngủ dưới nắng, và cái hạt trên lưng hấp thụ ánh mặt trời mà lớn dần.\n"
-"Hai: nó nhịn ăn được nhiều ngày liền, nhờ phần dự trữ trong củ.\n"
-"Vậy cái củ ấy không phải đồ trang trí. Nó là một cái dạ dày thứ hai, chạy bằng ánh nắng.\n"
-"Và K7 không hề lười. Nó đang ăn trưa.\n"
-"Nghe như chuyện bịa, nhưng ở biển quê tôi có loài sên Elysia làm đúng như vậy:\n"
-"nó giữ lại lục lạp từ đám tảo nó ăn, rồi sống bằng quang hợp suốt nhiều tháng.",
+"Nhưng ăn nắng thôi thì chưa đủ. Một cái cây còn cần nước và khoáng.\n"
+"Tôi mất thêm ba tuần mới thấy Chọn Nắng lấy hai thứ đó ở đâu.\n"
+"Cuối buổi chiều, nó ra mép ao, đứng lún hai chân trước trong lớp bùn nhão, rất lâu, và không uống ngụm nào.\n"
+"Ở quê tôi, ếch nhái gần như không uống bằng miệng. Chúng hút nước qua một vùng da mỏng ở bụng.\n"
+"Còn phần khoáng, tôi ngờ nó không đến từ bên ngoài chút nào.\n"
+"Dưới rạn san hô, tảo sống trong mô con vật chủ dùng lại chính chất thải của nó để lớn.\n"
+"Nếu cái củ này cũng vậy, thì nó đang được bón bằng thứ mà cơ thể Chọn Nắng thải ra.\n"
+"Một vòng khép kín. Không rơi mất giọt nào.",
 
-# ---- 4. sống trong đàn ------------------------------------------------------
+# ---- chương 3: một sinh vật sống chung ---------------------------------------
 "05":
-"Nếu ánh nắng là thức ăn, thì vệt nắng là lãnh thổ.\n"
-"Đây là thứ tôi không hề đoán trước khi ra đồng.\n"
-"Cuối buổi chiều, khi bóng rừng bò dần ra trảng, những vệt nắng còn lại co rất nhanh.\n"
-"Hai con chen vào cùng một vệt. Không con nào cắn con nào.\n"
-"Chúng chỉ ép vai, đẩy nhau, và cố giữ cái củ của mình ở trong sáng.\n"
-"Trong rừng ở quê tôi, cây cối cũng đánh nhau đúng kiểu đó. Chỉ là chậm hơn.\n"
-"Mọc cao hơn, để cướp ánh sáng của cây bên cạnh.",
+"Tới đây thì câu hỏi trong sổ tôi đổi hẳn.\n"
+"Ban đầu tôi viết: cái hạt này là vật ký sinh.\n"
+"Nó bám trên lưng, nó hút, nó lớn lên bằng thứ con vật kiếm được.\n"
+"Nhưng ký sinh thì không làm cho vật chủ no.\n"
+"Còn Chọn Nắng thì những ngày nắng gắt lại là những ngày nó khoẻ nhất.\n"
+"Vậy Chọn Nắng đang nuôi cái hạt, hay cái hạt đang nuôi Chọn Nắng?\n"
+"Ở quê tôi, hai kiểu sống chung này chỉ cách nhau một sợi tóc.\n"
+"Địa y là nấm và tảo dính vào nhau tới mức người ta từng tưởng là một loài.\n"
+"Còn cây tầm gửi thì cắm vòi vào thân cây chủ, rồi rút dần cho tới khi cây chủ chết đứng.",
 
+# ---- chương 4: bầy đàn --------------------------------------------------------
 "06":
-"Chúng cũng chạm vào nhau.\n"
-"Hai sợi dây leo thò ra từ dưới củ, gặp nhau giữa không trung, cuộn lấy nhau vài giây, rồi thả.\n"
-"Tôi đã đứng nhìn cảnh đó hai mươi phút và không ghi được chữ nào.\n"
-"Vì cái tôi vừa thấy không phải một thứ vũ khí. Nó gần với cái vòi của con voi hơn.\n"
-"Để cầm nắm, để chạm, để chào nhau.\n"
-"Chiều hôm đó tôi còn thấy một con lớn nằm với ba con non không phải con nó.\n"
-"Ở nhiều loài, kiểu trông trẻ chung như vậy giúp cả đàn giữ được nhiều con non hơn.",
+"Bảy con trong trảng không bao giờ nằm sát nhau.\n"
+"Mỗi con giữ một khoảng trống đủ rộng để nắng chạm được xuống lưng mình.\n"
+"Chiều xuống, khi bóng rừng bò ra, những vệt nắng còn lại co rất nhanh, và lúc đó thì có chen lấn.\n"
+"Không con nào cắn con nào. Chúng ép vai, đẩy nhau, rồi con thua bỏ đi tìm vệt khác.\n"
+"Chọn Nắng thường ngủ cách một con lớn hơn chừng hai thân người. Đêm nào cũng vậy, cùng một khoảng cách.\n"
+"Hai con ấy chưa bao giờ chạm vào nhau.\n"
+"Hôm con lớn kia bị rách một mảng da bên sườn, tôi mới đặt được tên cho nó: Vai Rách.\n"
+"Ở đây người ta đặt tên như thế. Cái tên đến sau vết thương.\n"
+"Và cả trảng đổi chỗ nằm. Tới tối, bốn con đã nằm quanh Vai Rách.",
 
-# ---- 5. kẻ địch -------------------------------------------------------------
 "07":
-"Ngày thứ hai mươi hai, lần đầu tiên tôi hiểu vì sao chúng nằm xa nhau đến thế.\n"
-"Một con chim lớn lao xuống từ phía mặt trời.\n"
-"K7 không chạy. Nó ép sát người xuống đất, dưới một tán dương xỉ, và đứng im.\n"
-"Con chim sượt qua, rồi bay vòng lại.\n"
-"Lần này, cái củ trên lưng K7 hé ra ở đỉnh, và một đám bào tử mịn bung lên thành màn.\n"
-"Con chim đảo cánh, mất phương hướng, rồi bỏ đi.\n"
-"Tôi vừa nhìn thấy một con mồi làm kẻ săn mình ngủ gật.",
+"Chúng cũng chạm vào nhau, chỉ là không nằm cạnh nhau.\n"
+"Hai sợi dây leo thò ra từ dưới củ, gặp nhau giữa không trung, cuộn lấy nhau vài giây, rồi thả.\n"
+"Tôi đứng nhìn cảnh đó hai mươi phút và không ghi nổi chữ nào.\n"
+"Vì thứ tôi vừa thấy không phải một cái roi. Nó gần với cái vòi con voi hơn.\n"
+"Để cầm, để chạm, để chào.\n"
+"Và để gãi. Lưng là điểm mù: một con vật bốn chân, cổ ngắn, không thể tự quay lại chỗ cái củ.\n"
+"Chiều hôm đó tôi thấy Chọn Nắng vẩy một sợi dây leo qua lưng, gạt phắt một con sâu đang bò lên mép lá,\n"
+"đúng động tác cái đuôi ngựa xua ruồi trâu.",
 
+# ---- chương 5: Mắt Xám --------------------------------------------------------
 "08":
-"Loài này còn một thứ nữa, và người bản xứ biết rõ: nó có độc.\n"
-"Tôi thấy lạ. Một con vật hiền lành, chậm chạp, ăn nắng, thì lấy độc ở đâu ra?\n"
-"Ở quê tôi có một lời giải. Ếch phi tiêu độc không tự tạo ra chất độc.\n"
-"Chúng lấy từ thức ăn, và chỉ tích lại trong da.\n"
-"Nếu đúng vậy, độc của loài này đến từ thứ nó hút lên khỏi mặt đất.\n"
-"Còn thứ tôi thấy tận mắt thì đơn giản hơn nhiều: những hạt nhỏ có gai, móc vào lông con khác, rồi đi nhờ.\n"
-"Cây ké ở quê tôi phát tán hạt đúng bằng cách ấy.",
+"Mắt Xám xuất hiện vào ngày thứ hai mươi hai.\n"
+"Một con chim lớn, mỏ dài, bay vòng rất cao. Nó không săn cả trảng. Nó chỉ theo Chọn Nắng.\n"
+"Lần bổ nhào đầu tiên, Chọn Nắng không chạy.\n"
+"Nó ép sát người xuống nền đất ẩm dưới một tán dương xỉ, và đứng im.\n"
+"Đây là lúc tôi hiểu ra bộ da của nó.\n"
+"Màu xanh lam với những đốm sẫm không đều, nhìn gần thì kỳ quặc, nhưng nằm dưới tán lá thì\n"
+"những đốm ấy trùng khít với các mảng nắng lọt qua kẽ lá rọi xuống đất.\n"
+"Mắt Xám sượt qua cách chừng một sải tay, rồi bay vòng lại.\n"
+"Lần thứ hai, cái củ trên lưng Chọn Nắng hé ra ở đỉnh, và một màn bào tử mịn bung lên.\n"
+"Con chim đảo cánh, mất hướng, rồi bỏ đi.",
 
-# ---- 5b. trong các trận đấu -------------------------------------------------
+# ---- chương 6: cái giá của sức mạnh ------------------------------------------
 "09":
-"Tới đây thì tôi phải kể một chuyện khác, vì ở vùng đất này có một thứ mà quê tôi không có.\n"
-"Người ta đấu với nhau bằng chính những con vật này.\n"
-"Tối hôm đó tôi xuống thị trấn, đứng ở vòng ngoài một sân đất, và xem một trận.\n"
-"Cái tôi thấy làm tôi ngồi viết tới gần sáng.",
+"Nhưng cái tôi ghi đậm nhất hôm đó không phải màn bào tử.\n"
+"Sau khi Mắt Xám bỏ đi, Chọn Nắng nằm im gần hết buổi chiều. Không ăn, không đổi chỗ, không phản ứng khi tôi lại gần.\n"
+"Và cái củ trên lưng nó nhỏ lại thấy rõ.\n"
+"Thứ vừa cứu mạng nó được lấy ra từ đúng cái kho mà nó phơi nắng cả tháng để tích.\n"
+"Từ hôm đó tôi thôi ghi những thứ này vào mục khả năng.\n"
+"Tôi chuyển hết sang mục thu và chi.",
 
+# ---- chương 6b: trong thị trấn ------------------------------------------------
 "10":
-"Trong sân, hai sợi dây leo ấy không còn để chào nhau nữa. Chúng quật.\n"
-"Các nhà huấn luyện gọi cú đó là Roi Dây.\n"
-"Cùng một cơ quan, ngoài rừng dùng để hái quả và ru con non, trong sân dùng để đánh.\n"
-"Ở quê tôi cũng vậy thôi. Cái vòi voi vừa để vuốt ve con non, vừa quật gãy được xương người.\n"
-"Cái đám bào tử tôi thấy hôm ở bìa rừng, họ gọi là Bột Ngủ, và trong sân nó là nước mở màn.\n"
-"Nghĩa là mọi thứ tôi ghi chép suốt mấy tháng qua, người ở đây đã biết từ lâu.\n"
-"Chỉ khác một điều: họ biết nó làm được gì. Còn tôi muốn biết vì sao nó có.",
+"Ở vùng đất này có một thứ mà quê tôi không có. Người ta đấu với nhau bằng chính những con vật này.\n"
+"Tối hôm ấy tôi xuống thị trấn, đứng ở vòng ngoài một sân đất, và xem một trận.\n"
+"Trong sân, hai sợi dây leo không còn để chào nhau nữa. Chúng quật.\n"
+"Cùng một cơ quan: ngoài rừng để hái quả và gạt sâu, trong sân để đánh.\n"
+"Tôi không thấy điều đó đáng lên án. Cái vòi voi ở quê tôi cũng vừa vuốt ve con non, vừa quật gãy được xương người.\n"
+"Nhưng có một cú làm tôi ngồi viết tới gần sáng.\n"
+"Con vật trong sân không bắn ngay. Nó đứng yên một nhịp, cái củ trên lưng sáng lên,\n"
+"rồi mới phóng ra một luồng sáng.\n"
+"Khán giả quanh tôi coi nhịp chờ ấy là điểm yếu. Tôi thì nhận ra mình vừa nhìn thấy cái kho ban trưa,\n"
+"bị rút cạn trong một hơi thở.",
 
+# ---- chương 6c: hai cái nết ---------------------------------------------------
 "11":
-"Và có một cú làm tôi thấy rõ điều đó nhất.\n"
-"Con vật trong sân không bắn ngay. Nó đứng yên một nhịp, hoa hoặc củ trên lưng sáng lên,\n"
-"rồi mới phóng ra một luồng sáng. Các nhà huấn luyện gọi là Tia Nắng.\n"
-"Cái nhịp chờ ấy, khán giả coi là điểm yếu.\n"
-"Tôi thì nhìn ra thứ khác: nó phải nạp. Đúng cái dạ dày thứ hai mà tôi đã ghi ở ngày thứ chín.\n"
-"Ngoài rừng, nó nạp bằng cách nằm ngủ cả buổi trưa.\n"
-"Trong sân, nó chỉ có một nhịp thở để làm việc đó.",
+"Những người nuôi lâu năm ở đây nói mỗi loài có một nết riêng. Với loài này thì có hai.\n"
+"Nết thứ nhất tôi tự đo được trước khi nghe ai nói.\n"
+"Giữa trưa nắng gắt, Chọn Nắng đi nhanh hơn hẳn chính nó lúc trời râm. Tôi bấm giờ trên cùng một quãng đường,\n"
+"và con số gần như gấp đôi.\n"
+"Ở quê tôi, thằn lằn và rắn phải phơi nắng cho ấm người đã, rồi mới chạy nhanh được.\n"
+"Một cỗ máy chạy bằng nắng thì nắng càng gắt, máy càng khoẻ.\n"
+"Nết thứ hai tôi chỉ thấy trong sân đấu, và nó làm tôi khó chịu hơn là thán phục.\n"
+"Khi con vật đã bị thương nặng, gần như không đứng nổi, những cú đánh của nó đột nhiên mạnh hẳn lên.\n"
+"Tôi không nghĩ nó khoẻ hơn. Tôi nghĩ nó đang dốc nốt chỗ dự trữ. Một lần. Và hết.\n"
+"Ở quê tôi, cây thùa sống mấy chục năm chỉ để dồn tất cả vào một lần trổ hoa, rồi chết.",
 
-# ---- 5c. đặc tính ----------------------------------------------------------
-"11b":
-"Những người huấn luyện lâu năm ở đây nói mỗi loài có một nết riêng. Với loài này thì có hai.\n"
-"Nết thứ nhất tôi tự đo được ngoài đồng, trước khi nghe ai nói.\n"
-"Giữa trưa, trời nắng gắt, K7 đi nhanh hơn hẳn chính nó lúc trời râm.\n"
-"Không phải nhanh hơn một chút. Tôi bấm giờ trên cùng một quãng đường, và con số gần như gấp đôi.\n"
-"Cái đó thì ở quê tôi giải thích được. Thằn lằn và rắn phải phơi nắng cho ấm người đã,\n"
-"rồi mới chạy nhanh được. Một cỗ máy chạy bằng nắng thì nắng càng gắt, máy càng khoẻ.\n"
-"Nết thứ hai thì tôi chỉ thấy trong sân đấu, và nó làm tôi khó chịu hơn là thán phục.\n"
-"Khi con vật đã bị thương nặng, gần như không đứng nổi, thì những cú đánh bằng dây leo của nó\n"
-"đột nhiên mạnh hẳn lên.\n"
-"Tôi nghĩ nó không hề khoẻ hơn. Nó đang dốc nốt chỗ dự trữ trong củ ra. Một lần. Và hết.\n"
-"Ở quê tôi có loài cây thùa sống mấy chục năm chỉ để làm đúng một việc:\n"
-"dồn toàn bộ những gì tích được vào một lần trổ hoa, rồi chết.\n"
-"Trong sân, khán giả gọi cú đó là gỡ gạc. Tôi ghi vào sổ là: nước cuối cùng.",
-
-# ---- 6. láng giềng ----------------------------------------------------------
+# ---- chương 7: trước khi đổi ---------------------------------------------------
 "12":
-"Trảng cỏ này không phải của riêng chúng.\n"
-"Sâu bướm gặm lá ở tầng thấp. Bướm lớn bay qua mỗi sáng.\n"
-"Và tôi để ý một chuyện. Khi lũ bướm lượn vòng, chúng không lượn quanh hoa dại.\n"
-"Chúng lượn quanh cái nụ trên lưng những con đã lớn.\n"
-"Một cái nụ đang toả hương, giữa một trảng đầy hoa dại, mà vẫn hút được côn trùng.\n"
-"Nếu đó không phải tình cờ, thì con vật này đang làm đúng việc mà một bông hoa vẫn làm.\n"
-"Trả công cho kẻ đưa phấn.",
+"Tháng thứ tư, Chọn Nắng đổi nếp.\n"
+"Nó nằm ngoài nắng lâu hơn hẳn, bỏ cả nhịp trú trưa trong bóng râm, và ăn nhiều hơn trước.\n"
+"Nó cũng đi chậm lại. Hai sợi dây leo dày lên, cử động nặng nề, có lần vươn ra rồi rơi xuống\n"
+"như chính nó cũng không điều khiển nổi.\n"
+"Có một buổi sáng tôi ngồi đúng ba tiếng chỉ để ghi một chi tiết.\n"
+"Đầu Chọn Nắng quay về hướng nam, nằm im. Nhưng cái củ trên lưng thì vặn chậm về phía đông, theo mặt trời.\n"
+"Hai thứ trên cùng một cơ thể, quay về hai hướng khác nhau, trong cùng một buổi sáng.\n"
+"Ở quê tôi, hoa hướng dương non cũng quay theo mặt trời suốt ngày. Tới khi nở hẳn thì đứng yên,\n"
+"và đứng mãi về một hướng.",
 
-# ---- 7. điều kiện tiến hoá --------------------------------------------------
 "13":
-"Tháng thứ tư, K7 đổi nếp sinh hoạt.\n"
-"Nó nằm ngoài nắng lâu hơn hẳn, và bỏ cả nhịp trú trưa trong bóng râm.\n"
-"Danh lục ghi đúng cái dấu hiệu này: càng tắm nắng, cái nụ trên lưng càng lớn.\n"
-"Và khi con vật bắt đầu nằm phơi nắng nhiều hơn thường lệ, tức là sắp tới lúc nở.\n"
-"Nói cách khác, bước chuyển của loài này không phải chuyện tuổi tác.\n"
-"Nó là chuyện tích luỹ đủ.",
+"Cuối tháng ấy, Chọn Nắng rời đàn.\n"
+"Nó bỏ trảng nắng, đi sâu vào phía rừng già, và tôi mất dấu nó bốn ngày.\n"
+"Đêm thứ năm tôi tìm thấy nó trong một hõm đất khuất sau vành cây, cùng hơn mười con khác, đứng thành vòng.\n"
+"Không con nào chạm vào con nào. Không con nào phát ra tiếng.\n"
+"Người bản xứ nói mỗi năm chúng tụ về đây một lần.\n"
+"Lúc đó tôi nghĩ nó sắp chết. Tôi đã viết nguyên một trang về chuyện ấy.\n"
+"Sau này tôi mới hiểu, nó chỉ đang chuẩn bị không còn là Chọn Nắng nữa.",
 
+# ---- chương 8: Ivysaur --------------------------------------------------------
 "14":
-"Đêm ấy tôi đi theo K7 vào một hõm đất khuất sau vành cây già.\n"
-"Ở đó có hơn mười con, đứng thành vòng. Người bản xứ nói mỗi năm chúng tụ về đây một lần,\n"
-"và cùng nhau đổi hình, dưới một con trưởng thành đứng ngoài rìa.\n"
-"Tôi không biết vì sao phải làm cùng nhau. Nhưng ở quê tôi, chuyện đó rất có lý.\n"
-"Ve sầu chui lên sau mười bảy năm, cùng một mùa. San hô cả rạn đẻ trứng trong cùng một đêm trăng.\n"
-"Làm cùng lúc thì kẻ săn mồi ăn không xuể.",
+"Tôi không nhìn thấy khoảnh khắc ấy. Tôi ngủ quên sau hai đêm thức trắng, và khi tỉnh dậy thì trời đã sáng.\n"
+"Cái hõm đất trống không.\n"
+"Nhưng nó để lại đủ thứ cho một người có nghề đọc.\n"
+"Đất bị cày lên thành những rãnh ngắn, chỗ bốn cái chân đã bấu xuống để chống đỡ một sức nặng mới.\n"
+"Cỏ quanh đó bẹp thành một vòng tròn. Quanh cổ củ, những bẹ lá già bong ra, khô, cuộn lại như vỏ hành.\n"
+"Và cả hõm đất sực mùi hoa, thứ mùi mà trước đó tôi chưa từng ngửi thấy ở loài này.\n"
+"Phía bên kia bãi cỏ, trong sương, có một cái bóng lớn hơn cái bóng tôi đã theo suốt một năm.\n"
+"Nó bước ra khỏi vùng sáng, và để lại những dấu chân sâu hơn hẳn, có một vệt kéo lê phía sau.\n"
+"Thứ đứng đó không còn là con vật tôi từng ghi chép.\n"
+"Nhưng khi tôi mở sổ, nó vẫn nghiêng đầu về phía tiếng bút.",
 
-# ---- 8. trưởng thành --------------------------------------------------------
 "15":
-"Sáng hôm sau, K7 đã khác.\n"
-"Cái củ thành một nụ hoa hồng, và nó nặng.\n"
-"Đây là chỗ tôi thích nhất trong cả cuốn sổ, vì danh lục mô tả đúng một hệ quả cơ học:\n"
-"khi cái nụ lớn lên, con vật mất khả năng đứng bằng hai chân sau.\n"
-"Chân và thân nó dày lên để đỡ sức nặng đó.\n"
-"Ở quê tôi, voi và rùa khổng lồ trả đúng cái giá ấy. Mang nặng thì chân phải thành cột.\n"
-"Dấu chân của K7 in xuống bùn cũng đổi. Sâu hơn, và có một vệt kéo lê phía sau.",
-
-"16":
-"Có một dòng trong danh lục làm tôi nghĩ mãi.\n"
-"Nó nói cái nụ hút năng lượng từ chính cơ thể con vật.\n"
-"Từ chính cơ thể nó.\n"
-"Vậy suốt từ đầu tới giờ, ai đang nuôi ai?\n"
-"Ở quê tôi, hai khả năng đều có thật. Địa y là nấm và tảo sống chung, hai bên cùng có lợi.\n"
-"Còn cây tầm gửi thì cắm vòi vào thân cây chủ, và rút dần.\n"
-"K7 đi chậm hơn trước, ăn nhiều hơn trước, và nằm ngoài nắng lâu hơn trước.\n"
-"Tôi vẫn chưa biết nó đang nuôi một người bạn, hay đang nuôi một kẻ ăn bám.",
-
-# ---- 9. mùa sinh sản & khép vòng -------------------------------------------
-"17":
-"Mùa hè năm sau, cái nụ nở. Và câu hỏi ở trang đầu cuốn sổ có lời đáp, chỉ bằng một cái nhìn.\n"
-"Ở con cái, chính giữa bông hoa có một nhụy. Ở con đực thì không.\n"
-"K7 là con đực. Một trong bảy phần tám.\n"
-"Từ đó nó không nằm yên nữa. Nó đi, liên tục, về phía có nắng, và mạnh nhất vào giữa mùa hè.\n"
-"Sau mỗi trận mưa, hương hoa của chúng đậm hẳn lên và kéo các loài khác tới gần.\n"
-"Tôi đã ngồi nhìn hai con vật gầm gừ nhau bên một bụi cỏ, rồi cùng ngồi xuống, cách nhau vài bước,\n"
-"trong làn hương ấy.\n"
-"Một loài nặng một tạ, mà thứ đắt nhất nó có lại là khả năng làm mọi thứ bình tĩnh lại.\n"
-"Mùa mưa cuối cùng trong cuốn sổ này, tôi quay lại vòm dương xỉ nơi tôi tìm thấy cái tổ đầu tiên.\n"
-"Lại có trứng ở đó.\n"
-"Cách đó không xa, một con già nằm bên bìa rừng, thân đã hoá gỗ, rêu mọc luôn trên lưng.\n"
-"Tôi không biết nó bao nhiêu tuổi.\n"
-"Ở quê tôi, rùa Galápagos sống quá trăm năm, và người ta đếm tuổi một cái cây bằng vòng gỗ trong thân.\n"
-"Có lẽ một ngày nào đó tôi sẽ biết cách đếm tuổi một con vật như thế này.\n"
-"Trang sau của cuốn sổ là một loài hoàn toàn khác. Nó mang lửa ở chóp đuôi,\n"
-"và ngọn lửa ấy cho biết nó còn khoẻ tới đâu.\n"
-"Vậy khi trời mưa, nó sống sót bằng cách nào?",
+"Cái nụ trên lưng nó bây giờ nặng tới mức nó không đứng bằng hai chân sau được nữa.\n"
+"Chân và thân đã dày lên để đỡ. Ở quê tôi, voi và rùa khổng lồ trả đúng cái giá ấy:\n"
+"mang nặng thì chân phải thành cột.\n"
+"Mùa mưa cuối cùng trong cuốn sổ này, tôi gặp một con trưởng thành già sống ở bìa rừng.\n"
+"Thân nó đã hoá gỗ, dương xỉ nhỏ và rêu mọc luôn trên lưng, bông hoa to và hơi bạc màu.\n"
+"Người bản xứ gọi con này là Rêu, và họ bảo nó ở bìa rừng ấy từ trước khi họ sinh ra.\n"
+"Chính giữa bông hoa của Rêu có một cái nhụy. Ở những con khác tôi từng gặp thì không có.\n"
+"Rêu là con cái. Và đó là lần đầu tiên tôi phân biệt được giới tính của loài này bằng mắt thường.\n"
+"Còn Chọn Nắng thì chưa. Cái nụ của nó chưa nở, nên tôi vẫn chưa biết mình đã theo một con đực hay con cái.\n"
+"Sau mỗi trận mưa, hương hoa của nó đậm hẳn lên, và tôi đã ngồi nhìn hai con vật đang gầm gừ nhau\n"
+"cùng ngồi xuống, cách nhau vài bước, trong làn hương ấy.\n"
+"Tôi vẫn không biết cái hạt trên lưng Chọn Nắng là một phần của nó, hay một sinh vật khác sống nhờ nó.\n"
+"Có lẽ câu trả lời không nằm ở chỗ ta gọi nó là gì.\n"
+"Có lẽ một cơ thể có thể bắt đầu từ hai sự sống, và vẫn thành một cá thể duy nhất.\n"
+"Ở trang sau của cuốn danh lục có một loài mang lửa ở chóp đuôi.\n"
+"Nếu ngọn lửa ấy tắt khi trời mưa, nó sống sót bằng cách nào?",
 
 "short-outro":
-"Con cái mang một nhụy ở chính giữa bông hoa. Con đực thì không.\n"
-"Sau mười bốn tháng ngoài đồng, tất cả gói lại trong một cái nhìn.",
+"Cái hạt ấy là một phần của nó, hay một sinh vật khác đang sống nhờ nó?\n"
+"Sau mười bốn tháng ngoài đồng, tôi vẫn chưa trả lời được.",
 }
 
 # Phiên âm cho TTS (VBee): caption trên màn hình vẫn giữ chính tả gốc.
 PRON = {
-    "Pokédex": "pô-kê-đéc",
+    "Bulbasaur": "bôn-ba-xo",
     "Kanto": "can-tô",
-    "Elysia": "ê-li-xi-a",
-    "Surinam": "xu-ri-nam",
-    "Galápagos": "ga-la-pa-gốt",
 }
 
 # Nguồn cho từng câu canon — soát lại trước khi thu giọng.
 NGUON = {
-    "7 đực : 1 cái (87,5%)": "Bulbapedia — Bulbasaur; Gender",
-    "hạt được gieo trên lưng ngay từ lúc chào đời": "Pokédex Red/Blue",
+    "hạt được gieo trên lưng từ lúc chào đời": "Pokédex Red/Blue",
     "ngủ dưới nắng, hạt hấp thụ nắng mà lớn": "Pokédex Ruby/Sapphire/Emerald",
     "nhịn ăn nhiều ngày, dự trữ trong củ": "Pokédex Yellow",
-    "có độc (hệ Cỏ/Độc — trong lời thoại chỉ nói 'nó có độc')": "Bulbapedia — Bulbasaur",
-    "Roi Dây · Bột Ngủ · Tia Nắng (Solar Beam cần một lượt nạp)": "bộ chiêu Bulbasaur — Bulbapedia",
+    "7 đực : 1 cái (không còn đọc thành số trong lời thoại, để dành cho tập khác)": "Bulbapedia",
+    "hai nết: nắng gắt → nhanh gấp đôi; kiệt sức → đòn mạnh hơn": "Chlorophyll; Overgrow — Bulbapedia",
     "nụ hút năng lượng từ chính cơ thể": "Pokédex Yellow (Ivysaur)",
-    "mất khả năng đứng bằng hai chân sau; chân và thân dày lên": "Pokédex Red/LeafGreen/Sword; Ruby/Emerald (Ivysaur)",
-    "nằm phơi nắng nhiều hơn = sắp nở; càng tắm nắng nụ càng lớn": "Pokédex Ruby/Omega Ruby; Scarlet/Gold (Ivysaur)",
-    "nụ toả hương khi sắp nở": "Pokédex Blue/Silver/Diamond (Ivysaur)",
-    "con cái có nhụy (gynoecium) giữa hoa": "Bulbapedia — Venusaur, gender differences",
-    "luôn di chuyển tìm nắng; mạnh nhất mùa hè": "Pokédex Red/Blue; Silver",
-    "sau mưa hương đậm hơn, kéo Pokémon khác tới gần": "Pokédex (Venusaur)",
-    "hương làm dịu cảm xúc, làm nguôi kẻ đang giao chiến": "Pokédex Ruby/Sapphire; FireRed",
-    "mỗi năm tụ về khu vườn bí mật cùng tiến hoá": "anime — Bulbapedia, mục Biology",
-    "ĐỐI CHIẾU TRÁI ĐẤT (soát lại trước khi thu)": "cóc Surinam ấp trứng trong da lưng · rùa xác định giới tính theo nhiệt độ · sên biển Elysia chlorotica giữ lục lạp · ếch phi tiêu lấy độc từ thức ăn · cây ké bám lông thú · ve sầu 17 năm · san hô đẻ đồng loạt · địa y cộng sinh · cây tầm gửi ký sinh · rùa Galápagos sống trên 100 năm",
+    "mất khả năng đứng bằng hai chân sau; chân và thân dày lên": "Pokédex Red/LeafGreen/Sword; Ruby/Emerald",
+    "phơi nắng nhiều hơn thường lệ = sắp nở; toả hương khi sắp nở": "Pokédex Ruby; Blue/Silver (Ivysaur)",
+    "con cái có nhụy giữa hoa": "Bulbapedia — Venusaur, gender differences",
+    "sau mưa hương đậm hơn; hương làm nguôi kẻ đang giao chiến": "Pokédex Venusaur; Ruby/Sapphire; FireRed",
+    "mỗi năm tụ về một chỗ khuất rồi cùng đổi hình": "anime — Bulbapedia, mục Biology (kể như lời người bản xứ)",
+    "ĐỐI CHIẾU TRÁI ĐẤT (soát lại trước khi thu)": "ếch hút nước qua da bụng · tảo cộng sinh trong mô san hô dùng lại chất thải đạm của vật chủ · địa y cộng sinh · cây tầm gửi ký sinh · đuôi ngựa xua ruồi · màu gây nhiễu dưới ánh nắng lọt tán lá · thằn lằn phơi nắng mới chạy nhanh · cây thùa dồn cả đời vào một lần trổ hoa · hoa hướng dương non quay theo mặt trời rồi đứng cố định khi nở · voi và rùa khổng lồ: mang nặng thì chân thành cột",
 }
