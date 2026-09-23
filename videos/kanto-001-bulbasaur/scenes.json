@@ -1,5 +1,5 @@
 {
- "_note": "Bản kể theo nhân vật: Tuấn (người kể) · K7 \"Kẻ Chọn Nắng\" · Mắt Tro (chim) · Lưng Rêu (con cái già) · Rừng Gió Gập. Cảnh tiến hoá KHÔNG có lột da — chỉ dấu vết (hõm đất trống, cỏ bẹp, bẹ lá khô, dấu chân, bóng trong sương). Chữ lower-third: text <= 4.2, caption <= 2.7. Toạ độ callout s02/s08/n12 đo trên ảnh thật.",
+ "_note": "Bản kể theo nhân vật: người kể xưng "tôi", không nêu tên · K7 \"Búp Lệch\" · Mắt Tro (chim) · Lưng Rêu (con cái già) · Rừng Gió Gập. Cảnh tiến hoá KHÔNG có lột da — chỉ dấu vết (hõm đất trống, cỏ bẹp, bẹ lá khô, dấu chân, bóng trong sương). Chữ lower-third: text <= 4.2, caption <= 2.7. Toạ độ callout s02/s08/n12 đo trên ảnh thật.",
  "00": {
   "bg": "RỪNG GIÓ GẬP",
   "holdSec": 1.0,
@@ -85,7 +85,7 @@
      },
      {
       "el": "label",
-      "text": "TUẤN · NHÀ SINH VẬT HỌC THỰC ĐỊA · RỪNG GIÓ GẬP",
+      "text": "TUẤN LA · RỪNG GIÓ GẬP, KANTO",
       "at": 8
      }
     ]
@@ -140,7 +140,7 @@
      },
      {
       "el": "caption",
-      "text": "Bảy cá thể · Chọn Nắng nhỏ nhất, luôn đi sau",
+      "text": "Bảy cá thể · Búp Lệch nhỏ nhất, luôn đi sau",
       "size": 2.6,
       "at": 12
      }
@@ -201,7 +201,7 @@
      },
      {
       "el": "text",
-      "value": "K7 thành [accent:Kẻ Chọn Nắng]",
+      "value": "K7 thành [accent:Búp Lệch]",
       "size": 4.2,
       "at": 46
      }
@@ -454,7 +454,7 @@
      },
      {
       "el": "text",
-      "value": "Chọn Nắng nuôi cái hạt,[br]hay [accent:cái hạt nuôi Chọn Nắng]?",
+      "value": "Búp Lệch nuôi cái hạt,[br]hay [accent:cái hạt nuôi Búp Lệch]?",
       "size": 3.8,
       "at": 10
      }
@@ -702,7 +702,7 @@
      },
      {
       "el": "caption",
-      "text": "Nó không săn cả trảng — nó chỉ theo Chọn Nắng",
+      "text": "Nó không săn cả trảng — nó chỉ theo Búp Lệch",
       "size": 2.6,
       "at": 18
      }
