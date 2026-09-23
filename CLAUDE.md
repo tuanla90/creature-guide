@@ -52,6 +52,10 @@ kênh thì nằm ở đây. Engine là repo công khai — **đừng đưa nội
 ## Gotcha hay cắn
 
 - Console Windows là cp1252 → mọi lệnh Python phải có `PYTHONUTF8=1`.
+- Render chết ở `SELF_SIGNED_CERT_IN_CHAIN` là do **mạng công ty chặn TLS**, không phải lỗi Remotion:
+  nó đang tải Chrome Headless Shell. Dùng Chrome cài sẵn là hết, `remotion.config.ts` đã có sẵn móc:
+  `setx CHROME "C:\Program Files\Google\Chrome\Application\chrome.exe"` (mở lại terminal sau khi
+  chạy). `npm run studio` **không** dính lỗi này vì nó chạy trong trình duyệt của bạn.
 - Sửa `content.py` thì phải `npm run scaffold -- <slug>` rồi `python tools/export-subs.py <slug>`,
   không thì timing và phụ đề vẫn là của bản cũ.
 - `_note` trong `scenes.json` **không được chứa dấu ngoặc kép** — hỏng JSON.

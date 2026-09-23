@@ -158,6 +158,16 @@ Chi tiết và giới hạn: [experiments/creature-motion](../experiments/creatu
 
 Rồi: `npm run scaffold -- <slug>` (timing ước lượng, audio câm) → `npm run registry` → `npm run studio`.
 
+**Hai đường xem, đừng lẫn:**
+
+| | Xem cái gì | Khi nào |
+|---|---|---|
+| `npm run studio` | bản dựng **trực tiếp** trong trình duyệt, tua được, không render | sửa hình, canh bố cục — vòng lặp nhanh |
+| `tools/review.py` | một bản **đã render**, kèm phụ đề, ghi chú được tại chỗ | soát lần cuối ở chặng 10 |
+
+Studio không tải Chrome Headless Shell nên không dính lỗi chứng chỉ của mạng công ty; render thì có
+— xem phần gotcha trong [CLAUDE.md](../CLAUDE.md).
+
 > **Cổng:** xem hết một lượt ở **cả 16:9 lẫn 9:16**. Bản dọc là nơi chữ tràn và cảnh rộng chết.
 > Ảnh thở: xem contact sheet ở cỡ thật — sọ, chân chạm đất và vật cứng (trứng, đá) phải đứng yên.
 
