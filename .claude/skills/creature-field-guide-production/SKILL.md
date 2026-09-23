@@ -45,8 +45,20 @@ Một shot:
   `anatomy` và `fieldnote` **không lấy `[ref]`** từ ảnh mẫu — ref là ảnh chụp, nó sẽ kéo bản x-quang
   và bản vẽ tay ngược về thành ảnh chụp. Cái giá: hai kind này dễ lệch hình hơn, nên tả `scene` kỹ hơn.
 
-  **`fieldnote` không có một chữ nào, cũng không có một mũi tên nào.** Chữ và mũi tên đều do Remotion
-  vẽ lên sau. AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn), còn mũi tên AI vẽ thì chỉ
+  **`fieldnote` không có một chữ nào, cũng không có một mũi tên nào.** Chữ do element `notepage`
+  của engine vẽ lên sau:
+
+  ```json
+  { "el": "notepage", "src": "img/kanto-001/x02-fieldnote.jpg",
+    "notes": [
+      { "x": 0.72, "y": 0.22, "text": "củ nghiêng hẳn sang trái", "atWord": "nghiêng" },
+      { "x": 0.72, "y": 0.41, "text": "ba lớp bẹ, lớp ngoài đã khô", "atWord": "bẹ" }
+    ] }
+  ```
+
+  Toạ độ `x`,`y` là toạ độ **trên ảnh** (0..1), đo bằng `tools/review.py` như callout. Ghi chú hiện
+  dần theo từ trong giọng đọc và **tích lại** tới hết cảnh. Font là PatrickHand — một trong số ít
+  font viết tay của Google Fonts có tiếng Việt. AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn), còn mũi tên AI vẽ thì chỉ
   sai chỗ mà không sửa được. Đổi lại được ba thứ: chữ luôn đọc được, sửa lời không phải sinh lại ảnh,
   và bản EN dùng chung y hệt tấm giấy — chỉ đổi lớp chữ.
 - `creatures`: `"<loài>"`, `"<loài>:male|female"` (lấy `sexDifferences`), `"<loài>:<mã cá thể>"`

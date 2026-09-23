@@ -124,7 +124,7 @@ Tải ZIP về → `python tools/import-flow.py <ep>` → `python tools/unwaterm
 - **`kind: "anatomy"`** — X-quang mô phỏng phục vụ nghiên cứu: nền xanh, xương, mạch năng lượng chạy
   trong thân. Thân **nguyên vẹn, khép kín**. Không máu me, không nội tạng, không mổ xẻ.
 - **`kind: "fieldnote"`** — trang sổ thực địa: Flow chỉ sinh **giấy và hình vẽ, chừa trống một phần
-  ba bên phải**; chữ và mũi tên do Remotion vẽ lên sau.
+  ba bên phải**; chữ do element `notepage` của engine vẽ lên sau (xem skill production).
 
 Cả hai **không lấy `[ref]`** từ ảnh mẫu — ref là ảnh chụp, nó kéo bản vẽ ngược về thành ảnh chụp.
 Nên tả `scene` kỹ hơn bình thường để bù.
@@ -195,8 +195,12 @@ Rồi **người xem một lượt trên bản dựng, có tiếng, không tua**
 PYTHONUTF8=1 python tools/review.py <slug>
 ```
 
-Trang này có hai mặt: trái là bản render (tạm dừng, gõ ghi chú, lưu kèm mốc thời gian và beat), phải
-là ảnh gốc (bấm lên ảnh → toạ độ callout). Tách hai mặt là bắt buộc — khung video đã bị `camera`
+Trang này có hai mặt: trái là bản render **kèm phụ đề bật/tắt được** (tạm dừng, gõ ghi chú, lưu kèm
+mốc thời gian và beat), phải là ảnh gốc (bấm lên ảnh → toạ độ callout).
+
+**Đọc lời bằng mắt trước khi trả tiền giọng.** `npm run build -- <slug> --skip-audio` ra mp4 câm,
+`python tools/export-subs.py <slug>` ra `.srt`, rồi mở trang này và bật phụ đề. Sai một câu phát hiện
+ở đây mất ba phút; phát hiện sau khi đã thu giọng thì phải thu lại cả beat. Tách hai mặt là bắt buộc — khung video đã bị `camera`
 zoom/pan nên bấm lên đó không ra được toạ độ trên ảnh gốc. Ghi ra `videos/<slug>/review-notes.json`.
 
 Toạ độ đo **trên ảnh thật**, sau khi ảnh đã chốt; sinh lại ảnh là phải đo lại.

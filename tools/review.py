@@ -4,11 +4,18 @@
 
 Mở một trang cục bộ có hai mặt:
 
-  TRÁI  · bản render. Tạm dừng ở chỗ sai, gõ ghi chú → lưu kèm mốc thời gian và beat đoán được.
+  TRÁI  · bản render, có phụ đề bật/tắt được. Tạm dừng ở chỗ sai, gõ ghi chú → lưu kèm mốc thời
+          gian và beat đoán được.
   PHẢI  · ảnh gốc. Bấm lên ảnh → ra toạ độ callout đã chuẩn hoá, dán thẳng vào scenes.json.
 
 Hai mặt tách nhau là cố ý: khung video đã bị `camera` zoom/pan nên bấm lên đó không suy ngược ra
 được toạ độ trên ảnh gốc. Video cho biết *chỗ nào sai*; ảnh cho biết *toạ độ bao nhiêu*.
+
+Phụ đề lấy từ out/<slug>/*.srt (chạy tools/export-subs.py trước). Trình duyệt không đọc .srt nên
+server đổi sang .vtt lúc gửi đi — file trên đĩa không bị đụng tới.
+
+Xem trước khi thu giọng: `npm run build -- <slug> --skip-audio` ra mp4 câm, rồi mở trang này. Đọc
+hết một lượt bằng mắt còn rẻ; sai một câu sau khi đã trả tiền giọng thì đắt.
 
 Ghi ra videos/<slug>/review-notes.json. Không sửa gì khác.
 """
@@ -65,6 +72,20 @@ def beat_offsets():
 VIDEO = find_video()
 OFFSETS = beat_offsets()
 IMAGES = sorted(p.name for p in IMG_DIR.glob("*.jpg")) if IMG_DIR.is_dir() else []
+OUT_DIR = ROOT / "out" / SLUG
+SUBS = sorted(p.name for p in OUT_DIR.glob("*.srt")) if OUT_DIR.is_dir() else []
+
+
+NL = chr(10)
+
+
+def srt_to_vtt(text: str) -> str:
+    """WebVTT = SRT nhưng có header và dùng dấu chấm cho phần nghìn giây.
+
+    splitlines() nuốt luôn CRLF nên không phải lo xuống dòng kiểu Windows.
+    """
+    out = [ln.replace(",", ".") if "-->" in ln else ln for ln in text.splitlines()]
+    return "WEBVTT" + NL + NL + NL.join(out) + NL
 
 PAGE = """<!doctype html><html lang="vi"><meta charset="utf-8">
 <title>Soát tập · __SLUG__</title>
@@ -93,6 +114,9 @@ li code{color:var(--hi);cursor:pointer;white-space:nowrap}
 li .x{margin-left:auto;color:var(--dim);cursor:pointer}
 #saved{color:var(--ok)}
 .empty{color:var(--dim);font-style:italic}
+.subline{border-left:3px solid var(--hi);padding:8px 12px;margin:8px 0;background:#1a1d23;
+  border-radius:0 4px 4px 0;min-height:2.6em;font-size:15px;line-height:1.45}
+.subline.none{color:var(--dim);font-style:italic;border-left-color:var(--line)}
 </style>
 <header>
   <h1>Soát tập · __SLUG__</h1>
@@ -104,7 +128,12 @@ li .x{margin-left:auto;color:var(--dim);cursor:pointer}
 <section>
   <h2>Bản dựng — ghi chú theo mốc thời gian</h2>
   <div id="noVid" class="empty" hidden>Chưa có bản render trong out/__SLUG__/. Truyền --video &lt;đường dẫn&gt;.</div>
-  <video id="v" controls></video>
+  <video id="v" controls crossorigin="anonymous"></video>
+  <div class="row">
+    <span class="dim">phụ đề</span><select id="subpick"></select>
+    <span class="dim" id="subnote"></span>
+  </div>
+  <div id="subline" class="subline">—</div>
   <div class="row">
     <span class="dim">tại</span><code id="t">0.00s</code>
     <span class="dim">beat</span><select id="beat"></select>
@@ -141,6 +170,32 @@ const v = $("#v");
 if (DATA.video) { v.src = "/video"; $("#vidname").textContent = DATA.video; }
 else { v.hidden = true; $("#noVid").hidden = false; }
 
+// ---- phụ đề ----
+// <track> cho phụ đề nằm TRÊN khung hình như lúc xem thật; đồng thời in ra một dòng to
+// bên dưới để đọc chữ cho kỹ — đó mới là việc đang làm ở đây.
+const subpick = $("#subpick");
+subpick.innerHTML = DATA.subs.length
+  ? '<option value="">(tắt)</option>' + DATA.subs.map(s => `<option>${s}</option>`).join("")
+  : '<option value="">(chưa có .srt — chạy tools/export-subs.py)</option>';
+let cues = [];
+function loadSubs(){
+  [...v.querySelectorAll("track")].forEach(t => t.remove());
+  cues = []; $("#subline").textContent = "—"; $("#subline").className = "subline none";
+  if (!subpick.value) { $("#subnote").textContent = ""; return; }
+  const tr = document.createElement("track");
+  tr.kind = "subtitles"; tr.label = subpick.value; tr.default = true;
+  tr.src = "/subs/" + encodeURIComponent(subpick.value);
+  v.appendChild(tr);
+  tr.addEventListener("load", () => {
+    const t0 = tr.track; t0.mode = "showing";
+    cues = [...(t0.cues || [])].map(c => ({s: c.startTime, e: c.endTime, t: c.text}));
+    $("#subnote").textContent = cues.length + " dòng";
+  });
+}
+subpick.onchange = loadSubs;
+if (DATA.subs.length) { subpick.value = DATA.subs.includes("long.srt") ? "long.srt" : DATA.subs[0]; }
+loadSubs();
+
 const beatSel = $("#beat");
 beatSel.innerHTML = '<option value="">—</option>' +
   DATA.offsets.map(o => `<option value="${o.beat}">${o.beat} · ${o.start}s</option>`).join("");
@@ -150,8 +205,13 @@ function beatAt(t){
   return hit ? hit.beat : "";
 }
 v.addEventListener("timeupdate", () => {
-  $("#t").textContent = v.currentTime.toFixed(2) + "s";
-  beatSel.value = beatAt(v.currentTime);
+  const now = v.currentTime;
+  $("#t").textContent = now.toFixed(2) + "s";
+  beatSel.value = beatAt(now);
+  const hit = cues.find(c => now >= c.s && now < c.e);
+  const el = $("#subline");
+  el.textContent = hit ? hit.t : (cues.length ? "…" : "—");
+  el.className = "subline" + (hit ? "" : " none");
 });
 document.addEventListener("keydown", e => {
   if (e.key.toLowerCase() === "n" && e.target.tagName !== "TEXTAREA" && e.target.tagName !== "INPUT") {
@@ -274,7 +334,7 @@ class Handler(BaseHTTPRequestHandler):
         p = unquote(urlparse(self.path).path)
         if p == "/":
             notes = json.loads(NOTES.read_text(encoding="utf-8")) if NOTES.exists() else {}
-            data = {"slug": SLUG, "ep": EP, "offsets": OFFSETS, "images": IMAGES,
+            data = {"slug": SLUG, "ep": EP, "offsets": OFFSETS, "images": IMAGES, "subs": SUBS,
                     "video": VIDEO.name if VIDEO else None, "notes": notes}
             page = (PAGE.replace("__DATA__", json.dumps(data, ensure_ascii=False))
                         .replace("__SLUG__", SLUG))
@@ -284,6 +344,13 @@ class Handler(BaseHTTPRequestHandler):
         if p.startswith("/img/"):
             name = Path(p[5:]).name          # chặn ../
             return self._file(IMG_DIR / name, "image/jpeg")
+        if p.startswith("/subs/"):
+            name = Path(p[6:]).name          # chặn ../
+            f = OUT_DIR / name
+            if not f.is_file() or f.suffix != ".srt":
+                return self._send(404, "không có phụ đề", "text/plain; charset=utf-8")
+            return self._send(200, srt_to_vtt(f.read_text(encoding="utf-8")),
+                              "text/vtt; charset=utf-8")
         self._send(404, "không có", "text/plain; charset=utf-8")
 
     def do_POST(self):
