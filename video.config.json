@@ -15,7 +15,7 @@
     "tagline": "SỔ TAY THỰC ĐỊA · TỪNG TRANG POKÉDEX"
   },
   "audio": {
-    "bed": "audio/music/field-bed-lyria.wav",
+    "bed": null,
     "bedVolume": 0.13,
     "sfxDir": "audio/sfx",
     "whoosh": null

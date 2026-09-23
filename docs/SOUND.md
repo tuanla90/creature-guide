@@ -61,6 +61,27 @@ Mỗi cue: loài thật làm gốc · từ khoá đi tìm · xử lý. `k7` là 
 | `arena-crowd` | 10,11 | trận đấu của trainer | — | đám đông xa | — | lowpass 1 kHz, mono, đẩy xuống −24 dB |
 | `swell-change` | 13,14 | đêm cả đàn tụ về | gió hút trầm | — | mô gỗ căng, đất lún | **không có tiếng biến hình** — chỉ căng và nín |
 
+## Máy dựng được cái gì, và không dựng được cái gì
+
+Đã nghe hết 17 cue rồi mới viết mục này, nên nó là kết quả chứ không phải dự đoán. Ranh giới
+nằm đúng ở chỗ **cái gì sinh ra âm thanh ấy**:
+
+| | Máy dựng | Vì sao |
+|---|---|---|
+| **Chất liệu** — bẻ, xé, vò lá khô, trượt vải ướt, bùn, roi vút, bước chân | **được, dùng luôn** | tiếng của chúng *đúng là* nhiễu qua bộ lọc cộng hưởng rồi tắt dần. Viết bằng numpy không phải bắt chước, mà là làm đúng cái vật lý ấy |
+| **Giọng** — ếch, cóc, vạc, quạ | **không** | tai người có phần chuyên trách cho tiếng sinh vật. Chuỗi xung + formant cố định thiếu đúng những thứ nó bắt: hơi rung thất thường, formant trôi trong một tiếng kêu, tạp âm của mô sống |
+| **Không gian** — rừng trưa, rạng sáng, mưa, đám đông | **không** | nghe ra *nhiễu*, không ra *một chỗ*. Một khu rừng là hàng trăm sự kiện rời nhau ở những khoảng cách khác nhau, cộng tiếng vang và độ hút của không khí |
+
+Suy ra thẳng từ dữ liệu, không phải đánh dấu tay: cue nào có lớp `role: "voice"` là có dây thanh,
+cue nào `loop: true` là một không gian. `build-sfx.py` tự tách hai nhóm ấy ra, gắn nhãn
+**PHẢI THAY**, và in sẵn từ khoá đi tìm cho từng lớp.
+
+Với Kanto #001 thì danh sách phải đi tìm là **10 lớp trong 8 cue** — bốn tiếng con vật, bốn lớp
+nền. Chín cue chất liệu còn lại dùng được ngay.
+
+> **Cổng:** không cue nào còn nhãn PHẢI THAY khi lên YouTube. Tiếng tổng hợp để dựng và canh nhịp
+> thì được; để đăng thì không.
+
 ## Quy trình
 
 Công thức của tập nằm ở `videos/<slug>/sfx.json` — bảng cue ở trên, viết ra dạng máy đọc được.

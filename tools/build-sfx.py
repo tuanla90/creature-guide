@@ -7,9 +7,22 @@
 Mỗi lớp lấy file thật ở assets/sfx-src/<cue>/<synth>.wav nếu có (Pixabay hoặc Freesound CC0 —
 luật ở docs/SOUND.md), không có thì dựng tạm bằng bộ tổng hợp dưới đây.
 
-Tiếng tổng hợp đủ dùng để dựng, canh nhịp và soát: nó đúng giải phẫu, đúng dải tần, đúng độ dài.
-Nhưng lớp GIỌNG (ếch, cóc, vạc, quạ) là chỗ tai người bắt bài nhanh nhất — chỗ đó sớm muộn phải
-thay bằng con vật thật. Thay xong chạy lại lệnh này, công thức giữ nguyên.
+Máy dựng được cái gì, và không dựng được cái gì — đã nghe thử cả 17 cue rồi mới viết:
+
+  ✔ CHẤT LIỆU (vật va vào vật): bẻ, xé, vò lá khô, trượt vải ướt, bùn, roi vút, bước chân.
+    Dùng được ngay. Vì tiếng của chúng ĐÚNG LÀ nhiễu qua bộ lọc cộng hưởng rồi tắt dần —
+    mô phỏng bằng numpy không phải bắt chước, mà là làm đúng cái vật lý ấy.
+
+  ✘ GIỌNG (ếch, cóc, vạc, quạ): nghe ra ngay là đồ giả. Tai người có phần chuyên trách cho
+    tiếng sinh vật, và nó bắt được những thứ chuỗi xung + formant cố định không có: hơi rung
+    thất thường, formant trôi trong một tiếng kêu, tạp âm của mô sống.
+
+  ✘ KHÔNG GIAN (lớp nền: rừng trưa, rạng sáng, mưa, đám đông): nghe ra là NHIỄU, không ra
+    một CHỖ. Một khu rừng là hàng trăm sự kiện rời nhau ở những khoảng cách khác nhau, cộng
+    tiếng vang và độ hút của không khí. Không có bản thu thật thì không có chiều sâu.
+
+Nên tám cue thuộc hai nhóm dưới BẮT BUỘC phải có file thật (Pixabay hoặc Freesound CC0). Tool
+vẫn dựng tạm để bạn canh nhịp, nhưng nó đếm riêng và nhắc riêng — đừng đem lên YouTube.
 
 Ra: public/audio/sfx/<ep>/<cue>.wav, 48 kHz 16 bit, đỉnh −3 dBFS. Độ lớn thật nằm ở "volume"
 trong sfx.json, chép sang scenes.json.
@@ -368,6 +381,15 @@ def apply_fx(x, ops):
     return x
 
 
+def must_be_real(cue):
+    """Cue này có thuộc loại máy không dựng nổi không?
+
+    Suy ra từ chính dữ liệu, không cần đánh dấu tay: có lớp GIỌNG (role "voice") là có dây
+    thanh, còn cue lặp (loop) là một KHÔNG GIAN. Hai loại ấy phải là bản thu thật.
+    """
+    return bool(cue.get("loop")) or any(L["role"] == "voice" for L in cue["layers"])
+
+
 def build_cue(cid, cue, srcdir):
     rng = np.random.default_rng(zlib.crc32(cid.encode()))
     sec = float(cue["sec"])
@@ -411,22 +433,36 @@ def main():
             print(f"{cid:16} beat {','.join(cue['beat']):8} {lay}")
         return
 
-    made, synthed = 0, 0
+    made, synthed, cho_thay = 0, 0, []
     for cid, cue in spec["cues"].items():
         if only and cid != only:
             continue
         x, real = build_cue(cid, cue, srcdir)
         al.write_wav(outdir / f"{cid}.wav", x)
         n_layers = len(cue["layers"])
-        tag = "thật" if len(real) == n_layers else (f"{len(real)}/{n_layers} thật" if real else "tổng hợp")
-        synthed += n_layers - len(real)
+        if len(real) == n_layers:
+            tag = "thật"
+        elif must_be_real(cue):
+            tag = "PHẢI THAY"
+            cho_thay.append((cid, cue))
+        else:
+            tag = "tổng hợp"
+            synthed += n_layers - len(real)
         made += 1
-        print(f"  ✓ {cid:16} {len(x) / SR:5.1f}s  vol {cue['volume']:.2f}  [{tag}]  {cue['desc']}")
+        print(f"  ✓ {cid:16} {len(x) / SR:5.1f}s  vol {cue['volume']:.2f}  [{tag:9}] {cue['desc']}")
 
     print(f"\n{made} cue -> public/audio/sfx/{ep}/")
     if synthed:
-        print(f"⚠ {synthed} lớp còn là tiếng tổng hợp. Thay dần bằng file thật ở "
-              f"assets/sfx-src/<cue>/<synth>.wav (Pixabay hoặc Freesound CC0), rồi chạy lại.")
+        print(f"  {synthed} lớp chất liệu đang là tiếng tổng hợp — dùng tạm được, thay dần thì hơn.")
+    if cho_thay:
+        print(f"\n⚠ {len(cho_thay)} cue máy KHÔNG dựng nổi: giọng thì tai người bắt bài ngay, lớp nền"
+              f" thì ra\n  nhiễu chứ không ra một chỗ. Đang là bản tạm để canh nhịp, PHẢI thay trước"
+              f" khi đăng.\n  Từ khoá đi tìm (Pixabay / Freesound lọc CC0):\n")
+        for cid, cue in cho_thay:
+            for L in cue["layers"]:
+                if L["role"] == "voice" or cue.get("loop"):
+                    print(f"    {cid:15} {L['role']:8} {L['species']:24} → \"{L['query']}\"")
+        print("\n  Tải về assets/sfx-src/<cue>/<tên lớp>.wav rồi chạy lại — công thức giữ nguyên.")
     print("Neo vào scenes.json:  "
           '{ "el": "sfx", "name": "%s/<cue>.wav", "atWord": "...", "volume": ... }' % ep)
 
