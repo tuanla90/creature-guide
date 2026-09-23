@@ -1,0 +1,91 @@
+{
+  "duration_seconds": 4.2,
+  "fps": 25,
+  "output_width": 1376,
+  "loop_mode": "cyclic",
+  "composite_mode": "warp_only",
+  "breath_skew": 0.34,
+  "motions": [
+    {
+      "kind": "breath",
+      "name": "lower-thorax",
+      "center": [
+        0.493,
+        0.684
+      ],
+      "sigma": [
+        0.115,
+        0.107
+      ],
+      "width_scale": 0.032,
+      "height_scale": 0.021,
+      "drop_px": 8.5,
+      "anchors": {
+        "top_fade": [
+          0.47,
+          0.61
+        ],
+        "bottom_fade": [
+          0.75,
+          0.89
+        ],
+        "face_fade": [
+          0.54,
+          0.68
+        ],
+        "face_min": 0.0
+      }
+    },
+    {
+      "kind": "blink",
+      "name": "near-eye",
+      "center": [
+        0.598,
+        0.474
+      ],
+      "sigma": [
+        0.035,
+        0.027
+      ],
+      "strength": 0.29,
+      "peak": 0.67,
+      "width": 0.055
+    },
+    {
+      "kind": "jaw",
+      "name": "mouth-corner",
+      "center": [
+        0.638,
+        0.582
+      ],
+      "sigma": [
+        0.062,
+        0.02
+      ],
+      "drop_px": 1.7
+    },
+    {
+      "kind": "sway",
+      "name": "bulb-upper",
+      "center": [
+        0.436,
+        0.218
+      ],
+      "sigma": [
+        0.095,
+        0.137
+      ],
+      "pivot": [
+        0.448,
+        0.422
+      ],
+      "angle_degrees": 1.8,
+      "shift_px": [
+        1.2,
+        -1.1
+      ],
+      "phase": 0.1,
+      "color_gate": "green"
+    }
+  ]
+}

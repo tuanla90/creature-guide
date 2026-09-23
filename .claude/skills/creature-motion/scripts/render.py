@@ -173,16 +173,19 @@ def main() -> None:
     bgr = source[:, :, :3]
     height, width = bgr.shape[:2]
     rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-    alpha = load_alpha(args.mask, source, bgr, spec.get("foreground_rect", [0, 0, 1, 1]))
-
-    if args.background:
-        background = image_or_fail(args.background, cv2.IMREAD_COLOR)
-        if background.shape[:2] != (height, width):
-            raise ValueError("Background plate must match source image size")
-    else:
-        hole = cv2.dilate((alpha > 20).astype(np.uint8) * 255, np.ones((11, 11), np.uint8))
-        background = cv2.inpaint(bgr, hole, 11, cv2.INPAINT_TELEA)
-    plate = cv2.cvtColor(background, cv2.COLOR_BGR2RGB).astype(np.float32)
+    composite_mode = spec.get("composite_mode", "cutout")
+    if composite_mode not in ("cutout", "warp_only"):
+        raise ValueError("composite_mode must be cutout or warp_only")
+    if composite_mode == "cutout":
+        alpha = load_alpha(args.mask, source, bgr, spec.get("foreground_rect", [0, 0, 1, 1]))
+        if args.background:
+            background = image_or_fail(args.background, cv2.IMREAD_COLOR)
+            if background.shape[:2] != (height, width):
+                raise ValueError("Background plate must match source image size")
+        else:
+            hole = cv2.dilate((alpha > 20).astype(np.uint8) * 255, np.ones((11, 11), np.uint8))
+            background = cv2.inpaint(bgr, hole, 11, cv2.INPAINT_TELEA)
+        plate = cv2.cvtColor(background, cv2.COLOR_BGR2RGB).astype(np.float32)
 
     yy, xx = np.mgrid[0:height, 0:width].astype(np.float32)
     gates = color_gates(rgb)
@@ -214,9 +217,12 @@ def main() -> None:
         map_x = np.ascontiguousarray(xx - dx)
         map_y = np.ascontiguousarray(yy - dy)
         warped_rgb = cv2.remap(rgb, map_x, map_y, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REFLECT)
-        warped_alpha = cv2.remap(alpha, map_x, map_y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
-        opacity = warped_alpha.astype(np.float32)[:, :, None] / 255
-        composite = np.clip(warped_rgb.astype(np.float32) * opacity + plate * (1 - opacity), 0, 255).astype(np.uint8)
+        if composite_mode == "warp_only":
+            composite = warped_rgb
+        else:
+            warped_alpha = cv2.remap(alpha, map_x, map_y, cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+            opacity = warped_alpha.astype(np.float32)[:, :, None] / 255
+            composite = np.clip(warped_rgb.astype(np.float32) * opacity + plate * (1 - opacity), 0, 255).astype(np.uint8)
         frames.append(Image.fromarray(composite).resize((output_width, output_height), Image.Resampling.LANCZOS))
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

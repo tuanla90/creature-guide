@@ -104,6 +104,22 @@ npm run registry                # sinh lại src/videos.gen.ts
 npm run studio                  # xem ở cả 16:9 lẫn 9:16
 ```
 
+## Cho ảnh thở
+
+Cảnh đứng lâu mà ảnh chết thì người xem thấy ngay. Skill `creature-motion` biến một ảnh thành vòng
+lặp 4 giây (thở, mắt khép, lá lay), chạy offline bằng OpenCV, không tốn credit. Xuất GIF rồi đổi sang
+mp4 bằng ffmpeg đi kèm Remotion (`npx remotion ffmpeg`), dùng như `clip` bình thường.
+
+Ba điều quyết định kết quả:
+
+- Đặt **mỏ neo** trước: sọ, chỗ chân chạm đất, gốc của từng bộ phận. Rồi mới cho cái gì lay.
+- `composite_mode: warp_only` cho nền phức tạp (tổ, trứng, lá chồng nhau); `cutout` chỉ hợp khi con
+  vật nằm trên nền trơn.
+- `output_width` và `fps` trong spec mặc định là 1032 px / 12 fps — **luôn đặt lại bằng chiều rộng
+  thật của ảnh và 25 fps**, không thì clip mờ hơn ảnh gốc.
+
+Đã dựng sẵn ba clip cho tập 1, xem `experiments/creature-motion/README.md`.
+
 ## Trước khi thu giọng và render
 
 ```bash

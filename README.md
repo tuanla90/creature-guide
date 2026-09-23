@@ -23,7 +23,7 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 | `/soat-tap <slug>` | soát trước khi thu giọng: máy soát rồi tới người soát |
 | skill `creature-field-guide-scriptwriter` | luật viết lời |
 | skill `creature-field-guide-production` | bible → ảnh → `scenes.json` → render |
-| skill `creature-motion` | biến một ảnh tĩnh thành vòng lặp động nhẹ |
+| skill `creature-motion` | biến một ảnh tĩnh thành vòng lặp động nhẹ — xem [experiments/creature-motion](experiments/creature-motion/README.md) |
 
 ## Lệnh hay dùng
 

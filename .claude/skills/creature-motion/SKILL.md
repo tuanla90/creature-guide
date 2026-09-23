@@ -15,9 +15,9 @@ Use this for a mostly stationary subject: breathing, an eyelid or jaw twitch, le
 
 Inspect the image and record normalized coordinates (0–1). Mark rigid anchors first: skull, spine/shoulder junction, feet/ground contact, and roots of appendages. Place the breath region on the lower chest or abdomen; fade it toward the skull and planted feet. Give organic parts different pivots, axes, phases, and modest amplitudes. A blink or jaw movement stays local to the face.
 
-Use `assets/ivysaur.spec.json` as the field example. Its numbers are **not** universal defaults. Match region centers and radii to the new image. Keep the first frame near the reference pose; movement should be noticeable within about two seconds without requiring a two-second cycle.
+Use `assets/ivysaur.spec.json` as a field example, `assets/bulbasaur-plate.spec.json` for a standing creature with a fixed head/feet, and `assets/nest-guarded.spec.json` for a crouching subject among eggs and foliage. Their numbers are **not** universal defaults. Match region centers and radii to the new image. Keep the first frame near the reference pose; movement should be noticeable within about two seconds without requiring a two-second cycle.
 
-For a simple background, let GrabCut infer the whole creature silhouette. When it cuts off feet/fur or includes background, supply a corrected alpha mask with `--mask`. A matching clean background plate can be supplied with `--background`; otherwise the renderer inpaints the subject area.
+Choose compositing before rendering. `composite_mode: warp_only` deforms only local image regions and leaves the rest of the original frame intact. Prefer it for foliage, nests, overlapping eggs, cropped anatomy, or subtle motion where a cutout boundary would show. Keep each motion region away from rigid contacts and unrelated objects. `composite_mode: cutout` lets GrabCut infer the creature silhouette for a clear subject on a simple background; supply a corrected alpha mask with `--mask` if its outline is wrong. A matching clean background plate can be supplied with `--background`; otherwise the renderer inpaints the subject area.
 
 ## Render and review
 
@@ -29,6 +29,6 @@ python scripts/render.py --input <image> --spec <spec.json> --output <loop.gif> 
 
 Dependencies: Python, `opencv-python`, `numpy`, `Pillow`.
 
-Inspect the animation itself and the contact sheet at normal viewing size. Check that the skull and feet stay stable, chest movement reads as breathing rather than whole-body inflation, plant/soft parts move around their roots, and no doubled edges or detached body patches appear. Use `loop_mode: cyclic` for a closed forward path: the exact first/last pose matches while offset sway axes continue through the seam. Use `boomerang` only if the user wants a deliberate return along the same path. If these checks fail, adjust the spec or mask and render again. Stop when the shot reads naturally; don't make every part move just because it is available.
+Inspect the animation itself and the contact sheet at normal viewing size. Check that the skull, planted feet, eggs and nest stay stable; chest movement reads as breathing rather than whole-body inflation; plant/soft parts move around their roots; and no doubled edges or detached body patches appear. Keep the head shape and crown stable. Use `loop_mode: cyclic` for a closed forward path: the exact first/last pose matches while offset sway axes continue through the seam. Use `boomerang` only if the user wants a deliberate return along the same path. If these checks fail, adjust the spec, compositing mode or mask and render again. Stop when the shot reads naturally; don't make every part move just because it is available.
 
 Deliver the loop plus its source spec. Mention any remaining visual limitations honestly. `scripts/render.py` is the portable motion engine; the Ivysaur spec is only one preset.

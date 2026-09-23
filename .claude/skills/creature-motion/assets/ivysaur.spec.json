@@ -1,31 +1,57 @@
 {
   "duration_seconds": 4,
-  "fps": 12,
-  "output_width": 1032,
+  "fps": 25,
+  "output_width": 1376,
   "loop_mode": "cyclic",
   "breath_skew": 0.35,
-  "foreground_rect": [0.20, 0.035, 0.60, 0.92],
+  "foreground_rect": [
+    0.2,
+    0.035,
+    0.6,
+    0.92
+  ],
   "motions": [
     {
       "kind": "breath",
       "name": "lower-chest",
-      "center": [0.515, 0.685],
-      "sigma": [0.125, 0.110],
-      "width_scale": 0.030,
+      "center": [
+        0.515,
+        0.685
+      ],
+      "sigma": [
+        0.125,
+        0.11
+      ],
+      "width_scale": 0.03,
       "height_scale": 0.025,
       "drop_px": 12,
       "anchors": {
-        "top_fade": [0.535, 0.650],
-        "bottom_fade": [0.660, 0.815],
-        "face_fade": [0.595, 0.680],
+        "top_fade": [
+          0.535,
+          0.65
+        ],
+        "bottom_fade": [
+          0.66,
+          0.815
+        ],
+        "face_fade": [
+          0.595,
+          0.68
+        ],
         "face_min": 0.08
       }
     },
     {
       "kind": "blink",
       "name": "eye",
-      "center": [0.652, 0.573],
-      "sigma": [0.028, 0.018],
+      "center": [
+        0.652,
+        0.573
+      ],
+      "sigma": [
+        0.028,
+        0.018
+      ],
       "strength": 0.28,
       "peak": 0.68,
       "width": 0.075
@@ -33,40 +59,82 @@
     {
       "kind": "jaw",
       "name": "lower-jaw",
-      "center": [0.665, 0.675],
-      "sigma": [0.056, 0.028],
+      "center": [
+        0.665,
+        0.675
+      ],
+      "sigma": [
+        0.056,
+        0.028
+      ],
       "drop_px": 2.6
     },
     {
       "kind": "sway",
       "name": "left-leaf",
-      "center": [0.365, 0.425],
-      "sigma": [0.135, 0.090],
-      "pivot": [0.455, 0.420],
+      "center": [
+        0.365,
+        0.425
+      ],
+      "sigma": [
+        0.135,
+        0.09
+      ],
+      "pivot": [
+        0.455,
+        0.42
+      ],
       "angle_degrees": 4.8,
-      "shift_px": [-9, -3],
+      "shift_px": [
+        -9,
+        -3
+      ],
       "phase": 0.08,
       "color_gate": "green"
     },
     {
       "kind": "sway",
       "name": "right-leaf",
-      "center": [0.585, 0.375],
-      "sigma": [0.125, 0.085],
-      "pivot": [0.475, 0.365],
+      "center": [
+        0.585,
+        0.375
+      ],
+      "sigma": [
+        0.125,
+        0.085
+      ],
+      "pivot": [
+        0.475,
+        0.365
+      ],
       "angle_degrees": -4.2,
-      "shift_px": [7, -2.5],
+      "shift_px": [
+        7,
+        -2.5
+      ],
       "phase": 1.0,
       "color_gate": "green"
     },
     {
       "kind": "sway",
       "name": "flower",
-      "center": [0.445, 0.225],
-      "sigma": [0.095, 0.145],
-      "pivot": [0.495, 0.355],
+      "center": [
+        0.445,
+        0.225
+      ],
+      "sigma": [
+        0.095,
+        0.145
+      ],
+      "pivot": [
+        0.495,
+        0.355
+      ],
       "angle_degrees": 3.4,
-      "shift_px": [3, -2],
+      "shift_px": [
+        3,
+        -2
+      ],
       "phase": 0.52,
       "color_gate": "pink"
     }

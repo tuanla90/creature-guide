@@ -14,6 +14,7 @@ hình tốn ba tiếng.
 | 4 | Soạn shot | 🤖 | `bible/shots/<ep>.json` → `prompts/<ep>.flow.txt` |
 | 5 | Sinh ảnh | ✋🤖 | `public/img/<ep>/*.jpg` |
 | 6 | Dựng hình | 🤖 | `videos/<slug>/scenes.json` |
+| 6b | Cho ảnh thở *(tuỳ chọn)* | 🤖 | `public/video/<ep>/*-breath.mp4` |
 | 7 | Tiếng | 🤖 | `public/audio/sfx/<ep>/*.wav` |
 | 8 | Giọng | ✋ | `videos/<slug>/audio/*.mp3` + timing thật |
 | 9 | Soát | 🤖 | `python tools/check-episode.py <slug>` sạch |
@@ -79,6 +80,21 @@ Skill: **`creature-field-guide-production`** (phần "Dựng cảnh").
 Rồi: `npm run scaffold -- <slug>` (timing ước lượng, audio câm) → `npm run registry` → `npm run studio`.
 
 > **Cổng:** xem hết một lượt ở **cả 16:9 lẫn 9:16**. Bản dọc là nơi chữ tràn và cảnh rộng chết.
+
+## 6b · Cho ảnh thở (tuỳ chọn) 🤖
+
+Skill: **`creature-motion`**. Biến ảnh tĩnh thành vòng lặp 4 giây — thở, mắt khép, lá lay — chạy
+offline bằng OpenCV, không tốn credit. Rồi đổi sang mp4 và dùng như một `clip` bình thường:
+
+```bash
+PYTHONUTF8=1 python .claude/skills/creature-motion/scripts/render.py   --input public/img/<ep>/<shot>.jpg --spec .claude/skills/creature-motion/assets/<spec>.json   --output out/<shot>.gif --contact-sheet experiments/creature-motion/<shot>-contact.jpg
+npx remotion ffmpeg -y -i out/<shot>.gif -c:v libx264 -crf 19 -pix_fmt yuv420p   public/video/<ep>/<shot>-breath.mp4
+```
+
+Chi tiết và giới hạn: [experiments/creature-motion](../experiments/creature-motion/README.md).
+
+> **Cổng:** xem contact sheet ở cỡ thật. Sọ, chân chạm đất và các vật cứng (trứng, đá) phải đứng yên;
+> chuyển động phải đọc ra là *thở*, không phải cả con phồng lên.
 
 ## 7 · Tiếng 🤖
 

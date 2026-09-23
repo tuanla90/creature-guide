@@ -1,0 +1,147 @@
+{
+  "duration_seconds": 4.4,
+  "fps": 25,
+  "output_width": 1376,
+  "loop_mode": "cyclic",
+  "composite_mode": "warp_only",
+  "breath_skew": 0.31,
+  "motions": [
+    {
+      "kind": "breath",
+      "name": "visible-flank",
+      "center": [
+        0.362,
+        0.671
+      ],
+      "sigma": [
+        0.138,
+        0.095
+      ],
+      "width_scale": 0.021,
+      "height_scale": 0.016,
+      "drop_px": 5.8,
+      "anchors": {
+        "top_fade": [
+          0.53,
+          0.63
+        ],
+        "bottom_fade": [
+          0.745,
+          0.88
+        ],
+        "face_fade": [
+          0.47,
+          0.57
+        ],
+        "face_min": 0.0
+      }
+    },
+    {
+      "kind": "blink",
+      "name": "guarding-eye",
+      "center": [
+        0.605,
+        0.599
+      ],
+      "sigma": [
+        0.026,
+        0.018
+      ],
+      "strength": 0.24,
+      "peak": 0.64,
+      "width": 0.048
+    },
+    {
+      "kind": "sway",
+      "name": "left-leaf",
+      "center": [
+        0.255,
+        0.415
+      ],
+      "sigma": [
+        0.125,
+        0.087
+      ],
+      "pivot": [
+        0.44,
+        0.348
+      ],
+      "angle_degrees": 2.2,
+      "shift_px": [
+        -3.2,
+        0.8
+      ],
+      "phase": 0.05,
+      "color_gate": "green"
+    },
+    {
+      "kind": "sway",
+      "name": "right-leaf",
+      "center": [
+        0.604,
+        0.421
+      ],
+      "sigma": [
+        0.103,
+        0.079
+      ],
+      "pivot": [
+        0.48,
+        0.365
+      ],
+      "angle_degrees": -1.9,
+      "shift_px": [
+        2.6,
+        -0.6
+      ],
+      "phase": 1.2,
+      "color_gate": "green"
+    },
+    {
+      "kind": "sway",
+      "name": "left-petal",
+      "center": [
+        0.334,
+        0.118
+      ],
+      "sigma": [
+        0.139,
+        0.081
+      ],
+      "pivot": [
+        0.458,
+        0.147
+      ],
+      "angle_degrees": 1.7,
+      "shift_px": [
+        -1.4,
+        -0.4
+      ],
+      "phase": 0.72,
+      "color_gate": "pink"
+    },
+    {
+      "kind": "sway",
+      "name": "right-petal",
+      "center": [
+        0.586,
+        0.104
+      ],
+      "sigma": [
+        0.131,
+        0.077
+      ],
+      "pivot": [
+        0.477,
+        0.145
+      ],
+      "angle_degrees": -1.6,
+      "shift_px": [
+        1.4,
+        -0.6
+      ],
+      "phase": 1.57,
+      "color_gate": "pink"
+    }
+  ]
+}

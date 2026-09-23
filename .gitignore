@@ -10,3 +10,4 @@ __pycache__/
 public/img/**/*.jpg
 !public/img/**/.keep
 public/video/**/*.mp4
+experiments/**/*.gif
