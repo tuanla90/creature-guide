@@ -1,0 +1,126 @@
+[s01-kanto-vista]
+Smooth cinematic drone forward drift over countryside, slow sweeping aerial pan, morning mist rolling slowly through valleys, sunrise light shifting across rolling hills, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s02-bulbasaur-plate]
+Locked-off tripod camera, studio reference observation, calm living specimen, slow breathing movement, subtle head turn, eyes blinking naturally, soft ambient studio lighting, no rapid motion, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s03-bulbasaur-hatch]
+Macro telephoto lens, shallow depth of field, delicate slow push-in, tiny muscle movements, subtle breathing, glistening skin moisture, soft dappled sunlight shifting, floating atmospheric dust motes, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s04-bulbasaur-sunbath]
+Slow static telephoto shot, very gentle tilt down, creature sleeping peacefully, deep rhythmic breathing movement, chest gently rising and falling, golden sunbeams warming the ground, sparkling dust particles in the air, calm forest clearing, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s05-elysia]
+Macro telephoto lens, shallow depth of field, delicate slow push-in, tiny muscle movements, subtle breathing, glistening skin moisture, soft dappled sunlight shifting, floating atmospheric dust motes, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s06-egg-nest-shade]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s07-ivysaur-bud]
+Smooth tracking shot following the slow heavy footsteps, side profile camera pan, deliberate heavy steps, shifting body weight, muscles rippling under bumpy skin, tall meadow grass parting around legs, faint pollen drifting in warm breeze, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s08-venusaur-pair-plate]
+Locked-off tripod camera, studio reference observation, calm living specimen, slow breathing movement, subtle head turn, eyes blinking naturally, soft ambient studio lighting, no rapid motion, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s09-venusaur-rain]
+Slow cinematic telephoto observation, soft horizontal pan, steady calm presence, gentle water droplets beading and trickling down petals and leaves, soft rain mist falling, low clouds breaking, damp glisten in the wet meadow, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s10-bulbasaur-vine-tree]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s11-bulbasaur-vine-comfort]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s12-bulbasaur-fishing]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[s13-charmander-rain]
+Slow cinematic telephoto observation, soft horizontal pan, steady calm presence, gentle water droplets beading and trickling down petals and leaves, soft rain mist falling, low clouds breaking, damp glisten in the wet meadow, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n01-forest-edge-dawn]
+Smooth cinematic drone forward drift over countryside, slow sweeping aerial pan, morning mist rolling slowly through valleys, sunrise light shifting across rolling hills, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n02-population-scatter]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n03-nest-guarded]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n04-sun-patch-dispute]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n05-sunbathing-group]
+Slow static telephoto shot, very gentle tilt down, creature sleeping peacefully, deep rhythmic breathing movement, chest gently rising and falling, golden sunbeams warming the ground, sparkling dust particles in the air, calm forest clearing, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n06-vine-touch]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n07-creche]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n08-raptor-strike]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n09-sleep-powder]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n10-leech-seed]
+Macro telephoto lens, shallow depth of field, delicate slow push-in, tiny muscle movements, subtle breathing, glistening skin moisture, soft dappled sunlight shifting, floating atmospheric dust motes, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n11-tracks-mud]
+Slow cinematic telephoto observation, soft horizontal pan, steady calm presence, gentle water droplets beading and trickling down petals and leaves, soft rain mist falling, low clouds breaking, damp glisten in the wet meadow, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n12-ivysaur-plate]
+Locked-off tripod camera, studio reference observation, calm living specimen, slow breathing movement, subtle head turn, eyes blinking naturally, soft ambient studio lighting, no rapid motion, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n13-ivysaur-strain]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n14-bud-aroma-insects]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n15-sun-shift]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n16-evolution-gathering]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n17-venusaur-march]
+Smooth tracking shot following the slow heavy footsteps, side profile camera pan, deliberate heavy steps, shifting body weight, muscles rippling under bumpy skin, tall meadow grass parting around legs, faint pollen drifting in warm breeze, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n18-scent-truce]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[n19-old-venusaur]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[b01-arena-dusk]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[b02-vine-whip-battle]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[b03-solarbeam-charge]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[b04-powder-arena]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[b05-last-stand]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[m01-mud-soak]
+Slow cinematic telephoto observation, soft horizontal pan, steady calm presence, gentle water droplets beading and trickling down petals and leaves, soft rain mist falling, low clouds breaking, damp glisten in the wet meadow, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[m02-vine-groom]
+Dynamic cinematic camera angle, subtle tracking, organic green vines extending fluidly, natural muscular articulation, controlled reach, foliage reacting with gentle secondary motion, dramatic lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[m03-heliotropism]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[m04-hollow-empty]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+
+[m05-silhouette-mist]
+Slow subtle camera push-in, cinematic telephoto lens, subtle realistic breathing, slight muscle twitch, natural eye blink, leaves and grass gently swaying in soft wind, natural outdoor lighting, photorealistic 4k BBC wildlife documentary footage, cinematic 24fps, highly detailed natural motion, no warping
+

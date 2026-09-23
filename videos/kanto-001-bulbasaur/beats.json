@@ -8,14 +8,14 @@
   {
     "id": "01",
     "audio": "audio/kanto-001-bulbasaur/beat-01.wav",
-    "durationSec": 20.84,
-    "durationInFrames": 625
+    "durationSec": 20.95,
+    "durationInFrames": 629
   },
   {
     "id": "02",
     "audio": "audio/kanto-001-bulbasaur/beat-02.wav",
-    "durationSec": 39.58,
-    "durationInFrames": 1187
+    "durationSec": 42.81,
+    "durationInFrames": 1284
   },
   {
     "id": "03",
@@ -50,8 +50,8 @@
   {
     "id": "08",
     "audio": "audio/kanto-001-bulbasaur/beat-08.wav",
-    "durationSec": 43.86,
-    "durationInFrames": 1316
+    "durationSec": 52.55,
+    "durationInFrames": 1577
   },
   {
     "id": "09",
@@ -92,7 +92,7 @@
   {
     "id": "15",
     "audio": "audio/kanto-001-bulbasaur/beat-15.wav",
-    "durationSec": 85.47,
-    "durationInFrames": 2564
+    "durationSec": 86.35,
+    "durationInFrames": 2591
   }
 ]

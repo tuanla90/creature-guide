@@ -1,11 +1,11 @@
 # Creature Field Guide — Kanto #001–003 · "Chọn Nắng"
 #
-# Người kể: An, nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Rừng Gió Gập ở Kanto.
+# Người kể: Tuấn, nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Rừng Gió Gập ở Kanto.
 # Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem skills/.../subject-naming-and-evidence.md):
-#   K7 "Chọn Nắng" — đặt theo hành vi: luôn chiếm vệt nắng sáng nhất · vai: KẺ YẾU THẾ VƯƠN LÊN
+#   K7 "Kẻ Chọn Nắng" (gọi tắt: Chọn Nắng) — hành vi: luôn chiếm vệt nắng sáng nhất · vai: KẺ YẾU THẾ VƯƠN LÊN
 #   "Vai Rách"     — đặt theo vết tích: mảng da rách bên sườn · vai: HÀNG XÓM
-#   "Mắt Xám"      — đặt theo vết tích: con mắt xám · vai: KẺ SĂN CHUYÊN MỘT CON MỒI
-#   "Rêu"          — đặt theo vết tích: rêu mọc trên lưng · con cái già · vai: BÀ LÃO CỦA VÙNG
+#   "Mắt Tro"      — đặt theo vết tích: một con mắt màu tro · vai: KẺ SĂN CHUYÊN MỘT CON MỒI
+#   "Lưng Rêu"     — đặt theo vết tích: rêu và dương xỉ mọc trên lưng · con cái già · vai: BÀ LÃO CỦA VÙNG
 # Bí ẩn xuyên suốt: cái hạt trên lưng là ký sinh hay cộng sinh? -> trả bài ở beat 15.
 #
 # Luật (docs/CREATURE-LENS.md + skills/creature-field-guide-scriptwriter):
@@ -26,7 +26,7 @@ BEATS = {
 "Nó đang thở. Và không phải chỉ bằng phổi.",
 
 "01":
-"Tôi là An. Tôi tới Rừng Gió Gập để làm một việc mà ở quê tôi người ta làm với sói và với voi:\n"
+"Tôi là Tuấn. Tôi tới Rừng Gió Gập để làm một việc mà ở quê tôi người ta làm với sói và với voi:\n"
 "chọn một con, đi theo nó đủ lâu, rồi xem cái gì thay đổi.\n"
 "Trong sổ của người bản xứ, con vật này được ghi là Bulbasaur. Trong sổ của tôi, nó là cá thể K7.\n"
 "Suốt mấy tuần đầu, nó chỉ có chừng ấy: một chữ và một con số.",
@@ -40,7 +40,7 @@ BEATS = {
 "Nhưng suốt một tuần đầu tiên, tôi ghi lại chỗ nằm của từng con vào mỗi buổi trưa.\n"
 "Và K7 luôn nằm đúng vệt nắng sáng nhất trong trảng. Không phải một hôm. Là cả bảy hôm.\n"
 "Ở đây người ta không gọi con vật bằng số. Họ gọi theo cái nó hay làm, hoặc theo dấu nó mang trên người.\n"
-"Từ hôm ấy, trong sổ tôi, K7 thành Chọn Nắng.",
+"Từ hôm ấy, trong sổ tôi, K7 thành Kẻ Chọn Nắng. Về sau, viết tắt dần, tôi chỉ còn ghi là Chọn Nắng.",
 
 # ---- chương 2: cái hạt không phải vật trang trí -------------------------------
 "03":
@@ -97,23 +97,25 @@ BEATS = {
 "Chiều hôm đó tôi thấy Chọn Nắng vẩy một sợi dây leo qua lưng, gạt phắt một con sâu đang bò lên mép lá,\n"
 "đúng động tác cái đuôi ngựa xua ruồi trâu.",
 
-# ---- chương 5: Mắt Xám --------------------------------------------------------
+# ---- chương 5: Mắt Tro --------------------------------------------------------
 "08":
-"Mắt Xám xuất hiện vào ngày thứ hai mươi hai.\n"
+"Con chim xuất hiện vào ngày thứ hai mươi hai.\n"
 "Một con chim lớn, mỏ dài, bay vòng rất cao. Nó không săn cả trảng. Nó chỉ theo Chọn Nắng.\n"
+"Một bên mắt nó phủ một lớp màng đục màu tro, dấu của một vết thương cũ.\n"
+"Người bản xứ gọi nó theo đúng cái mắt ấy: Mắt Tro.\n"
 "Lần bổ nhào đầu tiên, Chọn Nắng không chạy.\n"
 "Nó ép sát người xuống nền đất ẩm dưới một tán dương xỉ, và đứng im.\n"
 "Đây là lúc tôi hiểu ra bộ da của nó.\n"
 "Màu xanh lam với những đốm sẫm không đều, nhìn gần thì kỳ quặc, nhưng nằm dưới tán lá thì\n"
 "những đốm ấy trùng khít với các mảng nắng lọt qua kẽ lá rọi xuống đất.\n"
-"Mắt Xám sượt qua cách chừng một sải tay, rồi bay vòng lại.\n"
+"Mắt Tro sượt qua cách chừng một sải tay, rồi bay vòng lại.\n"
 "Lần thứ hai, cái củ trên lưng Chọn Nắng hé ra ở đỉnh, và một màn bào tử mịn bung lên.\n"
 "Con chim đảo cánh, mất hướng, rồi bỏ đi.",
 
 # ---- chương 6: cái giá của sức mạnh ------------------------------------------
 "09":
 "Nhưng cái tôi ghi đậm nhất hôm đó không phải màn bào tử.\n"
-"Sau khi Mắt Xám bỏ đi, Chọn Nắng nằm im gần hết buổi chiều. Không ăn, không đổi chỗ, không phản ứng khi tôi lại gần.\n"
+"Sau khi Mắt Tro bỏ đi, Chọn Nắng nằm im gần hết buổi chiều. Không ăn, không đổi chỗ, không phản ứng khi tôi lại gần.\n"
 "Và cái củ trên lưng nó nhỏ lại thấy rõ.\n"
 "Thứ vừa cứu mạng nó được lấy ra từ đúng cái kho mà nó phơi nắng cả tháng để tích.\n"
 "Từ hôm đó tôi thôi ghi những thứ này vào mục khả năng.\n"
@@ -185,9 +187,9 @@ BEATS = {
 "mang nặng thì chân phải thành cột.\n"
 "Mùa mưa cuối cùng trong cuốn sổ này, tôi gặp một con trưởng thành già sống ở bìa rừng.\n"
 "Thân nó đã hoá gỗ, dương xỉ nhỏ và rêu mọc luôn trên lưng, bông hoa to và hơi bạc màu.\n"
-"Người bản xứ gọi con này là Rêu, và họ bảo nó ở bìa rừng ấy từ trước khi họ sinh ra.\n"
-"Chính giữa bông hoa của Rêu có một cái nhụy. Ở những con khác tôi từng gặp thì không có.\n"
-"Rêu là con cái. Và đó là lần đầu tiên tôi phân biệt được giới tính của loài này bằng mắt thường.\n"
+"Người bản xứ gọi con này là Lưng Rêu, và họ bảo nó ở bìa rừng ấy từ trước khi họ sinh ra.\n"
+"Chính giữa bông hoa của Lưng Rêu có một cái nhụy. Ở những con khác tôi từng gặp thì không có.\n"
+"Lưng Rêu là con cái. Và đó là lần đầu tiên tôi phân biệt được giới tính của loài này bằng mắt thường.\n"
 "Còn Chọn Nắng thì chưa. Cái nụ của nó chưa nở, nên tôi vẫn chưa biết mình đã theo một con đực hay con cái.\n"
 "Sau mỗi trận mưa, hương hoa của nó đậm hẳn lên, và tôi đã ngồi nhìn hai con vật đang gầm gừ nhau\n"
 "cùng ngồi xuống, cách nhau vài bước, trong làn hương ấy.\n"

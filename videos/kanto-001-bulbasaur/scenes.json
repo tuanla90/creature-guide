@@ -1,5 +1,5 @@
 {
- "_note": "Bản kể theo nhân vật: An (người kể) · K7 \"Chọn Nắng\" · Mắt Xám (chim) · Rêu (con cái già) · Rừng Gió Gập. Cảnh tiến hoá KHÔNG có lột da — chỉ dấu vết (hõm đất trống, cỏ bẹp, bẹ lá khô, dấu chân, bóng trong sương). Chữ lower-third: text <= 4.2, caption <= 2.7. Toạ độ callout s02/s08/n12 đo trên ảnh thật.",
+ "_note": "Bản kể theo nhân vật: Tuấn (người kể) · K7 \"Kẻ Chọn Nắng\" · Mắt Tro (chim) · Lưng Rêu (con cái già) · Rừng Gió Gập. Cảnh tiến hoá KHÔNG có lột da — chỉ dấu vết (hõm đất trống, cỏ bẹp, bẹ lá khô, dấu chân, bóng trong sương). Chữ lower-third: text <= 4.2, caption <= 2.7. Toạ độ callout s02/s08/n12 đo trên ảnh thật.",
  "00": {
   "bg": "RỪNG GIÓ GẬP",
   "holdSec": 1.0,
@@ -85,7 +85,7 @@
      },
      {
       "el": "label",
-      "text": "AN · NHÀ SINH VẬT HỌC THỰC ĐỊA · RỪNG GIÓ GẬP",
+      "text": "TUẤN · NHÀ SINH VẬT HỌC THỰC ĐỊA · RỪNG GIÓ GẬP",
       "at": 8
      }
     ]
@@ -201,7 +201,7 @@
      },
      {
       "el": "text",
-      "value": "K7 thành [accent:Chọn Nắng]",
+      "value": "K7 thành [accent:Kẻ Chọn Nắng]",
       "size": 4.2,
       "at": 46
      }
@@ -671,7 +671,7 @@
   ]
  },
  "08": {
-  "bg": "CHƯƠNG 5 · MẮT XÁM",
+  "bg": "CHƯƠNG 5 · MẮT TRO",
   "holdSec": 1.3,
   "moments": [
    {
@@ -1377,7 +1377,7 @@
      },
      {
       "el": "text",
-      "value": "[accent:Rêu] · con cái già ở bìa rừng",
+      "value": "[accent:Lưng Rêu] · con cái già ở bìa rừng",
       "size": 3.8,
       "at": 12
      },
@@ -1403,7 +1403,7 @@
         "x": 0.725,
         "y": 0.22,
         "zoom": 1.7,
-        "label": "Rêu · con cái",
+        "label": "Lưng Rêu · con cái",
         "sub": "Nhụy hoa ở chính giữa",
         "tag": "♀",
         "color": "warn",
