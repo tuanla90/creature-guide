@@ -69,6 +69,11 @@ Ghi tên nhân vật vào [CAST.md](CAST.md) — cả bản VI và EN.
 
 ## 4 · Soát và duyệt kịch bản ✋🤖
 
+**Phân công đã chốt theo kinh nghiệm thật:** Gemini mạnh ở chặng **nghĩ ý** — dựng bố cục, đề xuất
+cảnh, mở rộng ý tưởng. Claude mạnh ở chặng **ép luật** — soi canon, bắt nhãn bằng chứng sai, số bịa,
+tuyến bỏ dở, tên sai luật. Nên thứ tự đúng là **Gemini phóng ra trước, Claude siết lại sau**, chứ
+không phải Claude ra ý rồi Gemini khai triển.
+
 Skill: **`episode-review`**. Ba lớp, đúng thứ tự, và **hết cả ba mới được đi tiếp**:
 
 1. **Máy soát logic** — `check-episode.py` + Claude: khung tập, nhãn bằng chứng, nguồn, chữ làm lộ

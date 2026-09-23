@@ -68,7 +68,17 @@ Rồi đọc tay những thứ linter chưa bắt được:
       ấy phải kéo được về chủ thể ở câu cuối.
 - [ ] `docs/IDEA-BANK.md` đánh ✅ đúng beat — ý đã đổi chỗ hoặc bị bỏ thì sửa lại, không để ✅ sai.
 
-### 1.7 Cấu trúc kỹ thuật
+### 1.7 Tên và dẫn chứng canon
+- [ ] Mọi dòng trong `CAST.md` có ô **Dẫn chứng** không rỗng. Cá thể do người kể đặt tên thì ghi
+      thẳng 👁 — đó là câu trả lời trung thực, không phải chỗ trống. Đừng ghi một lời khẳng định
+      thay cho nguồn.
+- [ ] **Không bịa địa danh** khi canon đã có. Ghi đúng **phiên bản** game: Bulbasaur hoang dã ở
+      Viridian Forest là canon *Let's Go*, không phải Gen 1.
+- [ ] Ý chỉ có trong anime gắn **🎬** và kể như truyền thuyết của người bản xứ, **không** gắn 📖.
+- [ ] Tên là **danh từ chỉ dấu tích**, không phải mẩu cắt của tên loài, không phải lời mô tả.
+- [ ] Màn hình ghi tên EN, giọng VI đọc tên VI — một video hai track giọng thì chữ dùng chung.
+
+### 1.8 Cấu trúc kỹ thuật
 - [ ] Có `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản Short).
 - [ ] `PRON` có mọi tên loài và tên riêng khó đọc (chỉ cần cho bản VI).
 

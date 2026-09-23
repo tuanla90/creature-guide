@@ -2,36 +2,51 @@
 
 Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 
-1. **Mã thực địa là cái neo.** `K7`, `B-02`… giữ nguyên ở cả hai bản. Người xem bản này nhảy sang bản
+1. **Mã thực địa là cái neo.** `K-01`, `B-02`… giữ nguyên ở cả hai bản. Người xem bản này nhảy sang bản
    kia vẫn nhận ra nhân vật, và mã số là thứ duy nhất không bao giờ phải dịch.
-2. **Tên gọi thì dịch theo nghĩa, không phiên âm.** Vì mọi tên đều đặt theo *hành vi* hoặc *vết tích*
-   (xem `.claude/skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md`),
-   nên nghĩa mới là thứ phải giữ, không phải âm.
-3. **Tên đến sau quan sát.** Trong cả hai bản, nhân vật chỉ được đặt tên sau khi khán giả đã thấy
-   cái hành vi hoặc vết tích ấy trên màn hình. Mắt Tro chỉ được gọi là Mắt Tro sau câu tả cái mắt; Búp Lệch sau câu tả cái củ nghẹo.
-4. **Tên là một DANH TỪ, không phải cụm động từ.** "Chọn Nắng" đứng trong câu thì đụng ngay động từ
-   đi sau ("Chọn Nắng bỏ ăn"), nghe gồ ghề và văn vở. Tên tốt là một bộ phận kèm tính từ:
-   *búp* lệch, *vai* rách, *mắt* tro, *lưng* rêu — đọc lại hai chục lần vẫn trôi.
-5. **Tên hai tiếng trở lên**, và phải dính vào một thứ khán giả nhìn thấy được trên màn hình.
+2. **Tên lấy tiếng Anh làm gốc (English-First).** Bản EN là bản gốc của kênh, nên tên được nghĩ ra
+   bằng tiếng Anh trước, rồi mới dịch sang tiếng Việt theo **nghĩa**, không phiên âm.
+   - **Không dùng lối rút gọn tên loài kiểu Trainer** (Bulbasaur → Saur, Pikachu → Pika). Đó là cách một
+     *Trainer* gọi bạn đồng hành của mình; người dẫn của kênh là nhà sinh vật học đứng ngoài quan
+     sát, không sở hữu con vật. Và một cái tên cắt từ tên loài thì con nào cũng mang được — nó không
+     phân biệt được cá thể, trong khi cả tập chỉ theo **một** cá thể.
+   - Tên tốt là lối NatGeo: một bộ phận kèm dấu ấn nhìn thấy được — `Crookedbud`, `Scar-Shoulder`,
+     `Ash-Eye`, `Moss-Back`.
+3. **Mọi tên gọi (creature, cá thể, địa danh) đều phải có LÝ DO sinh học/hình thái và DẪN CHỨNG CANON rõ ràng.**
+   - Không tự nghĩ ra địa danh hư cấu (fanon) nếu đã có địa danh Canon tương ứng trong game/anime/manga.
+   - Nguồn dẫn chứng ghi rõ trong cột Canon: Pokédex game nào, tập anime nào, chương manga nào.
+4. **Tên đến sau quan sát.** Trong cả hai bản, nhân vật chỉ được đặt tên sau khi khán giả đã thấy
+   cái hành vi hoặc vết tích ấy trên màn hình.
+5. **Tên là một DANH TỪ, không phải cụm động từ hay lời mô tả.** Một bộ phận kèm dấu ấn:
+   *Crookedbud*, *Scar-Shoulder*, *Ash-Eye*, *Moss-Back* — và bản VI cũng vậy: *Búp Lệch*, *Vai Rách*,
+   *Mắt Tro*, *Lưng Rêu*. "Bà Lão Rêu Xanh" là một lời mô tả, không phải một cái tên.
 6. **Người kể không có tên trong lời đọc.** Anh ta xưng "tôi" và chỉ thế. Tên thật nằm ở bìa sổ
    thực địa, ở chữ ký trang ghi chép, và ở credit cuối video: **Tuấn La**.
-7. **Trên màn hình ghi cả hai khi cần**: `K7 · Crookedbud`.
+7. **Màn hình ghi tên EN, giọng VI đọc tên VI.** Một video mang hai track giọng (YouTube
+   multi-audio) nên **chữ trên màn hình dùng chung**, không tách theo ngôn ngữ được. Vì vậy màn hình
+   ghi `K-01 · Crookedbud`, còn người dẫn bản VI đọc "Búp Lệch". Mã thực địa neo hai bên.
+   VBee đọc tên tiếng Anh sẽ ra thứ không ai hiểu — đó là lý do `PRON` tồn tại.
 
 ## Kanto #001–003 · dòng Bulbasaur
 
-| Vai | 🇻🇳 VI | 🇬🇧 EN | Đặt theo | Vai diễn |
+| Vai | 🇬🇧 EN (gốc) | 🇻🇳 VI | Lý do — dấu tích nhìn thấy được | Dẫn chứng |
 |---|---|---|---|---|
-| Cá thể được theo dõi | **Búp Lệch** (K7) | **Crookedbud** (K7) | vết tích: cái củ trên lưng mọc nghẹo một bên — hệ quả của bảy hôm liền nằm vặn theo vệt nắng | kẻ yếu thế vươn lên |
-| Con lớn nằm cạnh | **Vai Rách** | **Torn Flank** | vết tích: mảng da rách bên sườn | hàng xóm |
-| Con chim săn mồi | **Mắt Tro** | **Ashen Eye** | vết tích: một bên mắt phủ màng đục màu tro | kẻ săn chuyên một con mồi |
-| Con trưởng thành già | **Lưng Rêu** (cái) | **Mossback** (female) | vết tích: rêu và dương xỉ mọc trên lưng | bà lão của vùng |
-| Người kể | *không nêu tên, xưng "tôi"* | *unnamed, "I"* | — | nhà sinh vật học thực địa |
-| Credit / bìa sổ | **Tuấn La** | **Tuan La** | — | tên thật, chỉ xuất hiện dưới dạng chữ trên màn hình |
-| Địa danh | **Rừng Gió Gập** | **Windfold Forest** | — | — |
+| Cá thể được theo dõi | **Crookedbud** (K-01) | **Búp Lệch** | củ trên lưng mọc nghẹo một bên — vết của động tác vặn mình đón nắng lặp lại mỗi ngày | 👁 cá thể do người kể đặt tên. Tật hướng nắng suy từ 📖 *ngủ dưới nắng, hạt hấp thụ nắng mà lớn* (Ruby/Sapphire/Emerald) |
+| Con lớn bảo trợ | **Scar-Shoulder** | **Vai Rách** | mảng da rách bên sườn | 👁 cá thể do người kể đặt tên. Không có canon cho cá thể này — **đừng ghi nguồn giả** |
+| Con chim săn mồi | **Ash-Eye** | **Mắt Tro** | một bên mắt phủ màng đục màu tro | 👁 cá thể do người kể đặt tên. Loài 📖 **Fearow** — Bulbapedia, phân bố Kanto |
+| Cổ thụ đầu đàn | **Moss-Back** (cái) | **Lưng Rêu** | rêu và dương xỉ mọc trên lưng; nhụy giữa bông hoa | 👁 cá thể do người kể đặt tên. Dị hình giới tính 📖 Bulbapedia — Venusaur gender differences |
+| Người kể | *unnamed, "I"* | *không nêu tên, xưng "tôi"* | nhà sinh vật học thực địa | — |
+| Credit / bìa sổ | **Tuan La** | **Tuấn La** | tên tác giả, chỉ hiện dạng chữ | — |
+| Địa danh | **Viridian Forest** | **Rừng Viridian** | rừng Kanto nơi Bulbasaur sống hoang dã | 📖 **Pokémon Let's Go Pikachu/Eevee** — Bulbasaur bắt được ngoài hoang dã ở Viridian Forest. *(Gen 1 Red/Blue/Yellow KHÔNG có Bulbasaur hoang dã ở đâu cả — ghi sai phiên bản là hỏng chính luật này.)* |
+| Nơi bầy tụ họp | **The Mysterious Garden** | **Khu Vườn Kỳ Bí** | lòng chảo khuất, nơi cả bầy cùng đổi hình | 🎬 **Anime tập 51** *Bulbasaur's Mysterious Garden* — kể như **truyền thuyết của người bản xứ**, không phải danh lục |
+
+> **Ô "Dẫn chứng" không được để trống, và không được ghi một lời khẳng định thay cho nguồn.**
+> Cá thể do người kể đặt tên thì ghi thẳng là 👁 — đó là câu trả lời trung thực, không phải chỗ trống.
+> `check-episode.py` soát ô này.
 
 Người kể **không bao giờ nói tên mình**. Mở bằng "Tôi là…" là biến phim tư liệu thành vlog, và kéo
 sự chú ý ra khỏi khu rừng. Anh ta chỉ là một ống kính biết ngẫm. Tên thật đi bằng đường chữ:
-lower-third mở đầu `TUẤN LA · RỪNG GIÓ GẬP, KANTO`, rồi credit cuối video và mô tả kênh.
+lower-third mở đầu `TUẤN LA · VIRIDIAN FOREST, KANTO`, rồi credit cuối video và mô tả kênh.
 
 ## Quy ước cho tập sau
 

@@ -25,8 +25,11 @@ nghiệp vụ và chỗ nào còn làm tay.
   (phải kèm một loài có thật ở Trái Đất).
 - **Cảnh tiến hoá không có lột da.** Chỉ sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
 - Mọi khả năng phải nêu **cái giá** của nó.
-- Tên nhân vật là **danh từ chỉ một dấu tích nhìn thấy được** (Búp Lệch, Vai Rách, Mắt Tro, Lưng Rêu),
-  và chỉ được gọi **sau khi** khán giả đã thấy cái dấu ấy. Mã thực địa (K7) là neo giữa bản VI và EN.
+- **Tên và địa danh lấy tiếng Anh làm gốc**, là **danh từ chỉ một dấu tích nhìn thấy được**
+  (Crookedbud, Scar-Shoulder, Ash-Eye, Moss-Back), và **chỉ được gọi sau khi** khán giả đã thấy cái
+  dấu ấy. Mọi tên gọi và địa danh phải có **dẫn chứng canon**: game + phiên bản · anime + số tập ·
+  manga + chương. **Không bịa địa danh** khi canon đã có (Kanto → Viridian Forest). Mã thực địa
+  (K-01) là neo giữa hai bản: **màn hình ghi tên EN, giọng VI đọc tên VI**.
 - **Giải phẫu**: được bàn và được vẽ, nhưng theo lối nghiên cứu — dạng X-quang mô phỏng, nền xanh,
   xương, mạch năng lượng chạy trong thân; vết thương nhỏ trên da thì được. Không máu me, không nội
   tạng, không mổ xẻ. Cảnh ghép đôi dừng ở phô diễn, làm tổ, chăm con.

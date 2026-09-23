@@ -194,12 +194,24 @@ def main(slug: str) -> int:
                 continue
             if "credit" in cols[0].lower():   # tên chỉ hiện dưới dạng chữ, không ai đọc lên
                 continue
-            m = re.match(r"\*\*(.+?)\*\*", cols[1])
-            if not m:
+            # bảng có cả cột EN lẫn cột VI (thứ tự đã đổi khi chốt luật EN-gốc). Lời dẫn của bản
+            # nào thì chứa tên của bản ấy, nên chấp nhận khớp ở BẤT KỲ cột tên nào.
+            names = [x for c in cols[1:3] for x in re.findall(r"\*\*(.+?)\*\*", c)]
+            names = [re.sub(r"\s*\(.*?\)", "", n).strip() for n in names]
+            if not names:
                 continue
+            m = type("M", (), {"group": lambda self, i, n=names[0]: n})()
             n = m.group(1).strip()
             checked += 1
-            where = [b for b in order if n in beats.get(b, "")]
+            # Luật canon: mọi tên và địa danh phải có ô dẫn chứng. Ô trống hoặc "—" là chưa tra
+            # nguồn; một lời khẳng định thay cho nguồn thì máy không phân biệt được, nhưng ô trống
+            # thì bắt được — và đó đã là phần lớn số ca.
+            cite = cols[-1].strip() if len(cols) >= 5 else ""
+            if cols[0].strip().lower() not in ("người kể", "credit / bìa sổ") and cite in ("", "—", "-"):
+                E(f"“{n}” chưa có dẫn chứng trong CAST.md — mọi tên và địa danh phải ghi nguồn "
+                  f"(game + phiên bản · anime + số tập · manga + chương), hoặc ghi rõ 👁 là do "
+                  f"người kể đặt")
+            where = [b for b in order if any(x in beats.get(b, "") for x in names)]
             if not where:
                 W(f"tên “{n}” có trong bảng CAST.md nhưng không thấy trong lời dẫn")
             elif len(where) == 1 and len(order) > 6 and where[0] not in order[-2:]:
