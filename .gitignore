@@ -8,6 +8,7 @@ src/videos.gen.ts
 __pycache__/
 *.pyc
 public/img/**/*.jpg
+!public/img/**/layers/*.jpg   # lớp tách nền cắt tay, không sinh lại được
 !public/img/**/.keep
 public/video/**/*.mp4
 experiments/**/*.gif
