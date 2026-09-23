@@ -113,6 +113,10 @@ pre{background:#1a1d23;border-radius:4px;padding:8px;font-size:11px;max-height:2
       <select id="gate"><option value="">không</option><option value="green">green</option>
       <option value="pink">pink</option><option value="bright">bright · chỉ vùng sáng</option></select>
     </label>
+    <div class="row">
+      <button id="snap">Bám biên vật thể</button>
+      <span id="snapv" class="dim"></span>
+    </div>
     <div class="row dim" style="margin-top:8px">Thanh cắt — kéo ở mép ảnh</div>
     <label><input type="checkbox" id="fT">cắt trên</label>
     <label><input type="checkbox" id="fB">cắt dưới</label>
@@ -169,30 +173,47 @@ function pos(e){ const b = ov.getBoundingClientRect();
   return [(e.clientX-b.left)/b.width, (e.clientY-b.top)/b.height]; }
 
 let mode = null;
-$("#add").onclick = () => { mode = "new"; $("#msg").textContent = "kéo trên ảnh để khoanh vùng"; };
+function hint(s){ $("#msg").textContent = s; }
+$("#add").onclick = () => { mode = "new"; hint("Bước 1 — kéo chuột trên ảnh để khoanh một vùng"); };
 
 ov.onmousedown = e => {
   const [x,y] = pos(e);
-  if (mode === "new"){ drag = {t:"ellipse", x0:x, y0:y}; return; }
-  // trúng vùng nào thì chọn; kéo từ trong ra = mũi tên
+  if (mode === "new"){
+    // tạo ĐÚNG MỘT vùng rồi sửa tại chỗ trong lúc kéo
+    R.push({cx:x, cy:y, sx:0.01, sy:0.01, kind:"drift", ax:0, ay:0, amp:1, gate:"bright"});
+    sel = R.length - 1;
+    drag = {t:"ellipse", x0:x, y0:y, i:sel};
+    mode = null;
+    draw();
+    return;
+  }
   for (let i=R.length-1;i>=0;i--){
-    const r=R[i], dx=(x-r.cx)/r.sx, dy=(y-r.cy)/r.sy;
-    if (dx*dx+dy*dy <= 1.2){ sel=i; drag={t:"arrow", i}; draw(); return; }
+    const r=R[i], dx=(x-r.cx)/Math.max(r.sx,0.01), dy=(y-r.cy)/Math.max(r.sy,0.01);
+    if (dx*dx+dy*dy <= 1.3){ sel=i; drag={t:"arrow", i}; hint("Bước 2 — kéo ra ngoài để đặt hướng và biên độ"); draw(); return; }
   }
   sel=-1; draw();
 };
+
 ov.onmousemove = e => {
   if (!drag) return;
   const [x,y] = pos(e);
-  if (drag.t==="ellipse"){ drag.x1=x; drag.y1=y;
-    const r={cx:(drag.x0+x)/2, cy:(drag.y0+y)/2, sx:Math.abs(x-drag.x0)/2, sy:Math.abs(y-drag.y0)/2,
-             kind:"drift", ax:0, ay:0, amp:1, gate:""};
-    R[R.length] = R.tmp ? R[R.length-1] : r; R[R.length-1]=r; R.tmp=true; draw();
-  } else { const r=R[drag.i]; r.ax=x-r.cx; r.ay=y-r.cy; draw(); }
+  const r = R[drag.i];
+  if (drag.t === "ellipse"){
+    r.cx = (drag.x0 + x) / 2;
+    r.cy = (drag.y0 + y) / 2;
+    r.sx = Math.max(Math.abs(x - drag.x0) / 2, 0.01);
+    r.sy = Math.max(Math.abs(y - drag.y0) / 2, 0.01);
+  } else {
+    r.ax = x - r.cx;
+    r.ay = y - r.cy;
+  }
+  draw();
 };
+
 ov.onmouseup = () => {
-  if (drag && drag.t==="ellipse"){ R.tmp=false; mode=null; sel=R.length-1; $("#msg").textContent="kéo từ tâm ra để đặt hướng"; }
-  drag=null; draw();
+  if (drag && drag.t === "ellipse") hint("Bước 2 — kéo TỪ TRONG vùng ra ngoài để đặt hướng");
+  else if (drag) hint("Xong. Chọn kiểu bên phải rồi bấm Render thử.");
+  drag = null; draw();
 };
 
 function renderList(){
@@ -211,6 +232,14 @@ $("#kind").onchange = e => { R[sel].kind=e.target.value; draw(); };
 $("#gate").onchange = e => { R[sel].gate=e.target.value; draw(); };
 $("#amp").oninput = e => { R[sel].amp=+e.target.value; draw(); };
 $("#del").onclick = () => { R.splice(sel,1); sel=-1; draw(); };
+$("#snap").onclick = async () => {
+  const r = R[sel];
+  $("#snapv").textContent = "đang bắt…";
+  const j = await post("/mask", {index: sel, region: {cx:r.cx, cy:r.cy, sx:r.sx, sy:r.sy}});
+  if (j.ok){ r.mask = j.path; $("#snapv").textContent = "đã bám · phủ " + (j.cover*100).toFixed(1) + "%"; }
+  else $("#snapv").textContent = "hỏng: " + j.err;
+  draw();
+};
 for (const [k,def] of [["T",0.15],["B",0.55],["L",0.2],["R",0.8]])
   $("#f"+k).onchange = e => { R[sel]["f"+k] = e.target.checked ? def : null; draw(); };
 
@@ -232,6 +261,7 @@ function spec(){
       if (r.kind==="blink"){ m.strength=+(Math.abs(py)/D.height*6*a).toFixed(3); m.peak=0.65; m.width=0.06; }
       if (r.kind==="jaw"){ m.drop_px=+(Math.abs(py)*a).toFixed(2); }
       if (r.gate) m.color_gate=r.gate;
+      if (r.mask) m.region_mask=r.mask;
       const f={};
       if (r.fT!=null) f.top=[+r.fT.toFixed(3), +(r.fT+0.08).toFixed(3)];
       if (r.fB!=null) f.bottom=[+(r.fB-0.08).toFixed(3), +r.fB.toFixed(3)];
@@ -262,6 +292,35 @@ $("#render").onclick = async () => {
 };
 draw();
 </script></html>"""
+
+
+def snap_mask(cx, cy, sx, sy, idx):
+    """Vẽ đại một elip, để máy bắt lấy biên vật thể bên trong.
+
+    GrabCut lấy hộp bao quanh elip làm gợi ý, tự tách nền khỏi vật. Trả về ảnh xám cùng cỡ ảnh
+    gốc, render.py nhân nó vào trọng số. KHÔNG nhân lại Gaussian ở đây — render.py đã làm rồi,
+    nhân hai lần thì chuyển động teo mất.
+    """
+    import cv2
+    import numpy as np
+    img = cv2.imread(str(IMG), cv2.IMREAD_COLOR)
+    if img is None:
+        raise ValueError(f"không đọc được ảnh: {IMG}")
+    hgt, wid = img.shape[:2]
+    pad = 1.35
+    x0 = max(1, int((cx - sx * pad) * wid)); x1 = min(wid - 1, int((cx + sx * pad) * wid))
+    y0 = max(1, int((cy - sy * pad) * hgt)); y1 = min(hgt - 1, int((cy + sy * pad) * hgt))
+    if x1 - x0 < 8 or y1 - y0 < 8:
+        raise ValueError("vùng quá nhỏ để bắt biên")
+    mask = np.zeros((hgt, wid), np.uint8)
+    cv2.grabCut(img, mask, (x0, y0, x1 - x0, y1 - y0),
+                np.zeros((1, 65), np.float64), np.zeros((1, 65), np.float64),
+                4, cv2.GC_INIT_WITH_RECT)
+    m = np.where((mask == cv2.GC_FGD) | (mask == cv2.GC_PR_FGD), 255, 0).astype(np.uint8)
+    m = cv2.GaussianBlur(m, (0, 0), max(2.0, min(wid, hgt) * 0.004))   # mép mềm, không răng cưa
+    out = WORK / f"mask-{idx}.png"
+    cv2.imwrite(str(out), m)
+    return out, float((m > 40).mean())
 
 
 class H(BaseHTTPRequestHandler):
@@ -303,8 +362,16 @@ class H(BaseHTTPRequestHandler):
         p = urlparse(self.path).path
         n = int(self.headers.get("Content-Length", 0))
         body = json.loads(self.rfile.read(n).decode("utf-8"))
-        spec, regions = body["spec"], body["regions"]
-        spec["_studio"] = regions          # nhớ hình vẽ để mở lại còn sửa tiếp
+        if p == "/mask":
+            r = body["region"]
+            try:
+                path, cover = snap_mask(r["cx"], r["cy"], r["sx"], r["sy"], body["index"])
+            except Exception as e:                       # noqa: BLE001 — báo thẳng ra UI
+                return self._send(200, json.dumps({"ok": False, "err": str(e)[:200]}))
+            print(f"  bắt biên vùng {body['index']}: phủ {cover:.1%} khung")
+            return self._send(200, json.dumps({"ok": True, "path": str(path), "cover": cover}))
+        spec = body.get("spec") or {}
+        spec["_studio"] = body.get("regions", [])   # nhớ hình vẽ để mở lại còn sửa tiếp
         if p == "/save":
             SPEC.parent.mkdir(parents=True, exist_ok=True)
             SPEC.write_text(json.dumps(spec, ensure_ascii=False, indent=2) + NL, encoding="utf-8")
