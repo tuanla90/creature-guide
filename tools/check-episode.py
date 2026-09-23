@@ -10,6 +10,7 @@ Chỉ kiểm thứ máy kiểm được. Những thứ thuộc về thẩm mỹ 
 
 import importlib.util
 import statistics
+from collections import Counter
 import json
 import re
 import sys
@@ -51,6 +52,12 @@ MOMENT_BAD, MOMENT_THIN = 1.2, 2.5
 # Ngưỡng tuyệt đối chưa đủ: một tập có nhịp trung vị 15s thì cảnh 3s vẫn là hẫng, dù 3s nghe không
 # ngắn. Nên soát thêm theo nhịp của CHÍNH tập đó — dưới ngần này lần trung vị là lệch nhịp.
 MOMENT_REL = 0.25
+
+# Nhịp hình: một tập dùng mãi một loại cảnh thì beat nào cũng giống beat nào, và câu chuyện mất
+# nhịp dù lời dẫn vẫn đúng. FULL_BLEED là các element chiếm cả khung — chúng là "động từ" của hình.
+BLEED = ("world", "specimen", "clip", "notepage", "anatomy")
+SAME_RUN = 4          # bao nhiêu beat liên tiếp cùng một công thức hình thì báo
+DOMINANT = 0.75       # một loại cảnh chiếm quá ngần này thì tập bị đơn điệu
 # Callout của specimen còn cần camera đẩy tới nơi rồi thẻ mới hiện (T = 40% đoạn, tối đa 26 khung).
 CALLOUT_BAD, CALLOUT_THIN = 1.2, 2.0
 
@@ -370,6 +377,43 @@ def main(slug: str) -> int:
             W(f"cảnh lệch nhịp: {m} — không ngắn tuyệt đối, nhưng hẫng so với các cảnh quanh nó")
         if not short_bad and not short_thin and not off:
             K(f"không cảnh nào dưới {MOMENT_THIN}s hay lệch nhịp")
+
+    # ---- nhịp hình ----------------------------------------------------------
+    sig, bleed_count = {}, Counter()
+    for bid in order:
+        s = scenes.get(bid)
+        if not isinstance(s, dict):
+            continue
+        kinds = [e.get("el") for m in s.get("moments", []) for e in m.get("stack", [])
+                 if e.get("el") in BLEED]
+        if kinds:
+            sig[bid] = tuple(kinds)
+            bleed_count.update(kinds)
+
+    total_bleed = sum(bleed_count.values())
+    if total_bleed:
+        top, n = bleed_count.most_common(1)[0]
+        if n / total_bleed > DOMINANT:
+            W(f"nhịp hình đơn điệu: “{top}” chiếm {n}/{total_bleed} cảnh "
+              f"({n / total_bleed:.0%}) — xen clip, specimen hay trang sổ vào cho đổi nhịp")
+        for kind in ("clip", "notepage", "anatomy"):
+            if bleed_count[kind] == 0:
+                W(f"cả tập không có cảnh “{kind}” nào")
+
+        # chuỗi beat liên tiếp cùng một công thức hình
+        ids = [b for b in order if b in sig]
+        run_start = 0
+        for i in range(1, len(ids) + 1):
+            same = i < len(ids) and sig[ids[i]] == sig[ids[run_start]]
+            if not same:
+                length = i - run_start
+                if length >= SAME_RUN:
+                    formula = ", ".join(sig[ids[run_start]])
+                    W(f"beat {ids[run_start]}–{ids[i - 1]} ({length} beat liền) cùng một công thức "
+                      f"hình [{formula}] — khán giả thấy y hệt nhau")
+                run_start = i
+        if len(sig) and not any("nhịp hình" in m or "công thức" in m for m in warn):
+            K("nhịp hình có đổi giữa các beat")
 
     # ---- in kết quả ---------------------------------------------------------
     for m in ok:

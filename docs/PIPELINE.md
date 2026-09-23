@@ -207,6 +207,11 @@ Luật cảnh ngắn đo **hai kiểu**, vì một kiểu không đủ:
 
 Sửa bằng cách tăng `w` của moment hoặc bỏ bớt một moment trong beat — đừng kéo dài lời dẫn cho vừa hình.
 
+Và **nhịp hình**: một loại cảnh chiếm quá 75% thì tập đơn điệu; bốn beat liền cùng một công thức hình
+thì khán giả thấy y hệt nhau. Năm loại cảnh tràn khung là năm "động từ" khác nhau — `world` mở ra,
+`specimen` soi vào, `clip` cho chuyển động thật, `notepage` dừng lại ghi chép, `anatomy` nhìn xuyên
+qua. Dùng mãi một động từ thì câu chuyện mất nhịp dù lời dẫn vẫn đúng.
+
 Rồi **người xem một lượt trên bản dựng, có tiếng, không tua** — ghi chú ngay tại chỗ:
 
 ```bash
