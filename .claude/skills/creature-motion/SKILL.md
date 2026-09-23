@@ -32,3 +32,27 @@ Dependencies: Python, `opencv-python`, `numpy`, `Pillow`.
 Inspect the animation itself and the contact sheet at normal viewing size. Check that the skull, planted feet, eggs and nest stay stable; chest movement reads as breathing rather than whole-body inflation; plant/soft parts move around their roots; and no doubled edges or detached body patches appear. Keep the head shape and crown stable. Use `loop_mode: cyclic` for a closed forward path: the exact first/last pose matches while offset sway axes continue through the seam. Use `boomerang` only if the user wants a deliberate return along the same path. If these checks fail, adjust the spec, compositing mode or mask and render again. Stop when the shot reads naturally; don't make every part move just because it is available.
 
 Deliver the loop plus its source spec. Mention any remaining visual limitations honestly. `scripts/render.py` is the portable motion engine; the Ivysaur spec is only one preset.
+
+## Hai thứ hay sai, và cách bắt bằng số
+
+**1 · `face_side` — con vật quay đầu sang đâu.**
+`anchors.face_fade` che một phía để hơi thở không lan lên đầu, nhưng nó **mặc định giả sử đầu ở bên
+phải khung**. Ảnh nào con vật quay đầu sang trái thì phải khai `"face_side": "left"`, nếu không mặt
+nạ sẽ che **đúng cái sườn cần thở** và để nguyên cái sọ.
+
+Dấu hiệu: **sọ lệch ngang hoặc hơn sườn**. Đã dính thật ở `s04-bulbasaur-sunbath` — sọ 2,78 còn
+sườn chỉ 1,01. Khai `face_side: "left"` là đảo lại ngay.
+
+**2 · Đừng nghiệm thu bằng mắt trên contact sheet.** Chênh vài pixel thì mắt không thấy, nhưng chạy
+ở tốc độ thật lại thành cả con vật phồng lên. Đo:
+
+```bash
+PYTHONUTF8=1 python .claude/skills/creature-motion/scripts/check-motion.py out/<shot>.gif   --still "SỌ=0.46,0.42,0.68,0.62" --still "CHÂN=0.44,0.80,0.90,0.88" --still "NỀN=0,0.88,1,1"   --move  "SƯỜN=0.72,0.60,0.88,0.85" --move "CỦ=0.57,0.16,0.87,0.50"
+```
+
+Dáng số ĐÚNG: vùng phải-động lệch **gấp vài lần** vùng phải-đứng-yên.
+
+| | sọ | chân | nền | sườn | củ |
+|---|---|---|---|---|---|
+| sai (`face_side` thiếu) | 2,78 | 1,23 | 0,18 | 1,01 | 5,23 |
+| đúng | **0,58** | **0,59** | **0,20** | **4,16** | **2,22** |

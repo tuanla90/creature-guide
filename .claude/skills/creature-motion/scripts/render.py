@@ -130,7 +130,16 @@ def add_motion(region: dict, progress: float, mode: str, breath_skew: float, xx:
         weight = weight * np.clip((yy / height - top_a) / (top_b - top_a), 0, 1)
         weight *= np.clip((bottom_b - yy / height) / (bottom_b - bottom_a), 0, 1)
         face_min = float(anchors.get("face_min", 0))
-        weight *= 1 - (1 - face_min) * np.clip((xx / width - face_a) / (face_b - face_a), 0, 1)
+        # face_side: phía nào của khung là CÁI ĐẦU. Mặc định "right" (giữ nguyên hành vi cũ).
+        # Con vật quay đầu sang trái thì phải lật, nếu không sẽ che nhầm đúng cái sườn cần thở
+        # và để nguyên cái sọ — sọ động mạnh hơn sườn là dấu hiệu đặt sai cờ này.
+        face_side = str(anchors.get("face_side", "right")).lower()
+        if face_side not in ("left", "right"):
+            raise ValueError(f"face_side phải là left hoặc right, không phải {face_side!r}")
+        ramp = np.clip((xx / width - face_a) / (face_b - face_a), 0, 1)
+        if face_side == "left":
+            ramp = 1 - ramp
+        weight *= 1 - (1 - face_min) * ramp
         dx += (xx - cx) * float(motion.get("width_scale", 0)) * breath * weight
         dy += (float(motion.get("drop_px", 0)) + (yy - cy) * float(motion.get("height_scale", 0))) * breath * weight
     elif kind == "blink":

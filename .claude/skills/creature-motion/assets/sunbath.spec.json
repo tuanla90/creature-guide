@@ -1,0 +1,77 @@
+{
+  "duration_seconds": 4.0,
+  "fps": 25,
+  "output_width": 1376,
+  "loop_mode": "cyclic",
+  "composite_mode": "warp_only",
+  "breath_skew": 0.38,
+  "motions": [
+    {
+      "kind": "breath",
+      "name": "flank",
+      "center": [
+        0.8,
+        0.72
+      ],
+      "sigma": [
+        0.07,
+        0.07
+      ],
+      "width_scale": 0.011,
+      "height_scale": 0.009,
+      "drop_px": 2.6,
+      "anchors": {
+        "top_fade": [
+          0.54,
+          0.64
+        ],
+        "bottom_fade": [
+          0.7,
+          0.79
+        ],
+        "face_fade": [
+          0.72,
+          0.8
+        ],
+        "face_side": "left",
+        "face_min": 0.0
+      }
+    },
+    {
+      "kind": "sway",
+      "name": "bulb",
+      "center": [
+        0.715,
+        0.3
+      ],
+      "sigma": [
+        0.085,
+        0.12
+      ],
+      "pivot": [
+        0.742,
+        0.54
+      ],
+      "angle_degrees": 0.55,
+      "shift_px": [
+        0.4,
+        -0.3
+      ],
+      "phase": 0.15,
+      "color_gate": "green"
+    },
+    {
+      "kind": "jaw",
+      "name": "muzzle",
+      "center": [
+        0.52,
+        0.76
+      ],
+      "sigma": [
+        0.055,
+        0.018
+      ],
+      "drop_px": 0.9
+    }
+  ]
+}
