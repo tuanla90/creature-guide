@@ -95,6 +95,8 @@ Máy không đọc ra được những mục sau, nên người đọc:
 - [ ] **D8** Không mẹo nào dùng hai lần (người kể nhầm, tưởng chết, lạc mất…).
 - [ ] **D9** Không cảnh nào trước lần đổi hình trông giống lần đổi hình (củ mở, sáng, phồng).
 - [ ] **D11** Beat giới thiệu ≤ 20–25 giây.
+- [ ] **D14** Mỗi điều lạ có một lẽ đi kèm (không uống nước → nước đi đường nào; sống thành đàn →
+      vì sao). Người kể chỉ đoán khi có căn cứ; không có căn cứ thì để người kể tò mò.
 
 Duyệt ra lỗi mới thì **đóng gói nó** theo cách ghi ở đầu DNA.md trước khi đóng vòng duyệt.
 

@@ -16,10 +16,13 @@ TERMS = [
     (r"\bnhụy\b", "vi", "“cấu trúc giống hạt” — canon không nói đó là nhụy thật", "D1"),
     (r"\bpistil\b", "en", "“seed-like structure”", "D1"),
     (r"(?<!lục )\bxanh lam\b", "vi", "“xanh lục lam” — kiểm màu canon, đừng rút gọn màu", "D6"),
+    (r"\btiêu nắng\b", "vi", "“tiêu hao năng lượng” — chữ tổng quát, không chữ tự chế", "D13"),
+    (r"\bthu,? (và )?chi\b|cột “chi”", "vi", "“năng lực · cái giá” — không dùng ẩn dụ sổ sách", "D13"),
+    (r"\bincome\b|\bexpense\b", "en", "“what it can do · what it costs”", "D13"),
 ]
 
 # ---- D2 · dè dặt: câu nói về cơ chế bên trong phải có chữ rào ----------------------------------
-MECH = {"vi": r"\b(kho|dự trữ|tiêu sạch|cạn kiệt|dốc cạn)\b",
+MECH = {"vi": r"\b(kho|dự trữ|tiêu sạch|tiêu hao|cạn kiệt|dốc cạn)\b",
         "en": r"\b(store|reserve|paid for|used up)\b"}
 HEDGE = {"vi": r"\b(ngờ|có lẽ|có thể|tôi nghĩ|tôi tin|hình như|dường như|chưa chắc|không chứng minh|đoán|danh lục|dòng|người ta|kể|bảo)\b",
          "en": r"\b(suspect\w*|perhaps|maybe|might|may|seem\w*|believe|think|guess|cannot prove|catalogue|say|says|told)\b"}

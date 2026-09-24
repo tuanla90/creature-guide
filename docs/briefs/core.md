@@ -75,6 +75,12 @@ animals ("gã khổng lồ", "kẻ săn mồi"); no stage directions or [pause] 
 - **Nothing before the change may look like the change**: no bulb opening, glowing or swelling in an
   earlier beat. Powder puffs from the gaps between the leaf layers; the bulb keeps its shape.
 - **The introduction beat stays short** (≤ 20–25 s): the question, the choice, what the code means.
+- **Plain words over coined ones**: "uses up energy", "what it can do / what it costs". No
+  home-made terms ("spends sunlight") and no bookkeeping metaphor (income, expense).
+- **Every oddity comes with a reason.** It never drinks → where the water comes from. They live as a
+  herd → why (the only open sunlight, shared alarm). The narrator guesses only when he has grounds;
+  without grounds he is curious and asks, he does not assume (never "I believed it had come to
+  die" with nothing to support it).
 
 ## Hard rules. Breaking one means the draft is thrown out
 

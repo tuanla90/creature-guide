@@ -142,6 +142,32 @@ nói lại điều đã nói.
 
 Ép ở **R**. Nếu tái diễn thì thêm vào `dna_lint`.
 
+## D13 · Chữ tổng quát, không chữ tự chế
+
+Lỗi đã gặp (vòng 5): "tiêu nắng" và cột sổ "thu, và chi". Đó là những chữ người kể tự chế ra, và
+người xem phải dừng lại để giải nghĩa.
+
+**Luật:** gọi bằng chữ tổng quát, ai nghe cũng hiểu ngay: **tiêu hao năng lượng**, **năng lực · cái
+giá phải trả**. Ẩn dụ sổ sách (thu, chi, lãi, lỗ) không dùng làm khung cho tập.
+
+Ép ở **M** (`TERMS`, mã D13) và **B**.
+
+## D14 · Điều lạ nào cũng cần một lẽ, và đoán thì phải có căn cứ
+
+Lỗi đã gặp (vòng 5):
+- Beat 04 nói nó không bao giờ uống nước, rồi bỏ lửng. Nêu điều lạ thì phải đưa kèm một giả thuyết:
+  nước đi lên qua bàn chân ngập trong bùn.
+- Beat 06 nói bảy con phải sống chung một trảng cỏ, nhưng không nói vì sao. Hành vi bầy đàn nào cũng
+  cần **lý do sinh thái**: đây là khoảng nắng trống duy nhất; một con rạp xuống thì cả đàn rạp theo.
+- Beat 13 để người kể "tin rằng nó tìm đến để chết", trong khi không có căn cứ nào cho chuyện đó.
+  Người kể được phép sai, nhưng cái sai phải **có lý do**. Không có lý do thì để người kể **tò mò**
+  và đặt câu hỏi.
+
+**Luật:** nêu một điều lạ thì kèm một lẽ (📖, hoặc 🔬 có rào). Người kể chỉ đoán điều mình có căn cứ
+để đoán.
+
+Ép ở **R** và **B**.
+
 ## D12 · Bàn giao và công cụ
 
 | Lỗi đã gặp | Luật | Ép ở |

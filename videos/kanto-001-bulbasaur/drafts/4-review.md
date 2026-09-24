@@ -147,3 +147,20 @@ Máy: `tools/dna_lint.py` (mới) chạy trong `check-episode.py` và `handoff.p
 Gemini V4 cũ, nó bắt đủ các lỗi vòng này đã chỉ ra: nết/temperament, nhụy, xanh lam, bốn câu kho dự
 trữ không có chữ rào. Plan có cờ `incident` (03) · `promise` (02) · `sets`/`pays` (bóng chim, giá
 của màu da) · `change` (14). `content.py` khai `RESERVED = {"hạt": …}`.
+
+## Vòng 5 · duyệt trên trang (2026-09-24)
+
+Chủ dự án bấm Duyệt 10 beat (00–03, 05, 07, 08, 11, 12, 15); Cần sửa 6 beat:
+- **04** — thêm giả thuyết nước: "Tôi ngờ rằng nước đi lên qua đôi bàn chân ngập trong bùn, theo lối
+  rễ cây hút nước từ đất."
+- **06** — nói lý do bảy con sống chung: trảng cỏ là khoảng nắng trống duy nhất dưới tán rừng già;
+  và (🔬) một con rạp xuống là cả đàn rạp theo, nối với cái bóng ở beat 03.
+- **09** — "thu, và chi" → "một bên ghi năng lực, một bên ghi cái giá phải trả". Beat 10: cột "cái giá".
+- **10** — "tiêu nắng" → "tiêu hao năng lượng" (thêm chữ rào: máy bắt câu "tôi thấy chúng tiêu hao");
+  "kho nắng" → "phần năng lượng tích từ nắng ban trưa".
+- **13** — bỏ "tin rằng nó tìm đến để chết" (không có căn cứ). Thay bằng một trang sổ kín câu hỏi:
+  "Mười hai con vật ấy tụ về đây để làm gì, và sáng mai K-01 sẽ ra sao?"
+- **14** — "không còn giống K-01 mà tôi từng ghi chép".
+
+Đóng gói: DNA D13 (chữ tổng quát, máy bắt "tiêu nắng", "thu/chi", income/expense), D14 (điều lạ phải
+có lẽ, đoán phải có căn cứ; checklist + brief).

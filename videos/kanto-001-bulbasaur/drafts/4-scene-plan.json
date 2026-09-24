@@ -498,9 +498,9 @@
   },
   "09": {
    "act": "Hồi 4 · Cái giá",
-   "title": "Thu, và chi",
+   "title": "Năng lực và cái giá",
    "chip": "👁 OBSERVATION",
-   "caption": "Income and expense",
+   "caption": "What it can do, what it costs",
    "scenes": [
     {
      "at": "lay flattened",
@@ -519,7 +519,7 @@
      "el": "notepage",
      "who": "—",
      "shot": "trang sổ",
-     "what": "“Khả năng” bị gạch; viết đè “thu · chi”, hai cột hiện dần — không một con số",
+     "what": "“Khả năng” bị gạch; hai cột hiện dần: năng lực · cái giá — không một con số",
      "src": {
       "kind": "reuse",
       "id": "v3-x05-ledger"

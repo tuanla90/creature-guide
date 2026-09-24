@@ -84,7 +84,7 @@
 
 ## 04 · Một vòng khép kín
 
-*Hồi 2 · Cái dạ dày thứ hai · 🔬 HYPOTHESIS · đích 41s · VI ~57s · EN ~67s · chữ trên hình: A closed loop*
+*Hồi 2 · Cái dạ dày thứ hai · 🔬 HYPOTHESIS · đích 41s · VI ~64s · EN ~77s · chữ trên hình: A closed loop*
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
@@ -94,7 +94,7 @@
 | EN | VI |
 |---|---|
 | Yet sunlight alone is not enough. Every plant needs water and minerals as well, and it took me another three weeks of following K-01 to begin to guess where it finds them. | Thế nhưng chỉ có nắng thì chưa đủ. Cây cối nào cũng cần thêm nước và khoáng, và tôi phải theo thêm ba tuần nữa mới bắt đầu đoán được K-01 kiếm hai thứ ấy ở đâu. |
-| Every afternoon, once the light had turned golden, it would amble down to the edge of a small pond beside the clearing. There it stood for a long while, both front feet sunk deep in the cool mud. Rings spread slowly across the water, and yet not once did I see it lower its head to drink. | Chiều nào cũng vậy, khi nắng đã ngả vàng, nó lững thững lội ra mép cái ao nhỏ cạnh trảng cỏ. Rồi nó đứng yên rất lâu, hai chân trước lún sâu trong lớp bùn mát lạnh. Mặt nước gợn lên từng vòng, vậy mà chẳng lần nào tôi thấy nó cúi đầu uống lấy một ngụm. |
+| Every afternoon, once the light had turned golden, it would amble down to the edge of a small pond beside the clearing. There it stood for a long while, both front feet sunk deep in the cool mud. Rings spread slowly across the water, and yet not once did I see it lower its head to drink. I suspect the water rises through those feet sunk in the mud, the way a root draws it from the soil. | Chiều nào cũng vậy, khi nắng đã ngả vàng, nó lững thững lội ra mép cái ao nhỏ cạnh trảng cỏ. Rồi nó đứng yên rất lâu, hai chân trước lún sâu trong lớp bùn mát lạnh. Mặt nước gợn lên từng vòng, vậy mà chẳng lần nào tôi thấy nó cúi đầu uống lấy một ngụm. Tôi ngờ rằng nước đi lên qua đôi bàn chân ngập trong bùn, theo lối rễ cây hút nước từ đất. |
 | As for the minerals, I suspect they come from inside the animal itself. Back home, beneath the coral reefs, there are algae that live inside the coral's own tissue and feed on the waste of their host. | Còn khoáng, tôi ngờ rằng nó lấy ngay từ bên trong mình. Ở quê tôi, dưới những rạn san hô, có loài tảo sống lẫn trong mô san hô và lấy chính chất thải của vật chủ làm thức ăn. |
 | If this bulb lives the same way, then it is being fed on whatever K-01's body throws away: a closed circle, in which not a single drop is lost. | Nếu cái củ này cũng sống theo cách ấy, thì nó đang được bón bằng chính những gì cơ thể K-01 thải ra. Một vòng tròn khép kín, không rơi rớt đi đâu lấy một giọt. |
 
@@ -118,7 +118,7 @@
 
 ## 06 · Khoảng cách hai thân
 
-*Hồi 3 · Chạm · 👁 OBSERVATION · đích 45s · VI ~73s · EN ~91s · chữ trên hình: K-04*
+*Hồi 3 · Chạm · 👁 OBSERVATION · đích 45s · VI ~85s · EN ~110s · chữ trên hình: K-04*
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
@@ -129,7 +129,7 @@
 
 | EN | VI |
 |---|---|
-| If the seed and the animal must share one body, the seven Bulbasaur of the herd must share one clearing. And the way they divide the sunlight gave me another clue. They never lie pressed together: each keeps a space of its own, just wide enough for the sun to fall straight onto the bulb on its back. | Nếu cái hạt và con thú phải sống chung trong một thân, thì bảy con Bulbasaur cũng phải sống chung trên một trảng cỏ. Và cách chúng chia nhau từng vệt nắng cho tôi thêm một manh mối. Chúng chẳng bao giờ nằm sát vào nhau: con nào cũng giữ riêng một khoảng trống, vừa đủ rộng để nắng rọi thẳng xuống cái củ trên lưng. |
+| The seed and the animal must share one body; the seven Bulbasaur of the herd must share one clearing. Under the dense canopy of the old forest, it is the only open patch of sun for a long way around. I suspect there is a second reason: on the day the shadow passed, the moment one animal dropped flat, the whole herd dropped with it. And the way they divide the sunlight gave me another clue. They never lie pressed together: each keeps a space of its own, just wide enough for the sun to fall straight onto the bulb on its back. | Cái hạt và con thú phải sống chung trong một thân, còn bảy con Bulbasaur thì phải sống chung trên một trảng cỏ. Dưới tán rừng già dày đặc, đây là khoảng nắng trống duy nhất quanh vùng. Tôi ngờ rằng còn một lẽ nữa: hôm cái bóng lướt qua, chỉ cần một con rạp xuống là cả đàn rạp theo. Và cách chúng chia nhau từng vệt nắng cho tôi thêm một manh mối. Chúng chẳng bao giờ nằm sát vào nhau: con nào cũng giữ riêng một khoảng trống, vừa đủ rộng để nắng rọi thẳng xuống cái củ trên lưng. |
 | As evening comes and the shadow of the old forest creeps out across the clearing, the last patches of sunlight shrink quickly, and only then does the jostling begin. The animals lean shoulder against shoulder and shove one another back and forth, yet not one of them ever bites. Whichever gives way simply wanders off to find another patch of light. | Chiều xuống, bóng rừng già bò dần ra trảng cỏ, những vệt nắng còn sót lại co lại rất nhanh, và bấy giờ mới có chuyện chen lấn. Mấy con Bulbasaur ép vai, huých sườn, đẩy nhau dùng dằng, nhưng tuyệt nhiên không con nào cắn con nào. Con thua lẳng lặng bỏ đi tìm vệt nắng khác. |
 | Every night, K-01 lies about two body-lengths from a much larger Bulbasaur, never nearer and never farther, and the two of them have never once touched. | Đêm nào K-01 cũng nằm cách một con Bulbasaur to lớn hơn chừng hai thân mình, không xa hơn, cũng không gần hơn. Hai con chưa bao giờ chạm vào nhau. |
 | Then one day that larger animal tore a strip of skin from its flank, and from then on I could pick it out from the rest of the herd. I gave it a field code of its own: K-04. | Rồi một hôm, con to lớn ấy bị rách một mảng da bên sườn, và từ hôm đó tôi mới phân biệt được con vật ấy giữa đàn. Tôi ghi cho nó một mã số riêng: K-04. |
@@ -174,14 +174,14 @@
 | On the first dive, K-01 did not run. It pressed itself flat beneath a clump of ferns and lay without moving, and it was the ferns that hid it, not its skin. The bird swept down and passed by barely an arm's length away. | Lần bổ nhào thứ nhất, K-01 không chạy. Nó ép sát người xuống dưới một bụi dương xỉ rồi nằm im không nhúc nhích, và chính bụi dương xỉ đã che cho nó, chứ không phải bộ da. Con chim sà xuống, sượt qua chỉ cách một sải tay. |
 | On the second dive, a fine, pale powder puffed out from the gaps between the layers of K-01's bulb, spreading in a haze. The bird veered, lost its line, and flew off over the trees. | Đến lần thứ hai, từ những khe giữa các bẹ củ trên lưng K-01, một làn bột mịn màu nhạt phụt ra thành một đám mờ. Con chim chao đi, lệch hướng, rồi bay khỏi trảng cỏ. |
 
-## 09 · Thu, và chi
+## 09 · Năng lực và cái giá
 
-*Hồi 4 · Cái giá · 👁 OBSERVATION · đích 27s · VI ~40s · EN ~47s · chữ trên hình: Income and expense*
+*Hồi 4 · Cái giá · 👁 OBSERVATION · đích 27s · VI ~43s · EN ~50s · chữ trên hình: What it can do, what it costs*
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
 | “lay flattened” | K-01 nằm im trong bóng, thở nông, củ nhỏ đi thấy rõ · K-01 · medium · ngang | Sinh mới `v4-k01-spent` | Ảnh thở |
-| “two columns” | “Khả năng” bị gạch; viết đè “thu · chi”, hai cột hiện dần — không một con số · — · trang sổ | Có sẵn `v3-x05-ledger` | Trang sổ |
+| “two columns” | “Khả năng” bị gạch; hai cột hiện dần: năng lực · cái giá — không một con số · — · trang sổ | Có sẵn `v3-x05-ledger` | Trang sổ |
 
 | EN | VI |
 |---|---|
@@ -189,13 +189,13 @@
 | All through that afternoon, K-01 lay flattened in the shade, not eating, not moving, not even lifting its head when I came close. | Suốt cả buổi chiều hôm ấy, K-01 nằm bẹp dưới bóng râm, không ăn, không nhúc nhích, cũng chẳng buồn ngẩng lên khi tôi lại gần. |
 | And the bulb on its back had shrunk, plainly, to the naked eye. | Và cái củ trên lưng nó xẹp hẳn đi, nhìn thấy rõ bằng mắt thường. |
 | I cannot prove it, but I suspect that what had saved its life was paid for out of the very store it had spent weeks of sunshine filling. | Tôi không chứng minh được, nhưng tôi ngờ rằng thứ vừa cứu mạng nó đã được trả bằng chính cái kho mà nó mất bao nhiêu tuần phơi nắng mới tích được. |
-| From that day on, I stopped writing such things under the heading “abilities”, and instead opened a fresh page and ruled it into two columns: income, and expense. | Từ hôm ấy, tôi thôi không ghi những chuyện như thế vào mục “khả năng” nữa, mà mở hẳn một trang mới, kẻ làm hai cột: thu, và chi. |
+| From that day on, I stopped writing such things under the heading “abilities”, and instead opened a fresh page and ruled it into two columns: one for what it can do, and one for what it costs. | Từ hôm ấy, tôi thôi không ghi những chuyện như thế vào mục “khả năng” nữa. Tôi mở hẳn một trang mới, kẻ làm hai cột: một bên ghi năng lực, một bên ghi cái giá phải trả. |
 
 > **V · One organ, two uses** — thẻ chương (Hồi 5 · Cùng một cơ quan)
 
 ## 10 · Cùng một cơ quan
 
-*Hồi 5 · Cùng một cơ quan · ⚔ ARENA · đích 50s · VI ~86s · EN ~109s · chữ trên hình: Same organ, two uses*
+*Hồi 5 · Cùng một cơ quan · ⚔ ARENA · đích 50s · VI ~88s · EN ~110s · chữ trên hình: Same organ, two uses*
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
@@ -206,12 +206,12 @@
 
 | EN | VI |
 |---|---|
-| That “expense” column soon filled up, but its heaviest entries were not written in the forest. This land has something that my home does not: people set animals like these to fight one another, and it was there that I saw them spend their sunlight fastest. | Cột “chi” ấy chẳng bao lâu đã kín chữ, nhưng những dòng nặng nhất lại không ghi ở trong rừng. Vùng đất này có một điều mà quê tôi không có: người ta cho những con vật như thế này đấu với nhau. Và chính ở đó, tôi thấy chúng tiêu nắng nhanh nhất. |
+| That “cost” column soon filled up, but its heaviest entries were not written in the forest. This land has something that my home does not: people set animals like these to fight one another, and it was there, I suspect, that they burn through their energy fastest. | Cột “cái giá” ấy chẳng bao lâu đã kín chữ, nhưng những dòng nặng nhất lại không ghi ở trong rừng. Vùng đất này có một điều mà quê tôi không có: người ta cho những con vật như thế này đấu với nhau. Và tôi ngờ rằng chính ở đó, chúng tiêu hao năng lượng nhanh nhất. |
 | One afternoon I went down to a small town at the foot of the forest. I squeezed into the outer ring of a yard of beaten earth and watched a whole match. | Một buổi chiều, tôi xuống một thị trấn nhỏ dưới chân rừng, chen vào đứng ở vòng ngoài một sân đất nện, và xem trọn một trận. |
 | In that yard, the vines no longer reached out to greet. They shot out fast as the wind and cracked down onto the hard earth with a sound as sharp as a whip, throwing up streaks of dust. | Trong sân, những sợi dây leo không còn vươn ra để chào nhau nữa. Chúng vụt ra nhanh như gió, quất xuống nền đất nện nghe chát chúa như tiếng roi da, bụi đất tung lên thành từng vệt. |
 | It was the same organ: in the forest it picks fruit and brushes off caterpillars, and in the yard it became a weapon. I pass no judgement on that, for back home an elephant's trunk can caress a newborn calf, and it can also tear a great branch from a tree. | Vẫn là cơ quan ấy: trong rừng thì hái quả và gạt sâu, vào sân thì thành vũ khí. Tôi không phán xét chuyện đó, bởi ở quê tôi, cái vòi voi cũng vừa âu yếm được voi con, vừa bẻ gãy được cả một cành cây lớn. |
 | But one moment kept me writing until dawn. The animal in the yard suddenly stood stock-still for a beat, the bulb on its back brightening from within, and only then did it release a beam of light. | Nhưng có một khoảnh khắc khiến tôi ngồi viết đến tận sáng. Con vật trong sân bỗng đứng khựng lại một nhịp, cái củ trên lưng sáng dần lên từ bên trong, rồi mới phóng ra một luồng sáng. |
-| The crowd around me jeered at that pause as a weakness. What I suspected I had seen was a whole noon's store of sunlight spent in a single breath. | Đám đông quanh tôi chê nhịp chờ ấy là điểm yếu. Còn tôi thì ngờ rằng mình vừa thấy cả một kho nắng tích từ ban trưa bị tiêu sạch trong một hơi thở. |
+| The crowd around me jeered at that pause as a weakness. What I suspected I had seen was a whole noon's worth of energy used up in a single breath. | Đám đông quanh tôi chê nhịp chờ ấy là điểm yếu. Còn tôi thì ngờ rằng mình vừa thấy cả phần năng lượng tích từ nắng ban trưa bị tiêu hao trong một hơi thở. |
 | The next morning, back in the forest, I found K-01 already lying in the first patch of sun. | Sáng hôm sau trở về rừng, tôi đã thấy K-01 nằm sẵn trong vệt nắng đầu tiên. |
 
 ## 11 · Hai đặc tính
@@ -256,7 +256,7 @@
 
 ## 13 · Khu Vườn Kỳ Bí
 
-*Hồi 6 · Đổi hình · 🎬 LOCAL ACCOUNT · đích 32s · VI ~52s · EN ~63s · chữ trên hình: The Mysterious Garden*
+*Hồi 6 · Đổi hình · 🎬 LOCAL ACCOUNT · đích 32s · VI ~57s · EN ~67s · chữ trên hình: The Mysterious Garden*
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
@@ -271,7 +271,7 @@
 | Back in the clearing, K-04 lay every morning in exactly the same place, beside an empty space two body-lengths wide. Not one animal in the herd ever lay down in that space. | Ở lại trảng cỏ, sáng nào K-04 cũng nằm đúng chỗ cũ, bên cạnh một khoảng trống rộng bằng hai thân mình. Không con nào trong đàn vào nằm chỗ trống ấy. |
 | On the fifth night, I found K-01 in a hollow hidden behind a ring of ancient trees. It stood in a circle with eleven other Bulbasaur, silent, none of them touching, and among all that blue-green skin under the moon, it alone was pale. | Đến đêm thứ năm, tôi tìm thấy K-01 trong một hõm đất khuất sau vòng cây cổ thụ. Nó đứng thành một vòng tròn cùng mười một con Bulbasaur khác, lặng im, không con nào chạm vào con nào. Dưới ánh trăng, giữa những lớp da xanh lục lam, chỉ có mình nó là nhạt màu. |
 | The people here say that once every year, these animals gather in that place. They call it the Mysterious Garden. | Người ở đây kể rằng mỗi năm, loài vật này lại tụ về chốn ấy một lần. Họ gọi nơi đó là Khu Vườn Kỳ Bí. |
-| That night I believed K-01 had come there to die, and I filled an entire page of my notebook mourning it. | Đêm ấy, tôi đã tin rằng nó tìm đến đó để chết, và ngồi viết kín cả một trang sổ tiếc thương. |
+| That night I filled an entire page of my notebook with questions I could not yet answer. Why had twelve animals gathered here, and what would K-01 be by morning? | Đêm ấy, tôi ngồi viết kín cả một trang sổ, toàn những câu hỏi chưa có lời đáp. Mười hai con vật ấy tụ về đây để làm gì, và sáng mai K-01 sẽ ra sao? |
 
 ## 14 · Nụ vàng giữa những nụ hồng
 
@@ -291,7 +291,7 @@
 | Across the grass, in the early mist, large shapes loomed. They were Ivysaur, and every one of them carried a pink flower bud on its back. | Bên kia bãi cỏ, trong làn sương sớm, thấp thoáng những bóng hình to lớn. Đó là những con Ivysaur, con nào trên lưng cũng mang một nụ hoa màu hồng. |
 | All except one, which carried a bud of yellow. | Riêng một con mang trên lưng một nụ hoa màu vàng. |
 | Its skin had turned leaf-green now, no longer pale as before, but the bud was a shining gold, and I knew at once who it was. | Da nó giờ đã chuyển sang màu xanh lá, không còn nhàn nhạt như trước, nhưng cái nụ thì vàng óng, và tôi biết ngay đó là ai. |
-| The creature before me was no longer the animal I had been recording. And yet, when I opened my notebook, it tilted its head toward the scratch of my pen, just as it always had. | Sinh vật đứng trước mặt tôi không còn là con vật tôi từng ghi chép. Vậy mà khi tôi mở sổ ra, nó vẫn nghiêng đầu về phía tiếng ngòi bút sột soạt, như bao lần trước. |
+| The creature before me no longer looked like the K-01 I had been recording. And yet, when I opened my notebook, it tilted its head toward the scratch of my pen, just as it always had. | Sinh vật đứng trước mặt tôi không còn giống K-01 mà tôi từng ghi chép. Vậy mà khi tôi mở sổ ra, nó vẫn nghiêng đầu về phía tiếng ngòi bút sột soạt, như bao lần trước. |
 
 > **VII · Two lives, one body** — thẻ chương (Hồi 7 · Không có câu trả lời)
 
