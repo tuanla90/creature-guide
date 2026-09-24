@@ -30,6 +30,7 @@ Trạng thái: ✅ đã dùng · ⏸ hoãn · ⬜ chưa dùng
 | 18 | **Mega có phải trạng thái mùa sinh sản?** | Mega: hoa to hơn, lưng và chân khoẻ lên · Gigantamax: phấn gây hắt hơi, ngất | Cá hồi đổi hình mùa đẻ · hoa xác thối vài năm nở một lần | ⏸ chủ dự án hoãn |
 | 19 | Mùa đông chúng đi đâu? | luôn di chuyển tìm nắng; mạnh nhất mùa hè | Bướm vua di cư · cây rụng lá ngủ đông | ⬜ mới chạm nhẹ ở beat 17 |
 | 20 | Nhóm trứng Monster + Grass nghĩa là gì ngoài đời? | Bulbapedia | Loài lai, ranh giới loài ngoài tự nhiên | ⬜ |
+| 21 | **Solar Beam = tụ điện sinh học** — cả buổi sáng quang hợp cho một nhát bắn? | "Tia Nắng cần một lượt nạp" (Gen I) → bulb tích trữ, không phải thu năng lượng trong trận | Tụ điện: nạp chậm (giờ), phóng nhanh (ms); pin mặt trời nối acquy | ⬜ → **xem spec trang journal bên dưới** |
 
 ## Tập sau
 
@@ -40,6 +41,114 @@ Trạng thái: ✅ đã dùng · ⏸ hoãn · ⬜ chưa dùng
 | 3 | #0025 Pikachu | Cơ quan tích điện nằm ở đâu, và vì sao nó không tự làm mình bị thương? |
 | 4 | #0010 Caterpie → #0012 Butterfree | Bên trong cái kén, cơ thể cũ bị phá đi tới đâu? |
 | 5 | #0050 Diglett | Thứ nằm dưới mặt đất là phần còn lại của cơ thể, hay là hang? |
+
+---
+
+## Trang journal mẫu · #21 · Solar Beam — tụ điện sinh học
+
+> Spec sản xuất đầy đủ cho một double-spread journal page.  
+> Áp dụng: `kind: fieldnote` cho cả hai trang, engine render text lên sau.
+
+### Trang trái — sinh ảnh (không có chữ)
+
+| Yếu tố | Mô tả cho prompt |
+|---|---|
+| Nền | Parchment ố vàng nâu, cạnh tối, vết ố cà phê góc dưới phải |
+| Sketch chính | K-01 Bulbasaur Shiny (tone xanh nhạt hơn thường), 3/4 angle, mặt hướng về phía trên trái (về phía nắng), bulb xoay theo ánh sáng — pen sketch nâu sepia |
+| Sketch nhỏ 1 | Bulb cross-section: đường tròn, bên trong có seed oval, các đường mạch toả ra từ seed |
+| Sketch nhỏ 2 | Footprint K-01 với hai đường gạch song song = thước đo |
+| Góc dưới phải | Chữ ký Dr. Holth + dấu tam giác nhỏ (ký hiệu "đang nghiên cứu tiếp") |
+
+**Labels engine render (trang trái):**
+```
+SOLAR SKIN          → da lưng xanh
+BULB (Ø ~4cm)       → củ
+SEED CAVITY         → lõi hạt trong sketch cross-section
+TRACK · K-01        → dấu chân
+```
+
+---
+
+### Trang phải — sketch + field notes
+
+**Diagram năng lượng (sketch đơn giản, không có chữ trong ảnh):**
+```
+[hộp nhỏ] → [hộp lớn] → [tia nhọn ra ngoài]
+  ☀ in        BULB         BEAM out
+```
+Ba hình đơn giản nối bằng mũi tên — engine sẽ gán số lên sau.
+
+**Labels engine render (trang phải — giữ tiếng Anh ở cả hai bản):**
+```
+CHARGING RATE: ~1.3 J/s        → mũi tên vào hộp BULB
+CAPACITY: ~17,000 J            → trong hộp BULB
+DISCHARGE: 0.5s · 34 kW        → mũi tên ra BEAM
+RECHARGE: ~3.7h full sun       → bên dưới hộp
+VINE WHIP: ~6J · 5s recharge   → ghi chú nhỏ góc dưới
+```
+
+---
+
+### Field notes — bản Việt
+
+```
+Ngày 14, 9:23 sáng. K-01 định vị nhìn thẳng về phía mặt trời —
+không phải tư thế nghỉ ngơi thông thường. Củ xoay theo góc ánh
+sáng rõ rệt.
+
+Tôi ước lượng: diện tích hấp thụ khoảng 0.08 m², hiệu suất thực
+vật thực tế (~2%) → tích khoảng 1.3 joule mỗi giây.
+
+Để gây bỏng độ 2 trên 0.1 m² cần ~17,000 joule. Ở tốc độ 1.3 J/s:
+mất khoảng 13,000 giây — gần 4 tiếng.
+
+Cả buổi sáng.
+
+Nó không đứng im. Nó đang làm việc.
+
+🔬 Lượt "nạp" trong trận không phải thu năng lượng — mà là định
+hướng và hội tụ chùm tia. Năng lượng đã tích từ trước đó nhiều
+giờ. Bulb = tụ điện sinh học: nạp chậm, phóng nhanh.
+
+34 kilowatt trong nửa giây. Từ một con vật nặng 6.9 kg.
+
+📖 Bulbapedia · Solar Beam · Gen I · "charges on first turn"
+```
+
+### Field notes — bản Anh
+
+```
+Day 14, 09:23. K-01 oriented directly toward the sun — not its
+usual resting posture. The bulb tracks solar angle noticeably.
+
+Rough estimate: ~0.08m² absorptive area, 2% efficiency (C3 plant
+baseline) → ~1.3 joules per second.
+
+Delivering thermal burns across 0.1m² requires ~17,000J. At 1.3J/s:
+~13,000 seconds to accumulate. Nearly four hours.
+
+A morning.
+
+It isn't standing still. It's working.
+
+🔬 The "charge turn" in battle is not energy collection — it's beam
+focusing and targeting. Energy was stored hours earlier. The bulb
+functions as a biological capacitor: slow charge, fast discharge.
+
+34 kilowatts for half a second. From a 6.9kg animal.
+
+📖 Bulbapedia · Solar Beam · Gen I · "charges on first turn"
+```
+
+### Song ngữ — cách triển khai
+
+Một ảnh parchment + sketch duy nhất. Engine render text theo bản:
+- **Bản VI:** body text tiếng Việt · labels kỹ thuật giữ tiếng Anh
+- **Bản EN:** body text tiếng Anh · labels giữ nguyên
+
+Labels kỹ thuật (`CHARGING RATE`, `CAPACITY`, v.v.) **không dịch** — đây là quy ước khoa học quốc tế, giữ nguyên ở cả hai bản tăng độ authentic.
+
+---
 
 ## Ghi chú luật
 
