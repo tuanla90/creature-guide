@@ -44,7 +44,7 @@ Tập nào xong, tập nào đang dở, tập nào trong IDEA-BANK còn ⬜ mà 
 - **WIP = 1.** Tập đang dở chưa qua cổng chặng 10 thì **đừng đề xuất mở tập mới** — nói thẳng là
   đang bị chặn ở đâu.
 - Chọn tập tiếp theo: hook mạnh · đủ canon để không phải bịa · có ít nhất một dấu tích nhìn thấy
-  được để đặt tên cá thể.
+  được — ưu tiên loài có Shiny rõ, để làm đặc điểm của cá thể trung tâm.
 - Xen **Khung B (so sánh)** khi hai loài trong hàng đợi giải cùng một bài toán sinh tồn — xem
   [EPISODE-FRAME.md](../../../docs/EPISODE-FRAME.md).
 

@@ -29,11 +29,12 @@ nghiệp vụ và chỗ nào còn làm tay.
   (phải kèm một loài có thật ở Trái Đất).
 - **Cảnh tiến hoá không có lột da.** Chỉ sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
 - Mọi khả năng phải nêu **cái giá** của nó.
-- **Tên và địa danh lấy tiếng Anh làm gốc**, là **danh từ chỉ một dấu tích nhìn thấy được**
-  (Crookedbud, Scar-Shoulder, Ash-Eye, Moss-Back), và **chỉ được gọi sau khi** khán giả đã thấy cái
-  dấu ấy. Mọi tên gọi và địa danh phải có **dẫn chứng canon**: game + phiên bản · anime + số tập ·
-  manga + chương. **Không bịa địa danh** khi canon đã có (Kanto → Viridian Forest). Mã thực địa
-  (K-01) là neo giữa hai bản: **màn hình ghi tên EN, giọng VI đọc tên VI**.
+- **Không đặt tên riêng cho con vật.** Cá thể trung tâm = **đặc điểm canon + mã thực địa**
+  (`Shiny Bulbasaur · K-01`) — ưu tiên Shiny. Con khác gọi bằng tên loài; con phụ quay lại nhiều lần
+  thì cho mã (`K-04`), vẫn không đặt tên. Đặc điểm **chỉ được gọi sau khi** khán giả đã thấy nó.
+  "Shiny" là từ của người bản xứ, nói một lần rồi dùng mã. Xem [docs/CAST.md](docs/CAST.md).
+- Địa danh phải có **dẫn chứng canon** (game + phiên bản · anime + số tập · manga + chương). **Không
+  bịa địa danh** khi canon đã có (Kanto → Viridian Forest).
 - **Giải phẫu**: được bàn và được vẽ, nhưng theo lối nghiên cứu — dạng X-quang mô phỏng, nền xanh,
   xương, mạch năng lượng chạy trong thân; vết thương nhỏ trên da thì được. Không máu me, không nội
   tạng, không mổ xẻ. Cảnh ghép đôi dừng ở phô diễn, làm tổ, chăm con.

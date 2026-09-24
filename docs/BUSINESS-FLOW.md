@@ -100,7 +100,7 @@ chưa có gì" của bảng cũ biến mất, vì EN không còn là phái sinh.
 | B2 | Tra canon, ghi rõ **phiên bản nào được chọn** | bảng `NGUON` | Bulbapedia / nguồn lore | 🟡 | tập |
 | B3 | Tìm loài thật đối chiếu — **phải có nguồn tra được** | cột 🔬 | tra cứu web | 🟡 | tập |
 | B4 | Hồ sơ hình dáng loài (hai đường, xem dưới) | `bible/creatures/<loài>.json` | JSON | 🟡 | tập |
-| B5 | Đặt tên cá thể | `docs/CAST.md` | luật trong skill | 🟡 | tập |
+| B5 | Chốt đặc điểm cá thể trung tâm (không đặt tên) | `docs/CAST.md` · `individuals.<mã>.trait` | luật trong skill | 🟢 | tập |
 | B6 | **Viết kịch bản EN** | bản EN | skill scriptwriter (phải đảo sang EN) | 🟢 | tập |
 | B7 | Soát máy: logic, nhãn bằng chứng, kiểm chứng nguồn | báo cáo ✗/⚠ | `check-episode.py` + Claude | 🟢 | tập |
 | B8 | Soát văn: giọng, sức ép kể chuyện | ghi chú sửa | Gemini + `stop-slop` đã cắt 3 luật | 🟢 | tập |
@@ -122,9 +122,7 @@ mâu thuẫn dị bản thành nội dung thay vì giấu nó đi.
 - *Hình không cố định* (rồng, kỳ lân): **câu chuyện trước** → suy ra hình tượng cá thể (khiếm khuyết
   hay nét nổi bật trên ngoại hình) → rồi mới sinh ảnh.
 
-**B5 · Hai loại tên.** Cá thể **có tên canon** (Smaug, Buckbeak) thì tôn trọng tên gốc. Cá thể **vô
-danh** trong lore (như K7) thì theo luật kênh: danh từ chỉ một dấu tích nhìn thấy được, và chỉ được
-gọi sau khi khán giả đã thấy dấu ấy. `CAST.md` cần cột phân biệt hai loại.
+**B5 · Không đặt tên.** Cá thể trung tâm = đặc điểm canon + mã thực địa (`Shiny Bulbasaur · K-01`); con khác gọi bằng tên loài. Tên tự đặt đã ping-pong bốn vòng ở tập 001 — bỏ hẳn tầng quyết định ấy. Tên canon (Smaug, Buckbeak) vẫn giữ nguyên.
 
 **B10 · Luật mới, sinh ra từ multi-audio.** Một video, một dòng thời gian, hai track giọng — nên bản
 dịch VI không được dài ngắn tuỳ ý. Mỗi beat có hạn mức thời lượng lấy từ bản EN; lệch quá ngưỡng thì

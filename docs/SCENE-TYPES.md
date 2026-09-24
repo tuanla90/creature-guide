@@ -50,7 +50,7 @@ sau khi ảnh đã sinh — muốn cảnh từ trên xuống thì phải sinh ra
 | `extreme-wide` | mở một hồi, đổi địa điểm. Vùng đất là nhân vật |
 | `wide` | cảnh định vị: con vật ở đâu, bầy đứng thế nào |
 | `medium` | hành vi — cả con vật cùng việc nó đang làm |
-| `close` | cảm xúc, giác quan, dấu tích dùng để đặt tên |
+| `close` | cảm xúc, giác quan, đặc điểm nhận dạng của cá thể trung tâm |
 | `macro` | một chi tiết giải phẫu: vảy, bẹ củ, móng |
 
 **`angle` — máy đặt ở đâu**
@@ -111,13 +111,13 @@ Sinh **một** clip cho mỗi loại rủi ro, từ ảnh đã có, rồi chấm
 | cận cảnh con vật đứng yên | có tự thêm chuyển động thừa không |
 | cảnh toàn có gió, nắng, cỏ | môi trường có động tự nhiên không |
 | con vật đang làm một việc | tay chân có biến dạng không |
-| tấm có dấu tích đặt tên (củ nghẹo) | **dấu tích có giữ nguyên không** — cái này quyết định |
+| tấm có đặc điểm nhận dạng (màu Shiny) | **đặc điểm có giữ nguyên không** — cái này quyết định |
 
 Năm tiêu chí, đạt / không đạt:
 
 1. **Đúng hình** — đúng dáng, đúng hoa văn, đúng tỉ lệ từ đầu tới cuối
 2. **Không méo** — không mọc thêm chi, không chảy nhão, không đổi cấu trúc
-3. **Giữ dấu tích** — thứ dùng để đặt tên còn nhìn ra được
+3. **Giữ đặc điểm** — đặc điểm nhận dạng của cá thể trung tâm còn nhìn ra được
 4. **Chuyển động hợp lý** — đọc ra là hành vi của một con vật, không phải hiệu ứng
 5. **Dùng được bao nhiêu giây** — thường chỉ 2–3 giây đầu sạch; đó mới là độ dài thật
 
@@ -160,7 +160,7 @@ tập 001 lấy **con được chọn** làm mẫu — dấu nhận dạng của
 
 Kịch bản chốt **một** đặc điểm nhìn thấy được của con được theo dõi, ghi vào
 `bible/creatures/<loài>.json` → `individuals.<mã>.trait`. Từ đó ra hai mẫu: con thường và con được chọn.
-Tên của nó **đặt theo đúng đặc điểm ấy**.
+**Không đặt tên riêng**: nó được gọi bằng đặc điểm ấy cộng mã thực địa — `Shiny Bulbasaur · K-01`.
 
 **Ưu tiên Shiny khi loài có Shiny.** Ba lý do:
 

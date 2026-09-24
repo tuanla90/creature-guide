@@ -23,9 +23,8 @@
       ],
       "canon": "📖 Shiny Bulbasaur: thân xanh vàng thay vì xanh lam, củ sẫm hơn; từ Gen VI dịu thành xanh lá nhạt (Bulbapedia: Shiny Pokémon). Tỉ lệ gặp 1/8192 ở Gen II–V, 1/4096 từ Gen VI.",
       "earth": "🔬 biến thể sắc tố hiếm có thật: xanthism (dư sắc tố vàng) ở ếch và rắn, leucism ở cá sấu và chim",
-      "name": "_CHƯA CHỐT_",
-      "nameEn": "_CHƯA CHỐT_",
-      "_pending": "Tên phải đặt theo ĐẶC ĐIỂM đã chốt. Đặc điểm giờ là màu Shiny, nên 'Crookedbud / Búp Lệch' (theo củ nghẹo) không còn khớp — chờ chủ dự án chọn tên.",
+      "name": "Shiny Bulbasaur",
+      "nameEn": "Shiny Bulbasaur",
       "dropAppearance": [
         "blue-green skin"
       ],
@@ -34,11 +33,19 @@
         "teal skin",
         "turquoise skin"
       ],
-      "_promptNote": "Không nhắc tên màu SAI trong marks (kể cả 'instead of blue-green') — mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa vào forbidden."
+      "_promptNote": "Không nhắc tên màu SAI trong marks (kể cả 'instead of blue-green') — mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa vào forbidden.",
+      "_naming": "Không đặt tên riêng. Gọi bằng đặc điểm canon + mã: 'Shiny Bulbasaur · K-01'. Xem docs/CAST.md."
     },
     "K7": {
       "aliasOf": "K-01",
       "_note": "mã cũ, trỏ về K-01 để shot bible cũ vẫn chạy"
+    },
+    "K-04": {
+      "trait": "torn flank",
+      "marks": [
+        "a long healed tear in the hide along its flank, the skin around it thicker and paler"
+      ],
+      "_note": "con lớn nằm cạnh K-01; có mã vì quay lại ở beat 13 và dễ lẫn với cả đàn. Không đặt tên."
     }
   },
   "canon": [

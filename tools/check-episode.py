@@ -184,42 +184,50 @@ def main(slug: str) -> int:
     # ---- 4. nhân vật khớp bảng tên -----------------------------------------
     cast = ROOT / "docs" / "CAST.md"
     if cast.exists():
-        # chỉ đọc cột VI của bảng (dòng bắt đầu bằng |), bỏ phần văn xuôi
+        # Luật mới (docs/CAST.md): KHÔNG đặt tên riêng cho con vật. Cá thể trung tâm = đặc điểm canon
+        # + mã thực địa ("Shiny Bulbasaur · K-01"), con khác gọi bằng tên loài. Nên thứ bền để đối
+        # chiếu với lời dẫn là MÃ THỰC ĐỊA và ĐỊA DANH — không phải cả cụm "một con Fearow".
         body = "\n".join(beats.values())
+        locs = []
+        for f in (ROOT / "bible" / "locations").glob("*.json"):
+            L = json.loads(f.read_text(encoding="utf-8"))
+            locs.append({L["name"]["en"], L["name"]["vi"]} |
+                        {v for a in L.get("areas", {}).values() for v in a.get("name", {}).values()})
         rows = [L for L in cast.read_text(encoding="utf-8").splitlines() if L.startswith("|")]
         checked = 0
         for L in rows:
             cols = [c.strip() for c in L.strip("|").split("|")]
-            if len(cols) < 3:
+            if len(cols) < 3 or set(cols[0]) <= set("-: ") or cols[0] == "Vai":
                 continue
-            # người dẫn và tác giả KHÔNG được có tên trong lời đọc — đừng bắt họ phải xuất hiện
-            if any(k in cols[0].lower() for k in ("credit", "người kể", "tác giả")):
+            role = cols[0].lower()
+            if any(k in role for k in ("credit", "người kể", "tác giả")):
+                continue                        # không được xuất hiện trong lời đọc — đừng bắt
+            m = re.search(r"\*\*(.+?)\*\*", cols[1])
+            if not m:
                 continue
-            # bảng có cả cột EN lẫn cột VI (thứ tự đã đổi khi chốt luật EN-gốc). Lời dẫn của bản
-            # nào thì chứa tên của bản ấy, nên chấp nhận khớp ở BẤT KỲ cột tên nào.
-            names = [x for c in cols[1:3] for x in re.findall(r"\*\*(.+?)\*\*", c)]
-            names = [re.sub(r"\s*\(.*?\)", "", n).strip() for n in names]
-            if not names:
-                continue
-            m = type("M", (), {"group": lambda self, i, n=names[0]: n})()
             n = m.group(1).strip()
             checked += 1
-            # Luật canon: mọi tên và địa danh phải có ô dẫn chứng. Ô trống hoặc "—" là chưa tra
-            # nguồn; một lời khẳng định thay cho nguồn thì máy không phân biệt được, nhưng ô trống
-            # thì bắt được — và đó đã là phần lớn số ca.
-            cite = cols[-1].strip() if len(cols) >= 5 else ""
-            if cols[0].strip().lower() not in ("người kể", "tác giả", "credit / bìa sổ") and cite in ("", "—", "-"):
-                E(f"“{n}” chưa có dẫn chứng trong CAST.md — mọi tên và địa danh phải ghi nguồn "
-                  f"(game + phiên bản · anime + số tập · manga + chương), hoặc ghi rõ 👁 là do "
-                  f"người kể đặt")
-            where = [b for b in order if any(x in beats.get(b, "") for x in names)]
+
+            # Mọi dòng phải có ô dẫn chứng (cột cuối). Ô trống / "—" là chưa tra nguồn.
+            if cols[-1].strip() in ("", "—", "-"):
+                E(f"“{n}” chưa có dẫn chứng trong CAST.md — ghi nguồn (game + phiên bản · anime + số "
+                  f"tập · manga + chương), hoặc ghi rõ 👁 là quan sát của người kể")
+
+            codes = re.findall(r"\bK-\d+\b", n)
+            if codes:                           # cá thể có mã: mã phải có mặt trong lời
+                keys, label = codes, "mã " + ", ".join(codes)
+            elif "địa danh" in role or "nơi" in role:
+                keys = next((sorted(s) for s in locs if n in s), [n])
+                label = f"địa danh “{n}”"
+            else:
+                continue                        # con gọi bằng tên loài — không có gì cố định để so
+            where = [b for b in order if any(k in beats.get(b, "") for k in keys)]
             if not where:
-                W(f"tên “{n}” có trong bảng CAST.md nhưng không thấy trong lời dẫn")
-            elif len(where) == 1 and len(order) > 6 and where[0] not in order[-2:]:
-                # Một nhân vật được ĐẶT TÊN là một lời hứa với khán giả. Xuất hiện đúng một beat
-                # rồi biến mất là tuyến bỏ dở — người xem vẫn đợi nó quay lại tới hết tập.
-                W(f"tuyến bỏ dở: “{n}” chỉ xuất hiện ở beat {where[0]} rồi mất hẳn — "
-                  f"cho nó quay lại một lần, hoặc đừng đặt tên")
+                W(f"{label} có trong CAST.md nhưng không thấy trong lời dẫn")
+            elif codes and len(where) == 1 and len(order) > 6 and where[0] not in order[-2:]:
+                # Một cá thể được cho MÃ là vì nó quay lại. Có mã mà chỉ xuất hiện một beat là
+                # tuyến bỏ dở — hoặc cho nó quay lại, hoặc bỏ mã, gọi nó bằng tên loài.
+                W(f"tuyến bỏ dở: {label} chỉ xuất hiện ở beat {where[0]} — cho quay lại, hoặc bỏ mã")
         K(f"đã đối chiếu {checked} tên trong CAST.md")
     else:
         W("chưa có docs/CAST.md")

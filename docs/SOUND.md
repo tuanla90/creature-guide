@@ -39,7 +39,7 @@ to hơn**; giữ formant (`rubberband ... formant=preserved`, "Change Pitch") th
 
 ## Bảng cue — Kanto #001–003
 
-Mỗi cue: loài thật làm gốc · từ khoá đi tìm · xử lý. `k7` là cá thể Búp Lệch.
+Mỗi cue: loài thật làm gốc · từ khoá đi tìm · xử lý. `k7` là cá thể trung tâm K-01 (Shiny Bulbasaur).
 
 | id | beat | Cue | Thân | Giọng | Chi tiết | Xử lý |
 |---|---|---|---|---|---|---|
@@ -47,7 +47,7 @@ Mỗi cue: loài thật làm gốc · từ khoá đi tìm · xử lý. `k7` là 
 | `amb-edge-dawn` | 01,12 | bìa rừng lúc rạng | — | chim thưa | sương rơi trên lá | như trên, tối hơn |
 | `call-k7-soft` | 00,03 | tiếng thở của K7 lúc nằm | bò rống −70% | ếch ương một tiếng | hơi thở qua lỗ mũi ướt | `asetrate*0.55`, `tremolo=f=17`, lowpass 2.2 kHz |
 | `call-contact` | 06 | tiếng gọi giữ khoảng cách | lợn grunt | cóc trầm | — | như trên, ngắn 0.4 s, lặp 2 tiếng cách 1.2 s |
-| `call-alarm` | 08 | lúc Mắt Tro bổ nhào | — | vạc kêu, hạ 4 bán cung | cỏ bật | attack gắt, cắt đuôi vang |
+| `call-alarm` | 08 | lúc con Fearow bổ nhào | — | vạc kêu, hạ 4 bán cung | cỏ bật | attack gắt, cắt đuôi vang |
 | `bulb-creak` | 12 | củ vặn theo mặt trời | — | — | bẻ cần tây + vặn vải ướt | `asetrate*0.7`, bandpass 1.6 kHz, `aecho` nhẹ |
 | `bulb-open` | 08 | củ hé ra ở đỉnh | — | — | tách vỏ măng, lá tươi xé chậm | kéo dài 1.5 s bằng paulstretch |
 | `powder-burst` | 08 | màn bào tử bung | — | — | nhiễu trắng + thổi miệng đã lọc hơi người | bandpass 4 kHz, fade 15 ms vào / 300 ms ra |
@@ -56,7 +56,7 @@ Mỗi cue: loài thật làm gốc · từ khoá đi tìm · xử lý. `k7` là 
 | `mud-suck` | 04 | rút chân khỏi bùn | — | — | bùn/đất nhão | giữ nguyên, chỉ hạ 2 bán cung |
 | `step-soft` | nhiều | bước chân K7 | sine 45 Hz | — | lá khô vò | 3 lớp, tổng dưới 0.25 s |
 | `step-heavy` | 15 | bước chân Venusaur | sine 38 Hz | — | lá + cành nhỏ gãy | như trên, thêm rung đất 0.6 s sau |
-| `raptor-dive` | 08 | Mắt Tro lao xuống | — | quạ hạ 5 bán cung | gió qua lông cánh | **tránh** tiếng chim ưng đuôi đỏ kinh điển |
+| `raptor-dive` | 08 | con Fearow lao xuống | — | quạ hạ 5 bán cung | gió qua lông cánh | **tránh** tiếng chim ưng đuôi đỏ kinh điển |
 | `rain-leaves` | 15 | mưa trên tán lá | — | — | mưa rơi trên lá rộng | loop |
 | `arena-crowd` | 10,11 | trận đấu của trainer | — | đám đông xa | — | lowpass 1 kHz, mono, đẩy xuống −24 dB |
 | `swell-change` | 13,14 | đêm cả đàn tụ về | gió hút trầm | — | mô gỗ căng, đất lún | **không có tiếng biến hình** — chỉ căng và nín |

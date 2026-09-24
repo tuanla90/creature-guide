@@ -75,8 +75,9 @@ Một shot:
 Rồi `node tools/build-prompts.mjs <ep>`. File `.flow.txt` là thứ dán vào Batch Studio: mỗi block mở
 bằng `[id: …]`, cảnh nào có sinh vật đã có ảnh mẫu thì tự thêm `[ref: <id ảnh mẫu>]`.
 
-**Luật quan trọng nhất:** mỗi dấu tích dùng để đặt tên nhân vật phải có **một shot cận cảnh riêng**.
-Tên đặt theo thứ khán giả không nhìn thấy là tên chết.
+**Luật quan trọng nhất:** đặc điểm nhận dạng của cá thể trung tâm (vd màu Shiny) phải có **một cảnh
+rõ riêng**, và cảnh ấy đứng **trước** chỗ lời dẫn gọi nó ra. Gọi ra một đặc điểm khán giả chưa nhìn
+thấy là chữ rơi vào hư không. Kênh không đặt tên riêng cho con vật — xem `docs/CAST.md`.
 
 ## Sinh ảnh trong Google Flow
 

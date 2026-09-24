@@ -34,11 +34,12 @@ và kiến thức được gài vào dọc đường đi của con đó.
 
 3. **Mọi khả năng phải nêu cái giá của nó.**
 
-4. **Tên cá thể:** có tên canon (Smaug, Buckbeak) thì tôn trọng tên gốc; vô danh trong lore thì đặt
-   theo luật kênh — danh từ chỉ một dấu tích nhìn thấy được, gọi **sau khi** khán giả đã thấy dấu ấy.
+4. **Gọi cá thể:** có tên canon (Smaug, Buckbeak) thì tôn trọng tên gốc. Vô danh trong lore thì
+   **không đặt tên** — cá thể trung tâm là **đặc điểm canon + mã thực địa** (`Shiny Bulbasaur · K-01`),
+   con khác gọi bằng tên loài. Đặc điểm chỉ gọi ra **sau khi** khán giả đã thấy nó.
 
 5. **Chốt đúng MỘT đặc điểm của cá thể trung tâm** ngay ở kịch bản — ưu tiên **Shiny** nếu loài có.
-   Đặc điểm ấy quyết định tên, quyết định ảnh mẫu riêng, và mọi cảnh của nó phải giữ đúng đặc điểm ấy.
+   Đặc điểm ấy là cách gọi nó, quyết định ảnh mẫu riêng, và mọi cảnh của nó phải giữ đúng đặc điểm ấy.
    Xem [SCENE-TYPES.md](SCENE-TYPES.md) mục A3.
 
 6. **Mỗi tập có ít nhất một cảnh X-quang và một trang sổ nghiên cứu.** Người dẫn đi tìm sự sống ×

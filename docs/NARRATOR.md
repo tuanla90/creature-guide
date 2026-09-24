@@ -79,6 +79,9 @@ vào đối tượng. Đôi khi ông nói điều đó ra:
 
 Đó là lời duy nhất về đạo đức ông được phép nói, và chỉ khi câu chuyện đòi. Đừng giảng.
 
+**Ông không đặt tên cho con vật.** Ông gọi chúng bằng mã thực địa. Đặt tên là một kiểu nhận làm của
+mình; mã số là quan sát. Đó cũng là một cách buông.
+
 ## 4 · Cái tên — luật cứng
 
 **Người dẫn không bao giờ nói tên mình trong lời đọc.** Tên chỉ hiện bằng chữ: bìa sổ, chữ ký cuối

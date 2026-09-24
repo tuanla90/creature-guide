@@ -1,5 +1,11 @@
 # TẬP 001 V3 · "CROOKEDBUD — AI ĐANG NUÔI AI?" · bản phân cảnh
 
+> ⚠ **Bản này viết TRƯỚC các luật chốt ngày 2026-09-24** và sẽ được làm lại theo chúng: không đặt tên
+> riêng (cá thể trung tâm là `Shiny Bulbasaur · K-01`, không còn Crookedbud / Búp Lệch / Vai Rách /
+> Mắt Tro / Lưng Rêu) · đặc điểm nhận dạng là màu Shiny, không còn củ nghẹo · góc máy `size`/`angle` ·
+> ảnh `motion` riêng cho creature-motion · địa điểm là tài sản · ảnh tham chiếu. **Đừng lấy bản này
+> làm mẫu cho tập sau** — mẫu là `docs/CAST.md`, `docs/SCENE-TYPES.md`, `docs/NARRATOR.md`.
+
 > **Tập:** Kanto #001 · dòng Bulbasaur · Khung A (một cá thể)
 > **Cá thể trung tâm:** `K-01` · màn hình **Crookedbud** · giọng VI đọc **Búp Lệch**
 > **Người dẫn:** Dr. Holth — bìa sổ `DR. HOLTH · FIELD NOTES`, không bao giờ đọc tên (docs/NARRATOR.md)

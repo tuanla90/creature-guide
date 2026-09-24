@@ -66,10 +66,11 @@ quyết định bố cục, timing và ảnh.
 Skill: **`creature-field-guide-scriptwriter`** (luật kể chuyện, giọng, nhãn bằng chứng, cách đặt tên).
 Ghi tên nhân vật vào [CAST.md](CAST.md) — cả bản VI và EN.
 
-Đặt tên cá thể có **hai luật**:
-- Cá thể **có tên canon** (Smaug, Buckbeak) → tôn trọng tên gốc.
-- Cá thể **vô danh** trong lore (như K7) → danh từ chỉ một dấu tích nhìn thấy được, và chỉ được gọi
-  **sau khi** khán giả đã thấy dấu ấy.
+**Không đặt tên riêng cho con vật** ([CAST.md](CAST.md)):
+- Cá thể **có tên canon** (Smaug, Buckbeak) → giữ tên gốc.
+- Cá thể trung tâm vô danh → **đặc điểm canon + mã thực địa**: `Shiny Bulbasaur · K-01`. Ưu tiên Shiny.
+  Đặc điểm chỉ gọi ra **sau khi** khán giả đã thấy nó.
+- Con khác gọi bằng tên loài; con phụ quay lại nhiều lần thì có mã (`K-04`), không có tên.
 
 > **Cổng:** mỗi beat có đúng một việc để kể, và bạn chỉ được ra nhãn bằng chứng của từng câu.
 
@@ -126,8 +127,8 @@ Hồ sơ hình dáng có **hai đường ngược nhau**:
 - *Hình không cố định* (rồng, kỳ lân): **câu chuyện trước** → suy ra hình tượng cá thể (một khiếm
   khuyết hay một nét nổi bật trên ngoại hình) → rồi mới sinh ảnh.
 
-> **Cổng:** mỗi beat trong `ORDER` có ít nhất một shot; mỗi dấu tích dùng để đặt tên đều có **một
-> shot cận cảnh riêng** — tên đặt theo thứ khán giả không nhìn thấy là tên chết.
+> **Cổng:** mỗi beat trong `ORDER` có ít nhất một shot; đặc điểm của cá thể trung tâm có **một
+> cảnh rõ riêng** — gọi ra một đặc điểm khán giả chưa nhìn thấy là chữ rơi vào hư không.
 
 ## 7 · Sinh ảnh ✋🤖
 

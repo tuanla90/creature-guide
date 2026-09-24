@@ -50,16 +50,17 @@ Rồi đọc tay những thứ linter chưa bắt được:
       me, không nội tạng, không mổ xẻ.
 - [ ] Ghép đôi dừng ở phô diễn, làm tổ, chăm con.
 
-### 1.4 Tên cá thể
+### 1.4 Gọi cá thể
 - [ ] Tên canon (Smaug, Buckbeak) thì giữ nguyên.
-- [ ] Tên tự đặt là **danh từ chỉ một dấu tích nhìn thấy được**, và chỉ được gọi **sau khi** khán giả
-      đã thấy dấu ấy — tức là dấu ấy phải có **một shot cận cảnh riêng**.
-- [ ] Khớp `docs/CAST.md`, cả VI lẫn EN, và mã thực địa neo được hai bản.
+- [ ] **Không một cái tên tự đặt nào.** Cá thể trung tâm là `<đặc điểm> <loài> · <mã>`; con khác gọi
+      bằng tên loài; con phụ quay lại nhiều lần thì có mã, không có tên.
+- [ ] Đặc điểm chỉ được gọi **sau khi** khán giả đã thấy nó — tức là nó có **một cảnh rõ riêng**.
+- [ ] "Shiny" nói **một lần** như từ của người bản xứ, sau đó dùng mã. `PRON` có "Shiny".
 
 ### 1.5 Nhịp cảnh
 - [ ] `check-episode.py` không báo **cảnh bị ngắt sớm**, **cảnh mỏng**, hay **cảnh lệch nhịp**.
 - [ ] Máy chỉ đo được *thời lượng*. Người phải xem cảnh đó có **cần** lâu không: một cảnh cận dấu
-      tích dùng để đặt tên thì phải đủ để nhìn ra cái dấu; một cảnh chuyển thì ngắn là đúng.
+      đặc điểm của cá thể trung tâm thì phải đủ để nhìn ra; một cảnh chuyển thì ngắn là đúng.
 - [ ] Sửa bằng cách tăng `w` của moment, hoặc **bỏ bớt một moment** trong beat — chứ không phải kéo
       dài lời dẫn cho vừa hình.
 
@@ -67,8 +68,8 @@ Rồi đọc tay những thứ linter chưa bắt được:
 - [ ] **Hook của thumbnail phải được tập trả lời.** Đây là lỗi đắt nhất: người bấm vào vì một câu
       hỏi rồi không thấy câu trả lời sẽ bỏ đi ở giây thứ ba mươi, và số liệu sẽ đổ lỗi cho cái hook.
       Sửa lời hoặc sửa `thumb.json` — đừng để hai thứ nói hai đằng.
-- [ ] **Mọi nhân vật được đặt tên đều phải quay lại.** Đặt tên là một lời hứa; tên xuất hiện một beat
-      rồi mất hẳn thì khán giả vẫn đợi nó tới hết tập. Hoặc cho quay lại một lần, hoặc đừng đặt tên.
+- [ ] **Mọi con có mã thực địa đều phải quay lại.** Cho mã là vì nó quay lại; có mã mà chỉ xuất
+      hiện một beat thì hoặc cho quay lại, hoặc bỏ mã và gọi bằng tên loài.
 - [ ] **Cá thể trung tâm không nên vắng cả một beat.** Vắng thì phải là lựa chọn có lý do, và beat
       ấy phải kéo được về chủ thể ở câu cuối.
 - [ ] `docs/IDEA-BANK.md` đánh ✅ đúng beat — ý đã đổi chỗ hoặc bị bỏ thì sửa lại, không để ✅ sai.
@@ -80,8 +81,7 @@ Rồi đọc tay những thứ linter chưa bắt được:
 - [ ] **Không bịa địa danh** khi canon đã có. Ghi đúng **phiên bản** game: Bulbasaur hoang dã ở
       Viridian Forest là canon *Let's Go*, không phải Gen 1.
 - [ ] Ý chỉ có trong anime gắn **🎬** và kể như truyền thuyết của người bản xứ, **không** gắn 📖.
-- [ ] Tên là **danh từ chỉ dấu tích**, không phải mẩu cắt của tên loài, không phải lời mô tả.
-- [ ] Màn hình ghi tên EN, giọng VI đọc tên VI — một video hai track giọng thì chữ dùng chung.
+- [ ] Mã thực địa và "Shiny" giống nhau ở hai bản — không có gì phải dịch.
 
 ### 1.8 Cấu trúc kỹ thuật
 - [ ] Có `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản Short).
