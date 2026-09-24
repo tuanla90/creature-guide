@@ -172,6 +172,13 @@ Hồ sơ hình dáng có **hai đường ngược nhau**:
 Google Flow, project "Creature". Một hai ảnh lẻ thì gõ thẳng vào ô prompt của project; cả loạt thì
 mở Tools → Batch Image Studio Pro, dán `prompts/<ep>.flow.txt`.
 
+**Batch Image Studio Pro V3.0 · thư viện ref** (nâng cấp 2026-09-24). `[ref: id]` tìm theo thứ tự: trong
+lượt chạy hiện tại, rồi tới *Thư viện ref* của tool (lưu trong trình duyệt). Ảnh chính của mọi khối có `[id]` tự
+được ghi vào thư viện này. **SDK của Flow không cho tìm ảnh trong project theo tên**, nên ảnh sinh trước V3.0
+và ảnh tham chiếu tải về (`ref-*`) phải **gán một lần** bằng nút *Gán ảnh* (chọn trong thư viện project hoặc
+*Upload media*). Bấm *Phân tích* là tool liệt kê các ref còn thiếu; khối nào thiếu ref thì không chạy. Gán
+xong thì *Xuất* thư viện (JSON id → mediaId) và cất vào `bible/flow-ref-library.json`, để máy khác *Nhập* lại.
+
 Thứ tự. **Sinh ảnh trong Flow không tốn credit**: sai thì sinh lại, không cần tiếc. Cái đắt là
 **thời gian soát** và toạ độ callout đã đo trên ảnh cũ. Chỉ clip (Veo, Seedance) mới phải hỏi trước:
 1. **Ảnh mẫu** (địa điểm → con thường → con được chọn), kèm ảnh tham chiếu đã tải (`xong refs`).
