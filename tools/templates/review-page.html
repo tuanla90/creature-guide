@@ -35,6 +35,8 @@ header.top{padding-block:26px 6px}
 h1{font:700 clamp(26px,4vw,36px)/1.15 var(--ui);margin:.35em 0 .3em;text-wrap:balance;letter-spacing:-.01em}
 .lede{max-width:74ch;color:var(--muted);margin:0}
 .lede b{color:var(--ink);font-weight:600}
+.localnote{margin:14px 0 0;padding:10px 12px;border-radius:6px;background:var(--regen-bg);color:var(--regen);font-size:13.5px;max-width:74ch}
+.localnote a{color:inherit;font-weight:600}
 .steps{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 4px;padding:0;list-style:none}
 .steps li{font-size:12.5px;padding:6px 10px 6px 8px;border-radius:6px;border:1px solid var(--rule);background:var(--surface);color:var(--muted);display:flex;gap:6px;align-items:center}
 .steps li::before{content:"";width:9px;height:9px;border-radius:50%;border:2px solid var(--faint);flex:none}
@@ -150,6 +152,7 @@ table.script textarea{font:16px/1.5 var(--read)}
   <div class="eyebrow">Creature Field Guide · __SLUG__ · xưởng duyệt</div>
   <h1>__TITLE__</h1>
   <p class="lede">Duyệt lời và cảnh ở một chỗ. <b>Bấm vào mô tả cảnh hay câu lời</b> để sửa thẳng — Claude đọc lại và đưa vào repo. Cảnh nào đã có ảnh thì hiện ảnh; chưa có thì hiện mô tả. <b>Ưng mô tả</b> thì bấm <b>Ra prompt</b> để sinh tay trong Flow, hoặc tích <b>Đưa vào batch</b> rồi <b>Tạo script batch</b> để dán vào Batch Studio.</p>
+  <p class="localnote" id="localnote" hidden></p>
   <ol class="steps" id="steps"></ol>
   <div class="facts" id="facts"></div>
   <div class="legend" id="legend"></div>
@@ -264,6 +267,7 @@ function render(){
       <div class="sub">Lời dẫn — bấm vào câu để sửa</div>
       <div class="tbl"><table class="script"><thead><tr><th>EN · bản gốc</th><th>VI · track VBee</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>
       <div class="review">
+        <button class="small" data-mdbeat="${b.id}" title="Chép riêng beat này dạng Markdown">Chép Markdown beat này</button>
         <div class="btns"><button class="ok" data-status="${b.id}:ok" aria-pressed="false">Duyệt</button><button class="fix" data-status="${b.id}:fix" aria-pressed="false">Cần sửa</button></div>
         <textarea id="note-${b.id}" data-note="${b.id}" placeholder="Ghi chú cho beat ${esc(b.id)}: lời, cảnh, ảnh…" aria-label="Ghi chú beat ${esc(b.id)}"></textarea>
         <span class="saved" id="saved-${b.id}"></span></div>
@@ -290,7 +294,41 @@ function paint(){
   const todo = allScenes.filter(needsImage);
   $("batchbar").innerHTML = `<span class="n">Batch: <b>${picks.size}</b> ảnh được chọn · ${new Set(todo.map(x => x.s.src.id)).size} ảnh chưa có</span>
     <button class="small" data-act="pickall">Chọn mọi ảnh chưa có</button><button class="small" data-act="clear">Bỏ chọn</button>
-    <button class="primary" data-act="batch" ${picks.size ? "" : "disabled"}>Tạo script batch</button>`;
+    <button class="primary" data-act="batch" ${picks.size ? "" : "disabled"}>Tạo script batch</button>
+    <button class="small" data-act="md">Chép Markdown</button>`;
+}
+
+// ---------- Markdown: cùng nội dung trang, lấy chữ đã sửa nếu có
+const SRCV = {reuse:"Có sẵn", regen:"Sinh lại", new:"Sinh mới", earth:"Tải về"};
+const NL = String.fromCharCode(10);
+const mdc = s => String(s ?? "").split("|").join("\\|").split(NL).join(" ");
+function beatMd(b){
+  const L = [`## ${b.id} · ${b.title}`, "", `*${b.act} · ${b.chip} · đích ${b.target}s · VI ~${b.viSec}s · EN ~${b.enSec}s · chữ trên hình: ${b.caption}*`,
+    "", "| Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |", "|---|---|---|---|"];
+  allScenes.filter(x => x.beat === b.id).forEach(x => {
+    const s = x.s, src = s.src, what = edits[x.key] ? edits[x.key].text : s.what;
+    const where = `${SRCV[src.kind] || ""} \`${src.id || ""}\`` + (src.replaces ? ` ← \`${src.replaces}\`` : "") + (s.earth ? ` + ảnh quê nhà: ${mdc(s.earth)}` : "");
+    L.push(`| “${mdc(s.at)}” | ${mdc(what)} · ${mdc(s.who)} · ${mdc(s.shot)} | ${where} | ${MO[s.motion] || s.motion || ""} |`);
+  });
+  L.push("", "| EN | VI |", "|---|---|");
+  for (let i = 0; i < Math.max(b.en.length, b.vi.length); i++){
+    const e = edits[`en-${b.id}-${i}`] ? edits[`en-${b.id}-${i}`].text : b.en[i] || "";
+    const v = edits[`vi-${b.id}-${i}`] ? edits[`vi-${b.id}-${i}`].text : b.vi[i] || "";
+    L.push(`| ${mdc(e)} | ${mdc(v)} |`);
+  }
+  const r = review["b" + b.id];
+  if (r && (r.status || r.note)) L.push("", `**Duyệt:** ${r.status === "ok" ? "Duyệt" : r.status === "fix" ? "Cần sửa" : "—"}${r.note ? " · " + mdc(r.note) : ""}`);
+  return L.join(NL);
+}
+function allMd(){
+  const L = [`# ${document.querySelector("h1").textContent}`, "", "## Ảnh mẫu — sinh trước mọi cảnh", "", "| Ảnh mẫu | Là gì | Nguồn |", "|---|---|---|"];
+  DATA.plates.forEach(p => L.push(`| \`${p.id}\` | ${mdc(p.what)} | ${SRCV[p.src.kind] || ""} |`));
+  let act = null;
+  DATA.beats.forEach(b => {
+    if (b.act !== act){ act = b.act; L.push("", b.chapter ? `> **${b.chapter.kicker} · ${b.chapter.title}** — thẻ chương (${act})` : `# ${act}`); }
+    L.push("", beatMd(b));
+  });
+  return L.join(NL) + NL;
 }
 
 // ---------- batch
@@ -359,7 +397,9 @@ document.addEventListener("click", e => {
   if (t.dataset.earth){ const eb = $("eb-" + t.dataset.earth); eb.classList.toggle("open"); return; }
   if (t.dataset.copy){ const x = allScenes.find(y => y.key === t.dataset.copy); t.dataset.label = "Chép prompt"; copy(x.s.prompt, t); return; }
   if (t.dataset.pick !== undefined && t.type === "checkbox"){ t.checked ? picks.add(t.dataset.pick) : picks.delete(t.dataset.pick); paint(); savePicks(); return; }
+  if (t.dataset.mdbeat){ const b = DATA.beats.find(x => x.id === t.dataset.mdbeat); t.dataset.label = "Chép Markdown beat này"; copy(beatMd(b), t); return; }
   const act = t.dataset.act;
+  if (act === "md"){ t.dataset.label = "Chép Markdown"; copy(allMd(), t); return; }
   if (act === "pickall"){ allScenes.filter(needsImage).forEach(x => picks.add(x.s.src.id)); render(); savePicks(); }
   else if (act === "clear"){ picks.clear(); render(); savePicks(); }
   else if (act === "batch"){ openSheet(); }
@@ -378,7 +418,13 @@ steps(); facts(); render();
 (async () => {
   const c = window.claude;
   db = c && c.use ? await c.use("db") : null;
-  if (!db){ paint(); return; }
+  if (!db){
+    paint();
+    const n = $("localnote"); n.hidden = false;
+    n.innerHTML = (DATA.local ? "Bản mở trên máy: xem ảnh, chép prompt và tạo script batch được. " : "Chế độ xem này không lưu được. ")
+      + "Duyệt, sửa lời và ghi chú chỉ lưu trên bản Artifact" + (DATA.artifactUrl ? ` — <a href="${esc(DATA.artifactUrl)}" target="_blank" rel="noopener">mở bản Artifact</a>.` : ".");
+    return;
+  }
   canWrite = true;
   db.collection("review").onSnapshot(snap => { for (const d of snap.docs){ const v = d.data(); if (v) review[d.id] = {status: v.status || "", note: v.note || ""}; } paint(); }, () => {});
   db.collection("edits").onSnapshot(snap => {

@@ -8,6 +8,9 @@ sau đè file trước), ghép vào tools/templates/review-page.html, ghi ra out
 
 --img-root  nơi có ảnh thật (mặc định public/img/<ep> của repo này). Chạy từ worktree thì trỏ về thư
             mục chính, vì ảnh không nằm trong git.
+--local     bản mở trên máy: ảnh trỏ thẳng vào --img-root (đường dẫn tương đối), không cần asset store.
+            Duyệt / sửa / ghi chú chỉ lưu trên bản Artifact — trang ghi rõ và kèm link.
+--md <file> ghi thêm bản Markdown cùng nội dung (trang cũng có nút Chép Markdown).
 --thumbs    thu nhỏ những ảnh cần hiện mà chưa có link, vào out/<slug>/thumbs/ — chờ tải lên.
 --assets    JSON {id: url} — link các ảnh thu nhỏ đã tải lên asset store của Artifact (mặc định lấy từ
             videos/<slug>/drafts/review-page.json). Ảnh có trên máy mà chưa có link thì trang vẫn biết
@@ -106,6 +109,39 @@ def make_thumbs(slug, img_root, assets, plates, beats):
     print("  tải lên bằng Artifact (asset: true, file_paths ≤ 25/lần), ghi link vào drafts/review-page.json, dựng lại")
 
 
+SRC_VI = {"reuse": "Có sẵn", "regen": "Sinh lại", "new": "Sinh mới", "earth": "Tải về"}
+MO_VI = {"still": "Ảnh tĩnh · camera lia", "breath": "Ảnh thở", "veo": "Clip Veo", "seedance": "Clip Seedance",
+         "page": "Trang sổ", "freeze": "Dừng hình"}
+
+
+def to_markdown(title, beats, plates):
+    """Cùng nội dung với trang duyệt, dạng Markdown — để dán vào tài liệu, chat, hay đọc trên GitHub."""
+    cell = lambda s: str(s or "").replace("|", "\\|").replace("\n", " ")
+    L = [f"# {title}", ""]
+    L += ["## Ảnh mẫu — sinh trước mọi cảnh", "", "| Ảnh mẫu | Là gì | Nguồn |", "|---|---|---|"]
+    L += [f"| `{p['id']}` | {cell(p['what'])} | {SRC_VI.get(p['src']['kind'], '')} |" for p in plates]
+    act = None
+    for b in beats:
+        if b["act"] != act:
+            act = b["act"]
+            L += ["", f"> **{b['chapter']['kicker']} · {b['chapter']['title']}** — thẻ chương ({act})" if b.get("chapter")
+                  else f"# {act}"]
+        L += ["", f"## {b['id']} · {b['title']}", "",
+              f"*{b['act']} · {b['chip']} · đích {b['target']}s · VI ~{b['viSec']}s · EN ~{b['enSec']}s · chữ trên hình: {b['caption']}*",
+              "", "| Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |", "|---|---|---|---|"]
+        for s in b["scenes"]:
+            src = s["src"]
+            where = f"{SRC_VI.get(src['kind'], '')} `{src.get('id', '')}`" + (f" ← `{src['replaces']}`" if src.get("replaces") else "")
+            if s.get("earth"):
+                where += f" + ảnh quê nhà: {cell(s['earth'])}"
+            L.append(f"| “{cell(s['at'])}” | {cell(s['what'])} · {cell(s['who'])} · {cell(s['shot'])} | {where} | "
+                     f"{MO_VI.get(s.get('motion'), s.get('motion', ''))} |")
+        L += ["", "| EN | VI |", "|---|---|"]
+        for i in range(max(len(b["en"]), len(b["vi"]))):
+            L.append(f"| {cell(b['en'][i] if i < len(b['en']) else '')} | {cell(b['vi'][i] if i < len(b['vi']) else '')} |")
+    return "\n".join(L) + "\n"
+
+
 def main(slug):
     ep = "-".join(slug.split("-")[:2])
     vid = ROOT / "videos" / slug
@@ -121,10 +157,19 @@ def main(slug):
         if sk.exists() else {}
     img_root = Path(arg("--img-root", ROOT / "public" / "img" / ep))
     rp = vid / "drafts" / "review-page.json"          # link trang + ảnh đã tải lên, nếu tập đã có trang
-    if arg("--assets"):
+    page = json.loads(rp.read_text(encoding="utf-8")) if rp.exists() else {}
+    out = Path(arg("--out", ROOT / "out" / slug / "review.html"))
+    local = "--local" in sys.argv
+    if local:
+        # bản mở trên máy: ảnh lấy thẳng từ thư mục ảnh của dự án, đường dẫn tương đối từ file ra
+        import os
+        base = out.resolve().parent
+        assets = {f.stem: Path(os.path.relpath(f.resolve(), base)).as_posix()
+                  for f in sorted(img_root.glob("*")) if f.suffix.lower() in (".jpg", ".png", ".webp")}
+    elif arg("--assets"):
         assets = json.loads(Path(arg("--assets")).read_text(encoding="utf-8"))
     else:
-        assets = json.loads(rp.read_text(encoding="utf-8")).get("assets", {}) if rp.exists() else {}
+        assets = page.get("assets", {})
     blocks = flow_blocks(ep)
     sys.path.insert(0, str(ROOT / "tools"))
     from imgcheck import real_image
@@ -178,17 +223,21 @@ def main(slug):
         make_thumbs(slug, img_root, assets, plates, beats)
     cfg = ROOT / "video.config.json"
     gap = json.loads(cfg.read_text(encoding="utf-8")).get("pacing", {}).get("chapterGap", 2.2) if cfg.exists() else 2.2
-    data = {"beats": beats, "plates": plates, "steps": steps(slug, vid, plan, has), "chapterGap": str(gap).replace(".", ",")}
+    data = {"beats": beats, "plates": plates, "steps": steps(slug, vid, plan, has), "chapterGap": str(gap).replace(".", ","),
+            "local": local, "artifactUrl": page.get("url", "")}
     html = (ROOT / "tools" / "templates" / "review-page.html").read_text(encoding="utf-8")
     html = (html.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False))
                 .replace("__PAGETITLE__", plan.get("pageTitle", f"{slug} · xưởng duyệt"))
                 .replace("__SLUG__", slug).replace("__TITLE__", plan.get("episode", slug)))
-    out = Path(arg("--out", ROOT / "out" / slug / "review.html"))
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     n_img = sum(1 for b in beats for s in b["scenes"] if s.get("img") or s.get("oldImg"))
     print(f"{out}  ({len(beats)} beat · {sum(len(b['scenes']) for b in beats)} cảnh · {n_img} cảnh có hình · "
           f"{len(blocks)} prompt)")
+    if arg("--md"):
+        md = Path(arg("--md"))
+        md.write_text(to_markdown(plan.get("episode", slug), beats, plates), encoding="utf-8")
+        print(f"{md}  (Markdown)")
     for w in warn:
         print("  ⚠", w)
 

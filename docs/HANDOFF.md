@@ -87,6 +87,11 @@ Trang còn là **xưởng**, không chỉ là chỗ duyệt:
   vào Batch Image Studio, ảnh mẫu đứng đầu, cảnh báo nếu cảnh cần ảnh mẫu chưa có. Lựa chọn lưu ở
   `picks/state`.
 
+Bản nằm trong dự án (mở bằng trình duyệt trên máy, ảnh lấy thẳng từ `public/img`) và bản Markdown:
+`PYTHONUTF8=1 python tools/review-page.py <slug> --local --out videos/<slug>/drafts/5-review.html --md videos/<slug>/drafts/5-review.md`.
+Bản trên máy xem, chép prompt, tạo batch và **Chép Markdown** được; duyệt / sửa / ghi chú chỉ lưu trên
+bản Artifact. Trang Artifact cũng có nút Chép Markdown (cả bản hoặc từng beat, lấy chữ đã sửa).
+
 Dựng lại trang: `PYTHONUTF8=1 python tools/review-page.py <slug> --img-root <thư mục ảnh thật>`
 (chạy từ worktree thì trỏ về `public/img/<ep>` của thư mục chính).
 
