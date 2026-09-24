@@ -75,6 +75,21 @@ và bảng lời EN cạnh VI, dòng "shiny" tô màu. Dưới mỗi beat là **
 chung ngay trên trang — Claude đọc lại được (collection `review`, doc `b00`…`b15`, `bshort-outro`),
 bạn không phải chép ghi chú sang chat. Sửa xong Claude đăng lại **cùng link**, ghi chú cũ vẫn còn.
 
+Trang còn là **xưởng**, không chỉ là chỗ duyệt:
+- **Sửa thẳng**: bấm vào mô tả cảnh hay một câu lời EN / VI để sửa; chỗ đã sửa có viền tím. Lưu ở
+  collection `edits` (`sc-<beat>-<i>`, `en-<beat>-<i>`, `vi-<beat>-<i>`) — Claude đưa vào repo khi bạn
+  nói "xong duyệt". Sửa mô tả thì prompt tiếng Anh chưa theo kịp: Claude viết lại shot rồi dựng lại.
+- **Ảnh**: cảnh đã có ảnh thì hiện ảnh; cảnh sinh lại hiện ảnh cũ nhạt màu; cảnh chưa có ảnh hiện
+  mô tả tiếng Việt. Ảnh thu nhỏ tải lên asset store của trang, danh sách ở `drafts/review-page.json`.
+- **Ra prompt**: prompt thật từ `build-prompts.mjs` (kèm dòng `[ref: …]`), nút chép — để sinh tay
+  một ảnh trong Flow, tải về đặt tên `<id>.jpg`.
+- **Tạo script batch**: tích "Đưa vào batch" (hoặc "Chọn mọi ảnh chưa có") → một khối dán thẳng
+  vào Batch Image Studio, ảnh mẫu đứng đầu, cảnh báo nếu cảnh cần ảnh mẫu chưa có. Lựa chọn lưu ở
+  `picks/state`.
+
+Dựng lại trang: `PYTHONUTF8=1 python tools/review-page.py <slug> --img-root <thư mục ảnh thật>`
+(chạy từ worktree thì trỏ về `public/img/<ep>` của thư mục chính).
+
 Tập 001 bỏ qua bước 1 (ý đã chốt trước khi có luồng này), đi thẳng từ `2-skeleton.md`. Bản Gemini lưu
 theo tên cũ `v4-gemini.md` vẫn được nhận.
 

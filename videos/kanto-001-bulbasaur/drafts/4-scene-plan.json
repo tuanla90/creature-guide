@@ -1,100 +1,855 @@
 {
-  "episode": "Ai đang nuôi ai? — bản duyệt V4",
-  "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình).",
-  "plates": [
-    {"id": "loc-viridian-clearing", "what": "Trảng cỏ Viridian trống, không một con vật — ảnh mẫu địa điểm", "src": {"kind": "new"}},
-    {"id": "s02-bulbasaur-plate", "what": "Bulbasaur THƯỜNG, nền trơn — bản cũ là K7 củ nghẹo, không dùng làm ảnh mẫu loài được", "src": {"kind": "regen"}},
-    {"id": "p-k01-shiny", "what": "Shiny Bulbasaur K-01, nền trơn — thân vàng-xanh nhạt, củ sẫm", "src": {"kind": "new"}},
-    {"id": "p-k01-shiny-ivysaur", "what": "Shiny Ivysaur K-01, nền trơn — thân xanh lá, nụ vàng", "src": {"kind": "new"}},
-    {"id": "n12-ivysaur-plate", "what": "Ivysaur thường, nụ hồng", "src": {"kind": "reuse"}},
-    {"id": "s08-venusaur-pair-plate", "what": "Venusaur đực và cái", "src": {"kind": "reuse"}}
-  ],
-  "beats": {
-    "00": {"act": "Hồi 1 · Nghịch lý", "title": "Tưởng đã chết", "chip": "👁 OBSERVATION", "caption": "Viridian Forest · Day 1", "scenes": [
-      {"at": "first day", "el": "clip", "who": "K-01", "shot": "medium · ngang tầm mắt", "what": "K-01 nằm bất động giữa lối mòn dưới nắng trưa, sườn phập phồng rất khẽ", "src": {"kind": "new", "id": "v4-k01-trail-noon"}, "motion": "breath"},
-      {"at": "contracted", "el": "clip", "who": "K-01", "shot": "macro · từ trên", "what": "Bẹ củ co lại, lệch nhịp với nhịp thở của sườn — cả cái hook của tập", "src": {"kind": "regen", "id": "v2-s01-macro-breath", "why": "màu Shiny"}, "motion": "breath"}
-    ]},
-    "01": {"act": "Hồi 1 · Nghịch lý", "title": "Một chữ cái và một con số", "chip": "👁 OBSERVATION", "caption": "Bulbasaur · K-01", "scenes": [
-      {"at": "question", "el": "world", "who": "—", "shot": "wide · ngang", "what": "Bìa rừng Viridian lúc sáng sớm, sương, bụi nắng trôi", "src": {"kind": "reuse", "id": "n01-forest-edge-dawn"}, "motion": "still"},
-      {"at": "notebook", "el": "notepage", "who": "K-01 (phác)", "shot": "trang sổ", "what": "Trang đầu cuốn sổ: nét chì K-01 kèm một vệt màu nước vàng-xanh — chữ tay hiện dần: K-01 · Bulbasaur · day 1", "src": {"kind": "regen", "id": "v3-x01-day-one", "why": "thêm vệt màu nước — bút chì không cho thấy màu Shiny"}, "motion": "page"}
-    ]},
-    "02": {"act": "Hồi 1 · Nghịch lý", "title": "Con đập vào mắt đầu tiên", "chip": "👁 OBSERVATION", "caption": "Shiny Bulbasaur · K-01", "scenes": [
-      {"at": "Viridian", "el": "world", "who": "đàn thường + K-01", "shot": "wide · từ cao", "what": "Trảng cỏ và lối mòn cỏ rạp; bảy con, một con nhỏ nhạt màu đi cuối", "src": {"kind": "regen", "id": "n02-population-scatter", "why": "cảnh lẫn: đàn thường + đúng một con Shiny"}, "motion": "still"},
-      {"at": "skin", "el": "specimen", "who": "K-01 cạnh một con thường", "shot": "close · ngang", "what": "K-01 đứng cạnh một con xanh lam — hai điểm soi: da vàng-xanh · củ sẫm hơn", "src": {"kind": "new", "id": "v4-k01-reveal"}, "motion": "still"},
-      {"at": "seven days", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Sơ đồ bảy chỗ nằm giữa trưa; bảy chấm hiện dần, một chấm luôn ở vệt sáng nhất", "src": {"kind": "reuse", "id": "v3-x02-sun-map"}, "motion": "page"},
-      {"at": "shiny", "el": "clip", "who": "K-01", "shot": "medium · thấp", "what": "K-01 nằm giữa vệt nắng sáng nhất trảng; chữ “Shiny Bulbasaur · K-01” hiện SAU khi lời đọc tới", "src": {"kind": "new", "id": "v4-k01-sunpatch"}, "motion": "veo"}
-    ]},
-    "03": {"act": "Hồi 2 · Cái dạ dày thứ hai", "title": "Nó đang ăn một thứ khác", "chip": "📖 CATALOGUE", "caption": "A second stomach", "scenes": [
-      {"at": "noon", "el": "clip", "who": "K-01", "shot": "close · thấp", "what": "K-01 nằm phẳng giữa trưa, mắt khép, bụi nắng", "src": {"kind": "regen", "id": "s04-bulbasaur-sunbath", "why": "màu Shiny; chụp cận, nền tĩnh để ảnh thở"}, "motion": "breath"},
-      {"at": "swollen", "el": "specimen", "who": "K-01", "shot": "close", "what": "Cùng tấm ảnh — hai điểm soi: củ căng · bụng phẳng", "src": {"kind": "regen", "id": "s04-bulbasaur-sunbath"}, "motion": "still"},
-      {"at": "catalogue", "el": "specimen", "who": "X-quang Bulbasaur", "shot": "nghiêng", "what": "X-quang mô phỏng: mạch năng lượng từ củ chạy vào thân — điểm soi: mạch dẫn · khoang dự trữ", "src": {"kind": "reuse", "id": "v3-a01-conduit"}, "motion": "still"}
-    ]},
-    "04": {"act": "Hồi 2 · Cái dạ dày thứ hai", "title": "Một vòng khép kín", "chip": "🔬 HYPOTHESIS", "caption": "A closed loop", "scenes": [
-      {"at": "afternoon", "el": "clip", "who": "K-01", "shot": "medium · thấp", "what": "Cuối chiều, K-01 đứng ở mép ao, hai chân trước lún bùn, nước gợn vòng", "src": {"kind": "regen", "id": "m01-mud-soak", "why": "màu Shiny"}, "motion": "veo"},
-      {"at": "minerals", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Vòng khép kín vẽ dần: chất thải → rễ củ → đường → thân. So sánh san hô chỉ NÓI", "src": {"kind": "reuse", "id": "v3-x03-loop"}, "motion": "page"}
-    ]},
-    "05": {"act": "Hồi 2 · Cái dạ dày thứ hai", "title": "Ai đang nuôi ai?", "chip": "🔬 HYPOTHESIS", "caption": "Who feeds whom?", "scenes": [
-      {"at": "notebook", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Chữ “vật ký sinh” bị gạch mạnh, dòng mới viết đè lên", "src": {"kind": "reuse", "id": "v3-x04-crossed-out"}, "motion": "page"},
-      {"at": "feeding", "el": "world", "who": "K-01", "shot": "medium · nghiêng, ngược sáng", "what": "K-01 nghiêng, nắng rọi xuyên củ — câu hỏi xương sống đặt trên hình này. Địa y / tầm gửi chỉ NÓI", "src": {"kind": "regen", "id": "v2-s02-saur-crooked", "why": "màu Shiny, củ thẳng — ý củ nghẹo đã bỏ"}, "motion": "still"}
-    ]},
-    "06": {"act": "Hồi 3 · Chạm", "title": "Khoảng cách hai thân", "chip": "👁 OBSERVATION", "caption": "K-04", "scenes": [
-      {"at": "seven", "el": "world", "who": "đàn thường + K-01", "shot": "wide · từ cao", "what": "Bảy con nằm cách nhau trong trảng, mỗi con một vệt nắng", "src": {"kind": "regen", "id": "n05-sunbathing-group", "why": "cảnh lẫn: phải có đúng một con nhạt màu"}, "motion": "still"},
-      {"at": "dusk", "el": "clip", "who": "hai con thường", "shot": "medium · thấp", "what": "Hai con ép vai giành vệt nắng đang co lại", "src": {"kind": "reuse", "id": "n04-sun-patch-dispute"}, "motion": "veo"},
-      {"at": "flank", "el": "specimen", "who": "K-04", "shot": "close", "what": "Sườn K-04 — điểm soi: vết rách MỚI (không phải sẹo đã lành)", "src": {"kind": "reuse", "id": "v3-s07-torn-flank"}, "motion": "still"},
-      {"at": "That night", "el": "world", "who": "đàn + K-04 + K-01", "shot": "wide · từ cao, ánh trăng", "what": "Bốn con nằm quanh K-04; K-01 cách hai thân, đúng chỗ cũ", "src": {"kind": "regen", "id": "v3-s08-night-ring", "why": "tách làm hai: bản này CÓ K-01 (bản không có K-01 dùng ở beat 13)"}, "motion": "still"}
-    ]},
-    "07": {"act": "Hồi 3 · Chạm", "title": "Không phải cái roi", "chip": "👁 OBSERVATION", "caption": "To hold, to touch, to greet", "scenes": [
-      {"at": "vines", "el": "clip", "who": "hai con thường", "shot": "close · ngang", "what": "Hai dây leo gặp nhau giữa không trung, quấn lấy nhau rồi buông, ráng chiều", "src": {"kind": "reuse", "id": "n06-vine-touch"}, "motion": "veo"},
-      {"at": "blind spot", "el": "world", "who": "K-01", "shot": "medium · từ trên xuống", "what": "Nhìn từ trên: lưng và củ là điểm mù của con vật cổ ngắn", "src": {"kind": "regen", "id": "m02-vine-groom", "why": "màu Shiny"}, "motion": "still"},
-      {"at": "flicked", "el": "clip", "who": "K-01", "shot": "medium · từ sau", "what": "K-01 vẩy dây leo qua vai, gạt con sâu ở chân củ. Đuôi ngựa chỉ NÓI", "src": {"kind": "regen", "id": "m02-vine-groom"}, "motion": "veo"}
-    ]},
-    "08": {"act": "Hồi 4 · Cái giá", "title": "Màu da có giá", "chip": "🔬 HYPOTHESIS", "caption": "The price of a colour", "scenes": [
-      {"at": "fifty-third", "el": "specimen", "who": "Fearow", "shot": "wide · từ dưới lên", "what": "Con chim lớn lượn cao — điểm soi: một mắt đục màu tro", "src": {"kind": "reuse", "id": "v3-s10-ashen-eye"}, "motion": "still"},
-      {"at": "does not", "el": "freeze", "who": "đàn thường + K-01", "shot": "medium · thấp", "what": "Dưới tán dương xỉ, những con xanh lam tan vào bóng loang — hình ĐỨNG ở “does not”, soi da nhạt của K-01; thẻ kẹp ảnh quê nhà: bướm sâu đo nhạt trên vỏ cây sẫm", "src": {"kind": "regen", "id": "v3-s11-camouflage", "why": "đảo nghĩa: nay là cảnh K-01 KHÔNG ẩn được"}, "earth": "Biston betularia — bướm nhạt trên vỏ cây sẫm", "motion": "freeze"},
-      {"at": "first dive", "el": "clip", "who": "Fearow + K-01", "shot": "wide · thấp", "what": "Chim bổ nhào; K-01 ép sát dưới bụi dương xỉ, móng chim sượt qua", "src": {"kind": "regen", "id": "n08-raptor-strike", "why": "màu Shiny"}, "motion": "seedance"},
-      {"at": "second dive", "el": "clip", "who": "K-01", "shot": "close", "what": "Đỉnh củ hé, một làn bột mịn bung lên", "src": {"kind": "regen", "id": "n09-sleep-powder", "why": "màu Shiny"}, "motion": "veo"}
-    ]},
-    "09": {"act": "Hồi 4 · Cái giá", "title": "Thu, và chi", "chip": "👁 OBSERVATION", "caption": "Income and expense", "scenes": [
-      {"at": "lay still", "el": "clip", "who": "K-01", "shot": "medium · ngang", "what": "K-01 nằm im trong bóng, thở nông, củ nhỏ đi thấy rõ", "src": {"kind": "new", "id": "v4-k01-spent"}, "motion": "breath"},
-      {"at": "ledger", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "“Khả năng” bị gạch; viết đè “thu · chi”, hai cột hiện dần — không một con số", "src": {"kind": "reuse", "id": "v3-x05-ledger"}, "motion": "page"}
-    ]},
-    "10": {"act": "Hồi 5 · Cùng một cơ quan", "title": "Cùng một cơ quan", "chip": "⚔ ARENA", "caption": "Same organ, two uses", "scenes": [
-      {"at": "against each other", "el": "world", "who": "—", "shot": "wide · từ cao", "what": "Sân đất ở thị trấn lúc chạng vạng, bóng người mờ ở vòng ngoài", "src": {"kind": "reuse", "id": "b01-arena-dusk"}, "motion": "still"},
-      {"at": "lash", "el": "freeze", "who": "Bulbasaur trong sân", "shot": "close · ngang", "what": "Dây leo quất xuống nền đất — hình ĐỨNG ở “lash”, soi dây leo; tới “elephant” thẻ kẹp ảnh quê nhà: vòi voi", "src": {"kind": "reuse", "id": "b02-vine-whip-battle"}, "earth": "Loxodonta africana — vòi voi", "motion": "freeze"},
-      {"at": "held perfectly still", "el": "world", "who": "Bulbasaur trong sân", "shot": "medium · thấp", "what": "Củ sáng lên từ bên trong, khoảnh khắc đứng im trước khi phóng", "src": {"kind": "reuse", "id": "b03-solarbeam-charge"}, "motion": "still"},
-      {"at": "By morning", "el": "world", "who": "K-01", "shot": "medium", "what": "Về lại rừng: K-01 nằm trong vệt nắng đầu tiên — cố ý dùng lại hình beat 02", "src": {"kind": "new", "id": "v4-k01-sunpatch"}, "motion": "still"}
-    ]},
-    "11": {"act": "Hồi 5 · Cùng một cơ quan", "title": "Hai nết", "chip": "📖 CATALOGUE", "caption": "Two temperaments", "scenes": [
-      {"at": "measured", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Hai cột bấm giờ: nắng · râm, cùng một quãng — chữ tay KHÔNG ghi số đo", "src": {"kind": "reuse", "id": "v3-x06-stopwatch"}, "motion": "page"},
-      {"at": "badly hurt", "el": "world", "who": "Bulbasaur trong sân", "shot": "medium · thấp", "what": "Con vật trong sân gần gục, vẫn đứng lên", "src": {"kind": "reuse", "id": "b05-last-stand"}, "motion": "still"},
-      {"at": "reserve", "el": "specimen", "who": "X-quang Bulbasaur", "shot": "nghiêng", "what": "X-quang mô phỏng — điểm soi: kho dự trữ trong củ cạn dần. Cây thùa chỉ NÓI", "src": {"kind": "reuse", "id": "v3-a02-reserve"}, "motion": "still"}
-    ]},
-    "12": {"act": "Hồi 6 · Đổi hình", "title": "Đầu nam, củ đông", "chip": "👁 OBSERVATION", "caption": "Two parts, two directions", "scenes": [
-      {"at": "changed its habits", "el": "clip", "who": "K-01", "shot": "medium · nghiêng", "what": "K-01 đi chậm, nặng nề; dây leo dày lên, trĩu xuống", "src": {"kind": "new", "id": "v4-k01-heavy"}, "motion": "veo"},
-      {"at": "did not move", "el": "freeze", "who": "K-01", "shot": "close · từ cao", "what": "Đầu quay nam đứng yên, củ xoay dần về đông — hình ĐỨNG, hai điểm soi: đầu · củ. Không ảnh quê nhà; hướng dương chỉ NÓI", "src": {"kind": "regen", "id": "m03-heliotropism", "why": "màu Shiny"}, "motion": "freeze"},
-      {"at": "two lives", "el": "specimen", "who": "K-01", "shot": "macro · ngang", "what": "Chỗ nối giữa củ và thân — nơi hai sự sống gặp nhau", "src": {"kind": "new", "id": "v4-k01-junction"}, "motion": "still"}
-    ]},
-    "13": {"act": "Hồi 6 · Đổi hình", "title": "Khu Vườn Kỳ Bí", "chip": "🎬 LOCAL ACCOUNT", "caption": "The Mysterious Garden", "scenes": [
-      {"at": "old forest", "el": "world", "who": "—", "shot": "wide · ngang", "what": "Lối vào rừng già, tối dần", "src": {"kind": "new", "id": "loc-viridian-deep"}, "motion": "still"},
-      {"at": "K-04 stayed", "el": "world", "who": "K-04", "shot": "wide · từ cao, bình minh", "what": "K-04 nằm đúng chỗ cũ, cạnh một khoảng trống bằng hai thân — không ai vào", "src": {"kind": "new", "id": "v3-s08b-empty-gap", "why": "phần hai của v3-s08, KHÔNG có K-01"}, "motion": "still"},
-      {"at": "fifth night", "el": "clip", "who": "đàn thường + K-01", "shot": "wide · từ trên", "what": "Hõm đất ban đêm: mười hai con đứng thành vòng, lặng im; một con nhạt màu", "src": {"kind": "regen", "id": "n16-evolution-gathering", "why": "cảnh lẫn: đúng một con Shiny"}, "motion": "veo"},
-      {"at": "whole page", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Trang viết vội: “tôi nghĩ nó sắp chết”", "src": {"kind": "reuse", "id": "v3-x07-wrong-page", "why": "xem lại: ảnh phác có vẽ cả đàn không"}, "motion": "page"}
-    ]},
-    "14": {"act": "Hồi 6 · Đổi hình", "title": "Nụ vàng giữa những nụ hồng", "chip": "👁 OBSERVATION", "caption": "Shiny Ivysaur · K-01", "scenes": [
-      {"at": "empty", "el": "specimen", "who": "—", "shot": "close · từ trên", "what": "Hõm đất trống — ba điểm soi: rãnh cày · cỏ bẹp thành vòng · bẹ lá khô", "src": {"kind": "reuse", "id": "m04-hollow-empty"}, "motion": "still"},
-      {"at": "shapes", "el": "world", "who": "Ivysaur thường + K-01", "shot": "wide · ngang, sương", "what": "Những cái bóng lớn trong sương: nụ hồng, và đúng một nụ vàng", "src": {"kind": "regen", "id": "m05-silhouette-mist", "why": "cảnh lẫn: nụ hồng + một nụ vàng"}, "motion": "still"},
-      {"at": "yellow bud", "el": "clip", "who": "Ivysaur K-01", "shot": "medium · nghiêng", "what": "Shiny Ivysaur: da xanh lá, nụ vàng óng phập phồng; cuối cảnh nghiêng đầu về phía tiếng bút", "src": {"kind": "regen", "id": "n13-ivysaur-strain", "why": "thành Shiny Ivysaur"}, "motion": "breath"}
-    ]},
-    "15": {"act": "Hồi 7 · Không có câu trả lời", "title": "Hai sự sống, một cá thể", "chip": "🔬 HYPOTHESIS", "caption": "Two lives, one body", "scenes": [
-      {"at": "so heavy", "el": "specimen", "who": "X-quang Ivysaur", "shot": "thấp", "what": "X-quang mô phỏng: chân và thân dày lên đỡ sức nặng của nụ", "src": {"kind": "new", "id": "v4-a03-ivysaur-load"}, "motion": "still"},
-      {"at": "old female", "el": "world", "who": "Venusaur cái già", "shot": "wide · ngang, mưa", "what": "Con Venusaur cái rất già ở bìa rừng: thân hoá gỗ, rêu và dương xỉ trên lưng, hoa phai", "src": {"kind": "regen", "id": "n19-old-venusaur", "why": "đã đánh dấu: cái chứ không phải đực"}, "motion": "still"},
-      {"at": "pistil", "el": "specimen", "who": "Venusaur cái già", "shot": "close · từ cao", "what": "Cùng tấm ảnh — điểm soi: cái nhụy giữa hoa", "src": {"kind": "regen", "id": "n19-old-venusaur"}, "motion": "still"},
-      {"at": "After rain", "el": "clip", "who": "Venusaur cái già + hai con", "shot": "medium · thấp", "what": "Mưa trên cánh hoa; hai con đang gầm gừ nằm xuống cách nhau vài bước", "src": {"kind": "regen", "id": "n18-scent-truce", "why": "cùng nhân vật với n19"}, "motion": "veo"},
-      {"at": "still do not know", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Trang cuối: câu hỏi viết ra, bên dưới để trống", "src": {"kind": "reuse", "id": "v3-x08-last-page"}, "motion": "page"},
-      {"at": "flame", "el": "world", "who": "Charmander", "shot": "medium", "what": "Một con Charmander dưới mưa, ngọn lửa đuôi chập chờn — mồi sang tập sau (thay được bằng hình phác ngọn lửa ở góc trang sổ)", "src": {"kind": "reuse", "id": "s13-charmander-rain"}, "motion": "still"}
-    ]},
-    "short-outro": {"act": "Short", "title": "Bản Short", "chip": "🔬 HYPOTHESIS", "caption": "K-01 · Viridian Forest", "scenes": [
-      {"at": "feeding", "el": "notepage", "who": "—", "shot": "trang sổ", "what": "Trang cuối: câu hỏi hiện ra rồi dừng ở khoảng trống", "src": {"kind": "reuse", "id": "v3-x08-last-page"}, "motion": "page"}
-    ]}
+ "pageTitle": "Kanto 001 · bản duyệt V4",
+ "episode": "Ai đang nuôi ai? — bản duyệt V4",
+ "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình).",
+ "plates": [
+  {
+   "id": "loc-viridian-clearing",
+   "what": "Trảng cỏ Viridian trống, không một con vật — ảnh mẫu địa điểm",
+   "src": {
+    "kind": "new"
+   }
+  },
+  {
+   "id": "v4-plate-bulbasaur",
+   "what": "Bulbasaur THƯỜNG, nền trơn — bản cũ là K7 củ nghẹo, không dùng làm ảnh mẫu loài được",
+   "src": {
+    "kind": "regen"
+   },
+   "replaces": "s02-bulbasaur-plate"
+  },
+  {
+   "id": "p-k01-shiny",
+   "what": "Shiny Bulbasaur K-01, nền trơn — thân vàng-xanh nhạt, củ sẫm",
+   "src": {
+    "kind": "new"
+   }
+  },
+  {
+   "id": "p-k01-shiny-ivysaur",
+   "what": "Shiny Ivysaur K-01, nền trơn — thân xanh lá, nụ vàng",
+   "src": {
+    "kind": "new"
+   }
+  },
+  {
+   "id": "n12-ivysaur-plate",
+   "what": "Ivysaur thường, nụ hồng",
+   "src": {
+    "kind": "reuse"
+   }
+  },
+  {
+   "id": "s08-venusaur-pair-plate",
+   "what": "Venusaur đực và cái",
+   "src": {
+    "kind": "reuse"
+   }
   }
+ ],
+ "beats": {
+  "00": {
+   "act": "Hồi 1 · Nghịch lý",
+   "title": "Tưởng đã chết",
+   "chip": "👁 OBSERVATION",
+   "caption": "Viridian Forest · Day 1",
+   "scenes": [
+    {
+     "at": "first day",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · ngang tầm mắt",
+     "what": "K-01 nằm bất động giữa lối mòn dưới nắng trưa, sườn phập phồng rất khẽ",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-trail-noon"
+     },
+     "motion": "breath"
+    },
+    {
+     "at": "contracted",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "macro · từ trên",
+     "what": "Bẹ củ co lại, lệch nhịp với nhịp thở của sườn — cả cái hook của tập",
+     "src": {
+      "kind": "regen",
+      "id": "v4-macro-breath",
+      "why": "màu Shiny",
+      "replaces": "v2-s01-macro-breath"
+     },
+     "motion": "breath"
+    }
+   ]
+  },
+  "01": {
+   "act": "Hồi 1 · Nghịch lý",
+   "title": "Một chữ cái và một con số",
+   "chip": "👁 OBSERVATION",
+   "caption": "Bulbasaur · K-01",
+   "scenes": [
+    {
+     "at": "question",
+     "el": "world",
+     "who": "—",
+     "shot": "wide · ngang",
+     "what": "Bìa rừng Viridian lúc sáng sớm, sương, bụi nắng trôi",
+     "src": {
+      "kind": "reuse",
+      "id": "n01-forest-edge-dawn"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "notebook",
+     "el": "notepage",
+     "who": "K-01 (phác)",
+     "shot": "trang sổ",
+     "what": "Trang đầu cuốn sổ: nét chì K-01 kèm một vệt màu nước vàng-xanh — chữ tay hiện dần: K-01 · Bulbasaur · day 1",
+     "src": {
+      "kind": "regen",
+      "id": "v4-x01-day-one",
+      "why": "thêm vệt màu nước — bút chì không cho thấy màu Shiny",
+      "replaces": "v3-x01-day-one"
+     },
+     "motion": "page"
+    }
+   ]
+  },
+  "02": {
+   "act": "Hồi 1 · Nghịch lý",
+   "title": "Con đập vào mắt đầu tiên",
+   "chip": "👁 OBSERVATION",
+   "caption": "Shiny Bulbasaur · K-01",
+   "scenes": [
+    {
+     "at": "Viridian",
+     "el": "world",
+     "who": "đàn thường + K-01",
+     "shot": "wide · từ cao",
+     "what": "Trảng cỏ và lối mòn cỏ rạp; bảy con, một con nhỏ nhạt màu đi cuối",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n02-scatter",
+      "why": "cảnh lẫn: đàn thường + đúng một con Shiny",
+      "replaces": "n02-population-scatter"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "skin",
+     "el": "specimen",
+     "who": "K-01 cạnh một con thường",
+     "shot": "close · ngang",
+     "what": "K-01 đứng cạnh một con xanh lam — hai điểm soi: da vàng-xanh · củ sẫm hơn",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-reveal"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "seven days",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Sơ đồ bảy chỗ nằm giữa trưa; bảy chấm hiện dần, một chấm luôn ở vệt sáng nhất",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x02-sun-map"
+     },
+     "motion": "page"
+    },
+    {
+     "at": "shiny",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · thấp",
+     "what": "K-01 nằm giữa vệt nắng sáng nhất trảng; chữ “Shiny Bulbasaur · K-01” hiện SAU khi lời đọc tới",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-sunpatch"
+     },
+     "motion": "veo"
+    }
+   ]
+  },
+  "03": {
+   "act": "Hồi 2 · Cái dạ dày thứ hai",
+   "title": "Nó đang ăn một thứ khác",
+   "chip": "📖 CATALOGUE",
+   "caption": "A second stomach",
+   "scenes": [
+    {
+     "at": "noon",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "close · thấp",
+     "what": "K-01 nằm phẳng giữa trưa, mắt khép, bụi nắng",
+     "src": {
+      "kind": "regen",
+      "id": "v4-s04-sunbath",
+      "why": "màu Shiny; chụp cận, nền tĩnh để ảnh thở",
+      "replaces": "s04-bulbasaur-sunbath"
+     },
+     "motion": "breath"
+    },
+    {
+     "at": "swollen",
+     "el": "specimen",
+     "who": "K-01",
+     "shot": "close",
+     "what": "Cùng tấm ảnh — hai điểm soi: củ căng · bụng phẳng",
+     "src": {
+      "kind": "regen",
+      "id": "v4-s04-sunbath",
+      "replaces": "s04-bulbasaur-sunbath"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "catalogue",
+     "el": "specimen",
+     "who": "X-quang Bulbasaur",
+     "shot": "nghiêng",
+     "what": "X-quang mô phỏng: mạch năng lượng từ củ chạy vào thân — điểm soi: mạch dẫn · khoang dự trữ",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-a01-conduit"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "04": {
+   "act": "Hồi 2 · Cái dạ dày thứ hai",
+   "title": "Một vòng khép kín",
+   "chip": "🔬 HYPOTHESIS",
+   "caption": "A closed loop",
+   "scenes": [
+    {
+     "at": "afternoon",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · thấp",
+     "what": "Cuối chiều, K-01 đứng ở mép ao, hai chân trước lún bùn, nước gợn vòng",
+     "src": {
+      "kind": "regen",
+      "id": "v4-m01-mud-soak",
+      "why": "màu Shiny",
+      "replaces": "m01-mud-soak"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "minerals",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Vòng khép kín vẽ dần: chất thải → rễ củ → đường → thân. So sánh san hô chỉ NÓI",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x03-loop"
+     },
+     "motion": "page"
+    }
+   ]
+  },
+  "05": {
+   "act": "Hồi 2 · Cái dạ dày thứ hai",
+   "title": "Ai đang nuôi ai?",
+   "chip": "🔬 HYPOTHESIS",
+   "caption": "Who feeds whom?",
+   "scenes": [
+    {
+     "at": "notebook",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Chữ “vật ký sinh” bị gạch mạnh, dòng mới viết đè lên",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x04-crossed-out"
+     },
+     "motion": "page"
+    },
+    {
+     "at": "feeding",
+     "el": "world",
+     "who": "K-01",
+     "shot": "medium · nghiêng, ngược sáng",
+     "what": "K-01 nghiêng, nắng rọi xuyên củ — câu hỏi xương sống đặt trên hình này. Địa y / tầm gửi chỉ NÓI",
+     "src": {
+      "kind": "regen",
+      "id": "v4-k01-backlit",
+      "why": "màu Shiny, củ thẳng — ý củ nghẹo đã bỏ",
+      "replaces": "v2-s02-saur-crooked"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "06": {
+   "act": "Hồi 3 · Chạm",
+   "title": "Khoảng cách hai thân",
+   "chip": "👁 OBSERVATION",
+   "caption": "K-04",
+   "scenes": [
+    {
+     "at": "seven",
+     "el": "world",
+     "who": "đàn thường + K-01",
+     "shot": "wide · từ cao",
+     "what": "Bảy con nằm cách nhau trong trảng, mỗi con một vệt nắng",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n05-group",
+      "why": "cảnh lẫn: phải có đúng một con nhạt màu",
+      "replaces": "n05-sunbathing-group"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "dusk",
+     "el": "clip",
+     "who": "hai con thường",
+     "shot": "medium · thấp",
+     "what": "Hai con ép vai giành vệt nắng đang co lại",
+     "src": {
+      "kind": "reuse",
+      "id": "n04-sun-patch-dispute"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "flank",
+     "el": "specimen",
+     "who": "K-04",
+     "shot": "close",
+     "what": "Sườn K-04 — điểm soi: vết rách MỚI (không phải sẹo đã lành)",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-s07-torn-flank"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "That night",
+     "el": "world",
+     "who": "đàn + K-04 + K-01",
+     "shot": "wide · từ cao, ánh trăng",
+     "what": "Bốn con nằm quanh K-04; K-01 cách hai thân, đúng chỗ cũ",
+     "src": {
+      "kind": "regen",
+      "id": "v4-night-ring",
+      "why": "tách làm hai: bản này CÓ K-01 (bản không có K-01 dùng ở beat 13)",
+      "replaces": "v3-s08-night-ring"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "07": {
+   "act": "Hồi 3 · Chạm",
+   "title": "Không phải cái roi",
+   "chip": "👁 OBSERVATION",
+   "caption": "To hold, to touch, to greet",
+   "scenes": [
+    {
+     "at": "vines",
+     "el": "clip",
+     "who": "hai con thường",
+     "shot": "close · ngang",
+     "what": "Hai dây leo gặp nhau giữa không trung, quấn lấy nhau rồi buông, ráng chiều",
+     "src": {
+      "kind": "reuse",
+      "id": "n06-vine-touch"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "blind spot",
+     "el": "world",
+     "who": "K-01",
+     "shot": "medium · từ trên xuống",
+     "what": "Nhìn từ trên: lưng và củ là điểm mù của con vật cổ ngắn",
+     "src": {
+      "kind": "regen",
+      "id": "v4-m02-vine-groom",
+      "why": "màu Shiny",
+      "replaces": "m02-vine-groom"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "flicked",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · từ sau",
+     "what": "K-01 vẩy dây leo qua vai, gạt con sâu ở chân củ. Đuôi ngựa chỉ NÓI",
+     "src": {
+      "kind": "regen",
+      "id": "v4-m02-vine-groom",
+      "replaces": "m02-vine-groom"
+     },
+     "motion": "veo"
+    }
+   ]
+  },
+  "08": {
+   "act": "Hồi 4 · Cái giá",
+   "title": "Màu da có giá",
+   "chip": "🔬 HYPOTHESIS",
+   "caption": "The price of a colour",
+   "scenes": [
+    {
+     "at": "fifty-third",
+     "el": "specimen",
+     "who": "Fearow",
+     "shot": "wide · từ dưới lên",
+     "what": "Con chim lớn lượn cao — điểm soi: một mắt đục màu tro",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-s10-ashen-eye"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "does not",
+     "el": "freeze",
+     "who": "đàn thường + K-01",
+     "shot": "medium · thấp",
+     "what": "Dưới tán dương xỉ, những con xanh lam tan vào bóng loang — hình ĐỨNG ở “does not”, soi da nhạt của K-01; thẻ kẹp ảnh quê nhà: bướm sâu đo nhạt trên vỏ cây sẫm",
+     "src": {
+      "kind": "regen",
+      "id": "v4-camouflage",
+      "why": "đảo nghĩa: nay là cảnh K-01 KHÔNG ẩn được",
+      "replaces": "v3-s11-camouflage"
+     },
+     "earth": "Biston betularia — bướm nhạt trên vỏ cây sẫm",
+     "motion": "freeze"
+    },
+    {
+     "at": "first dive",
+     "el": "clip",
+     "who": "Fearow + K-01",
+     "shot": "wide · thấp",
+     "what": "Chim bổ nhào; K-01 ép sát dưới bụi dương xỉ, móng chim sượt qua",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n08-raptor-strike",
+      "why": "màu Shiny",
+      "replaces": "n08-raptor-strike"
+     },
+     "motion": "seedance"
+    },
+    {
+     "at": "second dive",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "close",
+     "what": "Đỉnh củ hé, một làn bột mịn bung lên",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n09-powder",
+      "why": "màu Shiny",
+      "replaces": "n09-sleep-powder"
+     },
+     "motion": "veo"
+    }
+   ]
+  },
+  "09": {
+   "act": "Hồi 4 · Cái giá",
+   "title": "Thu, và chi",
+   "chip": "👁 OBSERVATION",
+   "caption": "Income and expense",
+   "scenes": [
+    {
+     "at": "lay still",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · ngang",
+     "what": "K-01 nằm im trong bóng, thở nông, củ nhỏ đi thấy rõ",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-spent"
+     },
+     "motion": "breath"
+    },
+    {
+     "at": "ledger",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "“Khả năng” bị gạch; viết đè “thu · chi”, hai cột hiện dần — không một con số",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x05-ledger"
+     },
+     "motion": "page"
+    }
+   ]
+  },
+  "10": {
+   "act": "Hồi 5 · Cùng một cơ quan",
+   "title": "Cùng một cơ quan",
+   "chip": "⚔ ARENA",
+   "caption": "Same organ, two uses",
+   "scenes": [
+    {
+     "at": "against each other",
+     "el": "world",
+     "who": "—",
+     "shot": "wide · từ cao",
+     "what": "Sân đất ở thị trấn lúc chạng vạng, bóng người mờ ở vòng ngoài",
+     "src": {
+      "kind": "reuse",
+      "id": "b01-arena-dusk"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "lash",
+     "el": "freeze",
+     "who": "Bulbasaur trong sân",
+     "shot": "close · ngang",
+     "what": "Dây leo quất xuống nền đất — hình ĐỨNG ở “lash”, soi dây leo; tới “elephant” thẻ kẹp ảnh quê nhà: vòi voi",
+     "src": {
+      "kind": "reuse",
+      "id": "b02-vine-whip-battle"
+     },
+     "earth": "Loxodonta africana — vòi voi",
+     "motion": "freeze"
+    },
+    {
+     "at": "held perfectly still",
+     "el": "world",
+     "who": "Bulbasaur trong sân",
+     "shot": "medium · thấp",
+     "what": "Củ sáng lên từ bên trong, khoảnh khắc đứng im trước khi phóng",
+     "src": {
+      "kind": "reuse",
+      "id": "b03-solarbeam-charge"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "By morning",
+     "el": "world",
+     "who": "K-01",
+     "shot": "medium",
+     "what": "Về lại rừng: K-01 nằm trong vệt nắng đầu tiên — cố ý dùng lại hình beat 02",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-sunpatch"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "11": {
+   "act": "Hồi 5 · Cùng một cơ quan",
+   "title": "Hai nết",
+   "chip": "📖 CATALOGUE",
+   "caption": "Two temperaments",
+   "scenes": [
+    {
+     "at": "measured",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Hai cột bấm giờ: nắng · râm, cùng một quãng — chữ tay KHÔNG ghi số đo",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x06-stopwatch"
+     },
+     "motion": "page"
+    },
+    {
+     "at": "badly hurt",
+     "el": "world",
+     "who": "Bulbasaur trong sân",
+     "shot": "medium · thấp",
+     "what": "Con vật trong sân gần gục, vẫn đứng lên",
+     "src": {
+      "kind": "reuse",
+      "id": "b05-last-stand"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "reserve",
+     "el": "specimen",
+     "who": "X-quang Bulbasaur",
+     "shot": "nghiêng",
+     "what": "X-quang mô phỏng — điểm soi: kho dự trữ trong củ cạn dần. Cây thùa chỉ NÓI",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-a02-reserve"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "12": {
+   "act": "Hồi 6 · Đổi hình",
+   "title": "Đầu nam, củ đông",
+   "chip": "👁 OBSERVATION",
+   "caption": "Two parts, two directions",
+   "scenes": [
+    {
+     "at": "changed its habits",
+     "el": "clip",
+     "who": "K-01",
+     "shot": "medium · nghiêng",
+     "what": "K-01 đi chậm, nặng nề; dây leo dày lên, trĩu xuống",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-heavy"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "did not move",
+     "el": "freeze",
+     "who": "K-01",
+     "shot": "close · từ cao",
+     "what": "Đầu quay nam đứng yên, củ xoay dần về đông — hình ĐỨNG, hai điểm soi: đầu · củ. Không ảnh quê nhà; hướng dương chỉ NÓI",
+     "src": {
+      "kind": "regen",
+      "id": "v4-m03-heliotropism",
+      "why": "màu Shiny",
+      "replaces": "m03-heliotropism"
+     },
+     "motion": "freeze"
+    },
+    {
+     "at": "two lives",
+     "el": "specimen",
+     "who": "K-01",
+     "shot": "macro · ngang",
+     "what": "Chỗ nối giữa củ và thân — nơi hai sự sống gặp nhau",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-junction"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "13": {
+   "act": "Hồi 6 · Đổi hình",
+   "title": "Khu Vườn Kỳ Bí",
+   "chip": "🎬 LOCAL ACCOUNT",
+   "caption": "The Mysterious Garden",
+   "scenes": [
+    {
+     "at": "old forest",
+     "el": "world",
+     "who": "—",
+     "shot": "wide · ngang",
+     "what": "Lối vào rừng già, tối dần",
+     "src": {
+      "kind": "new",
+      "id": "loc-viridian-deep"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "K-04 stayed",
+     "el": "world",
+     "who": "K-04",
+     "shot": "wide · từ cao, bình minh",
+     "what": "K-04 nằm đúng chỗ cũ, cạnh một khoảng trống bằng hai thân — không ai vào",
+     "src": {
+      "kind": "new",
+      "id": "v4-empty-gap",
+      "why": "phần hai của v3-s08, KHÔNG có K-01"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "fifth night",
+     "el": "clip",
+     "who": "đàn thường + K-01",
+     "shot": "wide · từ trên",
+     "what": "Hõm đất ban đêm: mười hai con đứng thành vòng, lặng im; một con nhạt màu",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n16-gathering",
+      "why": "cảnh lẫn: đúng một con Shiny",
+      "replaces": "n16-evolution-gathering"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "whole page",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Trang viết vội: “tôi nghĩ nó sắp chết”",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x07-wrong-page",
+      "why": "xem lại: ảnh phác có vẽ cả đàn không"
+     },
+     "motion": "page"
+    }
+   ]
+  },
+  "14": {
+   "act": "Hồi 6 · Đổi hình",
+   "title": "Nụ vàng giữa những nụ hồng",
+   "chip": "👁 OBSERVATION",
+   "caption": "Shiny Ivysaur · K-01",
+   "scenes": [
+    {
+     "at": "empty",
+     "el": "specimen",
+     "who": "—",
+     "shot": "close · từ trên",
+     "what": "Hõm đất trống — ba điểm soi: rãnh cày · cỏ bẹp thành vòng · bẹ lá khô",
+     "src": {
+      "kind": "reuse",
+      "id": "m04-hollow-empty"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "shapes",
+     "el": "world",
+     "who": "Ivysaur thường + K-01",
+     "shot": "wide · ngang, sương",
+     "what": "Những cái bóng lớn trong sương: nụ hồng, và đúng một nụ vàng",
+     "src": {
+      "kind": "regen",
+      "id": "v4-m05-mist",
+      "why": "cảnh lẫn: nụ hồng + một nụ vàng",
+      "replaces": "m05-silhouette-mist"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "yellow bud",
+     "el": "clip",
+     "who": "Ivysaur K-01",
+     "shot": "medium · nghiêng",
+     "what": "Shiny Ivysaur: da xanh lá, nụ vàng óng phập phồng; cuối cảnh nghiêng đầu về phía tiếng bút",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n13-ivysaur",
+      "why": "thành Shiny Ivysaur",
+      "replaces": "n13-ivysaur-strain"
+     },
+     "motion": "breath"
+    }
+   ]
+  },
+  "15": {
+   "act": "Hồi 7 · Không có câu trả lời",
+   "title": "Hai sự sống, một cá thể",
+   "chip": "🔬 HYPOTHESIS",
+   "caption": "Two lives, one body",
+   "scenes": [
+    {
+     "at": "so heavy",
+     "el": "specimen",
+     "who": "X-quang Ivysaur",
+     "shot": "thấp",
+     "what": "X-quang mô phỏng: chân và thân dày lên đỡ sức nặng của nụ",
+     "src": {
+      "kind": "new",
+      "id": "v4-a03-ivysaur-load"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "old female",
+     "el": "world",
+     "who": "Venusaur cái già",
+     "shot": "wide · ngang, mưa",
+     "what": "Con Venusaur cái rất già ở bìa rừng: thân hoá gỗ, rêu và dương xỉ trên lưng, hoa phai",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n19-old-venusaur",
+      "why": "đã đánh dấu: cái chứ không phải đực",
+      "replaces": "n19-old-venusaur"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "pistil",
+     "el": "specimen",
+     "who": "Venusaur cái già",
+     "shot": "close · từ cao",
+     "what": "Cùng tấm ảnh — điểm soi: cái nhụy giữa hoa",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n19-old-venusaur",
+      "replaces": "n19-old-venusaur"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "After rain",
+     "el": "clip",
+     "who": "Venusaur cái già + hai con",
+     "shot": "medium · thấp",
+     "what": "Mưa trên cánh hoa; hai con đang gầm gừ nằm xuống cách nhau vài bước",
+     "src": {
+      "kind": "regen",
+      "id": "v4-n18-scent-truce",
+      "why": "cùng nhân vật với n19",
+      "replaces": "n18-scent-truce"
+     },
+     "motion": "veo"
+    },
+    {
+     "at": "still do not know",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Trang cuối: câu hỏi viết ra, bên dưới để trống",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x08-last-page"
+     },
+     "motion": "page"
+    },
+    {
+     "at": "flame",
+     "el": "world",
+     "who": "Charmander",
+     "shot": "medium",
+     "what": "Một con Charmander dưới mưa, ngọn lửa đuôi chập chờn — mồi sang tập sau (thay được bằng hình phác ngọn lửa ở góc trang sổ)",
+     "src": {
+      "kind": "reuse",
+      "id": "s13-charmander-rain"
+     },
+     "motion": "still"
+    }
+   ]
+  },
+  "short-outro": {
+   "act": "Short",
+   "title": "Bản Short",
+   "chip": "🔬 HYPOTHESIS",
+   "caption": "K-01 · Viridian Forest",
+   "scenes": [
+    {
+     "at": "feeding",
+     "el": "notepage",
+     "who": "—",
+     "shot": "trang sổ",
+     "what": "Trang cuối: câu hỏi hiện ra rồi dừng ở khoảng trống",
+     "src": {
+      "kind": "reuse",
+      "id": "v3-x08-last-page"
+     },
+     "motion": "page"
+    }
+   ]
+  }
+ }
 }
