@@ -154,6 +154,20 @@
       "framing": "close side view, whole bulb and belly line in frame, background still"
     },
     {
+      "id": "v4-shadow-pass",
+      "beat": "03",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "noon in the clearing, the huge shadow of an unseen bird with broad wings sliding across the grass, the ordinary Bulbasaur pressed flat and blending into the grass, one paler Bulbasaur lying in the brightest patch of sun, plainly visible",
+      "framing": "high wide view, the wing-shaped shadow crossing the middle third, the pale animal readable in its sun patch, no bird in frame"
+    },
+    {
       "id": "v4-m01-mud-soak",
       "replaces": "m01-mud-soak",
       "beat": "04",
@@ -270,8 +284,8 @@
       "size": "close",
       "angle": "eye",
       "motion": true,
-      "scene": "the tip of the bulb split slightly open and a fine pale powder lifting out of it in a soft cloud",
-      "framing": "close on the bulb, powder drifting upward against dark ferns"
+      "scene": "a fine pale powder puffing out from the narrow gaps between the leaf layers of the bulb, the bulb itself closed and unchanged in shape, the powder spreading sideways in a low haze",
+      "framing": "close on the bulb, powder haze against dark ferns, the animal's body unchanged"
     },
     {
       "id": "v4-k01-spent",
@@ -399,6 +413,20 @@
       "framing": "full body profile, centred, generous empty space above and to the right for annotation"
     },
     {
+      "id": "v4-k01-return",
+      "beat": "15",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-04",
+        "ivysaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "late afternoon in the old clearing, a larger Bulbasaur with an old healed scar on its flank lying in its usual place, and an Ivysaur lying exactly two body-lengths from it, clear flattened grass between them, not touching",
+      "framing": "same high view as the empty-gap shot: the Bulbasaur on the left third, the Ivysaur filling the gap on the right"
+    },
+    {
       "id": "v4-n19-old-venusaur",
       "replaces": "n19-old-venusaur",
       "beat": "15",
@@ -409,7 +437,7 @@
       "location": "viridian-forest:trail",
       "size": "wide",
       "angle": "eye",
-      "scene": "a very old female Venusaur resting at the forest edge in light rain, trunk gone woody like bark, moss and small ferns growing across her back, her great flower faded, a pistil at its centre",
+      "scene": "a very old female Venusaur resting at the forest edge in light rain, trunk gone woody like bark, moss and small ferns growing across her back, her great flower faded, a small seed-like structure at its centre",
       "framing": "wide, the animal on the left two thirds, rain visible against the dark trees"
     },
     {

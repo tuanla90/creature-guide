@@ -22,6 +22,8 @@ nghiệp vụ và chỗ nào còn làm tay.
   capability `db`, đọc lại Duyệt / Cần sửa ở collection `review`.
 - Đăng xong thì sao lưu → `PYTHONUTF8=1 python tools/backup-episode.py <slug> --to "<Drive>"`.
 - **Luôn** chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` trước khi thu giọng hoặc render.
+- Bài học từ các vòng duyệt nằm ở [docs/DNA.md](docs/DNA.md) — đọc trước khi viết hoặc duyệt; góp ý
+  mới lộ ra lỗi mới thì đóng gói vào đó (lỗi → luật → chỗ ép: brief · máy · checklist).
 
 ## Luật của kênh, không thương lượng
 
@@ -53,7 +55,7 @@ bible/             style.json · creatures/<loài>.json · shots/<ep>.json
                    locations/<nơi>.json · refs/<loài>/refs.json   (ảnh tham chiếu KHÔNG nằm trong git)
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
-docs/              PIPELINE · BUSINESS-FLOW · HANDOFF · briefs/ · CHANNEL-SETUP · SLATE · CREATURE-LENS
+docs/              PIPELINE · BUSINESS-FLOW · HANDOFF · DNA · VOICE · briefs/ · CHANNEL-SETUP · SLATE · CREATURE-LENS
                    IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SCENE-TYPES
 tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py
                    check-episode.py · review.py · backup-episode.py · motion-studio.py · handoff.py

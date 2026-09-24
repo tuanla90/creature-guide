@@ -117,3 +117,33 @@ Thời lượng: VI ~16,8 phút, EN ~20 phút ở 2,3 từ/giây — trong mức
 
 **Cái giá: dài ra.** VI ước 16,7 phút (vòng 1: 11,4), EN ước 19,9 phút ở 2,3 từ/giây. Chờ chủ dự án
 chốt: giữ độ dài, hay cắt về ~13 phút.
+
+## Vòng 4 · góp ý canon + giữ chân, đóng gói thành DNA (2026-09-24)
+
+Góp ý nhận (bài học chung ghi ở [docs/DNA.md](../../../docs/DNA.md), mã D…):
+- **00** (D7) — củ phồng lên "không cùng lúc với lồng ngực, mà chậm hơn đúng một nhịp": điều lạ là
+  cái lệch, không phải cái đều.
+- **01** (D11) — rút còn ~20 giây: câu hỏi, chọn một con, K-01 nghĩa là gì. Bỏ ví dụ sói/voi và câu kết.
+- **02** (D4, D6) — câu hứa cuối hồi 1: "màu da khiến tôi nhận ra nó giữa cả đàn cũng sẽ khiến một
+  thứ khác nhận ra nó". "xanh lam" → **xanh lục lam** (02, 08, 13).
+- **03** (D8, D4, D5) — bỏ cú "lạc mất nó" (trùng mẹo với beat 00). Thay bằng **cái bóng chim lướt
+  qua trảng giữa trưa**: cả đàn lẫn vào cỏ, chỉ K-01 sáng rõ giữa vệt nắng. Sự cố đầu tiên nay ở
+  ~2 phút (trước: Fearow ở ~6,5 phút). Beat 08 mở bằng "cái bóng lớn hôm nào quay lại". Shot mới
+  `v4-shadow-pass`.
+- **04, 09, 10, 11** (D2) — rào các câu nói về kho dự trữ: "bắt đầu đoán được", "tôi không chứng
+  minh được, nhưng tôi ngờ rằng…", "tôi ngờ rằng mình vừa thấy…".
+- **07** — bỏ so sánh con ngựa quất đuôi (giữ beat riêng, không gộp với 06).
+- **08** (D9) — bột phụt ra **từ khe giữa các bẹ củ**; củ giữ nguyên hình, để cảnh không trông như
+  đổi hình. Shot `v4-n09-powder` viết lại.
+- **11** (D1) — "nết" → **đặc tính**; hai đặc tính ở **hai cá thể**: K-01 (nắng gắt) và một con
+  trong sân đấu (kiệt sức). Phạm vi đúng canon: "những đòn dùng dây leo và năng lượng của củ".
+- **13** — câu của chủ dự án: "và ngồi viết kín cả một trang sổ tiếc thương".
+- **15** (D5, D1) — K-04 được trả: K-01 (đã là Ivysaur) trở lại trảng cũ và nằm cách K-04 đúng hai
+  thân, "dù thân mình ấy giờ đã lớn hơn trước". Cảnh lặp bố cục của `v4-empty-gap`. Shot mới
+  `v4-k01-return`. "Nhụy" → "một cấu trúc nhỏ giống hạt" (cả `venusaur.json` và `NGUON`).
+- **05** — địa y: "ngỡ là một sinh vật duy nhất".
+
+Máy: `tools/dna_lint.py` (mới) chạy trong `check-episode.py` và `handoff.py --draft`. Chạy lại trên bản
+Gemini V4 cũ, nó bắt đủ các lỗi vòng này đã chỉ ra: nết/temperament, nhụy, xanh lam, bốn câu kho dự
+trữ không có chữ rào. Plan có cờ `incident` (03) · `promise` (02) · `sets`/`pays` (bóng chim, giá
+của màu da) · `change` (14). `content.py` khai `RESERVED = {"hạt": …}`.

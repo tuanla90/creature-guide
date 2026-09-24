@@ -83,7 +83,22 @@ Rồi đọc tay những thứ linter chưa bắt được:
 - [ ] Ý chỉ có trong anime gắn **🎬** và kể như truyền thuyết của người bản xứ, **không** gắn 📖.
 - [ ] Mã thực địa và "Shiny" giống nhau ở hai bản — không có gì phải dịch.
 
-### 1.8 Cấu trúc kỹ thuật
+### 1.8 DNA: những lỗi đã từng lọt qua ([docs/DNA.md](../../../docs/DNA.md))
+
+`check-episode.py` tự soát các mã D1–D6 (chữ canon, chữ rào, chữ dành riêng, sự cố sớm, câu hứa,
+cài – trả, con có mã). Trước đó, plan phải có cờ `incident` · `promise` · `sets`/`pays` · `change`.
+Máy không đọc ra được những mục sau, nên người đọc:
+- [ ] **D1** Mỗi cá thể mang **một** đặc tính; đặc tính nói đúng phạm vi canon (Overgrow: đòn hệ
+      Cỏ, không phải mọi đòn); màu Shiny tra riêng từng dạng.
+- [ ] **D5** Cuộc tái ngộ của con có mã lặp lại một bố cục cũ, để người xem tự thấy cái đã đổi.
+- [ ] **D7** Câu móc nói đúng điều **lạ** mà cảnh đầu cho thấy.
+- [ ] **D8** Không mẹo nào dùng hai lần (người kể nhầm, tưởng chết, lạc mất…).
+- [ ] **D9** Không cảnh nào trước lần đổi hình trông giống lần đổi hình (củ mở, sáng, phồng).
+- [ ] **D11** Beat giới thiệu ≤ 20–25 giây.
+
+Duyệt ra lỗi mới thì **đóng gói nó** theo cách ghi ở đầu DNA.md trước khi đóng vòng duyệt.
+
+### 1.9 Cấu trúc kỹ thuật
 - [ ] Có `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản Short).
 - [ ] `PRON` có mọi tên loài và tên riêng khó đọc (chỉ cần cho bản VI).
 

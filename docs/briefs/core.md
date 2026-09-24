@@ -35,7 +35,7 @@ Mọi thứ phía trên vạch cắt dưới đây là ghi chú cho người b�
    is named with a noun ("the bird", "the old Venusaur", "the animal in the yard"). "They" only right
    after a plural noun in the same paragraph; never open a beat with "They". Each animal is introduced
    once, with a full noun, at the moment it is on screen, before it is called anything shorter.
-6. **Build unusual words.** The first time an uncommon word appears (clearing, bract, pistil), the
+6. **Build unusual words.** The first time an uncommon word appears (clearing, bract), the
    sentence explains it. Always use the full term afterwards.
 7. **A code must mean something.** The first time K-01 is used, say what K is (Kanto, the region) and
    what 01 is (the first animal he chose to follow).
@@ -47,6 +47,34 @@ precise verbs, reduplicated words (từ láy), flowing sentences that alternate 
 narrator who observes and gently comments. Never translate word for word; never use calques. Never:
 "nó quất", "nó đớp", "thế là xong", "đáng kinh ngạc", "tuyệt vời", "ngày nay"; no joking epithets for
 animals ("gã khổng lồ", "kẻ săn mồi"); no stage directions or [pause] tags inside the narration.
+
+## Lessons from review (every one of these was a real mistake in an earlier draft)
+
+- **Abilities** are "traits" (VI: **đặc tính**, never "nết"). **One animal carries one trait.** If
+  the species has two, say people speak of two traits and show each in a different animal. State
+  the canon scope exactly: a trait that powers up Grass moves strengthens "the blows struck with its
+  vines and the energy of its bulb", not every blow.
+- **Describe, don't promote**: if canon only draws a feature, describe what is visible ("a small
+  seed-like structure"), don't give it a botanical term ("pistil").
+- **Hedge the inside.** The narrator cannot see into the body. Any sentence about stores, reserves
+  or energy being spent is a 🔬 hypothesis and says so ("I suspect", "perhaps", "I cannot prove it,
+  but…"). 👁 sentences only describe what the eye sees.
+- **Stage words.** The word in the spine question (e.g. "the seed") is reserved for the spine
+  question, catalogue quotes and the last beat. Elsewhere name what is on screen: bulb
+  (Bulbasaur), bud (Ivysaur), flower (Venusaur).
+- **First danger before minute 4.** It can be small (a shadow passing), but the animal must be at
+  risk. **End act 1 with a promise line** that hints at what is coming without telling it.
+- **Set up, then pay off.** Every big threat is foreshadowed at least one beat earlier. Every coded
+  animal (K-04) appears at least twice and **returns after the central animal's change**, ideally
+  repeating an earlier composition so the change is felt.
+- **One colour word per colour**, exactly as canon (Bulbasaur is blue-green / teal, VI "xanh lục
+  lam"), used the same way throughout.
+- **The hook line says what is strange in the opening image**, not what is ordinary.
+- **Use each storytelling trick once** (the narrator misjudging, "I thought it was dead", "I lost
+  it").
+- **Nothing before the change may look like the change**: no bulb opening, glowing or swelling in an
+  earlier beat. Powder puffs from the gaps between the leaf layers; the bulb keeps its shape.
+- **The introduction beat stays short** (≤ 20–25 s): the question, the choice, what the code means.
 
 ## Hard rules. Breaking one means the draft is thrown out
 

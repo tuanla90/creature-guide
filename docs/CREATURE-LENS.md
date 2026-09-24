@@ -71,7 +71,7 @@ sát được. **Không bao giờ nói tên cơ chế của nguồn trong lời 
 | Mục Pokédex | trang trong **cuốn danh lục** của người bản xứ | "hạt được gieo ngay từ lúc chào đời" |
 | Tên đòn đánh | **tên người ta đặt** cho một cơ quan khi dùng trong trận | Roi Dây = dây leo; Bột Ngủ = bào tử |
 | Đòn cần "nạp một lượt" | cơ chế **tích trữ rồi phóng** | Tia Nắng ↔ cái dạ dày chạy bằng nắng |
-| Đặc tính (ability) | **một nết sinh lý** có điều kiện kích hoạt | nắng gắt → nhanh gấp đôi; kiệt sức → dốc dự trữ |
+| Đặc tính (ability) | **một đặc tính sinh lý** có điều kiện kích hoạt — mỗi cá thể mang **một** trong các đặc tính của loài | nắng gắt → nhanh gấp đôi; kiệt sức → dốc dự trữ |
 | Hệ (type) | **hoá sinh và vật liệu** của cơ thể | hệ Độc → độc lấy từ thức ăn, tích trong da |
 | Chỉ số (máu, tốc, thủ) | **thể chất**: khối lượng, sức bền, tốc độ | nặng 100 kg → chân phải thành cột |
 | Cấp tiến hoá | **ngưỡng tích luỹ** (nắng, dinh dưỡng, thời gian) | "không phải tuổi tác, là tích luỹ đủ" |
@@ -81,7 +81,7 @@ sát được. **Không bao giờ nói tên cơ chế của nguồn trong lời 
 | Nơi bắt gặp trong game | **vùng phân bố và sinh cảnh** | rìa rừng gặp đồng cỏ |
 | Chiều cao / cân nặng | **cơ học cơ thể**, dấu chân, sức nén lên đất | dấu chân sâu hơn, có vệt kéo |
 | Độ hiếm / tỉ lệ gặp | **mật độ quần thể** | "trảng này tôi đếm được năm cá thể" |
-| Hình ảnh khác biệt đực/cái | **dị hình giới tính** | nhụy giữa bông hoa của con cái |
+| Hình ảnh khác biệt đực/cái | **dị hình giới tính** | cấu trúc nhỏ giống hạt giữa bông hoa của con cái |
 | Anime, phim | 🎬 **truyền thuyết địa phương**, phải nói rõ là kể lại | lễ tiến hoá trong khu vườn bí mật |
 
 ### C2. Quy đổi cho thế giới kỳ ảo nói chung

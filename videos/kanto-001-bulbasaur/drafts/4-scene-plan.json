@@ -1,7 +1,7 @@
 {
  "pageTitle": "Kanto 001 · bản duyệt V4",
  "episode": "Ai đang nuôi ai? — bản duyệt V4",
- "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình).",
+ "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình). Cờ DNA (docs/DNA.md): incident (sự cố đầu tiên) · promise (câu hứa cuối hồi 1) · sets / pays (cài – trả) · change (cá thể trung tâm đổi hình).",
  "plates": [
   {
    "id": "loc-viridian-clearing",
@@ -172,6 +172,10 @@
      },
      "motion": "veo"
     }
+   ],
+   "promise": true,
+   "sets": [
+    "colour-price"
    ]
   },
   "03": {
@@ -193,6 +197,19 @@
       "replaces": "s04-bulbasaur-sunbath"
      },
      "motion": "breath"
+    },
+    {
+     "at": "large shadow",
+     "el": "world",
+     "who": "đàn thường + K-01",
+     "shot": "wide · từ cao",
+     "what": "Giữa trưa: bóng một cánh chim lớn lướt ngang trảng; cả đàn nằm rạp lẫn vào cỏ, chỉ K-01 nhạt màu sáng rõ giữa vệt nắng — KHÔNG thấy con chim (cài cho beat 08)",
+     "src": {
+      "kind": "new",
+      "id": "v4-shadow-pass",
+      "why": "cài bóng Fearow trước khi nó tấn công"
+     },
+     "motion": "still"
     },
     {
      "at": "filled out",
@@ -223,7 +240,11 @@
    "chapter": {
     "kicker": "II",
     "title": "The second stomach"
-   }
+   },
+   "incident": true,
+   "sets": [
+    "bird-shadow"
+   ]
   },
   "04": {
    "act": "Hồi 2 · Cái dạ dày thứ hai",
@@ -427,7 +448,7 @@
      "el": "freeze",
      "who": "đàn thường + K-01",
      "shot": "medium · thấp",
-     "what": "Dưới tán dương xỉ, những con xanh lam tan vào bóng loang — hình ĐỨNG ở “does not”, soi da nhạt của K-01; thẻ kẹp ảnh quê nhà: bướm sâu đo nhạt trên vỏ cây sẫm",
+     "what": "Dưới tán dương xỉ, những con xanh lục lam tan vào bóng loang — hình ĐỨNG ở “does not”, soi da nhạt của K-01; thẻ kẹp ảnh quê nhà: bướm sâu đo nhạt trên vỏ cây sẫm",
      "src": {
       "kind": "regen",
       "id": "v4-camouflage",
@@ -456,11 +477,11 @@
      "el": "clip",
      "who": "K-01",
      "shot": "close",
-     "what": "Đỉnh củ hé, một làn bột mịn bung lên",
+     "what": "Bột mịn phụt ra từ khe giữa các bẹ củ — củ giữ nguyên hình, KHÔNG hé mở (tránh trông như đổi hình)",
      "src": {
       "kind": "regen",
       "id": "v4-n09-powder",
-      "why": "màu Shiny",
+      "why": "màu Shiny · bột ra từ khe bẹ, không từ đỉnh củ",
       "replaces": "n09-sleep-powder"
      },
      "motion": "veo"
@@ -469,7 +490,11 @@
    "chapter": {
     "kicker": "IV",
     "title": "The price"
-   }
+   },
+   "pays": [
+    "colour-price",
+    "bird-shadow"
+   ]
   },
   "09": {
    "act": "Hồi 4 · Cái giá",
@@ -569,7 +594,7 @@
   },
   "11": {
    "act": "Hồi 5 · Cùng một cơ quan",
-   "title": "Hai nết",
+   "title": "Hai đặc tính",
    "chip": "📖 CATALOGUE",
    "caption": "Two temperaments",
    "scenes": [
@@ -769,7 +794,8 @@
      },
      "motion": "breath"
     }
-   ]
+   ],
+   "change": true
   },
   "15": {
    "act": "Hồi 7 · Không có câu trả lời",
@@ -777,6 +803,19 @@
    "chip": "🔬 HYPOTHESIS",
    "caption": "Two lives, one body",
    "scenes": [
+    {
+     "at": "A few weeks",
+     "el": "world",
+     "who": "K-04 + K-01 (Ivysaur)",
+     "shot": "wide · từ cao",
+     "what": "Trảng cũ: K-04 nằm chỗ quen, K-01 (Ivysaur) nằm cách đúng hai thân — cùng bố cục với cảnh chỗ trống ở beat 13, giờ chỗ trống đã có người về",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-return",
+      "why": "trả cho K-04: con có mã phải quay lại sau khi K-01 đổi hình"
+     },
+     "motion": "still"
+    },
     {
      "at": "so heavy",
      "el": "specimen",
@@ -804,11 +843,11 @@
      "motion": "still"
     },
     {
-     "at": "pistil",
+     "at": "seed-like",
      "el": "specimen",
      "who": "Venusaur cái già",
      "shot": "close · từ cao",
-     "what": "Cùng tấm ảnh — điểm soi: cái nhụy giữa hoa",
+     "what": "Cùng tấm ảnh — điểm soi: cấu trúc nhỏ giống hạt giữa hoa (con cái)",
      "src": {
       "kind": "regen",
       "id": "v4-n19-old-venusaur",

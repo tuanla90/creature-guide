@@ -39,7 +39,7 @@ Bộ soát máy bắt được một phần (mục cuối). Phần còn lại l�
      Bulbasaur… Chúng…"). Mở beat bằng "chúng" là sai.
    - Không "con đấy", "con đó", "con kia" trơ trọi. Con nào cũng được **giới thiệu một lần bằng
      danh từ đầy đủ, đúng lúc nó có trên hình**, rồi mới được gọi tắt.
-6. **Từ lạ phải được dựng.** Lần đầu dùng một từ ít gặp (trảng cỏ, bẹ lá, nhụy) thì câu ấy tự giải
+6. **Từ lạ phải được dựng.** Lần đầu dùng một từ ít gặp (trảng cỏ, bẹ lá) thì câu ấy tự giải
    nghĩa: "một khoảng đất trống cỏ mọc thấp, người ta gọi là trảng cỏ". Sau đó luôn viết đủ "trảng
    cỏ", không cắt còn "trảng". Không dịch sát kiểu Tây ("điều tôi gạch chân" → "điều khiến tôi phải
    ghi đậm vào sổ").

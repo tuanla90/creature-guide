@@ -110,7 +110,9 @@ Vòng sau: `--brief script --round 2` → `3-script-gemini-2.md`.
 3. **Claude soạn cảnh dự kiến** — `drafts/4-scene-plan.json`: mỗi beat mấy cảnh, lúc lời đọc tới
    chữ nào, trên hình có gì, ai trong khung (K-01 có mặt không), cỡ cảnh / góc máy, ảnh lấy từ đâu
    (**có sẵn · sinh lại · sinh mới · tải về**), chuyển động tầng nào, chỗ nào dừng hình. Kèm danh sách
-   ảnh mẫu phải sinh trước. Đây là bản nháp của shot bible — duyệt nó rẻ hơn duyệt ảnh.
+   ảnh mẫu phải sinh trước. Đây là bản nháp của shot bible — duyệt nó rẻ hơn duyệt ảnh. Plan mang **cờ
+   DNA** (`incident` · `promise` · `sets`/`pays` · `change`) để `check-episode.py` soát sự cố sớm, câu
+   hứa, cài – trả và con có mã quay lại — xem [DNA.md](DNA.md).
 4. **Người duyệt trên trang** — `PYTHONUTF8=1 python tools/review-page.py <slug>` ghép cảnh dự kiến
    + lời EN cạnh lời VI thành `out/<slug>/review.html`; Claude đăng thành Artifact (capability `db`).
    Mỗi beat có nút **Duyệt / Cần sửa** và ô ghi chú; Claude đọc lại bằng collection `review`, không
@@ -368,7 +370,7 @@ Bốn cái mới, từ lần đầu chạy luồng Gemini → Claude ở tập 0
 13. **Mục tự soát của Gemini nói sai.** Nó ghi "tối đa một so sánh mỗi beat" ngay trong bản có hai
     beat mỗi beat hai so sánh. Không tin SELF-CHECK — soát lại bằng máy và bằng mắt.
 14. **Số bịa trốn trong chỗ không phải lời** — ghi chú trang sổ "2.1 m/s", chữ "gấp đôi" cho một
-    nết canon là ×1,5. Soát cả SHOTS và notes, không chỉ VO.
+    đặc tính canon là ×1,5. Soát cả SHOTS và notes, không chỉ VO.
 15. **Mốc thời gian vênh** — ngày 22 bị tấn công nhưng kho dự trữ "tích cả tháng". Bắt Gemini viết
     TIMELINE, rồi đọc mọi con số trong lời đối chiếu với nó.
 16. **Tên cũ sống lại** trong TIMELINE khi lời đã sạch — dấu hiệu Gemini vẫn nghĩ bằng tên cũ.

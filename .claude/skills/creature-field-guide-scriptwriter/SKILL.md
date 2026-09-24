@@ -7,6 +7,9 @@ description: Write natural-history documentary scripts for fictional creatures u
 
 Write the episode as a narrated natural-history film, not as a list of Pokedex facts. Follow one observable subject through a meaningful period, and let facts arrive because the subject does something.
 
+Before writing, read `docs/DNA.md`: every rule there is a mistake an earlier draft made (canon terms
+such as "đặc tính", hedging, stage words, first danger before minute 4, set-up and pay-off).
+
 ## Non-negotiable narrative rules
 
 - Every episode needs a concrete survival question, environmental pressure, and a limit or deadline. The pressure may be drought, migration, injury, scarce light, reproduction, habitat change, social competition, or transformation; it does not need to be a predator attack.

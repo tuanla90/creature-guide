@@ -442,7 +442,7 @@ EN_BANNED = [
     (r"\blevels?\b", "thuật ngữ game"), (r"\bHP\b", "thuật ngữ game"), (r"\bstats?\b", "thuật ngữ game"),
     (r"\bevol(ve|ved|ves|ving|ution)", "gọi là 'the change' / 'changing form'"),
     (r"solar ?beam|vine whip|sleep powder|razor leaf|leech seed|\btackle\b|\bember\b|flamethrower|water gun|"
-     r"thunderbolt|thunder shock|chlorophyll|overgrow|\bblaze\b|\btorrent\b", "tên đòn / tên nết của game"),
+     r"thunderbolt|thunder shock|chlorophyll|overgrow|\bblaze\b|\btorrent\b", "tên đòn / tên đặc tính của game"),
     (r"\bcamera|\bcrew\b|\bfootage\b|\bvideo\b|\bviewers?\b|\bscreen\b|\bsubscrib", "lộ đoàn phim / màn hình"),
     (r"\bAI\b|\bprompt", "lộ công cụ"),
     (r"\bmolt|\bmoult|\bshed(s|ding)? (its |the )?skin|\bslough", "cảnh đổi hình không có lột da"),
@@ -538,6 +538,9 @@ def check_draft(slug, which=None):
         sys.path.insert(0, str(ROOT / "tools"))
         from voice_lint import lint_beat                      # docs/VOICE.md: câu cụt, đại từ trôi, từ trơ
         warn.extend("giọng văn — " + m for m in lint_beat(b, vi, "vi") + lint_beat(b, en, "en"))
+        from dna_lint import lint_terms, lint_hedge           # docs/DNA.md: từ canon đã gạch, câu thiếu rào
+        warn.extend("DNA " + m for m in lint_terms(b, vi, "vi") + lint_terms(b, en, "en")
+                    + lint_hedge(b, vi, "vi") + lint_hedge(b, en, "en"))
         en_all += f"\n[{b}] " + en
         vi_all += f"\n[{b}] " + vi
         en_s = len(re.findall(r"[A-Za-z0-9'’-]+", en)) / EN_WPS

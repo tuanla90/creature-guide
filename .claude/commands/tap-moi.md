@@ -25,7 +25,9 @@ Slug theo mẫu `<vùng>-<số>-<loài>` (vd `kanto-004-charmander`).
    `--brief script`, và **dừng**: chờ “xong kịch bản”.
 3. **Bước 4 · chuẩn hoá** (sau “xong kịch bản”). `--draft`, rồi đọc hết theo skill `episode-review`.
    Ghi `content.py` (`BEATS` VI + `BEATS_EN`) và `drafts/4-review.md`. Chạy `check-episode.py`.
-   Soạn `drafts/4-scene-plan.json` (cảnh dự kiến từng beat + ảnh mẫu), chạy
+   Soạn `drafts/4-scene-plan.json` (cảnh dự kiến từng beat + ảnh mẫu, **kèm cờ DNA** `incident` ·
+   `promise` · `sets`/`pays` · `change` — [docs/DNA.md](../../docs/DNA.md)). Khai `RESERVED` / `SPINE_KEY`
+   trong `content.py`. `check-episode.py` phải sạch mọi dòng `DNA`, rồi chạy
    `tools/review-page.py <slug>`, đăng `out/<slug>/review.html` thành Artifact có `capabilities: {db: {}}`,
    đưa link. **Dừng** chờ người duyệt bấm Duyệt / Cần sửa trên trang.
 4. **Sau “duyệt”** (đọc collection `review`; beat cần sửa thì sửa và đăng lại cùng link): ghi

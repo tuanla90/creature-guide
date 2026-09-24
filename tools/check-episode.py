@@ -140,7 +140,7 @@ def main(slug: str) -> int:
         print(f"không thấy videos/{slug}/content.py")
         return 2
 
-    c = load_content(d)
+    c = content = load_content(d)          # c bị vòng lặp callout dùng lại, content thì không
     scenes = json.loads((d / "scenes.json").read_text(encoding="utf-8"))
     beats = c.BEATS
     order = list(c.ORDER)
@@ -481,6 +481,16 @@ def main(slug: str) -> int:
         W("giọng văn — " + m)
     if not vmsgs:
         K("giọng văn: không câu cụt liền nhau, đại từ có chủ, không từ trơ (docs/VOICE.md)")
+
+    # ---- DNA: bài học rút từ các vòng duyệt (docs/DNA.md) ----------------------
+    from dna_lint import lint_episode
+    plan = json.loads(plan_f.read_text(encoding="utf-8")) if plan_f.exists() else None
+    gap = json.loads((ROOT / "video.config.json").read_text(encoding="utf-8")).get("pacing", {}).get("chapterGap", 2.2)
+    dmsgs = lint_episode(content, plan, order, gap)
+    for m in dmsgs:
+        W("DNA " + m + " (docs/DNA.md)")
+    if not dmsgs:
+        K("DNA: từ canon, chữ rào, sự cố sớm, câu hứa, cài – trả, con có mã quay lại (docs/DNA.md)")
 
     # ---- dừng hình và ảnh quê nhà --------------------------------------------
     # Luật cường độ (docs/SCENE-TYPES.md mục B2): dừng hình là lúc người kể ngừng lại để nghĩ —

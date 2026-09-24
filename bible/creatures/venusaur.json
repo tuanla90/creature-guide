@@ -10,9 +10,9 @@
     "heavy wide-set legs, small red eyes"
   ],
   "sexDifferences": {
-    "note": "Bulbapedia: Venusaur cái có nhụy (gynoecium) ở giữa hoa",
-    "female": ["a distinct seed-like pistil (gynoecium) standing in the center of the flower"],
-    "male": ["the center of the flower is open and empty, no pistil"]
+    "note": "Bulbapedia: Venusaur cái có một cấu trúc nhỏ giống hạt ở giữa hoa, con đực không có. Lời dẫn gọi là 'cấu trúc giống hạt', KHÔNG gọi là nhụy",
+    "female": ["a small distinct seed-like structure standing in the center of the flower"],
+    "male": ["the center of the flower is open and empty, no seed-like structure"]
   },
   "canon": [
     {"fact": "hoa nở khi hấp thụ năng lượng mặt trời; luôn di chuyển để tìm nắng", "src": "Pokédex"},
@@ -21,8 +21,8 @@
     {"fact": "cao 2,0 m, nặng 100 kg; 87,5% đực", "src": "Bulbapedia"}
   ],
   "states": {
-    "female": "female Venusaur, pistil clearly visible in the flower center",
-    "male": "male Venusaur, flower center open with no pistil"
+    "female": "female Venusaur, small seed-like structure clearly visible in the flower center",
+    "male": "male Venusaur, flower center open with no seed-like structure"
   },
   "invariants": ["huge open pink flower with white spots", "thick brown trunk under the flower", "draping green leaves"],
   "forbidden": ["closed bud", "red flower", "more than one flower on one body"]

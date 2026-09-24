@@ -35,7 +35,7 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh** trên cùng một video
 | Cá thể trung tâm | **Shiny Bulbasaur · K-01** | thân xanh vàng, củ sẫm hơn con thường | 📖 Bulbapedia — Shiny Pokémon. Tỉ lệ 1/8192 (Gen II–V), 1/4096 (từ Gen VI) |
 | Con lớn nằm cạnh *(quay lại ở beat 13)* | **một con Bulbasaur lớn · K-04** | mảng da rách bên sườn | 👁 quan sát của người kể — mã vì nó quay lại và dễ lẫn với cả đàn |
 | Kẻ săn | **một con Fearow** | một bên mắt phủ màng đục màu tro | 👁 quan sát của người kể. Loài 📖 Fearow — Bulbapedia, phân bố Kanto |
-| Con trưởng thành già | **con Venusaur cái già** | rêu và dương xỉ mọc trên lưng; nhụy giữa hoa | 👁 quan sát. Dị hình giới tính 📖 Bulbapedia — Venusaur gender differences |
+| Con trưởng thành già | **con Venusaur cái già** | rêu và dương xỉ mọc trên lưng; cấu trúc nhỏ giống hạt giữa hoa | 👁 quan sát. Dị hình giới tính 📖 Bulbapedia — Venusaur gender differences |
 | Người kể | **Dr. Holth** *(không đọc lên, xưng "tôi")* | nhà sinh vật học thực địa | Blightfall — IP riêng. Xem [NARRATOR.md](NARRATOR.md) |
 | Tác giả | **Tuấn La** | người làm phim thật — **không xuất hiện trong video** | chỉ ở mô tả YouTube |
 | Địa danh | **Viridian Forest** | rừng Kanto nơi Bulbasaur sống hoang dã | 📖 Pokémon Let's Go Pikachu/Eevee. *(Gen 1 KHÔNG có Bulbasaur hoang dã)* |
