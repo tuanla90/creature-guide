@@ -71,6 +71,36 @@ trị nào chiếm quá 60%, và **phải có ít nhất một cảnh toàn**. S
 **Dựng một hồi:** mở bằng `extreme-wide` hoặc `wide` · vào hành vi bằng `medium` · chốt bằng `close`
 hoặc `macro`. Khán giả luôn biết mình đang ở đâu trước khi được đưa lại gần.
 
+### Convention mở đầu tập — 4 shot bắt buộc
+
+Không có trung gian ở shot đầu: hoặc **cực rộng** (vùng đất là nhân vật) hoặc **cực gần** (một chi tiết gây tò mò trước khi thấy toàn cảnh). Chưa bao giờ mở bằng medium shot.
+
+| Thứ tự | Shot | Nội dung | Khai `size` / `angle` |
+|---|---|---|---|
+| **1 · Establish** | `extreme-wide` hoặc `macro` | Địa điểm hoặc chi tiết — **chưa thấy sinh vật** | `low` cho rừng; `macro` cho dấu vết / bào tử |
+| **2 · Reveal** | `wide` hoặc `medium` | Sinh vật xuất hiện lần đầu — **không phán xét, chỉ quan sát** | `low` để thấy nó to |
+| **3 · Detail/Hook** | `close` hoặc `macro` | Đặc điểm nhận dạng hoặc hành vi lạ → câu hỏi treo | `eye` hoặc `rear` |
+| **4 · Title card** | — | Tên loài + mã cá thể. Dứt điểm trước khi narrator bắt đầu nói | — |
+
+**Narrator bắt đầu VÀO hoặc SAU shot 3**, không trước. Shot 1 và 2 là tiếng thiên nhiên thuần — không lời.
+
+---
+
+## B · Vai sinh thái của Pokemon khách
+
+Mỗi tập phải có **2–4 Pokemon khách** với vai rõ ràng. Vai quyết định cách chúng xuất hiện, tần suất, và mức độ tương tác với cá thể trung tâm.
+
+| Vai | Chức năng trong tập | Xuất hiện | Lấy mã? |
+|---|---|---|---|
+| **Predator** | Tạo nguy hiểm, test phản ứng sinh vật trung tâm | 1–2 lần, dramatic | Không (ẩn danh = đáng sợ hơn) |
+| **Prey** | Đặt sinh vật trung tâm trong food chain; cho thấy nó ăn gì | 1 lần, không kịch tính | Không |
+| **Competitor** | Cùng niche, tranh tài nguyên — tạo tension không phải chiến đấu | 1–2 lần | Không |
+| **Mutualist** | Tương hỗ; cho thấy sinh vật trung tâm có vai trò trong ecosystem | Xuất hiện đều, không dramatic | Nếu quay lại > 2 lần thì cho mã |
+
+**Không đặt tên riêng** cho bất kỳ Pokemon khách nào — đây là luật chung của kênh. Nếu một con khách xuất hiện đủ nhiều để cần nhận dạng, cho mã thực địa (K-04) và gọi bằng đặc điểm.
+
+**Vai Mutualist** là cách xây dựng ecosystem mà không cần tập riêng: Butterfree thụ phấn cho củ của Bulbasaur, Caterpie làm sạch lá mục → khán giả thấy Viridian Forest như một hệ thống sống, không phải sân khấu.
+
 ### `motion: true` — ảnh sinh ra để chạy `creature-motion`
 
 `creature-motion` **chỉ làm động được con vật**. Nó không biết làm gió, tia nắng, nước chảy. Mọi thứ

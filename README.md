@@ -15,6 +15,7 @@ chặng một cổng.
 | [CAST.md](docs/CAST.md) | nhân vật tên gì ở bản VI và bản EN, đặt theo luật nào |
 | [SOUND.md](docs/SOUND.md) | tiếng kêu ghép từ những loài thật nào, nhạc nền theo tông nào |
 | [MUSIC-PROMPTS.md](docs/MUSIC-PROMPTS.md) | hai mươi câu lệnh sinh nhạc, theo mười chặng của khung tập |
+| [JOURNAL-STYLE.md](docs/JOURNAL-STYLE.md) | visual spec sổ thực địa Dr. Holth — aesthetic Gravity Falls, nội dung bio-energy |
 
 Máy làm được phần nào thì nằm ở `.claude/`:
 

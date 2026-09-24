@@ -137,6 +137,48 @@ Trộn: tiếng nền −28 dB, cue −12 tới −18 dB, lời dẫn luôn là 
 ở trường `volume` trong `sfx.json`, chép thẳng sang `scenes.json`. Cue nào đè lên một câu quan trọng
 thì bỏ cue, đừng hạ lời.
 
+## Giọng nhận dạng của sinh vật — tiếng kêu gọi tên
+
+Mỗi loài có một âm thanh đặc trưng nghe ra được tên loài nhưng không phải lời nói — giống như nghe tiếng chim mà tưởng tượng ra tên nó. Đây là **lớp giọng** trong bảng cue (dải 200–1200 Hz), không phải SFX.
+
+**Nguồn và quy trình:**
+
+Lấy phát âm tên loài (ghi âm mới, **không dùng file anime hay game**) → xử lý qua pipeline sau:
+
+| Bước | Công cụ | Thông số |
+|---|---|---|
+| 1. Ghi âm thô | Mic + DAW | Đọc tên loài chậm, nhấn vào âm tiết đặc trưng nhất |
+| 2. Hạ pitch + formant | `asetrate` × 0.45–0.6 | Nghe như con vật to hơn, không phải người đang hạ giọng |
+| 3. Layer 2–3 lần | Lệch nhau 30–80 ms | Tạo cảm giác cộng hưởng trong buồng họng lớn |
+| 4. Lowpass | Cắt trên 2.5 kHz | Loại bỏ phụ âm — chỉ giữ phần nguyên âm / cộng hưởng |
+| 5. Reverb nhẹ | Pre-delay 15 ms, tail 0.4 s | Đặt con vật vào không gian thật |
+
+**Kết quả mong muốn:** nghe biết đây là loài này, không nghe ra chữ nào.
+
+*Ví dụ Bulbasaur:* Phần "Bul-" → tiếng phồng trầm; "ba-" → mở họng; "-saur" → đuôi tắt dần.  
+Sau xử lý nghe như tiếng rống thấp có cộng hưởng ngực — không phải tiếng kêu tên.
+
+**Ghi chú bản quyền:** không lấy audio từ anime hay game dù để xử lý lại. Ghi âm mới từ đầu là con đường duy nhất an toàn và đúng với luật 1 của file này.
+
+---
+
+## Leitmotif tiến hoá — âm nhạc signature của kênh
+
+Mỗi lần bất kỳ sinh vật nào tiến hoá trong toàn series, **một đoạn nhạc duy nhất** xuất hiện — đủ nhận ra, đủ khác nhạc nền thường.
+
+**Spec:**
+- Độ dài: **20–35 giây** — dài hơn thì chiếm cảnh, ngắn hơn thì không đọng lại
+- Nhạc cụ: **instrument only**, không vocal
+- Tone: trang trọng + tự nhiên — không triumphant kiểu game RPG, không sad kiểu phim drama; gần BBC Earth hơn
+- Điểm bắt đầu: **beat trước khi hình thái mới xuất hiện** — khán giả nghe âm nhạc rồi mới thấy hình
+- Kết thúc: fade ra — nhạc nền thường trở lại, không cắt cứng
+
+**Biến tấu theo loài:** cùng melodic DNA, điều chỉnh tempo và nhạc cụ chủ đạo (loài nước thêm tiếng nước, loài lửa thêm brass ấm). Không làm 2 bài hoàn toàn khác nhau — mất brand recognition.
+
+**Lưu:** `public/audio/music/evolution-leitmotif-base.wav` + `evolution-leitmotif-[loài].wav` nếu có biến tấu.
+
+---
+
 ## Nhạc nền
 
 ```bash

@@ -52,6 +52,8 @@ Với mỗi loài, đi lần lượt. Trục nào không có tư liệu thì b�
 | 14 | **Ký sinh & vệ sinh** | bọ, ve, nấm trên da hoặc vảy; tắm cát, ngâm bùn, liếm, cọ lưng vào vách đá, nhờ loài khác nhặt hộ | Nó giữ sạch cơ thể bằng cách nào, và ai được lợi từ việc đó? |
 | 15 | **Nguỵ trang hay cảnh báo** | màu tiệp cảnh quan, hay sặc sỡ nổi bật (màu cảnh báo độc) | Nó muốn biến mất, hay muốn được nhìn thấy? |
 | 16 | **Cái chết & di sản sinh thái** | xác một cá thể để lại gì: kẻ ăn xác, cây mọc trên đó, khoáng trả lại đất | Loài này biến mất thì cái gì sụp theo? |
+| 17 | **Vật lý khả năng** | lực tác động, tốc độ phóng, năng lượng tiêu, cơ quan tạo ra từng move | Bao nhiêu joule? Tương đương gì trên Trái Đất? Cơ thể hoàn trả bằng gì và mất bao lâu? |
+| 18 | **Khoa học tương tác hệ** | tại sao hệ A lại hiệu quả / kém với hệ B về mặt hoá sinh và vật lý | Cơ chế nào khiến điện làm nước dẫn? Tại sao lực vật lý không truyền vào vật chất thay đổi trạng thái pha? |
 
 > Trục 16 kể bằng **dấu vết**: xương phủ rêu, một vạt cây mọc tốt bất thường, loài ăn xác lui tới.
 > Không quay cảnh xác chết cận, không mô tả nội tạng. Xương và mạch năng lượng dạng X-quang mô phỏng
@@ -100,6 +102,54 @@ Dùng khi làm loài ngoài Pokémon (Harry Potter, Trung Địa, D&D, quái v�
 
 ---
 
+## C3. Ước lượng vật lý khả năng — ba bước
+
+Áp cho **Trục 17** mỗi khi phân tích một move. Mục tiêu: ra một con số có thể nói được trong lời dẫn, không phải bịa.
+
+**Bước 1 — Đo từ kích thước thực (canon height/weight làm điểm neo)**
+
+Dùng cơ học cơ bản: `F = ma`, `E = ½mv²`, `P = E/t`. Lấy kích thước canon → suy ra khối lượng bộ phận liên quan → ước lượng tốc độ hoặc gia tốc quan sát được trong video/anime → ra lực và năng lượng.
+
+*Ví dụ Bulbasaur Vine Whip:* cao 0.7m, nặng 6.9kg → dây leo ~1.5m, đầu dây ~40g, gia tốc đến 18m/s trong 0.1s → F ≈ 7N, E ≈ 6J.
+
+**Bước 2 — So với stat canon**
+
+Attack stat, Speed stat, và mô tả Pokédex có ngụ ý con số khác không? Ghi cả hai.
+
+**Bước 3 — Xử lý khoảng lệch**
+
+| Khoảng lệch | Cách xử lý |
+|---|---|
+| < 1 bậc độ lớn | Dùng trung bình, ghi cả hai cách tính |
+| 1–2 bậc | Đặt tên cho cơ chế bù trừ sinh học — ví dụ: "chất kích thích thần kinh tiết qua dây leo khiến cơ con mồi co giật mạnh hơn lực thật" |
+| > 2 bậc | Hạ xuống thành 🔬 giả thuyết, nêu rõ khoảng cách |
+
+**Không được nâng con số vật lý lên để khớp stat.** Luôn tìm cơ chế sinh học giải thích khoảng cách — đó là nội dung, không phải vấn đề.
+
+**Quy đổi thân thiện để nói trong lời dẫn:**
+- Lực (N): so với búa, quyền đấm, cắn của loài thật
+- Năng lượng (J): so với thời gian quang hợp, bữa ăn, số bước chạy cần để hoàn trả
+- Nhiệt độ: so với lò, nước sôi, nhiệt độ cơ thể
+
+---
+
+## C4. Khoa học tương tác hệ — khung diễn đạt
+
+Áp cho **Trục 18**. Không dùng từ "khắc hệ" trong lời dẫn — dùng thay bằng cơ chế vật lý/hoá sinh cụ thể.
+
+**Nguyên tắc:** mỗi tương tác hệ đều có một cơ chế tự nhiên trên Trái Đất có thể làm đối chứng.
+
+| Tương tác | Cơ chế | Đối chứng Trái Đất |
+|---|---|---|
+| Điện → Nước (hiệu quả) | Hàm lượng ion trong cơ thể thuỷ sinh làm dẫn điện xuất sắc | Cá nước muối bị điện giật mạnh hơn cá nước ngọt vì độ dẫn điện khác |
+| Cỏ → Đá/Đất (hiệu quả) | Enzyme acid hữu cơ từ rễ cỏ phân giải canxi carbonat trong cấu trúc tinh thể | Cây dương xỉ nứt đá vôi trong hàng chục năm; Bulbasaur làm điều đó trong giây |
+| Thường → Ma (miễn nhiễm) | Lực vật lý không truyền được sang vật chất thay đổi trạng thái pha — momentum tiêu tán vì không có vật chất nhất quán để hấp thụ | Plasma trong lò phản ứng: lực cơ học không giữ được nó, chỉ từ trường mới làm được |
+| Chiến → Tối (hiệu quả) | Khí/aura tập trung từ sinh vật Chiến phá vỡ cơ chế tán xạ ánh sáng của hệ Tối | — (giả thuyết, chưa có đối chứng Trái Đất trực tiếp) |
+
+Nếu không tìm được đối chứng Trái Đất → **hạ xuống 🔬, nói thẳng là chưa rõ cơ chế**.
+
+---
+
 ## D. Quy trình áp cho một loài mới
 
 1. **Gom canon, ghi nguồn từng câu.** Nguồn có **hai tầng**, và tầng quyết định độ tự do:
@@ -141,6 +191,8 @@ Loài: #____ ________        Tập: ________
 | Ký sinh & vệ sinh |  |  |  |  |  |
 | Nguỵ trang / cảnh báo |  |  |  |  |  |
 | Cái chết & di sản |  |  |  |  |  |
+| **Vật lý khả năng** | Move chính · stat Attack/Speed/SP.Atk · height/weight |  |  |  | Diagram năng lượng |
+| **Tương tác hệ** | Type chart · cơ chế sinh hoá của hệ |  |  |  | Scientific visualization insert |
 ```
 
 ---
