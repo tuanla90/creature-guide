@@ -1,29 +1,31 @@
 ---
-description: Mở một tập mới — từ ý tưởng tới bộ prompt ảnh, theo đúng dây chuyền của kênh
-argument-hint: <loài hoặc số dex, vd "0004 Charmander">
+description: Mở một tập mới — luồng kịch bản năm bước (Gemini ý tưởng → Claude khung → Gemini lời → Claude chuẩn hoá → người duyệt)
+argument-hint: <loài hoặc số dex, vd "#0004 Charmander">
 ---
 
 Mở tập mới cho **$ARGUMENTS**.
 
-Đọc trước, theo thứ tự: `docs/PIPELINE.md` (chặng 1–4), `docs/CREATURE-LENS.md`, `docs/IDEA-BANK.md`,
-`docs/CAST.md`. Dùng skill `creature-field-guide-scriptwriter` để viết, `creature-field-guide-production`
-để soạn shot.
+Trước tiên: **WIP = 1.** Chạy skill `episode-plan` — tập đang chạy chưa qua cổng chặng 10 thì dừng
+lại và nói rõ nó đang kẹt ở đâu, đừng mở tập mới.
 
-Làm đúng bốn chặng đầu, dừng lại ở cổng của chặng 4 rồi báo cáo — **đừng sinh ảnh**, đó là việc tốn
-tiền và cần người duyệt.
+Đọc: `docs/PIPELINE.md` (chặng 1–4), `docs/HANDOFF.md` (luồng năm bước và tên file),
+`docs/CREATURE-LENS.md`, `docs/EPISODE-FRAME.md`, `docs/CAST.md`.
 
-1. **Ý tưởng.** Chọn từ IDEA-BANK nếu đã có mục cho loài này, không thì soi qua 16 trục của
-   CREATURE-LENS và đề xuất 3 hướng, kèm câu hỏi mở màn của từng hướng. **Hỏi tôi chọn hướng nào
-   trước khi viết.**
-2. **Canon.** Tra Bulbapedia từng mục danh lục. Mọi câu lấy từ đó phải vào `NGUON` kèm nguồn; mọi
-   suy đoán phải kèm một loài có thật ở Trái Đất. Cập nhật `bible/creatures/<loài>.json`
-   (anchor, appearance, sexDifferences, forbidden) và khai `individuals` cho cá thể trung tâm nếu nó
-   có dấu riêng.
-3. **Kịch bản.** `videos/<slug>/content.py`: `ORDER`, `BEATS` (nhớ `short-outro`), `PRON`, `NGUON`.
-   Tên nhân vật đặt theo vết tích hoặc hành vi, là danh từ, và **chỉ xuất hiện sau khi khán giả đã
-   thấy cái dấu ấy**. Ghi vào `docs/CAST.md` cả cột VI và EN. Người dẫn xưng "tôi", không nói tên.
-4. **Shot.** `bible/shots/<ep>.json` rồi `node tools/build-prompts.mjs <ep>`. Mỗi beat ít nhất một
-   shot; mỗi dấu tích dùng để đặt tên phải có một shot cận cảnh riêng.
+Slug theo mẫu `<vùng>-<số>-<loài>` (vd `kanto-004-charmander`).
 
-Rồi chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` và báo cáo: hướng đã chọn, cấu trúc tập,
-những chỗ canon mỏng phải dùng giả thuyết, số shot, và những gì còn thiếu trước khi sinh ảnh.
+1. **Bước 1 · ý tưởng.** `PYTHONUTF8=1 python tools/handoff.py <slug> --brief ideas "$ARGUMENTS"`.
+   Đọc lại `drafts/1-ideas-brief.md` một lượt (phần "What the channel already knows" lấy tự động từ
+   IDEA-BANK và SLATE — sửa nếu lệch), rồi **dừng**: đưa người dùng bản dán, chờ “xong ý tưởng”.
+2. **Bước 2 · khung** (sau “xong ý tưởng”). Chấm sáu ý theo năm tiêu chí (PIPELINE chặng 1), chọn
+   một, nêu lý do, giữ một ý dự phòng. Tra canon trên Bulbapedia cho **từng** câu định đưa vào bảng
+   nguồn — Gemini hay bịa canon, đừng chép nguồn nó ghi. Cập nhật `bible/creatures/<loài>.json`
+   (anchor, appearance, sexDifferences, forbidden, `individuals.K-01` với `trait`), `bible/refs/`,
+   `bible/locations/`. Viết `drafts/2-skeleton.md` theo mẫu của tập 001 (dòng `<!-- handoff: … -->`,
+   bảng nguồn, so sánh lõi/tuỳ chọn, chỗ dừng hình, beat gợi ý, `who`/`loc`). Rồi
+   `--brief script`, và **dừng**: chờ “xong kịch bản”.
+3. **Bước 4 · chuẩn hoá** (sau “xong kịch bản”). `--draft`, rồi đọc hết theo skill `episode-review`.
+   Ghi `content.py` và `drafts/4-review.md`. Chạy `check-episode.py`. **Dừng** chờ “duyệt”.
+4. **Sau “duyệt”**: ghi `Đã duyệt: <ngày>` vào `4-review.md`, soạn `bible/shots/<ep>.json`, chạy
+   `node tools/build-prompts.mjs <ep>`, báo số shot, số ảnh mẫu phải sinh trước và những gì còn thiếu.
+
+**Không sinh ảnh, không render, không đăng.** Mỗi loạt tốn credit phải hỏi trước.

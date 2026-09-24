@@ -1,6 +1,6 @@
 ---
 description: Người dùng vừa làm xong một việc tay — tìm xem cái gì vừa tới, nạp vào đúng chỗ, làm bước kế tiếp
-argument-hint: (để trống) · gemini · refs · ảnh mẫu · ảnh · clip · giọng · duyệt · đăng
+argument-hint: (để trống) · ý tưởng · kịch bản · refs · ảnh mẫu · ảnh · clip · earth · giọng · duyệt · đăng
 ---
 
 Người dùng báo xong: **$ARGUMENTS**
@@ -18,8 +18,10 @@ Bảng từ khoá và luật đặt tên: [docs/HANDOFF.md](../../docs/HANDOFF.m
 2. Có file khớp thì nạp thật (`--take`). Có file **không rõ** thì hỏi người dùng nó là gì, đừng đoán
    một id rồi đặt vào.
 3. Làm bước kế tiếp đúng cột "Claude làm tiếp" trong HANDOFF.md:
-   - `gemini` → `--draft vN`, đọc hết bản nháp theo skill `episode-review`, ép luật, rồi mới chuyển vào
-     `content.py`. Không sửa nguyên văn của Gemini trong `vN-gemini.md`: bản đã ép luật ghi ra chỗ khác.
+   - `ý tưởng` → chấm sáu ý, chọn một kèm lý do và dự phòng, tra canon, viết `2-skeleton.md`, rồi
+     `--brief script`. Chi tiết: lệnh `/tap-moi` bước 2.
+   - `kịch bản` / `gemini` → `--draft`, đọc hết theo skill `episode-review`, chuẩn hoá vào `content.py`,
+     ghi `4-review.md`. Không sửa nguyên văn của Gemini trong `3-script-gemini*.md`.
    - `ảnh` / `ảnh mẫu` → `tools/unwatermark.py <ep>`, rồi **cho người dùng xem ảnh** trước khi đo toạ
      độ hay chạy loạt tiếp. Ảnh mẫu hỏng thì mọi cảnh ăn theo đều hỏng.
    - `âm` → không phải việc của tool này, chạy `/nap-am`.

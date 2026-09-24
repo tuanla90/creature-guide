@@ -1,92 +1,67 @@
-# V4 · giao cho Gemini
+# Dán cho Gemini · script · kanto-001-bulbasaur
 
-**Cách dùng:** mở Gemini, dán **toàn bộ phần dưới vạch `DÁN TỪ ĐÂY`**, đính kèm
-`docs/EPISODE-001-V3-MASTER.md` (chỉ để Gemini bắt giọng văn — bản ấy còn tên cũ, bộ soát sẽ bắt nếu
-lọt). Prompt đã tự dặn Gemini chỗ lưu:
+Sinh bằng `PYTHONUTF8=1 python tools/handoff.py kanto-001-bulbasaur --brief script` — đừng sửa tay: sửa `docs/briefs/` hoặc `2-skeleton.md` rồi ghép lại.
 
-- Gemini ghi được file (Gemini CLI…) → nó tự lưu vào `videos/kanto-001-bulbasaur/drafts/v4-gemini.md`.
-- Gemini trên web → nó trả **một khối code duy nhất**, bấm nút copy của khối rồi dán vào file ấy.
-- Bị cắt giữa chừng → dòng cuối là `<!-- CONTINUE FROM BEAT xx -->`. Gõ "continue", dán khối mới
-  **nối tiếp** vào cùng file.
-
-Xong thì nhắn Claude: **`xong gemini`**.
-
-Gemini được **tự sửa nhẹ** (thứ tự câu, co giãn thời lượng, chọn so sánh và chỗ dừng hình). Muốn
-**sửa khung** (thêm/bớt/gộp beat, đổi sự kiện, đổi nhãn) thì chỉ được đề xuất ở mục
-`SKELETON-CHANGES` — Claude soát rồi bạn chốt.
-
-Phần 1, 2, 6 là **lõi dùng lại cho mọi tập**. Phần 3–5 là riêng tập này.
-
----
+1. Dán **toàn bộ phần dưới vạch** vào Gemini.
+2. Gemini tự lưu, hoặc trả **một khối code**: bấm copy, dán vào `videos/kanto-001-bulbasaur/drafts/3-script-gemini.md`.
+3. Bị cắt giữa chừng thì gõ "continue", dán nối vào cùng file.
+4. Nhắn Claude: **`xong kịch bản`**.
 
 ===== DÁN TỪ ĐÂY =====
 
-You are the writer for a nature-documentary channel. I need the full narration for one episode,
-rewritten so it sounds like a great wildlife film: calm, exact, curious and a little haunting. Below
-is a skeleton: the facts, the order and the evidence. Your main job is the **voice**: rhythm,
-tension, images, the sentence that makes someone stay.
-
-**Where your answer goes.** Your answer is saved as the file
-`videos/kanto-001-bulbasaur/drafts/v4-gemini.md` in the project folder
-`D:\Users\tuanla2\creature-field-guide`, and a script reads it.
-- If you can write files, write your whole answer to that path and reply only "saved".
-- Otherwise, put your **entire** answer inside **one** code block that opens with ````markdown (four
-  backticks) and whose first line is `<!-- save as videos/kanto-001-bulbasaur/drafts/v4-gemini.md -->`,
-  so it can be copied in one click. Nothing outside the block.
-- If you run out of space, stop at the end of a whole beat and write `<!-- CONTINUE FROM BEAT xx -->`
-  as the last line. When I say "continue", start a new block with the next beat.
-
-**What you may change, and how:**
-- **Change freely** (just do it): the order of sentences inside a beat · which details you dwell on
-  and which you cut · moving one fact to the neighbouring beat when the rhythm is better · shifting time
-  between beats (each beat within ±15% of its target, the whole episode within ±5%) · which optional
-  comparisons you use · where the freeze moments go (among the candidates, or a better place you find).
-- **Propose, don't apply** (write them in `## SKELETON-CHANGES`, and keep the narration on the current
-  skeleton): adding, removing, merging, splitting or reordering beats · changing, adding or dropping a
-  fact · changing an evidence label · changing the spine question or the ending · new catalogue or
-  anime material (goes in `## PROPOSED` with its source). For each proposal, say what it improves and
-  which rule or beat it might break.
-- **Never change**: the hard rules in section 2 · "shiny" said once in beat 02, after the colour is
-  seen · the spine question stays unanswered.
-
-## 1 · The world and the narrator (all episodes)
+## The world and the narrator
 
 - The narrator is a field biologist from *our* Earth, now working in a world where these creatures
   are ordinary wildlife. He speaks in the first person ("I"). **He never says his own name**, and nobody
-  names him. He compares everything to animals and plants "back home" (real Earth species).
+  names him. He compares things to animals and plants "back home" (real Earth species).
+- What he is looking for: creatures in which **life and energy cannot be pulled apart**. Every episode
+  adds one piece to that question, without ever saying it is solved.
 - He is a patient observer: he watches, he does not interfere, and he does not give animals pet
   names.
 - Tone: Attenborough's calm crossed with a private field diary. Short sentences next to long ones.
   Concrete images. No hype, no "incredible", no "amazing", no rhetorical questions stacked in a row,
   no "little did I know", no "nature is truly remarkable".
 
-## 2 · Hard rules. Breaking one means the draft is thrown out
+## Hard rules. Breaking one means the draft is thrown out
 
 1. **No game, no franchise.** Never say: Pokémon, Pokédex, trainer, gym, level, HP, stats, type,
-   move, attack names (Vine Whip, Solar Beam, Sleep Powder, Razor Leaf, Leech Seed, Tackle…), ability
-   names (Chlorophyll, Overgrow), Poké Ball, "evolve"/"evolution". The Pokédex is called **"the
-   catalogue"** (VI: "cuốn danh lục"). Changing form is "changing form" or "the change", never
-   "evolving". Describe what an organ *does*, never the name of an attack.
+   move, attack names (Vine Whip, Solar Beam, Ember, Flamethrower, Water Gun, Thunderbolt…), ability
+   names (Chlorophyll, Overgrow, Blaze, Torrent, Static…), Poké Ball, "evolve"/"evolution". The
+   Pokédex is called **"the catalogue"** (VI: "cuốn danh lục"). Changing form is "changing form" or
+   "the change", never "evolving". Describe what an organ *does*, never the name of an attack.
 2. **No film crew, no screen, no AI.** Never mention a camera, crew, footage, video, viewers, screen,
    subscribing, or how the images were made. There is only "I" and a notebook.
 3. **Three kinds of evidence, never mixed.** Every factual sentence belongs to exactly one:
-   - 📖 **catalogue**: it comes from the catalogue, and must match a source in the skeleton;
+   - 📖 **catalogue**: it comes from the catalogue, and must match a listed source;
    - 👁 **observation**: the narrator saw or measured it himself;
-   - 🔬 **hypothesis**: the narrator's own reasoning, **always tied to one real Earth species**.
+   - 🔬 **hypothesis**: the narrator's own reasoning, **always tied to one real Earth species**;
    - 🎬 **locals' story**: comes from the anime. Tell it as "people here say…", never as fact.
 4. **No invented numbers.** No percentages, degrees, kilograms or calories. Numbers the narrator
    counted himself (seven animals, day twenty-two, three hours) are fine, and they must agree with
-   the TIMELINE you write.
+   one consistent timeline.
 5. **Every ability has a cost.** When the animal uses something, say what it pays.
-6. **No shedding skin, no moulting, no transformation on camera.** The change of form is told only
+6. **No shedding skin, no moulting, no transformation on camera.** A change of form is told only
    through swelling, weight, light, silhouette and traces left behind.
-7. **No personal names for animals.** The central animal is **K-01**, a field code from his
-   notebook. Other animals are called by their species or by what they look like ("a larger one",
-   "an old female"). A minor animal that keeps coming back gets a code (K-04), never a name.
+7. **No personal names for animals.** The central animal is known by a field code from his notebook
+   (K-01) plus one visible canon trait (prefer **Shiny** colouring when the species has it). Other
+   animals are called by their species or by what they look like ("a larger one", "an old female").
+   A minor animal that keeps coming back gets a code (K-04), never a name. A trait is named only
+   **after** the audience has seen it.
 8. **Anatomy is research-style only**: an x-ray-like view of bones and energy channels. No blood, no
    organs, no cutting. Mating stops at display, nest and care of young.
+9. **Place names come from canon** (game + version, anime + episode, manga + chapter). Never invent
+   one when canon already has it.
 
-## 3 · This episode
+## Earth comparisons: few, and only the ones that carry the argument
+
+- The creature is the star. A comparison with a real Earth animal or plant is one or two sentences,
+  **at most one per beat**, and only when it pushes the episode's central question forward.
+- Up to **three times** per episode the picture may **freeze** on a word of the narration: the animal
+  caught mid-action, the frame darkens, a pointer examines one body part. The narrator stops to think.
+- In **at most two** of those freezes, a small **photograph from home** (a real Earth animal, like a
+  print he carries in his notebook) appears beside the pointer. No other picture shows an Earth animal.
+
+## This episode
 
 - **Species:** Bulbasaur → Ivysaur (the Venusaur is a different, old animal).
 - **Central animal:** `Shiny Bulbasaur · K-01`. Its whole body is a warm pale yellow-green, and the
@@ -94,16 +69,19 @@ tension, images, the sentence that makes someone stay.
   After the change of form it is still recognisable: a **Shiny Ivysaur has a golden-yellow bud**, while
   every ordinary Ivysaur has a **pink** one.
 - **The word "shiny"** is what people in this world call such animals. It appears **exactly once in
-  VO_EN and once in VO_VI**, in beat 02, *after* the audience has already seen the colour. Keep it as
-  "shiny" in the Vietnamese too. Never use "shiny" as an ordinary adjective anywhere else. After beat 02
-  the narrator says "K-01" or "it".
+  VO_EN and once in VO_VI**, early (beat 02 in the skeleton), *after* a close or medium shot has
+  already shown the colour. Keep it as "shiny" in the Vietnamese too. Never use "shiny" as an ordinary
+  adjective anywhere else. After that the narrator says "K-01" or "it".
 - **Place:** Viridian Forest (📖 *Pokémon: Let's Go, Pikachu!/Eevee!*). The hollow where they gather is
   **The Mysterious Garden** (🎬 anime, episode 51). Do not invent other place names.
 - **The spine question**, asked in beat 00/01, asked again in beat 05, **never answered** (not even in
   beat 15):
   > *Is the animal feeding the seed, or is the seed feeding the animal?*
-- **Research purpose** (said once, beat 01): the narrator came because he believes there are creatures
-  in which life and energy cannot be pulled apart. Say it plainly, without saying where he comes from.
+- **Research purpose** (this is the first episode, so say it once, early): the narrator came because
+  he believes there are creatures in which life and energy cannot be pulled apart. Say it plainly,
+  without saying where he comes from.
+- **Ending hook** (locked): the last line hands over to the next episode, the species with a flame at
+  the tip of its tail. If that flame goes out in the rain, how does it survive?
 
 ### Sources you may use (📖 and 🎬). Nothing else counts as catalogue.
 
@@ -138,24 +116,19 @@ comparison below is already fact-checked (🔬), but they are not equal:
   weight turns legs into pillars (15).
 - **At most one comparison per beat.** A comparison is one or two sentences, never a paragraph.
 
-### Freeze moments: the narrator stops to think
+### Freeze moments: candidates
 
-Up to **three times** in the episode the picture **freezes** on a word of the narration: the animal
-is caught mid-action, the frame darkens, and a pointer examines the one body part that matters. In
-**at most two** of those, a small **photograph from home** (a real Earth animal, like a print he
-carries in his notebook) appears next to the pointer. Write the narration so it has room for that
-pause: a short sentence that lands on the frozen moment, then the thought. Candidates (pick; don't
-use all):
+Write the narration so each freeze has room: a short sentence that lands on the frozen moment, then
+the thought. Pick from these, or find a better moment:
 
 - beat 10: the vine frozen mid-lash → photo: an elephant's trunk
 - beat 08: K-01 pressed flat under the fern, still pale in the shade → photo: a pale peppered moth
   on dark bark
 - beat 12: head still, bulb turned toward the sun → photo: a young sunflower
 
-## 4 · The skeleton: 16 beats + short outro
+## The skeleton: 16 beats + short outro (a proposal, you may reshape it)
 
-EN words ≈ seconds × 2.3. Stay within ±15%. VO_VI must take **about the same time to read** as VO_EN,
-because both voice tracks share one timeline.
+Total target: about 11.3 minutes. EN words ≈ seconds × 2.3.
 
 | Beat | Target | EN words | Must happen (in this order) |
 |---|---|---|---|
@@ -177,7 +150,7 @@ because both voice tracks share one timeline.
 | 15 | 86s | ~198 | 📖 The bud is now so heavy it can't rise onto its hind legs; legs and trunk have thickened (optional 🔬: elephants and giant tortoises, carry weight and legs become pillars). Last rainy season in this notebook: an **old female Venusaur** at the forest edge (trunk gone woody, moss and small ferns on her back, flower large and a little faded; people say she was there before they were born). 📖 A pistil at the centre of her flower (others he met had none): female, the first time he could tell sex by eye. K-01's bud hasn't opened, so he still doesn't know whether he followed a male or a female. 📖 After rain her scent grows stronger; he watched two animals that had been snarling sit down a few steps apart inside it. **The spine question one last time, unanswered**, then: perhaps a body can begin as two lives and still become one individual. Last line, handing over to the next episode: on the next page of the catalogue is a species that carries a flame at the tip of its tail. If that flame goes out in the rain, how does it survive? |
 | short-outro | 10s | ~23 | For the vertical Short: the spine question in its plainest form, plus "after fourteen months in the field, I still can't answer it" (the number must match your TIMELINE). |
 
-## 5 · What to improve
+## What to improve
 
 - **Voice and tension.** Each beat should end on something that pulls into the next one: an image, a
   doubt, a small reversal.
@@ -188,9 +161,49 @@ because both voice tracks share one timeline.
   translation. Pronoun for the animal: "nó". The narrator says "tôi". "Back home" = "ở quê tôi".
   Species names stay in English (Bulbasaur, Ivysaur, Venusaur, Fearow). K-01 is read "ca không một".
 
-## 6 · Output format (strict, because a script will parse it)
+## Allowed `who` and `loc` values for this episode
 
-Use exactly these headings and field names. No other prose before or after.
+- `who`: `none` · `bulbasaur` · `bulbasaur:K-01` · `bulbasaur:K-04` · `ivysaur` · `ivysaur:K-01` ·
+  `venusaur:female` · `fearow` · `anatomy:bulbasaur` · `anatomy:ivysaur` · `anatomy:venusaur`
+- `loc`: `viridian-forest:trail` · `viridian-forest:clearing` · `viridian-forest:garden` · `town:yard` ·
+  `none`
+
+## Your task: shape the episode and write it
+
+Above is the skeleton for this episode: the facts, their sources, a proposed order of beats and a
+target length. Make it a great wildlife film: calm, exact, curious and a little haunting. Rhythm,
+tension, images, the sentence that makes someone stay.
+
+**What you may change freely (just do it, then list it under `## CHANGES`):**
+- the structure: add, remove, merge, split or reorder beats; renumber them 00, 01, 02… in the new
+  order; the `short-outro` stays last;
+- time between beats: any beat may grow or shrink, but **the whole episode stays within ±5% of the
+  skeleton's total**;
+- the order of sentences, which details you dwell on and which you cut;
+- which optional Earth comparisons you use, and where the freeze moments go;
+- small sensory details (light, sound, smell, weather) and **new small observations** of the narrator,
+  as long as they are plausible and contradict nothing. Mark each new one `👁 (new)` in EVIDENCE.
+
+**What stays locked:**
+- **Catalogue facts come only from the skeleton's source table.** A fact you want but cannot find
+  there goes in `## PROPOSED` with its source, never in the narration.
+- The hard rules above, the rules for the central animal's trait, the spine question stays
+  unanswered, and the ending hook to the next episode.
+
+## Where your answer goes
+
+Your answer is saved as `videos/kanto-001-bulbasaur/drafts/3-script-gemini.md` in the project folder `D:\Users\tuanla2\creature-field-guide`,
+and a script reads it.
+- If you can write files, write your whole answer to that path and reply only "saved".
+- Otherwise, put your **entire** answer inside **one** code block that opens with ````markdown (four
+  backticks) and whose first line is `<!-- save as videos/kanto-001-bulbasaur/drafts/3-script-gemini.md -->`, so it can be copied in one click.
+  Nothing outside the block.
+- If you run out of space, stop at the end of a whole beat and write `<!-- CONTINUE FROM BEAT xx -->`
+  as the last line. When I say "continue", start a new block with the next beat.
+
+## Output format (strict, because a script will parse it)
+
+Use exactly these headings and field names.
 
 ```
 ## BEAT 00
@@ -211,6 +224,10 @@ EVIDENCE:
 - 🔬 <claim> — <Earth species>: <what it shows>
 ```
 
+EN words ≈ seconds × 2.3. VO_VI must take **about the same time to read** as VO_EN, because both
+voice tracks share one timeline. VO_VI is natural Vietnamese narration of the same content, not a
+word-for-word translation: the narrator says "tôi", the animal is "nó", "back home" is "ở quê tôi".
+
 Allowed values in SHOTS (anything else is rejected):
 
 - `el`: `world` (still image, slow camera) · `clip` (moving) · `specimen` (still image with
@@ -218,18 +235,14 @@ Allowed values in SHOTS (anything else is rejected):
   `freeze` (moving, then **freezes** on the word in `at`, a pointer examines one part; add
   `part="<the body part>"`, and optionally `earth="<Latin name> · <part>"` for the photo from home).
   Mix them: no beat should be only `world`, and no four beats in a row the same.
-  **At most 3 `freeze` in the episode, at most 2 of them with `earth=`.** No other shot shows an
-  Earth animal.
-- `who`: `none` · `bulbasaur` · `bulbasaur:K-01` · `bulbasaur:K-04` · `ivysaur` · `ivysaur:K-01` ·
-  `venusaur:female` · `fearow` · `anatomy:<species>` (x-ray style) — join with
-  `+` for several (`bulbasaur+bulbasaur:K-01` = an ordinary herd with K-01 among them).
+  **At most 3 `freeze` in the episode, at most 2 of them with `earth=`.**
+- `who` and `loc`: only the values listed in the skeleton. Join several with `+`
+  (`bulbasaur+bulbasaur:K-01` = an ordinary group with K-01 among them).
 - `size`: `extreme-wide` · `wide` · `medium` · `close` · `macro`
 - `angle`: `eye` · `low` · `high` · `overhead` · `rear` · `profile` · `pov`
-- `loc`: `viridian-forest:trail` · `viridian-forest:clearing` · `viridian-forest:garden` · `town:yard` ·
-  `none`
 - Across the episode: at least 3 sizes, 3 angles, at least one `wide`, at least one x-ray
-  `anatomy:*`, at least one `notepage`. K-01's colour must be clearly visible in a `close` or
-  `medium` shot **before** beat 02 says "shiny".
+  `anatomy:*`, at least one `notepage`. The central animal's trait must be clearly visible in a
+  `close` or `medium` shot **before** the narration names it.
 
 After the last beat:
 
@@ -244,6 +257,9 @@ SCREEN:
 ## TIMELINE
 <one line per event: day/week/month → what happens>
 
+## CHANGES
+<one line per change you made to the skeleton's structure: what — why. "none" if none.>
+
 ## TITLES
 - EN: <3 options>
 - VI: <3 options>
@@ -251,15 +267,12 @@ SCREEN:
 ## THUMB
 <3 thumbnail hooks, ≤ 5 words each, each one a question the episode really asks>
 
-## SKELETON-CHANGES
-<one per line: what you would change in the skeleton — why — what it might break. "none" if none.>
-
 ## PROPOSED
-<new facts you would like to add: claim — source. Do NOT use these in VO.>
+<catalogue facts you wanted but could not find in the table: claim — source. Not used in VO.>
 
 ## SELF-CHECK
-<one line per rule 1–8 in section 2: "ok" or what you broke and why>
-<one line: how many Earth comparisons you kept (spoken), how many freezes, how many photos from home>
+<one line per hard rule: "ok" or what you broke and why>
+<one line: how many Earth comparisons (spoken), how many freezes, how many photos from home>
 ```
 
 ===== HẾT PHẦN DÁN =====

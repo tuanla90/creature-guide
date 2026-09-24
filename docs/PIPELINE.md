@@ -11,11 +11,11 @@ hình tốn ba tiếng.
 
 | # | Chặng | | Ra cái gì |
 |---|---|---|---|
-| 1 | Chọn ý tưởng và khung tập | ✋ | một dòng trong `docs/IDEA-BANK.md` + khung đã chọn |
-| 2 | Tra canon | 🤖 | bảng `NGUON` + `bible/creatures/<loài>.json` |
-| 3 | Viết kịch bản **EN** | 🤖 | bản EN |
-| 4 | Soát và duyệt kịch bản | ✋🤖 | bản EN chốt |
-| 5 | Dịch VI, khít beat | 🤖 | `videos/<slug>/content.py` |
+| 1 | Ý tưởng: Gemini liệt kê, Claude chọn | 🤖✋ | `drafts/1-ideas-gemini.md` → ý đã chọn + khung A/B |
+| 2 | Tra canon, dựng khung | 🤖 | `drafts/2-skeleton.md` (bảng nguồn + beat) + `bible/creatures/<loài>.json` |
+| 3 | Gemini dựng lại khung và viết lời EN + VI nháp | 🤖 | `drafts/3-script-gemini.md` |
+| 4 | Claude chuẩn hoá, người duyệt | 🤖✋ | `content.py` + `drafts/4-review.md` · “Đã duyệt” |
+| 5 | Tinh chỉnh VI, khít beat | ✋🤖 | bản VI đóng băng trong `content.py` |
 | 6 | Soạn shot | 🤖 | `bible/shots/<ep>.json` → `prompts/<ep>.flow.txt` |
 | 7 | Sinh ảnh | ✋🤖 | `public/img/<ep>/*.jpg` |
 | 8 | Dựng hình và chuyển động | 🤖 | `videos/<slug>/scenes.json` + `public/video/<ep>/*.mp4` |
@@ -25,12 +25,21 @@ hình tốn ba tiếng.
 
 ---
 
-## 1 · Chọn ý tưởng và khung tập ✋
+## 1 · Ý tưởng: Gemini liệt kê, Claude chọn 🤖✋
 
-Skill: **`episode-plan`** (xem tập nào đang ở chặng nào, tập nào nên mở tiếp).
-Lấy từ [IDEA-BANK.md](IDEA-BANK.md), hoặc soi loài mới qua 16 trục của [CREATURE-LENS.md](CREATURE-LENS.md).
+Luồng kịch bản chia việc theo đúng sở trường, đã thử thật ở tập 001: **Gemini nghĩ rộng** (ý tưởng,
+bố cục, câu chữ), **Claude giữ kỷ luật** (chọn, canon, luật), **người chốt**. File và từ khoá bàn
+giao: [HANDOFF.md](HANDOFF.md).
 
-Rồi **chọn khung** trong [EPISODE-FRAME.md](EPISODE-FRAME.md):
+1. `tools/handoff.py <slug> --brief ideas "<loài>"` ghép `drafts/1-ideas-brief.md` — lõi luật
+   ([briefs/core.md](briefs/core.md)) + đề bài ([briefs/ideas.md](briefs/ideas.md)) + những gì
+   IDEA-BANK và SLATE đã ghi về loài. Gemini trả **sáu ý**, trải ít nhất bốn trục của
+   [CREATURE-LENS.md](CREATURE-LENS.md), mỗi ý một câu hỏi xương sống.
+2. Claude chấm từng ý theo năm tiêu chí — canon đủ dày · cá thể trung tâm có đặc điểm nhìn thấy được
+   (ưu tiên Shiny) · có đối chiếu Trái Đất mạnh · câu hỏi treo được cả tập · hook — rồi **chọn một,
+   nêu lý do, giữ một ý dự phòng**. Bạn chỉ cần nói "đổi" nếu không ưng.
+
+Khung trong [EPISODE-FRAME.md](EPISODE-FRAME.md):
 - **Khung A · một cá thể** — mặc định. Một câu hỏi sinh tồn, một con vật cụ thể có mã thực địa.
 - **Khung B · so sánh** — hai hoặc ba chủ thể trên một trục. Ba dạng Eevee của Kanto; rồng phương
   Đông và phương Tây; Hydra và Yamata no Orochi.
@@ -55,16 +64,30 @@ từng tấm. Ảnh là của bên thứ ba: chỉ để tham chiếu, không đ
 
 **Chốt địa điểm** — `bible/locations/<id>.json`, có dẫn chứng canon.
 
+Ra `drafts/2-skeleton.md`: đặc điểm cá thể trung tâm, địa danh, câu hỏi xương sống, **bảng nguồn**
+(thứ duy nhất Gemini được lấy làm 📖), so sánh lõi / tuỳ chọn, chỗ gợi ý dừng hình, các beat gợi ý kèm
+thời lượng, và giá trị `who` / `loc` được dùng. Dòng `<!-- handoff: trait=… central=… -->` ở đầu file
+cho bộ soát biết đặc điểm nào phải gọi đúng một lần.
+
 > **Cổng:** không có câu nào trong tập mà bạn không chỉ được ra nó là 📖 danh lục, 👁 quan sát,
 > hay 🔬 giả thuyết. Mỗi 📖 và mỗi 🔬 đều có một dòng nguồn.
 
-## 3 · Viết kịch bản EN 🤖
+## 3 · Gemini dựng lại khung và viết lời 🤖
 
-**Bản gốc của kênh là tiếng Anh.** Máy viết tiếng Anh tự nhiên hơn viết tiếng Việt, và bản EN là thứ
-quyết định bố cục, timing và ảnh.
+**Bản gốc của kênh là tiếng Anh**, và bản EN quyết định bố cục, timing và ảnh. Gemini viết EN kèm
+một bản VI nháp cùng nhịp.
 
-Skill: **`creature-field-guide-scriptwriter`** (luật kể chuyện, giọng, nhãn bằng chứng, cách đặt tên).
-Ghi tên nhân vật vào [CAST.md](CAST.md) — cả bản VI và EN.
+`tools/handoff.py <slug> --brief script` ghép `drafts/3-script-brief.md` — lõi luật + khung +
+đề bài ([briefs/script.md](briefs/script.md)). Quyền của Gemini:
+
+- **Bố cục thả:** thêm, bớt, gộp, tách, đổi thứ tự beat; co giãn thời lượng (tổng giữ trong ±5%);
+  chọn so sánh tuỳ chọn và chỗ dừng hình; thêm chi tiết giác quan và quan sát nhỏ (gắn `👁 (new)`).
+  Mọi thay đổi bố cục liệt kê ở mục `CHANGES`.
+- **Sự kiện khoá:** 📖 chỉ lấy từ bảng nguồn của khung. Muốn thêm thì ghi ở `PROPOSED`, không vào lời.
+- **Luật cứng khoá**, cùng đặc điểm cá thể trung tâm, câu hỏi xương sống không được trả lời, câu
+  móc sang tập sau.
+
+Vòng sau: `--brief script --round 2` → `3-script-gemini-2.md`.
 
 **Không đặt tên riêng cho con vật** ([CAST.md](CAST.md)):
 - Cá thể **có tên canon** (Smaug, Buckbeak) → giữ tên gốc.
@@ -74,32 +97,30 @@ Ghi tên nhân vật vào [CAST.md](CAST.md) — cả bản VI và EN.
 
 > **Cổng:** mỗi beat có đúng một việc để kể, và bạn chỉ được ra nhãn bằng chứng của từng câu.
 
-## 4 · Soát và duyệt kịch bản ✋🤖
+## 4 · Claude chuẩn hoá, người duyệt 🤖✋
 
-**Phân công đã chốt theo kinh nghiệm thật:** Gemini mạnh ở chặng **nghĩ ý** — dựng bố cục, đề xuất
-cảnh, mở rộng ý tưởng. Claude mạnh ở chặng **ép luật** — soi canon, bắt nhãn bằng chứng sai, số bịa,
-tuyến bỏ dở, tên sai luật. Nên thứ tự đúng là **Gemini phóng ra trước, Claude siết lại sau**, chứ
-không phải Claude ra ý rồi Gemini khai triển.
-
-Skill: **`episode-review`**. Ba lớp, đúng thứ tự, và **hết cả ba mới được đi tiếp**:
-
-1. **Máy soát logic** — `check-episode.py` + Claude: khung tập, nhãn bằng chứng, nguồn, chữ làm lộ
-   khung (game, AI, đoàn phim), tên nhân vật khớp CAST.md.
-2. **Gemini soát văn** — giọng và sức ép kể chuyện, kèm `stop-slop` (đã cắt ba luật, xem
-   [BUSINESS-FLOW.md](BUSINESS-FLOW.md) phần phụ lục).
-3. **Người duyệt** — dùng
+1. **Máy soát** — `tools/handoff.py <slug> --draft`: đủ mục, từ cấm EN lẫn VI, tên riêng cũ, đặc
+   điểm gọi đúng một lần và sau cảnh cận, giá trị `who`/`loc` trong khung, hạn mức dừng hình và ảnh
+   quê nhà, tổng thời lượng, hai track lệch nhau, bố cục đổi so với khung.
+2. **Claude chuẩn hoá** theo skill **`episode-review`** (gọi `stop-slop`): nhãn bằng chứng từng câu,
+   nguồn, số khớp TIMELINE, tuyến bỏ dở, quan sát mới có hợp lý không, cái giá của mỗi khả năng. Ghi
+   vào `content.py` (`ORDER`, `BEATS`, `short-outro`, `PRON`, `NGUON`), và ghi `drafts/4-review.md`:
+   **đã sửa gì của Gemini và vì sao**, đề xuất nào trong `PROPOSED` / `CHANGES` được nhận hay bị bỏ.
+   Rồi `check-episode.py`.
+3. **Người duyệt** — đọc `4-review.md` và bản dựng câm, dùng
    [episode-checklist.md](../.claude/skills/creature-field-guide-scriptwriter/references/episode-checklist.md).
+   Nói "duyệt" thì Claude ghi `Đã duyệt: <ngày>` vào `4-review.md`.
 
-> **Cổng:** soát **trước khi sinh ảnh**. Script quyết định ảnh; sửa script sau khi đã có ảnh là hỏng
-> cả loạt ảnh đã trả credit.
+> **Cổng:** duyệt **trước khi soạn shot và sinh ảnh**. Script quyết định ảnh; sửa script sau khi đã
+> có ảnh là hỏng cả loạt ảnh đã trả credit.
 
-## 5 · Dịch VI, khít beat 🤖
+## 5 · Tinh chỉnh VI, khít beat ✋🤖
 
 Một video mang **hai track giọng** trên **một dòng thời gian** (YouTube multi-audio). Nên bản VI
 không được dài ngắn tuỳ ý: mỗi beat có hạn mức thời lượng lấy từ bản EN.
 
-Ra `videos/<slug>/content.py`. Nhớ: `ORDER`, `BEATS`, beat `"short-outro"` (thiếu là không có bản
-Short), `PRON` cho VBee, `NGUON`.
+Gemini đã viết sẵn bản VI nháp cùng nhịp ở chặng 3, Claude đưa vào `content.py` ở chặng 4 và soát
+độ lệch thời lượng từng beat. Nhớ `PRON` cho VBee (tên loài, `K-01` đọc "ca không một", `Shiny`).
 
 Rồi bạn **tinh chỉnh tay** bản VI. Sau lúc đó **bản VI đóng băng**: sửa EN nữa thì phải sửa tay cả
 hai bên, đừng dịch lại — dịch lại là xoá sạch phần đã chỉnh.

@@ -23,7 +23,9 @@ gì: ảnh bị thay được đổi tên thành `<tên>.prev1.jpg`, còn ZIP đ
 
 | Bạn nói | Bạn đã làm | File phải tên là | Tool đặt vào | Claude làm tiếp |
 |---|---|---|---|---|
-| `xong gemini` | dán `drafts/vN-brief.md` vào Gemini, chép câu trả lời | `videos/<slug>/drafts/vN-gemini.md` (dán thẳng, không qua inbox) | — | `--draft vN` → ép luật từng beat → chuyển vào `content.py` → báo chỗ phải chốt |
+| `xong ý tưởng` | dán `drafts/1-ideas-brief.md` vào Gemini | `videos/<slug>/drafts/1-ideas-gemini.md` (dán thẳng, không qua inbox) | — | chấm sáu ý, chọn một kèm lý do và một ý dự phòng, dựng `2-skeleton.md`, ghép `3-script-brief.md` |
+| `xong kịch bản` (hoặc `xong gemini`) | dán `drafts/3-script-brief.md` vào Gemini | `drafts/3-script-gemini.md` (vòng sau `-2`, `-3`) | — | `--draft` → chuẩn hoá vào `content.py` → ghi `4-review.md` → báo chỗ bạn phải chốt |
+| `duyệt` | đọc `4-review.md` và bản dựng câm | — | — | ghi `Đã duyệt: <ngày>` vào `4-review.md`, rồi soạn shot |
 | `xong refs` | tải ảnh tham chiếu theo danh sách tool in ra | `<ref-id>.png` (vd `ref-bulbasaur-shiny.png`) | `bible/refs/<loài>/<file>`, đánh dấu “đã tải” trong `refs.json` | gắn vào ảnh mẫu, sinh lại `prompts/` |
 | `xong ảnh mẫu` | chạy loạt ảnh mẫu trong Batch Studio, tải ZIP | ZIP **tên gì cũng được** | `public/img/<ep>/<shot-id>.jpg` | gỡ watermark, mở cho bạn xem, rồi mới ra loạt cảnh |
 | `xong ảnh` | chạy loạt cảnh, tải ZIP | như trên | như trên | gỡ watermark, đo toạ độ callout, dựng `scenes.json` |
@@ -39,23 +41,34 @@ gì: ảnh bị thay được đổi tên thành `<tên>.prev1.jpg`, còn ZIP đ
 Id ảnh tham chiếu nằm trong `bible/refs/<loài>/refs.json`. Không nhớ thì chạy tool không kèm cờ, nó
 in ra từng id còn thiếu.
 
-## Bản nháp kịch bản
+## Luồng kịch bản — năm bước
 
 ```
 videos/<slug>/drafts/
-  v4-brief.md      Claude viết: luật + khung + định dạng trả về. Bạn dán cho Gemini.
-  v4-gemini.md     Bạn dán nguyên văn câu trả lời của Gemini.
+  1-ideas-brief.md     bản dán cho Gemini: liệt kê sáu ý          (tool ghép)
+  1-ideas-gemini.md    Gemini trả                                   → “xong ý tưởng”
+  2-skeleton.md        Claude chọn ý, tra canon, dựng khung
+  3-script-brief.md    bản dán cho Gemini: dựng lại khung + viết lời (tool ghép)
+  3-script-gemini.md   Gemini trả (vòng sau: -2, -3)                → “xong kịch bản”
+  4-review.md          Claude chuẩn hoá: đã sửa gì, vì sao, đề xuất nào nhận / bỏ
+                       + content.py                                 → bạn nói “duyệt”
 ```
 
-Mỗi vòng mới là một số mới (`v5-brief.md` …), không ghi đè vòng cũ, để còn so được hai vòng với
-nhau. Bản brief có ba phần **lõi dùng lại cho mọi tập** (thế giới và người dẫn · luật cứng · định dạng
-trả về) và ba phần riêng từng tập (tập này · khung beat · chỗ cần hay hơn). Tập mới thì chép brief của
-tập trước rồi thay ba phần riêng.
+Bản dán **không viết tay**: `tools/handoff.py <slug> --brief ideas "<loài>"` hoặc `--brief script`
+ghép từ ba mảnh — [briefs/core.md](briefs/core.md) (thế giới, người dẫn, luật cứng, luật so sánh Trái
+Đất, dùng chung mọi tập) · đề bài của bước ([briefs/ideas.md](briefs/ideas.md),
+[briefs/script.md](briefs/script.md)) · và `2-skeleton.md` riêng của tập. Luật kênh đổi thì sửa một
+chỗ, ghép lại là mọi bản dán sau đều theo. Mỗi bản dán tự dặn Gemini lưu vào đâu.
 
-`--draft vN` chỉ soát **phần có luật**: đủ beat, độ dài so với đích, hai track VI/EN lệch nhau, từ
-cấm (game, đoàn phim, lột da), tên riêng cũ, “shiny” đúng một lần ở beat 02, giá trị cỡ cảnh/góc máy
-hợp lệ, có X-quang, có trang sổ, màu K-01 được thấy trước khi được gọi. Nhãn bằng chứng có đúng
-không, số liệu có khớp TIMELINE không, câu có hay không thì Claude đọc tiếp.
+Quyền của Gemini ở bước 3: **bố cục thả, sự kiện khoá** — xem [PIPELINE.md](PIPELINE.md) chặng 3.
+
+`--draft` chỉ soát **phần có luật**: đủ mục, từ cấm (game, đoàn phim, lột da) cả EN lẫn VI, tên
+riêng cũ, đặc điểm cá thể trung tâm gọi đúng một lần và sau cảnh cận, `who`/`loc` nằm trong khung,
+hạn mức dừng hình và ảnh quê nhà, tổng thời lượng, hai track lệch nhau, bố cục đổi so với khung.
+Nhãn bằng chứng có đúng không, số có khớp TIMELINE không, câu có hay không thì Claude đọc tiếp.
+
+Tập 001 bỏ qua bước 1 (ý đã chốt trước khi có luồng này), đi thẳng từ `2-skeleton.md`. Bản Gemini lưu
+theo tên cũ `v4-gemini.md` vẫn được nhận.
 
 ## Vì sao đặt tên chặt thế
 

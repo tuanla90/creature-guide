@@ -3,7 +3,13 @@
     PYTHONUTF8=1 python tools/handoff.py <slug>              # tập đang ở đâu, thiếu gì, bước tiếp
     PYTHONUTF8=1 python tools/handoff.py <slug> --take       # nạp file mới từ inbox/ và Downloads
     PYTHONUTF8=1 python tools/handoff.py <slug> --take --dry-run
-    PYTHONUTF8=1 python tools/handoff.py <slug> --draft v4   # soát bản nháp Gemini
+    PYTHONUTF8=1 python tools/handoff.py <slug> --brief ideas "#0004 Charmander"   # bước 1: bản dán cho Gemini
+    PYTHONUTF8=1 python tools/handoff.py <slug> --brief script [--round 2]          # bước 3: bản dán cho Gemini
+    PYTHONUTF8=1 python tools/handoff.py <slug> --draft [file]   # soát bản Gemini viết (mặc định vòng mới nhất)
+
+Luồng kịch bản năm bước, file trong videos/<slug>/drafts/ (docs/HANDOFF.md):
+    1-ideas-brief.md → 1-ideas-gemini.md → 2-skeleton.md → 3-script-brief.md → 3-script-gemini.md
+    → content.py + 4-review.md → người duyệt
 
 Mọi thứ đều suy từ **tên file**, nên luật đặt tên là cả cái tool này — bảng đầy đủ ở docs/HANDOFF.md:
 
@@ -13,7 +19,7 @@ Mọi thứ đều suy từ **tên file**, nên luật đặt tên là cả cái
     clip Veo / Seedance           <shot-id>.mp4             -> public/video/<ep>/<shot-id>.mp4
     loài Trái Đất (nguồn sạch)    earth-<loài>-<bộ phận>.mp4|jpg -> public/video|img/<ep>/  + dòng trong earth.json
     giọng VI (VBee)               beat-<id>.mp3 · short-outro.mp3 -> public/audio/<slug>/
-    bản nháp Gemini               dán thẳng vào videos/<slug>/drafts/<vN>-gemini.md
+    bản Gemini viết               dán thẳng vào videos/<slug>/drafts/1-ideas-gemini.md · 3-script-gemini.md
 
 **Chuyển chứ không chép** (cùng luật với tools/intake.py): nạp xong thì file rời inbox/Downloads.
 ZIP đã giải nén được cất vào inbox/done/ — xoá hay giữ là việc của bạn, tool không xoá gì.
@@ -117,19 +123,7 @@ def status(slug):
     nxt = []
 
     # 1 · kịch bản
-    drafts = sorted((vid / "drafts").glob("v*-*.md")) if (vid / "drafts").exists() else []
-    briefs = {re.match(r"(v\d+)", p.name).group(1) for p in drafts if p.name.endswith("-brief.md")}
-    backs = {re.match(r"(v\d+)", p.name).group(1) for p in drafts if p.name.endswith("-gemini.md")}
-    print("1 · KỊCH BẢN")
-    for v in sorted(briefs | backs, key=lambda x: int(x[1:])):
-        b = "✓ brief" if v in briefs else "· không brief"
-        g = "✓ Gemini đã trả" if v in backs else "… chờ Gemini"
-        print(f"   {v}: {b} · {g}")
-        if v in briefs and v not in backs:
-            nxt.append(f"dán {rel(vid / 'drafts' / (v + '-brief.md'))} vào Gemini, lưu câu trả lời vào "
-                       f"{rel(vid / 'drafts' / (v + '-gemini.md'))}, rồi nói “xong gemini”")
-    if not drafts:
-        print("   chưa có bản nháp nào trong drafts/")
+    script_status(slug, vid, nxt)
 
     # 2 · ảnh tham chiếu
     refs = wanted_refs(ep)
@@ -328,13 +322,122 @@ def mark_ref(f, rid):
     f.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+# ---------------------------------------------------------------- bản giao cho Gemini
+# Luồng kịch bản: 1 Gemini liệt kê ý → 2 Claude chọn ý, dựng khung → 3 Gemini dựng lại khung và
+# viết lời → 4 Claude chuẩn hoá → 5 người duyệt. Bản dán ghép từ docs/briefs/ (lõi dùng chung) và
+# 2-skeleton.md (riêng tập) — luật kênh sửa ở một chỗ, mọi bản dán sau đều theo.
+BRIEFS = ROOT / "docs" / "briefs"
+CUT = "---8<---"
+
+
+def body_of(p):
+    """Bỏ phần ghi chú cho người bảo trì phía trên vạch cắt."""
+    t = p.read_text(encoding="utf-8")
+    return t.split(CUT, 1)[1].strip() if CUT in t else t.strip()
+
+
+def meta_of(p):
+    """`<!-- handoff: trait=shiny central=bulbasaur:K-01 -->` trong phần ghi chú của 2-skeleton.md."""
+    m = re.search(r"<!--\s*handoff:(.*?)-->", p.read_text(encoding="utf-8")) if p.exists() else None
+    return dict(x.split("=", 1) for x in m.group(1).split() if "=" in x) if m else {}
+
+
+def context_for(species):
+    """Những gì kênh đã ghi về loài này: các dòng bảng trong IDEA-BANK và SLATE."""
+    name = re.sub(r"[#\d]+", " ", species).split()[0]
+    rows = []
+    for doc in ("IDEA-BANK.md", "SLATE.md"):
+        f = ROOT / "docs" / doc
+        for line in f.read_text(encoding="utf-8").splitlines() if f.exists() else []:
+            if line.startswith("|") and re.search(rf"\b{re.escape(name)}\b", line, re.I):
+                cells = [c.strip() for c in line.strip().strip("|").split("|")]
+                rows.append("- " + " · ".join(c for c in cells if c and not re.fullmatch(r"\d+", c)))
+    return ("(notes in Vietnamese, from the channel's idea bank and schedule)\n" + "\n".join(rows)) if rows \
+        else "- nothing yet: start fresh"
+
+
+def make_brief(slug, kind, species=None, rnd=1):
+    d = ROOT / "videos" / slug / "drafts"
+    d.mkdir(parents=True, exist_ok=True)
+    core = body_of(BRIEFS / "core.md")
+    sfx = "" if rnd == 1 else f"-{rnd}"
+    if kind == "ideas":
+        if not species:
+            raise SystemExit('cần tên loài: --brief ideas "#0004 Charmander"')
+        task = body_of(BRIEFS / "ideas.md").replace("{{SPECIES}}", species).replace("{{CONTEXT}}", context_for(species))
+        parts, out, save, word = [core, task], d / "1-ideas-brief.md", d / "1-ideas-gemini.md", "xong ý tưởng"
+    elif kind == "script":
+        sk = d / "2-skeleton.md"
+        if not sk.exists():
+            raise SystemExit(f"chưa có {rel(sk)} — bước 2 (Claude dựng khung) chưa xong")
+        save = d / f"3-script-gemini{sfx}.md"
+        task = body_of(BRIEFS / "script.md").replace("{{SAVE}}", rel(save))
+        parts, out, word = [core, body_of(sk), task], d / f"3-script-brief{sfx}.md", "xong kịch bản"
+    else:
+        raise SystemExit("--brief ideas | script")
+    text = "\n\n".join(parts).replace("{{SLUG}}", slug)
+    head = (f"# Dán cho Gemini · {kind} · {slug}\n\n"
+            f"Sinh bằng `PYTHONUTF8=1 python tools/handoff.py {slug} --brief {kind}` — đừng sửa tay: sửa "
+            f"`docs/briefs/` hoặc `2-skeleton.md` rồi ghép lại.\n\n"
+            f"1. Dán **toàn bộ phần dưới vạch** vào Gemini.\n"
+            f"2. Gemini tự lưu, hoặc trả **một khối code**: bấm copy, dán vào `{rel(save)}`.\n"
+            f"3. Bị cắt giữa chừng thì gõ \"continue\", dán nối vào cùng file.\n"
+            f"4. Nhắn Claude: **`{word}`**.\n\n===== DÁN TỪ ĐÂY =====\n\n")
+    out.write_text(head + text + "\n\n===== HẾT PHẦN DÁN =====\n", encoding="utf-8")
+    print(f"{rel(out)}  (~{len(text.split())} từ)  → Gemini lưu vào {rel(save)}")
+
+
+def script_drafts(d):
+    """Các vòng Gemini viết, cũ trước mới sau. v*-gemini.md là tên cũ trước khi có luồng năm bước."""
+    rounds = sorted(d.glob("3-script-gemini*.md"), key=lambda p: int(re.search(r"-(\d+)\.md$", p.name).group(1))
+                    if re.search(r"-(\d+)\.md$", p.name) else 1)
+    return rounds or sorted(d.glob("v*-gemini.md"))
+
+
+def script_status(slug, vid, nxt):
+    d = vid / "drafts"
+    ideas, sk, rv = d / "1-ideas-gemini.md", d / "2-skeleton.md", d / "4-review.md"
+    drafts = script_drafts(d) if d.exists() else []
+    n_ideas = len(re.findall(r"^##\s+IDEA\b", ideas.read_text(encoding="utf-8"), re.M)) if ideas.exists() else 0
+    approved = rv.exists() and re.search(r"Đã duyệt:", rv.read_text(encoding="utf-8"))
+    rows = [
+        ("1 ý tưởng · brief cho Gemini", (d / "1-ideas-brief.md").exists()),
+        (f"1 ý tưởng · Gemini trả ({n_ideas} ý)" if n_ideas else "1 ý tưởng · Gemini trả", ideas.exists()),
+        ("2 khung · Claude chọn ý, dựng khung", sk.exists()),
+        ("3 kịch bản · brief cho Gemini", bool(list(d.glob("3-script-brief*.md"))) if d.exists() else False),
+        (f"3 kịch bản · Gemini trả ({len(drafts)} vòng)" if drafts else "3 kịch bản · Gemini trả", bool(drafts)),
+        ("4 chuẩn hoá · Claude", rv.exists()),
+        ("5 duyệt · bạn", bool(approved)),
+    ]
+    print("1 · KỊCH BẢN")
+    for name, done in rows:
+        print(f"   {'✓' if done else '·'} {name}")
+    if approved:
+        return
+    if not sk.exists() and not (d / "1-ideas-brief.md").exists():
+        nxt.append(f"Claude: ghép brief ý tưởng — tools/handoff.py {slug} --brief ideas \"<loài>\"")
+    elif not sk.exists() and not ideas.exists():
+        nxt.append(f"dán {rel(d / '1-ideas-brief.md')} vào Gemini, lưu vào {rel(ideas)}, rồi nói “xong ý tưởng”")
+    elif not sk.exists():
+        nxt.append("Claude: chấm các ý, chọn một (kèm dự phòng), dựng 2-skeleton.md")
+    elif not list(d.glob("3-script-brief*.md")):
+        nxt.append(f"Claude: ghép brief kịch bản — tools/handoff.py {slug} --brief script")
+    elif not drafts:
+        nxt.append(f"dán {rel(d / '3-script-brief.md')} vào Gemini, lưu vào {rel(d / '3-script-gemini.md')}, "
+                   f"rồi nói “xong kịch bản”")
+    elif not rv.exists():
+        nxt.append(f"Claude: soát {drafts[-1].name} (--draft), chuẩn hoá vào content.py, ghi 4-review.md")
+    else:
+        nxt.append(f"đọc {rel(rv)} và bản dựng, rồi nói “duyệt” hoặc ghi chú chỗ cần sửa")
+
+
 # ---------------------------------------------------------------- soát bản nháp Gemini
 EN_BANNED = [
     (r"pok[eé]", "tên thương hiệu"), (r"\btrainers?\b", "thuật ngữ game"), (r"\bgym\b", "thuật ngữ game"),
     (r"\blevels?\b", "thuật ngữ game"), (r"\bHP\b", "thuật ngữ game"), (r"\bstats?\b", "thuật ngữ game"),
     (r"\bevol(ve|ved|ves|ving|ution)", "gọi là 'the change' / 'changing form'"),
-    (r"solar ?beam|vine whip|sleep powder|razor leaf|leech seed|\btackle\b|chlorophyll|overgrow",
-     "tên đòn / tên nết của game"),
+    (r"solar ?beam|vine whip|sleep powder|razor leaf|leech seed|\btackle\b|\bember\b|flamethrower|water gun|"
+     r"thunderbolt|thunder shock|chlorophyll|overgrow|\bblaze\b|\btorrent\b", "tên đòn / tên nết của game"),
     (r"\bcamera|\bcrew\b|\bfootage\b|\bvideo\b|\bviewers?\b|\bscreen\b|\bsubscrib", "lộ đoàn phim / màn hình"),
     (r"\bAI\b|\bprompt", "lộ công cụ"),
     (r"\bmolt|\bmoult|\bshed(s|ding)? (its |the )?skin|\bslough", "cảnh đổi hình không có lột da"),
@@ -346,9 +449,7 @@ ALLOWED = {
     "el": {"world", "clip", "specimen", "notepage", "freeze"},
     "size": {"extreme-wide", "wide", "medium", "close", "macro"},
     "angle": {"eye", "low", "high", "overhead", "rear", "profile", "pov"},
-    "loc": {"viridian-forest:trail", "viridian-forest:clearing", "viridian-forest:garden", "town:yard", "none"},
 }
-WHO = re.compile(r"^(none|bulbasaur(:K-0[14])?|ivysaur(:K-01)?|venusaur:female|fearow|anatomy:.+)$")
 EN_WPS, VI_SPS = 2.3, 3.0        # nhịp ƯỚC LƯỢNG (VI lấy theo scaffold) — có giọng thật thì đo lại
 
 
@@ -357,6 +458,12 @@ def vi_forbidden():
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
     return m.FORBIDDEN
+
+
+def allowed_from(skeleton, key):
+    """Các giá trị `who` / `loc` khung cho phép — đọc từ dòng "- `who`: …" (có thể xuống dòng)."""
+    m = re.search(rf"^- `{key}`:(.*?)(?=^- `|^#|\Z)", skeleton, re.M | re.S)
+    return set(re.findall(r"`([^`]+)`", m.group(1))) if m else None
 
 
 def parse_draft(text):
@@ -379,35 +486,42 @@ def parse_draft(text):
     return out
 
 
-def check_draft(slug, ver):
-    vid = ROOT / "videos" / slug / "drafts"
-    f = vid / f"{ver}-gemini.md"
-    if not f.exists():
-        raise SystemExit(f"chưa có {rel(f)}")
-    brief = (vid / f"{ver}-brief.md").read_text(encoding="utf-8") if (vid / f"{ver}-brief.md").exists() else ""
+def check_draft(slug, which=None):
+    d = ROOT / "videos" / slug / "drafts"
+    f = (d / which) if which else (script_drafts(d)[-1] if script_drafts(d) else None)
+    if not f or not f.exists():
+        raise SystemExit(f"chưa có bản Gemini viết trong {rel(d)}")
+    skp = d / "2-skeleton.md"
+    skeleton = skp.read_text(encoding="utf-8") if skp.exists() else ""
+    meta = meta_of(skp)
     targets = {m.group(1).lower(): int(m.group(2))
-               for m in re.finditer(r"^\|\s*(\d\d|short-outro)\s*\|\s*(\d+)s\s*\|", brief, re.M)}
-    d = parse_draft(f.read_text(encoding="utf-8"))
-    beats = {k: v for k, v in d.items() if isinstance(v, dict)}
+               for m in re.finditer(r"^\|\s*(\d\d|short-outro)\s*\|\s*(\d+)s\s*\|", skeleton, re.M)}
+    who_ok = allowed_from(skeleton, "who")
+    loc_ok = allowed_from(skeleton, "loc")
+    raw = f.read_text(encoding="utf-8")
+    dd = parse_draft(raw)
+    beats = {k: v for k, v in dd.items() if isinstance(v, dict)}
     err, warn, ok = [], [], []
     VI_BAN = vi_forbidden()
 
-    miss = [b for b in targets if b not in beats]
-    if miss:
-        err.append("thiếu beat: " + ", ".join(miss))
-    raw = f.read_text(encoding="utf-8")
     if re.search(r"CONTINUE FROM BEAT", raw):
         err.append("Gemini bị cắt giữa chừng (còn dòng CONTINUE FROM BEAT) — gõ “continue” rồi dán nối phần sau")
-    sk = d.get("skeleton-changes")
-    if isinstance(sk, str) and sk.strip() and sk.strip().lower() != "none":
-        rows = [x.strip("- ") for x in sk.strip().splitlines()
-                if x.strip() and not x.startswith(("`", "<!--"))]
-        warn.append("Gemini đề xuất sửa khung — bạn duyệt từng dòng:" + "".join("\n      · " + x for x in rows))
-    for sec in ("timeline", "titles", "thumb", "skeleton-changes", "self-check"):
-        if sec not in d:
+    ch = dd.get("changes") or dd.get("skeleton-changes")
+    if isinstance(ch, str) and ch.strip() and ch.strip().lower() != "none":
+        rows = [x.strip("- ") for x in ch.strip().splitlines() if x.strip() and not x.startswith(("`", "<!--"))]
+        warn.append("Gemini đã đổi bố cục — soát từng dòng:" + "".join("\n      · " + x for x in rows))
+    for sec in ("timeline", "changes", "titles", "thumb", "self-check"):
+        if sec not in dd and not (sec == "changes" and "skeleton-changes" in dd):
             warn.append(f"thiếu mục {sec.upper()}")
+    # bố cục được thả: chỉ báo beat đổi, không bắt lỗi — tổng thời lượng mới là thứ giữ
+    same = set(targets) == set(beats)
+    if targets and not same:
+        gone = [b for b in targets if b not in beats]
+        new = [b for b in beats if b not in targets]
+        warn.append("bố cục khác khung" + (f" · bỏ/gộp: {', '.join(gone)}" if gone else "")
+                    + (f" · mới: {', '.join(new)}" if new else "") + " — đối chiếu với mục CHANGES")
 
-    en_all, vi_all, shots, total = "", "", [], 0.0
+    en_all, vi_all, shots, total, order = "", "", [], 0.0, list(beats)
     for b, fl in beats.items():
         for need in ("VO_EN", "VO_VI", "SHOTS", "EVIDENCE"):
             if not fl.get(need):
@@ -419,8 +533,8 @@ def check_draft(slug, ver):
         vi_s = len(vi.split()) / VI_SPS
         total += en_s
         t = targets.get(b)
-        if t and not (0.85 * t <= en_s <= 1.15 * t):
-            warn.append(f"beat {b}: EN đọc ~{en_s:.0f}s, đích {t}s")
+        if same and t and not (0.85 * t <= en_s <= 1.15 * t):
+            warn.append(f"beat {b}: EN đọc ~{en_s:.0f}s, khung gợi ý {t}s")
         if en_s and abs(vi_s - en_s) / en_s > 0.15:
             warn.append(f"beat {b}: VI ~{vi_s:.0f}s lệch EN ~{en_s:.0f}s quá 15% — hai track giọng lệch nhau")
         for pat, why in EN_BANNED:
@@ -441,7 +555,7 @@ def check_draft(slug, ver):
                     err.append(f"beat {b}: {m.group(1)} {len(s)} ký tự > {cap}: “{s}”")
         for line in fl.get("SHOTS", "").splitlines():
             line = line.strip().lstrip("-").strip()
-            if not line:
+            if not line or line.startswith(("`", "<!--")):
                 continue
             parts = [x.strip() for x in line.split("|")]
             sh = {"beat": b, "el": parts[0]}
@@ -456,30 +570,46 @@ def check_draft(slug, ver):
                 warn.append(f"beat {b}: dòng 📖 không có nguồn: {line[:60]}")
             if line.startswith("🔬") and ":" not in line:
                 warn.append(f"beat {b}: dòng 🔬 không nêu loài Trái Đất: {line[:60]}")
+            if "(new)" in line:
+                warn.append(f"beat {b}: quan sát mới của Gemini — soát có hợp lý không: {line[:70]}")
 
-    blob = f.read_text(encoding="utf-8")
-    if re.search(r"gilbert", blob, re.I):
+    goal = sum(targets.values())
+    if goal:
+        off = (total - goal) / goal
+        (err if abs(off) > 0.10 else warn if abs(off) > 0.05 else ok).append(
+            f"tổng EN ~{total / 60:.1f} phút, khung {goal / 60:.1f} phút ({off:+.0%})")
+
+    if re.search(r"gilbert", raw, re.I):
         err.append("“Gilbert” xuất hiện trong bản nháp — tuyệt đối không")
     if re.search(r"\bholth\b", en_all + vi_all, re.I):
         err.append("người dẫn nói tên mình (“Holth”) trong lời")
     for m in set(re.findall(OLD_NAMES, en_all + vi_all, re.I)):
         err.append(f"tên riêng cũ còn sót: “{m}”")
-    for lang, txt in (("EN", en_all), ("VI", vi_all)):
-        hits = re.findall(r"\[(\S+)\][^\[]*?\bshiny\b", txt, re.I | re.S)
-        n = len(re.findall(r"\bshiny\b", txt, re.I))
-        if n != 1:
-            err.append(f"“shiny” xuất hiện {n} lần trong lời {lang} — phải đúng 1, ở beat 02")
-        elif hits and hits[0] != "02":
-            err.append(f"“shiny” ({lang}) nằm ở beat {hits[0]}, phải ở beat 02")
+
+    # đặc điểm của cá thể trung tâm: gọi đúng một lần, và chỉ sau khi đã có cảnh cận thấy nó
+    trait, central = meta.get("trait"), meta.get("central")
+    seen_at = next((i for i, b in enumerate(order) for s in shots if s["beat"] == b and central
+                    and central in s.get("who", "") and s.get("size") in ("close", "medium", "macro")), None)
+    if trait:
+        for lang, txt in (("EN", en_all), ("VI", vi_all)):
+            n = len(re.findall(rf"\b{re.escape(trait)}\b", txt, re.I))
+            at = next((b for b in order if re.search(rf"\[{re.escape(b)}\][^\[]*\b{re.escape(trait)}\b", txt, re.I)), None)
+            if n != 1:
+                err.append(f"“{trait}” xuất hiện {n} lần trong lời {lang} — phải đúng 1")
+            elif seen_at is None or order.index(at) < seen_at:
+                err.append(f"“{trait}” ({lang}) được gọi ở beat {at} trước khi có cảnh close/medium thấy {central}")
 
     for sh in shots:
         where = f"beat {sh['beat']}"
         for k, allowed in ALLOWED.items():
             if k in sh and sh[k] not in allowed:
                 err.append(f"{where}: {k}={sh[k]} không có trong danh sách cho phép")
+        if loc_ok and sh.get("loc") and sh["loc"] not in loc_ok:
+            err.append(f"{where}: loc={sh['loc']} không có trong khung")
         for w in sh.get("who", "none").split("+"):
-            if not WHO.match(w.strip()):
-                err.append(f"{where}: who={w} không hợp lệ")
+            w = w.strip()
+            if who_ok and w not in who_ok:
+                err.append(f"{where}: who={w} không có trong khung")
     freezes = [s for s in shots if s["el"] == "freeze"]
     earth = [s for s in shots if s.get("earth")]
     if len(freezes) > 3:
@@ -497,13 +627,9 @@ def check_draft(slug, ver):
         err.append("không có cảnh X-quang (who=anatomy:<loài>)")
     if not any(s["el"] == "notepage" for s in shots):
         err.append("không có trang sổ (el=notepage)")
-    early = [s for s in shots if s["beat"] in ("00", "01", "02") and "K-01" in s.get("who", "")
-             and s.get("size") in ("close", "medium")]
-    if not early:
-        err.append("chưa có cảnh close/medium thấy rõ màu K-01 trước khi beat 02 nói “shiny”")
 
-    ok.append(f"{len(beats)} beat · {len(shots)} shot · EN ước ~{total / 60:.1f} phút")
-    print(f"SOÁT {rel(f)}\n")
+    ok.insert(0, f"{len(beats)} beat · {len(shots)} shot · {len(freezes)} dừng hình · {len(earth)} ảnh quê nhà")
+    print(f"SOÁT {rel(f)}  (khung: {rel(skp) if skeleton else 'không có'})\n")
     for m in ok:
         print("  ✓", m)
     for m in warn:
@@ -515,6 +641,10 @@ def check_draft(slug, ver):
     return 1 if err else 0
 
 
+def arg(args, flag, default=None):
+    return args[args.index(flag) + 1] if flag in args and args.index(flag) + 1 < len(args) else default
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     if not args or args[0].startswith("-"):
@@ -523,7 +653,12 @@ if __name__ == "__main__":
     slug = args[0]
     if "--take" in args:
         take(slug, "--dry-run" in args)
+    elif "--brief" in args:
+        kind = arg(args, "--brief")
+        rest = [a for a in args[args.index("--brief") + 2:] if not a.startswith("--")]
+        make_brief(slug, kind, species=rest[0] if rest else None, rnd=int(arg(args, "--round", 1)))
     elif "--draft" in args:
-        sys.exit(check_draft(slug, args[args.index("--draft") + 1]))
+        nxt_arg = arg(args, "--draft")
+        sys.exit(check_draft(slug, nxt_arg if nxt_arg and not nxt_arg.startswith("--") else None))
     else:
         status(slug)

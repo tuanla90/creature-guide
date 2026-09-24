@@ -19,7 +19,7 @@ Lấy từ [IDEA-BANK.md](IDEA-BANK.md). Chưa mở tập nào ở đây cho t�
 
 | # | Loài / trục | Khung | Vì sao chọn |
 |---|---|---|---|
-| 1 | #0004 Charmander | A | Ngọn lửa ở đuôi là đồng hồ sức khoẻ nhìn thấy được — hook mạnh, dễ có dấu tích đặt tên |
+| 1 | #0004 Charmander | A | Ngọn lửa ở đuôi là đồng hồ sức khoẻ nhìn thấy được — hook mạnh; cá thể trung tâm có Shiny rõ để làm đặc điểm |
 | 2 | #0007 Squirtle | A | Mai là xương hay vỏ: câu hỏi giải phẫu thuần, hợp loại cảnh X-quang mô phỏng |
 | 3 | #0025 Pikachu | A | Cơ quan tích điện: vì sao nó không tự làm mình bị thương. **Khép chương nghiên cứu đầu của Dr. Holth**: hạt mầm → hơi ấm → nước → cú hích (docs/NARRATOR.md) |
 | 4 | #0010 Caterpie → #0012 Butterfree | A | Bên trong kén — nhưng coi chừng luật "không lột da", phải kể bằng dấu vết |

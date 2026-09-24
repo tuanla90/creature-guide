@@ -96,16 +96,17 @@ chưa có gì" của bảng cũ biến mất, vì EN không còn là phái sinh.
 
 | # | Bước | Ra cái gì | Công nghệ | Auto | Nhịp |
 |---|---|---|---|---|---|
-| B1 | **Chọn khung tập**: một cá thể, hay so sánh 2–3 chủ thể | quyết định | `EPISODE-FRAME.md` | ✋ | tập |
+| B0 | **Gemini liệt kê sáu ý** → Claude chấm, chọn một, giữ dự phòng | `drafts/1-ideas-gemini.md` → ý đã chọn | `handoff.py --brief ideas` | 🟢 | tập |
+| B1 | **Chọn khung tập**: một cá thể, hay so sánh 2–3 chủ thể | quyết định | `EPISODE-FRAME.md` | 🟡 | tập |
 | B2 | Tra canon, ghi rõ **phiên bản nào được chọn** | bảng `NGUON` | Bulbapedia / nguồn lore | 🟡 | tập |
 | B3 | Tìm loài thật đối chiếu — **phải có nguồn tra được** | cột 🔬 | tra cứu web | 🟡 | tập |
 | B4 | Hồ sơ hình dáng loài (hai đường, xem dưới) | `bible/creatures/<loài>.json` | JSON | 🟡 | tập |
 | B5 | Chốt đặc điểm cá thể trung tâm (không đặt tên) | `docs/CAST.md` · `individuals.<mã>.trait` | luật trong skill | 🟢 | tập |
-| B6 | **Viết kịch bản EN** | bản EN | skill scriptwriter (phải đảo sang EN) | 🟢 | tập |
-| B7 | Soát máy: logic, nhãn bằng chứng, kiểm chứng nguồn | báo cáo ✗/⚠ | `check-episode.py` + Claude | 🟢 | tập |
+| B6 | **Claude dựng khung → Gemini dựng lại và viết lời EN + VI nháp** | `drafts/2-skeleton.md` → `3-script-gemini.md` | `handoff.py --brief script` · bố cục thả, sự kiện khoá | 🟢 | tập |
+| B7 | Soát máy + Claude chuẩn hoá: logic, nhãn, nguồn, luật | `content.py` + `drafts/4-review.md` | `handoff.py --draft` · `check-episode.py` | 🟢 | tập |
 | B8 | Soát văn: giọng, sức ép kể chuyện | ghi chú sửa | Gemini + `stop-slop` đã cắt 3 luật | 🟢 | tập |
 | B9 | **Người duyệt kịch bản** | quyết định đi tiếp | mắt | ✋ | tập |
-| B10 | Dịch sang VI, **theo hạn mức thời lượng từng beat** | bản VI | máy dịch + luật độ dài | 🟢 | tập |
+| B10 | Bản VI **theo hạn mức thời lượng từng beat** | bản VI | Gemini viết nháp cùng nhịp, Claude soát lệch | 🟢 | tập |
 | B11 | Người tinh chỉnh VI → **đóng băng bản VI** | bản VI chốt | mắt | ✋ | tập |
 | B12 | Bảng shot | `bible/shots/<ep>.json` → `prompts/` | `build-prompts.mjs` | 🟢 | tập |
 
