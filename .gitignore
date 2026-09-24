@@ -17,3 +17,5 @@ bible/refs/**/*.png
 bible/refs/**/*.jpg
 bible/refs/**/*.jpeg
 bible/refs/**/*.webp
+# chỗ thả file cho tools/handoff.py — xem docs/HANDOFF.md
+inbox/

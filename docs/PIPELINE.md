@@ -135,7 +135,8 @@ Hồ sơ hình dáng có **hai đường ngược nhau**:
 Google Flow, project "Creature". Một hai ảnh lẻ thì gõ thẳng vào ô prompt của project; cả loạt thì
 mở Tools → Batch Image Studio Pro, dán `prompts/<ep>.flow.txt`.
 
-Tải ZIP về → `python tools/import-flow.py <ep>` → `python tools/unwatermark.py <ep>`.
+Tải ZIP về (tên gì cũng được, để trong Downloads) rồi nói **"xong ảnh"** → `tools/handoff.py <slug> --take`
+nạp vào đúng chỗ → `python tools/unwatermark.py <ep>`. Luật đặt tên mọi file bàn giao: [HANDOFF.md](HANDOFF.md).
 
 **Hai loại cảnh có luật riêng:**
 
