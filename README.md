@@ -22,6 +22,7 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 |---|---|
 | `/tap-moi <loài>` | mở tập mới: ý tưởng → canon → kịch bản → shot, dừng trước khi tốn tiền ảnh |
 | `/soat-tap <slug>` | soát trước khi thu giọng: máy soát rồi tới người soát |
+| `/nap-am` | nạp âm thanh vừa tải về: đổi tên, cắt, vào đúng chỗ, không để bản sao |
 | skill `creature-field-guide-scriptwriter` | luật viết lời |
 | skill `creature-field-guide-production` | bible → ảnh → `scenes.json` → render |
 | skill `creature-motion` | biến một ảnh tĩnh thành vòng lặp động nhẹ — xem [experiments/creature-motion](experiments/creature-motion/README.md) |
@@ -35,6 +36,7 @@ python tools/unwatermark.py <ep>           # gỡ watermark Gemini
 python tools/build-sfx.py <slug>           # sfx.json -> tiếng của tập
 python tools/build-music.py                # 20 đoạn nhạc, cùng tông La thứ
 python tools/import-music.py <file>        # nhạc tải về -> bản nền lặp được
+python tools/intake.py --status            # bản gốc / bản dựng, nặng bao nhiêu
 npm run scaffold -- <slug>                 # timing ước lượng + audio câm
 npm run studio                             # xem thử
 python tools/check-episode.py <slug>       # soát trước khi thu giọng / render

@@ -120,6 +120,9 @@ Với mỗi lớp, tool tìm file thật ở `assets/sfx-src/<cue>/<tên lớp>.
 khác. **Không có file thật thì tool tự dựng lấy một tiếng tổng hợp** đúng dải tần, đúng giải phẫu,
 đúng độ dài — đủ để dựng hình, canh nhịp và soát, nhưng chưa phải con vật thật.
 
+Tải về rồi thì **đừng chép tay** — `/nap-am <cue>/<lớp>` lấy file mới nhất trong Downloads, đổi
+sang wav 48 kHz, đặt đúng chỗ và dựng lại cue ấy; bản gốc chỉ nằm ở một nơi duy nhất.
+
 Nên thứ tự làm ngược lại so với trước: dựng trước, nghe, rồi mới đi tìm. Đi tìm theo cột "từ khoá"
 trong bảng, tải về đúng chỗ trên (giữ nguyên file gốc, đừng ghi đè), chạy lại lệnh cũ — công thức
 không đổi, chỉ nguyên liệu tốt lên.
