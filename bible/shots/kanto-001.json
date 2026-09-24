@@ -408,19 +408,21 @@
       "creatures": [
         "venusaur:female"
       ],
-      "scene": "a resting Venusaur in a meadow with two smaller creatures that had been fighting now sitting quietly a few steps away in the drifting scent, petals releasing a faint visible haze",
+      "scene": "the same very old female Venusaur, trunk gone woody with moss and small ferns on its back, in a meadow with two smaller creatures that had been fighting now sitting quietly a few steps away in the drifting scent, petals releasing a faint visible haze",
       "framing": "medium-wide shot, Venusaur on the right, the two small creatures on the left",
-      "beat": "tbd"
+      "beat": "tbd",
+      "_fix": "2026-09-24: cùng nhân vật với n19 — phải cùng dáng già, có rêu. PHẢI SINH LẠI."
     },
     {
       "id": "n19-old-venusaur",
       "kind": "scene",
       "creatures": [
-        "venusaur:male"
+        "venusaur:female"
       ],
       "scene": "a very old Venusaur resting at the forest edge, its trunk gone woody and cracked with moss and small ferns growing on its back and shell, the flower huge and slightly faded",
       "framing": "close medium shot, texture of moss and bark clearly readable, soft rainy light",
-      "beat": "tbd"
+      "beat": "tbd",
+      "_fix": "2026-09-24: đổi male -> female. Kịch bản là con Venusaur CÁI già có nhụy; bản cũ khai nhầm male. PHẢI SINH LẠI."
     },
     {
       "id": "b01-arena-dusk",

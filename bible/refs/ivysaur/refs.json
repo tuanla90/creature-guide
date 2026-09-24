@@ -1,0 +1,30 @@
+{
+  "species": "ivysaur",
+  "_rule": "Ảnh tham chiếu bên thứ ba: chỉ để tham chiếu khi sinh, không đăng, không vào git. Ghi nguồn từng tấm.",
+  "refs": [
+    {
+      "id": "ref-ivysaur-size",
+      "file": "size.png",
+      "what": "tỉ lệ Ivysaur so với người",
+      "why": "AI hay vẽ sai cỡ",
+      "source": "Bulbapedia — Ivysaur",
+      "canon": "📖 cao 1.0 m",
+      "feeds": [
+        "plate"
+      ],
+      "status": "chưa tải"
+    },
+    {
+      "id": "ref-ivysaur-shiny",
+      "file": "shiny.png",
+      "what": "Shiny Ivysaur cạnh bản thường — nụ vàng / nụ hồng",
+      "why": "đặc điểm nhận dạng K-01 sau tiến hoá; sai màu nụ là mất nhân vật",
+      "source": "Bulbapedia — Shiny Pokémon, hoặc artwork chính thức Gen VI+",
+      "canon": "📖 Shiny Ivysaur: thân xanh lá, nụ và mắt vàng",
+      "feeds": [
+        "plate:K-01"
+      ],
+      "status": "chưa tải"
+    }
+  ]
+}

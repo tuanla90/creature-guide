@@ -34,7 +34,8 @@
         "turquoise skin"
       ],
       "_promptNote": "Không nhắc tên màu SAI trong marks (kể cả 'instead of blue-green') — mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa vào forbidden.",
-      "_naming": "Không đặt tên riêng. Gọi bằng đặc điểm canon + mã: 'Shiny Bulbasaur · K-01'. Xem docs/CAST.md."
+      "_naming": "Không đặt tên riêng. Gọi bằng đặc điểm canon + mã: 'Shiny Bulbasaur · K-01'. Xem docs/CAST.md.",
+      "evolvesTo": "ivysaur:K-01 — vẫn Shiny: thân xanh lá, nụ VÀNG (Ivysaur thường nụ hồng)"
     },
     "K7": {
       "aliasOf": "K-01",

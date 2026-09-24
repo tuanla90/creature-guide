@@ -9,12 +9,58 @@
     "a large closed pink flower bud on its back, supported by a short brown trunk and surrounded by four broad leafy green fronds",
     "the bud looks heavy, the body braced under its weight"
   ],
-  "sexDifferences": { "note": "không có khác biệt nhìn thấy được (Bulbapedia)", "female": [], "male": [] },
+  "sexDifferences": {
+    "note": "không có khác biệt nhìn thấy được (Bulbapedia)",
+    "female": [],
+    "male": []
+  },
   "canon": [
-    {"fact": "tiến hoá từ Bulbasaur ở cấp 16, lên Venusaur ở cấp 32", "src": "Bulbapedia"},
-    {"fact": "nụ hoa lớn dần theo năng lượng; toả hương khi sắp nở", "src": "Pokédex Yellow"},
-    {"fact": "càng tắm nắng càng khoẻ, nụ càng lớn", "src": "Pokédex Scarlet/Shield"}
+    {
+      "fact": "tiến hoá từ Bulbasaur ở cấp 16, lên Venusaur ở cấp 32",
+      "src": "Bulbapedia"
+    },
+    {
+      "fact": "nụ hoa lớn dần theo năng lượng; toả hương khi sắp nở",
+      "src": "Pokédex Yellow"
+    },
+    {
+      "fact": "càng tắm nắng càng khoẻ, nụ càng lớn",
+      "src": "Pokédex Scarlet/Shield"
+    }
   ],
-  "invariants": ["closed pink bud, never open", "four leafy fronds around the bud", "short brown trunk under the bud"],
-  "forbidden": ["open flower", "bulb instead of bud"]
+  "invariants": [
+    "closed pink bud, never open",
+    "four leafy fronds around the bud",
+    "short brown trunk under the bud"
+  ],
+  "forbidden": [
+    "open flower",
+    "bulb instead of bud"
+  ],
+  "individuals": {
+    "K-01": {
+      "trait": "shiny",
+      "sameAs": "bulbasaur:K-01 — cùng một cá thể sau khi đổi hình. Shiny được giữ qua tiến hoá (canon).",
+      "marks": [
+        "its skin is a fresh leaf green with darker green patches",
+        "pointed ears with black insides, narrow yellow eyes",
+        "a large closed flower bud on its back that is a clear golden yellow, supported by a short brown trunk and surrounded by four broad fronds of a lighter, brighter green"
+      ],
+      "dropAppearance": [
+        "blue-green skin",
+        "narrow red eyes",
+        "pink flower bud"
+      ],
+      "forbidden": [
+        "pink flower bud",
+        "magenta bud",
+        "turquoise skin",
+        "blue-green skin",
+        "red eyes"
+      ],
+      "canon": "📖 Shiny Ivysaur: thân xanh ngọc -> xanh lá, nụ và mắt -> vàng, lá sáng hơn (Shiny Pokémon Wiki; ShinyRating). Shiny giữ qua tiến hoá.",
+      "_why": "Luật kênh cấm cảnh lột da: khán giả KHÔNG thấy con vật biến hình. Nụ vàng là cách DUY NHẤT họ nhận ra con Ivysaur trong sương là K-01 — đặc điểm làm đúng việc cái tên từng làm.",
+      "_promptNote": "Không nhắc màu sai (hồng, xanh ngọc) trong marks — mô hình hay bỏ qua phủ định. Màu sai nằm ở forbidden."
+    }
+  }
 }

@@ -59,12 +59,32 @@ const place = (ref) => {
 const lines = [], jsonl = [], md = [`# Prompt — ${shots.episode}`, "", "| # | id | beat | file |", "|---|---|---|---|"];
 shots.shots.forEach((s, i) => {
   // cùng loài xuất hiện nhiều lần (vd đực + cái) -> mô tả loài một lần, khác biệt giới do s.scene nói
+  // Gom theo loài. Một loài xuất hiện nhiều lần trong một khung:
+  //  · biến thể giới tính (male/female) -> tả loài một lần, khác biệt do s.scene nói (như cũ)
+  //  · có CÁ THỂ ĐƯỢC CHỌN lẫn trong đàn -> tả loài một lần (màu THƯỜNG), rồi thêm "đúng một con
+  //    trong số đó: <đặc điểm>". Trước đây nhánh này gộp về tả loài và BỎ MẤT đặc điểm, nên cảnh
+  //    "một đàn thường + đúng một con Shiny" không sinh được. Không áp forbidden/dropAppearance của cá
+  //    thể lên cả khung — các con khác vẫn mang màu thường.
   const seen = new Set();
   const cs = s.creatures.map((r) => {
     const id = r.split(":")[0];
     if (seen.has(id)) return null;
     seen.add(id);
-    return creature(s.creatures.filter((x) => x.split(":")[0] === id).length > 1 ? id : r, s.dropAppearance);
+    const group = s.creatures.filter((x) => x.split(":")[0] === id);
+    if (group.length === 1) return creature(r, s.dropAppearance);
+    const chosen = group.map(canonRef).filter((x) => {
+      const st = x.split(":")[1];
+      return st && !["male", "female"].includes(st);
+    });
+    const base = creature(id, s.dropAppearance);
+    if (!chosen.length) return base;
+    const extra = chosen.map((x) => {
+      const [sp, st] = x.split(":");
+      const marks = bibleOf(sp)?.individuals?.[st]?.marks || [];
+      return `exactly ONE individual among them is different from all the others: ${marks.join(", ")}; ` +
+             `every other individual in the frame has the ordinary colouring described above`;
+    });
+    return {...base, text: [base.text, ...extra].join(". ")};
   }).filter(Boolean);
   // mỗi kind có khối style riêng; không khai thì rơi về style chung
   const LOOK = {plate: style.plateStyle, anatomy: style.anatomyStyle, fieldnote: style.fieldNoteStyle,
