@@ -395,7 +395,15 @@ def check_draft(slug, ver):
     miss = [b for b in targets if b not in beats]
     if miss:
         err.append("thiếu beat: " + ", ".join(miss))
-    for sec in ("timeline", "titles", "thumb", "self-check"):
+    raw = f.read_text(encoding="utf-8")
+    if re.search(r"CONTINUE FROM BEAT", raw):
+        err.append("Gemini bị cắt giữa chừng (còn dòng CONTINUE FROM BEAT) — gõ “continue” rồi dán nối phần sau")
+    sk = d.get("skeleton-changes")
+    if isinstance(sk, str) and sk.strip() and sk.strip().lower() != "none":
+        rows = [x.strip("- ") for x in sk.strip().splitlines()
+                if x.strip() and not x.startswith(("`", "<!--"))]
+        warn.append("Gemini đề xuất sửa khung — bạn duyệt từng dòng:" + "".join("\n      · " + x for x in rows))
+    for sec in ("timeline", "titles", "thumb", "skeleton-changes", "self-check"):
         if sec not in d:
             warn.append(f"thiếu mục {sec.upper()}")
 

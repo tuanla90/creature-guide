@@ -2,14 +2,18 @@
 
 **Cách dùng:** mở Gemini, dán **toàn bộ phần dưới vạch `DÁN TỪ ĐÂY`**, đính kèm
 `docs/EPISODE-001-V3-MASTER.md` (chỉ để Gemini bắt giọng văn — bản ấy còn tên cũ, bộ soát sẽ bắt nếu
-lọt). Gemini trả lời xong thì chép **nguyên văn** câu trả lời vào:
+lọt). Prompt đã tự dặn Gemini chỗ lưu:
 
-```
-videos/kanto-001-bulbasaur/drafts/v4-gemini.md
-```
+- Gemini ghi được file (Gemini CLI…) → nó tự lưu vào `videos/kanto-001-bulbasaur/drafts/v4-gemini.md`.
+- Gemini trên web → nó trả **một khối code duy nhất**, bấm nút copy của khối rồi dán vào file ấy.
+- Bị cắt giữa chừng → dòng cuối là `<!-- CONTINUE FROM BEAT xx -->`. Gõ "continue", dán khối mới
+  **nối tiếp** vào cùng file.
 
-rồi nhắn Claude: **`xong gemini`**. Gemini trả dài quá bị cắt thì bảo nó "continue from BEAT xx",
-dán nối vào cùng file.
+Xong thì nhắn Claude: **`xong gemini`**.
+
+Gemini được **tự sửa nhẹ** (thứ tự câu, co giãn thời lượng, chọn so sánh và chỗ dừng hình). Muốn
+**sửa khung** (thêm/bớt/gộp beat, đổi sự kiện, đổi nhãn) thì chỉ được đề xuất ở mục
+`SKELETON-CHANGES` — Claude soát rồi bạn chốt.
 
 Phần 1, 2, 6 là **lõi dùng lại cho mọi tập**. Phần 3–5 là riêng tập này.
 
@@ -19,9 +23,31 @@ Phần 1, 2, 6 là **lõi dùng lại cho mọi tập**. Phần 3–5 là riêng
 
 You are the writer for a nature-documentary channel. I need the full narration for one episode,
 rewritten so it sounds like a great wildlife film: calm, exact, curious and a little haunting. Below
-is a locked skeleton: the facts, the order and the evidence. Your job is the **voice**: rhythm,
-tension, images, the sentence that makes someone stay. Do not change the facts. If you think a fact is
-missing, put it in the PROPOSED section, never in the narration.
+is a skeleton: the facts, the order and the evidence. Your main job is the **voice**: rhythm,
+tension, images, the sentence that makes someone stay.
+
+**Where your answer goes.** Your answer is saved as the file
+`videos/kanto-001-bulbasaur/drafts/v4-gemini.md` in the project folder
+`D:\Users\tuanla2\creature-field-guide`, and a script reads it.
+- If you can write files, write your whole answer to that path and reply only "saved".
+- Otherwise, put your **entire** answer inside **one** code block that opens with ````markdown (four
+  backticks) and whose first line is `<!-- save as videos/kanto-001-bulbasaur/drafts/v4-gemini.md -->`,
+  so it can be copied in one click. Nothing outside the block.
+- If you run out of space, stop at the end of a whole beat and write `<!-- CONTINUE FROM BEAT xx -->`
+  as the last line. When I say "continue", start a new block with the next beat.
+
+**What you may change, and how:**
+- **Change freely** (just do it): the order of sentences inside a beat · which details you dwell on
+  and which you cut · moving one fact to the neighbouring beat when the rhythm is better · shifting time
+  between beats (each beat within ±15% of its target, the whole episode within ±5%) · which optional
+  comparisons you use · where the freeze moments go (among the candidates, or a better place you find).
+- **Propose, don't apply** (write them in `## SKELETON-CHANGES`, and keep the narration on the current
+  skeleton): adding, removing, merging, splitting or reordering beats · changing, adding or dropping a
+  fact · changing an evidence label · changing the spine question or the ending · new catalogue or
+  anime material (goes in `## PROPOSED` with its source). For each proposal, say what it improves and
+  which rule or beat it might break.
+- **Never change**: the hard rules in section 2 · "shiny" said once in beat 02, after the colour is
+  seen · the spine question stays unanswered.
 
 ## 1 · The world and the narrator (all episodes)
 
@@ -224,6 +250,9 @@ SCREEN:
 
 ## THUMB
 <3 thumbnail hooks, ≤ 5 words each, each one a question the episode really asks>
+
+## SKELETON-CHANGES
+<one per line: what you would change in the skeleton — why — what it might break. "none" if none.>
 
 ## PROPOSED
 <new facts you would like to add: claim — source. Do NOT use these in VO.>
