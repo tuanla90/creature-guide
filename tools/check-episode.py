@@ -463,6 +463,20 @@ def main(slug: str) -> int:
         if len(sig) and not any("nhịp hình" in m or "công thức" in m for m in warn):
             K("nhịp hình có đổi giữa các beat")
 
+    # ---- giọng văn (docs/VOICE.md) ------------------------------------------
+    sys.path.insert(0, str(ROOT / "tools"))
+    from voice_lint import lint_beat
+    vmsgs = []
+    for bid in order + (["short-outro"] if "short-outro" in beats else []):
+        vmsgs += lint_beat(bid, beats.get(bid, ""), "vi")
+        en_beats = getattr(c, "BEATS_EN", {})
+        if bid in en_beats:
+            vmsgs += lint_beat(bid, en_beats[bid], "en")
+    for m in vmsgs:
+        W("giọng văn — " + m)
+    if not vmsgs:
+        K("giọng văn: không câu cụt liền nhau, đại từ có chủ, không từ trơ (docs/VOICE.md)")
+
     # ---- dừng hình và ảnh quê nhà --------------------------------------------
     # Luật cường độ (docs/SCENE-TYPES.md mục B2): dừng hình là lúc người kể ngừng lại để nghĩ —
     # nhiều quá thì thành giờ giảng. Ảnh loài Trái Đất phải có nguồn sạch ghi trong earth.json.

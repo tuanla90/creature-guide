@@ -530,6 +530,9 @@ def check_draft(slug, which=None):
         for m in re.finditer(r"\d+(?:[.,]\d+)?\s*(?:m/s|km/h|km|kg|cm|mm|%|°|m\b)", fl.get("SHOTS", "")):
             err.append(f"beat {b}: số đo trong SHOTS/notes “{m.group(0)}” — số bịa, trang sổ chỉ ghi quan sát")
         en, vi = fl.get("VO_EN", ""), fl.get("VO_VI", "")
+        sys.path.insert(0, str(ROOT / "tools"))
+        from voice_lint import lint_beat                      # docs/VOICE.md: câu cụt, đại từ trôi, từ trơ
+        warn.extend("giọng văn — " + m for m in lint_beat(b, vi, "vi") + lint_beat(b, en, "en"))
         en_all += f"\n[{b}] " + en
         vi_all += f"\n[{b}] " + vi
         en_s = len(re.findall(r"[A-Za-z0-9'’-]+", en)) / EN_WPS

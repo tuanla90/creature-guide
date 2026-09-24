@@ -55,7 +55,7 @@
    "caption": "Viridian Forest · Day 1",
    "scenes": [
     {
-     "at": "first day",
+     "at": "small animal",
      "el": "clip",
      "who": "K-01",
      "shot": "medium · ngang tầm mắt",
@@ -67,7 +67,7 @@
      "motion": "breath"
     },
     {
-     "at": "contracted",
+     "at": "swelled",
      "el": "clip",
      "who": "K-01",
      "shot": "macro · từ trên",
@@ -195,7 +195,7 @@
      "motion": "breath"
     },
     {
-     "at": "swollen",
+     "at": "filled out",
      "el": "specimen",
      "who": "K-01",
      "shot": "close",
@@ -310,7 +310,7 @@
      "motion": "still"
     },
     {
-     "at": "dusk",
+     "at": "As evening comes",
      "el": "clip",
      "who": "hai con thường",
      "shot": "medium · thấp",
@@ -368,7 +368,7 @@
      "motion": "veo"
     },
     {
-     "at": "blind spot",
+     "at": "out of reach",
      "el": "world",
      "who": "K-01",
      "shot": "medium · từ trên xuống",
@@ -382,7 +382,7 @@
      "motion": "still"
     },
     {
-     "at": "flicked",
+     "at": "swing a vine",
      "el": "clip",
      "who": "K-01",
      "shot": "medium · từ sau",
@@ -466,7 +466,7 @@
    "caption": "Income and expense",
    "scenes": [
     {
-     "at": "lay still",
+     "at": "lay flattened",
      "el": "clip",
      "who": "K-01",
      "shot": "medium · ngang",
@@ -478,7 +478,7 @@
      "motion": "breath"
     },
     {
-     "at": "ledger",
+     "at": "two columns",
      "el": "notepage",
      "who": "—",
      "shot": "trang sổ",
@@ -498,7 +498,7 @@
    "caption": "Same organ, two uses",
    "scenes": [
     {
-     "at": "against each other",
+     "at": "fight one another",
      "el": "world",
      "who": "—",
      "shot": "wide · từ cao",
@@ -510,11 +510,11 @@
      "motion": "still"
     },
     {
-     "at": "lash",
+     "at": "cracked down",
      "el": "freeze",
      "who": "Bulbasaur trong sân",
      "shot": "close · ngang",
-     "what": "Dây leo quất xuống nền đất — hình ĐỨNG ở “lash”, soi dây leo; tới “elephant” thẻ kẹp ảnh quê nhà: vòi voi",
+     "what": "Dây leo quất xuống nền đất — hình ĐỨNG ở “cracked down”, soi dây leo; tới “elephant” thẻ kẹp ảnh quê nhà: vòi voi",
      "src": {
       "kind": "reuse",
       "id": "b02-vine-whip-battle"
@@ -523,7 +523,7 @@
      "motion": "freeze"
     },
     {
-     "at": "held perfectly still",
+     "at": "stock-still",
      "el": "world",
      "who": "Bulbasaur trong sân",
      "shot": "medium · thấp",
@@ -535,7 +535,7 @@
      "motion": "still"
     },
     {
-     "at": "By morning",
+     "at": "next morning",
      "el": "world",
      "who": "K-01",
      "shot": "medium",
@@ -599,7 +599,7 @@
    "caption": "Two parts, two directions",
    "scenes": [
     {
-     "at": "changed its habits",
+     "at": "change its ways",
      "el": "clip",
      "who": "K-01",
      "shot": "medium · nghiêng",
@@ -611,7 +611,7 @@
      "motion": "veo"
     },
     {
-     "at": "did not move",
+     "at": "turned to the south",
      "el": "freeze",
      "who": "K-01",
      "shot": "close · từ cao",
@@ -657,7 +657,7 @@
      "motion": "still"
     },
     {
-     "at": "K-04 stayed",
+     "at": "Back in the clearing",
      "el": "world",
      "who": "K-04",
      "shot": "wide · từ cao, bình minh",
@@ -684,7 +684,7 @@
      "motion": "veo"
     },
     {
-     "at": "whole page",
+     "at": "entire page",
      "el": "notepage",
      "who": "—",
      "shot": "trang sổ",
@@ -731,7 +731,7 @@
      "motion": "still"
     },
     {
-     "at": "yellow bud",
+     "at": "bud of yellow",
      "el": "clip",
      "who": "Ivysaur K-01",
      "shot": "medium · nghiêng",
@@ -792,7 +792,7 @@
      "motion": "still"
     },
     {
-     "at": "After rain",
+     "at": "After every rain",
      "el": "clip",
      "who": "Venusaur cái già + hai con",
      "shot": "medium · thấp",

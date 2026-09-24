@@ -12,9 +12,35 @@ Mọi thứ phía trên vạch cắt dưới đây là ghi chú cho người b�
   adds one piece to that question, without ever saying it is solved.
 - He is a patient observer: he watches, he does not interfere, and he does not give animals pet
   names.
-- Tone: Attenborough's calm crossed with a private field diary. Short sentences next to long ones.
-  Concrete images. No hype, no "incredible", no "amazing", no rhetorical questions stacked in a row,
+- Tone: Attenborough's calm crossed with a private field diary. Long, flowing sentences with a
+  rare short one for a punch. Concrete images. No hype, no "incredible", no "amazing", no rhetorical questions stacked in a row,
   no "little did I know", no "nature is truly remarkable".
+
+## Narration craft (the script must be gripping even read silently, with no sound and no picture)
+
+1. **Set the scene before the event.** Open every beat, and every change of place or time, with a
+   line of setting: the hour, the light, a sound, a smell. Not "Late afternoon, it goes to the pond"
+   but "Every afternoon, once the light had turned golden, it would amble down to the pond…".
+2. **Bridge sentences and beats.** Use time (then, from that day on, on the fifth night), cause
+   (because, so, it turned out), contrast (and yet, but, while). The first line of a beat hooks into
+   the last line of the one before.
+3. **Short sentences are seasoning, not the meal.** At most **one** very short sentence per beat,
+   where a punch is needed. Two short sentences in a row read like a report.
+4. **Strong verbs need a picture and a sound.** Every forceful action (lash, dive, burst, plough)
+   comes with a simile, a sound, or a visible consequence: not "They lash." but "They shot out fast
+   as the wind and cracked down onto the hard earth with a sound as sharp as a whip."
+5. **Every pronoun has an owner.** "It" is reserved for the central animal (K-01). Every other animal
+   is named with a noun ("the bird", "the old Venusaur", "the animal in the yard"). "They" only right
+   after a plural noun in the same paragraph; never open a beat with "They". Each animal is introduced
+   once, with a full noun, at the moment it is on screen, before it is called anything shorter.
+6. **Build unusual words.** The first time an uncommon word appears (clearing, bract, pistil), the
+   sentence explains it. Always use the full term afterwards.
+7. **A code must mean something.** The first time K-01 is used, say what K is (Kanto, the region) and
+   what 01 is (the first animal he chose to follow).
+
+For VO_VI, write literary Vietnamese in the tradition of classic Vietnamese animal and nature prose:
+precise verbs, reduplicated words (từ láy), long flowing sentences with rhythm, a first-person narrator
+who observes and gently comments. Never translate word for word; never use calques.
 
 ## Hard rules. Breaking one means the draft is thrown out
 

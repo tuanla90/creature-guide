@@ -78,3 +78,23 @@ cho khớp VI. Chưa cắt EN thêm lúc này để khỏi cắt hai lần.
 1. Đọc `content.py` (hoặc bản dựng câm sau khi scaffold) và nói **"duyệt"**, hoặc ghi chỗ cần sửa.
 2. Chấp nhận hai so sánh tuỳ chọn đã giữ (ngựa, cây thùa) hay đổi.
 3. Khi chốt giọng EN: thu thử một beat để đo nhịp thật.
+
+## Vòng 2 · viết lại theo góp ý duyệt (2026-09-24)
+
+Góp ý trên trang duyệt (beat 01, 02, 09, 10) và nhận xét chung: thiếu đoạn tả cảnh, thiếu từ chuyển
+tiếp, nhiều câu cụt, đại từ không đồng nhất. Lời V4 vòng 1 đọc thầm không hấp dẫn. Thành luật ở
+`docs/VOICE.md` (bảy luật, học cách làm của Tô Hoài, Nguyễn Đình Thi, Nguyễn Nhật Ánh) và
+`tools/voice_lint.py` (máy bắt câu cụt, "chúng" không chủ, "con đấy", "trảng" trơ, từ dịch sát) —
+vòng 1 dính 41 cảnh báo, vòng 2 còn 0. Lõi bản giao cho Gemini thêm mục *Narration craft*.
+
+Từng góp ý:
+- **01** — nói rõ K-01 là con vật nằm giữa lối mòn hôm ấy; K là Kanto, 01 là con đầu tiên được chọn.
+- **02** — "rừng già giáp với đồng cỏ"; "trảng cỏ" được dựng nghĩa ở câu đầu và luôn viết đủ; lối mòn
+  "do chính đàn Bulbasaur ngày ngày đi qua đi lại mà thành".
+- **09** — "Nhưng điều khiến tôi phải ghi đậm vào sổ lại là những gì xảy ra sau đó."
+- **10** — "Chúng vụt ra nhanh như gió, quất xuống nền đất nện nghe chát chúa như tiếng roi da, bụi
+  đất tung lên thành từng vệt."
+- Đại từ: "nó" chỉ dành cho K-01; con chim, con Venusaur già, con vật trong sân đều gọi bằng danh từ.
+
+**Cái giá: dài ra.** VI ước 16,7 phút (vòng 1: 11,4), EN ước 19,9 phút ở 2,3 từ/giây. Chờ chủ dự án
+chốt: giữ độ dài, hay cắt về ~13 phút.
