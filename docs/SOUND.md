@@ -30,10 +30,15 @@ nhớ nổi sau sáu tháng.
 
    Không đụng: BBC Sound Effects (cấm thương mại), Macaulay (phải mua license).
 
-   **xeno-canto** là kho tiếng chim lớn nhất (hơn một triệu bản thu), nhưng mỗi bản một giấy phép
-   khác nhau, phần nhiều là NC. Có bản CC0 và CC-BY dùng được, chỉ là phải xem từng bản một. Nếu
-   kênh chấp nhận **CC-BY** — dùng thương mại được, đổi lại phải ghi tên người thu trong phần mô tả
-   — thì cửa ấy mở ra rất rộng cho tiếng vạc và tiếng quạ. Chưa quyết; chủ dự án chốt.
+   **Không dùng CC-BY, và không dùng xeno-canto.** CC-BY cho phép thương mại, nhưng đổi lại mỗi
+   tập phải nuôi một danh sách credit trong phần mô tả — việc tay, lặp mãi, và sai một dòng là vi
+   phạm. Ba nguồn trên đều **không đòi ghi nguồn**; giữ đúng ba nguồn ấy.
+
+   **Khi kho CC0 không có loài đúng** — hay gặp nhất với chim nước như vạc — thì **đổi loài, đừng
+   đổi nguồn.** Luật 2 đòi mỗi lớp neo vào *một loài có thật*, chứ không đòi đúng loài đã ghi lúc
+   soạn bảng. Cái tai cần là **hình dạng tiếng**: một tiếng quạc khàn, ngắn, gắt. Con ngỗng cho
+   đúng thứ ấy và có đầy trong kho CC0. Đổi xong thì **sửa trường `species` trong `sfx.json` thành
+   con vật thật sự đã dùng** — bảng đó là chỗ trả lời "tiếng này ở đâu ra", nó phải đúng.
 5. **Tránh âm có chữ ký.** Tiếng hét chim ưng đuôi đỏ, tiếng voi rống, tiếng sư tử — tai người nhận
    ra ngay "à, con này". Nếu buộc phải dùng, chỉ lấy làm **lớp chìm** dưới 25% âm lượng.
 
