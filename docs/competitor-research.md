@@ -440,111 +440,94 @@ To endure the harsh laws of nature, this tiny creature must undergo an incredibl
 
 ## Phân tích hình ảnh & animation · Mỗi kênh làm gì về mặt kỹ thuật sản xuất
 
-> Xem trực tiếp video từng kênh, chụp màn hình nhiều frame để đánh giá. Dưới đây là quan sát thực tế.
+> Xem video đang chạy, chụp nhiều frame liên tiếp để quan sát chuyển động thực tế.  
+> **Lưu ý phương pháp:** Screenshot đóng băng không đủ để đánh giá — phải xem frame liên tiếp.
 
 ---
 
-### MonBiology — AI photorealistic + Ken Burns · Chuẩn cao nhất phân khúc
+### MonBiology — AI video generation · Photorealistic · Chuẩn cao nhất phân khúc
 
 **Kỹ thuật sản xuất:**
-- Ảnh AI photorealistic (phong cách Midjourney/FLUX) — không có video thật, không có 3D render
-- Mỗi cảnh là **một ảnh tĩnh được zoom/pan chậm** (Ken Burns effect) → tạo ảo giác chuyển động
-- Chuyển cảnh: cut thẳng hoặc crossfade nhẹ; không có transition phức tạp
+- **AI video generation** (khả năng cao: Kling AI, Runway Gen-3, hoặc tương đương) — sinh vật thực sự chuyển động trong video, không phải ảnh tĩnh
+- Camera movement (zoom, pan, tilt) cũng là một phần của video được sinh ra, không phải post-process
+- Mỗi "cảnh" là một đoạn video ngắn 3–8 giây, ghép nối nhau
+
+**Bằng chứng chuyển động (2 frame liên tiếp, Bulbasaur video ~10–11s):**
+- Frame 10s: Bulbasaur nhìn nghiêng sang phải, tư thế thấp, bulb xanh non
+- Frame 11s: Bulbasaur đã xoay đầu, tư thế khác — tư thế thân và vị trí đầu thay đổi rõ ràng
 
 **Bảng màu và ánh sáng:**
-- Rừng nhiệt đới: xanh lá ấm, tán cây lọc nắng, tia nắng (god rays) xuyên qua cành
-- Shallow depth of field — nhân vật nét, nền mờ như ống kính máy ảnh thật
+- Rừng ấm: xanh lá, tán cây lọc nắng, god rays, shallow depth of field
 - Cảnh Venusaur trưởng thành: chuyển sang blue-purple dramatic — biết điều tiết palette theo arc cảm xúc
+- Texture sắc nét: vảy da, bulb, rễ cây, lá mục đều có chi tiết
 
-**Frame quan sát thực tế (Bulbasaur video):**
-| Timestamp | Mô tả |
-|---|---|
-| 0:15s | Bulbasaur con nở, rừng sáng ấm, bokeh mạnh, sub: "the hatchling shifts its body" |
-| 1:30s | Bulbasaur đối mặt rắn, ánh sáng dramatic từ bên hông, rõ vảy da rắn và texture bulb |
-| 3:20s | Venusaur emerge — blue-purple cinematic, hoa nở lớn, góc thấp ngửa lên |
-
-**Đánh giá:** Chất lượng ảnh ngang NatGeo về mặt aesthetic. Bí quyết không phải công cụ mà là **cách viết prompt nhất quán** — cùng lighting style, cùng camera angle convention (thấp, wide), cùng màu sắc cho từng sinh cảnh. Điểm yếu duy nhất: sinh vật không thực sự di chuyển → không có shot "Bulbasaur đang chạy", "đang cắn", "đang leo cây".
+**Đánh giá:** Chất lượng AI video ngang NatGeo về aesthetic. Bí quyết là **consistency trong prompting** — cùng lighting convention, cùng camera angle thấp, cùng màu sắc cho từng sinh cảnh. Thách thức lớn nhất của AI video generation là giữ nhân vật nhất quán giữa các shot — MonBiology làm khá tốt điều này.
 
 ---
 
-### Pokearth (EnlargedKai) — 3D Blender animation thuần · Kỹ thuật cao nhất
+### Pokearth (EnlargedKai) — Blender 3D animation thuần · Stylized · 472K sub
 
 **Kỹ thuật sản xuất:**
-- **3D animation hoàn toàn trong Blender** — không phải AI ảnh, không phải video thật
-- Creature model giữ phong cách art chính thức của Pokémon nhưng render trong Blender
-- Môi trường (cỏ, cây, đá, bầu trời) render photorealistic bằng Cycles hoặc Eevee
-- Sinh vật **thực sự chuyển động** — đây là điểm khác biệt lớn nhất so với mọi kênh còn lại
+- **3D animation hoàn toàn trong Blender** — model Pokemon riêng, environment riêng, render riêng
+- Sinh vật di chuyển, tương tác với môi trường — walking cycle, breathing, head turn
+- Môi trường (cỏ, cây, đá, bầu trời) render photorealistic; creature model giữ phong cách art chính thức của Pokemon
 
 **Bảng màu và ánh sáng:**
-- Môi trường: ánh sáng buổi chiều vàng ấm (golden hour), bầu trời xanh, đồng cỏ hoa
-- Sinh vật: giữ màu sắc canonical (Turtwig xanh lá/nâu, Torterra xanh lục tối)
-- Camera: **luôn thấp hơn sinh vật** → tạo cảm giác sinh vật to lớn, hùng tráng; shallow DoF
+- Golden hour ấm, bầu trời xanh, đồng cỏ hoa — palette tươi sáng nhất trong 4 kênh
+- Camera luôn thấp hơn sinh vật → tạo cảm giác hùng tráng, scale to lớn
 
-**Frame quan sát thực tế (Torterra video):**
-| Timestamp | Mô tả |
-|---|---|
-| 0:30s | Turtwig nhỏ trên bãi cỏ cạnh đá → camera rất thấp, đất chiếm 60% frame |
-| 1:30s | Wide shot Torterra đứng giữa đồng cỏ có hoa, cây xanh xa xa → scale to lớn rõ |
-| 2:30s | Low-angle: đá nhọn Torterra gần camera, thân sau nét dần → depth of field cinema |
-
-**Đánh giá:** Đây là kênh có **ceiling kỹ thuật cao nhất** — sinh vật thực sự có thể tương tác, chiến đấu, chạy, nhảy. 472K sub với chỉ 18 video chứng tỏ chất lượng animation là yếu tố khuếch đại viral rất mạnh. Nhưng cũng là **không thể cạnh tranh trực tiếp** — một video Pokearth đòi hỏi kỹ năng Blender chuyên nghiệp và thời gian render; không phù hợp với workflow AI image của Creature Field Guide.
+**Đánh giá:** Ceiling kỹ thuật cao nhất và kiểm soát cao nhất — animator có thể làm đúng bất kỳ action nào. Nhưng đây là pipeline **không thể replicate** mà không có kỹ năng Blender chuyên nghiệp + thời gian render. 472K sub từ 18 video là bằng chứng mạnh nhất rằng chất lượng animation là yếu tố khuếch đại viral hàng đầu.
 
 ---
 
-### Pokevideo Lab (POKE GEO) — AI photorealistic + Ken Burns · Palette tối, mood khắc nghiệt
+### Pokevideo Lab — AI video generation · Palette tối · Mood khắc nghiệt
 
 **Kỹ thuật sản xuất:**
-- Cùng kỹ thuật cơ bản với MonBiology: AI image generation + Ken Burns effect
-- Nhưng **art direction hoàn toàn khác**: thay vì rừng ấm áp → hang đá, sa mạc, địa hình khô cằn
-- Không có chuyển động thật của sinh vật
+- Cùng kỹ thuật với MonBiology: **AI video generation** với sinh vật di chuyển thật
+- **Art direction khác hoàn toàn**: hang đá, sa mạc, địa hình khô cằn thay vì rừng ấm
 
-**Bảng màu và ánh sáng:**
-- Palette: blue-grey lạnh (cảnh hang), đất cát nâu xám (sa mạc), không có green/golden
-- Lighting: harsh — ánh sáng chói từ cửa hang, bóng sâu, không có god rays kiểu rừng
-- Mood: khắc nghiệt, survival, gần với phim tài liệu vùng khô hạn
+**Bằng chứng chuyển động (2 frame liên tiếp, Larvitar video ~40s):**
+- Frame A: Larvitar đang bò sát đất, claws bấu vào đất, thân nằm ngang
+- Frame B: Larvitar đứng thẳng hoàn toàn, nhìn về phía trước — pose thay đổi 90°
 
-**Frame quan sát thực tế (Larvitar video):**
-| Timestamp | Mô tả |
-|---|---|
-| 0:40s | Larvitar mới nở, nổi lên từ đất đen trong hang đá, ánh sáng xanh lạnh |
-| 2:00s | Larvitar lớn hơn đứng trong hốc đá sa mạc, ánh nắng gay gắt từ bên ngoài |
+**Bảng màu:**
+- Blue-grey lạnh (cảnh hang), nâu xám sa mạc, không có green/golden
+- Lighting harsh: ánh sáng chói từ cửa hang, bóng sâu, mood survival/khắc nghiệt
 
-**Đánh giá:** Chứng minh rằng **cùng một kỹ thuật AI image nhưng palette + biome khác nhau** có thể tạo ra sản phẩm trông hoàn toàn khác. Kênh này mới nhưng đáng theo dõi — nếu tăng trưởng, đây là đối thủ trực tiếp nhất về kỹ thuật với Creature Field Guide.
+**Đánh giá:** Chứng minh AI video generation có thể phủ nhiều biome/mood khác nhau. Kênh mới, chưa biết tốc độ tăng trưởng, nhưng về kỹ thuật là đối thủ gần nhất với Creature Field Guide.
 
 ---
 
-### PokéNature Archives — Real footage + creature overlay · Format "I Simulated"
+### PokéNature Archives — Real footage + AI creature composite · Format "I Simulated"
 
 **Kỹ thuật sản xuất:**
-- **Không phải wildlife documentary** — đây là presenter format
-- Footage thật: người dùng tay xây terrarium (bể kính, đất, cây) rồi quay lại quá trình
-- Creature: AI-generated hoặc 3D composite đặt vào môi trường (cả thật lẫn dựng)
-- Có mặt người (bàn tay, người dẫn) trong nhiều frame
+- **Không phải wildlife documentary** — đây là presenter format với người dẫn xuất hiện
+- Footage thật: quay quá trình tay xây terrarium (bể kính, đất, cây thật)
+- Creature: AI-generated hoặc 3D composite đặt vào môi trường
 
-**Frame quan sát thực tế (Bulbasaur simulation):**
-| Timestamp | Mô tả |
-|---|---|
-| 0:30s | Bàn tay người vuốt đầu Venusaur trong môi trường rừng composite |
-| 2:00s | Bể kính thật đang đổ sỏi, cát — dựng habitat thật sự |
-
-**Đánh giá:** Hoàn toàn khác genre. Không phải đối thủ của Creature Field Guide về mặt hình ảnh — nhưng format "build a habitat" tạo ra **engagement khác** (process porn, ASMR, DIY). 211K views trên Bulbasaur video chứng minh format này hút người dù chất lượng AI image thấp hơn MonBiology.
+**Đánh giá:** Khác genre hoàn toàn. 211K views chứng tỏ format DIY/process này hút người xem riêng, không phải từ chất lượng production.
 
 ---
 
-### So sánh nhanh · 4 kỹ thuật sản xuất
+### So sánh · 4 kỹ thuật sản xuất
 
-| Kênh | Kỹ thuật | Sinh vật di chuyển? | Chi phí sản xuất | Mood |
+| Kênh | Kỹ thuật | Sinh vật di chuyển? | Chi phí | Kiểm soát |
 |---|---|---|---|---|
-| MonBiology | AI image + Ken Burns | Không | Thấp–Trung | Ấm, thiên nhiên tươi tắn |
-| Pokearth | Blender 3D animation | **Có** | **Cao** | Hùng tráng, cinematic |
-| Pokevideo Lab | AI image + Ken Burns | Không | Thấp–Trung | Khắc nghiệt, tối |
-| PokéNature | Real footage + overlay | Không (overlay tĩnh) | Thấp | Thân thiện, DIY |
-| **Creature Field Guide** | AI image + Remotion motion | Có (parallax/motion) | Trung | TBD |
+| MonBiology | AI video generation | **Có** | Trung | Thấp–Trung (AI tự quyết) |
+| Pokearth | Blender 3D animation | **Có** | **Cao** | **Cao** (animator kiểm soát toàn bộ) |
+| Pokevideo Lab | AI video generation | **Có** | Trung | Thấp–Trung |
+| PokéNature | Real footage + overlay | Có (AI overlay) | Thấp | Thấp |
+| **Creature Field Guide** | AI image + Remotion motion | Có (parallax/layer) | Thấp–Trung | Trung |
+
+**Điểm yếu chung của AI video generation** (MonBiology, Pokevideo Lab):
+- Sinh vật có thể bị **inconsistent** giữa các shot — hình dạng, màu sắc, chi tiết thay đổi nhẹ
+- Không thể chỉ định chính xác một action (không như Blender animator)
+- Khó duy trì cá thể "trung tâm" nhất quán xuyên suốt cả video
 
 **Khoảng trống hình ảnh chưa ai chiếm:**
-1. **AI image với motion thật** — MonBiology và Pokevideo Lab dùng Ken Burns (ảnh tĩnh pan/zoom). Creature Field Guide có Remotion để làm parallax/layer animation → sinh vật có thể "di chuyển" trong ảnh AI mà không cần 3D render
-2. **Palette trung nhiệt đới Việt Nam** — tất cả đang dùng palette châu Âu/Bắc Mỹ (rừng temperate). Sinh cảnh rừng mưa nhiệt đới Đông Nam Á (xanh đậm, ẩm ướt, lá rộng) là hướng visual chưa ai đi
-3. **Text/typography dẫn chuyện** — không kênh nào dùng graphic on-screen để làm rõ canon data (số liệu, tên khoa học, chú thích nguồn). Đây là cơ hội của Creature Field Guide
+1. **Palette rừng mưa nhiệt đới Đông Nam Á** — tất cả đang dùng palette châu Âu/Bắc Mỹ (temperate forest); xanh đậm ẩm ướt, lá rộng là hướng visual chưa ai đi
+2. **Cá thể nhất quán xuyên suốt** — AI video generation khó giữ consistent creature; Creature Field Guide dùng AI image (ít shot hơn, mỗi shot được duyệt kỹ) → có thể maintain visual identity của cá thể trung tâm tốt hơn
+3. **Typography/data on-screen** — không kênh nào dùng graphic hiển thị canon data, số liệu, chú thích nguồn
 
 ---
 
