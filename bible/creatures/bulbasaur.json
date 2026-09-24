@@ -16,20 +16,29 @@
   },
   "individuals": {
     "K-01": {
-      "name": "Saur",
-      "nameEn": "Saur",
+      "trait": "shiny",
+      "traitNote": "MỘT đặc điểm duy nhất được chốt cho cá thể trung tâm: màu Shiny. Mọi cảnh có K-01 phải lấy ảnh mẫu CỦA K-01 làm [ref], không lấy ảnh mẫu loài.",
       "marks": [
-        "the bulb on its back grows noticeably tilted, leaning to one side instead of sitting upright"
+        "its whole body is a warm pale yellow-green, the same colour an ordinary individual's bulb would be, and the bulb on its back is a noticeably darker, deeper green than usual"
       ],
-      "note": "cá thể trung tâm của tập kanto-001 (Saur); củ nghẹo là vết của việc vặn theo mặt trời mỗi ngày (heliotropism)"
+      "canon": "📖 Shiny Bulbasaur: thân xanh vàng thay vì xanh lam, củ sẫm hơn; từ Gen VI dịu thành xanh lá nhạt (Bulbapedia: Shiny Pokémon). Tỉ lệ gặp 1/8192 ở Gen II–V, 1/4096 từ Gen VI.",
+      "earth": "🔬 biến thể sắc tố hiếm có thật: xanthism (dư sắc tố vàng) ở ếch và rắn, leucism ở cá sấu và chim",
+      "name": "_CHƯA CHỐT_",
+      "nameEn": "_CHƯA CHỐT_",
+      "_pending": "Tên phải đặt theo ĐẶC ĐIỂM đã chốt. Đặc điểm giờ là màu Shiny, nên 'Crookedbud / Búp Lệch' (theo củ nghẹo) không còn khớp — chờ chủ dự án chọn tên.",
+      "dropAppearance": [
+        "blue-green skin"
+      ],
+      "forbidden": [
+        "blue-green skin",
+        "teal skin",
+        "turquoise skin"
+      ],
+      "_promptNote": "Không nhắc tên màu SAI trong marks (kể cả 'instead of blue-green') — mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa vào forbidden."
     },
     "K7": {
-      "name": "Saur",
-      "nameEn": "Saur",
-      "marks": [
-        "the bulb on its back grows noticeably tilted, leaning to one side instead of sitting upright"
-      ],
-      "note": "alias cũ của K-01"
+      "aliasOf": "K-01",
+      "_note": "mã cũ, trỏ về K-01 để shot bible cũ vẫn chạy"
     }
   },
   "canon": [
@@ -52,13 +61,18 @@
   ],
   "invariants": [
     "one closed green bulb on the back",
-    "blue-green skin with darker patches",
     "red eyes",
-    "three claws per foot"
+    "three claws per foot",
+    "blue-green skin with darker patches — EXCEPT the chosen individual K-01, which is shiny yellow-green"
   ],
   "forbidden": [
     "flower on the back",
     "open petals",
     "standing on two legs"
-  ]
+  ],
+  "footprint": {
+    "look": "a small rounded paw print pressed into soft earth, with short claw marks at its front edge",
+    "canon": "📖 Pokédex footprint — dữ liệu dấu chân có từ Gen II tới Gen V, làm lại trong Brilliant Diamond / Shining Pearl (Bulbapedia: Footprint · List of Pokémon by footprint)",
+    "_verify": "ĐỐI CHIẾU hình dấu chân thật trên Bulbapedia 'List of Pokémon by footprint' trước khi sinh trang sổ. Mô tả ở đây suy từ ba móng trên mỗi chân trong appearance, CHƯA đối chiếu hình."
+  }
 }

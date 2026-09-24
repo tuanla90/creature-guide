@@ -49,6 +49,12 @@ Nguồn có **hai tầng**:
 - **Phạm vi công cộng** (thần thoại, cổ tích, dân gian): lỏng hơn, nhưng nhiều dị bản nên **phải ghi
   rõ chọn bản nào và vì sao**.
 
+**Tải ảnh tham chiếu** cho mỗi loài chính — `bible/refs/<loài>/refs.json`: kích thước so với người,
+dấu chân Pokédex, màu Shiny. AI biết dáng Pokémon phổ biến nhưng không biết chắc tiểu tiết. Ghi nguồn
+từng tấm. Ảnh là của bên thứ ba: chỉ để tham chiếu, không đăng, không đưa vào git.
+
+**Chốt địa điểm** — `bible/locations/<id>.json`, có dẫn chứng canon.
+
 > **Cổng:** không có câu nào trong tập mà bạn không chỉ được ra nó là 📖 danh lục, 👁 quan sát,
 > hay 🔬 giả thuyết. Mỗi 📖 và mỗi 🔬 đều có một dòng nguồn.
 
@@ -105,7 +111,13 @@ hai bên, đừng dịch lại — dịch lại là xoá sạch phần đã ch�
 Skill: **`creature-field-guide-production`** (phần "Soạn shot").
 
 `bible/shots/<ep>.json` → `node tools/build-prompts.mjs <ep>` → bốn file trong `prompts/`.
-Ảnh mẫu (`kind: "plate"`) sinh trước, mọi cảnh khác lấy nó làm `[ref]` để con vật không đổi hình.
+
+**Sinh ảnh mẫu TRƯỚC, theo đúng thứ tự:** địa điểm trống (`kind: location`) → con thường của loài →
+con được chọn. Mọi cảnh khác lấy chúng làm `[ref]`. Chuỗi đầy đủ: [SCENE-TYPES.md](SCENE-TYPES.md) mục A3.
+
+Kịch bản đã **chốt một đặc điểm** của cá thể trung tâm (ưu tiên Shiny nếu loài có) — ghi vào
+`individuals.<mã>.trait`. Mỗi shot khai `size`, `angle`, và `location`. Bắt buộc có ít nhất một
+`anatomy` và một `fieldnote`.
 Cá thể có dấu riêng thì khai ở `individuals` trong `bible/creatures/<loài>.json` và gọi bằng
 `"creatures": ["bulbasaur:K7"]`.
 

@@ -37,6 +37,13 @@ và kiến thức được gài vào dọc đường đi của con đó.
 4. **Tên cá thể:** có tên canon (Smaug, Buckbeak) thì tôn trọng tên gốc; vô danh trong lore thì đặt
    theo luật kênh — danh từ chỉ một dấu tích nhìn thấy được, gọi **sau khi** khán giả đã thấy dấu ấy.
 
+5. **Chốt đúng MỘT đặc điểm của cá thể trung tâm** ngay ở kịch bản — ưu tiên **Shiny** nếu loài có.
+   Đặc điểm ấy quyết định tên, quyết định ảnh mẫu riêng, và mọi cảnh của nó phải giữ đúng đặc điểm ấy.
+   Xem [SCENE-TYPES.md](SCENE-TYPES.md) mục A3.
+
+6. **Mỗi tập có ít nhất một cảnh X-quang và một trang sổ nghiên cứu.** Người dẫn đi tìm sự sống ×
+   năng lượng — hai loại cảnh ấy là cách ông nhìn xuyên qua và ghi lại.
+
 ---
 
 ## Khung A · một cá thể

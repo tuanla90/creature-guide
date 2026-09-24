@@ -43,6 +43,7 @@ nghiệp vụ và chỗ nào còn làm tay.
 ```
 videos/<slug>/     content.py (lời) · scenes.json (hình) · thumb.json · timings.json
 bible/             style.json · creatures/<loài>.json · shots/<ep>.json
+                   locations/<nơi>.json · refs/<loài>/refs.json   (ảnh tham chiếu KHÔNG nằm trong git)
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
 docs/              PIPELINE · BUSINESS-FLOW · CHANNEL-SETUP · SLATE · CREATURE-LENS

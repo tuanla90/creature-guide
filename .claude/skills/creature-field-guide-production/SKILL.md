@@ -41,6 +41,12 @@ Một shot:
   | `real` | động vật Trái Đất để đối chiếu | bỏ phần "giữ dáng sinh vật hư cấu" |
   | `anatomy` | X-quang mô phỏng, nền xanh, xương và mạch năng lượng | thân **nguyên vẹn, khép kín** — không máu me, nội tạng, mổ xẻ |
   | `fieldnote` | trang sổ thực địa: giấy + hình vẽ chì/mực | chừa trống **một phần ba bên phải** |
+  | `location` | **địa điểm trống**, không một sinh vật nào | ảnh mẫu địa điểm — sinh trước, mọi cảnh cùng nơi lấy làm `[ref]` |
+
+  Trường thêm của shot: `size` · `angle` · `motion` · `location` (`"viridian-forest:clearing"`) ·
+  `studies` (cho `fieldnote`, `"footprint"` lấy dấu chân canon). Chuỗi tham chiếu ba lớp — ảnh tham
+  chiếu → ảnh mẫu → cảnh — và luật hai ảnh mẫu (con thường / con được chọn): `docs/SCENE-TYPES.md`
+  mục A2, A3.
 
   `anatomy` và `fieldnote` **không lấy `[ref]`** từ ảnh mẫu — ref là ảnh chụp, nó sẽ kéo bản x-quang
   và bản vẽ tay ngược về thành ảnh chụp. Cái giá: hai kind này dễ lệch hình hơn, nên tả `scene` kỹ hơn.

@@ -1,0 +1,23 @@
+{
+  "id": "viridian-forest",
+  "name": { "en": "Viridian Forest", "vi": "Rừng Viridian" },
+  "canon": [
+    { "fact": "Bulbasaur bắt được ngoài hoang dã ở Viridian Forest", "src": "📖 Pokémon Let's Go Pikachu / Let's Go Eevee — KHÔNG phải Gen 1 (Red/Blue/Yellow không có Bulbasaur hoang dã)" },
+    { "fact": "rừng nằm ở Kanto, giữa Viridian City và Pewter City", "src": "📖 Pokémon Red/Blue · Let's Go" }
+  ],
+  "look": "a dense old-growth temperate forest where tall broadleaf trees open onto a sunlit grassy clearing, a narrow trampled trail running between forest edge and meadow, deep green canopy, moss on roots and stones, humid still air",
+  "light": "soft morning light through the canopy, warm dappled patches on the clearing floor",
+  "season": "late spring, lush and wet",
+  "areas": {
+    "trail":    { "name": { "en": "The Trail", "vi": "Lối mòn" },
+                  "look": "a narrow path of flattened grass running along the forest edge, worn by many small animals passing the same way",
+                  "canon": "👁 quan sát của người kể — không có canon riêng" },
+    "clearing": { "name": { "en": "The Sun Clearing", "vi": "Trảng nắng" },
+                  "look": "an open grassy clearing inside the forest where the canopy breaks and patches of full sun reach the ground",
+                  "canon": "👁 quan sát của người kể — không có canon riêng" },
+    "garden":   { "name": { "en": "The Mysterious Garden", "vi": "Khu Vườn Kỳ Bí" },
+                  "look": "a hidden hollow deep in the forest, ringed by old trees and hanging vines, a bowl of bare trampled earth at its centre",
+                  "canon": "🎬 Anime tập 51 'Bulbasaur's Mysterious Garden' — kể như truyền thuyết của người bản xứ, KHÔNG gắn 📖" }
+  },
+  "_note": "Địa điểm là tài sản dùng lại được. Sinh ảnh mẫu địa điểm TRƯỚC (kind location, không có sinh vật nào), rồi mọi cảnh có location sẽ lấy nó làm ref để rừng giống nhau giữa các cảnh và giữa các tập. Ảnh mẫu địa điểm cũng dùng thẳng được làm nền: cảnh toàn mở hồi, nền cho trang sổ, nền để ghép sinh vật vào."
+}

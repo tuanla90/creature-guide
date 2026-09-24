@@ -37,8 +37,8 @@ Trạng thái: ✅ đã dùng · ⏸ hoãn · ⬜ chưa dùng
 |---|---|---|
 | 1 | #0004 Charmander | Ngọn lửa ở chóp đuôi cho biết nó còn khoẻ tới đâu. Vậy khi trời mưa, nó sống sót bằng cách nào? |
 | 2 | #0007 Squirtle | Cái mai là xương hay là vỏ? Nó lớn lên cùng con vật hay được thay? |
-| 3 | #0010 Caterpie → #0012 Butterfree | Bên trong cái kén, cơ thể cũ bị phá đi tới đâu? |
-| 4 | #0025 Pikachu | Cơ quan tích điện nằm ở đâu, và vì sao nó không tự làm mình bị thương? |
+| 3 | #0025 Pikachu | Cơ quan tích điện nằm ở đâu, và vì sao nó không tự làm mình bị thương? |
+| 4 | #0010 Caterpie → #0012 Butterfree | Bên trong cái kén, cơ thể cũ bị phá đi tới đâu? |
 | 5 | #0050 Diglett | Thứ nằm dưới mặt đất là phần còn lại của cơ thể, hay là hang? |
 
 ## Ghi chú luật

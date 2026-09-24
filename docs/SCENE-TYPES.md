@@ -126,6 +126,82 @@ Ghi kết quả vào `experiments/flow-veo/`.
 
 ---
 
+## A3 · Ba lớp tham chiếu — ảnh tham chiếu, ảnh mẫu, cảnh
+
+Mọi thứ AI sinh ra được giữ đúng hình bằng **một chuỗi tham chiếu ba lớp**. Sai ở lớp dưới là sai
+lan lên mọi lớp trên.
+
+```
+ảnh tham chiếu tải về      →   ảnh mẫu (plate)          →   mọi cảnh
+bible/refs/<loài>/              kind: plate / location       [ref: <plate>]
+kích thước · dấu chân · Shiny   con thường · con được chọn
+                                · địa điểm trống
+```
+
+**Lớp 1 · Ảnh tham chiếu tải về** — `bible/refs/<loài>/refs.json`. AI biết dáng một Pokémon phổ biến,
+nhưng **không biết chắc tiểu tiết**: kích thước so với người, hình dấu chân, màu Shiny. Tải những tấm
+đó về, nạp lên Flow, và `build-prompts` tự gắn chúng vào đúng ảnh mẫu. Mỗi tấm ghi nguồn trong
+`refs.json` — đó là một phần của sổ tài sản. Ảnh là của bên thứ ba: **chỉ để tham chiếu khi sinh, không
+đăng, không đưa vào git**.
+
+**Lớp 2 · Ảnh mẫu — ba loại, sinh TRƯỚC mọi cảnh:**
+
+| Ảnh mẫu | Khai | Nuôi cảnh nào |
+|---|---|---|
+| **con thường** của loài | `kind: plate`, `creatures: ["bulbasaur"]` | mọi cảnh có đàn, có con không tên |
+| **con được chọn** | `kind: plate`, `creatures: ["bulbasaur:K-01"]` | mọi cảnh có cá thể trung tâm |
+| **địa điểm trống** | `kind: location`, `location: "viridian-forest"`, **không có sinh vật** | mọi cảnh có cùng `location` |
+
+Ảnh mẫu khoá theo **cá thể trước, loài sau**. Trước đây chỉ khoá theo loài, nên 21 cảnh đàn thường của
+tập 001 lấy **con được chọn** làm mẫu — dấu nhận dạng của nhân vật chính lan sang cả đàn. `male` /
+`female` là biến thể của loài, không phải cá thể được chọn, nên vẫn làm được ảnh mẫu loài.
+
+### Cá thể trung tâm — chốt đúng MỘT đặc điểm
+
+Kịch bản chốt **một** đặc điểm nhìn thấy được của con được theo dõi, ghi vào
+`bible/creatures/<loài>.json` → `individuals.<mã>.trait`. Từ đó ra hai mẫu: con thường và con được chọn.
+Tên của nó **đặt theo đúng đặc điểm ấy**.
+
+**Ưu tiên Shiny khi loài có Shiny.** Ba lý do:
+
+1. **Có sẵn trong canon** — không phải bịa, thoả luật dẫn chứng.
+2. **AI giữ màu dễ hơn giữ hình.** Một cái củ nghiêng 20° rất dễ bị sinh lại thành thẳng; một thân
+   màu xanh vàng thì khó lẫn. Đây là thứ quyết định khi chấm Veo — tiêu chí "giữ dấu tích".
+3. **Có đối chứng thật trên Trái Đất** 🔬: biến thể sắc tố hiếm — xanthism ở ếch, rắn; leucism ở cá
+   sấu, chim. Và nó có **cái giá** đúng luật kênh: con khác màu thì kém nguỵ trang.
+
+Cá thể có thể **thay** một dòng mô tả của loài bằng `dropAppearance` — Shiny thay dòng màu da. Cộng
+thêm thôi thì prompt tự mâu thuẫn. **Đừng nhắc tên màu sai trong `marks`** (kể cả *"instead of
+blue-green"*): mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa vào `forbidden` của cá thể.
+
+### Địa điểm — tài sản dùng lại được
+
+`bible/locations/<id>.json`: tên EN/VI, **dẫn chứng canon**, mô tả, và các khu (`areas`). Shot khai
+`location: "viridian-forest:clearing"` thì prompt nhận mô tả địa điểm và `[ref]` tới ảnh mẫu địa điểm.
+
+Ảnh mẫu địa điểm là **cảnh trống, không một sinh vật nào**. Nhờ vậy nó dùng lại được: làm cảnh toàn
+mở hồi, làm nền cho trang sổ, làm nền để ghép sinh vật vào, và **dùng lại ở tập sau** nếu cùng vùng đất.
+
+### Trang sổ nghiên cứu — kiểu Darwin, da Vinci
+
+Nhà khoa học không chỉ vẽ cả thân: họ **bóc từng chi tiết ra vẽ riêng** trên cùng trang — một cái móng,
+một con mắt, một bẹ lá, một mảng da. Khai trong shot:
+
+```json
+{ "kind": "fieldnote", "creatures": ["bulbasaur:K-01"],
+  "studies": ["one claw seen from below", "the eye in profile", "a single leaf of the bulb", "footprint"] }
+```
+
+`"footprint"` lấy **dấu chân canon** của loài (`bible/creatures/<loài>.json` → `footprint`) và tự gắn ảnh
+tham chiếu dấu chân. "Bóc tách" là tách **hình vẽ** ra khỏi thân — **không phải mổ xẻ**: chỉ bộ phận nhìn
+thấy từ bên ngoài, không nội tạng.
+
+**Mỗi tập bắt buộc có ít nhất một cảnh X-quang (`anatomy`) và một trang sổ (`fieldnote`).** Người dẫn
+là người đi tìm sự sống × năng lượng; hai loại cảnh này là cách ông **nhìn xuyên qua** và **ghi lại**.
+`check-episode.py` báo ✗ nếu thiếu.
+
+---
+
 ## B · Năm loại cảnh tràn khung (`el`) — đây là "động từ" của hình
 
 Mỗi loại là một động tác khác nhau của máy quay. Một tập dùng mãi một loại thì beat nào cũng giống

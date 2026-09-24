@@ -51,10 +51,20 @@ Câu hỏi của ông khớp đúng dãy tập đang xếp hàng:
 | 003 | Squirtle | **nước** |
 | 004 | Pikachu | **cú hích** — tia sét cất trong một cơ thể |
 
-Gần như không phải ép: hàng đợi trong [IDEA-BANK.md](IDEA-BANK.md) đã là Charmander → Squirtle →
-Caterpie → Pikachu. Chỉ cần **đưa Pikachu lên trước Caterpie** là bốn tập đầu thành một chương nghiên
-cứu trọn vẹn — hạt mầm và ba thứ làm nó tỉnh dậy. Mỗi tập Dr. Holth đóng thêm một mảnh cho cùng một
+Hàng đợi trong [IDEA-BANK.md](IDEA-BANK.md) đã được xếp lại theo đúng thứ tự này (Pikachu đưa lên
+trước Caterpie, 2026-09-24), nên bốn tập đầu là một chương nghiên cứu trọn vẹn — hạt mầm và ba thứ
+làm nó tỉnh dậy. Mỗi tập Dr. Holth đóng thêm một mảnh cho cùng một
 câu hỏi, nên khán giả có lý do xem tập kế tiếp mà không cần một câu hứa.
+
+### Hai cảnh bắt buộc mỗi tập
+
+Một người đi tìm sự sống × năng lượng thì phải **nhìn xuyên qua** và phải **ghi lại**:
+
+- **Cảnh X-quang** (`kind: anatomy`) — năng lượng chạy ở đâu trong thân.
+- **Trang sổ nghiên cứu** (`kind: fieldnote`) — kiểu Darwin, da Vinci: một hình chính và nhiều chi tiết
+  **bóc ra vẽ riêng** trên cùng trang, có cả dấu chân theo Pokédex.
+
+Đây là chữ ký hình ảnh của Dr. Holth: tập nào thiếu một trong hai là tập đó không phải của ông.
 
 ## 3 · Tính khí — kiềm chế
 

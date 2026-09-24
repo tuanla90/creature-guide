@@ -1,0 +1,37 @@
+{
+  "species": "bulbasaur",
+  "_why": "AI sinh ảnh biết dáng Bulbasaur, nhưng KHÔNG biết chắc các tiểu tiết: kích thước so với người, hình dấu chân, màu Shiny. Ảnh tham chiếu tải về, nạp lên Flow, rồi gắn vào ảnh mẫu — ảnh mẫu đúng thì mọi cảnh đúng theo.",
+  "_rule": "Ảnh tham chiếu là tài sản bên thứ ba: CHỈ dùng làm tham chiếu khi sinh ảnh, KHÔNG đăng lên video, KHÔNG đưa vào git (đã gitignore). Mỗi tấm phải ghi nguồn ở đây — đây là một phần của sổ tài sản.",
+  "refs": [
+    {
+      "id": "ref-bulbasaur-size",
+      "file": "size.png",
+      "what": "tỉ lệ kích thước Bulbasaur so với người trưởng thành",
+      "why": "Pokédex ghi 0.7 m — AI hay vẽ quá to hoặc quá nhỏ so với cỏ, cây, đá xung quanh",
+      "source": "Bulbapedia — trang Bulbasaur, mục kích thước (hình so sánh với người)",
+      "canon": "📖 cao 0.7 m, nặng 6.9 kg",
+      "feeds": ["plate"],
+      "status": "chưa tải"
+    },
+    {
+      "id": "ref-bulbasaur-footprint",
+      "file": "footprint.png",
+      "what": "dấu chân Bulbasaur theo dữ liệu Pokédex",
+      "why": "AI không biết hình dấu chân canon — sẽ tự bịa",
+      "source": "Bulbapedia — List of Pokémon by footprint",
+      "canon": "📖 dấu chân Pokédex Gen II–V, làm lại trong Brilliant Diamond / Shining Pearl",
+      "feeds": ["fieldnote:footprint"],
+      "status": "chưa tải"
+    },
+    {
+      "id": "ref-bulbasaur-shiny",
+      "file": "shiny.png",
+      "what": "màu Shiny của Bulbasaur, đặt cạnh bản thường",
+      "why": "đặc điểm nhận dạng đã chốt của cá thể trung tâm K-01 — sai màu là mất nhân vật",
+      "source": "Bulbapedia — Shiny Pokémon · hoặc artwork chính thức, bản từ Gen VI trở đi",
+      "canon": "📖 thân xanh vàng, củ sẫm hơn; từ Gen VI dịu thành xanh lá nhạt",
+      "feeds": ["plate:K-01"],
+      "status": "chưa tải"
+    }
+  ]
+}

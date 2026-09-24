@@ -32,7 +32,7 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 
 | Vai | 🇬🇧 EN (gốc) | 🇻🇳 VI | Lý do — dấu tích nhìn thấy được | Dẫn chứng |
 |---|---|---|---|---|
-| Cá thể được theo dõi | **Crookedbud** (K-01) | **Búp Lệch** | củ trên lưng mọc nghẹo một bên — vết của động tác vặn mình đón nắng lặp lại mỗi ngày | 👁 cá thể do người kể đặt tên. Tật hướng nắng suy từ 📖 *ngủ dưới nắng, hạt hấp thụ nắng mà lớn* (Ruby/Sapphire/Emerald) |
+| Cá thể được theo dõi | **_chưa chốt_** (K-01) | **_chưa chốt_** | củ trên lưng mọc nghẹo một bên — vết của động tác vặn mình đón nắng lặp lại mỗi ngày | 👁 cá thể do người kể đặt tên. Tật hướng nắng suy từ 📖 *ngủ dưới nắng, hạt hấp thụ nắng mà lớn* (Ruby/Sapphire/Emerald) |
 | Con lớn bảo trợ | **Scar-Shoulder** | **Vai Rách** | mảng da rách bên sườn | 👁 cá thể do người kể đặt tên. Không có canon cho cá thể này — **đừng ghi nguồn giả** |
 | Con chim săn mồi | **Ash-Eye** | **Mắt Tro** | một bên mắt phủ màng đục màu tro | 👁 cá thể do người kể đặt tên. Loài 📖 **Fearow** — Bulbapedia, phân bố Kanto |
 | Cổ thụ đầu đàn | **Moss-Back** (cái) | **Lưng Rêu** | rêu và dương xỉ mọc trên lưng; nhụy giữa bông hoa | 👁 cá thể do người kể đặt tên. Dị hình giới tính 📖 Bulbapedia — Venusaur gender differences |

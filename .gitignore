@@ -12,3 +12,8 @@ public/img/**/*.jpg
 !public/img/**/.keep
 public/video/**/*.mp4
 experiments/**/*.gif
+# ảnh tham chiếu tải về là tài sản bên thứ ba — chỉ để sinh ảnh, không đưa vào git
+bible/refs/**/*.png
+bible/refs/**/*.jpg
+bible/refs/**/*.jpeg
+bible/refs/**/*.webp

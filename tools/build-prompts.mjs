@@ -16,19 +16,44 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf-8"));
 const style = read("bible/style.json");
 const shots = read(`bible/shots/${ep}.json`);
 
-const creature = (ref, drop = []) => {
-  const [id, state] = ref.split(":");
+// "bulbasaur:K7" -> "bulbasaur:K-01" nếu K7 là alias. Dùng chung cho mô tả và cho việc chọn ảnh mẫu.
+const bibleOf = (id) => {
   const f = path.join(root, "bible/creatures", `${id}.json`);
-  if (!fs.existsSync(f)) return {text: shots.extraCreatures?.[id] || id, forbidden: []};
-  const b = JSON.parse(fs.readFileSync(f, "utf-8"));
+  return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, "utf-8")) : null;
+};
+const canonRef = (ref) => {
+  const [id, state] = ref.split(":");
+  const alias = state && bibleOf(id)?.individuals?.[state]?.aliasOf;
+  return alias ? `${id}:${alias}` : ref;
+};
+
+const creature = (ref, drop = []) => {
+  const [id, state] = canonRef(ref).split(":");
+  const b = bibleOf(id);
+  if (!b) return {text: shots.extraCreatures?.[id] || id, forbidden: [], footprint: ""};
   const sex = state && b.sexDifferences?.[state]?.length ? b.sexDifferences[state] : [];
-  // individuals: dấu riêng của MỘT cá thể có tên trong tập (vd bulbasaur:K7 -> củ mọc nghẹo)
-  const mark = state && b.individuals?.[state]?.marks ? b.individuals[state].marks : [];
+  // individuals: đặc điểm ĐÃ CHỐT của cá thể trung tâm. Cá thể có thể THAY một dòng của loài
+  // (vd Shiny thay dòng màu da) qua dropAppearance — cộng thêm thôi thì prompt tự mâu thuẫn.
+  const ind = state ? b.individuals?.[state] : null;
+  const mark = ind?.marks || [];
+  const dropAll = [...drop, ...(ind?.dropAppearance || [])];
   return {
-    // dropAppearance: bỏ dòng mô tả chung chọi với cảnh (vd con non chưa có củ)
-    text: [b.anchor, ...b.appearance.filter((a) => !drop.some((d) => a.includes(d))), ...sex, ...mark].join(", "),
-    forbidden: b.forbidden || [],
+    text: [b.anchor, ...b.appearance.filter((a) => !dropAll.some((d) => a.includes(d))), ...sex, ...mark].join(", "),
+    forbidden: [...(b.forbidden || []), ...(ind?.forbidden || [])],
+    footprint: b.footprint?.look || "",
   };
+};
+
+// địa điểm: bible/locations/<id>.json. "viridian-forest" hoặc "viridian-forest:clearing"
+const place = (ref) => {
+  if (!ref) return null;
+  const [id, area] = ref.split(":");
+  const f = path.join(root, "bible/locations", `${id}.json`);
+  if (!fs.existsSync(f)) throw new Error(`location "${id}" chưa có trong bible/locations/`);
+  const L = JSON.parse(fs.readFileSync(f, "utf-8"));
+  const A = area ? L.areas?.[area] : null;
+  if (area && !A) throw new Error(`location "${id}" không có khu "${area}"`);
+  return {id, text: [L.look, A?.look, L.light, L.season].filter(Boolean).join(", ")};
 };
 
 const lines = [], jsonl = [], md = [`# Prompt — ${shots.episode}`, "", "| # | id | beat | file |", "|---|---|---|---|"];
@@ -42,7 +67,11 @@ shots.shots.forEach((s, i) => {
     return creature(s.creatures.filter((x) => x.split(":")[0] === id).length > 1 ? id : r, s.dropAppearance);
   }).filter(Boolean);
   // mỗi kind có khối style riêng; không khai thì rơi về style chung
-  const LOOK = {plate: style.plateStyle, anatomy: style.anatomyStyle, fieldnote: style.fieldNoteStyle};
+  const LOOK = {plate: style.plateStyle, anatomy: style.anatomyStyle, fieldnote: style.fieldNoteStyle,
+                location: style.locationStyle};
+  if (s.kind === "location" && s.creatures.length)
+    throw new Error(`shot ${s.id}: kind location là ảnh địa điểm TRỐNG — không được có creatures`);
+  const loc = place(s.location);
   const look = LOOK[s.kind] || (s.kind === "scene" && !cs.length ? style.sceneStyle : style.style);
   // anatomy và fieldnote không phải "con vật thật đang sống" nên cần cách xử lý sinh vật riêng
   const TREAT = {anatomy: style.anatomyTreatment, fieldnote: style.fieldNoteTreatment};
@@ -55,11 +84,14 @@ shots.shots.forEach((s, i) => {
   const bad = (k, m) => { throw new Error(`shot ${s.id}: ${k} "${m}" không có trong style.json`); };
   const size = s.size ? (style.sizes?.[s.size] ?? bad("size", s.size)) : "";
   const angle = s.angle ? (style.angles?.[s.angle] ?? bad("angle", s.angle)) : "";
+  const studies = (s.studies || []).map((x) => (x === "footprint" ? cs.map((c) => c.footprint).filter(Boolean).join("; ") || "its footprint" : x));
   const parts = [
     look,
     treatment,
     ...cs.map((c) => c.text),
+    loc ? `setting: ${loc.text}` : "",
     s.scene,
+    studies.length ? `${style.studyPrefix}: ${studies.join("; ")}` : "",
     size,
     angle,
     s.framing,
@@ -67,6 +99,7 @@ shots.shots.forEach((s, i) => {
     style.output,
     // shot.allow: bỏ vài mục khỏi danh sách cấm chung (vd cảnh trận đấu cần bóng người xem)
     "avoid: " + [...new Set([...style.forbidden, ...(kf.add || []), ...(s.motion ? style.motionForbidden || [] : []),
+                             ...(s.kind === "location" ? style.locationForbidden || [] : []),
                              ...cs.flatMap((c) => c.forbidden)])]
       .filter((x) => !drop.has(x)).join(", "),
   ].filter(Boolean);
@@ -82,13 +115,44 @@ fs.mkdirSync(path.join(root, "prompts"), {recursive: true});
 fs.writeFileSync(path.join(root, `prompts/${ep}.txt`), lines.join("\n") + "\n");
 // Batch Image Studio: mỗi block mở bằng [id: …] (tên ảnh/tên file) và [ref: …] — cảnh có sinh vật
 // đã có ảnh mẫu (plate) thì lấy ảnh mẫu ấy làm tham chiếu, để con vật giống nhau giữa các cảnh.
+// Ảnh mẫu khoá theo CÁ THỂ trước ("bulbasaur:K-01"), rồi mới theo loài ("bulbasaur"). Trước đây chỉ
+// khoá theo loài, nên mọi cảnh của cá thể trung tâm lấy ảnh mẫu của một con THƯỜNG làm ref — dấu nhận
+// dạng không bao giờ được giữ. Ảnh mẫu địa điểm khoá bằng "loc:<id>".
 const plateOf = {};
-shots.shots.forEach((s) => s.kind === "plate" && s.creatures.forEach((r) => (plateOf[r.split(":")[0]] ??= s.id)));
+shots.shots.forEach((s) => {
+  if (s.kind === "plate") s.creatures.forEach((r) => {
+    const full = canonRef(r), [sp, ind] = full.split(":");
+    // male/female là BIẾN THỂ của loài, không phải cá thể được chọn -> vẫn làm ảnh mẫu loài được
+    if (ind && !["male", "female"].includes(ind)) plateOf[full] ??= s.id;
+    else { plateOf[sp] ??= s.id; if (ind) plateOf[full] ??= s.id; }
+  });
+  if (s.kind === "location" && s.location) plateOf["loc:" + s.location.split(":")[0]] ??= s.id;
+});
+const plateFor = (r) => { const full = canonRef(r); return plateOf[full] || plateOf[full.split(":")[0]]; };
+// Ảnh tham chiếu tải về (bible/refs/<loài>/refs.json): tiểu tiết AI không biết chắc — kích thước so
+// với người, dấu chân, màu Shiny. Chúng nuôi ẢNH MẪU; ảnh mẫu nuôi mọi cảnh. Nên chỉ gắn vào plate,
+// và vào trang sổ có nghiên cứu dấu chân. Id trong [ref] là tên ảnh phải nạp lên Flow trước.
+const refImages = (s) => {
+  const out = [];
+  for (const r of s.creatures) {
+    const [sp, ind] = canonRef(r).split(":");
+    const f = path.join(root, "bible/refs", sp, "refs.json");
+    if (!fs.existsSync(f)) continue;
+    for (const x of JSON.parse(fs.readFileSync(f, "utf-8")).refs || []) {
+      const want = x.feeds || [];
+      const plate = s.kind === "plate" && (want.includes("plate") || (ind && want.includes(`plate:${ind}`)));
+      const foot = s.kind === "fieldnote" && (s.studies || []).includes("footprint") && want.includes("fieldnote:footprint");
+      if (plate || foot) out.push(x.id);
+    }
+  }
+  return out;
+};
 const blocks = shots.shots.map((s, i) => {
   // plate không tự tham chiếu. anatomy/fieldnote cũng không: lấy một ảnh CHỤP làm ref sẽ kéo bản
   // x-quang và bản vẽ tay ngược về thành ảnh chụp, đúng thứ ta không muốn.
-  const noRef = s.kind === "plate" || s.kind === "anatomy" || s.kind === "fieldnote";
-  const refs = noRef ? [] : [...new Set(s.creatures.map((r) => plateOf[r.split(":")[0]]).filter(Boolean))];
+  const noRef = s.kind === "plate" || s.kind === "anatomy" || s.kind === "fieldnote" || s.kind === "location";
+  const locRef = s.location ? plateOf["loc:" + s.location.split(":")[0]] : null;
+  const refs = [...new Set([...(noRef ? [] : [...s.creatures.map(plateFor), locRef]), ...refImages(s)].filter(Boolean))];
   return [`[id: ${s.id}]`, refs.length ? `[ref: ${refs.join(", ")}]` : null, lines[i]].filter(Boolean).join("\n");
 });
 fs.writeFileSync(path.join(root, `prompts/${ep}.flow.txt`), blocks.join("\n\n") + "\n");

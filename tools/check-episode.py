@@ -485,6 +485,74 @@ def main(slug: str) -> int:
         if len(sizes) >= 3 and len(angles) >= 3:
             K(f"góc máy đa dạng: {len(sizes)} cỡ cảnh · {len(angles)} góc")
 
+    # ---- bible: cảnh nghiên cứu · ảnh mẫu · địa điểm · ảnh tham chiếu ------
+    all_shots = [s for f in shot_files for s in json.loads(f.read_text(encoding="utf-8")).get("shots", [])]
+    kinds = Counter(s.get("kind") for s in all_shots)
+
+    # Dr. Holth là người đi tìm sự sống × năng lượng: mỗi tập bắt buộc có một cảnh nhìn XUYÊN QUA
+    # (x-quang) và một trang sổ nghiên cứu kiểu Darwin / da Vinci. Xem docs/NARRATOR.md.
+    if all_shots:
+        for need, why in (("anatomy", "cảnh X-quang"), ("fieldnote", "trang sổ nghiên cứu")):
+            if not kinds.get(need):
+                E(f"tập chưa có {why} nào (kind {need}) — bắt buộc cho nghiên cứu của Dr. Holth")
+
+    def bible_of(sp):
+        f = ROOT / "bible" / "creatures" / f"{sp}.json"
+        return json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
+
+    def canon_ref(r):
+        sp, _, ind = r.partition(":")
+        alias = ((bible_of(sp) or {}).get("individuals", {}).get(ind) or {}).get("aliasOf") if ind else None
+        return f"{sp}:{alias}" if alias else r
+
+    # Hai mẫu: con thường và con được chọn. Mỗi loại cần ảnh mẫu RIÊNG, nếu không cảnh của đàn sẽ
+    # lấy con được chọn làm mẫu (và ngược lại) — dấu nhận dạng lan sang cả đàn.
+    plates = set()
+    for s in all_shots:
+        if s.get("kind") == "plate":
+            for r in s.get("creatures", []):
+                full = canon_ref(r)
+                plates.add(full)
+                if full.split(":")[-1] in ("male", "female"):   # biến thể giới tính vẫn là mẫu loài
+                    plates.add(full.split(":")[0])
+    used = {canon_ref(r) for s in all_shots if s.get("kind") not in ("plate", "location")
+            for r in s.get("creatures", []) if bible_of(r.split(":")[0])}
+    for r in sorted(used):
+        sp, _, ind = r.partition(":")
+        if ind in ("male", "female"):
+            continue
+        if ind and r not in plates:
+            W(f"cá thể “{r}” chưa có ảnh mẫu RIÊNG — mọi cảnh của nó sẽ không giữ được đặc điểm nhận dạng")
+        if not ind and sp not in plates:
+            W(f"loài “{sp}” chưa có ảnh mẫu con THƯỜNG — cảnh của đàn sẽ không có ref")
+        if ind:
+            trait = ((bible_of(sp) or {}).get("individuals", {}).get(ind) or {}).get("trait")
+            if not trait:
+                W(f"cá thể “{r}” chưa chốt trait trong bible/creatures/{sp}.json")
+
+    # Địa điểm là tài sản dùng lại được: phải có bible, có canon, có ảnh mẫu địa điểm trống.
+    loc_plates = {s.get("location", "").split(":")[0] for s in all_shots if s.get("kind") == "location"}
+    for loc in sorted({s["location"].split(":")[0] for s in all_shots if s.get("location")}):
+        f = ROOT / "bible" / "locations" / f"{loc}.json"
+        if not f.exists():
+            E(f"địa điểm “{loc}” dùng trong shot nhưng chưa có bible/locations/{loc}.json")
+            continue
+        if not json.loads(f.read_text(encoding="utf-8")).get("canon"):
+            E(f"địa điểm “{loc}” chưa có dẫn chứng canon")
+        if loc not in loc_plates:
+            W(f"địa điểm “{loc}” chưa có ảnh mẫu địa điểm (kind location) — các cảnh sẽ không giống nhau")
+    if all_shots and not any(s.get("location") for s in all_shots):
+        W("chưa shot nào khai location — địa điểm chưa được chốt thành tài sản dùng lại")
+
+    # Ảnh tham chiếu tải về: tiểu tiết AI không biết chắc (kích thước, dấu chân, Shiny).
+    for sp in sorted({r.split(":")[0] for s in all_shots for r in s.get("creatures", [])}):
+        mf = ROOT / "bible" / "refs" / sp / "refs.json"
+        if not mf.exists():
+            continue
+        for x in json.loads(mf.read_text(encoding="utf-8")).get("refs", []):
+            if not (mf.parent / x["file"]).exists():
+                W(f"ảnh tham chiếu chưa tải: {sp}/{x['file']} — {x['what']}")
+
     # ---- tên người dẫn và tác giả ------------------------------------------
     # docs/NARRATOR.md. "Gilbert D. Holth" là đảo chữ tròn 13/13 của "Blight Lord" — cú lật của game
     # Blightfall. Chữ "Gilbert" hiện ở BẤT CỨ đâu trên kênh công khai là lộ bí mật của game.
