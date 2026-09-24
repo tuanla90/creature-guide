@@ -1,6 +1,6 @@
 """Xưởng duyệt một tập: cảnh dự kiến (ảnh hoặc mô tả) + prompt + lời EN cạnh VI + ô duyệt từng beat.
 
-    PYTHONUTF8=1 python tools/review-page.py <slug> [--img-root <thư mục ảnh>] [--assets <map.json>] [--out <file>]
+    PYTHONUTF8=1 python tools/review-page.py <slug> [--img-root <thư mục ảnh>] [--assets <map.json>] [--out <file>] [--thumbs]
 
 Đọc videos/<slug>/content.py (BEATS = VI, BEATS_EN = EN), drafts/4-scene-plan.json (cảnh dự kiến),
 drafts/2-skeleton.md (thời lượng đích), prompts/<ep>*.flow.txt (prompt thật từ build-prompts.mjs, file
@@ -8,6 +8,7 @@ sau đè file trước), ghép vào tools/templates/review-page.html, ghi ra out
 
 --img-root  nơi có ảnh thật (mặc định public/img/<ep> của repo này). Chạy từ worktree thì trỏ về thư
             mục chính, vì ảnh không nằm trong git.
+--thumbs    thu nhỏ những ảnh cần hiện mà chưa có link, vào out/<slug>/thumbs/ — chờ tải lên.
 --assets    JSON {id: url} — link các ảnh thu nhỏ đã tải lên asset store của Artifact (mặc định lấy từ
             videos/<slug>/drafts/review-page.json). Ảnh có trên máy mà chưa có link thì trang vẫn biết
             là "đã có", chỉ không hiện được hình.
@@ -82,6 +83,29 @@ def steps(slug, vid, plan, has):
     return out
 
 
+def make_thumbs(slug, img_root, assets, plates, beats):
+    """Ảnh cần hiện mà chưa có link → thu nhỏ vào out/<slug>/thumbs/ để Claude tải lên asset store."""
+    from PIL import Image
+    want = set()
+    for s in plates + [s for b in beats for s in b["scenes"]]:
+        for i in (s.get("src", {}).get("id") if "src" in s else s.get("id"), s.get("src", {}).get("replaces") or s.get("replaces")):
+            if i and i not in assets:
+                want.add(i)
+    out = ROOT / "out" / slug / "thumbs"
+    out.mkdir(parents=True, exist_ok=True)
+    made = []
+    for i in sorted(want):
+        f = next((img_root / f"{i}.{x}" for x in ("jpg", "png", "webp") if (img_root / f"{i}.{x}").exists()), None)
+        if not f:
+            continue
+        im = Image.open(f).convert("RGB")
+        im.thumbnail((960, 960))
+        im.save(out / f"{i}.jpg", quality=80)
+        made.append(i)
+    print(f"thu nhỏ {len(made)} ảnh chưa có link → {out}" + (": " + ", ".join(made) if made else ""))
+    print("  tải lên bằng Artifact (asset: true, file_paths ≤ 25/lần), ghi link vào drafts/review-page.json, dựng lại")
+
+
 def main(slug):
     ep = "-".join(slug.split("-")[:2])
     vid = ROOT / "videos" / slug
@@ -141,6 +165,8 @@ def main(slug):
                       "en": en, "vi": vi, "target": tg.get(b, 0),
                       "enSec": round(len(re.findall(r"[A-Za-z0-9'’-]+", c.BEATS_EN.get(b, ""))) / EN_WPS),
                       "viSec": round(len(c.BEATS[b].split()) / VI_SPS)})
+    if "--thumbs" in sys.argv:
+        make_thumbs(slug, img_root, assets, plates, beats)
     data = {"beats": beats, "plates": plates, "steps": steps(slug, vid, plan, has)}
     html = (ROOT / "tools" / "templates" / "review-page.html").read_text(encoding="utf-8")
     html = (html.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False))
