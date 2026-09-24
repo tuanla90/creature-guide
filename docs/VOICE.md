@@ -18,7 +18,7 @@ Bộ soát máy bắt được một phần (mục cuối). Phần còn lại l�
 - **Nguyễn Nhật Ánh — *Tôi là Bêtô*.** Người kể nói *với* người đọc; giữa hai sự việc có một câu
   bình, một câu tự hỏi. Chữ giản dị nhưng có tình.
 
-## Bảy luật
+## Tám luật
 
 1. **Mở cảnh trước khi kể việc.** Mỗi beat, và mỗi khi đổi chỗ hay đổi giờ, có một câu dựng cảnh:
    giờ nào, ánh sáng thế nào, nghe gì, ngửi thấy gì. "Chiều nào cũng vậy, khi nắng đã ngả vàng, nó
@@ -44,7 +44,17 @@ Bộ soát máy bắt được một phần (mục cuối). Phần còn lại l�
 7. **Mã số phải có nghĩa.** Lần đầu gọi K-01, nói K là gì (Kanto — tên vùng đất) và 01 là gì (con
    đầu tiên được chọn theo). Mã chỉ gán sau khi khán giả đã thấy con vật.
 
-Bản EN theo cùng bảy luật, với giọng Attenborough — câu dài uyển chuyển, không nhịp điện tín.
+8. **Không kịch.** Tả bằng chi tiết cụ thể, không bằng cảm thán. Mỗi đoạn **nhiều nhất một** hình
+   ảnh so sánh ("như…"). Không nhân hoá con vật thành người ("như người ta quây quanh một người ốm"),
+   không từ tuyệt đối ("mãi mãi", "tin chắc", "như chết", "loạn xạ", "chói loà"). Nhà sinh vật học
+   ghi điều mình thấy; cảm xúc để khán giả tự có. Chỗ cần tả mạnh (một cú quất, một cú bổ nhào) thì
+   dồn hình và tiếng vào đúng chỗ ấy, không rải khắp bài.
+
+Chỗ **đổi hồi** là chỗ dễ đứt mạch nhất (luật 2): câu mở hồi mới phải nhắc lại một chữ, một ý của
+beat trước, hoặc mở bằng một mốc thời gian. Thẻ chương trên hình giúp người xem biết đã sang phần
+khác, nhưng không trả lời được vì sao câu chuyện đi sang đó — việc ấy là của chữ.
+
+Bản EN theo cùng tám luật, với giọng Attenborough — câu dài uyển chuyển, không nhịp điện tín.
 
 ## Máy bắt được gì
 
@@ -53,7 +63,9 @@ Bản EN theo cùng bảy luật, với giọng Attenborough — câu dài uyể
 - beat mở bằng "chúng"/"they" chưa có danh từ số nhiều đứng trước;
 - "con đấy / con đó / con kia";
 - "trảng" không kèm "cỏ";
-- từ dịch sát trong danh sách `CALQUES`.
+- từ dịch sát trong danh sách `CALQUES`;
+- đoạn có hơn một hình ảnh so sánh (luật 8);
+- chỗ đổi hồi mà câu mở không móc vào beat trước (hồi lấy từ `drafts/4-scene-plan.json`).
 
 Máy không biết câu nào hay. Mở cảnh, cầu nối, hình và tiếng của động từ — người đọc thành tiếng
 một lượt mới biết.

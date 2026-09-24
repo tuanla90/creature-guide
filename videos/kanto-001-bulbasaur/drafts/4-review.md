@@ -96,5 +96,24 @@ Từng góp ý:
   đất tung lên thành từng vệt."
 - Đại từ: "nó" chỉ dành cho K-01; con chim, con Venusaur già, con vật trong sân đều gọi bằng danh từ.
 
+## Vòng 3 · bớt kịch, cầu nối, thẻ chương (2026-09-24)
+
+Chủ dự án: dài tới ~20 phút vẫn được; văn còn "kịch". Chỗ 09 → 10 (sổ thu chi → sân đấu) hẫng.
+- **Bớt kịch** (VOICE.md luật 8): bỏ so sánh chồng nhau và nhân hoá ("như người ta quây quanh một
+  người ốm", "như hai bàn tay nắm lấy nhau", "như ngọn đèn lồng"), bỏ từ tuyệt đối ("tin chắc",
+  "như chết", "loạn xạ", "mãi mãi", "lặng lẽ chết đi"). So sánh còn 6 mỗi thứ tiếng (trước ~15).
+  Giữ cảnh quất dây leo có hình và tiếng như góp ý beat 10.
+- **Cầu nối ba chỗ đổi hồi**: 05 → 06 (sống chung một thân → sống chung một trảng cỏ), 07 → 08
+  (những buổi chiều yên ả ấy → màu da phải trả giá), 09 → 10 (cột "chi" kín chữ → sân đấu, nơi
+  chúng tiêu nắng nhanh nhất). `check-episode.py` giờ soát chỗ đổi hồi.
+- **Thẻ chương** trước 03, 06, 08, 10, 12, 15 (II–VII); giữa các beat trong một hồi là cắt thẳng.
+- Sửa đại từ sót: beat 08 "Nó bỏ qua cả đàn" (con chim) → "Con chim ấy".
+- Lộ ra khi dựng thử thẻ chương: **mười ảnh "có sẵn" chỉ là ảnh giữ chỗ** (b01–b05, m01–m05, do
+  tools/placeholders.py). Năm tấm trong kế hoạch đổi sang sinh mới (v4-b01, v4-b02-vine-lash,
+  v4-b03-glow, v4-b05-last-stand, v4-m04-hollow); `tools/imgcheck.py` để hai công cụ không đếm
+  ảnh giữ chỗ là có nữa.
+
+Thời lượng: VI ~16,8 phút, EN ~20 phút ở 2,3 từ/giây — trong mức 20 phút chủ dự án cho.
+
 **Cái giá: dài ra.** VI ước 16,7 phút (vòng 1: 11,4), EN ước 19,9 phút ở 2,3 từ/giây. Chờ chủ dự án
 chốt: giữ độ dài, hay cắt về ~13 phút.

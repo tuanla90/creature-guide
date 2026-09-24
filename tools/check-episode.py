@@ -472,6 +472,11 @@ def main(slug: str) -> int:
         en_beats = getattr(c, "BEATS_EN", {})
         if bid in en_beats:
             vmsgs += lint_beat(bid, en_beats[bid], "en")
+    plan_f = ROOT / "videos" / slug / "drafts" / "4-scene-plan.json"      # hồi của từng beat
+    if plan_f.exists() and hasattr(c, "BEATS_EN"):
+        from voice_lint import lint_bridges
+        acts = {k: v.get("act") for k, v in json.loads(plan_f.read_text(encoding="utf-8"))["beats"].items()}
+        vmsgs += lint_bridges(order, c.BEATS_EN, acts)
     for m in vmsgs:
         W("giọng văn — " + m)
     if not vmsgs:

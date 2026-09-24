@@ -140,10 +140,13 @@ def status(slug):
     groups = {"ảnh mẫu / địa điểm": [i for i in want if kinds.get(i) in base],
               "cảnh": [i for i in want if kinds.get(i) not in base]}
     print("\n3 · ẢNH")
+    sys.path.insert(0, str(ROOT / "tools"))
+    from imgcheck import is_placeholder
+    ph = [i for i in want if is_placeholder(want[i])]
     for name, ids in groups.items():
-        have = [i for i in ids if want[i].exists()]
+        have = [i for i in ids if want[i].exists() and i not in ph]
         print(f"   {name}: {len(have)}/{len(ids)}")
-        miss = [i for i in ids if not want[i].exists()]
+        miss = [i for i in ids if not want[i].exists() or i in ph]
         if miss:
             print("      thiếu: " + ", ".join(miss[:12]) + (f" … (+{len(miss) - 12})" if len(miss) > 12 else ""))
     fix = []
@@ -152,7 +155,9 @@ def status(slug):
                 if "PHẢI SINH LẠI" in s.get("_fix", "")]
     if fix:
         print("   đánh dấu PHẢI SINH LẠI: " + ", ".join(fix))
-    miss_base = [i for i in groups["ảnh mẫu / địa điểm"] if not want[i].exists()]
+    if ph:
+        print(f"   {len(ph)} ảnh giữ chỗ (tools/placeholders.py), không tính là có: " + ", ".join(sorted(ph)))
+    miss_base = [i for i in groups["ảnh mẫu / địa điểm"] if not want[i].exists() or i in ph]
     if miss_base and not miss_refs:
         nxt.append("sinh ảnh mẫu trước (" + ", ".join(miss_base) + "), rồi nói “xong ảnh mẫu”")
 

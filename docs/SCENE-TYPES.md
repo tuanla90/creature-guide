@@ -269,6 +269,18 @@ Trình bày kiểu này vì ba lẽ: khán giả đọc ra ngay đó là **ký �
 Viridian; phim thật đặt cạnh ảnh AI không bị lệch chất liệu, vì chúng rõ ràng thuộc hai thế giới; và
 nó là ảnh ông mang theo chứ không phải máy quay, nên không phạm luật "không có đoàn làm phim".
 
+## B1 · Chuyển cảnh — cắt thẳng trong hồi, thẻ chương giữa hồi
+
+Phim tài liệu không dừng lại giữa mọi đoạn. `video.config.json` → `pacing.between: "cut"`: giữa hai
+beat cùng một hồi là **cắt thẳng**, không nền, không tiếng vút. Beat **mở một hồi mới** khai
+`"chapter": {"kicker": "V", "title": "One organ, two uses"}` trong `scenes.json`: trước beat ấy
+engine chèn **thẻ chương** (`pacing.chapterGap`, mặc định 2,2 giây): hình beat trước tối dần, số hồi
+và tên hồi hiện lên giữa nền tối, rồi beat sau cắt vào. Chữ EN — chữ trên hình dùng chung hai track.
+
+Thẻ chương cho biết **đã sang phần khác**, không nói **vì sao**. Câu mở hồi vẫn phải có cầu nối
+(docs/VOICE.md, luật 2) — `check-episode.py` soát chỗ này. Hồi lấy từ `drafts/4-scene-plan.json`,
+trang duyệt vẽ thẻ chương ở đúng chỗ.
+
 ## B2 · Loài Trái Đất — luật cường độ
 
 1. **Tối đa 3 cú dừng hình mỗi tập**, trong đó **tối đa 2 cú có ảnh quê nhà**. Khung chia đôi

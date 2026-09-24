@@ -27,7 +27,9 @@
     "shortGap": 0.33,
     "shortTail": 1.2,
     "leadIn": 0.4,
-    "whooshLead": 0.89
+    "whooshLead": 0.89,
+    "between": "cut",
+    "chapterGap": 2.2
   },
   "thumb": {
     "person": "thumb/person.png",

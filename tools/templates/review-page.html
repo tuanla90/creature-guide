@@ -55,6 +55,10 @@ nav.acts{display:flex;flex-wrap:wrap;gap:6px}
 nav.acts a{font:500 12px/1 var(--mono);color:var(--muted);text-decoration:none;padding:5px 7px;border-radius:4px;border:1px solid var(--rule)}
 nav.acts a.ok{background:var(--ok-bg);color:var(--ok);border-color:transparent}
 nav.acts a.fix{background:var(--fix-bg);color:var(--fix);border-color:transparent}
+.chapter{background:#0A0D0B;color:#E9EEE9;border-radius:10px;margin:34px 0 14px;padding:26px 18px 18px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.chapter .ck{font:500 12px/1 var(--mono);letter-spacing:.5em;color:#A3C95A;padding-left:.5em}
+.chapter .ct{font:500 20px/1.3 var(--ui);letter-spacing:.14em;text-transform:uppercase}
+.chapter .cn{font-size:12px;color:#8A978E;margin-top:6px;max-width:60ch}
 h2.act{font:600 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:34px 0 10px}
 section.beat,section.plates{background:var(--surface);border:1px solid var(--rule);border-radius:10px;margin-bottom:18px;overflow:hidden}
 .bhead{display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:baseline;padding:16px 18px 12px;border-bottom:1px solid var(--rule)}
@@ -236,7 +240,13 @@ function render(){
   $("plates").innerHTML = allScenes.filter(x => x.beat === "plates").map(card).join("");
   let act = null, html = "";
   for (const b of DATA.beats){
-    if (b.act !== act){ act = b.act; html += `<h2 class="act">${esc(act)}</h2>`; }
+    if (b.act !== act){
+      act = b.act;
+      html += b.chapter
+        ? `<div class="chapter" role="note" aria-label="Thẻ chương"><span class="ck">${esc(b.chapter.kicker || "")}</span>
+            <span class="ct">${esc(b.chapter.title)}</span><span class="cn">${esc(act)} · thẻ chương ${esc(DATA.chapterGap)} giây: hình beat trước tối dần, hiện chữ, rồi cắt vào</span></div>`
+        : `<h2 class="act">${esc(act)}</h2>`;
+    }
     const over = b.target && b.enSec > b.target*1.15 ? " · EN dài hơn đích" : "";
     const rows = [];
     for (let i = 0; i < Math.max(b.en.length, b.vi.length); i++){

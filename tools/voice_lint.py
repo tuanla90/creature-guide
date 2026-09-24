@@ -57,4 +57,41 @@ def lint_beat(bid, text, lang):
         for pat, why in CALQUES:
             for m in re.finditer(pat, text, re.I):
                 out.append(f"beat {bid} VI: “{m.group(0)}” — {why}")
+    return out + lint_simile(bid, text, lang)
+
+
+SIMILE = {"vi": r"\bnhư (một|những|hai|lá|con|tiếng|ngọn|người|thể một)\b|\by như\b",
+          "en": r"\blike an?\b|\bas \w+ as\b|\bthe way (people|a|an)\b"}
+
+
+def lint_simile(bid, text, lang):
+    """Luật 8 · không kịch: mỗi đoạn nhiều nhất một hình ảnh so sánh."""
+    out = []
+    for para in [p for p in text.split("\n") if p.strip()]:
+        n = len(re.findall(SIMILE[lang], para, re.I))
+        if n > 1:
+            out.append(f"beat {bid} {lang.upper()}: {n} so sánh trong một đoạn — kịch, giữ một: “{para[:60]}…”")
+    return out
+
+
+STOP = set("""about after again against because before being below between could every first from have here
+their there these those through under until where which while would should other still never always
+whole little great until again them they this that with into only just what when your""".split())
+TIME_OPEN = re.compile(r"^(in the \w+ (month|week|year|season)|at the end|by now|on the \w+ (day|night)|"
+                       r"from (that|then)|that night|the next|every (day|night|afternoon|morning))", re.I)
+
+
+def lint_bridges(order, beats_en, acts):
+    """Luật 2 · chỗ đổi hồi phải có cầu nối: câu mở hồi mới nhắc lại một chữ của beat trước, hoặc mở
+    bằng một mốc thời gian. Soát trên bản EN (từ tiếng Anh tách nghĩa rõ hơn âm tiết tiếng Việt)."""
+    out = []
+    words = lambda s: {w.lower()[:6] for w in re.findall(r"[A-Za-z]{5,}", s) if w.lower() not in STOP}
+    for a, b in zip(order, order[1:]):
+        if acts.get(a) == acts.get(b) or a not in beats_en or b not in beats_en:
+            continue
+        first = re.split(r"(?<=[.!?])\s+", beats_en[b].strip())[0]
+        if TIME_OPEN.match(first):
+            continue
+        if not words(first) & words(beats_en[a]):
+            out.append(f"beat {a} → {b} (đổi hồi): câu mở “{first[:70]}…” không móc vào beat trước — thêm cầu nối")
     return out

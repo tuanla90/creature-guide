@@ -219,7 +219,11 @@
      },
      "motion": "still"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "II",
+    "title": "The second stomach"
+   }
   },
   "04": {
    "act": "Hồi 2 · Cái dạ dày thứ hai",
@@ -347,7 +351,11 @@
      },
      "motion": "still"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "III",
+    "title": "Touch"
+   }
   },
   "07": {
    "act": "Hồi 3 · Chạm",
@@ -457,7 +465,11 @@
      },
      "motion": "veo"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "IV",
+    "title": "The price"
+   }
   },
   "09": {
    "act": "Hồi 4 · Cái giá",
@@ -504,8 +516,9 @@
      "shot": "wide · từ cao",
      "what": "Sân đất ở thị trấn lúc chạng vạng, bóng người mờ ở vòng ngoài",
      "src": {
-      "kind": "reuse",
-      "id": "b01-arena-dusk"
+      "kind": "new",
+      "id": "v4-b01-arena-dusk",
+      "why": "b01-arena-dusk chỉ là ảnh giữ chỗ (tools/placeholders.py), chưa từng sinh"
      },
      "motion": "still"
     },
@@ -516,8 +529,9 @@
      "shot": "close · ngang",
      "what": "Dây leo quất xuống nền đất — hình ĐỨNG ở “cracked down”, soi dây leo; tới “elephant” thẻ kẹp ảnh quê nhà: vòi voi",
      "src": {
-      "kind": "reuse",
-      "id": "b02-vine-whip-battle"
+      "kind": "new",
+      "id": "v4-b02-vine-lash",
+      "why": "b02-vine-whip-battle chỉ là ảnh giữ chỗ (tools/placeholders.py), chưa từng sinh"
      },
      "earth": "Loxodonta africana — vòi voi",
      "motion": "freeze"
@@ -529,8 +543,9 @@
      "shot": "medium · thấp",
      "what": "Củ sáng lên từ bên trong, khoảnh khắc đứng im trước khi phóng",
      "src": {
-      "kind": "reuse",
-      "id": "b03-solarbeam-charge"
+      "kind": "new",
+      "id": "v4-b03-glow",
+      "why": "b03-solarbeam-charge chỉ là ảnh giữ chỗ (tools/placeholders.py), chưa từng sinh"
      },
      "motion": "still"
     },
@@ -546,7 +561,11 @@
      },
      "motion": "still"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "V",
+    "title": "One organ, two uses"
+   }
   },
   "11": {
    "act": "Hồi 5 · Cùng một cơ quan",
@@ -573,8 +592,9 @@
      "shot": "medium · thấp",
      "what": "Con vật trong sân gần gục, vẫn đứng lên",
      "src": {
-      "kind": "reuse",
-      "id": "b05-last-stand"
+      "kind": "new",
+      "id": "v4-b05-last-stand",
+      "why": "b05-last-stand chỉ là ảnh giữ chỗ (tools/placeholders.py), chưa từng sinh"
      },
      "motion": "still"
     },
@@ -636,7 +656,11 @@
      },
      "motion": "still"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "VI",
+    "title": "The change"
+   }
   },
   "13": {
    "act": "Hồi 6 · Đổi hình",
@@ -711,8 +735,9 @@
      "shot": "close · từ trên",
      "what": "Hõm đất trống — ba điểm soi: rãnh cày · cỏ bẹp thành vòng · bẹ lá khô",
      "src": {
-      "kind": "reuse",
-      "id": "m04-hollow-empty"
+      "kind": "new",
+      "id": "v4-m04-hollow",
+      "why": "m04-hollow-empty chỉ là ảnh giữ chỗ (tools/placeholders.py), chưa từng sinh"
      },
      "motion": "still"
     },
@@ -829,7 +854,11 @@
      },
      "motion": "still"
     }
-   ]
+   ],
+   "chapter": {
+    "kicker": "VII",
+    "title": "Two lives, one body"
+   }
   },
   "short-outro": {
    "act": "Short",

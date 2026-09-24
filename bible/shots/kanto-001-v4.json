@@ -7,125 +7,506 @@
     "charmander": "Charmander, a small bipedal orange lizard-like creature about 0.6 m tall with a cream belly and a burning flame on the tip of its tail"
   },
   "shots": [
-    {"id": "loc-viridian-clearing", "kind": "location", "location": "viridian-forest:clearing", "creatures": [],
-     "size": "wide", "angle": "eye",
-     "scene": "the sunlit clearing at the edge of the old forest, flattened grass trails crossing it, patches of bright sun between long tree shadows, ferns along the rim",
-     "framing": "wide establishing view at ground level, clearing in the middle third"},
-    {"id": "loc-viridian-deep", "kind": "location", "location": "viridian-forest:trail", "creatures": [],
-     "size": "wide", "angle": "eye",
-     "scene": "the trail leaving the clearing and entering the old forest, huge mossy trunks closing in, light falling away into green darkness",
-     "framing": "trail leading from the lower centre into the dark between the trunks"},
-    {"id": "v4-plate-bulbasaur", "replaces": "s02-bulbasaur-plate", "kind": "plate", "creatures": ["bulbasaur"],
-     "scene": "an ordinary adult Bulbasaur standing in three-quarter side view facing right",
-     "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"},
-    {"id": "p-k01-shiny", "kind": "plate", "creatures": ["bulbasaur:K-01"],
-     "scene": "the central individual standing in three-quarter side view facing right",
-     "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"},
-    {"id": "p-k01-shiny-ivysaur", "kind": "plate", "creatures": ["ivysaur:K-01"],
-     "scene": "the same individual after its change of form, standing in three-quarter side view facing right",
-     "framing": "whole body centered, generous margin, the closed golden-yellow bud clearly visible"},
-
-    {"id": "v4-k01-trail-noon", "beat": "00", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:trail",
-     "size": "medium", "angle": "eye", "motion": true,
-     "scene": "lying completely still in the middle of a narrow trail at noon, eyes closed, flank barely lifting, harsh overhead sun",
-     "framing": "whole animal in frame, trail running away behind it, background still"},
-    {"id": "v4-macro-breath", "replaces": "v2-s01-macro-breath", "beat": "00", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:trail",
-     "size": "macro", "angle": "overhead", "motion": true,
-     "scene": "the leaf layers of the bulb on its back, tightly closed, beads of sap on the veins, the skin of the back just visible at the edge of frame",
-     "framing": "extreme close-up from above, shallow depth of field"},
-    {"id": "v4-x01-day-one", "replaces": "v3-x01-day-one", "beat": "01", "kind": "fieldnote", "creatures": ["bulbasaur:K-01"],
-     "scene": "first page of a field notebook: a careful pencil study of the animal lying down, seen from the side, with a small watercolour swatch beside it showing its pale yellow-green skin and the darker green of its bulb",
-     "framing": "sketch and swatch on the left two thirds of the page"},
-    {"id": "v4-n02-scatter", "replaces": "n02-population-scatter", "beat": "02", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "wide", "angle": "high",
-     "scene": "seven Bulbasaur crossing the clearing in a loose line along a trail of flattened grass, the smallest one walking last",
-     "framing": "high view over the clearing, the line of animals running diagonally, the last and smallest one in the lower right"},
-    {"id": "v4-k01-reveal", "beat": "02", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "close", "angle": "eye",
-     "scene": "two Bulbasaur side by side in soft even light, so the difference in colour between them is plain to see",
-     "framing": "both animals sharp, side by side, filling the frame"},
-    {"id": "v4-k01-sunpatch", "beat": "02,10", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "low", "motion": true,
-     "scene": "lying in the single brightest patch of sunlight in the clearing, everything around it in soft shade",
-     "framing": "low angle across the grass, the animal in the pool of light on the right third"},
-    {"id": "v4-s04-sunbath", "replaces": "s04-bulbasaur-sunbath", "beat": "03", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "close", "angle": "low", "motion": true,
-     "scene": "lying flat at noon, eyes closed, the bulb on its back taut and swollen while the belly stays flat against the ground, dust motes in the light",
-     "framing": "close side view, whole bulb and belly line in frame, background still"},
-    {"id": "v4-m01-mud-soak", "replaces": "m01-mud-soak", "beat": "04", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "low", "motion": true,
-     "scene": "late afternoon at the muddy edge of a small pond beside the clearing, standing still with both front feet sunk in the mud, head up, not drinking, faint rings on the water",
-     "framing": "low angle near the water line, amber side light"},
-    {"id": "v4-k01-backlit", "replaces": "v2-s02-saur-crooked", "beat": "05", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "profile",
-     "scene": "standing alert in profile, the late sun behind it shining through the leaf layers of the bulb so they glow",
-     "framing": "profile against the light, bulb upright and centred"},
-    {"id": "v4-n05-group", "replaces": "n05-sunbathing-group", "beat": "06", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "wide", "angle": "high",
-     "scene": "seven Bulbasaur lying well apart across the clearing, each in its own patch of sun, none touching",
-     "framing": "high wide view showing the spacing between the animals"},
-    {"id": "v4-night-ring", "replaces": "v3-s08-night-ring", "beat": "06", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "wide", "angle": "high",
-     "scene": "night, moonlight on the clearing: four Bulbasaur lying close around a larger one with a torn flank, and one smaller Bulbasaur lying alone about two body-lengths away",
-     "framing": "high view, the group of five on the left, the lone animal on the right with clear empty ground between"},
-    {"id": "v4-m02-vine-groom", "replaces": "m02-vine-groom", "beat": "07", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "overhead", "motion": true,
-     "scene": "seen from directly above, a thin vine curling up from under the bulb and reaching back over its shoulder toward a caterpillar on the base of the bulb",
-     "framing": "top-down, the whole back and bulb in frame"},
-    {"id": "v4-camouflage", "replaces": "v3-s11-camouflage", "beat": "08", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "low", "motion": true,
-     "scene": "several Bulbasaur resting under a canopy of ferns in broken dappled shade; the blotched blue-green ones almost vanish into the pattern of light and shadow, one pale individual stands out clearly",
-     "framing": "low angle under the fern fronds, dappled light across the whole frame"},
-    {"id": "v4-n08-raptor-strike", "replaces": "n08-raptor-strike", "beat": "08", "kind": "scene", "creatures": ["fearow", "bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "wide", "angle": "low",
-     "scene": "a large bird with one clouded grey eye stooping out of the sky toward a fern clump, talons forward; under the fern a small pale animal presses itself flat to the ground",
-     "framing": "bird in the upper frame diving toward the fern in the lower corner"},
-    {"id": "v4-n09-powder", "replaces": "n09-sleep-powder", "beat": "08", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "close", "angle": "eye", "motion": true,
-     "scene": "the tip of the bulb split slightly open and a fine pale powder lifting out of it in a soft cloud",
-     "framing": "close on the bulb, powder drifting upward against dark ferns"},
-    {"id": "v4-k01-spent", "beat": "09", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "eye", "motion": true,
-     "scene": "lying limp in the shade after an attack, breathing shallowly, the bulb on its back visibly smaller and softer than before",
-     "framing": "side view at ground level, background still"},
-    {"id": "v4-k01-heavy", "beat": "12", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "medium", "angle": "profile", "motion": true,
-     "scene": "walking slowly and heavily across the clearing, the bulb larger than before, the two vines thick and drooping to the ground",
-     "framing": "profile tracking view, whole animal in frame"},
-    {"id": "v4-m03-heliotropism", "replaces": "m03-heliotropism", "beat": "12", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "close", "angle": "high", "motion": true,
-     "scene": "early morning, the head resting still and facing one way while the bulb on its back is visibly turned the other way, toward the low sun",
-     "framing": "from above and behind, head and bulb both clear, long morning shadows"},
-    {"id": "v4-k01-junction", "beat": "12", "kind": "scene", "creatures": ["bulbasaur:K-01"], "location": "viridian-forest:clearing",
-     "size": "macro", "angle": "eye",
-     "scene": "the place where the base of the bulb grows out of the animal's back, skin and plant tissue meeting in one seamless ring",
-     "framing": "extreme close-up, shallow depth of field"},
-    {"id": "v4-empty-gap", "replaces": "v3-s08-night-ring", "beat": "13", "kind": "scene", "creatures": ["bulbasaur:K-04"], "location": "viridian-forest:clearing",
-     "size": "wide", "angle": "high",
-     "scene": "dawn, a larger Bulbasaur with a torn flank lying alone in its usual place, an empty patch of flattened grass two body-lengths beside it",
-     "framing": "high view, the animal on the left third, the empty patch clearly readable on the right"},
-    {"id": "v4-n16-gathering", "replaces": "n16-evolution-gathering", "beat": "13", "kind": "scene", "creatures": ["bulbasaur", "bulbasaur:K-01"], "location": "viridian-forest:garden",
-     "size": "wide", "angle": "overhead",
-     "scene": "night in a hidden hollow ringed by old trees: twelve Bulbasaur standing in a silent circle, not touching, faint moonlight, one of them pale",
-     "framing": "from above, the circle filling the middle of the frame"},
-    {"id": "v4-m05-mist", "replaces": "m05-silhouette-mist", "beat": "14", "kind": "scene", "creatures": ["ivysaur", "ivysaur:K-01"], "location": "viridian-forest:garden",
-     "size": "wide", "angle": "eye",
-     "scene": "dawn mist over the hollow, several large Ivysaur emerging from it, their pink buds catching the first light, and one golden-yellow bud among them",
-     "framing": "ground level, silhouettes layered in the mist, the golden bud in the right third"},
-    {"id": "v4-n13-ivysaur", "replaces": "n13-ivysaur-strain", "beat": "14", "kind": "scene", "creatures": ["ivysaur:K-01"], "location": "viridian-forest:garden",
-     "size": "medium", "angle": "profile", "motion": true,
-     "scene": "standing in the hollow after the change, legs thick and braced under the weight of the bud, head tilted slightly toward the viewer",
-     "framing": "profile, whole animal, bud clearly visible, background still"},
-    {"id": "v4-a03-ivysaur-load", "beat": "15", "kind": "anatomy", "creatures": ["ivysaur"],
-     "scene": "side view of the whole animal, the thickened leg bones and the spine carrying the weight of the bud glowing brighter than the rest, energy channels running up into the bud",
-     "framing": "full body profile, centred, generous empty space above and to the right for annotation"},
-    {"id": "v4-n19-old-venusaur", "replaces": "n19-old-venusaur", "beat": "15", "kind": "scene", "creatures": ["venusaur:female"], "location": "viridian-forest:trail",
-     "size": "wide", "angle": "eye",
-     "scene": "a very old female Venusaur resting at the forest edge in light rain, trunk gone woody like bark, moss and small ferns growing across her back, her great flower faded, a pistil at its centre",
-     "framing": "wide, the animal on the left two thirds, rain visible against the dark trees"},
-    {"id": "v4-n18-scent-truce", "replaces": "n18-scent-truce", "beat": "15", "kind": "scene", "creatures": ["venusaur:female", "bulbasaur"], "location": "viridian-forest:trail",
-     "size": "medium", "angle": "low",
-     "scene": "after rain beside the same very old female Venusaur, two Bulbasaur that were squaring up to each other now lying down a few steps apart, calm, faint haze drifting from her flower",
-     "framing": "low angle, the two small animals in the foreground, the old Venusaur behind"}
+    {
+      "id": "loc-viridian-clearing",
+      "kind": "location",
+      "location": "viridian-forest:clearing",
+      "creatures": [],
+      "size": "wide",
+      "angle": "eye",
+      "scene": "the sunlit clearing at the edge of the old forest, flattened grass trails crossing it, patches of bright sun between long tree shadows, ferns along the rim",
+      "framing": "wide establishing view at ground level, clearing in the middle third"
+    },
+    {
+      "id": "loc-viridian-deep",
+      "kind": "location",
+      "location": "viridian-forest:trail",
+      "creatures": [],
+      "size": "wide",
+      "angle": "eye",
+      "scene": "the trail leaving the clearing and entering the old forest, huge mossy trunks closing in, light falling away into green darkness",
+      "framing": "trail leading from the lower centre into the dark between the trunks"
+    },
+    {
+      "id": "v4-plate-bulbasaur",
+      "replaces": "s02-bulbasaur-plate",
+      "kind": "plate",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "an ordinary adult Bulbasaur standing in three-quarter side view facing right",
+      "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"
+    },
+    {
+      "id": "p-k01-shiny",
+      "kind": "plate",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "the central individual standing in three-quarter side view facing right",
+      "framing": "whole body centered, generous margin around it, bulb and feet clearly visible"
+    },
+    {
+      "id": "p-k01-shiny-ivysaur",
+      "kind": "plate",
+      "creatures": [
+        "ivysaur:K-01"
+      ],
+      "scene": "the same individual after its change of form, standing in three-quarter side view facing right",
+      "framing": "whole body centered, generous margin, the closed golden-yellow bud clearly visible"
+    },
+    {
+      "id": "v4-k01-trail-noon",
+      "beat": "00",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:trail",
+      "size": "medium",
+      "angle": "eye",
+      "motion": true,
+      "scene": "lying completely still in the middle of a narrow trail at noon, eyes closed, flank barely lifting, harsh overhead sun",
+      "framing": "whole animal in frame, trail running away behind it, background still"
+    },
+    {
+      "id": "v4-macro-breath",
+      "replaces": "v2-s01-macro-breath",
+      "beat": "00",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:trail",
+      "size": "macro",
+      "angle": "overhead",
+      "motion": true,
+      "scene": "the leaf layers of the bulb on its back, tightly closed, beads of sap on the veins, the skin of the back just visible at the edge of frame",
+      "framing": "extreme close-up from above, shallow depth of field"
+    },
+    {
+      "id": "v4-x01-day-one",
+      "replaces": "v3-x01-day-one",
+      "beat": "01",
+      "kind": "fieldnote",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "first page of a field notebook: a careful pencil study of the animal lying down, seen from the side, with a small watercolour swatch beside it showing its pale yellow-green skin and the darker green of its bulb",
+      "framing": "sketch and swatch on the left two thirds of the page"
+    },
+    {
+      "id": "v4-n02-scatter",
+      "replaces": "n02-population-scatter",
+      "beat": "02",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "seven Bulbasaur crossing the clearing in a loose line along a trail of flattened grass, the smallest one walking last",
+      "framing": "high view over the clearing, the line of animals running diagonally, the last and smallest one in the lower right"
+    },
+    {
+      "id": "v4-k01-reveal",
+      "beat": "02",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "close",
+      "angle": "eye",
+      "scene": "two Bulbasaur side by side in soft even light, so the difference in colour between them is plain to see",
+      "framing": "both animals sharp, side by side, filling the frame"
+    },
+    {
+      "id": "v4-k01-sunpatch",
+      "beat": "02,10",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "low",
+      "motion": true,
+      "scene": "lying in the single brightest patch of sunlight in the clearing, everything around it in soft shade",
+      "framing": "low angle across the grass, the animal in the pool of light on the right third"
+    },
+    {
+      "id": "v4-s04-sunbath",
+      "replaces": "s04-bulbasaur-sunbath",
+      "beat": "03",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "close",
+      "angle": "low",
+      "motion": true,
+      "scene": "lying flat at noon, eyes closed, the bulb on its back taut and swollen while the belly stays flat against the ground, dust motes in the light",
+      "framing": "close side view, whole bulb and belly line in frame, background still"
+    },
+    {
+      "id": "v4-m01-mud-soak",
+      "replaces": "m01-mud-soak",
+      "beat": "04",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "low",
+      "motion": true,
+      "scene": "late afternoon at the muddy edge of a small pond beside the clearing, standing still with both front feet sunk in the mud, head up, not drinking, faint rings on the water",
+      "framing": "low angle near the water line, amber side light"
+    },
+    {
+      "id": "v4-k01-backlit",
+      "replaces": "v2-s02-saur-crooked",
+      "beat": "05",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "profile",
+      "scene": "standing alert in profile, the late sun behind it shining through the leaf layers of the bulb so they glow",
+      "framing": "profile against the light, bulb upright and centred"
+    },
+    {
+      "id": "v4-n05-group",
+      "replaces": "n05-sunbathing-group",
+      "beat": "06",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "seven Bulbasaur lying well apart across the clearing, each in its own patch of sun, none touching",
+      "framing": "high wide view showing the spacing between the animals"
+    },
+    {
+      "id": "v4-night-ring",
+      "replaces": "v3-s08-night-ring",
+      "beat": "06",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "night, moonlight on the clearing: four Bulbasaur lying close around a larger one with a torn flank, and one smaller Bulbasaur lying alone about two body-lengths away",
+      "framing": "high view, the group of five on the left, the lone animal on the right with clear empty ground between"
+    },
+    {
+      "id": "v4-m02-vine-groom",
+      "replaces": "m02-vine-groom",
+      "beat": "07",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "overhead",
+      "motion": true,
+      "scene": "seen from directly above, a thin vine curling up from under the bulb and reaching back over its shoulder toward a caterpillar on the base of the bulb",
+      "framing": "top-down, the whole back and bulb in frame"
+    },
+    {
+      "id": "v4-camouflage",
+      "replaces": "v3-s11-camouflage",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "low",
+      "motion": true,
+      "scene": "several Bulbasaur resting under a canopy of ferns in broken dappled shade; the blotched blue-green ones almost vanish into the pattern of light and shadow, one pale individual stands out clearly",
+      "framing": "low angle under the fern fronds, dappled light across the whole frame"
+    },
+    {
+      "id": "v4-n08-raptor-strike",
+      "replaces": "n08-raptor-strike",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "fearow",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "low",
+      "scene": "a large bird with one clouded grey eye stooping out of the sky toward a fern clump, talons forward; under the fern a small pale animal presses itself flat to the ground",
+      "framing": "bird in the upper frame diving toward the fern in the lower corner"
+    },
+    {
+      "id": "v4-n09-powder",
+      "replaces": "n09-sleep-powder",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "close",
+      "angle": "eye",
+      "motion": true,
+      "scene": "the tip of the bulb split slightly open and a fine pale powder lifting out of it in a soft cloud",
+      "framing": "close on the bulb, powder drifting upward against dark ferns"
+    },
+    {
+      "id": "v4-k01-spent",
+      "beat": "09",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "eye",
+      "motion": true,
+      "scene": "lying limp in the shade after an attack, breathing shallowly, the bulb on its back visibly smaller and softer than before",
+      "framing": "side view at ground level, background still"
+    },
+    {
+      "id": "v4-k01-heavy",
+      "beat": "12",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "medium",
+      "angle": "profile",
+      "motion": true,
+      "scene": "walking slowly and heavily across the clearing, the bulb larger than before, the two vines thick and drooping to the ground",
+      "framing": "profile tracking view, whole animal in frame"
+    },
+    {
+      "id": "v4-m03-heliotropism",
+      "replaces": "m03-heliotropism",
+      "beat": "12",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "close",
+      "angle": "high",
+      "motion": true,
+      "scene": "early morning, the head resting still and facing one way while the bulb on its back is visibly turned the other way, toward the low sun",
+      "framing": "from above and behind, head and bulb both clear, long morning shadows"
+    },
+    {
+      "id": "v4-k01-junction",
+      "beat": "12",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "macro",
+      "angle": "eye",
+      "scene": "the place where the base of the bulb grows out of the animal's back, skin and plant tissue meeting in one seamless ring",
+      "framing": "extreme close-up, shallow depth of field"
+    },
+    {
+      "id": "v4-empty-gap",
+      "replaces": "v3-s08-night-ring",
+      "beat": "13",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-04"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "wide",
+      "angle": "high",
+      "scene": "dawn, a larger Bulbasaur with a torn flank lying alone in its usual place, an empty patch of flattened grass two body-lengths beside it",
+      "framing": "high view, the animal on the left third, the empty patch clearly readable on the right"
+    },
+    {
+      "id": "v4-n16-gathering",
+      "replaces": "n16-evolution-gathering",
+      "beat": "13",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "bulbasaur:K-01"
+      ],
+      "location": "viridian-forest:garden",
+      "size": "wide",
+      "angle": "overhead",
+      "scene": "night in a hidden hollow ringed by old trees: twelve Bulbasaur standing in a silent circle, not touching, faint moonlight, one of them pale",
+      "framing": "from above, the circle filling the middle of the frame"
+    },
+    {
+      "id": "v4-m05-mist",
+      "replaces": "m05-silhouette-mist",
+      "beat": "14",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur",
+        "ivysaur:K-01"
+      ],
+      "location": "viridian-forest:garden",
+      "size": "wide",
+      "angle": "eye",
+      "scene": "dawn mist over the hollow, several large Ivysaur emerging from it, their pink buds catching the first light, and one golden-yellow bud among them",
+      "framing": "ground level, silhouettes layered in the mist, the golden bud in the right third"
+    },
+    {
+      "id": "v4-n13-ivysaur",
+      "replaces": "n13-ivysaur-strain",
+      "beat": "14",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur:K-01"
+      ],
+      "location": "viridian-forest:garden",
+      "size": "medium",
+      "angle": "profile",
+      "motion": true,
+      "scene": "standing in the hollow after the change, legs thick and braced under the weight of the bud, head tilted slightly toward the viewer",
+      "framing": "profile, whole animal, bud clearly visible, background still"
+    },
+    {
+      "id": "v4-a03-ivysaur-load",
+      "beat": "15",
+      "kind": "anatomy",
+      "creatures": [
+        "ivysaur"
+      ],
+      "scene": "side view of the whole animal, the thickened leg bones and the spine carrying the weight of the bud glowing brighter than the rest, energy channels running up into the bud",
+      "framing": "full body profile, centred, generous empty space above and to the right for annotation"
+    },
+    {
+      "id": "v4-n19-old-venusaur",
+      "replaces": "n19-old-venusaur",
+      "beat": "15",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:female"
+      ],
+      "location": "viridian-forest:trail",
+      "size": "wide",
+      "angle": "eye",
+      "scene": "a very old female Venusaur resting at the forest edge in light rain, trunk gone woody like bark, moss and small ferns growing across her back, her great flower faded, a pistil at its centre",
+      "framing": "wide, the animal on the left two thirds, rain visible against the dark trees"
+    },
+    {
+      "id": "v4-n18-scent-truce",
+      "replaces": "n18-scent-truce",
+      "beat": "15",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:female",
+        "bulbasaur"
+      ],
+      "location": "viridian-forest:trail",
+      "size": "medium",
+      "angle": "low",
+      "scene": "after rain beside the same very old female Venusaur, two Bulbasaur that were squaring up to each other now lying down a few steps apart, calm, faint haze drifting from her flower",
+      "framing": "low angle, the two small animals in the foreground, the old Venusaur behind"
+    },
+    {
+      "id": "v4-b01-arena-dusk",
+      "replaces": "b01-arena-dusk",
+      "beat": "10",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "size": "wide",
+      "angle": "high",
+      "scene": "a packed dirt yard in a small town at dusk, worn white boundary line, a Bulbasaur standing braced at one end, blurred silhouettes of people watching from the edge of the lamplight",
+      "framing": "high wide view from behind the crowd, subject small in the middle, warm lamps behind"
+    },
+    {
+      "id": "v4-b02-vine-lash",
+      "replaces": "b02-vine-whip-battle",
+      "beat": "10",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "size": "close",
+      "angle": "eye",
+      "motion": true,
+      "scene": "a Bulbasaur in the dirt yard lashing both vines down onto the hard earth, dust thrown up in streaks, the vines taut and straight instead of curled, blurred spectators behind",
+      "framing": "side-on, the vines crossing the frame, evening light"
+    },
+    {
+      "id": "v4-b03-glow",
+      "replaces": "b03-solarbeam-charge",
+      "beat": "10",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "size": "medium",
+      "angle": "low",
+      "scene": "a Bulbasaur standing perfectly still in the dirt yard, the bulb on its back glowing from inside like a lantern, the ground around it faintly lit, opponent out of frame",
+      "framing": "slightly below eye level, the glow as the main light source, dark blue dusk behind"
+    },
+    {
+      "id": "v4-b05-last-stand",
+      "replaces": "b05-last-stand",
+      "beat": "11",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "size": "medium",
+      "angle": "low",
+      "scene": "a battered Bulbasaur swaying low on the dirt yard, one eye half shut, small scratches on its flank, still bracing its legs to stand, dust settling around it",
+      "framing": "low shot from the front, dark yard and blurred spectators behind"
+    },
+    {
+      "id": "v4-m04-hollow",
+      "replaces": "m04-hollow-empty",
+      "beat": "14",
+      "kind": "scene",
+      "creatures": [],
+      "location": "viridian-forest:garden",
+      "size": "wide",
+      "angle": "high",
+      "scene": "an empty hollow in the ground at dawn ringed by old trees: grass pressed flat in a wide circle, short furrows clawed into the earth, dry curled leaf sheaths like onion skin scattered at the centre, mist still lying low",
+      "framing": "slightly high wide shot looking down into the hollow, cold morning light"
+    }
   ]
 }

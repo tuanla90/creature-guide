@@ -24,9 +24,9 @@ ORDER = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
 BEATS = {
 # ---- HỒI 1 · NGHỊCH LÝ ----------------------------------------------------------
 "00":
-"Đó là một buổi trưa đầu hạ ở rừng Viridian. Nắng đổ xuống lối mòn trắng loá, gió cũng lười chẳng buồn lay ngọn cỏ, và giữa lối mòn ấy có một con vật nhỏ nằm sấp, bốn chân duỗi thẳng, cái củ xanh sẫm trên lưng im lìm như một hòn đá phủ rêu.\n"
-"Tôi đứng nhìn nó rất lâu, và tin chắc rằng nó đã chết.\n"
-"Thế rồi cái củ trên lưng nó khẽ phồng lên, rồi xẹp xuống, chậm rãi như một lồng ngực. Con vật ấy đang thở, mà hình như không chỉ thở bằng phổi.",
+"Đó là một buổi trưa đầu hạ ở rừng Viridian. Nắng rọi thẳng xuống lối mòn, cỏ hai bên đứng im không một ngọn gió, và giữa lối mòn có một con vật nhỏ nằm sấp, bốn chân duỗi ra, cái củ xanh sẫm trên lưng không hề động đậy.\n"
+"Tôi đứng nhìn nó khá lâu và nghĩ rằng nó đã chết.\n"
+"Rồi cái củ trên lưng nó khẽ phồng lên, rồi xẹp xuống, đều đặn như một lồng ngực. Con vật ấy đang thở, và hình như không chỉ thở bằng phổi.",
 
 "01":
 "Tôi đến vùng đất này mang theo một câu hỏi đã theo tôi nhiều năm: liệu có những sinh vật mà sự sống và năng lượng quấn chặt vào nhau đến mức không thể gỡ ra được hay không.\n"
@@ -36,7 +36,7 @@ BEATS = {
 
 "02":
 "Viridian là nơi rừng già giáp với đồng cỏ. Ở chỗ giáp ranh ấy có một khoảng đất trống cỏ mọc thấp, người ta gọi là trảng cỏ, và băng ngang trảng cỏ là một lối mòn nhỏ, cỏ rạp cả xuống, do chính đàn Bulbasaur ngày ngày đi qua đi lại mà thành.\n"
-"Đàn ở trảng cỏ này có bảy con. K-01 bé nhất đàn, lúc nào cũng lũn cũn đi sau cùng, vậy mà lại là con người ta nhìn thấy trước tiên. Sáu con còn lại khoác lớp da xanh lam lốm đốm như rêu trên đá, còn da K-01 lại màu vàng xanh nhàn nhạt, ấm như lá non đầu mùa, và cái củ trên lưng nó cũng sẫm màu hơn hẳn củ của các bạn cùng đàn.\n"
+"Đàn ở trảng cỏ này có bảy con. K-01 bé nhất đàn, lúc nào cũng lũn cũn đi sau cùng, vậy mà lại là con người ta nhìn thấy trước tiên. Sáu con còn lại có lớp da xanh lam lốm đốm, còn da K-01 màu vàng xanh nhàn nhạt như lá non, và cái củ trên lưng nó sẫm hơn hẳn củ của những con cùng đàn.\n"
 "Suốt bảy ngày liền, cứ đúng giữa trưa, tôi lại vẽ vào sổ chỗ nằm của từng con. Bảy ngày như một, K-01 đều nằm gọn trong vệt nắng sáng nhất trảng cỏ.\n"
 "Người ở đây gọi những con vật mang màu lạ như thế là “shiny”. Nhưng trong sổ của tôi, nó vẫn chỉ là K-01.",
 
@@ -62,26 +62,26 @@ BEATS = {
 
 # ---- HỒI 3 · CHẠM ---------------------------------------------------------------
 "06":
-"Bảy con Bulbasaur trong đàn chẳng bao giờ nằm sát vào nhau. Con nào cũng giữ riêng cho mình một khoảng trống, vừa đủ rộng để nắng rọi thẳng xuống cái củ trên lưng.\n"
-"Chiều xuống, bóng rừng già bò dần ra trảng cỏ, những vệt nắng còn sót lại co lại nhanh như vũng nước bốc hơi, và bấy giờ mới có chuyện chen lấn. Mấy con Bulbasaur ép vai, huých sườn, đẩy nhau dùng dằng, nhưng tuyệt nhiên không con nào cắn con nào, và con nào thua thì lẳng lặng bỏ đi tìm vệt nắng khác.\n"
+"Nếu cái hạt và con thú phải sống chung trong một thân, thì bảy con Bulbasaur cũng phải sống chung trên một trảng cỏ, và cách chúng chia nhau từng vệt nắng cho tôi thêm một manh mối. Chúng chẳng bao giờ nằm sát vào nhau: con nào cũng giữ riêng một khoảng trống, vừa đủ rộng để nắng rọi thẳng xuống cái củ trên lưng.\n"
+"Chiều xuống, bóng rừng già bò dần ra trảng cỏ, những vệt nắng còn sót lại co lại rất nhanh, và bấy giờ mới có chuyện chen lấn. Mấy con Bulbasaur ép vai, huých sườn, đẩy nhau dùng dằng, nhưng tuyệt nhiên không con nào cắn con nào, và con nào thua thì lẳng lặng bỏ đi tìm vệt nắng khác.\n"
 "Đêm nào K-01 cũng nằm cách một con Bulbasaur to lớn hơn chừng hai thân mình, không xa hơn, cũng không gần hơn, và hai con chưa bao giờ chạm vào nhau.\n"
 "Rồi một hôm, con to lớn ấy bị rách một mảng da bên sườn, và từ hôm đó tôi mới phân biệt được con vật ấy giữa đàn. Tôi ghi cho nó một mã số riêng: K-04.\n"
-"Đêm ấy, cả đàn dời chỗ nằm, bốn con xích lại quanh K-04 như người ta quây quanh một người ốm, riêng K-01 vẫn nằm nguyên chỗ cũ, cách đúng hai thân mình.",
+"Đêm ấy, cả đàn dời chỗ nằm, bốn con xích lại nằm quanh K-04, riêng K-01 vẫn nằm nguyên chỗ cũ, cách đúng hai thân mình.",
 
 "07":
 "Nói vậy không có nghĩa là những con Bulbasaur ấy chẳng bao giờ chạm vào nhau. Chỉ là chúng không chạm nhau bằng cách nằm cạnh nhau.\n"
-"Có những buổi chiều, từ dưới gốc củ của hai con Bulbasaur, hai sợi dây leo thong thả vươn ra, gặp nhau giữa không trung, quấn lấy nhau vài giây như hai bàn tay nắm lấy nhau, rồi buông ra. Tôi đứng xem suốt hai mươi phút mà không viết nổi một chữ nào vào sổ.\n"
+"Có những buổi chiều, từ dưới gốc củ của hai con Bulbasaur, hai sợi dây leo thong thả vươn ra, gặp nhau giữa không trung, quấn lấy nhau vài giây, rồi buông ra. Tôi đứng xem suốt hai mươi phút mà không viết nổi một chữ nào vào sổ.\n"
 "Bởi thứ tôi vừa thấy không phải một cái roi, mà là một cơ quan để cầm nắm, để sờ chạm, để chào hỏi.\n"
 "Và còn để giữ mình sạch sẽ nữa. Tấm lưng là chỗ khuất của một con vật bốn chân cổ ngắn, và chiều hôm ấy tôi thấy K-01 vắt một sợi dây leo qua vai, gạt phắt con sâu đang bò lên chân củ, gọn gàng y như con ngựa quất đuôi đuổi ruồi.",
 
 # ---- HỒI 4 · CÁI GIÁ ------------------------------------------------------------
 "08":
-"Thế nhưng màu da khác lạ ấy cũng có cái giá của nó.\n"
-"Vào ngày thứ năm mươi ba, một con chim lớn bắt đầu lượn vòng trên nền trời phía trên trảng cỏ. Cuốn danh lục gọi loài chim ấy là Fearow, và con chim này có một bên mắt đục mờ màu tro, dấu vết của một vết thương cũ. Nó bỏ qua cả đàn, chỉ nhằm theo một mình K-01.\n"
+"Cũng trong những buổi chiều yên ả ấy, tôi bắt đầu hiểu rằng màu da khác lạ của K-01 phải trả bằng một cái giá.\n"
+"Vào ngày thứ năm mươi ba, một con chim lớn bắt đầu lượn vòng trên nền trời phía trên trảng cỏ. Cuốn danh lục gọi loài chim ấy là Fearow, và con chim này có một bên mắt đục mờ màu tro, dấu vết của một vết thương cũ. Con chim ấy bỏ qua cả đàn, chỉ nhằm theo một mình K-01.\n"
 "Nằm dưới tán dương xỉ, lớp da xanh lam lốm đốm của những con Bulbasaur khác tan biến vào những mảng bóng nắng loang lổ, còn lớp da nhàn nhạt của K-01 thì không.\n"
 "Ở quê tôi, những con bướm đêm màu nhạt đậu trên thân cây ám khói bồ hóng bị chim bắt nhiều hơn hẳn những con màu sẫm.\n"
-"Lần bổ nhào thứ nhất, K-01 không chạy. Nó ép sát người xuống dưới một bụi dương xỉ rồi nằm yên như chết, và chính bụi dương xỉ đã che cho nó, chứ không phải bộ da. Con chim sà xuống, sượt qua chỉ cách một sải tay.\n"
-"Đến lần thứ hai, đỉnh củ trên lưng K-01 bỗng hé mở, và một làn bột mịn màu nhạt tung ra, lan toả như khói. Con chim chao đảo, cánh đập loạn xạ, mất hướng, rồi bỏ đi mất hút.",
+"Lần bổ nhào thứ nhất, K-01 không chạy. Nó ép sát người xuống dưới một bụi dương xỉ rồi nằm im không nhúc nhích, và chính bụi dương xỉ đã che cho nó, chứ không phải bộ da. Con chim sà xuống, sượt qua chỉ cách một sải tay.\n"
+"Đến lần thứ hai, đỉnh củ trên lưng K-01 bỗng hé mở, và một làn bột mịn màu nhạt tung ra thành một đám mờ. Con chim chao đi, lệch hướng, rồi bay khỏi trảng cỏ.",
 
 "09":
 "Nhưng điều khiến tôi phải ghi đậm vào sổ lại là những gì xảy ra sau đó.\n"
@@ -92,11 +92,11 @@ BEATS = {
 
 # ---- HỒI 5 · CÙNG MỘT CƠ QUAN ----------------------------------------------------
 "10":
-"Vùng đất này có một điều mà quê tôi không có: người ta cho những con vật như thế này đấu với nhau.\n"
+"Cột “chi” ấy chẳng bao lâu đã kín chữ, nhưng những dòng nặng nhất lại không ghi ở trong rừng. Vùng đất này có một điều mà quê tôi không có: người ta cho những con vật như thế này đấu với nhau, và chính ở đó tôi thấy chúng tiêu nắng nhanh nhất.\n"
 "Một buổi chiều, tôi xuống một thị trấn nhỏ dưới chân rừng, chen vào đứng ở vòng ngoài một sân đất nện, và xem trọn một trận.\n"
 "Trong sân, những sợi dây leo không còn vươn ra để chào nhau nữa. Chúng vụt ra nhanh như gió, quất xuống nền đất nện nghe chát chúa như tiếng roi da, bụi đất tung lên thành từng vệt.\n"
 "Vẫn là cơ quan ấy: trong rừng thì hái quả và gạt sâu, vào sân thì thành vũ khí. Tôi không phán xét chuyện đó, bởi ở quê tôi, cái vòi voi cũng vừa âu yếm được voi con, vừa bẻ gãy được cả một cành cây lớn.\n"
-"Nhưng có một khoảnh khắc khiến tôi ngồi viết đến tận sáng. Con vật trong sân bỗng đứng khựng lại một nhịp, cái củ trên lưng rực sáng lên từ bên trong như ngọn đèn lồng, rồi mới phóng ra một luồng sáng chói loà.\n"
+"Nhưng có một khoảnh khắc khiến tôi ngồi viết đến tận sáng. Con vật trong sân bỗng đứng khựng lại một nhịp, cái củ trên lưng sáng dần lên từ bên trong, rồi mới phóng ra một luồng sáng.\n"
 "Đám đông quanh tôi chê nhịp chờ ấy là điểm yếu. Còn tôi thì thấy cả một kho nắng tích từ ban trưa bị tiêu sạch chỉ trong một hơi thở.\n"
 "Sáng hôm sau trở về rừng, tôi đã thấy K-01 nằm sẵn trong vệt nắng đầu tiên.",
 
@@ -105,7 +105,7 @@ BEATS = {
 "Nết thứ nhất, tôi đã tự mình đo được trước khi có ai kể. Dưới cái nắng gắt giữa trưa, K-01 đi hết cùng một quãng đường nhanh gần gấp đôi so với lúc trời râm, và tôi đã cầm đồng hồ bấm giờ không biết bao nhiêu lần. Một cơ thể chạy bằng nắng thì nắng càng gắt, nó càng khoẻ.\n"
 "Nết thứ hai thì tôi chỉ thấy trong sân đấu, và nó khiến tôi bứt rứt hơn là thán phục. Khi một con Bulbasaur đã bị thương nặng, lảo đảo gần như không đứng vững, những cú đánh của con vật ấy bỗng mạnh lên một cách lạ lùng.\n"
 "Tôi không nghĩ con vật ấy khoẻ thêm. Tôi nghĩ nó đang dốc cạn chút dự trữ cuối cùng, dồn hết vào một lần duy nhất.\n"
-"Ở quê tôi, cây thùa tích góp suốt mấy chục năm trời chỉ để dồn hết vào một lần trổ hoa, rồi lặng lẽ chết đi.",
+"Ở quê tôi, cây thùa tích góp suốt mấy chục năm trời chỉ để dồn hết vào một lần trổ hoa, rồi chết.",
 
 # ---- HỒI 6 · ĐỔI HÌNH -----------------------------------------------------------
 "12":
@@ -115,7 +115,7 @@ BEATS = {
 "Cái đầu của K-01 quay về hướng nam và nằm im, không nhúc nhích. Nhưng cái củ trên lưng nó thì cứ chầm chậm xoay về hướng đông, bám theo mặt trời đang lên.\n"
 "Hai phần của cùng một cơ thể, quay về hai phía khác nhau, trong cùng một buổi sáng.\n"
 "Đó là dấu hiệu rõ ràng nhất tôi từng có rằng trong thân thể nhỏ bé ấy đang có hai sự sống. Vậy mà tôi vẫn không dám nói bên nào đang nuôi bên nào.\n"
-"Ở quê tôi, những bông hướng dương non cũng quay theo mặt trời suốt ngày, đến khi nở hẳn thì đứng yên, và mãi mãi hướng về phía đông.",
+"Ở quê tôi, những bông hướng dương non cũng quay theo mặt trời suốt ngày, đến khi nở hẳn thì đứng yên, cứ thế hướng về phía đông.",
 
 "13":
 "Cuối tháng ấy, K-01 rời đàn, một mình đi sâu vào rừng già, và tôi mất dấu nó suốt bốn ngày.\n"
@@ -150,9 +150,9 @@ BEATS = {
 
 BEATS_EN = {
 "00":
-"It was an early-summer noon in Viridian Forest. The sun beat down on the trail until it glared white, the air too lazy even to stir the grass, and in the middle of that trail lay a small animal, flat on its belly, legs stretched out, the dark green bulb on its back as still as a moss-covered stone.\n"
-"I watched it for a long time, and I was certain it was dead.\n"
-"Then the bulb on its back swelled, very slightly, and sank again, slow as a ribcage. The animal was breathing, and not, it seemed, only with its lungs.",
+"It was an early-summer noon in Viridian Forest. The sun fell straight onto the trail, the grass on either side stood without a breath of wind, and in the middle of the trail lay a small animal, flat on its belly, legs stretched out, the dark green bulb on its back not moving at all.\n"
+"I watched it for some time and assumed it was dead.\n"
+"Then the bulb on its back swelled slightly and sank again, as regularly as a ribcage. The animal was breathing, and not, it seemed, only with its lungs.",
 
 "01":
 "I came to this land carrying a question that had followed me for years: whether there are creatures in which life and energy are wound together so tightly that they can no longer be pulled apart.\n"
@@ -162,7 +162,7 @@ BEATS_EN = {
 
 "02":
 "Viridian is where the old forest meets the grassland. Along that border lies an open patch of short grass, a clearing, and across the clearing runs a narrow trail of flattened stems, worn there by the herd of Bulbasaur walking the same way, day after day.\n"
-"There are seven of them in this herd. K-01 is the smallest, always trotting along at the back, and yet it is the one you notice first. The other six wear a blotched blue-green skin, like moss on stone, while K-01's skin is a pale, warm yellow-green, the colour of a new leaf, and the bulb on its back is darker than any of theirs.\n"
+"There are seven of them in this herd. K-01 is the smallest, always trotting along at the back, and yet it is the one you notice first. The other six have blotched blue-green skin, while K-01's is a pale yellow-green, like a new leaf, and the bulb on its back is darker than any of theirs.\n"
 "For seven days running, at exactly noon, I sketched where each animal lay. On every one of those seven days, K-01 lay curled in the brightest patch of sun in the whole clearing.\n"
 "People here call animals with such unusual colouring “shiny”. In my notebook, it was still simply K-01.",
 
@@ -186,25 +186,25 @@ BEATS_EN = {
 "Back home, the line between those two ways of living together is as thin as a hair. A lichen is a fungus and an alga bound so closely that we once took them for a single species, while a mistletoe drives its roots into its host and drains it, little by little, until the tree dies standing.",
 
 "06":
-"The seven Bulbasaur of the herd never lie pressed together. Each one keeps a space of its own, just wide enough for the sun to fall straight onto the bulb on its back.\n"
-"As evening comes and the shadow of the old forest creeps out across the clearing, the last patches of sunlight shrink as fast as puddles drying in the heat, and only then does the jostling begin. The animals lean shoulder against shoulder and shove one another back and forth, yet not one of them ever bites, and whichever gives way simply wanders off in search of another patch of light.\n"
+"If the seed and the animal must share one body, the seven Bulbasaur of the herd must share one clearing, and the way they divide the sunlight gave me another clue. They never lie pressed together: each keeps a space of its own, just wide enough for the sun to fall straight onto the bulb on its back.\n"
+"As evening comes and the shadow of the old forest creeps out across the clearing, the last patches of sunlight shrink quickly, and only then does the jostling begin. The animals lean shoulder against shoulder and shove one another back and forth, yet not one of them ever bites, and whichever gives way simply wanders off in search of another patch of light.\n"
 "Every night, K-01 lies about two body-lengths from a much larger Bulbasaur, never nearer and never farther, and the two of them have never once touched.\n"
 "Then one day that larger animal tore a strip of skin from its flank, and from then on I could pick it out from the rest of the herd. I gave it a field code of its own: K-04.\n"
-"That night the whole herd rearranged itself: four animals shuffled in close around K-04, the way people gather round someone who is ill, while K-01 stayed exactly where it always lay, two body-lengths away.",
+"That night the whole herd rearranged itself: four animals shuffled in close around K-04, while K-01 stayed exactly where it always lay, two body-lengths away.",
 
 "07":
 "That is not to say these Bulbasaur never touch one another. They simply do not touch by lying side by side.\n"
-"On some afternoons, two vines would slip out from beneath the bulbs of two Bulbasaur, meet in the air, and wind around each other for a few seconds, like two hands clasping, before letting go. I stood watching for twenty minutes and could not write a single word.\n"
+"On some afternoons, two vines would slip out from beneath the bulbs of two Bulbasaur, meet in the air, and wind around each other for a few seconds before letting go. I stood watching for twenty minutes and could not write a single word.\n"
 "Because what I had just seen was not a whip, but an organ for holding, for feeling, for greeting.\n"
 "And for keeping clean as well. The back is out of reach for a short-necked animal on four legs, and that afternoon I watched K-01 swing a vine over its shoulder and flick a caterpillar off the base of its bulb, as neatly as a horse swishing its tail at a fly.",
 
 "08":
-"And yet that unusual colour has its price.\n"
+"It was during those same quiet afternoons that I began to understand that K-01's unusual colour came at a price.\n"
 "On the fifty-third day, a large bird began to circle high over the clearing. The catalogue calls this kind of bird Fearow, and this one had an eye clouded ash-grey, the mark of some old wound. The bird paid no attention to the rest of the herd; it followed K-01 alone.\n"
 "Lying beneath the ferns, the blotched blue-green skin of the other Bulbasaur melts away into the broken patches of shade, while K-01's pale skin does not.\n"
 "Back home, pale moths resting on bark blackened with soot were taken by birds far more often than the dark ones.\n"
-"On the first dive, K-01 did not run. It pressed itself flat beneath a clump of ferns and lay as still as death, and it was the ferns that hid it, not its skin. The bird swept down and passed by barely an arm's length away.\n"
-"On the second dive, the top of the bulb on K-01's back split open and a fine, pale powder burst out, spreading like smoke. The bird lurched, wings beating wildly, lost its line, and was gone.",
+"On the first dive, K-01 did not run. It pressed itself flat beneath a clump of ferns and lay without moving, and it was the ferns that hid it, not its skin. The bird swept down and passed by barely an arm's length away.\n"
+"On the second dive, the top of the bulb on K-01's back split open and a fine, pale powder burst out in a haze. The bird veered, lost its line, and flew off over the trees.",
 
 "09":
 "But what made me press hardest on my pencil that day was what came afterwards.\n"
@@ -214,11 +214,11 @@ BEATS_EN = {
 "From that day on, I stopped writing such things under the heading “abilities”, and instead opened a fresh page and ruled it into two columns: income, and expense.",
 
 "10":
-"This land has something that my home does not: people set animals like these to fight one another.\n"
+"That “expense” column soon filled up, but its heaviest entries were not written in the forest. This land has something that my home does not: people set animals like these to fight one another, and it was there that I saw them spend their sunlight fastest.\n"
 "One afternoon I went down to a small town at the foot of the forest, squeezed into the outer ring of a yard of beaten earth, and watched a whole match.\n"
 "In that yard, the vines no longer reached out to greet. They shot out fast as the wind and cracked down onto the hard earth with a sound as sharp as a whip, throwing up streaks of dust.\n"
 "It was the same organ: in the forest it picks fruit and brushes off caterpillars, and in the yard it became a weapon. I pass no judgement on that, for back home an elephant's trunk can caress a newborn calf, and it can also tear a great branch from a tree.\n"
-"But one moment kept me writing until dawn. The animal in the yard suddenly stood stock-still for a beat, the bulb on its back glowing from within like a lantern, and only then did it release a blinding beam of light.\n"
+"But one moment kept me writing until dawn. The animal in the yard suddenly stood stock-still for a beat, the bulb on its back brightening from within, and only then did it release a beam of light.\n"
 "The crowd around me jeered at that pause as a weakness. What I saw was a whole noon's store of sunlight spent in a single breath.\n"
 "The next morning, back in the forest, I found K-01 already lying in the first patch of sun.",
 
@@ -227,7 +227,7 @@ BEATS_EN = {
 "The first I had measured for myself before anyone told me of it. Under the harsh noon sun, K-01 covered the same stretch of ground almost twice as fast as it did when the sky was overcast, and I timed it with a stopwatch more times than I can count. A body that runs on sunlight runs harder the fiercer the sun.\n"
 "The second I saw only in the fighting yard, and it unsettled me more than it impressed me. When a Bulbasaur has been badly hurt and is swaying, barely able to stand, its blows suddenly grow strangely strong.\n"
 "I do not believe the animal grows stronger. I believe it is pouring out the very last of its reserve, all of it, at once.\n"
-"Back home, the agave gathers its strength for decades, only to spend it all on a single flowering, and then quietly dies.",
+"Back home, the agave gathers its strength for decades, only to spend it all on a single flowering, and then dies.",
 
 "12":
 "In the fourth month, K-01 began to change its ways.\n"

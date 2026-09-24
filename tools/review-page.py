@@ -126,18 +126,26 @@ def main(slug):
     else:
         assets = json.loads(rp.read_text(encoding="utf-8")).get("assets", {}) if rp.exists() else {}
     blocks = flow_blocks(ep)
-    has = lambda i: bool(i) and any((img_root / f"{i}.{x}").exists() for x in ("jpg", "png", "webp"))
+    sys.path.insert(0, str(ROOT / "tools"))
+    from imgcheck import real_image
+    has = lambda i: bool(i) and real_image(img_root, i) is not None     # ảnh giữ chỗ không tính là có
+
+    warn = []
 
     def enrich(s_src, extra):
         i, old = s_src.get("id"), s_src.get("replaces")
         extra["has"] = has(i)
-        extra["img"] = assets.get(i) if has(i) or s_src["kind"] == "reuse" else None
-        extra["oldImg"] = assets.get(old) if old else None
+        # ảnh có trên máy mà chỉ là ảnh giữ chỗ thì không hiện (ảnh V3 chưa nạp vẫn hiện được nhờ link)
+        on_disk = lambda x: any((img_root / f"{x}.{e}").exists() for e in ("jpg", "png", "webp"))
+        shown = lambda x: bool(x) and x in assets and (has(x) or not on_disk(x))
+        extra["img"] = assets.get(i) if shown(i) else None
+        extra["oldImg"] = assets.get(old) if shown(old) else None
+        if s_src["kind"] == "reuse" and not shown(i):
+            warn.append(f"{i}: đánh dấu có sẵn nhưng không có ảnh thật (thiếu, hoặc chỉ là ảnh giữ chỗ)")
         if s_src["kind"] in ("regen", "new") and i in blocks:
             extra["prompt"] = blocks[i]
         return extra
 
-    warn = []
     plates = []
     for p in plan.get("plates", []):
         src = {"kind": p["src"]["kind"], "id": p["id"], "replaces": p.get("replaces")}
@@ -162,12 +170,15 @@ def main(slug):
                 warn.append(f"{b}: {sc['src']['id']} chưa có prompt")
             scenes.append(enrich(sc["src"], {**sc}))
         beats.append({"id": b, **{k: p[k] for k in ("act", "title", "chip", "caption")}, "scenes": scenes,
+                      "chapter": p.get("chapter"),
                       "en": en, "vi": vi, "target": tg.get(b, 0),
                       "enSec": round(len(re.findall(r"[A-Za-z0-9'’-]+", c.BEATS_EN.get(b, ""))) / EN_WPS),
                       "viSec": round(len(c.BEATS[b].split()) / VI_SPS)})
     if "--thumbs" in sys.argv:
         make_thumbs(slug, img_root, assets, plates, beats)
-    data = {"beats": beats, "plates": plates, "steps": steps(slug, vid, plan, has)}
+    cfg = ROOT / "video.config.json"
+    gap = json.loads(cfg.read_text(encoding="utf-8")).get("pacing", {}).get("chapterGap", 2.2) if cfg.exists() else 2.2
+    data = {"beats": beats, "plates": plates, "steps": steps(slug, vid, plan, has), "chapterGap": str(gap).replace(".", ",")}
     html = (ROOT / "tools" / "templates" / "review-page.html").read_text(encoding="utf-8")
     html = (html.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False))
                 .replace("__PAGETITLE__", plan.get("pageTitle", f"{slug} · xưởng duyệt"))
