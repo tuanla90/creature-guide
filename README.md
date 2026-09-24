@@ -22,6 +22,8 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 |---|---|
 | `/tap-moi <loài>` | mở tập mới: ý tưởng → canon → kịch bản → shot, dừng trước khi tốn tiền ảnh |
 | `/soat-tap <slug>` | soát trước khi thu giọng: máy soát rồi tới người soát |
+| `/nghi-y-tuong <loài>` | khai phá 6 hướng nội dung và chọn một ý mạnh, chưa mở tập hay sửa pipeline |
+| `/review-noi-dung <file hoặc slug>` | review canon, speculative biology, câu chuyện và lời dẫn; bỏ qua UI/code |
 | `/nap-am` | nạp âm thanh vừa tải về: đổi tên, cắt, vào đúng chỗ, không để bản sao |
 | skill `creature-field-guide-scriptwriter` | luật viết lời |
 | skill `creature-field-guide-production` | bible → ảnh → `scenes.json` → render |

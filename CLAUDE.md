@@ -12,6 +12,8 @@ nghiệp vụ và chỗ nào còn làm tay.
 - Lên lịch, xem tập nào tới đâu → `episode-plan`. Soát kịch bản trước khi sinh ảnh → `episode-review`
   (gọi `stop-slop`). Soạn gói đăng → `episode-publish`. Tất cả nằm trong `.claude/skills/`.
 - Mở tập mới → `/tap-moi <loài>`. Soát trước khi thu giọng/render → `/soat-tap <slug>`.
+- Chỉ nghĩ và chấm ý tưởng, chưa mở tập → `/nghi-y-tuong <loài>`. Chỉ review nội dung một bản nháp
+  hoặc trang duyệt, không xét UI/code → `/review-noi-dung <file hoặc slug>`.
 - Xem bản dựng và ghi chú tại chỗ → `PYTHONUTF8=1 python tools/review.py <slug>`.
 - Khoanh vùng ảnh thở bằng chuột → `PYTHONUTF8=1 python tools/motion-studio.py <ảnh>`.
 - Người dùng nói **"xong"** (xong ý tưởng · kịch bản · refs · ảnh · clip · earth · giọng…) → `/xong`,
