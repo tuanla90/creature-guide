@@ -164,3 +164,5 @@ Chủ dự án bấm Duyệt 10 beat (00–03, 05, 07, 08, 11, 12, 15); Cần s�
 
 Đóng gói: DNA D13 (chữ tổng quát, máy bắt "tiêu nắng", "thu/chi", income/expense), D14 (điều lạ phải
 có lẽ, đoán phải có căn cứ; checklist + brief).
+
+**Đã duyệt: 2026-09-24** — đủ 17/17 beat (kể cả short-outro) trên trang duyệt, không còn sửa trực tiếp nào trong collection `edits`.
