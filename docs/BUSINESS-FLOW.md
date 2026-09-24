@@ -243,7 +243,7 @@ chiều theo tập. Nhóm cần cứu nhỏ hơn bạn tưởng — chỉ nhữn
 
 | Tái tạo được | Không tái tạo được → phải sao lưu |
 |---|---|
-| Ảnh chưa đo toạ độ (còn prompt là sinh lại được, tốn credit) | **Ảnh đã đo toạ độ callout** — sinh lại ra ảnh khác là hỏng cả `scenes.json` |
+| Ảnh chưa đo toạ độ (còn prompt là sinh lại được, không tốn credit) | **Ảnh đã đo toạ độ callout** — sinh lại ra ảnh khác là hỏng cả `scenes.json` |
 | Timing, phụ đề (máy chạy lại) | Giọng đã duyệt bằng tai |
 | Prompt (sinh từ `bible/`) | Nhạc đã chọn · lớp cắt tay |
 

@@ -586,6 +586,12 @@ def main(slug: str) -> int:
                 plates.add(full)
                 if full.split(":")[-1] in ("male", "female"):   # biến thể giới tính vẫn là mẫu loài
                     plates.add(full.split(":")[0])
+    # Loài chỉ có một dòng extraCreatures thì Flow tự bịa — ảnh mắt đục Fearow ra một con chim thật
+    # (docs/DNA.md D12). Loài nào lên hình cũng cần bible riêng.
+    no_bible = sorted({r.split(":")[0] for s in all_shots if s.get("kind") != "real"
+                       for r in s.get("creatures", []) if not bible_of(r.split(":")[0])})
+    for sp in no_bible:
+        W(f"loài “{sp}” lên hình mà chưa có bible/creatures/{sp}.json — Flow sẽ tự bịa dáng (DNA D12)")
     used = {canon_ref(r) for s in all_shots if s.get("kind") not in ("plate", "location")
             for r in s.get("creatures", []) if bible_of(r.split(":")[0])}
     for r in sorted(used):

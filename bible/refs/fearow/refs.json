@@ -1,0 +1,18 @@
+{
+  "species": "fearow",
+  "_rule": "Ảnh tham chiếu bên thứ ba: chỉ để tham chiếu khi sinh, không đăng, không vào git. Ghi nguồn từng tấm.",
+  "refs": [
+    {
+      "id": "ref-fearow-art",
+      "file": "art.png",
+      "what": "artwork chính thức Fearow — dáng đầu, mỏ, mào",
+      "why": "không có ref thì AI vẽ ra một con chim thật (mỏ dày, đầu trọc) thay vì Fearow",
+      "source": "Bulbapedia — Fearow (official artwork)",
+      "canon": "📖 cao 1.2 m, mỏ dài nhọn, mào đỏ hồng",
+      "feeds": [
+        "plate"
+      ],
+      "status": "chưa tải"
+    }
+  ]
+}

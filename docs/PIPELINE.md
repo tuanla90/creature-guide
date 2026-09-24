@@ -122,7 +122,7 @@ Vòng sau: `--brief script --round 2` → `3-script-gemini-2.md`.
    sửa, đăng lại trang (cùng link), bạn duyệt lại riêng beat ấy.
 
 > **Cổng:** duyệt **trước khi soạn shot và sinh ảnh**. Script quyết định ảnh; sửa script sau khi đã
-> có ảnh là hỏng cả loạt ảnh đã trả credit.
+> có ảnh là phải sinh lại và đo lại cả loạt.
 
 ## 5 · Tinh chỉnh VI, khít beat ✋🤖
 
@@ -172,7 +172,8 @@ Hồ sơ hình dáng có **hai đường ngược nhau**:
 Google Flow, project "Creature". Một hai ảnh lẻ thì gõ thẳng vào ô prompt của project; cả loạt thì
 mở Tools → Batch Image Studio Pro, dán `prompts/<ep>.flow.txt`.
 
-Thứ tự, và **hỏi trước mỗi loạt tốn credit**:
+Thứ tự. **Sinh ảnh trong Flow không tốn credit**: sai thì sinh lại, không cần tiếc. Cái đắt là
+**thời gian soát** và toạ độ callout đã đo trên ảnh cũ. Chỉ clip (Veo, Seedance) mới phải hỏi trước:
 1. **Ảnh mẫu** (địa điểm → con thường → con được chọn), kèm ảnh tham chiếu đã tải (`xong refs`).
    Xem bằng mắt trước khi đi tiếp: ảnh mẫu sai màu thì mọi cảnh ăn theo đều sai.
 2. **Thử một cảnh lẫn đối tượng** trước cả loạt. Flow không giữ được "đúng một con khác màu" thì

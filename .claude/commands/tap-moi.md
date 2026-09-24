@@ -34,4 +34,4 @@ Slug theo mẫu `<vùng>-<số>-<loài>` (vd `kanto-004-charmander`).
    `Đã duyệt: <ngày>` vào `4-review.md`, soạn `bible/shots/<ep>.json` từ cảnh dự kiến, chạy
    `node tools/build-prompts.mjs <ep>`, báo số shot, số ảnh mẫu phải sinh trước và những gì còn thiếu.
 
-**Không sinh ảnh, không render, không đăng.** Mỗi loạt tốn credit phải hỏi trước.
+**Không sinh ảnh, không render, không đăng.** Sinh ảnh không tốn credit, nhưng vẫn để người chạy batch; clip Veo/Seedance phải hỏi trước.

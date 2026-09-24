@@ -1,0 +1,51 @@
+{
+  "id": "fearow",
+  "dex": "0022",
+  "name": "Fearow",
+  "_note": "Tạo khi ảnh v3-s10-ashen-eye ra một con chim thật (mỏ dày có rãnh, đầu trọc, cổ ngắn): chỉ có một dòng extraCreatures thì AI tự bịa. Soát lại appearance với ảnh tham chiếu ref-fearow-art khi tải về.",
+  "anchor": "Fearow, a large wild bird-like creature about 1.2 m tall",
+  "appearance": [
+    "a very long, thin, straight, sharply pointed beak, pale pinkish-beige, much longer than the head",
+    "a shaggy crest of red-pink feathers standing up on top of the head",
+    "small narrow fierce eyes set close to the base of the beak",
+    "a long slender neck with a ruff of pale tan feathers",
+    "mostly brown plumage over the body, large broad brown wings",
+    "long pink legs with three sharp toes"
+  ],
+  "sexDifferences": {
+    "note": "không có khác biệt nhìn thấy được (Bulbapedia)",
+    "female": [],
+    "male": []
+  },
+  "canon": [
+    {
+      "fact": "cánh lớn, bay rất lâu không cần đậu; mỏ dài để bắt mồi trong đất và nước",
+      "src": "Pokédex — Fearow (Bulbapedia)"
+    }
+  ],
+  "invariants": [
+    "long thin straight pointed beak",
+    "red-pink crest on the head",
+    "long neck"
+  ],
+  "forbidden": [
+    "short beak",
+    "thick heavy beak",
+    "hooked beak",
+    "grooved bill",
+    "bald head",
+    "shoebill",
+    "vulture",
+    "stork",
+    "short neck"
+  ],
+  "individuals": {
+    "ashen-eye": {
+      "trait": "một bên mắt đục màu tro",
+      "marks": [
+        "its left eye is clouded over with a pale ash-grey opaque film from an old injury, the right eye clear and fierce"
+      ],
+      "_note": "con Fearow ở beat 08 (và cái bóng ở beat 03). Không đặt tên, không mã — chỉ xuất hiện trong một chuỗi sự cố."
+    }
+  }
+}

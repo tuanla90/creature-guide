@@ -45,6 +45,24 @@
    "src": {
     "kind": "reuse"
    }
+  },
+  {
+   "id": "p-fearow",
+   "what": "Ảnh mẫu Fearow mắt đục — mỏ dài thẳng nhọn, mào đỏ hồng, cổ dài; mọi cảnh có Fearow lấy làm tham chiếu",
+   "src": {
+    "kind": "new",
+    "id": "p-fearow",
+    "why": "Fearow chưa có ảnh mẫu — ảnh mắt đục cũ ra chim thật"
+   }
+  },
+  {
+   "id": "p-k04",
+   "what": "Ảnh mẫu K-04 — con Bulbasaur to hơn, vệt rách dài bên sườn; mọi cảnh có K-04 lấy làm tham chiếu",
+   "src": {
+    "kind": "new",
+    "id": "p-k04",
+    "why": "K-04 xuất hiện ở 06, 13, 15 — cần giữ vết sườn"
+   }
   }
  ],
  "beats": {
@@ -435,11 +453,13 @@
      "at": "fifty-third",
      "el": "specimen",
      "who": "Fearow",
-     "shot": "wide · từ dưới lên",
-     "what": "Con chim lớn lượn cao — điểm soi: một mắt đục màu tro",
+     "shot": "close · ngang",
+     "what": "Đầu và cổ con Fearow đậu trên cành khô bìa rừng — điểm soi: một mắt đục màu tro",
      "src": {
-      "kind": "reuse",
-      "id": "v3-s10-ashen-eye"
+      "kind": "regen",
+      "id": "v4-fearow-eye",
+      "replaces": "v3-s10-ashen-eye",
+      "why": "ảnh cũ ra chim thật (mỏ dày, đầu trọc), không phải Fearow"
      },
      "motion": "still"
     },

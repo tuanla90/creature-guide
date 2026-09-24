@@ -176,4 +176,5 @@ Lỗi đã gặp (vòng 5):
 | Tin mục SELF-CHECK của Gemini | Không tin. Chạy `handoff.py --draft` (có cả DNA D1, D2) rồi đọc bằng mắt | M · R |
 | Số đo bịa trong ghi chú trang sổ ("2.1 m/s") | Trang sổ chỉ ghi quan sát, không ghi số đo | M `--draft` |
 | Ảnh AI của loài Trái Đất | Không sinh. Dừng hình ≤ 3, ảnh quê nhà ≤ 2, nguồn sạch ghi trong `earth.json` | M `check-episode` |
+| Loài phụ chỉ có một dòng `extraCreatures` → Flow vẽ ra chim thật (ảnh mắt đục Fearow: mỏ dày có rãnh, đầu trọc) | Loài nào **lên hình** cũng phải có `bible/creatures/<loài>.json` (dáng đầu, mỏ, mào, `forbidden` chặn các loài thật nó dễ bị nhầm), một ảnh mẫu, và một ảnh tham chiếu | R · shot bible |
 | Viết script Python bằng heredoc có `\n` hoặc chữ Việt trong mẫu `sed` | Dùng tool Write/Edit; khớp chữ Việt trong Python file, không trong `sed` | (ghi cho Claude) |

@@ -3,7 +3,6 @@
   "outDir": "public/img/kanto-001",
   "_note": "V4 — sinh từ drafts/4-scene-plan.json. Ảnh sinh lại mang id mới v4-…, trường replaces trỏ về ảnh cũ. Ảnh mẫu đứng đầu: sinh trước, mọi cảnh lấy làm ref.",
   "extraCreatures": {
-    "fearow": "Fearow, a large brown bird-like creature with a very long thin beak, a red crest and broad wings",
     "charmander": "Charmander, a small bipedal orange lizard-like creature about 0.6 m tall with a cream belly and a burning flame on the tip of its tail"
   },
   "shots": [
@@ -54,6 +53,24 @@
       ],
       "scene": "the same individual after its change of form, standing in three-quarter side view facing right",
       "framing": "whole body centered, generous margin, the closed golden-yellow bud clearly visible"
+    },
+    {
+      "id": "p-fearow",
+      "kind": "plate",
+      "creatures": [
+        "fearow:ashen-eye"
+      ],
+      "scene": "an old adult standing in three-quarter side view facing right, neck raised, wings folded",
+      "framing": "whole body centered, generous margin, head, beak and crest clearly visible"
+    },
+    {
+      "id": "p-k04",
+      "kind": "plate",
+      "creatures": [
+        "bulbasaur:K-04"
+      ],
+      "scene": "a larger, heavier adult than usual standing in three-quarter side view facing left, its torn flank toward the viewer",
+      "framing": "whole body centered, generous margin, the flank and the bulb clearly visible"
     },
     {
       "id": "v4-k01-trail-noon",
@@ -258,18 +275,32 @@
       "framing": "low angle under the fern fronds, dappled light across the whole frame"
     },
     {
+      "id": "v4-fearow-eye",
+      "replaces": "v3-s10-ashen-eye",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "fearow:ashen-eye"
+      ],
+      "location": "viridian-forest:clearing",
+      "size": "close",
+      "angle": "eye",
+      "scene": "head and upper neck of the bird perched on a dead branch at the forest edge, the clouded ash-grey eye turned toward the viewer, the long thin beak in full profile",
+      "framing": "head and neck only, overcast sky behind, cold flat light, the clouded eye in the upper third"
+    },
+    {
       "id": "v4-n08-raptor-strike",
       "replaces": "n08-raptor-strike",
       "beat": "08",
       "kind": "scene",
       "creatures": [
-        "fearow",
+        "fearow:ashen-eye",
         "bulbasaur:K-01"
       ],
       "location": "viridian-forest:clearing",
       "size": "wide",
       "angle": "low",
-      "scene": "a large bird with one clouded grey eye stooping out of the sky toward a fern clump, talons forward; under the fern a small pale animal presses itself flat to the ground",
+      "scene": "the bird stooping out of the sky toward a fern clump, wings half folded, talons forward; under the fern a small pale animal presses itself flat to the ground",
       "framing": "bird in the upper frame diving toward the fern in the lower corner"
     },
     {

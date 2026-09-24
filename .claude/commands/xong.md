@@ -34,4 +34,4 @@ Bảng từ khoá và luật đặt tên: [docs/HANDOFF.md](../../docs/HANDOFF.m
    - `âm` → không phải việc của tool này, chạy `/nap-am`.
 4. Báo lại ngắn gọn: đã nạp gì, còn thiếu gì, bước tiếp là của ai.
 
-Không tự sinh ảnh, không tự render, không tự đăng. Mỗi loạt tốn credit Flow/Veo/Seedance phải hỏi trước.
+Không tự sinh ảnh, không tự render, không tự đăng. Sinh ảnh Flow không tốn credit; clip Veo/Seedance phải hỏi trước.

@@ -8,7 +8,7 @@ description: Soát kịch bản một tập trước khi sinh ảnh — ba lớp
 Chạy trên **một tập**. Xuất bảng **PASS/FAIL** + danh sách cần sửa. **Không tự sửa** trừ khi user bảo.
 
 Vị trí trong dây chuyền: [PIPELINE.md](../../../docs/PIPELINE.md) chặng 4. Soát **trước khi sinh ảnh**,
-vì script quyết định ảnh — sửa script sau khi đã có ảnh là hỏng cả loạt ảnh đã trả credit.
+vì script quyết định ảnh — sửa script sau khi đã có ảnh là phải sinh lại, soát lại và đo lại toạ độ cả loạt.
 
 Phân công đã chốt: **máy lo logic và kiểm chứng · Gemini lo giọng văn và khả năng kể chuyện · người
 quyết đi tiếp**.
