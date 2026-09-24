@@ -1,0 +1,253 @@
+<title>__SLUG__ · bản duyệt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#EEF1EB; --surface:#FFFFFF; --sunk:#F6F8F4; --ink:#16201B; --muted:#5A695F; --faint:#8A978E;
+  --rule:#D6DDD3; --accent:#2E6A48; --accent-ink:#FFFFFF; --shiny:#A9B93A; --shiny-bg:#F1F4D8;
+  --reuse:#2E6A48; --reuse-bg:#E1EEE5; --regen:#9A5B12; --regen-bg:#F8EAD5; --new:#4B4FA3; --new-bg:#E6E7F7;
+  --earth:#7A4A2A; --earth-bg:#F2E6DC; --ok:#2E7D4F; --ok-bg:#DDF0E3; --fix:#B23A2C; --fix-bg:#F8E0DC;
+  --ui:"Be Vietnam Pro",system-ui,"Segoe UI",sans-serif; --read:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0F1411; --surface:#161E19; --sunk:#1B241E; --ink:#E4ECE6; --muted:#9DAEA3; --faint:#728278;
+  --rule:#2A3630; --accent:#7CC29A; --accent-ink:#0F1411; --shiny:#D3E26A; --shiny-bg:#2C3318;
+  --reuse:#86C9A0; --reuse-bg:#1C3326; --regen:#E8B26A; --regen-bg:#3A2A14; --new:#A9ACF0; --new-bg:#25274A;
+  --earth:#E0A57E; --earth-bg:#3A271B; --ok:#7FD39F; --ok-bg:#183A26; --fix:#F29487; --fix-bg:#44211C;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0F1411; --surface:#161E19; --sunk:#1B241E; --ink:#E4ECE6; --muted:#9DAEA3; --faint:#728278;
+  --rule:#2A3630; --accent:#7CC29A; --accent-ink:#0F1411; --shiny:#D3E26A; --shiny-bg:#2C3318;
+  --reuse:#86C9A0; --reuse-bg:#1C3326; --regen:#E8B26A; --regen-bg:#3A2A14; --new:#A9ACF0; --new-bg:#25274A;
+  --earth:#E0A57E; --earth-bg:#3A271B; --ok:#7FD39F; --ok-bg:#183A26; --fix:#F29487; --fix-bg:#44211C;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--ui);padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header.top{padding-block:28px 8px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(26px,4vw,36px)/1.15 var(--ui);margin:.35em 0 .3em;text-wrap:balance;letter-spacing:-.01em}
+.lede{max-width:70ch;color:var(--muted);margin:0}
+.lede b{color:var(--ink);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:18px 0 6px;font-variant-numeric:tabular-nums}
+.fact{display:flex;flex-direction:column}
+.fact .v{font:600 20px/1.2 var(--ui)}
+.fact .k{font-size:12px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;font-size:13px;color:var(--muted);align-items:center}
+.progress{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);border-bottom:1px solid var(--rule);
+  padding-block:10px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px}
+.progress .bar{flex:1 1 160px;height:6px;border-radius:3px;background:var(--rule);overflow:hidden;display:flex;min-width:120px}
+.progress .bar i{display:block;height:100%}
+.progress .st{font-variant-numeric:tabular-nums;color:var(--muted)}
+.progress .st b{color:var(--ink)}
+.store{font-size:12px;color:var(--faint)}
+nav.acts{display:flex;flex-wrap:wrap;gap:6px}
+nav.acts a{font:500 12px/1 var(--mono);color:var(--muted);text-decoration:none;padding:5px 7px;border-radius:4px;border:1px solid var(--rule)}
+nav.acts a.ok{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+nav.acts a.fix{background:var(--fix-bg);color:var(--fix);border-color:transparent}
+h2.act{font:600 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:36px 0 10px}
+section.beat{background:var(--surface);border:1px solid var(--rule);border-radius:10px;margin-bottom:18px;overflow:hidden}
+.bhead{display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:baseline;padding:16px 18px 12px;border-bottom:1px solid var(--rule)}
+.bid{font:500 30px/1 var(--mono);color:var(--faint)}
+.btitle{font:600 19px/1.25 var(--ui);text-wrap:balance}
+.bmeta{font-size:12.5px;color:var(--muted);grid-column:2/4;display:flex;flex-wrap:wrap;gap:4px 14px;font-variant-numeric:tabular-nums}
+.bmeta .cap{font-family:var(--mono);color:var(--ink)}
+.bchip{font:500 12px/1 var(--mono);white-space:nowrap;color:var(--muted)}
+.sub{font:600 11.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:14px 18px 6px}
+.tbl{overflow-x:auto;padding:0 18px}
+table{border-collapse:collapse;width:100%}
+th{font:500 11.5px/1.3 var(--ui);color:var(--faint);text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{vertical-align:top;padding:9px 12px 9px 0;border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:0}
+table.scenes{min-width:760px;font-size:13.5px}
+.at{font:500 12.5px/1.35 var(--mono);color:var(--ink);white-space:nowrap}
+.el{font:500 12px/1.3 var(--mono);color:var(--muted);display:block;margin-top:3px}
+.who{font-size:12.5px;color:var(--muted);display:block;margin-top:2px}
+.who.k01{color:var(--ink)}
+.who.k01::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--shiny);margin-right:6px;vertical-align:1px}
+.what{max-width:52ch}
+.shot{font-size:12px;color:var(--faint);display:block;margin-top:3px}
+.src{display:inline-block;font:500 11.5px/1.2 var(--ui);padding:3px 7px;border-radius:4px;white-space:nowrap}
+.src.reuse{background:var(--reuse-bg);color:var(--reuse)} .src.regen{background:var(--regen-bg);color:var(--regen)}
+.src.new{background:var(--new-bg);color:var(--new)} .src.earth{background:var(--earth-bg);color:var(--earth)}
+.sid{display:block;font:400 11.5px/1.35 var(--mono);color:var(--muted);margin-top:4px;word-break:break-all}
+.why{display:block;font-size:12px;color:var(--faint);margin-top:2px;max-width:26ch}
+.mo{font-size:12.5px;white-space:nowrap}
+.mo.freeze{font-weight:600;color:var(--accent)}
+.earthline{display:block;margin-top:6px}
+table.script{font:400 16.5px/1.55 var(--read);min-width:640px}
+table.script th{font-family:var(--ui)}
+table.script td{width:50%;padding-right:22px}
+table.script td.vi{font-size:16.5px}
+table.script tr.shinyrow td{background:linear-gradient(var(--shiny-bg),var(--shiny-bg))}
+.review{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-start;padding:14px 18px 16px;background:var(--sunk);border-top:1px solid var(--rule);margin-top:10px}
+.review .btns{display:flex;gap:6px}
+button{font:500 13px/1 var(--ui);padding:9px 12px;border-radius:6px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer}
+button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button[aria-pressed="true"].ok{background:var(--ok);color:var(--accent-ink);border-color:var(--ok)}
+button[aria-pressed="true"].fix{background:var(--fix);color:#fff;border-color:var(--fix)}
+button:disabled{opacity:.5;cursor:not-allowed}
+textarea{flex:1 1 320px;min-height:42px;font:14px/1.45 var(--ui);color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:8px 10px;resize:vertical}
+.saved{font-size:12px;color:var(--faint);align-self:center;min-width:6ch}
+.plates{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:6px 0 10px;margin-top:18px}
+.plates table{font-size:13.5px;min-width:560px}
+.note{font-size:13px;color:var(--muted);max-width:75ch;margin:10px 0 0}
+@media (max-width:700px){
+  .bhead{grid-template-columns:auto 1fr}.bchip{grid-column:2}.bmeta{grid-column:1/3}
+  table.script{min-width:0}table.script thead{display:none}
+  table.script tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0}
+  table.script td{display:block;width:auto;border:0;padding:2px 0}
+  table.script td.vi{color:var(--muted)}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Creature Field Guide · __SLUG__ · bước 5 · người duyệt</div>
+  <h1>__TITLE__</h1>
+  <p class="lede">Mỗi beat có <b>các cảnh dự kiến</b> (trên hình có gì, ảnh lấy từ đâu, chuyển động kiểu gì) và <b>lời EN cạnh lời VI</b>. Bấm <b>Duyệt</b> hoặc <b>Cần sửa</b> rồi ghi chú ngay dưới beat — Claude đọc được những gì bạn ghi ở đây. Chưa có ảnh nào được sinh theo bản này.</p>
+  <div class="facts" id="facts"></div>
+  <div class="legend" id="legend"></div>
+</header>
+<div class="progress" id="progress"></div>
+<main id="main"></main>
+<h2 class="act" id="plates-h">Ảnh mẫu — sinh trước mọi cảnh</h2>
+<div class="plates"><div class="tbl" id="plates"></div>
+<p class="note" style="padding:0 18px">Ảnh mẫu là tham chiếu cho mọi cảnh cùng con vật. Ảnh mẫu sai màu thì mọi cảnh ăn theo đều sai, nên duyệt ảnh mẫu bằng mắt trước khi chạy loạt cảnh.</p></div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const SRC = {reuse:"Có sẵn", regen:"Sinh lại", new:"Sinh mới", earth:"Tải về"};
+const MO = {still:"Ảnh tĩnh · camera lia", breath:"Ảnh thở (miễn phí)", veo:"Clip Veo", seedance:"Clip Seedance",
+  page:"Trang sổ · chữ hiện dần", freeze:"Dừng hình"};
+const EL = {world:"world", clip:"clip", specimen:"specimen · soi", notepage:"notepage", freeze:"specimen · video"};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const key = id => "b" + id;
+const state = {};           // key -> {status, note}
+let db = null;
+
+function facts(){
+  const B = DATA.beats, sc = B.flatMap(b => b.scenes);
+  const cnt = k => sc.filter(s => s.src.kind === k).length;
+  const ids = k => new Set(sc.filter(s => s.src.kind === k).map(s => s.src.id)).size;
+  const vi = B.reduce((a,b)=>a+b.viSec,0)/60, en = B.reduce((a,b)=>a+b.enSec,0)/60;
+  const mo = k => sc.filter(s => s.motion === k).length;
+  const earth = sc.filter(s => s.earth).length;
+  const items = [[B.length-1+" + Short","beat"],[sc.length,"cảnh"],[vi.toFixed(1).replace(".",",")+"′","lời VI (ước)"],
+    [en.toFixed(1).replace(".",",")+"′","lời EN (ước, 2,3 từ/giây)"],[ids("reuse"),"ảnh có sẵn"],[ids("regen"),"ảnh sinh lại"],
+    [ids("new"),"ảnh sinh mới"],[mo("veo")+" · "+mo("seedance"),"clip Veo · Seedance"],[mo("freeze")+"/3 · "+earth+"/2","dừng hình · ảnh quê nhà"]];
+  document.getElementById("facts").innerHTML = items.map(([v,k]) => `<div class="fact"><span class="v">${esc(v)}</span><span class="k">${esc(k)}</span></div>`).join("");
+  document.getElementById("legend").innerHTML = "Nguồn ảnh: " + Object.entries(SRC).map(([k,v]) => `<span class="src ${k}">${v}</span>`).join(" ")
+    + ` <span class="who k01" style="margin:0 0 0 8px">K-01 trong khung</span>`;
+}
+
+function sceneRows(b){
+  return b.scenes.map(s => {
+    const k01 = /K-01/.test(s.who);
+    const src = `<span class="src ${s.src.kind}">${SRC[s.src.kind]}</span>` + (s.src.id ? `<span class="sid">${esc(s.src.id)}</span>` : "")
+      + (s.src.why ? `<span class="why">${esc(s.src.why)}</span>` : "")
+      + (s.earth ? `<span class="earthline"><span class="src earth">Tải về</span><span class="sid">${esc(s.earth)}</span></span>` : "");
+    return `<tr><td><span class="at">“${esc(s.at)}”</span><span class="el">${esc(EL[s.el]||s.el)}</span></td>
+      <td class="what">${esc(s.what)}<span class="who ${k01?"k01":""}">${esc(s.who)}</span><span class="shot">${esc(s.shot)}</span></td>
+      <td>${src}</td><td class="mo ${s.motion}">${esc(MO[s.motion]||s.motion)}</td></tr>`;
+  }).join("");
+}
+
+function scriptRows(b){
+  const n = Math.max(b.en.length, b.vi.length); let out = "";
+  for (let i=0;i<n;i++){
+    const shiny = /\bshiny\b/i.test(b.en[i]||"") ? ' class="shinyrow"' : "";
+    out += `<tr${shiny}><td lang="en">${esc(b.en[i]||"")}</td><td class="vi" lang="vi">${esc(b.vi[i]||"")}</td></tr>`;
+  }
+  return out;
+}
+
+function render(){
+  let act = null, html = "";
+  for (const b of DATA.beats){
+    if (b.act !== act){ act = b.act; html += `<h2 class="act">${esc(act)}</h2>`; }
+    const over = b.enSec > b.target*1.15 ? " · EN dài hơn đích" : "";
+    html += `<section class="beat" id="beat-${b.id}">
+      <div class="bhead"><span class="bid">${b.id === "short-outro" ? "S" : esc(b.id)}</span>
+        <span class="btitle">${esc(b.title)}</span><span class="bchip">${esc(b.chip)}</span>
+        <div class="bmeta"><span>đích ${b.target}s · VI ~${b.viSec}s · EN ~${b.enSec}s${over}</span><span>chữ trên hình: <span class="cap">${esc(b.caption)}</span></span></div></div>
+      <div class="sub">Cảnh dự kiến</div>
+      <div class="tbl"><table class="scenes"><thead><tr><th>Lúc lời đọc tới</th><th>Trên hình</th><th>Nguồn ảnh</th><th>Chuyển động</th></tr></thead>
+        <tbody>${sceneRows(b)}</tbody></table></div>
+      <div class="sub">Lời dẫn</div>
+      <div class="tbl"><table class="script"><thead><tr><th>EN · bản gốc</th><th>VI · track VBee</th></tr></thead><tbody>${scriptRows(b)}</tbody></table></div>
+      <div class="review" data-k="${key(b.id)}">
+        <div class="btns"><button class="ok" id="ok-${b.id}" aria-pressed="false">Duyệt</button><button class="fix" id="fix-${b.id}" aria-pressed="false">Cần sửa</button></div>
+        <textarea id="note-${b.id}" placeholder="Ghi chú cho beat ${esc(b.id)}: lời, cảnh, ảnh…" aria-label="Ghi chú beat ${esc(b.id)}"></textarea>
+        <span class="saved" id="saved-${b.id}"></span></div>
+    </section>`;
+  }
+  document.getElementById("main").innerHTML = html;
+  const P = DATA.plates;
+  document.getElementById("plates").innerHTML = `<table><thead><tr><th>Ảnh mẫu</th><th>Là gì</th><th>Nguồn</th></tr></thead><tbody>`
+    + P.map(p => `<tr><td class="at">${esc(p.id)}</td><td>${esc(p.what)}</td><td><span class="src ${p.src.kind}">${SRC[p.src.kind]}</span></td></tr>`).join("")
+    + `</tbody></table>`;
+}
+
+function paint(){
+  let ok=0, fix=0; const total = DATA.beats.length;
+  for (const b of DATA.beats){
+    const s = state[key(b.id)] || {};
+    document.getElementById("ok-"+b.id).setAttribute("aria-pressed", s.status==="ok");
+    document.getElementById("fix-"+b.id).setAttribute("aria-pressed", s.status==="fix");
+    const ta = document.getElementById("note-"+b.id);
+    if (document.activeElement !== ta && ta.dataset.dirty !== "1") ta.value = s.note || "";
+    if (s.status==="ok") ok++; if (s.status==="fix") fix++;
+  }
+  const nav = DATA.beats.map(b => { const s = (state[key(b.id)]||{}).status; return `<a href="#beat-${b.id}" class="${s||""}">${b.id==="short-outro"?"S":b.id}</a>`; }).join("");
+  document.getElementById("progress").innerHTML =
+    `<span class="st">Đã duyệt <b>${ok}</b> · cần sửa <b>${fix}</b> · còn <b>${total-ok-fix}</b> / ${total}</span>
+     <span class="bar"><i style="width:${ok/total*100}%;background:var(--ok)"></i><i style="width:${fix/total*100}%;background:var(--fix)"></i></span>
+     <nav class="acts">${nav}</nav>
+     <span class="store" id="store">${db ? "Lưu chung — Claude đọc được" : "Đang kết nối nơi lưu…"}</span>`;
+}
+
+async function save(id, patch){
+  if (!db) return;
+  const k = key(id), cur = state[k] || {};
+  const next = {status: cur.status || "", note: cur.note || "", ...patch, at: new Date().toISOString()};
+  state[k] = next; paint();
+  const el = document.getElementById("saved-"+id); el.textContent = "Đang lưu…";
+  try { await db.doc("review/" + k).set(next); el.textContent = "Đã lưu"; }
+  catch(e){ el.textContent = e && e.code === "invalid_argument" ? "Không có quyền ghi" : "Chưa lưu được"; }
+}
+
+function wire(){
+  for (const b of DATA.beats){
+    document.getElementById("ok-"+b.id).addEventListener("click", () => save(b.id, {status: (state[key(b.id)]||{}).status==="ok" ? "" : "ok"}));
+    document.getElementById("fix-"+b.id).addEventListener("click", () => save(b.id, {status: (state[key(b.id)]||{}).status==="fix" ? "" : "fix"}));
+    const ta = document.getElementById("note-"+b.id); let t = null;
+    ta.addEventListener("input", () => { ta.dataset.dirty = "1"; clearTimeout(t); t = setTimeout(() => { ta.dataset.dirty = ""; save(b.id, {note: ta.value}); }, 900); });
+    ta.addEventListener("blur", () => { if (ta.dataset.dirty === "1"){ clearTimeout(t); ta.dataset.dirty = ""; save(b.id, {note: ta.value}); } });
+  }
+}
+
+function disable(msg){
+  document.querySelectorAll(".review button, .review textarea").forEach(x => x.disabled = true);
+  const s = document.getElementById("store"); if (s) s.textContent = msg;
+}
+
+facts(); render(); wire(); paint();
+disable("Đang kết nối nơi lưu…");
+(async () => {
+  const c = window.claude;
+  db = c && c.use ? await c.use("db") : null;
+  if (!db){ paint(); disable("Chế độ xem này không lưu được — ghi chú trong chat"); return; }
+  document.querySelectorAll(".review button, .review textarea").forEach(x => x.disabled = false);
+  db.collection("review").onSnapshot(snap => {
+    for (const d of snap.docs){ const v = d.data(); if (v) state[d.id] = {status: v.status || "", note: v.note || ""}; }
+    paint();
+  }, () => { disable("Mất kết nối nơi lưu — tải lại trang"); });
+  paint();
+})();
+</script>

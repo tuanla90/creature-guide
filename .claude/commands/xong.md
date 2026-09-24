@@ -22,6 +22,10 @@ Bảng từ khoá và luật đặt tên: [docs/HANDOFF.md](../../docs/HANDOFF.m
      `--brief script`. Chi tiết: lệnh `/tap-moi` bước 2.
    - `kịch bản` / `gemini` → `--draft`, đọc hết theo skill `episode-review`, chuẩn hoá vào `content.py`,
      ghi `4-review.md`. Không sửa nguyên văn của Gemini trong `3-script-gemini*.md`.
+   - `duyệt` → đọc collection `review` của trang duyệt (ArtifactData `list`). Beat "Cần sửa": sửa
+     `content.py` / `4-scene-plan.json`, chạy lại `tools/review-page.py`, đăng lại **cùng link**. Đủ
+     "Duyệt" hết: ghi `Đã duyệt: <ngày>` vào `4-review.md`, rồi soạn shot.
+   - `earth` → soát `earth.json` có link gốc và giấy phép cho từng file, rồi gắn vào `callout.media`.
    - `ảnh` / `ảnh mẫu` → `tools/unwatermark.py <ep>`, rồi **cho người dùng xem ảnh** trước khi đo toạ
      độ hay chạy loạt tiếp. Ảnh mẫu hỏng thì mọi cảnh ăn theo đều hỏng.
    - `âm` → không phải việc của tool này, chạy `/nap-am`.

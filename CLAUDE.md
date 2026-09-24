@@ -14,8 +14,12 @@ nghiệp vụ và chỗ nào còn làm tay.
 - Mở tập mới → `/tap-moi <loài>`. Soát trước khi thu giọng/render → `/soat-tap <slug>`.
 - Xem bản dựng và ghi chú tại chỗ → `PYTHONUTF8=1 python tools/review.py <slug>`.
 - Khoanh vùng ảnh thở bằng chuột → `PYTHONUTF8=1 python tools/motion-studio.py <ảnh>`.
-- Người dùng nói **"xong"** (xong gemini · refs · ảnh · clip · giọng…) → `/xong`, bảng từ khoá và
-  luật đặt tên ở [docs/HANDOFF.md](docs/HANDOFF.md).
+- Người dùng nói **"xong"** (xong ý tưởng · kịch bản · refs · ảnh · clip · earth · giọng…) → `/xong`,
+  bảng từ khoá và luật đặt tên ở [docs/HANDOFF.md](docs/HANDOFF.md).
+- Luồng kịch bản năm bước (Gemini ý → Claude khung → Gemini lời → Claude chuẩn hoá → người duyệt):
+  bản dán cho Gemini ghép bằng `tools/handoff.py <slug> --brief ideas|script`, không viết tay.
+- Duyệt kịch bản + cảnh dự kiến → `PYTHONUTF8=1 python tools/review-page.py <slug>`, đăng Artifact có
+  capability `db`, đọc lại Duyệt / Cần sửa ở collection `review`.
 - Đăng xong thì sao lưu → `PYTHONUTF8=1 python tools/backup-episode.py <slug> --to "<Drive>"`.
 - **Luôn** chạy `PYTHONUTF8=1 python tools/check-episode.py <slug>` trước khi thu giọng hoặc render.
 
@@ -49,10 +53,11 @@ bible/             style.json · creatures/<loài>.json · shots/<ep>.json
                    locations/<nơi>.json · refs/<loài>/refs.json   (ảnh tham chiếu KHÔNG nằm trong git)
 prompts/           sinh ra từ bible, đừng sửa tay
 public/            img/<ep>/ · video/<ep>/ · audio/sfx/<ep>/   (ảnh và clip KHÔNG nằm trong git)
-docs/              PIPELINE · BUSINESS-FLOW · HANDOFF · CHANNEL-SETUP · SLATE · CREATURE-LENS
+docs/              PIPELINE · BUSINESS-FLOW · HANDOFF · briefs/ · CHANNEL-SETUP · SLATE · CREATURE-LENS
                    IDEA-BANK · CAST · SOUND · EPISODE-FRAME · SCENE-TYPES
 tools/             build-prompts.mjs · import-flow.py · unwatermark.py · export-subs.py
                    check-episode.py · review.py · backup-episode.py · motion-studio.py · handoff.py
+                   review-page.py (trang duyệt) · templates/
 experiments/       ghi chép những thứ đã thử và giới hạn của chúng
 ```
 
@@ -73,3 +78,9 @@ kênh thì nằm ở đây. Engine là repo công khai — **đừng đưa nội
 - Toạ độ callout đo **trên ảnh thật**, sau khi ảnh đã chốt. Sinh lại ảnh là phải đo lại.
 - Google Flow: pane trình duyệt bị ẩn thì tab treo I/O và mọi ảnh báo "Failed to load image" —
   không phải lỗi phía Google.
+- Engine đang nối vào worktree `blog2video/.claude/worktrees/specimen-media` (nhánh
+  `feat/specimen-freeze-media`: notepage + dừng hình + ảnh quê nhà), **chưa gộp vào `main` của
+  engine**. Sửa engine xong phải `node scripts/build-lib.mjs` bên đó.
+- Claude làm trong worktree rồi fast-forward `master`. Thư mục chính có sửa dở thì cất vào một nhánh
+  `wip/…` trước khi gộp — đừng stash, đừng ghi đè.
+- Không tin mục SELF-CHECK của Gemini: soát lại bằng `handoff.py --draft` và đọc bằng mắt.

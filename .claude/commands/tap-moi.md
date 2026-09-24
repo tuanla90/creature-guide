@@ -24,8 +24,12 @@ Slug theo mẫu `<vùng>-<số>-<loài>` (vd `kanto-004-charmander`).
    bảng nguồn, so sánh lõi/tuỳ chọn, chỗ dừng hình, beat gợi ý, `who`/`loc`). Rồi
    `--brief script`, và **dừng**: chờ “xong kịch bản”.
 3. **Bước 4 · chuẩn hoá** (sau “xong kịch bản”). `--draft`, rồi đọc hết theo skill `episode-review`.
-   Ghi `content.py` và `drafts/4-review.md`. Chạy `check-episode.py`. **Dừng** chờ “duyệt”.
-4. **Sau “duyệt”**: ghi `Đã duyệt: <ngày>` vào `4-review.md`, soạn `bible/shots/<ep>.json`, chạy
+   Ghi `content.py` (`BEATS` VI + `BEATS_EN`) và `drafts/4-review.md`. Chạy `check-episode.py`.
+   Soạn `drafts/4-scene-plan.json` (cảnh dự kiến từng beat + ảnh mẫu), chạy
+   `tools/review-page.py <slug>`, đăng `out/<slug>/review.html` thành Artifact có `capabilities: {db: {}}`,
+   đưa link. **Dừng** chờ người duyệt bấm Duyệt / Cần sửa trên trang.
+4. **Sau “duyệt”** (đọc collection `review`; beat cần sửa thì sửa và đăng lại cùng link): ghi
+   `Đã duyệt: <ngày>` vào `4-review.md`, soạn `bible/shots/<ep>.json` từ cảnh dự kiến, chạy
    `node tools/build-prompts.mjs <ep>`, báo số shot, số ảnh mẫu phải sinh trước và những gì còn thiếu.
 
 **Không sinh ảnh, không render, không đăng.** Mỗi loạt tốn credit phải hỏi trước.

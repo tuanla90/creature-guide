@@ -25,7 +25,7 @@ gì: ảnh bị thay được đổi tên thành `<tên>.prev1.jpg`, còn ZIP đ
 |---|---|---|---|---|
 | `xong ý tưởng` | dán `drafts/1-ideas-brief.md` vào Gemini | `videos/<slug>/drafts/1-ideas-gemini.md` (dán thẳng, không qua inbox) | — | chấm sáu ý, chọn một kèm lý do và một ý dự phòng, dựng `2-skeleton.md`, ghép `3-script-brief.md` |
 | `xong kịch bản` (hoặc `xong gemini`) | dán `drafts/3-script-brief.md` vào Gemini | `drafts/3-script-gemini.md` (vòng sau `-2`, `-3`) | — | `--draft` → chuẩn hoá vào `content.py` → ghi `4-review.md` → báo chỗ bạn phải chốt |
-| `duyệt` | đọc `4-review.md` và bản dựng câm | — | — | ghi `Đã duyệt: <ngày>` vào `4-review.md`, rồi soạn shot |
+| `duyệt` | bấm Duyệt / Cần sửa từng beat trên **trang duyệt** (Artifact) | — (lưu ngay trên trang) | — | đọc collection `review`; beat cần sửa thì sửa rồi đăng lại cùng link; đủ Duyệt thì ghi `Đã duyệt: <ngày>` vào `4-review.md`, soạn shot từ `4-scene-plan.json` |
 | `xong refs` | tải ảnh tham chiếu theo danh sách tool in ra | `<ref-id>.png` (vd `ref-bulbasaur-shiny.png`) | `bible/refs/<loài>/<file>`, đánh dấu “đã tải” trong `refs.json` | gắn vào ảnh mẫu, sinh lại `prompts/` |
 | `xong ảnh mẫu` | chạy loạt ảnh mẫu trong Batch Studio, tải ZIP | ZIP **tên gì cũng được** | `public/img/<ep>/<shot-id>.jpg` | gỡ watermark, mở cho bạn xem, rồi mới ra loạt cảnh |
 | `xong ảnh` | chạy loạt cảnh, tải ZIP | như trên | như trên | gỡ watermark, đo toạ độ callout, dựng `scenes.json` |
@@ -51,7 +51,9 @@ videos/<slug>/drafts/
   3-script-brief.md    bản dán cho Gemini: dựng lại khung + viết lời (tool ghép)
   3-script-gemini.md   Gemini trả (vòng sau: -2, -3)                → “xong kịch bản”
   4-review.md          Claude chuẩn hoá: đã sửa gì, vì sao, đề xuất nào nhận / bỏ
-                       + content.py                                 → bạn nói “duyệt”
+                       + content.py (BEATS = VI, BEATS_EN = EN)
+  4-scene-plan.json    Claude: cảnh dự kiến từng beat + ảnh mẫu phải sinh trước
+out/<slug>/review.html trang duyệt (tools/review-page.py) → Claude đăng Artifact → bạn bấm Duyệt / Cần sửa
 ```
 
 Bản dán **không viết tay**: `tools/handoff.py <slug> --brief ideas "<loài>"` hoặc `--brief script`
@@ -66,6 +68,12 @@ Quyền của Gemini ở bước 3: **bố cục thả, sự kiện khoá** — 
 riêng cũ, đặc điểm cá thể trung tâm gọi đúng một lần và sau cảnh cận, `who`/`loc` nằm trong khung,
 hạn mức dừng hình và ảnh quê nhà, tổng thời lượng, hai track lệch nhau, bố cục đổi so với khung.
 Nhãn bằng chứng có đúng không, số có khớp TIMELINE không, câu có hay không thì Claude đọc tiếp.
+
+**Trang duyệt.** Bước 5 không đọc file mà đọc một trang: mỗi beat một khối — bảng cảnh dự kiến
+(lúc lời đọc tới chữ nào · trên hình có gì · ảnh có sẵn / sinh lại / sinh mới / tải về · chuyển động)
+và bảng lời EN cạnh VI, dòng "shiny" tô màu. Dưới mỗi beat là **Duyệt / Cần sửa** và ô ghi chú, lưu
+chung ngay trên trang — Claude đọc lại được (collection `review`, doc `b00`…`b15`, `bshort-outro`),
+bạn không phải chép ghi chú sang chat. Sửa xong Claude đăng lại **cùng link**, ghi chú cũ vẫn còn.
 
 Tập 001 bỏ qua bước 1 (ý đã chốt trước khi có luồng này), đi thẳng từ `2-skeleton.md`. Bản Gemini lưu
 theo tên cũ `v4-gemini.md` vẫn được nhận.

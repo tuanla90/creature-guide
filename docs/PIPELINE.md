@@ -107,9 +107,17 @@ Vòng sau: `--brief script --round 2` → `3-script-gemini-2.md`.
    vào `content.py` (`ORDER`, `BEATS`, `short-outro`, `PRON`, `NGUON`), và ghi `drafts/4-review.md`:
    **đã sửa gì của Gemini và vì sao**, đề xuất nào trong `PROPOSED` / `CHANGES` được nhận hay bị bỏ.
    Rồi `check-episode.py`.
-3. **Người duyệt** — đọc `4-review.md` và bản dựng câm, dùng
+3. **Claude soạn cảnh dự kiến** — `drafts/4-scene-plan.json`: mỗi beat mấy cảnh, lúc lời đọc tới
+   chữ nào, trên hình có gì, ai trong khung (K-01 có mặt không), cỡ cảnh / góc máy, ảnh lấy từ đâu
+   (**có sẵn · sinh lại · sinh mới · tải về**), chuyển động tầng nào, chỗ nào dừng hình. Kèm danh sách
+   ảnh mẫu phải sinh trước. Đây là bản nháp của shot bible — duyệt nó rẻ hơn duyệt ảnh.
+4. **Người duyệt trên trang** — `PYTHONUTF8=1 python tools/review-page.py <slug>` ghép cảnh dự kiến
+   + lời EN cạnh lời VI thành `out/<slug>/review.html`; Claude đăng thành Artifact (capability `db`).
+   Mỗi beat có nút **Duyệt / Cần sửa** và ô ghi chú; Claude đọc lại bằng collection `review`, không
+   phải chép qua chat. Soát theo
    [episode-checklist.md](../.claude/skills/creature-field-guide-scriptwriter/references/episode-checklist.md).
-   Nói "duyệt" thì Claude ghi `Đã duyệt: <ngày>` vào `4-review.md`.
+   Mọi beat "Duyệt" thì Claude ghi `Đã duyệt: <ngày>` vào `4-review.md`; beat "Cần sửa" thì Claude
+   sửa, đăng lại trang (cùng link), bạn duyệt lại riêng beat ấy.
 
 > **Cổng:** duyệt **trước khi soạn shot và sinh ảnh**. Script quyết định ảnh; sửa script sau khi đã
 > có ảnh là hỏng cả loạt ảnh đã trả credit.
@@ -132,7 +140,13 @@ hai bên, đừng dịch lại — dịch lại là xoá sạch phần đã ch�
 
 Skill: **`creature-field-guide-production`** (phần "Soạn shot").
 
-`bible/shots/<ep>.json` → `node tools/build-prompts.mjs <ep>` → bốn file trong `prompts/`.
+Đầu vào là `drafts/4-scene-plan.json` **đã duyệt** — mỗi cảnh "sinh lại / sinh mới" thành một shot,
+"có sẵn" giữ nguyên id (đổi ảnh là phải đo lại toạ độ callout), "tải về" thành một dòng chờ trong
+`earth.json`. `bible/shots/<ep>.json` → `node tools/build-prompts.mjs <ep>` → bốn file trong `prompts/`.
+
+Cảnh **lẫn đối tượng** (đàn thường + đúng một con được chọn) khai cả hai: `"creatures": ["bulbasaur",
+"bulbasaur:K-01"]` — builder tả loài một lần với màu thường rồi thêm "đúng một con khác: …". Chỉ khai
+`bulbasaur:K-01` cho cảnh cả đàn thì cả đàn sẽ mang màu Shiny (`check-episode.py` bắt).
 
 **Sinh ảnh mẫu TRƯỚC, theo đúng thứ tự:** địa điểm trống (`kind: location`) → con thường của loài →
 con được chọn. Mọi cảnh khác lấy chúng làm `[ref]`. Chuỗi đầy đủ: [SCENE-TYPES.md](SCENE-TYPES.md) mục A3.
@@ -155,6 +169,17 @@ Hồ sơ hình dáng có **hai đường ngược nhau**:
 
 Google Flow, project "Creature". Một hai ảnh lẻ thì gõ thẳng vào ô prompt của project; cả loạt thì
 mở Tools → Batch Image Studio Pro, dán `prompts/<ep>.flow.txt`.
+
+Thứ tự, và **hỏi trước mỗi loạt tốn credit**:
+1. **Ảnh mẫu** (địa điểm → con thường → con được chọn), kèm ảnh tham chiếu đã tải (`xong refs`).
+   Xem bằng mắt trước khi đi tiếp: ảnh mẫu sai màu thì mọi cảnh ăn theo đều sai.
+2. **Thử một cảnh lẫn đối tượng** trước cả loạt. Flow không giữ được "đúng một con khác màu" thì
+   đường lùi là ghép: sinh cảnh đàn thường, rồi đặt K-01 vào bằng ảnh mẫu.
+3. **Cả loạt cảnh.**
+4. **Clip**: Veo trong Flow dựng từ chính ảnh đã chốt (15 token/clip — trong hạn mức 25k/tháng coi
+   như không giới hạn); Seedance chỉ cho cảnh hành động. Nguồn của mỗi cú **dừng hình** phải là clip.
+5. **Loài Trái Đất** (tối đa 2 mỗi tập) **không sinh** — tải từ nguồn không đòi ghi tên tác giả, ghi
+   một dòng vào `earth.json`, nói `xong earth` ([SCENE-TYPES.md](SCENE-TYPES.md) mục B2).
 
 Tải ZIP về (tên gì cũng được, để trong Downloads) rồi nói **"xong ảnh"** → `tools/handoff.py <slug> --take`
 nạp vào đúng chỗ → `python tools/unwatermark.py <ep>`. Luật đặt tên mọi file bàn giao: [HANDOFF.md](HANDOFF.md).
@@ -179,6 +204,11 @@ Bảng tra đầy đủ các loại cảnh và tuỳ chọn: [SCENE-TYPES.md](SC
 
 `scenes.json`: `world` cho cảnh tràn khung, `specimen` cho cảnh soi từng điểm, `clip` cho video.
 Chữ lower-third: `text` ≤ 4.2, `caption` ≤ 2.7.
+
+**Dừng hình để phân tích** — `specimen` với `video` thay cho `src`: clip chạy tới đúng chữ neo của
+callout đầu tiên rồi đứng hình, tối nền, soi. **Ảnh quê nhà** — `callout.media`: ảnh hoặc video loài
+Trái Đất kẹp trong thẻ như tấm ảnh in. Tối đa 3 cú dừng, 2 ảnh quê nhà mỗi tập
+([SCENE-TYPES.md](SCENE-TYPES.md) mục B, B2).
 
 **Chuyển động chia ba tầng — chọn tầng rẻ nhất còn dùng được:**
 
@@ -332,3 +362,13 @@ Hai cái mới, sinh ra từ việc đổi sang EN-trước và một-kênh-mult
 
 11. Sửa bản EN sau khi đã tinh chỉnh tay bản VI, rồi dịch lại → mất sạch phần đã chỉnh.
 12. Bản VI dịch dài hơn bản EN ở một beat → hai track giọng lệch nhau trên cùng một dòng thời gian.
+
+Bốn cái mới, từ lần đầu chạy luồng Gemini → Claude ở tập 001 (bộ soát `handoff.py --draft` đã học cả bốn):
+
+13. **Mục tự soát của Gemini nói sai.** Nó ghi "tối đa một so sánh mỗi beat" ngay trong bản có hai
+    beat mỗi beat hai so sánh. Không tin SELF-CHECK — soát lại bằng máy và bằng mắt.
+14. **Số bịa trốn trong chỗ không phải lời** — ghi chú trang sổ "2.1 m/s", chữ "gấp đôi" cho một
+    nết canon là ×1,5. Soát cả SHOTS và notes, không chỉ VO.
+15. **Mốc thời gian vênh** — ngày 22 bị tấn công nhưng kho dự trữ "tích cả tháng". Bắt Gemini viết
+    TIMELINE, rồi đọc mọi con số trong lời đối chiếu với nó.
+16. **Tên cũ sống lại** trong TIMELINE khi lời đã sạch — dấu hiệu Gemini vẫn nghĩ bằng tên cũ.

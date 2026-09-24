@@ -30,6 +30,13 @@ Ghi lại để sáu tháng sau không ai phải hỏi lại "vì sao hồi đó
 | Sao lưu | Google Drive, **chép một chiều**; git giữ phần chữ | Git không chứa nổi 7–14GB ảnh |
 | Đăng | Đăng tay, máy soạn sẵn gói đăng | Tường không phải code mà là xác minh app Google |
 | Sửa sau đăng | Ghim comment đính chính | Nội dung hư cấu, không cần gỡ video |
+| Luồng kịch bản | **Gemini liệt kê ý → Claude chọn, dựng khung → Gemini dựng lại và viết lời → Claude chuẩn hoá → người duyệt trên trang** | Gemini nghĩ rộng, Claude giữ luật. Lần chạy đầu Gemini phạm bốn luật mà tự khai là không — bước chuẩn hoá là bắt buộc |
+| Quyền của Gemini | Bố cục thả, **sự kiện khoá** (canon chỉ từ bảng nguồn của khung) | Gemini giỏi bố cục, hay bịa canon |
+| Gọi con vật | **Không đặt tên riêng**: đặc điểm canon + mã (`Shiny Bulbasaur · K-01`); "shiny" nói một lần, sau khi đã thấy | Tên tự đặt ping-pong bốn vòng ở tập 001 |
+| Loài Trái Đất | Tối đa **3 cú dừng hình, 2 ảnh quê nhà** mỗi tập, còn lại chỉ nói; **không sinh bằng AI**, lấy từ nguồn không đòi ghi tên tác giả | Sai về loài thật bị bắt ngay; cắt sang ảnh thật tràn khung làm vỡ nhập vai |
+| Bàn giao | **Tên file mang id**, bạn chỉ nói "xong <việc>" | Mỗi câu hỏi "file này là gì" là một vòng qua lại |
+| Duyệt | Trên một **trang** có Duyệt / Cần sửa từng beat, Claude đọc lại được | Nút thắt là duyệt — bớt chép ghi chú qua chat |
+| Clip | Veo trong Flow **15 token/clip** — coi như không giới hạn; Seedance chỉ cho hành động | Đã đo |
 
 ### Ba thứ chưa chốt
 
@@ -105,10 +112,10 @@ chưa có gì" của bảng cũ biến mất, vì EN không còn là phái sinh.
 | B6 | **Claude dựng khung → Gemini dựng lại và viết lời EN + VI nháp** | `drafts/2-skeleton.md` → `3-script-gemini.md` | `handoff.py --brief script` · bố cục thả, sự kiện khoá | 🟢 | tập |
 | B7 | Soát máy + Claude chuẩn hoá: logic, nhãn, nguồn, luật | `content.py` + `drafts/4-review.md` | `handoff.py --draft` · `check-episode.py` | 🟢 | tập |
 | B8 | Soát văn: giọng, sức ép kể chuyện | ghi chú sửa | Gemini + `stop-slop` đã cắt 3 luật | 🟢 | tập |
-| B9 | **Người duyệt kịch bản** | quyết định đi tiếp | mắt | ✋ | tập |
+| B9 | **Người duyệt kịch bản + cảnh dự kiến** trên trang | Duyệt / Cần sửa từng beat | `drafts/4-scene-plan.json` → `tools/review-page.py` → Artifact (`db`) | ✋ | tập |
 | B10 | Bản VI **theo hạn mức thời lượng từng beat** | bản VI | Gemini viết nháp cùng nhịp, Claude soát lệch | 🟢 | tập |
 | B11 | Người tinh chỉnh VI → **đóng băng bản VI** | bản VI chốt | mắt | ✋ | tập |
-| B12 | Bảng shot | `bible/shots/<ep>.json` → `prompts/` | `build-prompts.mjs` | 🟢 | tập |
+| B12 | Bảng shot, **từ cảnh dự kiến đã duyệt** | `bible/shots/<ep>.json` → `prompts/` | `build-prompts.mjs` | 🟢 | tập |
 
 > **Cổng B9:** không câu nào mà bạn không chỉ được ra nó là 📖 danh lục, 👁 quan sát hay 🔬 giả thuyết.
 > Soát trước khi sinh ảnh — script quyết định ảnh, sửa script sau khi có ảnh là đắt gấp mười.
@@ -148,6 +155,8 @@ dịch lại là xoá sạch phần bạn đã chỉnh — phải sửa tay cả
 | C7 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | `sfx.json` + `tools/build-sfx.py` — máy dựng bản tổng hợp ngay, người thay dần lớp giọng bằng file thật ([SOUND.md](SOUND.md)) · nạp bằng `/nap-am` | 🟡 | tập |
 | C8 | Giọng EN | mp3 theo beat | **chưa chốt nhà cung cấp** | 🔴 | tập |
 | C9 | Giọng VI, khít beat của bản EN | mp3 theo beat | VBee Pro | 🟡 | tập |
+| C10 | Ảnh / video loài Trái Đất (≤ 2 mỗi tập) | `public/{img,video}/<ep>/earth-*` + `videos/<slug>/earth.json` | Pexels, Pixabay, NOAA/USFWS/NPS, Biodiversity Heritage Library | ✋ | tập |
+| C11 | Nạp mọi file bàn giao vào đúng chỗ | ảnh, clip, giọng, tham chiếu, loài Trái Đất | `tools/handoff.py --take` (`/xong`) · âm thanh: `tools/intake.py` (`/nap-am`) | 🟢 | tập |
 
 **C3 · Luật phân tầng chuyển động.** Trước giờ chưa ai viết ra:
 
@@ -157,7 +166,8 @@ dịch lại là xoá sạch phần bạn đã chỉnh — phải sửa tay cả
 | Sinh hoạt thường | Veo / Nano Banana | trong 25k token/tháng |
 | Hành động | Topview (Seedance, MiniMax) | token riêng, dè xẻn |
 
-Cần đo **một lần**: một clip Veo tốn bao nhiêu trong 25k đó. Biết số ấy là tính được trần tập/tháng.
+Đã đo: một clip Veo trong Flow tốn **15 token** — 25k/tháng là hơn một nghìn clip, coi như không giới
+hạn. Trần thật là thời gian duyệt, không phải token.
 
 **C4 · Ranh giới giải phẫu.** Được: dạng X-quang mô phỏng phục vụ nghiên cứu — nền xanh, xương, mạch
 năng lượng chạy trong thân; vết thương nhỏ trên da. Không được: máu me, nội tạng, mổ xẻ. Luật này đã
@@ -178,7 +188,7 @@ trong `experiments/` làm ghi chép, không làm nữa.
 
 | # | Bước | Ra cái gì | Công nghệ | Auto | Nhịp |
 |---|---|---|---|---|---|
-| D1 | Dựng hình từng beat | `scenes.json` | skill production | 🟢 | tập |
+| D1 | Dựng hình từng beat — kể cả dừng hình và ảnh quê nhà | `scenes.json` | skill production · engine `specimen` + `video` / `callout.media` | 🟢 | tập |
 | D2 | Timing ước lượng để xem trước | `timings.json` | `npm run scaffold` | 🟢 | tập |
 | D3 | Timing thật theo giọng | `timings.json` | `npm run align` (whisper) | 🟢 | tập |
 | D4 | Phụ đề EN + VI | `out/<slug>/*.srt` | `export-subs.py` | 🟢 | tập |
