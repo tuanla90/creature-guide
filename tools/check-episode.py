@@ -540,8 +540,13 @@ def main(slug: str) -> int:
 
     # Cảnh có ĐÀN mà chỉ khai cá thể được chọn -> mọi con trong khung sẽ mang đặc điểm của nó (cả đàn
     # Shiny). Phải khai cả loài thường lẫn cá thể: ["bulbasaur", "bulbasaur:K-01"].
-    GROUP = re.compile(r"\b(herd|group|several|others|dozen|seven|six|five|four|three|two|ring of|among)\b", re.I)
+    # từ chỉ đàn; số đếm chỉ tính khi đi kèm từ chỉ con vật ("two strokes" không phải hai con)
+    NUM = r"(two|three|four|five|six|seven|eight|nine|ten|a dozen|several)"
+    GROUP = re.compile(r"\b(herd|group|others|dozen|ring of|among)\b|\b" + NUM +
+                       r"\s+(\w+\s+){0,2}(individuals|animals|of them|bulbasaur|ivysaur|venusaur|creatures)\b", re.I)
     for s in all_shots:
+        if s.get("kind") == "plate":
+            continue                            # ảnh mẫu luôn chỉ một con
         crs = [canon_ref(r) for r in s.get("creatures", [])]
         for r in crs:
             sp, _, ind = r.partition(":")
