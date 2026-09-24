@@ -286,7 +286,15 @@ def take(slug, dry):
             unknown.append(p)
         elif kind == "zip":
             names = zip_ids(p, want)
-            print(f"   {p.name}: {len(names)} ảnh")
+            # ZIP cũ hơn ảnh đang có = bản xuất gốc của ảnh đã nạp (và đã gỡ watermark): nạp lại là
+            # đè ảnh sạch bằng ảnh còn watermark. Bỏ qua, để nguyên ZIP cho người dùng tự xoá.
+            stale = [n for n in names if want[re.sub(r"_\d+$", "", Path(n).stem)].exists()
+                     and want[re.sub(r"_\d+$", "", Path(n).stem)].stat().st_mtime > p.stat().st_mtime]
+            names = [n for n in names if n not in stale]
+            if stale and not names:
+                print(f"   {p.name}: ZIP cũ — cả {len(stale)} ảnh đã có bản mới hơn, bỏ qua (xoá hay giữ tuỳ bạn)")
+                continue
+            print(f"   {p.name}: {len(names)} ảnh" + (f" · bỏ {len(stale)} ảnh đã có bản mới hơn" if stale else ""))
             if not dry:
                 with zipfile.ZipFile(p) as z:
                     for n in names:
