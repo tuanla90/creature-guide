@@ -284,6 +284,129 @@ Format YouTuber: "Tôi nuôi / tôi mô phỏng Pokémon trong đời thực". K
 
 ---
 
+## Phân tích kịch bản · So sánh 4 video Bulbasaur/Venusaur
+
+> Đọc transcript thực tế từ 4 video documentary về Bulbasaur/Venusaur. Mục tiêu: hiểu họ đang làm gì, đang bỏ qua gì.
+
+---
+
+### Video 1 · MonBiology — "Bulbasaur: Born of the Forest" (4:07 · 281K views)
+
+**Cấu trúc 4 act:**
+| Thời điểm | Nội dung |
+|---|---|
+| 0:00–0:46 | Sinh ra từ tổ lá, bulb là dấu hiệu nhận dạng, lần đầu tiếp xúc ánh sáng mặt trời |
+| 0:46–2:04 | Khám phá rừng, ngửi mùi thực vật, Venusaur già canh gác từ xa — không can thiệp |
+| 2:04–2:56 | Nguy hiểm: Pidgeotto + Fearow, ẩn nấp quan trọng hơn chiến đấu; Venusaur toả mùi cảnh báo |
+| 2:56–4:04 | Tiến hoá Ivysaur → Venusaur qua "ancient ritual" → trở thành guardian của rừng |
+
+**Phong cách lời dẫn:**
+```
+"from a simple nest of leaves, roots and moss a bulbasaur is born,
+tiny and still trembling, it already carries on its back the Mark of its kind"
+```
+→ Thơ, ngắn, hiện tại, quan sát thụ động. Không có nhân vật "tôi". Không có câu hỏi treo.
+
+**Điểm mạnh:** Nhịp nhanh, atmospheric, thuần khiết — phù hợp thuật toán 4 phút.  
+**Điểm yếu không thấy trong video này:**
+- Không có cá thể trung tâm riêng biệt — "a bulbasaur" chung chung
+- Không có nguồn canon nào được trích dẫn
+- Không có so sánh loài Trái Đất
+- Không có "cái giá" của khả năng (photosynthesis → làm chậm lại? tiêu hao gì không?)
+- Venusaur già = female guardian: không giải thích tại sao
+
+---
+
+### Video 2 · POKE GEO CHANNEL — "Kanto: The Venusaur Realm" (11:15 · 6.7K views)
+
+**Cấu trúc:** Hệ sinh thái cả vùng Kanto trong một ngày (13 chapters)
+
+| Chapter | Nội dung |
+|---|---|
+| 1–2 | Giới thiệu rừng Kanto, buổi sáng, Bulbasaur như "biological miracle" |
+| 3–6 | Ecosystem: Caterpie = thợ làm vườn, Butterfree = pollinator, Ivysaur = sentinel |
+| 7 | Venusaur = "Emerald Heart" — toả phấn hoa mỗi ngày, nuôi cả rừng |
+| 8–9 | Scyther bảo vệ, Chansey chữa bệnh, Arcanine tuần tra đồng cỏ |
+| 10–11 | Aerodactyl + Ninetales = legendary sightings; rừng lúc chạng vạng |
+| 12–13 | Ca đêm: Haunter bảo vệ giấc mơ, Clefairy múa, Lapras ru ngủ, Dragonite canh gác |
+
+**Phong cách lời dẫn:**
+```
+"The forest of Kanto, an ancient kingdom where life is measured
+not in years but in cycles of bloom."
+```
+→ Thiên về thơ ca, nhẹ nhàng. Dùng CGI/Unreal Engine 5.
+
+**Điểm đặc biệt:** Format "ecosystem" không ai khác làm — không theo một cá thể mà theo một địa điểm.  
+**Điểm yếu:** Rải rác quá nhiều loài → không ai được nói sâu; thông tin sinh học rất generic.
+
+---
+
+### Video 3 · Pokémon Discovery IRL — "Venusaur: Friendly Enemy" (10:38 · 36K views)
+
+**Cấu trúc:** Drama/conflict narrative — KHÔNG phải wildlife doc thuần
+
+| Chapter | Nội dung |
+|---|---|
+| 1 | Intro: "Two guardians, one forest, a threat neither can face alone" |
+| 2 | Bulbasaur + **Snivy** (hai vùng khác nhau!) thấy nhau — "instinct vs pride" |
+| 3 | Scorbunny + Piplup tấn công → Bulbasaur + Snivy tạm thời liên minh |
+| 4 | **Evolution via stress**: "Repeated stress pushes Bulbasaur's body beyond its stable limits" → Ivysaur |
+| 5+ | Tiếp tục tăng trưởng, bão thử thách... |
+
+**Phong cách lời dẫn:**
+```
+"Score Bunny initiates contact using fire to test resistance.
+Piplup introduces water, shifting conditions for all involved.
+Loss of footing creates immediate vulnerability."
+```
+→ Ngôn ngữ kỹ thuật, tả combat như báo cáo chiến đấu. **Hoàn toàn khác** với wildlife doc.
+
+**Điểm mạnh:** View cao (36K) chứng tỏ góc "drama/conflict" hút người xem hơn "ecology thuần".  
+**Điểm yếu:** Snivy (Unova) và Bulbasaur (Kanto) chung rừng — vi phạm canon; không giải thích.
+
+---
+
+### Video 4 · Monterra — "The Secret Life of Bulbasaur" (5:56 · 76 views)
+
+**Cấu trúc:** Lifecycle cá thể, kịch tính cao
+
+| Chapter | Nội dung |
+|---|---|
+| Intro | "fragile, vulnerable, and completely alone... its journey to survival begins now" |
+| 1 | Trứng nở, bulb là "anchor of its life", uống sương mai + ánh sáng |
+| 2 | Học đường rừng, bị kẻ thù tấn công, phản công bằng vine whip |
+| 3 | Tiến hoá Ivysaur dưới trăng, bioluminescent, "shimmering with vibrant light" |
+| 4 | Trở thành Venusaur — "sovereign guardian of the forest", toả phấn cho ecosystem |
+
+**Phong cách lời dẫn:**
+```
+"Fragile, vulnerable, and completely alone, its journey to survival begins now.
+To endure the harsh laws of nature, this tiny creature must undergo an incredible metamorphosis."
+```
+→ Kịch tính nhất trong 4 video. Giọng Attenborough-style nhưng over-the-top ("brutal wild predators", "ultimate destiny").
+
+**Điểm mạnh:** Structure tốt (5 acts rõ ràng), evolution scene đẹp.  
+**Điểm yếu:** Kênh quá nhỏ (76 views), ngôn ngữ quá sáo rỗng ("harsh laws of nature", "ultimate destiny").
+
+---
+
+## Tổng hợp · Điểm chung trong kịch bản của cả 4 video
+
+| Pattern | MonBiology | POKE GEO | Discovery IRL | Monterra |
+|---|---|---|---|---|
+| Cá thể trung tâm riêng | ✗ | ✗ | ✗ | ✗ |
+| Nguồn canon dẫn chứng | ✗ | ✗ | ✗ | ✗ |
+| So sánh loài Trái Đất | ✗ | ✗ | ✗ | ✗ |
+| "Cái giá" của khả năng | ✗ | ✗ | ✗ | ✗ |
+| Câu hỏi treo cả tập | ✗ | ✗ | Có | ✗ |
+| Evolution có giải thích sinh học | Ritual | Generic | Stress-induced | Bioluminescent |
+| Nhân vật người dẫn | ✗ | ✗ | ✗ | ✗ |
+
+**Kết luận từ phân tích script:** Tất cả 4 video đều kể "vòng đời của loài" theo dạng quan sát thụ động. Không ai làm điều mà Creature Field Guide làm: **một cá thể cụ thể có đặc điểm nhận dạng, nguồn canon cho từng câu, cái giá của mỗi khả năng, và câu hỏi sinh tồn treo từ đầu đến cuối**.
+
+---
+
 ## Kênh tìm thêm từ suggested / related
 
 | Kênh | Tìm từ đâu | Subs | Ghi chú |
