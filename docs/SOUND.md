@@ -13,9 +13,27 @@ nhớ nổi sau sáu tháng.
 3. **Giải phẫu quyết định âm sắc.** Con vật lưỡng cư bốn chân, cổ ngắn, có túi khí → tiếng trầm, ngắn,
    có cộng hưởng; không rít, không gầm kiểu thú ăn thịt có răng nanh. Cái củ là **mô thực vật**, nên
    tiếng của nó là tiếng gỗ ẩm vặn và lá cọ, không phải tiếng thịt.
-4. **Nguồn chỉ lấy hai nơi**: Pixabay (Content License — thương mại tự do, không cần ghi nguồn) và
-   Freesound **lọc CC0**. Không đụng BBC Sound Effects (cấm thương mại), xeno-canto (đa số NC),
-   Macaulay (phải mua license).
+4. **Nguồn chỉ lấy ba nơi** (đã đọc giấy phép tận nơi, không nghe đồn):
+
+   | Nguồn | Giấy phép | Ghi nguồn | Hợp với |
+   |---|---|---|---|
+   | [Freesound](https://freesound.org) **lọc CC0** | CC0 — từ bỏ mọi quyền | không cần | tiếng loài cụ thể: ếch, cóc, vạc, quạ |
+   | [Pixabay](https://pixabay.com/sound-effects/) | Pixabay Content License | không cần | tiếng thường gặp, lớp nền phổ thông |
+   | [Sonniss GDC Bundle](https://gdc.sonniss.com/) | royalty-free, thương mại, có kiếm tiền | không cần | lớp nền và foley chất lượng cao, mỗi năm ~20 GB |
+
+   Lọc CC0 trên Freesound: gõ từ khoá rồi bấm **Creative Commons 0** ở cột *licenses* bên phải.
+
+   **Hai điều cấm của Sonniss, đọc kỹ vì nó dính tới cách kênh này làm việc:**
+   - *Không phát tán lại chính file tiếng.* `assets/` nằm ngoài git là đúng — đẩy thư mục ấy lên
+     một repo công khai là vi phạm.
+   - *Không dùng để huấn luyện AI.* Đưa vào video thì được, đưa vào một mô hình audio thì không.
+
+   Không đụng: BBC Sound Effects (cấm thương mại), Macaulay (phải mua license).
+
+   **xeno-canto** là kho tiếng chim lớn nhất (hơn một triệu bản thu), nhưng mỗi bản một giấy phép
+   khác nhau, phần nhiều là NC. Có bản CC0 và CC-BY dùng được, chỉ là phải xem từng bản một. Nếu
+   kênh chấp nhận **CC-BY** — dùng thương mại được, đổi lại phải ghi tên người thu trong phần mô tả
+   — thì cửa ấy mở ra rất rộng cho tiếng vạc và tiếng quạ. Chưa quyết; chủ dự án chốt.
 5. **Tránh âm có chữ ký.** Tiếng hét chim ưng đuôi đỏ, tiếng voi rống, tiếng sư tử — tai người nhận
    ra ngay "à, con này". Nếu buộc phải dùng, chỉ lấy làm **lớp chìm** dưới 25% âm lượng.
 
