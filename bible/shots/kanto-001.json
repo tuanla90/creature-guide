@@ -3,6 +3,110 @@
   "outDir": "public/img/kanto-001",
   "shots": [
     {
+      "id": "v2-s01-macro-breath",
+      "beat": "00",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "extreme macro cinematic shot of a living green plant bulb attached to the leathery reptilian skin of a Bulbasaur, visible breathing movement, translucent sap beads on leaf veins, dappled forest sunlight in Viridian Forest",
+      "framing": "extreme close-up macro, shallow depth of field, naturalistic documentary style"
+    },
+    {
+      "id": "v2-s02-saur-crooked",
+      "beat": "00,02",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "a young Bulbasaur named Saur lying in a bright shaft of sunlight on the forest floor of Viridian Forest, viewed from behind and slightly above, the green bulb on its back visibly tilted to the right side toward the sun while its body lies straight, heliotropism posture",
+      "framing": "close three-quarter rear shot, subject centered, natural morning sunlight"
+    },
+    {
+      "id": "v2-s03-anatomy-conduit",
+      "beat": "03",
+      "kind": "anatomy",
+      "creatures": [],
+      "scene": "biological scientific X-ray diagram of a Bulbasaur on dark teal background, semi-transparent body revealing internal skeletal structure and luminous green bio-vascular conduits connecting the back bulb directly to the creature's heart and digestive system, no blood, clean scientific diagram",
+      "framing": "profile side view diagram, clean medical visualization"
+    },
+    {
+      "id": "v2-s04-mud-absorption",
+      "beat": "04",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "low ground-level macro shot of sturdy blue-green reptilian legs of Bulbasaur sunken into rich wet black marsh mud beside a forest stream in Viridian Forest, moisture and tiny droplets beading along the porous skin texture, gentle water ripples",
+      "framing": "ground-level macro angle, focus on feet and mud texture"
+    },
+    {
+      "id": "v2-s05-vine-embrace",
+      "beat": "07",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur"
+      ],
+      "scene": "two slender flexible green vine tendrils extending from two Bulbasaur meeting in mid-air at dusk, gently curling together like elephant trunks, warm golden backlight shining through the translucent green plant tissue, floating pollen",
+      "framing": "medium close-up focused on the two curling vines, subjects softly blurred in background"
+    },
+    {
+      "id": "v2-s06-fearow-dive",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "fearow",
+        "bulbasaur:K-01"
+      ],
+      "scene": "dynamic high-speed action shot of a fierce Fearow raptor bird with one milky-gray blind eye diving violently from an overcast sky with talons extended, wings blurred from speed, targeting a small camouflaged Bulbasaur pressed flat into the ferns below",
+      "framing": "dramatic dynamic telephoto angle, bird in upper frame diving toward lower corner"
+    },
+    {
+      "id": "v2-s07-powder-burst",
+      "beat": "08",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur:K-01"
+      ],
+      "scene": "slow motion explosion of dense glowing golden-yellow sleep spores erupting from the top aperture of a Bulbasaur's back bulb, sparkling dust cloud swirling through sunbeams, defensive biological reaction",
+      "framing": "backlit medium shot isolating the explosive spore cloud"
+    },
+    {
+      "id": "v2-s08-solarbeam-charge",
+      "beat": "10",
+      "kind": "scene",
+      "creatures": [
+        "ivysaur"
+      ],
+      "allow": [
+        "humans",
+        "trainers"
+      ],
+      "scene": "cinematic shot inside a packed dirt arena at dusk, an Ivysaur bracing its thick legs into the ground, its pink bud glowing intensely with concentrated solar radiation, golden energy threads warping the air, blurred spectators in shadows behind",
+      "framing": "low angle medium shot, dramatic solar glow as primary light source"
+    },
+    {
+      "id": "v2-s09-metamorphosis-gathering",
+      "beat": "13",
+      "kind": "scene",
+      "creatures": [
+        "bulbasaur",
+        "ivysaur"
+      ],
+      "scene": "mystical night gathering inside a hidden rocky hollow in Viridian Forest, a dozen Bulbasaur standing in a silent circle under moonlight, soft bioluminescent emerald light rising from all their bulbs into mist, sacred evolutionary ritual",
+      "framing": "wide elevated shot overlooking the glowing circular gathering"
+    },
+    {
+      "id": "v2-s10-mossback-portrait",
+      "beat": "15",
+      "kind": "scene",
+      "creatures": [
+        "venusaur:female"
+      ],
+      "scene": "profile portrait of a massive ancient female Venusaur named Moss-Back resting near mossy rocks after rain in Viridian Forest, thick woody textured hide covered in living ferns and moss, enormous faded pink flower with a prominent central pistil seed, raindrops",
+      "framing": "intimate medium portrait, soft rainy daylight, rich moss textures"
+    },
+    {
       "id": "s01-kanto-vista",
       "beat": "01",
       "kind": "scene",

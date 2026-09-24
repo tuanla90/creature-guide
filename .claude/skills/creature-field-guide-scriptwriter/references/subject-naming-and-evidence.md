@@ -1,13 +1,15 @@
 # Subject naming and evidence
 
-## Naming hierarchy
-
-1. Species label: “Bulbasaur”.
-2. Field identifier: “K7”, “female 2”, “the juvenile with the pale patch”.
-3. Local name: use only when the fictional culture or research team plausibly gives it one.
-4. Personal nickname: use sparingly; it changes the tone toward an authored character story.
-
-The field identifier is usually the best default for a documentary voice because it creates continuity without falsely implying intimacy.
+## Naming hierarchy & Canon mandate
+ 
+1. **English-Base Priority (Trainer & Manga/Anime Alignment):**
+   - Individual naming and local monikers must be based on English first (e.g. Trainer Red's nickname style in *Pokémon Adventures*: Bulbasaur $\to$ **Saur**, or descriptive epithets: **Scar-Shoulder**, **Ash-Eye**, **Moss-Back**).
+   - Species label: “Bulbasaur” (never translated).
+   - Field identifier: “K-01”, “female 2”, “the juvenile with the pale patch”.
+2. **Strict Canon-Backed Rule (No Unverified Fanon):**
+   - Every location name, creature behavior, and individual moniker **must have an explicit reason** rooted in morphology/behavior AND a **verifiable Canon source** (Game Pokédex, Pokémon Anime episode, or Manga chapter).
+   - Example: Locations must use official Kanto geography (e.g., **Viridian Forest** where wild Bulbasaur naturally spawn in *Let's Go* canon, or **The Mysterious Garden** from Anime Ep 51) rather than fabricated fanon names.
+3. Personal nickname: use sparingly and respectfully, echoing a field biologist's observation rather than a pet name.
 
 ## Evidence labels
 

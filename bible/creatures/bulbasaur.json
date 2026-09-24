@@ -15,13 +15,21 @@
     "male": []
   },
   "individuals": {
-    "K7": {
-      "name": "Búp Lệch",
-      "nameEn": "Crookedbud",
+    "K-01": {
+      "name": "Saur",
+      "nameEn": "Saur",
       "marks": [
         "the bulb on its back grows noticeably tilted, leaning to one side instead of sitting upright"
       ],
-      "note": "cá thể trung tâm của tập kanto-001; cái củ nghẹo là vết của việc vặn theo mặt trời mỗi ngày"
+      "note": "cá thể trung tâm của tập kanto-001 (Saur); củ nghẹo là vết của việc vặn theo mặt trời mỗi ngày (heliotropism)"
+    },
+    "K7": {
+      "name": "Saur",
+      "nameEn": "Saur",
+      "marks": [
+        "the bulb on its back grows noticeably tilted, leaning to one side instead of sitting upright"
+      ],
+      "note": "alias cũ của K-01"
     }
   },
   "canon": [

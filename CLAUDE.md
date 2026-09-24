@@ -21,8 +21,9 @@ nghiệp vụ và chỗ nào còn làm tay.
   (phải kèm một loài có thật ở Trái Đất).
 - **Cảnh tiến hoá không có lột da.** Chỉ sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
 - Mọi khả năng phải nêu **cái giá** của nó.
-- Tên nhân vật là **danh từ chỉ một dấu tích nhìn thấy được** (Búp Lệch, Vai Rách, Mắt Tro, Lưng Rêu),
-  và chỉ được gọi **sau khi** khán giả đã thấy cái dấu ấy. Mã thực địa (K7) là neo giữa bản VI và EN.
+- Tên nhân vật, địa danh base tiếng Anh làm gốc (Saur, Scar-Shoulder, Ash-Eye, Moss-Back; Viridian Forest),
+  chỉ danh từ chỉ một dấu tích nhìn thấy được hoặc phong cách Trainer canon. Mọi tên gọi và địa danh
+  phải có lý do sinh học và DẪN CHỨNG CANON (Game, Anime, Manga). Mã thực địa (K-01) là neo giữa bản VI và EN.
 - Không làm giải phẫu, mổ xẻ. Cảnh ghép đôi dừng ở phô diễn, làm tổ, chăm con.
 
 ## Bố cục
