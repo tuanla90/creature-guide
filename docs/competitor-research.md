@@ -1,7 +1,7 @@
 # Nghiên cứu đối thủ — YouTube · Phim tài liệu sinh vật hư cấu
 
-> Cập nhật lần cuối: 2026-09-24  
-> Phương pháp: duyệt thủ công từng kênh/video + xem suggested để tìm kênh tương tự
+> Cập nhật lần cuối: 2026-09-24 (vòng 2 — thêm suggested)  
+> Phương pháp: duyệt thủ công từng kênh/video + xem suggested từ video 300K-640K views + search trực tiếp
 
 ---
 
@@ -18,6 +18,10 @@
 | EnlargedKai (Pokearth) | @EnlargedKai | **472K** | 18 | EN | 3D animation doc (3-4') |
 | Idris.Creates | @Idris.Creates | 41 | 52 | EN | Doc nhỏ + anime football |
 | Pokevideo Lab | @PokeVideoLab | 31 | — | EN | "Life of a" doc, rất mới |
+| **Jamie Dunbar (Pokemon Planet)** | @JamieDunbar | **71.5K** | 123 | EN | 3D render doc + Blender tuts |
+| Oak's Chronicles | @OaksChronicles | 16.8K | 52 | EN | Doc + tournament animation |
+| Planet Pokewild | @PlanetPokewild | 526 | 6 | EN | Biology-focused doc (7-15') |
+| Pokémon Nature Archives | @PokémonNatureArchives | 777 | 8 | EN | NatGeo short (2-4') |
 
 ---
 
@@ -137,7 +141,77 @@ Format YouTuber: "Tôi nuôi / tôi mô phỏng Pokémon trong đời thực". K
 
 ---
 
-### 5 · Idris.Creates — mới, mixed content
+### 5 · Jamie Dunbar / Pokemon Planet — top video 2.4 triệu views
+
+**Kênh:** `@JamieDunbar` · **71.5K subs** · 123 video · kênh lâu năm, đa dạng nội dung
+
+**Series Pokemon Planet:** đánh số Pokédex — `Pokemon Planet - 0445 Garchomp`, `0778 Mimikyu`...
+
+**Điểm nổi bật:**
+- Video Garchomp đạt **2.4 triệu views** — cao nhất trong toàn bộ cảnh này
+- Dùng **3D render** hoặc ảnh wildlife thật, không dùng AI image style
+- Kênh làm song song: Pokémon doc + hướng dẫn Blender/Creature Kitbash addon
+- Format đánh số Pokédex rất có hệ thống → dễ build catalog đầy đủ
+
+**Nhận xét:**
+- 2.4M views nhưng chỉ 71.5K sub → sub conversion rất thấp (đặc điểm chung của cả niche)
+- Blender tutorials là nội dung phụ nhưng có thể giúp kênh ổn định khi Pokémon content không viral
+- Không chia sẻ cách làm video → không học được production workflow từ đây
+
+---
+
+### 6 · Oak's Chronicles — hybrid doc + cinematic battle
+
+**Kênh:** `@OaksChronicles` · 16.8K subs · 52 video
+
+**Hai loại nội dung:**
+1. Doc kiểu documentary: `Regigigas: The Ancient Titan Beneath the Ice | Real Life Pokémon Nature Documentary` (3:22)
+2. Battle animation: `Pokemon Tournament Animation | Lucario vs Gallade` (3:11) — "Hyper-Realistic Cinematic Battle"
+
+**Video nổi bật:** `The Forgotten Age | Fossil Pokémon 🦴` (10:27)
+
+**Nhận xét:**
+- Kết hợp doc + battle → có thể đang thử nghiệm xem hướng nào hiệu quả hơn
+- 16.8K sub khá ổn so với số video và độ dài kênh
+
+---
+
+### 7 · Planet Pokewild — biology-first, hiệu ứng bất ngờ
+
+**Kênh:** `@PlanetPokewild` · 526 subs · **6 video** · mới (từ Jan 2026)
+
+**Video ví dụ:**
+- *Pokémon In Real Life | Every Legendary Pokémon (Gen 1–9) Explained Biologically* · 12:43 → **135K views**
+- *Pokémon In Real Life | All 151 Kanto Species Explained (Biologically Accurate)* · 15:00
+- *Fossil Pokémon In Real Life | Biological Documentary: All 11 Fossil Pokémon* · 10:14
+
+**Nhận xét:**
+- Format "biological accuracy" — giải thích sinh học đằng sau nhiều Pokémon trong một tập
+- 135K views với chỉ 526 sub = **tỉ lệ view/sub = 256x** → cực kỳ bất thường, chứng tỏ thuật toán đang đẩy mạnh
+- Kênh rất mới, tiềm năng tăng trưởng cao nếu duy trì
+- Không có cá thể trung tâm, không narrative — thiên về "encyclopedia" hơn storytelling
+
+---
+
+### 8 · Pokémon Nature Archives — NatGeo short format
+
+**Kênh:** `@PokémonNatureArchives` · 777 subs · **8 video** · mới (từ Dec 2025)
+
+**Format tiêu đề:** `Real Life Pokémon | NatGeo: [Tên] — [Tagline]` (2-4 phút)
+
+**Video ví dụ:**
+- *NatGeo: Mimikyu — The One Who Hides in the Shadows* · 3:45 → **122K views**
+- *NatGeo: Rayquaza — Guardian of the Ozone Layer* · 3:58
+- *NatGeo: Greninja – The Specter of the Frozen Tunnels* · 2:49
+
+**Nhận xét:**
+- 122K views với 777 sub = **tỉ lệ view/sub = 157x** → cùng hiện tượng với Planet Pokewild
+- Video rất ngắn (2-3 phút), phong cách tối giản
+- **Pattern quan trọng:** cả Planet Pokewild lẫn kênh này đều mới và đang được thuật toán đẩy mạnh → thị trường đang được khai thác, YouTube đang tích cực giới thiệu content này
+
+---
+
+### 9 · Idris.Creates — mới, mixed content
 
 **Kênh:** `@Idris.Creates` · 41 subs · 52 video
 
@@ -218,6 +292,26 @@ Format YouTuber: "Tôi nuôi / tôi mô phỏng Pokémon trong đời thực". K
 | EnlargedKai / Pokearth (@EnlargedKai) | Suggested từ MonBiology video | 472K | 3D animation, 18 video |
 | Pokevideo Lab (@PokeVideoLab) | Video link từ user | 31 | Rất mới |
 | Idris.Creates (@Idris.Creates) | Video link từ user | 41 | Mixed content |
+| Jamie Dunbar / Pokemon Planet (@JamieDunbar) | Suggested từ video Eevee 639K | 71.5K | Top video 2.4M views! |
+| Oak's Chronicles (@OaksChronicles) | Suggested từ video Gengar 499K | 16.8K | Doc + tournament animation |
+| Planet Pokewild (@PlanetPokewild) | Suggested từ video Gengar 499K | 526 | 135K views dù chỉ 526 sub |
+| Pokémon Nature Archives (@PokémonNatureArchives) | Search trực tiếp | 777 | 122K views dù chỉ 777 sub |
+
+---
+
+## Pattern quan trọng phát hiện trong vòng 2
+
+### View/sub ratio bất thường — dấu hiệu thuật toán đang đẩy niche này
+
+| Kênh | Sub | Views (top video) | Tỉ lệ |
+|---|---|---|---|
+| Planet Pokewild | 526 | 135K | 256× |
+| Pokémon Nature Archives | 777 | 122K | 157× |
+| Jamie Dunbar | 71.5K | 2.4M | 34× |
+| MonBiology | 26.9K | 639K | 24× |
+
+→ Các kênh mới ra đời 2025-2026 đang nhận được **push mạnh từ thuật toán** — niche chưa bão hòa.  
+→ Sub conversion thấp là điểm yếu của toàn niche, không phải của riêng ai — người xem click thấy hay nhưng không subscribe. Cần CTA mạnh và series hook để chuyển viewer thành subscriber.
 
 ---
 
