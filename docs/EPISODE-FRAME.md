@@ -12,8 +12,10 @@ và kiến thức được gài vào dọc đường đi của con đó.
 
 ## Luật chung cho cả hai khung
 
-1. **Người kể là một nhà sinh vật học của thế giới chúng ta, đang khảo sát vùng đất ấy.**
+1. **Người kể là Dr. Holth, một nhà sinh vật học của thế giới chúng ta, đang khảo sát vùng đất ấy.**
    Ngôi thứ nhất, có ngày tháng, có địa điểm. Được phép sai, được phép chờ, được phép không biết.
+   Ông đi tìm những sinh vật mà **sự sống và năng lượng không tách rời nhau** — và ông quan sát mà
+   **không can thiệp**. Căn cước đầy đủ: [NARRATOR.md](NARRATOR.md).
    ⛔ **Không bao giờ nhắc tới game.** Mọi thứ phải có mặt như một sự vật trong thế giới đó:
    - Pokédex → **cuốn danh lục** của người bản xứ (nhắc tên Pokédex đúng một lần ở tập đầu).
    - Tên đòn đánh → **cái tên các nhà huấn luyện đặt cho nó trong các trận đấu**.

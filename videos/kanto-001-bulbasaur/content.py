@@ -1,7 +1,7 @@
 # Creature Field Guide — Kanto #001–003 · "Búp Lệch"
 #
-# Người kể: xưng "tôi", KHÔNG bao giờ nói tên mình. Tên "Tuấn La" chỉ nằm ở bìa sổ thực địa và credit.
-# Người kể là nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Rừng Gió Gập ở Kanto.
+# Người kể: Dr. Holth (docs/NARRATOR.md) — xưng "tôi", KHÔNG bao giờ nói tên mình. Tên chỉ ở bìa sổ thực địa và credit.
+# Người kể là nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Viridian Forest ở Kanto.
 # Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem .claude/skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md):
 #   K7 "Búp Lệch" — vết tích: cái củ trên lưng mọc nghẹo một bên (hệ quả của việc luôn vặn theo nắng)
 #                   · vai: KẺ YẾU THẾ VƯƠN LÊN · trả bài ở beat 12 (hướng dương) và beat 13 (thôi là Búp Lệch)

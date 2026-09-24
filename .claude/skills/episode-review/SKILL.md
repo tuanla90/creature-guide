@@ -38,7 +38,12 @@ Rồi đọc tay những thứ linter chưa bắt được:
 
 ### 1.3 Luật kênh
 - [ ] Không nhắc game, không nhắc AI, không nhắc đoàn làm phim. Pokédex → "cuốn danh lục".
-- [ ] Người dẫn xưng "tôi", **không bao giờ nói tên mình**.
+- [ ] Người dẫn là Dr. Holth, xưng "tôi", **không bao giờ nói tên mình**.
+- [ ] ⛔ **Không có chữ "Gilbert" ở bất cứ đâu** — lời, màn hình, thumbnail, gói đăng. Đảo chữ của
+      "Blight Lord". Chỉ `Dr. Holth` hoặc chữ ký `— H.`
+- [ ] Không có "Tuấn La" trong video — chỉ ở mô tả YouTube.
+- [ ] Blightfall chỉ lộ ra cái tên, câu hỏi sự sống × năng lượng, và tính khí không can thiệp.
+      Không Chrona, không Blight Lord, không "Nguyên Tố" viết hoa, không nhắc nhánh khác.
 - [ ] Cảnh tiến hoá **không có lột da** — chỉ sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
 - [ ] Mọi khả năng đều nêu **cái giá** của nó.
 - [ ] Giải phẫu đúng ranh giới: X-quang mô phỏng, xương, mạch năng lượng, vết thương nhỏ — không máu

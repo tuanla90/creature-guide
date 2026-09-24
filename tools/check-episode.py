@@ -192,7 +192,8 @@ def main(slug: str) -> int:
             cols = [c.strip() for c in L.strip("|").split("|")]
             if len(cols) < 3:
                 continue
-            if "credit" in cols[0].lower():   # tên chỉ hiện dưới dạng chữ, không ai đọc lên
+            # người dẫn và tác giả KHÔNG được có tên trong lời đọc — đừng bắt họ phải xuất hiện
+            if any(k in cols[0].lower() for k in ("credit", "người kể", "tác giả")):
                 continue
             # bảng có cả cột EN lẫn cột VI (thứ tự đã đổi khi chốt luật EN-gốc). Lời dẫn của bản
             # nào thì chứa tên của bản ấy, nên chấp nhận khớp ở BẤT KỲ cột tên nào.
@@ -207,7 +208,7 @@ def main(slug: str) -> int:
             # nguồn; một lời khẳng định thay cho nguồn thì máy không phân biệt được, nhưng ô trống
             # thì bắt được — và đó đã là phần lớn số ca.
             cite = cols[-1].strip() if len(cols) >= 5 else ""
-            if cols[0].strip().lower() not in ("người kể", "credit / bìa sổ") and cite in ("", "—", "-"):
+            if cols[0].strip().lower() not in ("người kể", "tác giả", "credit / bìa sổ") and cite in ("", "—", "-"):
                 E(f"“{n}” chưa có dẫn chứng trong CAST.md — mọi tên và địa danh phải ghi nguồn "
                   f"(game + phiên bản · anime + số tập · manga + chương), hoặc ghi rõ 👁 là do "
                   f"người kể đặt")
@@ -483,6 +484,29 @@ def main(slug: str) -> int:
             W(f"{len(shots) - len(declared)}/{len(shots)} shot chưa khai size/angle")
         if len(sizes) >= 3 and len(angles) >= 3:
             K(f"góc máy đa dạng: {len(sizes)} cỡ cảnh · {len(angles)} góc")
+
+    # ---- tên người dẫn và tác giả ------------------------------------------
+    # docs/NARRATOR.md. "Gilbert D. Holth" là đảo chữ tròn 13/13 của "Blight Lord" — cú lật của game
+    # Blightfall. Chữ "Gilbert" hiện ở BẤT CỨ đâu trên kênh công khai là lộ bí mật của game.
+    spoken = chr(10).join(beats.values())
+    shown = [("scenes.json", json.dumps(scenes, ensure_ascii=False))]
+    for extra in ("thumb.json", "PUBLISH.md"):
+        f = d / extra
+        if f.exists():
+            shown.append((extra, f.read_text(encoding="utf-8")))
+    leak = [where for where, txt in [("lời đọc", spoken)] + shown
+            if re.search(r"gilbert", txt, re.I)]
+    if leak:
+        E(f"chữ “Gilbert” xuất hiện ở: {', '.join(leak)} — đảo chữ của “Blight Lord”, lộ cú lật "
+          f"của Blightfall. Chỉ được dùng “Dr. Holth” (xem docs/NARRATOR.md)")
+    if re.search(r"\bholth\b", spoken, re.I):
+        E("người dẫn nói tên mình trong lời đọc (“Holth”) — tên chỉ được hiện bằng chữ")
+    in_video = [("lời đọc", spoken)] + [s for s in shown if s[0] != "PUBLISH.md"]
+    author = [where for where, txt in in_video if re.search(r"tu[aấ]n\s*la\b", txt, re.I)]
+    if author:
+        E(f"tên tác giả “Tuấn La” xuất hiện trong video ({', '.join(author)}) — chỉ được ở mô tả YouTube")
+    if not leak and not author:
+        K("tên người dẫn và tác giả đúng luật")
 
     # ---- in kết quả ---------------------------------------------------------
     for m in ok:

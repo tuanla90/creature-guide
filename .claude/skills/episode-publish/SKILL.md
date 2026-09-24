@@ -38,8 +38,10 @@ danh sách sự thật.
 
 - Hai câu đầu là phần hiện trước khi bấm "xem thêm" — đặt câu hỏi của tập ở đó.
 - Giữa: tóm tắt 3–4 câu, có từ khoá tên loài ở cả hai cách viết.
-- Cuối, **bắt buộc**: ghi rõ đây là phim tài liệu giả tưởng về sinh vật hư cấu · credit **Tuấn La** ·
-  nguồn canon đã dùng · nguồn nhạc và tiếng CC0.
+- Cuối, **bắt buộc**: ghi rõ đây là phim tài liệu giả tưởng về sinh vật hư cấu · **tác giả: Tuấn La**
+  *(đây là chỗ DUY NHẤT tên thật xuất hiện — không có trong video)* · nguồn canon đã dùng · nguồn nhạc
+  và tiếng CC0.
+- ⛔ Không ghi "Gilbert" ở bất cứ đâu trong gói đăng, kể cả mô tả — xem `docs/NARRATOR.md`.
 
 ### 3. Chapters
 

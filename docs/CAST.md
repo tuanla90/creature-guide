@@ -20,8 +20,9 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 5. **Tên là một DANH TỪ, không phải cụm động từ hay lời mô tả.** Một bộ phận kèm dấu ấn:
    *Crookedbud*, *Scar-Shoulder*, *Ash-Eye*, *Moss-Back* — và bản VI cũng vậy: *Búp Lệch*, *Vai Rách*,
    *Mắt Tro*, *Lưng Rêu*. "Bà Lão Rêu Xanh" là một lời mô tả, không phải một cái tên.
-6. **Người kể không có tên trong lời đọc.** Anh ta xưng "tôi" và chỉ thế. Tên thật nằm ở bìa sổ
-   thực địa, ở chữ ký trang ghi chép, và ở credit cuối video: **Tuấn La**.
+6. **Người kể là Dr. Holth, và không có tên trong lời đọc.** Ông xưng "tôi" và chỉ thế. Tên chỉ hiện
+   bằng chữ trên bìa sổ và chữ ký trang ghi chép — **chỉ `Dr. Holth`, không bao giờ "Gilbert"**.
+   Xem [NARRATOR.md](NARRATOR.md). **Tuấn La không xuất hiện trong video**, chỉ ở mô tả YouTube.
 7. **Màn hình ghi tên EN, giọng VI đọc tên VI.** Một video mang hai track giọng (YouTube
    multi-audio) nên **chữ trên màn hình dùng chung**, không tách theo ngôn ngữ được. Vì vậy màn hình
    ghi `K-01 · Crookedbud`, còn người dẫn bản VI đọc "Búp Lệch". Mã thực địa neo hai bên.
@@ -35,8 +36,8 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 | Con lớn bảo trợ | **Scar-Shoulder** | **Vai Rách** | mảng da rách bên sườn | 👁 cá thể do người kể đặt tên. Không có canon cho cá thể này — **đừng ghi nguồn giả** |
 | Con chim săn mồi | **Ash-Eye** | **Mắt Tro** | một bên mắt phủ màng đục màu tro | 👁 cá thể do người kể đặt tên. Loài 📖 **Fearow** — Bulbapedia, phân bố Kanto |
 | Cổ thụ đầu đàn | **Moss-Back** (cái) | **Lưng Rêu** | rêu và dương xỉ mọc trên lưng; nhụy giữa bông hoa | 👁 cá thể do người kể đặt tên. Dị hình giới tính 📖 Bulbapedia — Venusaur gender differences |
-| Người kể | *unnamed, "I"* | *không nêu tên, xưng "tôi"* | nhà sinh vật học thực địa | — |
-| Credit / bìa sổ | **Tuan La** | **Tuấn La** | tên tác giả, chỉ hiện dạng chữ | — |
+| Người kể | **Dr. Holth** *(never spoken, "I")* | **Dr. Holth** *(không đọc lên, xưng "tôi")* | nhà sinh vật học thực địa; một Gilbert ở nhánh chưa từng xuống hầm ngầm | Blightfall — IP riêng, `CHARACTER-BIBLE.md` · luật đa vũ trụ *"hàng vạn Gilbert"*. Xem [NARRATOR.md](NARRATOR.md) |
+| Tác giả | **Tuan La** | **Tuấn La** | người làm phim thật — **không xuất hiện trong video** | chỉ ở mô tả YouTube |
 | Địa danh | **Viridian Forest** | **Rừng Viridian** | rừng Kanto nơi Bulbasaur sống hoang dã | 📖 **Pokémon Let's Go Pikachu/Eevee** — Bulbasaur bắt được ngoài hoang dã ở Viridian Forest. *(Gen 1 Red/Blue/Yellow KHÔNG có Bulbasaur hoang dã ở đâu cả — ghi sai phiên bản là hỏng chính luật này.)* |
 | Nơi bầy tụ họp | **The Mysterious Garden** | **Khu Vườn Kỳ Bí** | lòng chảo khuất, nơi cả bầy cùng đổi hình | 🎬 **Anime tập 51** *Bulbasaur's Mysterious Garden* — kể như **truyền thuyết của người bản xứ**, không phải danh lục |
 
@@ -45,8 +46,8 @@ Kênh làm **hai bản: tiếng Việt và tiếng Anh**. Luật:
 > `check-episode.py` soát ô này.
 
 Người kể **không bao giờ nói tên mình**. Mở bằng "Tôi là…" là biến phim tư liệu thành vlog, và kéo
-sự chú ý ra khỏi khu rừng. Anh ta chỉ là một ống kính biết ngẫm. Tên thật đi bằng đường chữ:
-lower-third mở đầu `TUẤN LA · VIRIDIAN FOREST, KANTO`, rồi credit cuối video và mô tả kênh.
+sự chú ý ra khỏi khu rừng. Ông chỉ là một ống kính biết ngẫm. Tên đi bằng đường chữ: bìa sổ ghi
+`DR. HOLTH · FIELD NOTES`, chữ ký cuối trang `— H.`
 
 ## Quy ước cho tập sau
 

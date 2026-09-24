@@ -250,7 +250,7 @@ theo ngôn ngữ**, nên ảnh bìa Short phải không chữ hoặc chọn mộ
 chapters, comment ghim, hashtag — **hai ngôn ngữ**. Thumbnail ra vài phương án để chọn.
 
 Lên YouTube: bật khai báo **nội dung tổng hợp bằng AI**, gắn phụ đề, nạp **track giọng thứ hai** và
-tiêu đề/mô tả/thumbnail bản địa hoá, credit **Tuấn La**.
+tiêu đề/mô tả/thumbnail bản địa hoá. Tên tác giả **Tuấn La** chỉ ở mô tả, không có trong video.
 
 **Sao lưu** — đẩy một chiều lên Drive những thứ **không tái tạo được**: ảnh đã đo toạ độ, giọng đã
 duyệt, nhạc đã chọn. Ảnh đổi từ "tái tạo được" sang "không tái tạo được" đúng lúc chặng 10 đo xong

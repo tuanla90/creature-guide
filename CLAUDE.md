@@ -19,8 +19,11 @@ nghiệp vụ và chỗ nào còn làm tay.
 
 ## Luật của kênh, không thương lượng
 
-- Lời dẫn là **nhà sinh vật học thực địa của thế giới chúng ta**, xưng "tôi", **không bao giờ nói tên
-  mình**. Tên thật "Tuấn La" chỉ hiện dưới dạng chữ trên màn hình và ở credit.
+- Người dẫn là **Dr. Holth**, nhà sinh vật học thực địa của thế giới chúng ta — xem
+  [docs/NARRATOR.md](docs/NARRATOR.md). Xưng "tôi", **không bao giờ nói tên mình**; tên chỉ hiện bằng
+  chữ trên bìa sổ và chữ ký. ⛔ **Không bao giờ hiện "Gilbert"** — "Gilbert D. Holth" là đảo chữ của
+  "Blight Lord", cú lật của game Blightfall. "Tuấn La" **không xuất hiện trong video**, chỉ ở mô tả
+  YouTube.
 - Không nhắc game, không nhắc AI, không nhắc đoàn làm phim. Pokédex gọi là "cuốn danh lục".
 - Ba nhãn không được trộn: 📖 danh lục (phải có nguồn trong `NGUON`) · 👁 quan sát · 🔬 giả thuyết
   (phải kèm một loài có thật ở Trái Đất).
