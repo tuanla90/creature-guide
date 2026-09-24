@@ -480,21 +480,24 @@ To endure the harsh laws of nature, this tiny creature must undergo an incredibl
 
 ---
 
-### Pokevideo Lab — AI video generation · Palette tối · Mood khắc nghiệt
+### Pokevideo Lab — Google Veo (Gemini) · Palette tối · Chất lượng không đều
 
 **Kỹ thuật sản xuất:**
-- Cùng kỹ thuật với MonBiology: **AI video generation** với sinh vật di chuyển thật
-- **Art direction khác hoàn toàn**: hang đá, sa mạc, địa hình khô cằn thay vì rừng ấm
+- **Google Veo** — xác nhận bằng icon Gemini xuất hiện ở góc phải bên dưới video
+- Art direction: hang đá, sa mạc, địa hình khô cằn; palette blue-grey lạnh và nâu xám sa mạc
 
 **Bằng chứng chuyển động (2 frame liên tiếp, Larvitar video ~40s):**
 - Frame A: Larvitar đang bò sát đất, claws bấu vào đất, thân nằm ngang
 - Frame B: Larvitar đứng thẳng hoàn toàn, nhìn về phía trước — pose thay đổi 90°
 
-**Bảng màu:**
-- Blue-grey lạnh (cảnh hang), nâu xám sa mạc, không có green/golden
-- Lighting harsh: ánh sáng chói từ cửa hang, bóng sâu, mood survival/khắc nghiệt
+**Điểm yếu rõ ràng của Google Veo (quan sát thực tế):**
+- **Nhân vật inconsistent**: ngoại hình Larvitar thay đổi liên tục giữa các shot — màu sắc, tỉ lệ, chi tiết da không nhất quán
+- **Vật lý không hợp lý**: nhiều đoạn chuyển động không follow vật lý (chân di chuyển sai, thân xoay bất thường)
+- Đây là giới hạn đã biết của Veo ở thời điểm hiện tại — khó duy trì identity nhân vật qua nhiều clip
 
-**Đánh giá:** Chứng minh AI video generation có thể phủ nhiều biome/mood khác nhau. Kênh mới, chưa biết tốc độ tăng trưởng, nhưng về kỹ thuật là đối thủ gần nhất với Creature Field Guide.
+**So sánh với MonBiology:** MonBiology dùng tool khác (chưa xác định — Kling AI hoặc Runway Gen-3 khả năng cao) và quality consistency tốt hơn đáng kể.
+
+**Đánh giá:** Kênh mới, chưa rõ tiềm năng tăng trưởng. Việc dùng Google Veo hiện tại tạo ra quality gap rõ rệt so với MonBiology — nếu không nâng cấp tool, khó cạnh tranh về hình ảnh.
 
 ---
 
@@ -511,13 +514,13 @@ To endure the harsh laws of nature, this tiny creature must undergo an incredibl
 
 ### So sánh · 4 kỹ thuật sản xuất
 
-| Kênh | Kỹ thuật | Sinh vật di chuyển? | Chi phí | Kiểm soát |
+| Kênh | Kỹ thuật (tool) | Sinh vật di chuyển? | Consistency nhân vật | Chi phí |
 |---|---|---|---|---|
-| MonBiology | AI video generation | **Có** | Trung | Thấp–Trung (AI tự quyết) |
-| Pokearth | Blender 3D animation | **Có** | **Cao** | **Cao** (animator kiểm soát toàn bộ) |
-| Pokevideo Lab | AI video generation | **Có** | Trung | Thấp–Trung |
-| PokéNature | Real footage + overlay | Có (AI overlay) | Thấp | Thấp |
-| **Creature Field Guide** | AI image + Remotion motion | Có (parallax/layer) | Thấp–Trung | Trung |
+| MonBiology | AI video (Kling AI / Runway — chưa xác nhận) | **Có** | **Tốt** | Trung |
+| Pokearth | Blender 3D animation | **Có** | **Rất tốt** | **Cao** |
+| Pokevideo Lab | **Google Veo (Gemini — xác nhận)** | **Có** | **Kém** (thay đổi giữa shot) | Thấp |
+| PokéNature | Real footage + AI overlay | Có | Thấp | Thấp |
+| **Creature Field Guide** | AI image (Google Flow) + Remotion | Có (parallax/layer) | Trung–Tốt | Thấp–Trung |
 
 **Điểm yếu chung của AI video generation** (MonBiology, Pokevideo Lab):
 - Sinh vật có thể bị **inconsistent** giữa các shot — hình dạng, màu sắc, chi tiết thay đổi nhẹ
