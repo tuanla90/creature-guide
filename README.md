@@ -13,7 +13,8 @@ chặng một cổng.
 | [IDEA-BANK.md](docs/IDEA-BANK.md) | tập này kể chuyện gì, tập sau kể chuyện gì |
 | [EPISODE-FRAME.md](docs/EPISODE-FRAME.md) | một tập có mấy chương, mỗi chương làm gì |
 | [CAST.md](docs/CAST.md) | nhân vật tên gì ở bản VI và bản EN, đặt theo luật nào |
-| [SOUND.md](docs/SOUND.md) | tiếng kêu ghép từ những loài thật nào |
+| [SOUND.md](docs/SOUND.md) | tiếng kêu ghép từ những loài thật nào, nhạc nền theo tông nào |
+| [MUSIC-PROMPTS.md](docs/MUSIC-PROMPTS.md) | hai mươi câu lệnh sinh nhạc, theo mười chặng của khung tập |
 
 Máy làm được phần nào thì nằm ở `.claude/`:
 
@@ -21,6 +22,7 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 |---|---|
 | `/tap-moi <loài>` | mở tập mới: ý tưởng → canon → kịch bản → shot, dừng trước khi tốn tiền ảnh |
 | `/soat-tap <slug>` | soát trước khi thu giọng: máy soát rồi tới người soát |
+| `/nap-am` | nạp âm thanh vừa tải về: đổi tên, cắt, vào đúng chỗ, không để bản sao |
 | skill `creature-field-guide-scriptwriter` | luật viết lời |
 | skill `creature-field-guide-production` | bible → ảnh → `scenes.json` → render |
 | skill `creature-motion` | biến một ảnh tĩnh thành vòng lặp động nhẹ — xem [experiments/creature-motion](experiments/creature-motion/README.md) |
@@ -31,6 +33,10 @@ Máy làm được phần nào thì nằm ở `.claude/`:
 node tools/build-prompts.mjs <ep>          # bible -> prompt cho Google Flow
 python tools/import-flow.py <ep>           # ZIP tải về -> public/img/
 python tools/unwatermark.py <ep>           # gỡ watermark Gemini
+python tools/build-sfx.py <slug>           # sfx.json -> tiếng của tập
+python tools/build-music.py                # 20 đoạn nhạc, cùng tông La thứ
+python tools/import-music.py <file>        # nhạc tải về -> bản nền lặp được
+python tools/intake.py --status            # bản gốc / bản dựng, nặng bao nhiêu
 npm run scaffold -- <slug>                 # timing ước lượng + audio câm
 npm run studio                             # xem thử
 python tools/check-episode.py <slug>       # soát trước khi thu giọng / render

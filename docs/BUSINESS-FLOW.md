@@ -143,8 +143,8 @@ dịch lại là xoá sạch phần bạn đã chỉnh — phải sửa tay cả
 | C3 | Chuyển động — **ba tầng, xem bảng dưới** | mp4 | tuỳ tầng | 🟡 | tập |
 | C4 | Cảnh giải phẫu | ảnh nền xanh, xương, mạch năng lượng | `kind: "anatomy"` trong shot bible | 🟢 | tập |
 | C5 | Trang sổ thực địa | giấy + hình vẽ, **chữ để trống** | `kind: "fieldnote"` + `el: "notepage"` | 🟢 | tập |
-| C6 | Nhạc: ghép từ thư viện mẫu | nhạc nền tập | thư viện dựng ở 0.6 | 🟡 | tập |
-| C7 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | [SOUND.md](SOUND.md), Pixabay/Freesound CC0 | 🔴 | tập |
+| C6 | Nhạc nền | `public/audio/music/` | `tools/build-music.py` — 20 đoạn cùng tông La thứ theo 10 chặng của khung tập · `import-music.py` cho nhạc sinh bằng Lyria / YouTube Audio Library · nạp bằng `/nap-am` | 🟢 | tập |
+| C7 | Tiếng động, tiếng sinh vật | `public/audio/sfx/<ep>/` | `sfx.json` + `tools/build-sfx.py` — máy dựng bản tổng hợp ngay, người thay dần lớp giọng bằng file thật ([SOUND.md](SOUND.md)) · nạp bằng `/nap-am` | 🟡 | tập |
 | C8 | Giọng EN | mp3 theo beat | **chưa chốt nhà cung cấp** | 🔴 | tập |
 | C9 | Giọng VI, khít beat của bản EN | mp3 theo beat | VBee Pro | 🟡 | tập |
 

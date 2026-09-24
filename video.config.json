@@ -16,7 +16,7 @@
   },
   "audio": {
     "bed": null,
-    "bedVolume": 0.15,
+    "bedVolume": 0.13,
     "sfxDir": "audio/sfx",
     "whoosh": null
   },
