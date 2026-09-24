@@ -61,7 +61,7 @@ Làm sai thứ tự thì phát hiện lúc sắp đăng tập đầu.
 | 0.3 | Chốt track gốc VI hay EN | quyết định | — | ✋ | 1× |
 | 0.4 | ✅ Khung tập thứ hai (so sánh 2–3 chủ thể) | `EPISODE-FRAME.md` khung B | markdown | 🟢 | 1× |
 | 0.5 | ✅ `CREATURE-LENS.md` trung lập với Pokémon | nguồn hai tầng · trục 12 · bẫy từ vựng kỳ ảo | 🟢 | 1× |
-| 0.6 | Thư viện nhạc mẫu — **đã có quy cách, chưa sinh** | 7 bản, xem [SOUND.md](SOUND.md) | 🟡 | 1× |
+| 0.6 | Thư viện nhạc mẫu — **21 bản nguồn đã có, chưa dựng ra `public/audio/music/`** | xem [SOUND.md](SOUND.md) | 🟡 | 1× |
 | 0.7 | ✅ Bê 3 skill từ `semantix-docs`, cắt 3 luật của `stop-slop` | `episode-plan` · `episode-review` · `episode-publish` · `stop-slop` | 🟢 | 1× |
 | 0.8 | ✅ Công cụ xem-và-ghi-chú trên bản dựng | `tools/review.py` → `review-notes.json` | 🟢 | 1× |
 | 0.9 | ✅ Script sao lưu một chiều — *còn phải chọn thư mục Drive* | `tools/backup-episode.py` | 🟡 | 1× |
@@ -107,14 +107,14 @@ chưa có gì" của bảng cũ biến mất, vì EN không còn là phái sinh.
 | B1 | **Chọn khung tập**: một cá thể, hay so sánh 2–3 chủ thể | quyết định | `EPISODE-FRAME.md` | 🟡 | tập |
 | B2 | Tra canon, ghi rõ **phiên bản nào được chọn** | bảng `NGUON` | Bulbapedia / nguồn lore | 🟡 | tập |
 | B3 | Tìm loài thật đối chiếu — **phải có nguồn tra được** | cột 🔬 | tra cứu web | 🟡 | tập |
-| B4 | Hồ sơ hình dáng loài (hai đường, xem dưới) | `bible/creatures/<loài>.json` | JSON | 🟡 | tập |
+| B4 | Hồ sơ hình dáng **mọi loài lên hình** (hai đường, xem dưới) + ảnh tham chiếu | `bible/creatures/<loài>.json` · `bible/refs/<loài>/` | JSON · tải tay | 🟡 | mỗi loài |
 | B5 | Chốt đặc điểm cá thể trung tâm (không đặt tên) | `docs/CAST.md` · `individuals.<mã>.trait` | luật trong skill | 🟢 | tập |
 | B6 | **Claude dựng khung → Gemini dựng lại và viết lời EN + VI nháp** | `drafts/2-skeleton.md` → `3-script-gemini.md` | `handoff.py --brief script` · bố cục thả, sự kiện khoá | 🟢 | tập |
 | B7 | Soát máy + Claude chuẩn hoá: logic, nhãn, nguồn, luật | `content.py` + `drafts/4-review.md` | `handoff.py --draft` · `check-episode.py` | 🟢 | tập |
 | B8 | Soát văn: giọng, sức ép kể chuyện | ghi chú sửa | Gemini + `stop-slop` đã cắt 3 luật | 🟢 | tập |
 | B9 | **Người duyệt kịch bản + cảnh dự kiến** trên trang | Duyệt / Cần sửa từng beat | `drafts/4-scene-plan.json` → `tools/review-page.py` → Artifact (`db`) | ✋ | tập |
-| B10 | Bản VI **theo hạn mức thời lượng từng beat** | bản VI | Gemini viết nháp cùng nhịp, Claude soát lệch | 🟢 | tập |
-| B11 | Người tinh chỉnh VI → **đóng băng bản VI** | bản VI chốt | mắt | ✋ | tập |
+| B10 | ~~Bản VI theo hạn mức thời lượng từng beat~~ → **gộp vào B6/B7**: Gemini viết EN + VI cùng lúc, `--draft` soát lệch | bản VI | — | 🟢 | tập |
+| B11 | ~~Người tinh chỉnh VI~~ → **gộp vào B9**: VI duyệt ngay trên trang; đủ Duyệt là đóng băng | bản VI chốt | trang duyệt | ✋ | tập |
 | B12 | Bảng shot, **từ cảnh dự kiến đã duyệt** | `bible/shots/<ep>.json` → `prompts/` | `build-prompts.mjs` | 🟢 | tập |
 
 > **Cổng B9:** không câu nào mà bạn không chỉ được ra nó là 📖 danh lục, 👁 quan sát hay 🔬 giả thuyết.
@@ -146,8 +146,8 @@ dịch lại là xoá sạch phần bạn đã chỉnh — phải sửa tay cả
 
 | # | Bước | Ra cái gì | Công nghệ | Auto | Nhịp |
 |---|---|---|---|---|---|
-| C1 | Sinh ảnh | `public/img/<ep>/*.jpg` | Google Flow (Nano Banana Pro) + Batch Studio | 🟡 | tập |
-| C2 | Nhập ảnh, gỡ watermark | ảnh sạch | `import-flow.py`, `unwatermark.py` | 🟢 | tập |
+| C1 | Sinh ảnh — **ảnh mẫu trước**, rồi cảnh; không tốn credit | `public/img/<ep>/*.jpg` | Google Flow (Nano Banana Pro) + Batch Studio | 🟡 | tập |
+| C2 | Nhập ảnh, gỡ watermark | ảnh sạch | `handoff.py --take` (thay `import-flow.py`), `unwatermark.py` | 🟢 | tập |
 | C3 | Chuyển động — **ba tầng, xem bảng dưới** | mp4 | tuỳ tầng | 🟡 | tập |
 | C4 | Cảnh giải phẫu | ảnh nền xanh, xương, mạch năng lượng | `kind: "anatomy"` trong shot bible | 🟢 | tập |
 | C5 | Trang sổ thực địa | giấy + hình vẽ, **chữ để trống** | `kind: "fieldnote"` + `el: "notepage"` | 🟢 | tập |
@@ -251,36 +251,79 @@ chiều theo tập. Nhóm cần cứu nhỏ hơn bạn tưởng — chỉ nhữn
 
 ---
 
-## Nợ, xếp theo loại — vì mỗi loại xử lý khác nhau
+## Rà soát 2026-09-24 · bước nào đang ở đâu
 
-Cập nhật sau đợt dựng cụm 0. Việc đã xong đánh ~~gạch~~.
+Rà lại sau khi tập 001 đi hết vòng kịch bản V4 (năm vòng duyệt). Mỗi bước được xếp vào **đúng một** nhóm:
 
-**Rủi ro mất trắng · vá một lần, rẻ**
-1. ~~`E3` script sao lưu~~ — đã có `tools/backup-episode.py`. **Còn lại:** chọn thư mục Drive, đặt
-   `CFG_BACKUP_DIR`, chạy thử một lần. Tới lúc đó ảnh vẫn chỉ nằm trên một cái máy.
-2. `D11` **sổ tài sản** — vẫn trống. Máy sinh được gần hết từ `prompts/<ep>.jsonl`; phần phải điền tay
-   là giấy phép của nhạc và tiếng.
-3. ~~`A5` chỗ ghi việc theo dõi IP~~ — đã có sổ rà trong `SLATE.md`. **Còn lại:** thật sự rà, và tự
-   đặt ngưỡng sub để rẽ nhánh.
+- **Một lần**: làm xong thì thôi. Còn mở thì là việc phải làm, không phải việc phải thiết kế.
+- **Đã chốt**: có công cụ và có quy trình, mỗi tập chỉ việc chạy. Người chỉ duyệt.
+- **Tự động một phần**: máy làm được một khúc. Ghi rõ khúc nào còn tay, và bước nhỏ tiếp theo nếu muốn đẩy thêm.
+- **Còn mở**: chưa có lời giải, hoặc chưa quyết.
 
-**Thuế mỗi tập · quyết định kênh có scale nổi không**
-4. ~~`D10` gói đăng~~ — skill `episode-publish` soạn được. Chưa chạy thật lần nào.
-5. `C7` **tiếng động** — vẫn hoàn toàn làm tay, và `sfx.json` chưa dựng.
-6. ~~`C4` `C5` hai loại cảnh mới~~ — đã có `kind: "anatomy"`, `kind: "fieldnote"`, và element
-   `notepage` bên engine (nhánh `feat/notepage-element`) vẽ chữ viết tay lên chỗ trống.
-   **Còn lại:** chưa sinh thử tấm nào để biết Flow có chịu chừa trống một phần ba bên phải hay không,
-   và `package.json` của kênh chưa trỏ sang nhánh engine có `notepage`.
-7. `0.6` **thư viện nhạc** — quy cách và prompt đã có, bảy bản chưa sinh.
+### Một lần
 
-**Nợ chiến lược · cần quyết, không cần code**
-8. `C8` **giọng EN** — 10.700 ký tự/tập, gói free ElevenLabs đọc được một tập/tháng. Chưa có lời giải.
-   Đây là thứ đang chặn tập 001 ở chặng 9.
-9. `0.3` **track gốc VI hay EN** — khó đổi sau, phải quyết trước tập đầu.
-10. `0.1`–`0.2` **lập kênh và bật Advanced features** — chưa làm. Xem `CHANNEL-SETUP.md`.
+| # | Việc | Trạng thái |
+|---|---|---|
+| 0.4 · 0.5 · 0.7 · 0.8 · A1 | khung B · CREATURE-LENS · bốn skill · `review.py` · định vị | ✅ xong |
+| — | trang duyệt + luồng kịch bản năm bước + DNA (`review-page.py`, `handoff.py --brief/--draft`, `dna_lint.py`) | ✅ xong trong đợt tập 001 |
+| 0.6 | thư viện nhạc | 🟡 21 bản nguồn đã có ở `assets/music-src/`; **chưa chạy** `build-music.py` ra `public/audio/music/` và chưa chọn nền cho tập 001 |
+| 0.9 | sao lưu Drive | 🔴 script có, **`CFG_BACKUP_DIR` chưa đặt**, chưa chạy thử. Ảnh vẫn chỉ nằm trên một máy |
+| mới | **git remote** | 🔴 repo **không có remote**: cả phần chữ (kịch bản, bible, tool) cũng chỉ nằm trên một máy. Rẻ nhất, gấp nhất |
+| mới | gộp engine | 🔴 `feat/specimen-freeze-media` (notepage · dừng hình · ảnh quê nhà · thẻ chương) **chưa vào `main` của engine**; kênh đang nối vào worktree |
+| 0.1 · 0.2 | lập kênh, bật Advanced features | ✋ chưa làm, chặn multi-audio ([CHANNEL-SETUP.md](CHANNEL-SETUP.md)) |
+| 0.3 | track gốc VI hay EN | ✋ chưa quyết (xem *Còn mở*) |
+| mỗi loài | bible loài + ảnh tham chiếu | 🟡 một lần **cho mỗi loài**, không phải mỗi tập. Bài học Fearow: loài nào lên hình cũng phải có bible (DNA D12) |
 
-**Đo lường · chưa có thì mọi ưu tiên đều là cảm tính**
-11. `A4` **giờ người mỗi tập và token đã tiêu.** Với kênh một người, chi phí lớn nhất là giờ của bạn,
-    và nó vẫn đang hoàn toàn không được đo. Kế hoạch: chạy vài tập trong một tháng rồi đánh giá lại.
+### Đã chốt · chạy mỗi tập, người chỉ duyệt
+
+| # | Bước | Chốt bằng |
+|---|---|---|
+| B0 | Gemini liệt kê sáu ý | `handoff.py --brief ideas` (hoặc `/nghi-y-tuong` nếu chỉ muốn nghĩ) |
+| B5 | gọi cá thể: đặc điểm + mã, không đặt tên | luật + `check-episode.py` đối chiếu CAST |
+| B6 | Claude dựng khung → Gemini viết EN + VI | `handoff.py --brief script`; **gộp luôn B10**: Gemini viết hai bản cùng nhịp |
+| B7 | soát máy + chuẩn hoá | `handoff.py --draft` · `check-episode.py` · `voice_lint` · `dna_lint` (D1–D6, D13) |
+| B9 | duyệt kịch bản + cảnh dự kiến | ✋ trang Artifact `db`: Duyệt / Cần sửa từng beat, Claude đọc lại được. **Gộp luôn B11**: bản VI được duyệt ngay trên trang |
+| B9+ | góp ý lộ ra lỗi mới → đóng gói | `docs/DNA.md` (lỗi → luật → chỗ ép: brief · máy · checklist) |
+| B12 | cảnh dự kiến → shot → prompt | `bible/shots` + `build-prompts.mjs`; ảnh mẫu trước, ảnh mẫu riêng cho mỗi con có mã |
+| C2 · C11 | nạp file bàn giao, gỡ watermark | `handoff.py --take` (thay `import-flow.py`; bỏ qua ZIP cũ hơn ảnh đang có) · `unwatermark.py` |
+| C4 · C5 | cảnh X-quang, trang sổ để trống chữ | `kind: anatomy / fieldnote` + element `notepage` |
+| C10 | loài Trái Đất | luật: ≤3 dừng hình, ≤2 ảnh quê nhà, không sinh AI, ghi `earth.json`. Tải về là ✋ |
+| D1–D5 · D7 | dựng, timing, align, phụ đề, soát máy, render | engine + `scaffold` / `align` / `export-subs.py` / `check-episode.py` |
+| A3 | lịch | skill `episode-plan` |
+
+### Tự động một phần
+
+| # | Bước | Máy làm | Còn tay | Bước nhỏ tiếp theo |
+|---|---|---|---|---|
+| A2 | kho ý tưởng | `/nghi-y-tuong` chấm sáu ý | chọn | — (chọn là việc của người) |
+| B1–B3 | khung · canon · loài đối chiếu | Claude đề xuất trong `2-skeleton.md` kèm nguồn | soát nguồn loài thật | — |
+| B4 | bible loài + ảnh tham chiếu | Claude viết JSON, `refs.json` liệt kê ảnh cần tải | **tải ảnh tham chiếu** (bên thứ ba, người tải) | `check-episode` đã báo loài thiếu bible |
+| C1 | sinh ảnh | prompt + tờ batch (`out/flow/…`, nút "Tạo script batch" trên trang) | chạy Batch Studio, tải ZIP. **Không tốn credit**: sai thì sinh lại | tự chạy batch qua CDP như `animate_flow_cdp.py` đang làm cho clip |
+| C3 | chuyển động | tầng 1 `creature-motion` + `motion-studio.py` (khoanh vùng bằng chuột); tầng 2 Veo qua `animate_flow_cdp.py` | Seedance (tầng 3), duyệt clip | soát `animate_flow_cdp.py` còn chạy với Flow hiện tại không |
+| C6 | nhạc | `build-music.py` 20 đoạn theo chặng | chọn nền | chạy lần đầu (xem 0.6) |
+| C7 | tiếng động | `sfx.json` + `build-sfx.py` dựng bản tổng hợp | thay dần lớp giọng sinh vật bằng file thật | — |
+| C9 | giọng VI | `out/<slug>/script-tts.txt`, nạp mp3 bằng `--take`, `align` | dán từng beat vào VBee, nghe duyệt | ⚠ `public/audio/kanto-001-bulbasaur/` đang là bản thu **V3** (còn beat 11b, 16, 17): V4 phải thu lại |
+| D6 | soát bản dựng | `review.py`: ghi chú theo mốc + toạ độ callout | xem có tiếng, không tua | — |
+| D8 · D9 | Short · thumbnail | engine dựng, `npm run thumb` | chọn hook, chọn phương án | — |
+| D10 | gói đăng | skill `episode-publish` | duyệt | **chưa chạy thật lần nào** (chưa có `PUBLISH.md`) |
+| E3 | sao lưu | `backup-episode.py` | chọn thư mục Drive | xem 0.9 |
+
+### Còn mở
+
+| # | Việc | Loại | Đề xuất |
+|---|---|---|---|
+| C8 | **giọng EN** | quyết + tiền | chặn bản EN của mọi tập. Ba đường: trả ElevenLabs · đổi nhà · ra EN sau VI. Nên chốt trước khi thu VI tập 001, vì bản VI phải khít nhịp EN |
+| 0.3 | track gốc VI hay EN | quyết | khó đổi sau khi đã đăng tập đầu |
+| A4 | giờ người mỗi tập | đo | **đo được rồi, rẻ**: trang duyệt ghi mốc giờ từng lần bấm. Vòng 5 tập 001 duyệt 16 beat trong ~10 phút, duyệt lại 6 beat trong ~2 phút. Ghi mốc vào `4-review.md` mỗi vòng |
+| A5 | rà IP + ngưỡng rẽ nhánh | kỳ | bảng rà trong SLATE còn trống. Chưa có kênh thì chưa có gì để rà; đặt **ngưỡng sub** ngay |
+| D11 | sổ tài sản | tool | sinh từ `prompts/*.jsonl` + `earth.json` + `CREDITS`; chỉ giấy phép nhạc và tiếng là tay |
+| E4 | đọc số → hành động | kỳ | chờ có kênh; bảng quy đổi ở trên là đủ |
+| E6 | quét mã nguồn mở | kỳ | — |
+| — | ranh giới IP với HP / LOTR / GoT | quyết | chưa tới lúc |
+
+**Đếm nợ thật** (🔴 không kể ✋): git remote · sao lưu Drive · gộp engine · sổ tài sản · giọng EN. Ba
+việc đầu là việc một lần, mỗi việc dưới một giờ. Nên làm trước khi tập 001 có giọng và toạ độ callout,
+vì đó là những thứ đầu tiên **không tái tạo được**.
 
 ---
 
