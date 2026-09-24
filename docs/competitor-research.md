@@ -568,6 +568,42 @@ To endure the harsh laws of nature, this tiny creature must undergo an incredibl
 
 ---
 
+## Ba kỹ thuật visual đáng học · Quan sát từ ảnh người dùng chia sẻ
+
+### 1 · Sổ thực địa / Explorer journal — Poké Science (Mew video, 0:19s)
+
+**Quan sát:** Cảnh mở đầu Mew video là bàn gỗ với sổ tay cũ, bên trong có bản phác thảo tay Mew và chữ "MYTH?". La bàn, bút mực, ánh nến ấm. Không phải AI wildlife footage — đây là **góc nhìn của nhà thám hiểm/nhà khoa học** đang nghiên cứu sinh vật qua tài liệu và ghi chép.
+
+**Tại sao quan trọng với Creature Field Guide:** Dr. Holth đã có sổ tay, chữ ký, bìa sổ ghi tên. Đây là visual identity chưa được khai thác — cảnh mở đầu bằng trang sổ thực địa, bản phác thảo tay, ghi chú hiện trường sẽ tạo ra lớp thẩm quyền mà MonBiology không có. Poké Science chỉ làm một cảnh — Creature Field Guide có thể làm nó thành **signature visual** xuyên suốt mọi tập.
+
+---
+
+### 2 · Giải phẫu học kiểu textbook — @TopherStoll / PokéNatomy Vol. II
+
+**Quan sát:** Sơ đồ giải phẫu Donphan chi tiết theo phong cách sách giáo khoa động vật học — xương, cơ bắp, label khoa học đầy đủ (Osteoderm, Lumbar vertebrae, Brachiocephalicus...). Đây là tác phẩm của illustrator @TopherStoll, không phải kênh YouTube doc — nhưng được repost rộng rãi trên TikTok/Shorts.
+
+**Tại sao quan trọng:** Đây là content type riêng biệt — không ai trong kênh doc đang làm anatomy diagram thật sự. CLAUDE.md đã có luật "giải phẫu theo lối nghiên cứu — dạng X-quang mô phỏng, nền xanh, xương, mạch năng lượng chạy trong thân". Kết hợp pipeline Remotion + graphic overlay có thể tạo ra cảnh anatomy đúng chuẩn doc khoa học thật, không cần outsource cho illustrator.
+
+---
+
+### 3 · Scientific visualization insert — Poké Science (Mew video, 2:15s)
+
+**Quan sát:** Giữa video AI wildlife footage, Poké Science cắt sang cảnh 3D scientific diagram — chuỗi DNA xoắn phát sáng, mạng lưới hạt vàng, label "PROJECT MEW / GENETIC RECONFIGURATION". Đây là cách các doc khoa học thật (BBC Earth, NatGeo) dùng CGI insert để giải thích concept không thể quay thực tế.
+
+**Tại sao quan trọng:** Đây là kỹ thuật nâng độ tin cậy khoa học lên một bậc — thay vì chỉ nói "Mew có thể viết lại DNA", họ *show* nó bằng visualization. Remotion hoàn toàn có thể làm loại cảnh này: animated data visualization, energy flow diagram, spectrogram âm thanh, heat map phân bố loài.
+
+---
+
+### Tổng hợp · 3 kỹ thuật × mức độ Creature Field Guide có thể làm
+
+| Kỹ thuật | Ai đang làm | CFG có thể làm? | Độ khó |
+|---|---|---|---|
+| Sổ thực địa / explorer journal | Poké Science (1 cảnh) | **Có — Dr. Holth là perfect fit** | Thấp |
+| Anatomy diagram textbook | @TopherStoll (illustrator) | Có — Remotion + graphic | Trung |
+| Scientific visualization insert | Poké Science | Có — Remotion animation | Trung–Cao |
+
+---
+
 ## Kết luận · 1 đoạn
 
 Thị trường "Pokémon như sinh vật có thật" đang tăng nhanh — MonBiology đã chứng minh video 4-8 phút có thể đạt 300-600K views trong vài tháng. Nhưng toàn bộ thị trường đang nói tiếng Anh, kể về "loài nói chung" (không có cá thể cụ thể), và không ai đặt chuẩn nghiêm túc về canon. Creature Field Guide có cơ hội chiếm toàn bộ thị trường tiếng Việt (không có đối thủ), đồng thời đánh vào phân khúc tiếng Anh bằng chất lượng cao hơn: cá thể trung tâm có danh tính, nguồn canon rõ ràng, và song ngữ trên một video.
