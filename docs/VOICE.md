@@ -25,11 +25,13 @@ Bộ soát máy bắt được một phần (mục cuối). Phần còn lại l�
    lững thững lội ra mép ao…" chứ không phải "Cuối chiều, nó ra mép ao."
 2. **Có cầu nối giữa các câu và các beat.** Thời gian (rồi, từ hôm ấy, đến đêm thứ năm), nguyên
    nhân (bởi, vì thế, hoá ra), đối lập (thế nhưng, vậy mà, còn). Đầu beat móc vào cuối beat trước.
-3. **Câu cụt là gia vị, không phải cơm.** Tối đa **một** câu ngắn (≤ 6 tiếng) mỗi beat, đặt ở chỗ
-   cần cú đập. Hai câu ngắn liền nhau là nhịp báo cáo. "Chúng quất." → "Chúng vụt ra nhanh như gió,
-   quất xuống nền đất nện nghe chát chúa như tiếng roi da."
-4. **Động từ hành động phải có hình và tiếng.** Mọi hành động mạnh (quất, bổ nhào, bung, cày) đi kèm
-   một so sánh, một âm thanh, hay một hệ quả nhìn thấy được.
+3. **Nhịp: một câu thong thả, một câu gọn.** Sức hút của lời thuyết minh đến từ **tương phản**: một
+   câu tả cảnh thong thả (15–25 tiếng) rồi một câu hành động gọn (7–12 tiếng). Không câu nào quá
+   ~30 tiếng — đọc một hơi không hết, và toàn câu dài thì nhịp đều đều, nghe nặng. Câu cụt (≤ 6
+   tiếng) là gia vị: tối đa **một** mỗi beat, ở chỗ cần cú đập. Hai câu cụt liền nhau là nhịp báo cáo.
+4. **Tả trước, động sau.** Trước một động từ mạnh, một vài chữ tả đà hay thế của con vật; động từ
+   mạnh đi kèm một âm thanh hay một hệ quả nhìn thấy được. "Chúng quất." → "Chúng vụt ra nhanh như
+   gió, quất xuống nền đất nện nghe chát chúa như tiếng roi da." 
 5. **Đại từ có chủ.**
    - **"Nó" chỉ dành cho cá thể trung tâm (K-01).** Con khác gọi bằng danh từ: "con chim ấy",
      "con Venusaur già", "con vật trong sân".
@@ -56,10 +58,27 @@ khác, nhưng không trả lời được vì sao câu chuyện đi sang đó �
 
 Bản EN theo cùng tám luật, với giọng Attenborough — câu dài uyển chuyển, không nhịp điện tín.
 
+## Góp ý đã xem xét (2026-09-24)
+
+Một bộ gợi ý kiểu "Thế Giới Động Vật" từ ngoài. Nhận và không nhận:
+
+| Gợi ý | | Vì sao |
+|---|---|---|
+| Nhịp một câu dài một câu gọn · tả trước động sau | **nhận** | luật 3, 4 — đúng bệnh của vòng 2: câu dài đều, TB 25 tiếng, dài nhất 48 |
+| Cấm "nó quất / đớp / xơi", "thế là xong", "đáng kinh ngạc", "tuyệt vời", "bứt phá", "ngày nay" | **nhận** | `BANNED_VI` trong bộ soát |
+| Đừng lặp "nó" | nhận một phần | xen "K-01", "con vật nhỏ"; nhưng không đặt biệt danh |
+| Biệt danh "gã khổng lồ", "tên tội phạm nhỏ bé", "kẻ săn mồi", "khối cơ bắp biết đi" | không | hài kiểu châm biếm và gán vai ác — trái CREATURE-LENS luật 5, trái góp ý "bớt kịch" |
+| Động từ "tung cú ra đòn", "khoá chặt mục tiêu", "chiến lợi phẩm", "bữa tiệc" | không | ngôn ngữ trận đấu / game, nhân hoá — cái bộ này muốn tránh lại tự mang vào |
+| Ngôi thứ ba "chúng ta đang quan sát", "qua ống kính máy quay" | không | người dẫn là Dr. Holth, ngôi thứ nhất; kênh cấm nhắc máy quay |
+| Chèn `[...]`, `(nghỉ 1s)`, `[tiếng lá xạc xào]` vào lời | không | VBee đọc cả chữ trong lời; ngắt bằng xuống dòng và dấu câu, tiếng động ở `sfx.json` (SOUND.md) |
+| Repo `f/awesome-chatgpt-prompts` (vai Attenborough), `LockMan04/Vietnamese-prompts`, `ngwgsang/vietquill` | để xem | chưa mở; vietquill là thêm một vòng gọi model — chỉ đáng nếu luật ở đây không đủ |
+
 ## Máy bắt được gì
 
 `tools/voice_lint.py`, chạy trong `check-episode.py` và `handoff.py --draft`:
 - beat có hơn một câu ngắn, hoặc hai câu ngắn liền nhau (VI ≤ 6 tiếng, EN ≤ 5 từ);
+- câu quá dài (VI > 32 tiếng, EN > 34 từ);
+- từ cộc và từ hô hào trong `BANNED_VI`;
 - beat mở bằng "chúng"/"they" chưa có danh từ số nhiều đứng trước;
 - "con đấy / con đó / con kia";
 - "trảng" không kèm "cỏ";

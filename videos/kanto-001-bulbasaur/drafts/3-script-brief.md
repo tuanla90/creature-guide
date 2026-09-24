@@ -18,8 +18,8 @@ Sinh bằng `PYTHONUTF8=1 python tools/handoff.py kanto-001-bulbasaur --brief sc
   adds one piece to that question, without ever saying it is solved.
 - He is a patient observer: he watches, he does not interfere, and he does not give animals pet
   names.
-- Tone: Attenborough's calm crossed with a private field diary. Long, flowing sentences with a
-  rare short one for a punch. Concrete images. No hype, no "incredible", no "amazing", no rhetorical questions stacked in a row,
+- Tone: Attenborough's calm crossed with a private field diary. Calm descriptive sentences
+  alternating with tight action ones (see Narration craft 3). Concrete images. No hype, no "incredible", no "amazing", no rhetorical questions stacked in a row,
   no "little did I know", no "nature is truly remarkable".
 
 ## Narration craft (the script must be gripping even read silently, with no sound and no picture)
@@ -30,11 +30,13 @@ Sinh bằng `PYTHONUTF8=1 python tools/handoff.py kanto-001-bulbasaur --brief sc
 2. **Bridge sentences and beats.** Use time (then, from that day on, on the fifth night), cause
    (because, so, it turned out), contrast (and yet, but, while). The first line of a beat hooks into
    the last line of the one before.
-3. **Short sentences are seasoning, not the meal.** At most **one** very short sentence per beat,
-   where a punch is needed. Two short sentences in a row read like a report.
-4. **Strong verbs need a picture and a sound.** Every forceful action (lash, dive, burst, plough)
-   comes with a simile, a sound, or a visible consequence: not "They lash." but "They shot out fast
-   as the wind and cracked down onto the hard earth with a sound as sharp as a whip."
+3. **Rhythm: one unhurried sentence, then one tight one.** The pull of nature narration comes from
+   contrast: a calm, descriptive sentence (15–25 words) followed by a short action sentence (6–10
+   words). No sentence over ~30 words: it cannot be read in one breath, and all-long reads heavy. A
+   very short sentence (≤ 5 words) is seasoning: at most **one** per beat. Two in a row read like a report.
+4. **Describe first, then act.** Before a strong verb, a few words of the animal's momentum or
+   posture; the verb comes with a sound or a visible consequence: not "They lash." but "They shot
+   out fast as the wind and cracked down onto the hard earth with a sound as sharp as a whip."
 5. **Every pronoun has an owner.** "It" is reserved for the central animal (K-01). Every other animal
    is named with a noun ("the bird", "the old Venusaur", "the animal in the yard"). "They" only right
    after a plural noun in the same paragraph; never open a beat with "They". Each animal is introduced
@@ -43,10 +45,14 @@ Sinh bằng `PYTHONUTF8=1 python tools/handoff.py kanto-001-bulbasaur --brief sc
    sentence explains it. Always use the full term afterwards.
 7. **A code must mean something.** The first time K-01 is used, say what K is (Kanto, the region) and
    what 01 is (the first animal he chose to follow).
+8. **Not theatrical.** Concrete detail, not exclamation. At most one simile per paragraph. Do not turn
+   animals into people or villains; no absolutes ("forever", "certain", "still as death").
 
 For VO_VI, write literary Vietnamese in the tradition of classic Vietnamese animal and nature prose:
-precise verbs, reduplicated words (từ láy), long flowing sentences with rhythm, a first-person narrator
-who observes and gently comments. Never translate word for word; never use calques.
+precise verbs, reduplicated words (từ láy), flowing sentences that alternate calm and tight, a first-person
+narrator who observes and gently comments. Never translate word for word; never use calques. Never:
+"nó quất", "nó đớp", "thế là xong", "đáng kinh ngạc", "tuyệt vời", "ngày nay"; no joking epithets for
+animals ("gã khổng lồ", "kẻ săn mồi"); no stage directions or [pause] tags inside the narration.
 
 ## Hard rules. Breaking one means the draft is thrown out
 

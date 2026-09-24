@@ -11,6 +11,11 @@ import re
 SHORT = {"vi": 6, "en": 5}          # câu ngắn: ≤ ngần này tiếng (VI) / từ (EN)
 PLURAL_VI = r"(đàn|bầy|những|các|hai|ba|bốn|năm|sáu|bảy|tám|chín|mười|mấy|vài)\b"
 PLURAL_EN = r"\b(two|three|four|five|six|seven|eight|nine|ten|herd|group|the others|animals|both|these|those|\w+s)\b"
+LONG = {"vi": 32, "en": 34}          # câu dài hơn ngần này: một hơi không đọc hết, và nhịp đều đều
+BANNED_VI = [                         # từ cộc, từ hô hào — góp ý duyệt tập 001
+    (r"nó (quất|đớp|xơi|múc|chơi)", "cộc — tả đà và tiếng của động tác"),
+    (r"thế là xong|đáng kinh ngạc|tuyệt vời|bứt phá|ngày nay|mọi người ơi", "hô hào / sáo"),
+]
 CALQUES = [
     (r"điều tôi gạch chân", "dịch sát — “điều khiến tôi phải ghi đậm vào sổ”"),
     (r"\bđập vào mắt\b", "sáo — tả cái gì làm nó nổi lên"),
@@ -34,6 +39,10 @@ def lint_beat(bid, text, lang):
     if len(short) > 1:
         out.append(f"beat {bid} {lang.upper()}: {len(short)} câu ngắn — tối đa một mỗi beat: "
                    + " · ".join(f"“{ss[i]}”" for i in short[:4]))
+    long_ = [s for s in ss if size(s, lang) > LONG[lang]]
+    for s in long_[:3]:
+        out.append(f"beat {bid} {lang.upper()}: câu {size(s, lang)} {'tiếng' if lang == 'vi' else 'từ'} — tách thành "
+                   f"một câu tả thong thả và một câu hành động gọn: “{s[:60]}…”")
     for a, b in zip(short, short[1:]):
         if b == a + 1:
             out.append(f"beat {bid} {lang.upper()}: hai câu ngắn liền nhau “{ss[a]}” “{ss[b]}” — nhịp báo cáo, gộp lại")
@@ -54,6 +63,9 @@ def lint_beat(bid, text, lang):
             out.append(f"beat {bid} VI: “{m.group(0)}” — gọi bằng danh từ đầy đủ")
         for m in re.finditer(r"\btrảng\b(?! cỏ)", text, re.I):
             out.append(f"beat {bid} VI: “trảng” đứng một mình — viết đủ “trảng cỏ”")
+        for pat, why in BANNED_VI:
+            for m in re.finditer(pat, text, re.I):
+                out.append(f"beat {bid} VI: “{m.group(0)}” — {why}")
         for pat, why in CALQUES:
             for m in re.finditer(pat, text, re.I):
                 out.append(f"beat {bid} VI: “{m.group(0)}” — {why}")
