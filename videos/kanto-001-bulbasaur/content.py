@@ -1,232 +1,301 @@
-# Creature Field Guide — Kanto #001–003 · "Búp Lệch"
+# Creature Field Guide — Kanto #001 · "Ai đang nuôi ai?" · V4
 #
-# Người kể: Dr. Holth (docs/NARRATOR.md) — xưng "tôi", KHÔNG bao giờ nói tên mình. Tên chỉ ở bìa sổ thực địa và credit.
-# Người kể là nhà sinh vật học thực địa của thế giới chúng ta, khảo sát Viridian Forest ở Kanto.
-# Nhân vật (đặt tên theo vết tích hoặc hành vi, kèm vai diễn — xem .claude/skills/creature-field-guide-scriptwriter/references/subject-naming-and-evidence.md):
-#   K7 "Búp Lệch" — vết tích: cái củ trên lưng mọc nghẹo một bên (hệ quả của việc luôn vặn theo nắng)
-#                   · vai: KẺ YẾU THẾ VƯƠN LÊN · trả bài ở beat 12 (hướng dương) và beat 13 (thôi là Búp Lệch)
-#   "Vai Rách"     — đặt theo vết tích: mảng da rách bên sườn · vai: HÀNG XÓM
-#   "Mắt Tro"      — đặt theo vết tích: một con mắt màu tro · vai: KẺ SĂN CHUYÊN MỘT CON MỒI
-#   "Lưng Rêu"     — đặt theo vết tích: rêu và dương xỉ mọc trên lưng · con cái già · vai: BÀ LÃO CỦA VÙNG
-# Bí ẩn xuyên suốt: cái hạt trên lưng là ký sinh hay cộng sinh? -> trả bài ở beat 15.
+# Luồng: 2-skeleton.md (Claude) → 3-script-gemini.md (Gemini) → bản này (Claude chuẩn hoá).
+# Đã sửa gì của Gemini và vì sao: drafts/4-review.md.
 #
-# Luật (docs/CREATURE-LENS.md + .claude/skills/creature-field-guide-scriptwriter):
-#   - Không nhắc game. Pokédex = cuốn danh lục của người bản xứ; tên đòn đánh = tên người ta đặt.
-#   - Ba nhãn không trộn: 📖 danh lục (có nguồn) · 👁 quan sát · 🔬 giả thuyết (kèm loài có thật).
-#   - CẢNH TIẾN HOÁ: không có lột da. Chỉ dùng sưng nở, sức nặng, ánh sáng, bóng dáng, dấu vết.
-#   - Mọi khả năng phải nêu CÁI GIÁ.
-# Giọng đọc VBee ghép sau -> không dùng [tag]. "\n" = một nhịp ngắt.
+# Người kể: Dr. Holth (docs/NARRATOR.md) — xưng "tôi", KHÔNG bao giờ nói tên mình.
+# Không đặt tên riêng cho con vật (docs/CAST.md):
+#   K-01 · Shiny Bulbasaur → Shiny Ivysaur — đặc điểm: thân vàng-xanh nhạt, củ sẫm; sau đổi hình: nụ VÀNG
+#   K-04 · con Bulbasaur lớn, rách một mảng da bên sườn — quay lại ở beat 13
+#   một con Fearow, một bên mắt đục màu tro · con Venusaur cái già ở bìa rừng
+# "shiny" là từ của người bản xứ, nói ĐÚNG MỘT LẦN ở beat 02, sau khi đã thấy màu.
+# Câu hỏi xương sống, không bao giờ trả lời: con thú nuôi cái hạt, hay cái hạt nuôi con thú?
+#
+# Luật: không nhắc game · ba nhãn 📖 👁 🔬 (+🎬 lời người bản xứ) · không lột da · mọi khả năng có giá ·
+# không bịa số. Giọng đọc VBee ghép sau -> không dùng [tag]. "\n" = một nhịp ngắt.
+#
+# BEATS là bản VI (track giọng VBee). BEATS_EN là bản gốc EN — engine chưa đọc, giữ ở đây để hai bản
+# đi cùng một file và soát lệch thời lượng được.
 
 ORDER = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"]
 
 BEATS = {
-# ---- mở đầu ------------------------------------------------------------------
+# ---- HỒI 1 · NGHỊCH LÝ ----------------------------------------------------------
 "00":
-"Ngày đầu tiên tôi gặp Búp Lệch, nó đang nằm giữa lối mòn, bất động dưới nắng trưa.\n"
+"Ngày đầu tiên tôi gặp nó, nó nằm bất động giữa lối mòn dưới nắng trưa.\n"
 "Tôi tưởng nó đã chết.\n"
-"Rồi cái hạt trên lưng nó khẽ co lại.\n"
-"Nó đang thở. Và không phải chỉ bằng phổi.",
+"Rồi cái hạt trên lưng nó khẽ co lại. Nó đang thở, và không phải chỉ bằng phổi.",
 
 "01":
-"Tôi tới Rừng Gió Gập để làm một việc mà ở quê tôi người ta làm với sói và với voi:\n"
-"chọn một con, đi theo nó đủ lâu, rồi xem cái gì thay đổi.\n"
-"Trong sổ của người bản xứ, con vật này được ghi là Bulbasaur. Trong sổ của tôi, nó là cá thể K7.\n"
-"Suốt mấy tuần đầu, nó chỉ có chừng ấy: một chữ và một con số.",
+"Tôi mang theo một câu hỏi từ nhiều năm nay: có những sinh vật mà sự sống và năng lượng không thể tách rời.\n"
+"Nên tôi làm cái việc ở quê tôi người ta vẫn làm với sói và voi: chọn một con, đi theo nó, xem điều gì thay đổi.\n"
+"Cuốn danh lục gọi loài này là Bulbasaur. Sổ của tôi gọi nó là K-01.\n"
+"Suốt mấy tuần đầu, nó chỉ có chừng ấy: một chữ cái và một con số.",
 
-# ---- chương 1: con yếu nhất --------------------------------------------------
 "02":
-"Rừng Gió Gập là chỗ rừng già chạm vào đồng cỏ. Giữa hai thứ đó có một lối mòn nhỏ, cỏ bị đè rạp,\n"
-"và lối mòn ấy do chúng đi.\n"
-"Ở trảng này tôi đếm được bảy cá thể. Búp Lệch là con nhỏ nhất, và lúc nào cũng đi sau.\n"
-"Nếu chỉ nhìn qua, nó là con yếu nhất trong bảy con.\n"
-"Nhưng suốt một tuần đầu tiên, tôi ghi lại chỗ nằm của từng con vào mỗi buổi trưa.\n"
-"Và K7 luôn nằm đúng vệt nắng sáng nhất trong trảng. Không phải một hôm. Là cả bảy hôm.\n"
-"Ở đây người ta không gọi con vật bằng số. Họ gọi theo dấu nó mang trên người.\n"
-"Con này có sẵn một dấu. Cái củ trên lưng nó không mọc thẳng như sáu con kia, mà nghẹo hẳn về một bên.\n"
-"Từ hôm ấy, trong sổ tôi, K7 thành Búp Lệch.",
+"Viridian là nơi rừng già chạm vào đồng cỏ. Giữa hai thứ ấy có một lối mòn cỏ rạp, và chính chúng đã dẫm ra nó.\n"
+"Trảng này có bảy con. K-01 nhỏ nhất, và lúc nào cũng đi sau cùng. Vậy mà nó lại là con đập vào mắt đầu tiên.\n"
+"Da nó màu vàng xanh nhạt, ấm, trong khi những con kia xanh lam. Và cái củ trên lưng nó sẫm hơn củ của chúng.\n"
+"Suốt bảy ngày, tôi vẽ lại chỗ từng con nằm lúc giữa trưa. Ngày nào K-01 cũng chiếm vệt nắng sáng nhất.\n"
+"Người ở đây gọi những con như thế là “shiny”. Trong sổ tôi, nó vẫn chỉ là K-01.",
 
-# ---- chương 2: cái hạt không phải vật trang trí -------------------------------
+# ---- HỒI 2 · CÁI DẠ DÀY THỨ HAI ---------------------------------------------------
 "03":
-"Mỗi buổi trưa, Búp Lệch bỏ ăn.\n"
-"Nó nằm yên tới mức có hôm tôi tưởng mình đã mất dấu, và bò vòng qua bụi dương xỉ để tìm.\n"
-"Nhưng sau vài giờ, cái hạt trên lưng nó căng lên, còn cái bụng thì vẫn phẳng.\n"
+"Giữa trưa, K-01 thôi kiếm ăn và nằm im. Có lần tôi mất dấu nó hẳn, phải bò qua bụi dương xỉ hai mươi phút mới tìm ra.\n"
+"Ba tiếng sau, cái hạt trên lưng nó căng tròn. Còn bụng thì vẫn phẳng.\n"
 "Nó không nhịn đói. Nó đang ăn một thứ khác.\n"
-"Cuốn danh lục ghi hai dòng rời nhau, và tôi mất gần một tháng mới ghép được chúng lại:\n"
-"cái hạt lớn lên nhờ hút ánh mặt trời, và con vật này nhịn ăn được nhiều ngày liền\n"
-"nhờ phần dự trữ nằm trong củ.\n"
-"Nói cách khác, thứ trên lưng nó không phải đồ trang trí, mà là một cái dạ dày thứ hai.",
+"Cuốn danh lục có hai dòng ghi rời nhau: nắng làm cái hạt lớn lên, và con vật nhịn ăn được nhiều ngày nhờ phần dự trữ trong củ. Tôi mất gần một tháng mới ghép được hai dòng ấy lại.\n"
+"Thứ trên lưng nó là một cái dạ dày thứ hai.",
 
 "04":
-"Nhưng ăn nắng thôi thì chưa đủ. Một cái cây còn cần nước và khoáng.\n"
-"Tôi mất thêm ba tuần mới thấy Búp Lệch lấy hai thứ đó ở đâu.\n"
-"Cuối buổi chiều, nó ra mép ao, đứng lún hai chân trước trong lớp bùn nhão, rất lâu, và không uống ngụm nào.\n"
-"Ở quê tôi, ếch nhái gần như không uống bằng miệng. Chúng hút nước qua một vùng da mỏng ở bụng.\n"
-"Còn phần khoáng, tôi ngờ nó không đến từ bên ngoài chút nào.\n"
-"Dưới rạn san hô, tảo sống trong mô con vật chủ dùng lại chính chất thải của nó để lớn.\n"
-"Nếu cái củ này cũng vậy, thì nó đang được bón bằng thứ mà cơ thể Búp Lệch thải ra.\n"
-"Một vòng khép kín. Không rơi mất giọt nào.",
+"Nhưng chỉ có nắng thì chưa đủ. Một cái cây còn cần nước và khoáng, và tôi mất thêm ba tuần mới thấy K-01 lấy chúng ở đâu.\n"
+"Cuối chiều, nó lội ra mép ao, đứng rất lâu, hai chân trước lún trong bùn. Nó không hề cúi xuống uống.\n"
+"Còn khoáng, tôi ngờ là đến từ bên trong. Ở quê tôi, loài tảo sống trong mô san hô lấy chính chất thải của vật chủ làm thức ăn.\n"
+"Nếu cái củ cũng vậy, thì nó đang được bón bằng thứ mà cơ thể K-01 thải ra. Một vòng khép kín. Không rơi mất giọt nào.",
 
-# ---- chương 3: một sinh vật sống chung ---------------------------------------
 "05":
-"Tới đây thì câu hỏi trong sổ tôi đổi hẳn.\n"
-"Ban đầu tôi viết: cái hạt này là vật ký sinh.\n"
-"Nó bám trên lưng, nó hút, nó lớn lên bằng thứ con vật kiếm được.\n"
-"Nhưng ký sinh thì không làm cho vật chủ no.\n"
-"Còn Búp Lệch thì những ngày nắng gắt lại là những ngày nó khoẻ nhất.\n"
-"Vậy Búp Lệch đang nuôi cái hạt, hay cái hạt đang nuôi Búp Lệch?\n"
-"Ở quê tôi, hai kiểu sống chung này chỉ cách nhau một sợi tóc.\n"
-"Địa y là nấm và tảo dính vào nhau tới mức người ta từng tưởng là một loài.\n"
-"Còn cây tầm gửi thì cắm vòi vào thân cây chủ, rồi rút dần cho tới khi cây chủ chết đứng.",
+"Tới đây, cuốn sổ của tôi rẽ sang hướng khác.\n"
+"Ban đầu tôi viết: vật ký sinh. Một thứ bám vào, hút, và lớn lên bằng những gì vật chủ kiếm được. Rồi tôi gạch đi. Ký sinh không làm vật chủ no, mà K-01 lại khoẻ nhất vào những ngày nắng gắt nhất.\n"
+"Con thú đang nuôi cái hạt, hay cái hạt đang nuôi con thú?\n"
+"Ở quê tôi, ranh giới giữa hai lối sống chung ấy mỏng như sợi tóc. Địa y là nấm và tảo gắn chặt tới mức người ta từng tưởng là một loài. Còn cây tầm gửi cắm rễ vào thân cây chủ, cho tới khi cây chủ chết đứng.",
 
-# ---- chương 4: bầy đàn --------------------------------------------------------
+# ---- HỒI 3 · CHẠM ---------------------------------------------------------------
 "06":
-"Bảy con trong trảng không bao giờ nằm sát nhau.\n"
-"Mỗi con giữ một khoảng trống đủ rộng để nắng chạm được xuống lưng mình.\n"
-"Chiều xuống, khi bóng rừng bò ra, những vệt nắng còn lại co rất nhanh, và lúc đó thì có chen lấn.\n"
-"Không con nào cắn con nào. Chúng ép vai, đẩy nhau, rồi con thua bỏ đi tìm vệt khác.\n"
-"Búp Lệch thường ngủ cách một con lớn hơn chừng hai thân người. Đêm nào cũng vậy, cùng một khoảng cách.\n"
-"Hai con ấy chưa bao giờ chạm vào nhau.\n"
-"Hôm con lớn kia bị rách một mảng da bên sườn, tôi mới đặt được tên cho nó: Vai Rách.\n"
-"Ở đây người ta đặt tên như thế. Cái tên đến sau vết thương.\n"
-"Và cả trảng đổi chỗ nằm. Tới tối, bốn con đã nằm quanh Vai Rách.",
+"Bảy con không bao giờ nằm sát nhau. Con nào cũng giữ một khoảng trống đủ để nắng chạm xuống lưng mình.\n"
+"Chiều xuống, bóng rừng bò dần qua trảng, những vệt nắng co lại rất nhanh, và cuộc chen lấn bắt đầu. Chúng ép vai, không bao giờ cắn. Con thua bỏ đi.\n"
+"K-01 ngủ cách một con lớn hơn chừng hai thân. Đêm nào cũng đúng khoảng ấy. Hai con chưa bao giờ chạm vào nhau.\n"
+"Hôm con lớn kia bị rách một mảng da bên sườn, tôi cho nó một mã: K-04. Một con vật chỉ có mã khi tôi phân biệt được nó.\n"
+"Đêm ấy, bốn con dời chỗ nằm quanh K-04. K-01 vẫn nằm đúng chỗ cũ.",
 
 "07":
-"Chúng cũng chạm vào nhau, chỉ là không nằm cạnh nhau.\n"
-"Hai sợi dây leo thò ra từ dưới củ, gặp nhau giữa không trung, cuộn lấy nhau vài giây, rồi thả.\n"
-"Tôi đứng nhìn cảnh đó hai mươi phút và không ghi nổi chữ nào.\n"
-"Vì thứ tôi vừa thấy không phải một cái roi. Nó gần với cái vòi con voi hơn.\n"
-"Để cầm, để chạm, để chào.\n"
-"Và để gãi. Lưng là điểm mù: một con vật bốn chân, cổ ngắn, không thể tự quay lại chỗ cái củ.\n"
-"Chiều hôm đó tôi thấy Búp Lệch vẩy một sợi dây leo qua lưng, gạt phắt một con sâu đang bò lên mép lá,\n"
-"đúng động tác cái đuôi ngựa xua ruồi trâu.",
+"Chúng có chạm vào nhau. Chỉ là không phải lúc nằm nghỉ.\n"
+"Hai sợi dây leo thò ra từ dưới củ, gặp nhau giữa không trung, quấn lấy nhau vài giây rồi buông. Tôi đứng nhìn hai mươi phút mà không viết nổi một chữ.\n"
+"Đó không phải cái roi. Đó là một cơ quan để cầm, để chạm, để chào.\n"
+"Và để giữ mình sạch sẽ. Lưng là điểm mù của một con vật bốn chân, cổ ngắn. Chiều hôm ấy, K-01 vẩy một sợi dây leo qua vai, gạt phắt con sâu đang bò ở chân củ, y như con ngựa quất đuôi đuổi ruồi.",
 
-# ---- chương 5: Mắt Tro --------------------------------------------------------
+# ---- HỒI 4 · CÁI GIÁ ------------------------------------------------------------
 "08":
-"Con chim xuất hiện vào ngày thứ hai mươi hai.\n"
-"Một con chim lớn, mỏ dài, bay vòng rất cao. Nó không săn cả trảng. Nó chỉ theo Búp Lệch.\n"
-"Một bên mắt nó phủ một lớp màng đục màu tro, dấu của một vết thương cũ.\n"
-"Người bản xứ gọi nó theo đúng cái mắt ấy: Mắt Tro.\n"
-"Lần bổ nhào đầu tiên, Búp Lệch không chạy.\n"
-"Nó ép sát người xuống nền đất ẩm dưới một tán dương xỉ, và đứng im.\n"
-"Đây là lúc tôi hiểu ra bộ da của nó.\n"
-"Màu xanh lam với những đốm sẫm không đều, nhìn gần thì kỳ quặc, nhưng nằm dưới tán lá thì\n"
-"những đốm ấy trùng khít với các mảng nắng lọt qua kẽ lá rọi xuống đất.\n"
-"Mắt Tro sượt qua cách chừng một sải tay, rồi bay vòng lại.\n"
-"Lần thứ hai, cái củ trên lưng Búp Lệch hé ra ở đỉnh, và một màn bào tử mịn bung lên.\n"
-"Con chim đảo cánh, mất hướng, rồi bỏ đi.",
+"Màu da ấy có cái giá của nó.\n"
+"Ngày thứ năm mươi ba, một con chim lớn bắt đầu lượn vòng trên cao. Danh lục ghi nó là Fearow. Một bên mắt nó đục màu tro vì một vết thương cũ. Nó chỉ bám theo K-01.\n"
+"Dưới tán dương xỉ, bộ da xanh lam lốm đốm của những con kia tan vào bóng nắng loang lổ. Còn da nhạt màu của K-01 thì không.\n"
+"Ở quê tôi, những con bướm đêm màu nhạt đậu trên vỏ cây ám khói bị chim bắt nhiều hơn hẳn những con sẫm màu.\n"
+"Cú bổ nhào đầu tiên, K-01 không chạy. Nó ép sát mình dưới một bụi dương xỉ và đứng im. Bụi dương xỉ che nó, chứ không phải bộ da. Con chim trượt qua cách một sải tay.\n"
+"Cú thứ hai, đỉnh củ hé ra và một làn bột mịn bung lên. Con chim chao đảo, mất hướng, rồi bỏ đi.",
 
-# ---- chương 6: cái giá của sức mạnh ------------------------------------------
 "09":
-"Nhưng cái tôi ghi đậm nhất hôm đó không phải màn bào tử.\n"
-"Sau khi Mắt Tro bỏ đi, Búp Lệch nằm im gần hết buổi chiều. Không ăn, không đổi chỗ, không phản ứng khi tôi lại gần.\n"
-"Và cái củ trên lưng nó nhỏ lại thấy rõ.\n"
-"Thứ vừa cứu mạng nó được lấy ra từ đúng cái kho mà nó phơi nắng cả tháng để tích.\n"
-"Từ hôm đó tôi thôi ghi những thứ này vào mục khả năng.\n"
-"Tôi chuyển hết sang mục thu và chi.",
+"Điều tôi gạch chân lại đến sau đó.\n"
+"K-01 nằm im suốt buổi chiều. Không ăn, không nhúc nhích, không phản ứng khi tôi lại gần.\n"
+"Và cái củ nhỏ đi thấy rõ.\n"
+"Thứ vừa cứu mạng nó được trả bằng đúng cái kho mà nó đã phơi nắng hàng tuần để tích.\n"
+"Từ hôm ấy, tôi thôi ghi những thứ này vào mục khả năng. Tôi mở một cuốn sổ: thu, và chi.",
 
-# ---- chương 6b: trong thị trấn ------------------------------------------------
+# ---- HỒI 5 · CÙNG MỘT CƠ QUAN ----------------------------------------------------
 "10":
-"Ở vùng đất này có một thứ mà quê tôi không có. Người ta đấu với nhau bằng chính những con vật này.\n"
-"Tối hôm ấy tôi xuống thị trấn, đứng ở vòng ngoài một sân đất, và xem một trận.\n"
-"Trong sân, hai sợi dây leo không còn để chào nhau nữa. Chúng quật.\n"
-"Cùng một cơ quan: ngoài rừng để hái quả và gạt sâu, trong sân để đánh.\n"
-"Tôi không thấy điều đó đáng lên án. Cái vòi voi ở quê tôi cũng vừa vuốt ve con non, vừa quật gãy được xương người.\n"
-"Nhưng có một cú làm tôi ngồi viết tới gần sáng.\n"
-"Con vật trong sân không bắn ngay. Nó đứng yên một nhịp, cái củ trên lưng sáng lên,\n"
-"rồi mới phóng ra một luồng sáng.\n"
-"Khán giả quanh tôi coi nhịp chờ ấy là điểm yếu. Tôi thì nhận ra mình vừa nhìn thấy cái kho ban trưa,\n"
-"bị rút cạn trong một hơi thở.",
+"Vùng đất này có một thứ mà quê tôi không có: người ta cho những con vật này đấu với nhau.\n"
+"Tôi xuống một thị trấn, đứng ở vòng ngoài một sân đất, xem một trận.\n"
+"Trong sân, dây leo không chào nhau nữa. Chúng quất.\n"
+"Cùng một cơ quan: trong rừng để hái quả và gạt sâu, trong sân để đánh. Tôi không phán xét điều đó. Ở quê tôi, vòi voi vừa vuốt ve voi con, vừa bẻ gãy được cả một cành cây.\n"
+"Có một khoảnh khắc làm tôi ngồi viết tới sáng. Con vật đứng im một nhịp, cái củ sáng lên từ bên trong, rồi mới phóng ra một luồng sáng.\n"
+"Đám đông coi nhịp chờ ấy là điểm yếu. Tôi thì thấy cả kho nắng ban trưa bị tiêu sạch trong một hơi thở.\n"
+"Sáng hôm sau về lại rừng, K-01 đã nằm sẵn trong vệt nắng đầu tiên.",
 
-# ---- chương 6c: hai cái nết ---------------------------------------------------
 "11":
-"Những người nuôi lâu năm ở đây nói mỗi loài có một nết riêng. Với loài này thì có hai.\n"
-"Nết thứ nhất tôi tự đo được trước khi nghe ai nói.\n"
-"Giữa trưa nắng gắt, Búp Lệch đi nhanh hơn hẳn chính nó lúc trời râm. Tôi bấm giờ trên cùng một quãng đường,\n"
-"và con số gần như gấp đôi.\n"
-"Ở quê tôi, thằn lằn và rắn phải phơi nắng cho ấm người đã, rồi mới chạy nhanh được.\n"
-"Một cỗ máy chạy bằng nắng thì nắng càng gắt, máy càng khoẻ.\n"
-"Nết thứ hai tôi chỉ thấy trong sân đấu, và nó làm tôi khó chịu hơn là thán phục.\n"
-"Khi con vật đã bị thương nặng, gần như không đứng nổi, những cú đánh của nó đột nhiên mạnh hẳn lên.\n"
-"Tôi không nghĩ nó khoẻ hơn. Tôi nghĩ nó đang dốc nốt chỗ dự trữ. Một lần. Và hết.\n"
-"Ở quê tôi, cây thùa sống mấy chục năm chỉ để dồn tất cả vào một lần trổ hoa, rồi chết.",
+"Những người nuôi loài này lâu năm bảo mỗi loài có một nết. Loài này có hai.\n"
+"Nết thứ nhất tôi tự đo được trước khi ai kể. Dưới nắng gắt giữa trưa, K-01 đi hết cùng một quãng đường nhanh gần gấp đôi lúc trời râm. Tôi đã bấm giờ. Một cơ thể chạy bằng nắng thì nắng càng gắt, nó càng khoẻ.\n"
+"Nết thứ hai tôi chỉ thấy trong sân đấu, và nó làm tôi khó chịu hơn là thán phục. Khi con vật đã bị thương nặng, gần như không đứng nổi, những cú đánh của nó bỗng mạnh hẳn lên.\n"
+"Tôi không nghĩ nó khoẻ hơn. Tôi nghĩ nó đang dốc nốt phần dự trữ cuối cùng. Một lần. Rồi hết.\n"
+"Ở quê tôi, cây thùa tích mấy chục năm chỉ để dồn cả vào một lần trổ hoa, rồi chết.",
 
-# ---- chương 7: trước khi đổi ---------------------------------------------------
+# ---- HỒI 6 · ĐỔI HÌNH -----------------------------------------------------------
 "12":
-"Tháng thứ tư, Búp Lệch đổi nếp.\n"
-"Nó nằm ngoài nắng lâu hơn hẳn, bỏ cả nhịp trú trưa trong bóng râm, và ăn nhiều hơn trước.\n"
-"Nó cũng đi chậm lại. Hai sợi dây leo dày lên, cử động nặng nề, có lần vươn ra rồi rơi xuống\n"
-"như chính nó cũng không điều khiển nổi.\n"
-"Có một buổi sáng tôi ngồi đúng ba tiếng chỉ để ghi một chi tiết.\n"
-"Đầu Búp Lệch quay về hướng nam, nằm im. Nhưng cái củ trên lưng thì vặn chậm về phía đông, theo mặt trời.\n"
-"Hai thứ trên cùng một cơ thể, quay về hai hướng khác nhau, trong cùng một buổi sáng.\n"
-"Và cái củ mọc lệch mà tôi lấy làm tên cho nó, hoá ra không phải một tật bẩm sinh.\n"
-"Đó là vết của một động tác lặp lại mỗi ngày, từ ngày nó còn nằm trong vệt nắng ấy.\n"
-"Ở quê tôi, hoa hướng dương non cũng quay theo mặt trời suốt ngày. Tới khi nở hẳn thì đứng yên,\n"
-"và đứng mãi về một hướng.",
+"Sang tháng thứ tư, K-01 đổi nếp.\n"
+"Nó nằm ngoài nắng lâu hơn hẳn, bỏ cả nhịp trú trưa, và ăn nhiều hơn. Nó đi chậm lại. Hai sợi dây leo dày lên, trĩu xuống, như thể nó không còn điều khiển được chúng.\n"
+"Có một buổi sáng tôi ngồi ba tiếng chỉ để ghi một chi tiết.\n"
+"Đầu K-01 quay về hướng nam và không nhúc nhích. Nhưng cái củ trên lưng thì xoay chậm về hướng đông, theo mặt trời.\n"
+"Hai phần của cùng một cơ thể, quay về hai hướng, trong cùng một buổi sáng.\n"
+"Đó là dấu hiệu rõ nhất tôi có được rằng trong thân thể này có hai sự sống. Vậy mà tôi vẫn không nói được con nào đang nuôi con nào.\n"
+"Ở quê tôi, hoa hướng dương non quay theo mặt trời suốt ngày. Tới khi nở hẳn thì đứng yên, nhìn mãi về hướng đông.",
 
 "13":
-"Cuối tháng ấy, Búp Lệch rời đàn.\n"
-"Nó bỏ trảng nắng, đi sâu vào phía rừng già, và tôi mất dấu nó bốn ngày.\n"
-"Đêm thứ năm tôi tìm thấy nó trong một hõm đất khuất sau vành cây, cùng hơn mười con khác, đứng thành vòng.\n"
-"Không con nào chạm vào con nào. Không con nào phát ra tiếng.\n"
-"Người bản xứ nói mỗi năm chúng tụ về đây một lần.\n"
-"Lúc đó tôi nghĩ nó sắp chết. Tôi đã viết nguyên một trang về chuyện ấy.\n"
-"Sau này tôi mới hiểu, nó chỉ đang chuẩn bị không còn là Búp Lệch nữa.",
+"Cuối tháng ấy, K-01 rời đàn, đi vào rừng già. Tôi mất dấu nó bốn ngày.\n"
+"K-04 ở lại. Sáng nào nó cũng nằm đúng chỗ cũ, cạnh một khoảng trống bằng hai thân. Không con nào vào nằm chỗ ấy.\n"
+"Đêm thứ năm, tôi tìm thấy K-01 trong một hõm đất sau vành cây cổ thụ, đứng thành vòng cùng mười một con khác, lặng im, không con nào chạm con nào. K-01 là con nhạt màu duy nhất.\n"
+"Người ở đây kể rằng mỗi năm chúng tụ về đây một lần. Họ gọi nơi này là Khu Vườn Kỳ Bí.\n"
+"Lúc ấy tôi tưởng nó đến đó để chết. Tôi đã viết nguyên một trang về chuyện ấy.",
 
-# ---- chương 8: Ivysaur --------------------------------------------------------
 "14":
-"Tôi không nhìn thấy khoảnh khắc ấy. Tôi ngủ quên sau hai đêm thức trắng, và khi tỉnh dậy thì trời đã sáng.\n"
-"Cái hõm đất trống không.\n"
-"Nhưng nó để lại đủ thứ cho một người có nghề đọc.\n"
-"Đất bị cày lên thành những rãnh ngắn, chỗ bốn cái chân đã bấu xuống để chống đỡ một sức nặng mới.\n"
-"Cỏ quanh đó bẹp thành một vòng tròn. Quanh cổ củ, những bẹ lá già bong ra, khô, cuộn lại như vỏ hành.\n"
-"Và cả hõm đất sực mùi hoa, thứ mùi mà trước đó tôi chưa từng ngửi thấy ở loài này.\n"
-"Phía bên kia bãi cỏ, trong sương, có một cái bóng lớn hơn cái bóng tôi đã theo suốt một năm.\n"
-"Nó bước ra khỏi vùng sáng, và để lại những dấu chân sâu hơn hẳn, có một vệt kéo lê phía sau.\n"
-"Thứ đứng đó không còn là con vật tôi từng ghi chép.\n"
-"Nhưng khi tôi mở sổ, nó vẫn nghiêng đầu về phía tiếng bút.",
+"Tôi không được thấy khoảnh khắc ấy. Sau hai đêm thức trắng tôi thiếp đi, và khi tỉnh dậy lúc rạng sáng, hõm đất đã trống không.\n"
+"Nhưng nó để lại đủ cho một người biết đọc mặt đất.\n"
+"Đất bị cày thành những rãnh ngắn, chỗ bốn bàn chân đã bấu xuống để đỡ một sức nặng mới. Cỏ bẹp thành một vòng tròn. Trên mặt đất rải rác những bẹ lá già khô, bong ra, cuộn lại như vỏ hành. Và cả hõm đất sực mùi hoa, thứ mùi tôi chưa từng ngửi thấy ở loài này.\n"
+"Bên kia bãi cỏ, trong sương, có những cái bóng lớn. Những con kia mang nụ màu hồng.\n"
+"Một con mang nụ màu vàng.\n"
+"Da nó giờ đã xanh lá, không còn nhạt màu nữa, nhưng cái nụ thì vàng óng, và tôi biết.\n"
+"Thứ đứng đó không còn là con vật tôi từng ghi chép. Nhưng khi tôi mở sổ, nó vẫn nghiêng đầu về phía tiếng bút.",
 
+# ---- HỒI 7 · KHÔNG CÓ CÂU TRẢ LỜI ------------------------------------------------
 "15":
-"Cái nụ trên lưng nó bây giờ nặng tới mức nó không đứng bằng hai chân sau được nữa.\n"
-"Chân và thân đã dày lên để đỡ. Ở quê tôi, voi và rùa khổng lồ trả đúng cái giá ấy:\n"
-"mang nặng thì chân phải thành cột.\n"
-"Mùa mưa cuối cùng trong cuốn sổ này, tôi gặp một con trưởng thành già sống ở bìa rừng.\n"
-"Thân nó đã hoá gỗ, dương xỉ nhỏ và rêu mọc luôn trên lưng, bông hoa to và hơi bạc màu.\n"
-"Người bản xứ gọi con này là Lưng Rêu, và họ bảo nó ở bìa rừng ấy từ trước khi họ sinh ra.\n"
-"Chính giữa bông hoa của Lưng Rêu có một cái nhụy. Ở những con khác tôi từng gặp thì không có.\n"
-"Lưng Rêu là con cái. Và đó là lần đầu tiên tôi phân biệt được giới tính của loài này bằng mắt thường.\n"
-"Còn Búp Lệch thì chưa. Cái nụ của nó chưa nở, nên tôi vẫn chưa biết mình đã theo một con đực hay con cái.\n"
-"Sau mỗi trận mưa, hương hoa của nó đậm hẳn lên, và tôi đã ngồi nhìn hai con vật đang gầm gừ nhau\n"
-"cùng ngồi xuống, cách nhau vài bước, trong làn hương ấy.\n"
-"Tôi vẫn không biết cái hạt trên lưng Búp Lệch là một phần của nó, hay một sinh vật khác sống nhờ nó.\n"
-"Có lẽ câu trả lời không nằm ở chỗ ta gọi nó là gì.\n"
-"Có lẽ một cơ thể có thể bắt đầu từ hai sự sống, và vẫn thành một cá thể duy nhất.\n"
-"Ở trang sau của cuốn danh lục có một loài mang lửa ở chóp đuôi.\n"
-"Nếu ngọn lửa ấy tắt khi trời mưa, nó sống sót bằng cách nào?",
+"Cái nụ giờ nặng tới mức K-01 không đứng lên bằng hai chân sau được nữa. Chân và thân nó đã dày ra để đỡ.\n"
+"Mùa mưa cuối cùng trong cuốn sổ này, tôi gặp một con Venusaur cái rất già ở bìa rừng. Thân nó đã hoá gỗ. Rêu và dương xỉ nhỏ mọc kín lưng, bông hoa lớn đã phai màu. Người ở đây bảo nó ở bìa rừng ấy từ trước khi ông bà họ ra đời.\n"
+"Chính giữa bông hoa có một cái nhụy. Những con khác tôi gặp đều không có. Nó là con cái, và đó là lần đầu tôi phân biệt được giới tính loài này bằng mắt thường.\n"
+"Nụ của K-01 thì chưa nở. Sau mười bốn tháng, tôi vẫn chưa biết mình đã theo một con đực hay một con cái.\n"
+"Sau mỗi trận mưa, hương hoa của con cái già đậm hẳn lên. Có lần tôi thấy hai con vật đang gầm gừ nhau cùng nằm xuống, cách nhau vài bước, trong làn hương ấy, và nằm yên.\n"
+"Tôi vẫn không biết cái hạt trên lưng K-01 là một phần của nó, hay một sự sống khác đang sống nhờ nó. Có lẽ câu trả lời không nằm ở cách ta gọi tên. Có lẽ một cơ thể có thể bắt đầu từ hai sự sống, mà vẫn thành một.\n"
+"Ở trang sau của cuốn danh lục là một loài mang ngọn lửa ở chóp đuôi. Nếu ngọn lửa ấy tắt trong mưa, nó sống sót bằng cách nào?",
 
 "short-outro":
-"Cái hạt ấy là một phần của nó, hay một sinh vật khác đang sống nhờ nó?\n"
+"Con thú đang nuôi cái hạt, hay cái hạt đang nuôi con thú?\n"
 "Sau mười bốn tháng ngoài đồng, tôi vẫn chưa trả lời được.",
 }
 
-# Phiên âm cho TTS (VBee): caption trên màn hình vẫn giữ chính tả gốc.
-PRON = {
-    "Bulbasaur": "bôn-ba-xo",
-    "Kanto": "can-tô",
+BEATS_EN = {
+"00":
+"On the first day, I found it lying on the trail under the midday sun.\n"
+"I thought it was dead.\n"
+"Then the seed on its back contracted. It was breathing, and not only with its lungs.",
+
+"01":
+"I came with a question I have carried for years: there are creatures in which life and energy cannot be pulled apart.\n"
+"So I did what we do back home with wolves and elephants. Choose one animal, follow it, see what changes.\n"
+"The catalogue calls this species Bulbasaur. My notebook calls it K-01.\n"
+"For weeks, that was all it was: a letter and a number.",
+
+"02":
+"Viridian is where the old forest meets the grassland. Between them runs a trail of flattened stems, and they are the ones who made it.\n"
+"Seven animals live in this clearing. K-01 is the smallest, and it always walks last. Yet it is the one you notice first.\n"
+"Its skin is a warm, pale yellow-green where the others are blue-green, and the bulb on its back is darker than theirs.\n"
+"For seven days I mapped where each animal lay at noon. K-01 took the brightest patch every single day.\n"
+"People here call animals like this “shiny”. In my notebook, it is still just K-01.",
+
+"03":
+"At noon, K-01 stops feeding and lies still. Once I lost it completely, and spent twenty minutes crawling through the bracken to find it.\n"
+"Three hours later, the seed on its back was taut and swollen. Its belly was still flat.\n"
+"It was not fasting. It was eating something else.\n"
+"The catalogue keeps two separate notes: sunlight makes the seed grow, and the animal can go for days without food on what the bulb has stored. It took me nearly a month to put them together.\n"
+"The thing on its back is a second stomach.",
+
+"04":
+"But sunlight is not enough. A plant also needs water and minerals, and it took me another three weeks to see where K-01 finds them.\n"
+"Late in the afternoon it wades to the edge of the pond and stands there a long time, front feet sunk in the mud. It never lowers its head to drink.\n"
+"The minerals, I suspect, come from inside. Back home, the algae living in coral tissue feed on their host's waste.\n"
+"If the bulb works the same way, it is fed by what K-01's own body throws away. A closed loop. Nothing lost.",
+
+"05":
+"Here my notebook changed course.\n"
+"At first I wrote: parasite. Something that clings, drinks, and grows on whatever its host finds. Then I crossed it out. Parasites do not leave their host well fed, and K-01 is strongest on the fiercest days of sun.\n"
+"Is the animal feeding the seed, or is the seed feeding the animal?\n"
+"Back home, the line between those two ways of living is a hair thin. A lichen is a fungus and an alga bound so tightly we once took them for one species. A mistletoe drives its roots into a tree until the tree dies standing.",
+
+"06":
+"The seven never sleep pressed together. Each keeps enough space for the sun to reach its back.\n"
+"At dusk, as the forest's shadow crawls across the clearing, the patches of light shrink fast, and the shoving begins. Shoulders, never teeth. The loser walks away.\n"
+"K-01 sleeps about two body-lengths from a larger animal. Every night, the same distance. They never touch.\n"
+"The day that larger one tore open its flank, I gave it a code: K-04. An animal earns a code once I can tell it apart.\n"
+"That night, four animals moved to lie around K-04. K-01 stayed where it always was.",
+
+"07":
+"They do touch. Just never while they rest.\n"
+"Two vines slide out from under the bulbs, meet in the air, wind around each other for a few seconds, and let go. I watched for twenty minutes and did not write a word.\n"
+"This is not a whip. It is an organ for holding, for touching, for greeting.\n"
+"And for keeping clean. The back is a blind spot for a short-necked animal on four legs. That afternoon, K-01 flicked a vine over its shoulder and knocked a caterpillar off the base of its bulb, the way a horse swats a fly with its tail.",
+
+"08":
+"The colour has a price.\n"
+"On the fifty-third day, a large bird began to circle overhead. The catalogue lists it as Fearow. One of its eyes was clouded ash-grey from an old wound. It followed only K-01.\n"
+"Under the ferns, the others' blotched blue-green skin melts into the broken shade. K-01's pale skin does not.\n"
+"Back home, pale moths resting on soot-darkened bark were taken by birds far more often than dark ones.\n"
+"On the first dive, K-01 did not run. It pressed itself flat under a fern and froze. The fern hid it, not its skin. The bird missed by an arm's length.\n"
+"On the second dive, the top of the bulb split open and a fine pale powder burst out. The bird rolled, lost its line, and was gone.",
+
+"09":
+"What I underlined came afterwards.\n"
+"K-01 lay still for the rest of the afternoon. It did not eat, did not move, did not react when I came close.\n"
+"And the bulb was visibly smaller.\n"
+"What had saved its life was paid out of the store it had spent weeks filling in the sun.\n"
+"From then on, I stopped writing these things under abilities. I started a ledger: income, and expense.",
+
+"10":
+"This land has something my home does not. People set these animals against each other.\n"
+"I went down to a town and watched one match from the edge of a dirt yard.\n"
+"In the yard, the vines do not greet. They lash.\n"
+"The same organ that picks fruit and brushes off pests in the forest is used here to strike. I do not judge it. Back home, an elephant's trunk can caress a newborn calf, and it can tear a branch from a tree.\n"
+"One moment kept me writing until dawn. The animal held perfectly still for a beat, the bulb lit from within, and only then came the beam of light.\n"
+"The crowd called that pause a weakness. I saw the day's stored sun spent in a single breath.\n"
+"By morning, back in the forest, K-01 was already lying in the first patch of light.",
+
+"11":
+"People who have raised these animals for years say each kind has a temperament. This one has two.\n"
+"The first I had measured myself before anyone told me. Under the harsh noon sun, K-01 covered the same stretch of ground almost twice as fast as in the shade. I timed it. A body that runs on sunlight runs harder when the sun is fierce.\n"
+"The second I saw only in the yard, and it troubled me more than it impressed me. When an animal is badly hurt, barely standing, its blows suddenly grow stronger.\n"
+"I do not think it has become stronger. I think it is spending the last of its reserve. Once.\n"
+"Back home, the agave stores for decades for a single flowering, and then it dies.",
+
+"12":
+"In the fourth month, K-01 changed its habits.\n"
+"It stayed out in the open sun long past noon, gave up its midday shade, and ate more than before. It walked more slowly. Its vines thickened and hung heavy, as if it could no longer quite steer them.\n"
+"One morning I sat for three hours to record a single detail.\n"
+"K-01's head faced south and did not move. But the bulb on its back turned, slowly, toward the east, following the sun.\n"
+"Two parts of one body, facing two ways, on the same morning.\n"
+"It is the clearest sign I have that two lives share this body. And still I cannot say which one is feeding the other.\n"
+"Back home, young sunflowers follow the sun all day. Once they bloom, they stop, and face the east for good.",
+
+"13":
+"At the end of that month, K-01 left the herd and went into the old forest. For four days I lost it.\n"
+"K-04 stayed. Every morning it lay in its usual place, beside the same two-body gap. No one took that spot.\n"
+"On the fifth night I found K-01 in a hollow behind a ring of old trees, standing in a silent circle with eleven others, none of them touching. K-01 was the only pale one.\n"
+"People here say they gather in this place once a year. They call it the Mysterious Garden.\n"
+"I thought it had gone there to die. I wrote a whole page about it.",
+
+"14":
+"I did not see the moment itself. After two sleepless nights I fell asleep, and when I woke at dawn, the hollow was empty.\n"
+"But it had left enough for anyone who reads the ground.\n"
+"The soil was ploughed into short furrows, where four feet had braced under a sudden new weight. The grass lay flattened in a ring. Old dry bracts lay scattered on the ground, come loose and curled like onion skin. And the whole hollow smelled of flowers, a scent I had never known this species to carry.\n"
+"Across the grass, in the mist, stood large shapes. The others carried pink buds.\n"
+"One carried a yellow bud.\n"
+"Its skin was leaf-green now, no longer pale, but the bud was gold, and I knew.\n"
+"What stood there was no longer the animal I had recorded. But when I opened my notebook, it tilted its head toward the sound of the pen.",
+
+"15":
+"The bud is so heavy now that K-01 can no longer rise onto its hind legs. Its legs and body have thickened to carry it.\n"
+"In the last rainy season of this notebook, I met a very old female Venusaur at the edge of the forest. Her trunk had turned to bark. Moss and small ferns covered her back, and her great flower had faded. People here say she was there before their grandparents were born.\n"
+"At the centre of her flower was a pistil. The others I had met had none. She was female, the first time I could tell the sexes of this species apart by eye.\n"
+"K-01's bud has not opened. After fourteen months, I still do not know whether I have followed a male or a female.\n"
+"After rain, her scent grows stronger. Once I watched two animals that had been snarling at each other lie down a few steps apart inside it, and stay there.\n"
+"I still do not know whether the seed on K-01's back is part of it, or another life living on it. Perhaps the answer is not in what we call it. Perhaps a body can begin as two lives, and still become one.\n"
+"On the next page of the catalogue is a creature that carries a flame at the tip of its tail. If that flame goes out in the rain, how does it survive?",
+
+"short-outro":
+"Is the animal feeding the seed, or is the seed feeding the animal?\n"
+"After fourteen months in the field, I still cannot say.",
 }
 
-# Nguồn cho từng câu canon — soát lại trước khi thu giọng.
+# Phiên âm cho TTS (VBee): chữ trên màn hình vẫn giữ chính tả gốc. Nghe thử rồi chỉnh.
+PRON = {
+    "Bulbasaur": "bôn-ba-xo",
+    "Venusaur": "vi-nu-xo",
+    "Fearow": "phia-râu",
+    "Viridian": "vi-ri-đi-an",
+    "K-01": "ca không một",
+    "K-04": "ca không bốn",
+    "shiny": "sai-ni",
+}
+
+# Nguồn cho từng câu canon — soát lại trước khi thu giọng. Khoá theo nghĩa, không theo chữ.
 NGUON = {
-    "hạt được gieo trên lưng từ lúc chào đời": "Pokédex Red/Blue",
-    "ngủ dưới nắng, hạt hấp thụ nắng mà lớn": "Pokédex Ruby/Sapphire/Emerald",
+    "hạt trên lưng; ngủ dưới nắng, hạt hấp thụ nắng mà lớn": "Pokédex Ruby/Sapphire/Emerald",
     "nhịn ăn nhiều ngày, dự trữ trong củ": "Pokédex Yellow",
-    "7 đực : 1 cái (không còn đọc thành số trong lời thoại, để dành cho tập khác)": "Bulbapedia",
-    "hai nết: nắng gắt → nhanh gấp đôi; kiệt sức → đòn mạnh hơn": "Chlorophyll; Overgrow — Bulbapedia",
-    "nụ hút năng lượng từ chính cơ thể": "Pokédex Yellow (Ivysaur)",
-    "mất khả năng đứng bằng hai chân sau; chân và thân dày lên": "Pokédex Red/LeafGreen/Sword; Ruby/Emerald",
+    "màu Shiny: thân vàng-xanh nhạt, củ sẫm; Shiny Ivysaur nụ vàng; giữ qua đổi hình": "Bulbapedia — Shiny Pokémon",
+    "bung bột mịn làm kẻ tấn công lả đi (không gọi tên)": "Sleep Powder, Gen I — Bulbapedia",
+    "nạp sáng trong củ, đứng im một nhịp rồi phóng (không gọi tên)": "Solar Beam, lượt nạp — Bulbapedia",
+    "hai nết: nắng gắt → nhanh gấp đôi; kiệt sức → đòn mạnh hơn (không gọi tên, không nói hệ số)": "Chlorophyll; Overgrow — Bulbapedia",
     "phơi nắng nhiều hơn thường lệ = sắp nở; toả hương khi sắp nở": "Pokédex Ruby; Blue/Silver (Ivysaur)",
+    "mất khả năng đứng bằng hai chân sau; chân và thân dày lên": "Pokédex Red/LeafGreen/Sword; Ruby/Emerald",
     "con cái có nhụy giữa hoa": "Bulbapedia — Venusaur, gender differences",
     "sau mưa hương đậm hơn; hương làm nguôi kẻ đang giao chiến": "Pokédex Venusaur; Ruby/Sapphire; FireRed",
-    "mỗi năm tụ về một chỗ khuất rồi cùng đổi hình": "anime — Bulbapedia, mục Biology (kể như lời người bản xứ)",
-    "ĐỐI CHIẾU TRÁI ĐẤT (soát lại trước khi thu)": "ếch hút nước qua da bụng · tảo cộng sinh trong mô san hô dùng lại chất thải đạm của vật chủ · địa y cộng sinh · cây tầm gửi ký sinh · đuôi ngựa xua ruồi · màu gây nhiễu dưới ánh nắng lọt tán lá · thằn lằn phơi nắng mới chạy nhanh · cây thùa dồn cả đời vào một lần trổ hoa · hoa hướng dương non quay theo mặt trời rồi đứng cố định khi nở · voi và rùa khổng lồ: mang nặng thì chân thành cột",
+    "mỗi năm tụ về một chỗ khuất rồi cùng đổi hình (🎬, kể như lời người bản xứ)": "anime tập 51 — Bulbapedia, mục Biology",
+    "Viridian Forest": "Pokémon: Let's Go, Pikachu!/Eevee!",
+    "ĐỐI CHIẾU TRÁI ĐẤT (soát nguồn trước khi thu)":
+        "lõi: tảo cộng sinh trong mô san hô dùng lại chất thải của vật chủ · địa y cộng sinh / cây tầm gửi ký sinh · "
+        "vòi voi (vuốt ve và bẻ cành) · bướm sâu đo Biston betularia, dạng nhạt trên vỏ cây ám khói bị chim bắt nhiều hơn "
+        "(Kettlewell 1955; Cook et al. 2012) · hướng dương non quay theo mặt trời, nở rồi đứng yên hướng đông "
+        "(Atamian et al. 2016) — tuỳ chọn (2/2): đuôi ngựa xua ruồi · cây thùa dồn cả đời vào một lần trổ hoa",
 }

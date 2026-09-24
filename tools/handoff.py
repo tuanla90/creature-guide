@@ -523,9 +523,12 @@ def check_draft(slug, which=None):
 
     en_all, vi_all, shots, total, order = "", "", [], 0.0, list(beats)
     for b, fl in beats.items():
-        for need in ("VO_EN", "VO_VI", "SHOTS", "EVIDENCE"):
+        for need in ("VO_EN", "VO_VI") if b == "short-outro" else ("VO_EN", "VO_VI", "SHOTS", "EVIDENCE"):
             if not fl.get(need):
                 err.append(f"beat {b}: thiếu {need}")
+        # số đo trong ghi chú trang sổ cũng là số bịa — lần đầu chạy thật, Gemini ghi "2.1 m/s"
+        for m in re.finditer(r"\d+(?:[.,]\d+)?\s*(?:m/s|km/h|km|kg|cm|mm|%|°|m\b)", fl.get("SHOTS", "")):
+            err.append(f"beat {b}: số đo trong SHOTS/notes “{m.group(0)}” — số bịa, trang sổ chỉ ghi quan sát")
         en, vi = fl.get("VO_EN", ""), fl.get("VO_VI", "")
         en_all += f"\n[{b}] " + en
         vi_all += f"\n[{b}] " + vi
@@ -585,6 +588,17 @@ def check_draft(slug, which=None):
         err.append("người dẫn nói tên mình (“Holth”) trong lời")
     for m in set(re.findall(OLD_NAMES, en_all + vi_all, re.I)):
         err.append(f"tên riêng cũ còn sót: “{m}”")
+    tl = dd.get("timeline")
+    for m in set(re.findall(OLD_NAMES, tl if isinstance(tl, str) else "", re.I)):
+        warn.append(f"tên riêng cũ trong TIMELINE: “{m}” — Gemini còn nghĩ bằng tên cũ, soát lời kỹ hơn")
+    # "ở quê tôi" là dấu của một lần so sánh Trái Đất: lõi (tối đa ~5) + tối đa 2 tuỳ chọn
+    for lang, txt, pat in (("EN", en_all, r"back home"), ("VI", vi_all, r"ở quê tôi")):
+        n = len(re.findall(pat, txt, re.I))
+        if n > 7:
+            warn.append(f"“{pat}” {n} lần trong lời {lang} — so sánh Trái Đất vượt hạn mức (lõi + tối đa 2 tuỳ chọn)")
+    per_beat = [b for b in order if len(re.findall(r"back home", beats[b].get("VO_EN", ""), re.I)) > 1]
+    if per_beat:
+        warn.append(f"hơn một so sánh Trái Đất trong một beat: {', '.join(per_beat)}")
 
     # đặc điểm của cá thể trung tâm: gọi đúng một lần, và chỉ sau khi đã có cảnh cận thấy nó
     trait, central = meta.get("trait"), meta.get("central")
