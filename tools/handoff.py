@@ -11,6 +11,7 @@ Mọi thứ đều suy từ **tên file**, nên luật đặt tên là cả cái
     một ảnh lẻ                    <shot-id>.jpg|png         -> public/img/<ep>/<shot-id>.jpg
     ảnh tham chiếu                <ref-id>.png|jpg|webp     -> bible/refs/<loài>/<file trong refs.json>
     clip Veo / Seedance           <shot-id>.mp4             -> public/video/<ep>/<shot-id>.mp4
+    loài Trái Đất (nguồn sạch)    earth-<loài>-<bộ phận>.mp4|jpg -> public/video|img/<ep>/  + dòng trong earth.json
     giọng VI (VBee)               beat-<id>.mp3 · short-outro.mp3 -> public/audio/<slug>/
     bản nháp Gemini               dán thẳng vào videos/<slug>/drafts/<vN>-gemini.md
 
@@ -171,6 +172,17 @@ def status(slug):
     for c in miss_clips:
         print(f"   · thiếu public/{c}")
 
+    # 4b · loài Trái Đất: file có mặt và đã ghi nguồn chưa
+    led_f = vid / "earth.json"
+    ledger = {x.get("file") for x in json.loads(led_f.read_text(encoding="utf-8"))} if led_f.exists() else set()
+    earth = sorted(q.name for d in ("img", "video") for q in (ROOT / "public" / d / ep).glob("earth-*"))
+    if earth or ledger:
+        print(f"\n4b · LOÀI TRÁI ĐẤT  {len(earth)} file · {len(ledger)} dòng nguồn")
+        for n in earth:
+            if n not in ledger:
+                print(f"   ✗ {n}: chưa ghi nguồn/giấy phép trong videos/{slug}/earth.json")
+                nxt.append(f"ghi nguồn cho {n} vào earth.json (link gốc + giấy phép)")
+
     # 5 · giọng
     c = load_content(slug)
     order = list(getattr(c, "ORDER", [])) if c else []
@@ -214,6 +226,10 @@ def classify(p, ep, want, refs, voice):
         return ("ref", refs[stem][0])
     if kind == "mp4" and (stem in want or stem.rsplit("-", 1)[0] in want):
         return ("clip", ROOT / "public" / "video" / ep / f"{stem}.mp4")
+    if stem.startswith("earth-") and kind in ("jpg", "png", "webp"):   # loài Trái Đất: SCENE-TYPES mục B2
+        return ("earth", ROOT / "public" / "img" / ep / f"{stem}.{kind}")
+    if stem.startswith("earth-") and kind == "mp4":
+        return ("earth", ROOT / "public" / "video" / ep / f"{stem}.mp4")
     if kind == "mp3" and stem in voice:
         return ("voice", ROOT / "public" / "audio" / "{slug}" / f"{stem}.mp3")
     return None
@@ -291,6 +307,8 @@ def take(slug, dry):
                 dst = Path(str(dst).replace("{slug}", slug))
             note = f"   [{refs[p.stem][1]['what']}]" if kind == "ref" else ""
             move(p, dst, dry, note)
+            if kind == "earth":
+                note = "   [nhớ ghi link gốc + giấy phép vào earth.json]"
             if kind == "ref" and not dry:
                 mark_ref(dst.parent / "refs.json", p.stem)
             zips += kind == "img"
@@ -325,12 +343,12 @@ OLD_NAMES = r"crookedbud|scar-?shoulder|ash-?eye|moss-?back|\bsaur\b|búp lệch
 NUM_WORDS = (r"\b(\d+[\d.,]*|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
              r"twenty[- ]?\w*|thirty|forty|fifty|hundred|thousand|dozen|percent|degrees?)\b")
 ALLOWED = {
-    "el": {"world", "clip", "specimen", "notepage"},
+    "el": {"world", "clip", "specimen", "notepage", "freeze"},
     "size": {"extreme-wide", "wide", "medium", "close", "macro"},
     "angle": {"eye", "low", "high", "overhead", "rear", "profile", "pov"},
     "loc": {"viridian-forest:trail", "viridian-forest:clearing", "viridian-forest:garden", "town:yard", "none"},
 }
-WHO = re.compile(r"^(none|bulbasaur(:K-0[14])?|ivysaur(:K-01)?|venusaur:female|fearow|real:.+|anatomy:.+)$")
+WHO = re.compile(r"^(none|bulbasaur(:K-0[14])?|ivysaur(:K-01)?|venusaur:female|fearow|anatomy:.+)$")
 EN_WPS, VI_SPS = 2.3, 3.0        # nhịp ƯỚC LƯỢNG (VI lấy theo scaffold) — có giọng thật thì đo lại
 
 
@@ -454,6 +472,15 @@ def check_draft(slug, ver):
         for w in sh.get("who", "none").split("+"):
             if not WHO.match(w.strip()):
                 err.append(f"{where}: who={w} không hợp lệ")
+    freezes = [s for s in shots if s["el"] == "freeze"]
+    earth = [s for s in shots if s.get("earth")]
+    if len(freezes) > 3:
+        err.append(f"{len(freezes)} cú dừng hình — tối đa 3 (beat {', '.join(s['beat'] for s in freezes)})")
+    if len(earth) > 2:
+        err.append(f"{len(earth)} ảnh quê nhà — tối đa 2 (beat {', '.join(s['beat'] for s in earth)})")
+    for s in earth:
+        if s["el"] != "freeze":
+            err.append(f"beat {s['beat']}: earth= chỉ đi kèm el=freeze (ảnh quê nhà nằm trong thẻ của cú dừng)")
     sizes = {s.get("size") for s in shots} - {None}
     angles = {s.get("angle") for s in shots} - {None}
     if len(sizes) < 3 or len(angles) < 3 or "wide" not in sizes:

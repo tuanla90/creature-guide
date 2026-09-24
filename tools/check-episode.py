@@ -463,6 +463,36 @@ def main(slug: str) -> int:
         if len(sig) and not any("nhịp hình" in m or "công thức" in m for m in warn):
             K("nhịp hình có đổi giữa các beat")
 
+    # ---- dừng hình và ảnh quê nhà --------------------------------------------
+    # Luật cường độ (docs/SCENE-TYPES.md mục B2): dừng hình là lúc người kể ngừng lại để nghĩ —
+    # nhiều quá thì thành giờ giảng. Ảnh loài Trái Đất phải có nguồn sạch ghi trong earth.json.
+    freezes, earth = [], []
+    for bid in order:
+        s = scenes.get(bid)
+        if not isinstance(s, dict):
+            continue
+        for m in s.get("moments", []):
+            for e in m.get("stack", []):
+                if e.get("el") == "specimen" and e.get("video"):
+                    freezes.append(bid)
+                for c in e.get("callouts", []) if e.get("el") == "specimen" else []:
+                    if c.get("media"):
+                        earth.append((bid, c["media"].get("src", "")))
+    if len(freezes) > 3:
+        E(f"{len(freezes)} cú dừng hình (beat {', '.join(freezes)}) — tối đa 3 mỗi tập")
+    if len(earth) > 2:
+        E(f"{len(earth)} ảnh quê nhà (beat {', '.join(b for b, _ in earth)}) — tối đa 2 mỗi tập")
+    ledger_f = ROOT / "videos" / slug / "earth.json"
+    ledger = {x.get("file"): x for x in json.loads(ledger_f.read_text(encoding="utf-8"))} if ledger_f.exists() else {}
+    for bid, src in earth:
+        row = ledger.get(Path(src).name)
+        if not row:
+            E(f"beat {bid}: ảnh quê nhà “{src}” chưa ghi nguồn trong videos/{slug}/earth.json")
+        elif not row.get("source") or not row.get("license"):
+            E(f"beat {bid}: “{src}” thiếu link gốc hoặc giấy phép trong earth.json")
+    if freezes or earth:
+        K(f"{len(freezes)} cú dừng hình · {len(earth)} ảnh quê nhà — trong hạn mức")
+
     # ---- góc máy -----------------------------------------------------------
     # Một tập chụp mãi ngang tầm mắt, cỡ trung, thì beat nào cũng giống beat nào — y như bệnh
     # "88% world" nhưng ở tầng ảnh. Soát trên shot bible vì góc máy được quyết từ lúc viết prompt.
@@ -496,6 +526,10 @@ def main(slug: str) -> int:
     # ---- bible: cảnh nghiên cứu · ảnh mẫu · địa điểm · ảnh tham chiếu ------
     all_shots = [s for f in shot_files for s in json.loads(f.read_text(encoding="utf-8")).get("shots", [])]
     kinds = Counter(s.get("kind") for s in all_shots)
+    reals = [s["id"] for s in all_shots if s.get("kind") == "real" and not s.get("_legacy")]
+    if reals:
+        W(f"{len(reals)} ảnh kind “real” — loài Trái Đất không sinh bằng AI nữa, lấy ảnh/video thật từ nguồn "
+          f"sạch (SCENE-TYPES mục B2): {', '.join(reals[:6])}")
 
     # Dr. Holth là người đi tìm sự sống × năng lượng: mỗi tập bắt buộc có một cảnh nhìn XUYÊN QUA
     # (x-quang) và một trang sổ nghiên cứu kiểu Darwin / da Vinci. Xem docs/NARRATOR.md.

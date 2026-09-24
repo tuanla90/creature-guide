@@ -23,7 +23,7 @@ của khâu dựng hình.
 |---|---|---|
 | `plate` | ảnh mẫu: cả thân, nền trơn, ánh sáng đều | không — **nó chính là ref** |
 | `scene` | cảnh thật ngoài thực địa | có |
-| `real` | động vật có thật ở Trái Đất, để đối chiếu 🔬 | không |
+| ~~`real`~~ | **ngừng dùng** — loài Trái Đất không sinh bằng AI nữa, xem mục B2 | — |
 | `anatomy` | X-quang mô phỏng: nền teal, thân trong mờ, xương và mạch năng lượng phát sáng | **không** |
 | `fieldnote` | một trang sổ: giấy + hình vẽ chì mực, **chừa trống một phần ba bên phải** | **không** |
 
@@ -239,6 +239,56 @@ lời dẫn đang chỉ ra từng chi tiết trên cơ thể.
 - `w`: trọng số thời lượng của từng callout. Dưới ~1,2 giây thì thẻ chưa kịp hiện.
 - `outro`: `"overview"` (lùi ra, mặc định) hoặc `"hold"` (giữ nguyên ở callout cuối).
 
+### Dừng hình để phân tích — `specimen` trên video
+
+Con vật đang làm một việc, lời dẫn tới đúng chữ quan trọng thì **hình đứng lại**, nền tối đi, rồi
+camera soi vào bộ phận đang làm việc ấy. Đây là lúc người kể dừng lại để nghĩ.
+
+```json
+{ "el": "specimen", "aspect": 1.7917,
+  "video": {"src": "video/kanto-001/b02-vine-lash.mp4", "from": 0.5, "to": 4},
+  "introW": 1.2,
+  "callouts": [
+    {"x": 0.52, "y": 0.3, "zoom": 2.0, "label": "Vine · one organ", "sub": "grasp · greet · strike",
+     "atWord": "quật", "media": {"src": "video/kanto-001/earth-elephant-trunk.mp4",
+     "from": 2, "to": 6, "caption": "Elephas maximus · trunk"}}
+  ] }
+```
+
+- Video chạy trong đoạn tổng thể đầu, **đứng hình đúng lúc callout đầu tiên mở** — neo nó bằng
+  `atWord` vào chữ đang nói. Khung đứng lấy từ chính video nên không có vết nối.
+- `to` chặn trên: đoạn tổng thể dài hơn nguồn thì đứng ở `to`. `dim` độ tối thêm (mặc định 0.35).
+- Lời dẫn phải **chừa chỗ** cho cú dừng: quyết từ kịch bản, không chèn sau khi đã thu giọng.
+
+### Ảnh quê nhà — `callout.media`
+
+Trong thẻ callout, một tấm ảnh in dán vào như ảnh ông mang theo từ quê nhà: viền giấy, băng
+dính, màu ngả, hạt phim, tên Latin viết tay trên mép (`caption`). Ảnh hoặc video lặp đều được.
+
+Trình bày kiểu này vì ba lẽ: khán giả đọc ra ngay đó là **ký ức "ở quê tôi"**, không phải cảnh ở
+Viridian; phim thật đặt cạnh ảnh AI không bị lệch chất liệu, vì chúng rõ ràng thuộc hai thế giới; và
+nó là ảnh ông mang theo chứ không phải máy quay, nên không phạm luật "không có đoàn làm phim".
+
+## B2 · Loài Trái Đất — luật cường độ
+
+1. **Tối đa 3 cú dừng hình mỗi tập**, trong đó **tối đa 2 cú có ảnh quê nhà**. Khung chia đôi
+   (đặt hai thứ cạnh nhau cả khung) chưa làm — để dành cho khi thật cần.
+2. **Mọi so sánh khác chỉ nói, không lên hình.** Một so sánh chỉ được lên hình khi nó đẩy câu hỏi
+   của tập đi tiếp.
+3. **Loài Trái Đất không sinh bằng AI.** Ảnh AI "chụp thật" một loài thật sai là bị bắt ngay, và dễ
+   bị tưởng là ảnh thật. Lấy từ nguồn **không đòi ghi tên tác giả** (cùng luật với âm thanh): Pexels,
+   Pixabay (video) · ảnh và phim của cơ quan chính phủ Mỹ (NOAA, USFWS, NPS — thuộc phạm vi công
+   cộng) · tranh cổ Biodiversity Heritage Library · Wikimedia Commons chỉ bản công cộng hoặc CC0.
+   **Không** lấy thẳng từ kết quả Google.
+4. **Mỗi file ghi vào `videos/<slug>/earth.json`**: loài, link gốc, giấy phép. Pexels/Pixabay đôi khi
+   bị Content ID nhận vơ — link gốc là thứ để kháng nghị.
+
+   ```json
+   [{"file": "earth-elephant-trunk.mp4", "species": "Elephas maximus",
+     "source": "<link trang gốc>", "license": "Pexels License"}]
+   ```
+5. Tên file `earth-<loài>-<bộ phận>.mp4|jpg`, thả vào `inbox/` như mọi file bàn giao (docs/HANDOFF.md).
+
 ### `clip` — chuyển động thật
 Một đoạn video. Vẫn lia và phóng được như `world`.
 
@@ -333,5 +383,6 @@ Sửa bằng cách tăng `w` hoặc **bỏ bớt một moment** — đừng kéo
 | con vật đứng yên, thở, chờ | `clip` từ `creature-motion` (miễn phí) |
 | liệt kê quan sát, người kể đang phân vân | `notepage` |
 | giải thích cơ chế bên trong | ảnh `anatomy` dựng bằng `specimen` |
-| đối chiếu một loài có thật ở Trái Đất 🔬 | ảnh `real` dựng bằng `world` |
+| đối chiếu một loài có thật ở Trái Đất 🔬 | **nói**; nếu đẩy câu hỏi đi tiếp thì dừng hình + ảnh quê nhà (tối đa 2/tập) |
+| con vật vừa làm một động tác đáng soi | dừng hình: `specimen` với `video` |
 | nêu cái giá của một khả năng | `specimen` soi đúng chỗ bị hao |

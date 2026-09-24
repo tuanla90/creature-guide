@@ -29,6 +29,7 @@ gì: ảnh bị thay được đổi tên thành `<tên>.prev1.jpg`, còn ZIP đ
 | `xong ảnh` | chạy loạt cảnh, tải ZIP | như trên | như trên | gỡ watermark, đo toạ độ callout, dựng `scenes.json` |
 | — | sinh lại **một** ảnh lẻ ngoài batch | `<shot-id>.jpg` hoặc `.png` | `public/img/<ep>/<shot-id>.jpg` | như trên, đo lại toạ độ của riêng ảnh ấy |
 | `xong clip` | tải clip Veo / Seedance | `<shot-id>.mp4` (nhiều bản thì `<shot-id>-2.mp4`) | `public/video/<ep>/` | cắt `from`/`to`, gắn vào `scenes.json` |
+| `xong earth` | tải ảnh/video loài Trái Đất từ nguồn sạch ([SCENE-TYPES.md](SCENE-TYPES.md) mục B2) | `earth-<loài>-<bộ phận>.mp4` hoặc `.jpg`, và **một dòng** trong `videos/<slug>/earth.json` | `public/video/<ep>/` hoặc `public/img/<ep>/` | soát giấy phép, gắn vào `callout.media` |
 | `xong giọng` | thu VBee từng beat | `beat-00.mp3` … `beat-15.mp3`, `short-outro.mp3` | `public/audio/<slug>/` | `npm run align` → `export-subs.py` → soát lệch |
 | `xong âm` | tải nhạc / tiếng động | theo [SOUND.md](SOUND.md) | `assets/` | chạy `/nap-am` (tool riêng: `tools/intake.py`) |
 | `xong duyệt` | xem bản dựng trong `tools/review.py`, ghi chú tại chỗ | tự lưu `videos/<slug>/review-notes.json` | — | sửa theo từng ghi chú, báo lại cái nào chưa sửa được |

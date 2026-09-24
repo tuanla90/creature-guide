@@ -38,7 +38,7 @@ Một shot:
   |---|---|---|
   | `plate` | ảnh mẫu, nền trơn, cả thân | sinh **trước**, mọi cảnh khác lấy nó làm `[ref]` |
   | `scene` | cảnh thật | mặc định |
-  | `real` | động vật Trái Đất để đối chiếu | bỏ phần "giữ dáng sinh vật hư cấu" |
+  | ~~`real`~~ | **ngừng dùng** | loài Trái Đất lấy ảnh/video thật, xem `docs/SCENE-TYPES.md` mục B2 |
   | `anatomy` | X-quang mô phỏng, nền xanh, xương và mạch năng lượng | thân **nguyên vẹn, khép kín** — không máu me, nội tạng, mổ xẻ |
   | `fieldnote` | trang sổ thực địa: giấy + hình vẽ chì/mực | chừa trống **một phần ba bên phải** |
   | `location` | **địa điểm trống**, không một sinh vật nào | ảnh mẫu địa điểm — sinh trước, mọi cảnh cùng nơi lấy làm `[ref]` |
@@ -120,6 +120,7 @@ Ba element làm gần hết việc:
 | `world` | cảnh tràn khung, camera tự lia/phóng | nhiều `layers` + `depth` thì có parallax; `fx` cho hạt |
 | `specimen` | soi từng điểm trên một ảnh mẫu | **toạ độ đo trên ảnh thật**, `atWord` neo theo lời đọc |
 | `clip` | nguồn là video | `from`/`to` tính bằng giây trong file gốc, `speed`, tự lặp |
+| `specimen` + `video` | **dừng hình để phân tích** | video chạy tới callout đầu rồi đứng; `callout.media` kẹp ảnh quê nhà. Tối đa 3 cú dừng, 2 ảnh quê nhà mỗi tập |
 
 Luật chữ của kênh (khác mặc định của engine):
 
