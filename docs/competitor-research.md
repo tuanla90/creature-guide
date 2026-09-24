@@ -22,6 +22,7 @@
 | Oak's Chronicles | @OaksChronicles | 16.8K | 52 | EN | Doc + tournament animation |
 | Planet Pokewild | @PlanetPokewild | 526 | 6 | EN | Biology-focused doc (7-15') |
 | Pokémon Nature Archives | @PokémonNatureArchives | 777 | 8 | EN | NatGeo short (2-4') |
+| **Poké Science** | @PokeSciencereal | 440 | 19 | EN | Science-driven, câu hỏi investigative |
 
 ---
 
@@ -84,12 +85,19 @@ Format YouTuber: "Tôi nuôi / tôi mô phỏng Pokémon trong đời thực". K
 
 **Độ dài:** **26–33 phút** — dài nhất trong thị trường
 
+**Visual đặc trưng quan sát thực tế (Kommo-o video):**
+- **Hero pose** trên nền mây/bầu trời dramatic — không phải wildlife habitat, gần movie poster hơn NatGeo
+- Close-up face rất mạnh (0:30s): mắt Kommo-o chiếm gần toàn frame, ánh sáng dramatic một bên
+- Cảnh 2:00s: Kommo-o đứng thẳng nhìn xuống từ đỉnh núi — perspective "god's eye", ngược Pokearth (Pokearth luôn ngửa lên)
+- Palette: xanh lam lạnh, grey bầu trời — không có warm forest tone của MonBiology
+
 **Nhận xét:**
 - Format NatGeo rất rõ ràng, tiêu đề đặt đẹp
 - 79 video = sản lượng cao, phủ nhiều generation
 - Nhưng sub (12K) thấp so với số video → mỗi video view không cao
-- Hypothesis: video dài không phù hợp với discovery thuật toán — YouTube đẩy video ngắn 5-10 phút mạnh hơn cho phân khúc này
+- Hypothesis: video dài (26-33') không phù hợp thuật toán — YouTube đẩy 5-10 phút mạnh hơn
 - Phủ nhiều Pokémon ít nổi tiếng (Ferrothorn, Malamar, Klefki) → dũng cảm nhưng có thể không tối ưu view
+- Visual "epic/mythology" khác hẳn MonBiology's "wildlife observation" — hai cách tiếp cận hoàn toàn khác nhau với cùng chủ đề
 
 ---
 
@@ -220,7 +228,33 @@ Format YouTuber: "Tôi nuôi / tôi mô phỏng Pokémon trong đời thực". K
 
 ---
 
-### 6 · Pokevideo Lab — rất mới
+### 6 · Poké Science — investigative format, visual quality cao
+
+**Kênh:** `@PokeSciencereal` · 440 subs · 19 video · mới
+
+**Mô tả tự khai:** *"Cinematic, science-driven channel that explores Pokémon as if they existed in the real world. We combine realistic AI-generated visuals with scientific analysis to examine Pokémon biology, anatomy, behavior, evolution, and survival strategies — grounded in real-world biology."*
+
+**Format tiêu đề:** `Real Life Pokémon NATGEO | [Câu hỏi] | [Tên] Documentary`
+
+**Video ví dụ:**
+- *What If Parasect Is Already Dead?* · 5:27
+- *What Happens at the Top of Mount Silver? | Red vs Ethan* · 5:17
+- *What Happens When Snorlax Wakes Up?* · 6:26
+- *The Primordial Mother: Mew's Genetic Blueprint* · (video link 2 của user)
+
+**Visual đặc trưng quan sát thực tế:**
+- AI video generation chất lượng cao — cảnh Squirtle underwater photorealistic, cảnh Arcanine/Growlithe trong rừng rất đẹp
+- Biết dùng nhiều biome trong một video (dưới nước, trên cạn, rừng, hang động)
+- Cảnh amber/fossil ở 20s: dramatic spotlight trên nền tối — cinematic mood rất khác MonBiology's warm forest
+
+**Điểm đáng chú ý:**
+- **Format câu hỏi** ("What If…?", "What Happens When…?") tạo hook tốt hơn format tường thuật thụ động
+- Đặt câu hỏi → khán giả tò mò → tỉ lệ click cao hơn
+- Chưa có đủ dữ liệu view để đánh giá hiệu quả (kênh mới)
+
+---
+
+### 7 · Pokevideo Lab — rất mới
 
 **Kênh:** `@PokeVideoLab` · 31 subs  
 **Video:** *Rise of the Badlands Titan | Life of a Larvitar* (Sep 2026) · 386 views  
