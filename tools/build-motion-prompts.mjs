@@ -9,6 +9,32 @@ const ep = process.argv[2] || "kanto-001";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, "$1")), "..");
 const shotsFile = path.join(root, `bible/shots/${ep}.json`);
 
+// Ưu tiên bible/clips/<ep>.json: chuyển động VIẾT TAY cho từng clip (từ drafts/4-scene-plan.json), thay
+// cho phần đoán theo từ khoá bên dưới — đoán theo từ khoá ra chuyển động chung chung, lệch lời dẫn.
+const clipsFile = path.join(root, `bible/clips/${ep}.json`);
+if (fs.existsSync(clipsFile)) {
+  const NL = String.fromCharCode(10);
+  const C =JSON.parse(fs.readFileSync(clipsFile, "utf-8"));
+  const jsonl = [], txt = [], md = [`# Clip — ${C.episode} (${ep})`, "",
+    "Ảnh đầu = ảnh cảnh đã chốt. **hold** = nguồn của một cú dừng hình: clip phải có khoảnh khắc đứng yên, rõ nét.", "",
+    "| # | id | beat | máy | hold | ảnh đầu |", "|---|---|---|---|---|---|"];
+  C.clips.forEach((c, i) => {
+    const file = `${C.imgDir}/${c.id}.jpg`;
+    const avoid = [...(C.avoid || []), ...(c.avoid || [])];
+    const motionPrompt = [c.motion, C.suffix, avoid.length ? `Avoid: ${avoid.join(", ")}.` : ""].filter(Boolean).join(" ");
+    const has = fs.existsSync(path.join(root, file));
+    jsonl.push(JSON.stringify({id: c.id, file, beat: c.beat, engine: c.engine, hold: c.hold || null, motionPrompt}));
+    txt.push([`[id: ${c.id}]`, `[image: ${file}]`, `[engine: ${c.engine}]${c.hold ? `  [hold: ${c.hold}]` : ""}`, motionPrompt].join(NL));
+    md.push(`| ${i + 1} | \`${c.id}\` | ${c.beat} | ${c.engine} | ${c.hold || ""} | ${has ? "có" : "**chưa có ảnh**"} |`);
+  });
+  md.push("", ...C.clips.map((c, i) => `**${i + 1}. ${c.id}** · ${c.engine}${NL}${NL}${JSON.parse(jsonl[i]).motionPrompt}${NL}`));
+  fs.writeFileSync(path.join(root, `prompts/${ep}-motion.jsonl`), jsonl.join(NL) + NL);
+  fs.writeFileSync(path.join(root, `prompts/${ep}-motion.txt`), txt.join(NL + NL) + NL);
+  fs.writeFileSync(path.join(root, `prompts/${ep}-motion.md`), md.join(NL) + NL);
+  console.log(`${C.clips.length} clip -> prompts/${ep}-motion.{txt,jsonl,md} (từ bible/clips)`);
+  process.exit(0);
+}
+
 if (!fs.existsSync(shotsFile)) {
   console.error(`Không tìm thấy file: ${shotsFile}`);
   process.exit(1);
