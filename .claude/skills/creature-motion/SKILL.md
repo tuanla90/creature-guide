@@ -93,3 +93,22 @@ lên 21,0.
 
 Tương tự, `"bright"` bắt **mọi** thứ sáng — kể cả cái mặt con vật đang được nắng chiếu. Dùng `fade`
 khoanh biên thì chắc hơn cổng màu; cổng màu chỉ nên dùng khi màu thật sự tách bạch.
+
+## Chọn đúng tấm ảnh — quan trọng hơn mọi tham số
+
+Skill này **chỉ làm động được con vật**. Nó không biết làm gió, tia nắng, nước, cỏ lay. Tấm ảnh mà
+môi trường vốn phải động thì chỉnh tham số khéo đến đâu cũng trông như ảnh hỏng.
+
+**Đủ ba điều mới dùng:**
+
+1. Con vật **chiếm phần lớn khung** — cận hoặc trung cận. Ở cảnh xa, chuyển động thở quá nhỏ để thấy.
+2. Môi trường **đứng yên được một cách tự nhiên** — trời râm, gió lặng, nền mờ. Không tia nắng,
+   không cỏ lay, không nước chảy.
+3. Chuyển động mong muốn **nằm trên chính con vật** — thở, chớp mắt, lá trên lưng lay.
+
+Thiếu điều nào thì gửi sang Veo, đừng ép. Tốt nhất là **sinh ảnh riêng cho việc này** với
+`motion: true` trong shot bible — xem `docs/SCENE-TYPES.md` mục A2.
+
+Bài học từ `s04-bulbasaur-sunbath`: cả buổi chỉnh `face_side`, `fade`, cổng màu, biên độ mà vẫn không
+đạt, vì tấm ảnh chụp xa, có tia nắng và cỏ. `drift` cho đốm nắng là vá tạm — không thay được một tấm
+ảnh sinh đúng từ đầu.

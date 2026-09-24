@@ -454,6 +454,36 @@ def main(slug: str) -> int:
         if len(sig) and not any("nhịp hình" in m or "công thức" in m for m in warn):
             K("nhịp hình có đổi giữa các beat")
 
+    # ---- góc máy -----------------------------------------------------------
+    # Một tập chụp mãi ngang tầm mắt, cỡ trung, thì beat nào cũng giống beat nào — y như bệnh
+    # "88% world" nhưng ở tầng ảnh. Soát trên shot bible vì góc máy được quyết từ lúc viết prompt.
+    ep = "-".join(slug.split("-")[:2])
+    shot_files = sorted((ROOT / "bible" / "shots").glob(f"{ep}*.json"))
+    shots = [s for f in shot_files for s in json.loads(f.read_text(encoding="utf-8")).get("shots", [])
+             if s.get("kind") not in ("plate", "fieldnote")]
+    declared = [s for s in shots if s.get("size") or s.get("angle")]
+    if shots and not declared:
+        W(f"shot bible chưa khai size/angle cho shot nào ({len(shots)} shot) — không soát được góc máy")
+    elif declared:
+        sizes = Counter(s.get("size") for s in declared if s.get("size"))
+        angles = Counter(s.get("angle") for s in declared if s.get("angle"))
+        n = len(declared)
+        if len(sizes) < 3:
+            W(f"cỡ cảnh nghèo: chỉ {len(sizes)} loại {dict(sizes)} — cần ít nhất toàn · trung · cận")
+        if len(angles) < 3:
+            W(f"góc máy nghèo: chỉ {len(angles)} loại {dict(angles)} — thêm từ trên xuống, từ sau, góc thấp")
+        for label, c in (("cỡ cảnh", sizes), ("góc máy", angles)):
+            if c:
+                top, k = c.most_common(1)[0]
+                if k / n > 0.6:
+                    W(f"{label} “{top}” chiếm {k}/{n} shot ({k / n:.0%}) — đơn điệu")
+        if not any(s.get("size") in ("wide", "extreme-wide") for s in declared):
+            W("không có cảnh toàn nào — khán giả không biết con vật đang ở đâu")
+        if len(declared) < len(shots):
+            W(f"{len(shots) - len(declared)}/{len(shots)} shot chưa khai size/angle")
+        if len(sizes) >= 3 and len(angles) >= 3:
+            K(f"góc máy đa dạng: {len(sizes)} cỡ cảnh · {len(angles)} góc")
+
     # ---- in kết quả ---------------------------------------------------------
     for m in ok:
         print("  ✓", m)

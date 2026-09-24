@@ -51,15 +51,23 @@ shots.shots.forEach((s, i) => {
   // kindForbidden: thêm/bớt so với danh sách cấm chung, theo từng kind
   const kf = style.kindForbidden?.[s.kind] || {};
   const drop = new Set([...(s.allow || []), ...(kf.drop || [])]);
+  // size / angle / motion: ngữ pháp góc máy, chọn từ lúc viết prompt (xem docs/SCENE-TYPES.md)
+  const bad = (k, m) => { throw new Error(`shot ${s.id}: ${k} "${m}" không có trong style.json`); };
+  const size = s.size ? (style.sizes?.[s.size] ?? bad("size", s.size)) : "";
+  const angle = s.angle ? (style.angles?.[s.angle] ?? bad("angle", s.angle)) : "";
   const parts = [
     look,
     treatment,
     ...cs.map((c) => c.text),
     s.scene,
+    size,
+    angle,
     s.framing,
+    s.motion ? style.motionReady : "",
     style.output,
     // shot.allow: bỏ vài mục khỏi danh sách cấm chung (vd cảnh trận đấu cần bóng người xem)
-    "avoid: " + [...new Set([...style.forbidden, ...(kf.add || []), ...cs.flatMap((c) => c.forbidden)])]
+    "avoid: " + [...new Set([...style.forbidden, ...(kf.add || []), ...(s.motion ? style.motionForbidden || [] : []),
+                             ...cs.flatMap((c) => c.forbidden)])]
       .filter((x) => !drop.has(x)).join(", "),
   ].filter(Boolean);
   const prompt = parts.join(". ").replace(/\s+/g, " ").replace(/\.\./g, ".");

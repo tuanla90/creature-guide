@@ -76,5 +76,36 @@
       "drop": []
     }
   },
-  "note3": "anatomy và fieldnote là hai kind riêng, mỗi cái có style + treatment + forbidden của nó. fieldnote CỐ Ý chừa trống một phần ba bên phải và cấm mọi thứ giống chữ VÀ mọi mũi tên — chữ và mũi tên đều do Remotion vẽ lên, vì AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn) và mũi tên AI vẽ thì chỉ sai chỗ mà không sửa được. Ảnh chỉ là giấy và hình vẽ."
+  "note3": "anatomy và fieldnote là hai kind riêng, mỗi cái có style + treatment + forbidden của nó. fieldnote CỐ Ý chừa trống một phần ba bên phải và cấm mọi thứ giống chữ VÀ mọi mũi tên — chữ và mũi tên đều do Remotion vẽ lên, vì AI sinh chữ ra ký tự méo (tiếng Việt có dấu méo nặng hơn) và mũi tên AI vẽ thì chỉ sai chỗ mà không sửa được. Ảnh chỉ là giấy và hình vẽ.",
+  "sizes": {
+    "extreme-wide": "extreme wide landscape shot, the creature a tiny figure in a vast environment, the land itself is the subject",
+    "wide": "wide establishing shot, the whole creature visible small within its habitat, environment dominant",
+    "medium": "medium shot, the whole creature filling about half the frame with its immediate surroundings",
+    "close": "close-up, the creature's head and upper body filling most of the frame",
+    "macro": "extreme macro close-up on a single anatomical detail, filling the whole frame"
+  },
+  "angles": {
+    "eye": "camera at the creature's own eye level",
+    "low": "low angle from ground level looking up at the creature, making it feel large",
+    "high": "high angle looking down onto the creature from above",
+    "overhead": "straight top-down overhead view looking directly down",
+    "rear": "shot from behind the creature, its back toward camera, seeing what it sees",
+    "profile": "strict side profile, creature facing across the frame",
+    "pov": "from the creature's point of view at its eye height, the creature itself not in frame"
+  },
+  "motionReady": "the creature fills most of the frame and is the only subject, completely still air, no wind, soft even overcast light, background calm and softly out of focus",
+  "motionForbidden": [
+    "god rays",
+    "light shafts",
+    "sunbeams through trees",
+    "wind-blown foliage",
+    "swaying grass",
+    "flowing water",
+    "falling leaves",
+    "floating particles",
+    "dust motes",
+    "mist drifting",
+    "hard dappled sunlight"
+  ],
+  "note4": "size / angle / motion là ba trường của shot, chọn từ lúc viết prompt. motion:true dành cho ảnh sẽ chạy creature-motion: creature-motion chỉ làm động được CON VẬT, nên mọi thứ trong cảnh vốn phải động (tia nắng, gió, cỏ lay, nước) mà đứng im sẽ trông như ảnh hỏng. Ảnh có những thứ đó thì gửi sang Veo, đừng ép creature-motion."
 }

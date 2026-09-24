@@ -38,6 +38,94 @@ engine vẽ lên sau. Vì thế sửa lời không phải sinh lại ảnh, và 
 
 ---
 
+## A2 · Ngữ pháp góc máy — `size` · `angle` · `motion`
+
+Ba trường của shot, **quyết từ lúc viết prompt**, không phải lúc dựng. Góc máy là thứ không sửa được
+sau khi ảnh đã sinh — muốn cảnh từ trên xuống thì phải sinh ra cảnh từ trên xuống.
+
+**`size` — cỡ cảnh, con vật chiếm bao nhiêu khung**
+
+| `size` | Khi nào dùng |
+|---|---|
+| `extreme-wide` | mở một hồi, đổi địa điểm. Vùng đất là nhân vật |
+| `wide` | cảnh định vị: con vật ở đâu, bầy đứng thế nào |
+| `medium` | hành vi — cả con vật cùng việc nó đang làm |
+| `close` | cảm xúc, giác quan, dấu tích dùng để đặt tên |
+| `macro` | một chi tiết giải phẫu: vảy, bẹ củ, móng |
+
+**`angle` — máy đặt ở đâu**
+
+| `angle` | Cho người xem cảm giác gì |
+|---|---|
+| `eye` | ngang hàng với con vật — mặc định, đừng lạm dụng |
+| `low` | con vật to lớn, đáng gờm |
+| `high` | con vật nhỏ bé, dễ tổn thương |
+| `overhead` | bản đồ: khoảng cách giữa các cá thể, hình dạng trảng — **thứ không thấy được từ mặt đất** |
+| `rear` | nhìn cùng hướng con vật, **thấy thứ nó thấy** — mạnh nhất cho cảnh chờ, cảnh đối mặt |
+| `profile` | dáng hình, so sánh tỉ lệ |
+| `pov` | mắt con vật — dùng rất ít |
+
+**Luật soát** (`check-episode.py`): một tập phải có **ít nhất 3 cỡ cảnh và 3 góc máy**, không giá
+trị nào chiếm quá 60%, và **phải có ít nhất một cảnh toàn**. Shot chưa khai hai trường này thì bị báo.
+
+**Dựng một hồi:** mở bằng `extreme-wide` hoặc `wide` · vào hành vi bằng `medium` · chốt bằng `close`
+hoặc `macro`. Khán giả luôn biết mình đang ở đâu trước khi được đưa lại gần.
+
+### `motion: true` — ảnh sinh ra để chạy `creature-motion`
+
+`creature-motion` **chỉ làm động được con vật**. Nó không biết làm gió, tia nắng, nước chảy. Mọi thứ
+trong cảnh vốn phải động mà đứng im sẽ trông như **ảnh hỏng** — tia nắng xuyên rừng đứng sững trong
+khi con vật thở là lộ ngay.
+
+Đã dính thật ở `s04-bulbasaur-sunbath`: góc tương đối xa, có tia nắng, có cỏ, có cây. Chỉnh cả buổi
+vẫn trông lỗi, vì **bản thân tấm ảnh không hợp** với loại chuyển động này.
+
+Nên ảnh nào định chạy `creature-motion` thì khai `motion: true` **từ lúc sinh**. Prompt được thêm:
+
+> *the creature fills most of the frame and is the only subject, completely still air, no wind,
+> soft even overcast light, background calm and softly out of focus*
+
+và cấm thêm: tia nắng, gió thổi lá, cỏ lay, nước chảy, lá rơi, bụi bay, sương trôi, nắng loang lổ.
+
+**Chọn công nghệ theo tấm ảnh:**
+
+| Tấm ảnh có… | Dùng |
+|---|---|
+| con vật chiếm khung, môi trường đứng yên (`motion: true`) | `creature-motion` — miễn phí, không méo hình |
+| con vật **và** môi trường cùng có thứ phải động | Veo |
+| hành động nhanh: săn, đấu, bổ nhào | Seedance |
+| sự đứng yên **chính là** nội dung (hõm đất trống, dấu vết) | `world` — ảnh tĩnh, máy lia chậm |
+
+### Chi phí đã đo
+
+**Veo trong Flow: 15 token/clip.** Hạn mức 25.000/tháng → ~1.666 clip/tháng, ~190 clip mỗi tập ở nhịp
+2 tập/tuần. Ở quy mô này Veo gần như không tốn; giới hạn thật là **thời gian bấm tay** vì Flow chưa tự
+động hoá được (Chrome chặn CDP trên profile đang đăng nhập).
+
+### Đánh giá Flow một lần trước khi dựa vào nó
+
+Sinh **một** clip cho mỗi loại rủi ro, từ ảnh đã có, rồi chấm:
+
+| Ảnh thử | Rủi ro cần xem |
+|---|---|
+| cận cảnh con vật đứng yên | có tự thêm chuyển động thừa không |
+| cảnh toàn có gió, nắng, cỏ | môi trường có động tự nhiên không |
+| con vật đang làm một việc | tay chân có biến dạng không |
+| tấm có dấu tích đặt tên (củ nghẹo) | **dấu tích có giữ nguyên không** — cái này quyết định |
+
+Năm tiêu chí, đạt / không đạt:
+
+1. **Đúng hình** — đúng dáng, đúng hoa văn, đúng tỉ lệ từ đầu tới cuối
+2. **Không méo** — không mọc thêm chi, không chảy nhão, không đổi cấu trúc
+3. **Giữ dấu tích** — thứ dùng để đặt tên còn nhìn ra được
+4. **Chuyển động hợp lý** — đọc ra là hành vi của một con vật, không phải hiệu ứng
+5. **Dùng được bao nhiêu giây** — thường chỉ 2–3 giây đầu sạch; đó mới là độ dài thật
+
+Trượt tiêu chí 3 thì **không dùng Veo cho mọi cảnh có dấu tích**, dù các tiêu chí khác đạt.
+Ghi kết quả vào `experiments/flow-veo/`.
+
+---
+
 ## B · Năm loại cảnh tràn khung (`el`) — đây là "động từ" của hình
 
 Mỗi loại là một động tác khác nhau của máy quay. Một tập dùng mãi một loại thì beat nào cũng giống
