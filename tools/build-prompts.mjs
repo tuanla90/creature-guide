@@ -14,6 +14,15 @@ const ep = process.argv[2] || "kanto-001";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, "$1")), "..");
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf-8"));
 const style = read("bible/style.json");
+// Bố cục trang sổ tách khỏi style (docs/SCENE-TYPES.md, Ngữ pháp trang sổ): shot.layout + shot.canvas
+const layouts = fs.existsSync(path.join(root, "bible/layouts.json")) ? read("bible/layouts.json") : null;
+const layoutOf = (s) => {
+  if (s.kind !== "fieldnote" || !layouts) return "";
+  const lay = s.layout || "hero", can = s.canvas || "spread";
+  if (!layouts.layouts[lay]) throw new Error(`shot ${s.id}: layout "${lay}" không có trong bible/layouts.json`);
+  if (!layouts.canvas[can]) throw new Error(`shot ${s.id}: canvas "${can}" không có trong bible/layouts.json`);
+  return `${layouts.canvas[can]}, ${layouts.layouts[lay]}`;
+};
 const shots = read(`bible/shots/${ep}.json`);
 
 // "bulbasaur:K7" -> "bulbasaur:K-01" nếu K7 là alias. Dùng chung cho mô tả và cho việc chọn ảnh mẫu.
@@ -107,6 +116,7 @@ shots.shots.forEach((s, i) => {
   const studies = (s.studies || []).map((x) => (x === "footprint" ? cs.map((c) => c.footprint).filter(Boolean).join("; ") || "its footprint" : x));
   const parts = [
     look,
+    layoutOf(s),
     treatment,
     ...cs.map((c) => c.text),
     loc ? `setting: ${loc.text}` : "",

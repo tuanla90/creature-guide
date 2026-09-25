@@ -25,7 +25,7 @@ của khâu dựng hình.
 | `scene` | cảnh thật ngoài thực địa | có |
 | ~~`real`~~ | **ngừng dùng** — loài Trái Đất không sinh bằng AI nữa, xem mục B2 | — |
 | `anatomy` | X-quang mô phỏng: nền teal, thân trong mờ, xương và mạch năng lượng phát sáng | **không** |
-| `fieldnote` | một trang sổ: giấy + hình vẽ chì mực, **chừa trống một phần ba bên phải** | **không** |
+| `fieldnote` | một trang sổ: giấy + hình vẽ, **chừa khoảng trống theo họ bố cục** (`layout`, xem *Ngữ pháp trang sổ*) | **không** |
 
 `anatomy` và `fieldnote` không lấy `[ref]` vì ref là một ảnh *chụp* — nó kéo bản x-quang và bản vẽ
 tay ngược về thành ảnh chụp. Cái giá: hai loại này dễ lệch hình hơn, nên phải tả `scene` kỹ hơn.
@@ -211,6 +211,65 @@ blue-green"*): mô hình sinh ảnh hay bỏ qua phủ định. Màu sai đưa v
 
 Ảnh mẫu địa điểm là **cảnh trống, không một sinh vật nào**. Nhờ vậy nó dùng lại được: làm cảnh toàn
 mở hồi, làm nền cho trang sổ, làm nền để ghép sinh vật vào, và **dùng lại ở tập sau** nếu cùng vùng đất.
+
+### Ngữ pháp trang sổ · bố cục tách khỏi style
+
+Trang sổ không có một bố cục cố định. Sức hút của cuốn sổ nằm ở chỗ **mỗi trang chọn một khối dẫn mắt
+khác nhau** (bài học từ Journal 3: tác giả làm "hàng chục bố cục mới"). Mục này chỉ chốt **bố cục**: loại
+bố cục, thứ bậc thông tin, quan hệ chữ – hình – sơ đồ, vùng để engine chèn chữ, nhịp đọc, một trang hay
+trang đôi, và phần nào nằm trong ảnh, phần nào engine vẽ. **Không** chốt giấy, mực, nét, độ cũ, font:
+đó là *style*, nằm ở `bible/style.json` → `fieldNoteStyle` (hướng đang thử: `experiments/notebook-style/`).
+
+Không mặc định "trang trái là con vật, trang phải là phân tích". Không bắt mọi trang sổ phải là trang đôi.
+
+**Ba tầng, khai trong shot và trong cảnh:**
+
+```json
+{ "kind": "fieldnote", "canvas": "spread", "layout": "correction", "readingOrder": "top-to-bottom" }
+```
+
+1. **`canvas`:** `page` (một trang) hoặc `spread` (trang đôi). Đây là cỡ sân khấu, không quyết định nội
+   dung. Khung 16:9 hợp nhất với `spread`; `page` thì phải đặt lên nền (mặt bàn, lề tối).
+2. **`layout`:** một trong 12 họ dưới đây. Mỗi họ chỉ quy định quan hệ và ưu tiên không gian. Câu tả
+   bố cục cho prompt nằm ở `bible/layouts.json`, `build-prompts.mjs` tự ghép theo `layout`.
+3. **Khối (`blocks`)** do engine vẽ lên ảnh, đặt vào **vùng có tên** (`region`). Toạ độ của vùng **đo
+   trên ảnh thật** sau khi ảnh đã chốt, như toạ độ callout: Flow không giữ đúng một vùng trống theo prompt.
+
+**12 họ bố cục**
+
+| `layout` | Khối dẫn mắt | Dùng khi lời dẫn đang… |
+|---|---|---|
+| `hero` | một hình lớn (½–⅔ trang), ghi chú và chi tiết bám quanh | giới thiệu loài, một cơ quan quan trọng |
+| `text-led` | khối ghi chép là chính, hình nhỏ chen ở đầu, chân, lề | kể nhật ký theo ngày, lập luận |
+| `diagram-led` | một sơ đồ lớn ở giữa, chữ thành chú thích quanh nó | giải thích một cơ chế (vòng khép kín, tụ năng lượng) |
+| `full-spread` | một hình vượt qua gáy, phủ cả hai trang | giải phẫu toàn thân, mạng năng lượng, chu trình lớn |
+| `atlas` | nhiều hình nhỏ ngang hàng, xếp hàng, cụm hoặc ô | dấu chân, bộ phận, tư thế, so nhiều cá thể |
+| `comparison` | hai đối tượng đối diện, giữa là vùng mũi tên và điểm chung / khác | so hai cơ chế, hai trạng thái, hai cột |
+| `map` | bản đồ hoặc mặt bằng, dấu vết và mốc thời gian nằm ngay trên đó | chỗ nằm, đường đi, vùng sống |
+| `sequence` | 3–6 trạng thái theo đường ngang, dọc hoặc vòng cung | một quá trình: đổi hình, tích – xả, một hành vi |
+| `correction` | ghi chép cũ làm nền, rồi gạch, sửa, khoanh, thêm giả thuyết mới | **người kể đổi nhận định** |
+| `evidence-board` | các mảnh bằng chứng rời quanh một câu hỏi ở giữa | beat chưa có kết luận |
+| `sparse` | một hình hoặc một câu giữa nhiều khoảng trống | chuyển hồi, phát hiện lớn, câu kết |
+| `marginalia` | trang cố ý dày; nội dung chính rõ, lề đầy ghi chú phụ, phép tính | đang đào sâu một vấn đề (dùng hiếm) |
+
+**Khối cơ bản và ai vẽ**
+
+| Khối | Nằm trong ảnh (Flow sinh) | Engine vẽ |
+|---|---|---|
+| `figure` · `detail` | ✓ hình chính, chi tiết bóc riêng | — |
+| `map` · `timeline` · khung của `comparison` | ✓ nét bản đồ, trục, hai khung | — |
+| `body` (đoạn ghi chép) | — | ✓ chữ viết tay hiện dần (`notes` hiện có) |
+| `label` + `connector` | — | ✓ nhãn IN HOA + đường chỉ tới đích |
+| `measurement` | — | ✓ số ước lượng có `~` (DNA D15) |
+| `crossref` | — | ✓ `→ xem trang…` · `📖 danh lục` |
+| `correction` | — | ✓ gạch bỏ rồi viết đè: kể được lúc người kể đổi ý |
+
+**Luật không đổi:** ảnh không có chữ, không số, không mũi tên. Mọi thứ đọc được đều do engine vẽ, nên
+sửa lời không phải sinh lại ảnh và hai bản VI / EN dùng chung một tấm giấy.
+
+**Engine hôm nay** (`el: "notepage"`) mới có `body`: `notes[{x, y, text, atWord}]`. `label` + `connector`,
+`measurement` và `correction` là việc tiếp theo, làm trước cho sáu họ tập 001 cần: `correction` ·
+`comparison` · `map` · `sequence` · `diagram-led` · `sparse`.
 
 ### Trang sổ nghiên cứu — kiểu Darwin, da Vinci
 
@@ -423,7 +482,7 @@ Sửa bằng cách tăng `w` hoặc **bỏ bớt một moment** — đừng kéo
 | chỉ ra từng chi tiết trên cơ thể | `specimen` |
 | kể một hành vi đang diễn ra | `clip` |
 | con vật đứng yên, thở, chờ | `clip` từ `creature-motion` (miễn phí) |
-| liệt kê quan sát, người kể đang phân vân | `notepage` |
+| liệt kê quan sát, người kể đang phân vân | `notepage` (chọn `layout` theo bảng *Ngữ pháp trang sổ*) |
 | giải thích cơ chế bên trong | ảnh `anatomy` dựng bằng `specimen` |
 | đối chiếu một loài có thật ở Trái Đất 🔬 | **nói**; nếu đẩy câu hỏi đi tiếp thì dừng hình + ảnh quê nhà (tối đa 2/tập) |
 | con vật vừa làm một động tác đáng soi | dừng hình: `specimen` với `video` |

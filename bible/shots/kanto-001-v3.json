@@ -16,7 +16,9 @@
       "id": "v3-a01-conduit",
       "beat": "03",
       "kind": "anatomy",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "side view of the whole animal, the vascular bundle that feeds the back bulb glowing brighter than the rest of the body, tracing from the base of the bulb down into the trunk and the gut cavity, the storage chamber inside the bulb clearly fuller than the stomach below it",
       "framing": "full body profile, centred, even study lighting, generous empty space above and to the right for annotation"
     },
@@ -24,16 +26,19 @@
       "id": "v3-a02-reserve",
       "beat": "11",
       "kind": "anatomy",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "same study plate but the storage chamber inside the bulb is nearly empty and dim, only a faint residue of light left in it, while the limb and trunk conduits still glow, showing a reserve that has just been spent",
       "framing": "full body profile, centred, matching the earlier study plate exactly so the two can be compared side by side"
     },
-
     {
       "id": "v3-m06-crooked-bulb",
       "beat": "02",
       "kind": "scene",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "tight close-up of the back of the animal from slightly above and behind, the bulb clearly growing tilted over to one side instead of straight up, the base of the bulb where it meets the skin visible and slightly puckered on the compressed side",
       "framing": "close on the bulb and upper back only, head out of focus at the frame edge, soft overcast light, shallow depth of field"
     },
@@ -41,7 +46,9 @@
       "id": "v3-s07-torn-flank",
       "beat": "06",
       "kind": "scene",
-      "creatures": ["bulbasaur"],
+      "creatures": [
+        "bulbasaur"
+      ],
       "scene": "close-up of the flank of a larger adult of the same species, a healed tear in the hide running along the ribs, the skin around it thickened and paler than the rest, old and long since closed",
       "framing": "close on the flank, animal lying down, late afternoon side light raking across the scar"
     },
@@ -49,7 +56,9 @@
       "id": "v3-s10-ashen-eye",
       "beat": "08",
       "kind": "scene",
-      "creatures": ["fearow"],
+      "creatures": [
+        "fearow"
+      ],
       "scene": "close-up of the head of an old large bird, one eye covered by a pale grey opaque film from an old injury, the other eye clear and alert, beak turned slightly toward camera",
       "framing": "head and shoulders only, overcast sky behind, cold flat light"
     },
@@ -57,7 +66,9 @@
       "id": "v3-s11-camouflage",
       "beat": "08",
       "kind": "scene",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "the animal pressed flat against damp leaf litter under a fern canopy, its dark dappled markings falling exactly on the patches of broken sunlight coming through the leaves above, so the body reads as ground rather than as an animal",
       "framing": "from above and slightly to the side, the dappled light pattern filling the whole frame, the animal only resolving on a second look"
     },
@@ -65,16 +76,19 @@
       "id": "v3-s08-night-ring",
       "beat": "06",
       "kind": "scene",
-      "creatures": ["bulbasaur"],
+      "creatures": [
+        "bulbasaur"
+      ],
       "scene": "several of the animals sleeping in a clearing at night, spaced evenly apart, none touching, one gap in the ring noticeably empty where another animal usually lies",
       "framing": "wide, from slightly above, moonlight only, cool blue, long shadows"
     },
-
     {
       "id": "v3-r01-coral-zoox",
       "beat": "04",
       "kind": "real",
-      "creatures": ["zooxanthellae"],
+      "creatures": [
+        "zooxanthellae"
+      ],
       "scene": "extreme close-up of living coral polyp tissue, the golden-brown symbiotic algae cells visible suspended inside the translucent flesh of the host",
       "framing": "macro, shallow depth of field, clear blue water above"
     },
@@ -82,7 +96,9 @@
       "id": "v3-r02-lichen",
       "beat": "05",
       "kind": "real",
-      "creatures": ["lichen"],
+      "creatures": [
+        "lichen"
+      ],
       "scene": "a lichen spread across damp granite, so completely merged that the fungal and algal parts cannot be told apart by eye",
       "framing": "close, flat overcast light, shallow depth of field"
     },
@@ -90,7 +106,9 @@
       "id": "v3-r03-mistletoe",
       "beat": "05",
       "kind": "real",
-      "creatures": ["mistletoe"],
+      "creatures": [
+        "mistletoe"
+      ],
       "scene": "a mistletoe clump thriving green on the trunk of its host, the branches of the host above it bare, grey and dead",
       "framing": "medium, looking up the trunk, winter light"
     },
@@ -98,7 +116,9 @@
       "id": "v3-r04-lizard-basking",
       "beat": "11",
       "kind": "real",
-      "creatures": ["basking-lizard"],
+      "creatures": [
+        "basking-lizard"
+      ],
       "scene": "a lizard flattened wide against hot sunlit rock, absolutely still, warming before it can move fast",
       "framing": "low and close, hard midday light, heat shimmer at the edge of frame"
     },
@@ -106,7 +126,9 @@
       "id": "v3-r05-agave",
       "beat": "11",
       "kind": "real",
-      "creatures": ["agave"],
+      "creatures": [
+        "agave"
+      ],
       "scene": "a century plant that has spent everything on one enormous flowering stalk, the rosette at its base already collapsing and browning",
       "framing": "wide and low, the stalk running the full height of the frame, dry blue sky"
     },
@@ -114,18 +136,23 @@
       "id": "v3-r06-sunflower",
       "beat": "12",
       "kind": "real",
-      "creatures": ["sunflower"],
+      "creatures": [
+        "sunflower"
+      ],
       "scene": "a young sunflower bud with its stem visibly bent from turning to follow the sun through the day",
       "framing": "close on the bud and upper stem, backlit, early morning"
     },
-
     {
       "id": "v3-x01-day-one",
       "beat": "01",
       "kind": "fieldnote",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "a first-day page: one quick pencil study of the whole animal lying down, drawn fast and unfinished, with a smaller thumbnail of its head in a corner",
-      "framing": "page flat to camera, drawing filling the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "hero",
+      "canvas": "spread"
     },
     {
       "id": "v3-x02-sun-map",
@@ -133,23 +160,33 @@
       "kind": "fieldnote",
       "creatures": [],
       "scene": "a hand drawn map of a forest clearing in pencil and ink, the treeline and a trail marked, and seven small empty circles scattered across the open ground with no writing beside them",
-      "framing": "page flat to camera, map filling the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "map",
+      "canvas": "spread"
     },
     {
       "id": "v3-x03-loop",
       "beat": "04",
       "kind": "fieldnote",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "a page with one careful ink study of the animal seen from the side, drawn in cross section so the gut cavity and the base of the back bulb are both visible on the same drawing",
-      "framing": "page flat to camera, drawing filling the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "diagram-led",
+      "canvas": "spread"
     },
     {
       "id": "v3-x04-crossed-out",
       "beat": "05",
       "kind": "fieldnote",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "a page where a large block of the drawing area has been struck through with two decisive diagonal pencil strokes, the study of the animal underneath still visible through the strikethrough, and clean unused paper below it",
-      "framing": "page flat to camera, struck-through drawing on the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "correction",
+      "canvas": "spread"
     },
     {
       "id": "v3-x05-ledger",
@@ -157,7 +194,9 @@
       "kind": "fieldnote",
       "creatures": [],
       "scene": "a bookkeeping page: a hand ruled ink table with two tall empty columns and a heavy horizontal rule across the middle, no figures entered, a small pencil sketch of a plant bulb in the top corner",
-      "framing": "page flat to camera, ruled table on the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "comparison",
+      "canvas": "spread"
     },
     {
       "id": "v3-x06-stopwatch",
@@ -165,23 +204,33 @@
       "kind": "fieldnote",
       "creatures": [],
       "scene": "a page with a small ink drawing of a mechanical stopwatch and, beside it, two hand ruled empty columns for recording pairs of times, with a rough pencil sketch of the same trail drawn twice",
-      "framing": "page flat to camera, drawings on the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "comparison",
+      "canvas": "spread"
     },
     {
       "id": "v3-x07-wrong-page",
       "beat": "13",
       "kind": "fieldnote",
-      "creatures": ["bulbasaur:K7"],
+      "creatures": [
+        "bulbasaur:K7"
+      ],
       "scene": "a page written in obvious haste at night, the pencil pressure heavy and uneven, with a single hurried sketch of the animal standing alone among others in a hollow, the paper slightly cockled from damp",
-      "framing": "page flat to camera, hurried sketch on the left two thirds, right third of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "evidence-board",
+      "canvas": "spread"
     },
     {
       "id": "v3-x08-last-page",
       "beat": "15",
       "kind": "fieldnote",
-      "creatures": ["venusaur"],
+      "creatures": [
+        "venusaur"
+      ],
       "scene": "the final page of a long field notebook, one last careful ink study of a very old large adult of the species, moss and small ferns drawn growing on its back, and a great deal of clean unused paper left below the drawing",
-      "framing": "page flat to camera, drawing high on the left two thirds, right third and the lower half of the page completely empty"
+      "framing": "pages flat to camera",
+      "layout": "sparse",
+      "canvas": "spread"
     }
   ]
 }

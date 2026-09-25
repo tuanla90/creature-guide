@@ -157,7 +157,9 @@
       "why": "thêm vệt màu nước — bút chì không cho thấy màu Shiny",
       "replaces": "v3-x01-day-one"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "hero",
+     "canvas": "spread"
     }
    ]
   },
@@ -203,7 +205,9 @@
       "kind": "reuse",
       "id": "v3-x02-sun-map"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "map",
+     "canvas": "spread"
     },
     {
      "at": "shiny",
@@ -321,7 +325,9 @@
       "kind": "reuse",
       "id": "v3-x03-loop"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "diagram-led",
+     "canvas": "spread"
     }
    ]
   },
@@ -341,7 +347,9 @@
       "kind": "reuse",
       "id": "v3-x04-crossed-out"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "correction",
+     "canvas": "spread"
     },
     {
      "at": "feeding",
@@ -571,7 +579,9 @@
       "kind": "reuse",
       "id": "v3-x05-ledger"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "comparison",
+     "canvas": "spread"
     }
    ]
   },
@@ -655,7 +665,9 @@
       "kind": "reuse",
       "id": "v3-x06-stopwatch"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "comparison",
+     "canvas": "spread"
     },
     {
      "at": "badly hurt",
@@ -784,13 +796,15 @@
      "el": "notepage",
      "who": "—",
      "shot": "trang sổ",
-     "what": "Trang viết vội: “tôi nghĩ nó sắp chết”",
+     "what": "Trang kín câu hỏi quanh một khoảng trống ở giữa: tụ về đây làm gì, sáng mai K-01 sẽ ra sao? (vòng 5: bỏ ý tưởng chết)",
      "src": {
-      "kind": "reuse",
+      "kind": "regen",
       "id": "v3-x07-wrong-page",
-      "why": "xem lại: ảnh phác có vẽ cả đàn không"
+      "why": "bố cục evidence-board; ảnh cũ là trang viết vội về cái chết"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "evidence-board",
+     "canvas": "spread"
     }
    ]
   },
@@ -926,7 +940,9 @@
       "kind": "reuse",
       "id": "v3-x08-last-page"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "sparse",
+     "canvas": "spread"
     },
     {
      "at": "flame",
@@ -962,7 +978,9 @@
       "kind": "reuse",
       "id": "v3-x08-last-page"
      },
-     "motion": "page"
+     "motion": "page",
+     "layout": "sparse",
+     "canvas": "spread"
     }
    ]
   }

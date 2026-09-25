@@ -267,7 +267,7 @@
 | “old forest” | Lối vào rừng già, tối dần · — · wide · ngang | Sinh mới `loc-viridian-deep` | Ảnh tĩnh · camera lia |
 | “Back in the clearing” | K-04 nằm đúng chỗ cũ, cạnh một khoảng trống bằng hai thân — không ai vào · K-04 · wide · từ cao, bình minh | Sinh mới `v4-empty-gap` | Ảnh tĩnh · camera lia |
 | “fifth night” | Hõm đất ban đêm: mười hai con đứng thành vòng, lặng im; một con nhạt màu · đàn thường + K-01 · wide · từ trên | Sinh lại `v4-n16-gathering` ← `n16-evolution-gathering` | Clip Veo |
-| “entire page” | Trang viết vội: “tôi nghĩ nó sắp chết” · — · trang sổ | Có sẵn `v3-x07-wrong-page` | Trang sổ |
+| “entire page” | Trang kín câu hỏi quanh một khoảng trống ở giữa: tụ về đây làm gì, sáng mai K-01 sẽ ra sao? (vòng 5: bỏ ý tưởng chết) · — · trang sổ | Sinh lại `v3-x07-wrong-page` | Trang sổ |
 
 | EN | VI |
 |---|---|

@@ -1,4 +1,7 @@
-# Sổ thực địa Dr. Holth — Visual spec
+# Sổ thực địa Dr. Holth — Visual spec (một hướng style, CHƯA CHỐT)
+
+> 2026-09-25: đây là hướng **C** trong `experiments/notebook-style/`. Style của kênh chốt sau khi thử ba
+> hướng; phần giọng văn (D), chú thích (E), nội dung trang phải (F) và điều cấm (G) dùng được cho mọi style.
 
 Tài liệu này mô tả phong cách hình ảnh của sổ tay Dr. Holth khi xuất hiện trong video
 (kind `fieldnote` trong `bible/shots/`) và trong thumbnail, intro card, v.v.
@@ -34,44 +37,11 @@ Chú thích số không bao giờ viết chắc chắn hơn dữ liệu — nế
 
 ---
 
-## C. Bố cục hai trang
+## C. Bố cục: chuyển sang SCENE-TYPES
 
-### Trang trái — Nhân vật chính
-```
-┌─────────────────────────────────┐
-│  [Tên loài — cursive lớn]       │
-│                                 │
-│   [Sketch chính — cả thân,      │
-│    3/4 diện tích trang]         │
-│                                 │
-│  [Ghi chú ngắn bên cạnh —      │
-│   3-4 dòng body text]           │
-│                                 │
-│  [1-2 detail sketch nhỏ:        │
-│   bộ phận đặc biệt, dấu chân]   │
-│                                 │
-│  [Chữ ký Dr. Holth + ngày]     │
-└─────────────────────────────────┘
-```
-
-### Trang phải — Quan sát và phân tích
-```
-┌─────────────────────────────────┐
-│  [Field notes — body text,      │
-│   ngôi thứ nhất, 3-4 đoạn]     │
-│                                 │
-│   [Detail sketch 1:             │
-│    cơ quan / cấu trúc]          │
-│   LABEL ──────────────►         │
-│                                 │
-│   [Detail sketch 2:             │
-│    diagram năng lượng hoặc      │
-│    anatomy X-quang đơn giản]    │
-│                                 │
-│  [Cross-ref: Xem [NGUON] ·     │
-│   so sánh loài Trái Đất]        │
-└─────────────────────────────────┘
-```
+Bố cục trang sổ **không** thuộc style. Xem [SCENE-TYPES.md](SCENE-TYPES.md) mục *Ngữ pháp trang sổ*: 12
+họ bố cục, khối cơ bản, `canvas` một trang hay trang đôi. Không mặc định trang trái là con vật, trang
+phải là phân tích.
 
 ---
 

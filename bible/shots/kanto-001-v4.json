@@ -110,7 +110,9 @@
         "bulbasaur:K-01"
       ],
       "scene": "first page of a field notebook: a careful pencil study of the animal lying down, seen from the side, with a small watercolour swatch beside it showing its pale yellow-green skin and the darker green of its bulb",
-      "framing": "sketch and swatch on the left two thirds of the page"
+      "framing": "pages flat to camera",
+      "layout": "hero",
+      "canvas": "spread"
     },
     {
       "id": "v4-n02-scatter",

@@ -1,0 +1,21 @@
+{
+  "_note": "Câu tả BỐ CỤC cho prompt trang sổ (kind fieldnote), ghép theo shot.layout / shot.canvas. Không chứa style (giấy, mực, nét): cái đó ở style.json -> fieldNoteStyle. Vùng để engine chèn chữ phải đo trên ảnh thật sau khi chốt.",
+  "canvas": {
+    "spread": "two facing pages of the notebook filling a 16:9 landscape frame, the centre gutter visible",
+    "page": "a single notebook page lying on a dark field table, the page centred in a 16:9 landscape frame with table visible on both sides"
+  },
+  "layouts": {
+    "hero": "one large main study filling about half to two thirds of the space, a few smaller isolated detail studies around it, generous empty paper beside the main study for notes",
+    "text-led": "mostly empty paper laid out for several blocks of handwritten notes, with only two or three small studies tucked at the top, the foot and the margin",
+    "diagram-led": "one large simple schematic diagram in the centre built from plain shapes joined by lines, with open empty space all around it for labels",
+    "full-spread": "one large study running across both pages over the centre gutter, empty paper only in the remaining corners",
+    "atlas": "a grid of six to nine small studies of equal weight arranged in neat rows, each separated by clear empty space",
+    "comparison": "two studies facing each other on opposite halves, a wide empty band down the middle between them",
+    "map": "a hand-drawn map or ground plan as the main shape, simple outlines of trees and ground, small marks placed on it, empty paper around the map",
+    "sequence": "four small studies of the same subject in a row, each a later state of the same slow change, clear empty space between and below them",
+    "correction": "an earlier study already on the page with a large empty area beside and below it left for later corrections and new notes",
+    "evidence-board": "several small separate fragments scattered around an empty circle in the middle of the page: a footprint, a small study, a pressed leaf, a small diagram",
+    "sparse": "one small study placed low on an otherwise almost completely empty page",
+    "marginalia": "a main study with wide empty margins on every side, the margins left for many small notes"
+  }
+}
