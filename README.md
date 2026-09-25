@@ -3,6 +3,9 @@
 Phim tài liệu tự nhiên về những sinh vật không có thật — dựng như Discovery, đi theo thứ tự danh lục,
 làm hai bản Việt và Anh.
 
+Trợ lý AI (Claude, Gemini, Codex, Cursor, Copilot…) đọc **[AGENTS.md](AGENTS.md)** trước: bản đồ đọc theo việc, luật kênh,
+cách làm việc. `CLAUDE.md` và `GEMINI.md` chỉ nhúng file đó.
+
 Bắt đầu ở đây: **[docs/PIPELINE.md](docs/PIPELINE.md)** — mười chặng từ ý tưởng tới bản upload, mỗi
 chặng một cổng.
 
