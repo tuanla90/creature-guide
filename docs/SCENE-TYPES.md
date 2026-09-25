@@ -267,9 +267,18 @@ Không mặc định "trang trái là con vật, trang phải là phân tích". 
 **Luật không đổi:** ảnh không có chữ, không số, không mũi tên. Mọi thứ đọc được đều do engine vẽ, nên
 sửa lời không phải sinh lại ảnh và hai bản VI / EN dùng chung một tấm giấy.
 
-**Engine hôm nay** (`el: "notepage"`) mới có `body`: `notes[{x, y, text, atWord}]`. `label` + `connector`,
-`measurement` và `correction` là việc tiếp theo, làm trước cho sáu họ tập 001 cần: `correction` ·
-`comparison` · `map` · `sequence` · `diagram-led` · `sparse`.
+**Engine** (`el: "notepage"`, nhánh `feat/specimen-freeze-media`, 2026-09-25) vẽ được: `notes` (thân), `labels`
+(nhãn IN HOA, có `anchor` thì có đường chỉ), `diagrams` (7 kiểu ở mục *Diagram khoa học*), `corrections`
+(`strike` + chữ viết đè), `crossrefs`, `mark` vẽ tay trên note / nhãn / diagram, `short.page` cho khung dọc,
+và `debug: true` (lưới 10% + khung `keepout`, để đo toạ độ trên ảnh thật). Mực lấy từ `video.config.json` →
+`notebook.{ink, accent}`; chữ `{vi, en}` chọn theo `text.lang`.
+
+**Một video, một lớp chữ.** YouTube multi-audio chỉ đổi track giọng, không đổi chữ trên hình. Nên mỗi lần
+render chỉ mang **một** ngôn ngữ chữ (`text.lang`). Chữ còn lại đi bằng phụ đề của track ấy. Chọn ngôn ngữ
+chữ gắn với quyết định *track gốc VI hay EN* (CHANNEL-SETUP mục 3), vẫn đang treo.
+
+**Cảnh sổ trong Short phải render thử.** Ở 9:16 chữ tự to lên cỡ tối thiểu, note dài xuống thêm dòng và có
+thể đè khối bên dưới (đã thấy khi thử). Khai toạ độ riêng cho Short nếu cần.
 
 ### Style bắt buộc của trang sổ
 
