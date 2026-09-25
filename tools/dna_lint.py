@@ -161,7 +161,7 @@ def lint_numbers(c, order):
 
 # ---- D16 · chữ trên hình (trang sổ, nhãn, chú thích) không mang tên game --------------------------
 GAME_ONSCREEN = r"vine whip|solar ?beam|razor leaf|sleep powder|leech seed|bulbapedia|pok[eé]dex|pok[eé]mon|\bgen\s*[ivx\d]+\b|\bhp\b|\bstats?\b"
-TEXT_KEYS = {"text", "lines", "label", "caption", "title", "sub", "kicker", "body", "note"}
+TEXT_KEYS = {"text", "lines", "label", "caption", "title", "sub", "kicker", "body", "note", "to", "vi", "en", "value"}
 
 
 def lint_onscreen(scenes):
@@ -175,6 +175,69 @@ def lint_onscreen(scenes):
                         if isinstance(s, str):
                             for m in re.finditer(GAME_ONSCREEN, s, re.I):
                                 out.append(f"D16 beat {bid}: chữ trên hình “{m.group(0)}” — tả việc cơ quan làm, nguồn chỉ nằm ở NGUON")
+                walk(v, bid)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v, bid)
+    for bid, s in (scenes or {}).items():
+        if not bid.startswith("_"):
+            walk(s, bid)
+    return out
+
+
+# ---- D19 · chữ trên trang sổ: hai ngôn ngữ, giới hạn theo bản dài hơn (SCENE-TYPES, Giới hạn chữ) ----
+NOTE_MAX, NOTES_PAGE, NOTES_SPREAD, LABEL_MAX, LABELS_PAGE, VALUE_MAX = 80, 5, 8, 22, 6, 16
+DIAGRAMS = {"force", "energy-bar", "energy-flow", "phase", "field-map", "day-timeline", "life-timeline"}
+
+
+def _langs(t):
+    return t if isinstance(t, dict) else {"vi": t}
+
+
+def lint_notepage(scenes):
+    out = []
+
+    def check(np, bid, stack):
+        notes, labels = np.get("notes", []), np.get("labels", [])
+        pages = {n.get("page") for n in [np] if n.get("page")}
+        cap = NOTES_SPREAD if np.get("canvas", "spread") == "spread" else NOTES_PAGE
+        if len(notes) > cap:
+            out.append(f"D19 beat {bid}: {len(notes)} note trên một trang sổ — tối đa {cap}")
+        for n in notes:
+            t = _langs(n.get("text", ""))
+            if "en" not in t:
+                out.append(f"D19 beat {bid}: note “{str(t.get('vi', ''))[:30]}…” chưa có bản EN — một tấm giấy, hai ngôn ngữ")
+            longest = max((len(v) for v in t.values()), default=0)
+            if longest > NOTE_MAX:
+                out.append(f"D19 beat {bid}: note {longest} ký tự (bản dài hơn) — tối đa {NOTE_MAX}")
+        if len(labels) > LABELS_PAGE:
+            out.append(f"D19 beat {bid}: {len(labels)} nhãn — tối đa {LABELS_PAGE} mỗi trang")
+        for lb in labels:
+            s = lb.get("text", "") if isinstance(lb.get("text"), str) else " ".join(lb.get("text", {}).values())
+            if len(s) > LABEL_MAX or s != s.upper():
+                out.append(f"D19 beat {bid}: nhãn “{s}” — IN HOA, ≤ {LABEL_MAX} ký tự")
+        for dg in np.get("diagrams", []):
+            if dg.get("type") not in DIAGRAMS:
+                out.append(f"D19 beat {bid}: diagram “{dg.get('type')}” không có trong ngữ pháp — {', '.join(sorted(DIAGRAMS))}")
+            v = str(dg.get("value", ""))
+            if v and (len(v) > VALUE_MAX or "~" not in v):
+                out.append(f"D19 beat {bid}: số “{v}” — có “~”, ≤ {VALUE_MAX} ký tự (D15)")
+        for x in notes + labels + np.get("crossrefs", []):
+            to = str(x.get("to", ""))
+            if to and not re.match(r"^(page:\d+|species:[a-z0-9-]+|catalogue)$", to):
+                out.append(f"D19 beat {bid}: tham chiếu “{to}” — chỉ page:<n> · species:<loài> · catalogue")
+        if any(e.get("el") == "chip" for e in stack):
+            out.append(f"D19 beat {bid}: `chip` cùng khung với trang sổ — trên sổ dùng `mark` vẽ tay")
+        return pages
+
+    def walk(node, bid):
+        if isinstance(node, dict):
+            stack = node.get("stack")
+            if isinstance(stack, list):
+                for e in stack:
+                    if isinstance(e, dict) and e.get("el") == "notepage":
+                        check(e, bid, stack)
+            for v in node.values():
                 walk(v, bid)
         elif isinstance(node, list):
             for v in node:
@@ -204,7 +267,7 @@ def lint_opening_guests(plan, order):
 
 
 def lint_episode(c, plan, order, gap=2.2, scenes=None):
-    out = lint_numbers(c, order) + lint_onscreen(scenes) + lint_opening_guests(plan, order)
+    out = lint_numbers(c, order) + lint_onscreen(scenes) + lint_notepage(scenes) + lint_opening_guests(plan, order)
     for bid in order:
         vi, en = c.BEATS.get(bid, ""), getattr(c, "BEATS_EN", {}).get(bid, "")
         out += lint_terms(bid, vi, "vi") + lint_hedge(bid, vi, "vi")

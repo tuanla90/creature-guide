@@ -76,7 +76,11 @@ phải là phân tích.
 
 ---
 
-## F. Loại nội dung trang phải theo loại phân tích
+## F. Loại phân tích → diagram
+
+Cách khai và ai vẽ gì: [SCENE-TYPES.md](SCENE-TYPES.md) mục *Diagram khoa học* (`force` · `energy-bar` · `energy-flow` · `phase` · `field-map` · `day-timeline` · `life-timeline`). Bảng dưới chỉ giữ phần hình dung.
+
+### Hình dung theo loại phân tích
 
 | Loại phân tích | Detail sketch trang phải |
 |---|---|

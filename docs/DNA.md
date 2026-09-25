@@ -206,6 +206,19 @@ không có mã. Loài tương hỗ quay lại quá hai lần thì cho mã. Khai 
 
 Ép ở **M** (mã D18) và **R**.
 
+## D19 · Trang sổ: một tấm giấy, hai ngôn ngữ
+
+Rủi ro chỉ ra khi rà SCENE-TYPES (2026-09-25): trang sổ dùng chung ảnh nhưng vẽ chữ hai thứ tiếng, và
+chưa có giới hạn chữ, chưa có ngữ pháp diagram, `chip` phát sáng lại va với trang vẽ tay.
+
+**Luật** ([SCENE-TYPES.md](SCENE-TYPES.md) các mục *Style bắt buộc*, *Diagram khoa học*, *Bằng chứng và
+tham chiếu*, *Giới hạn chữ trên trang sổ*): mọi chữ khai `{vi, en}` và giới hạn tính theo bản dài hơn · note
+≤ 80 ký tự, ≤ 5 mỗi trang (trang đôi ≤ 8) · nhãn IN HOA ≤ 22 ký tự, ≤ 6 mỗi trang · số có `~` · diagram chỉ
+trong 7 kiểu · tham chiếu chỉ `page:<n>` / `species:<loài>` / `catalogue` · `chip` không lên trang sổ, bằng
+chứng là `mark` vẽ tay · chữ không đè `keepout`.
+
+Ép ở **M** (`lint_notepage` mã D19, quét `scenes.json`) và **R** (chữ có đè hình không, 9:16 có đọc được không).
+
 ## D12 · Bàn giao và công cụ
 
 | Lỗi đã gặp | Luật | Ép ở |

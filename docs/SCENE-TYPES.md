@@ -271,6 +271,101 @@ sửa lời không phải sinh lại ảnh và hai bản VI / EN dùng chung m�
 `measurement` và `correction` là việc tiếp theo, làm trước cho sáu họ tập 001 cần: `correction` ·
 `comparison` · `map` · `sequence` · `diagram-led` · `sparse`.
 
+### Style bắt buộc của trang sổ
+
+**Mọi ảnh `kind: "fieldnote"` và mọi cảnh `el: "notepage"` bắt buộc theo [JOURNAL-STYLE.md](JOURNAL-STYLE.md)**:
+giấy, mực, màu nhấn, độ cũ, ba lớp chữ (tiêu đề · thân · nhãn IN HOA), cách vẽ mũi tên. Tài liệu này không
+chép lại style. Chỉ một điều ghi cứng ở đây, vì nó đúng với mọi style: tinh thần là **khoa học năng lượng
+sinh học thực địa, không phải bí ẩn**. Không bí mật, không kịch tính; một người quan sát bình thản đang
+đo, ghi, và sửa nhận định của chính mình. (Style đang thử ba hướng: `experiments/notebook-style/`.)
+
+### Diagram khoa học · `diagram`
+
+Trang sổ phân tích năm loại việc (JOURNAL-STYLE mục F). Mỗi loại cần một kiểu diagram. **Nguyên tắc: nét
+nào mang dữ liệu thì engine vẽ** (chiều mũi tên, độ dài thanh, vạch mốc, đường năng lượng, dấu trên bản
+đồ): như thế số đúng, hai bản ngôn ngữ dùng chung, và sửa không phải sinh lại ảnh. Ảnh Flow chỉ mang
+**hình vẽ con vật, chi tiết, nền bản đồ, và khoảng trống**. Engine vẽ diagram theo lối tay (nét hơi run,
+mực và màu nhấn lấy từ JOURNAL-STYLE).
+
+| Việc phân tích | `diagram.type` | Ảnh mang | Engine vẽ |
+|---|---|---|---|
+| Vật lý khả năng | `force` · `energy-bar` | hình con vật, khoảng trống | mũi tên lực (gốc, hướng, độ lớn `~`), thanh năng lượng so sánh |
+| Anatomy (nhẹ) | `energy-flow` | hình con vật | đường năng lượng chạy trên thân (màu nhấn), nhãn cơ quan |
+| Tương tác hệ | `phase` | khoảng trống | sơ đồ ion / tinh thể / trạng thái pha: ô, mũi tên chuyển trạng thái |
+| Hành vi | `field-map` · `day-timeline` | nền bản đồ (`layout: map`) | dấu vết, chỗ nằm, giờ; trục giờ trong ngày và sự kiện |
+| Vòng đời, tích luỹ | `life-timeline` | khoảng trống | trục tuyến tính, các giai đoạn, **ngưỡng** tích luỹ |
+
+Toạ độ `[x, y]` là tỉ lệ trên ảnh (0–1), **đo trên ảnh thật** như toạ độ callout. Ví dụ đủ bảy kiểu:
+
+```json
+{ "el": "notepage", "src": "img/kanto-001/x09-capacitor.jpg", "layout": "diagram-led", "page": 14,
+  "keepout": [[0.08, 0.20, 0.46, 0.78]],
+  "diagrams": [
+    {"type": "force", "from": [0.40, 0.52], "angle": -25, "length": 0.12,
+     "value": "~7 N", "label": "VINE STRIKE", "mark": "hypothesis", "atWord": "quất"},
+    {"type": "energy-bar", "region": [0.56, 0.20, 0.92, 0.36], "unit": "kJ",
+     "bars": [{"label": "ONE MORNING OF SUN", "value": 17}, {"label": "ONE BEAM", "value": 17}],
+     "mark": "hypothesis"},
+    {"type": "energy-flow", "path": [[0.30, 0.30], [0.33, 0.45], [0.38, 0.60]], "label": "SOLAR SKIN → BULB"},
+    {"type": "field-map", "marks": [{"at": [0.62, 0.40], "kind": "rest", "t": "D14 · 09:23"},
+                                    {"at": [0.70, 0.55], "kind": "track"}]},
+    {"type": "day-timeline", "region": [0.55, 0.70, 0.95, 0.80], "from": "06:00", "to": "18:00",
+     "events": [{"t": "09:23", "label": "FACES THE SUN"}, {"t": "12:00", "label": "SUNBATH"}]},
+    {"type": "life-timeline", "region": [0.55, 0.82, 0.95, 0.92],
+     "stages": ["BULB", "BUD", "FLOWER"], "threshold": {"at": 0.62, "label": "CHANGE"}},
+    {"type": "phase", "region": [0.56, 0.40, 0.92, 0.66], "states": ["STORED", "FOCUSED", "RELEASED"],
+     "arrows": [[0, 1], [1, 2]]}
+  ],
+  "labels": [{"text": "SOLAR SKIN", "anchor": [0.34, 0.33], "at": [0.52, 0.16], "atWord": "da"}] }
+```
+
+- **Nhãn gắn với một điểm trên hình:** `anchor` là điểm trên con vật, `at` là chỗ đặt chữ; engine vẽ
+  đường chỉ tay từ chữ tới điểm. Nhãn không có `anchor` thì là chữ tự do.
+- `keepout`: các khung của hình chính và chi tiết, đo trên ảnh thật. Chữ và diagram **không được đè**
+  lên đó.
+- Số trong diagram theo DNA D15: ước lượng, có `~`, cách tính nằm trên chính trang ấy.
+
+### Bằng chứng và tham chiếu trên trang sổ
+
+- **`chip` chỉ dùng ngoài sổ.** Viên bo tròn phát sáng là ngôn ngữ của lớp chữ trên phim. Trên trang sổ,
+  bằng chứng là **`mark`** gắn vào note, nhãn hoặc diagram: `catalogue` · `observation` · `hypothesis`.
+  Engine vẽ nó thành **ký hiệu vẽ tay** (cuốn sách · con mắt · bình thí nghiệm) bằng mực của JOURNAL-STYLE,
+  không bao giờ là emoji.
+- **Giả thuyết luôn lộ ra là giả thuyết:** `mark: "hypothesis"` thì engine thêm `(?)` sau con số hoặc câu,
+  hoặc dòng "chưa xác nhận" / "unconfirmed" dưới diagram.
+- **Tham chiếu chéo** có cú pháp riêng và không lộ nguồn thật:
+
+  ```json
+  {"type": "crossref", "to": "page:14"}      // → xem tr. 14   /  → see p. 14
+  {"type": "crossref", "to": "species:venusaur"}   // → Venusaur
+  {"type": "crossref", "to": "catalogue"}    // [ký hiệu sách] danh lục  /  catalogue
+  ```
+
+  `page:<n>` phải trỏ tới một `notepage` có `"page": n` trong cùng tập. Tên Bulbapedia, bản game, số tập
+  anime **chỉ** nằm trong `NGUON` của `content.py` (DNA D16).
+
+### Giới hạn chữ trên trang sổ · hai ngôn ngữ trên một tấm giấy
+
+Mỗi chữ trên trang sổ khai **cả hai bản**: `"text": {"vi": "…", "en": "…"}`. Nhãn kỹ thuật IN HOA thì
+giữ tiếng Anh ở cả hai bản, nên chỉ cần một chuỗi. **Mọi giới hạn tính theo bản dài hơn**; bản VI thường
+dài hơn EN chừng 20–30% số ký tự, nên vùng chữ phải đo theo bản VI.
+
+| Khối | Giới hạn |
+|---|---|
+| `body` (một note) | ≤ **80 ký tự**, tối đa 2 dòng trong vùng của nó |
+| số note mỗi trang | ≤ **5** (trang đôi ≤ **8**) · đoạn thân dài ≤ **3** mỗi trang |
+| `label` | ≤ **22 ký tự**, IN HOA · ≤ **6** nhãn mỗi trang |
+| `measurement` / `value` | ≤ **16 ký tự**, có `~` |
+| bề rộng vùng chữ | ≥ **18%** bề rộng khung |
+| cỡ chữ tối thiểu, 16:9 1080p | thân ≥ **34 px** · nhãn ≥ **26 px** |
+| cỡ chữ tối thiểu, 9:16 | thân ≥ **44 px** sau khi cắt khung |
+
+- **Bản dọc 9:16 không nhét cả trang đôi.** Cảnh sổ trong Short khai `"short": {"page": "left" | "right"}`
+  hoặc một vùng `[x0, y0, x1, y1]` để cắt đúng một trang. Chữ phải đọc được ở cỡ tối thiểu sau khi cắt.
+- **Tràn chữ:** engine thu cỡ chữ tới mức tối thiểu rồi xuống dòng. Vẫn tràn thì `check-episode.py` báo
+  **trước khi render**. Không để engine tự cắt chữ.
+- Chữ không bao giờ đè lên `keepout`.
+
 ### Trang sổ nghiên cứu — kiểu Darwin, da Vinci
 
 Nhà khoa học không chỉ vẽ cả thân: họ **bóc từng chi tiết ra vẽ riêng** trên cùng trang — một cái móng,
@@ -440,9 +535,10 @@ Chữ **không** chọn vị trí tự do được (trừ `notepage`). Nó nằm
 | `text` | tiêu đề lớn | `size` ≤ **4.2** ·  ≤ 52 ký tự |
 | `caption` | lower-third, dòng chú thích dưới | `size` ≤ **2.7** · ≤ 68 ký tự |
 | `label` | dòng chữ nhỏ chữ mono, giãn cách rộng — nhãn mục, ngày tháng | ≤ 46 ký tự |
-| `chip` | viên bo tròn có viền phát sáng — nhãn bằng chứng 📖 👁 🔬 | ngắn |
+| `chip` | viên bo tròn có viền phát sáng — nhãn bằng chứng 📖 👁 🔬. **Chỉ dùng ngoài sổ**: trên `notepage` dùng `mark` vẽ tay | ngắn |
 
 Neo bằng `atWord` (một từ trong giọng đọc) hoặc `at` (số khung trong cảnh).
+Giới hạn riêng cho chữ **trên trang sổ** (hai ngôn ngữ, note, nhãn, số) ở mục *Giới hạn chữ trên trang sổ*.
 **Giới hạn ký tự là cho khung dọc 9:16** — vừa khít ở 16:9 mà tràn ở 9:16 là lỗi đã xảy ra nhiều lần.
 
 ## D · Tiếng
