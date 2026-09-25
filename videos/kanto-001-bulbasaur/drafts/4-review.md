@@ -166,3 +166,11 @@ Chủ dự án bấm Duyệt 10 beat (00–03, 05, 07, 08, 11, 12, 15); Cần s�
 có lẽ, đoán phải có căn cứ; checklist + brief).
 
 **Đã duyệt: 2026-09-24** — đủ 17/17 beat (kể cả short-outro) trên trang duyệt, không còn sửa trực tiếp nào trong collection `edits`.
+
+## Vòng 6 · áp nghiên cứu đối thủ (2026-09-25)
+
+Chủ dự án duyệt ý chính; chi tiết (Caterpie làm loài khách…) bàn sau.
+- **Con số (D15):** được dùng số ước lượng suy từ canon, có `~` và 🔬, tối đa hai số trong lời dẫn. V4 hiện không có số nào.
+- **Chữ trên hình (D16):** trang sổ không có tên đòn, tên nguồn game. Đã sửa spec trang mẫu (`VINE STRIKE`, `📖 danh lục`).
+- **Mở tập bốn shot (D17):** beat 00 thêm hai cảnh không lời trước lời: trảng cỏ trống (`loc-viridian-clearing`) rồi K-01 giữa lối mòn. Lời vào ở cận củ thở lệch nhịp. **Engine cần hỗ trợ khoảng im lặng đầu beat.**
+- **Loài khách (D18):** plan khai `guests`; mới có Fearow (predator). Còn thiếu ít nhất một vai: bàn sau (Caterpie ở beat 07?).

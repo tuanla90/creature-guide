@@ -486,7 +486,7 @@ def main(slug: str) -> int:
     from dna_lint import lint_episode
     plan = json.loads(plan_f.read_text(encoding="utf-8")) if plan_f.exists() else None
     gap = json.loads((ROOT / "video.config.json").read_text(encoding="utf-8")).get("pacing", {}).get("chapterGap", 2.2)
-    dmsgs = lint_episode(content, plan, order, gap)
+    dmsgs = lint_episode(content, plan, order, gap, scenes)
     for m in dmsgs:
         W("DNA " + m + " (docs/DNA.md)")
     if not dmsgs:

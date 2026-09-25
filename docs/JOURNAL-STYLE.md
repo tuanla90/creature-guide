@@ -84,7 +84,7 @@ Chú thích số không bao giờ viết chắc chắn hơn dữ liệu — nế
 | "Cá thể K-01 không rời bóng tán cây trong hai giờ đầu buổi sáng." | "Thật tuyệt vời khi được nhìn thấy nó!" |
 | "Tôi ước lượng lực vine whip ở khoảng 7N — xem trang 14." | "Đòn đánh của nó cực kỳ mạnh mẽ!" |
 | "Điều kỳ lạ: cá thể này không phản ứng với Fearow gần đó. Chưa rõ lý do." | "Có vẻ nó rất dũng cảm." |
-| "Xem thêm: Venusaur · trang 31. Bulbapedia · Gen I · Red." | — |
+| "Xem thêm: Venusaur · trang 31. 📖 danh lục." | "Bulbapedia · Gen I · Red" (tên nguồn chỉ nằm trong `NGUON`) |
 
 **Dry humor được phép, một lần mỗi trang:** *"Con vật khó quan sát hơn tôi nghĩ — nhất là khi nó nhìn thẳng vào ống kính."*
 
@@ -95,7 +95,7 @@ Chú thích số không bao giờ viết chắc chắn hơn dữ liệu — nế
 **Mũi tên:** vẽ tay, hơi cong, đầu mũi tên đơn giản. Không thẳng tắp như diagram công nghệ.
 
 **Cross-reference format:**
-- Canon: `→ Bulbapedia · Bulbasaur · Pokédex Gen I`
+- Canon: `→ 📖 danh lục` (nguồn thật — Bulbapedia, bản game — chỉ ghi trong `NGUON` của `content.py`, không lên trang)
 - Nội bộ: `→ Xem trang [N]` hoặc `→ Xem [loài khác]`
 - Giả thuyết: `🔬 Chưa xác nhận — cần quan sát thêm`
 
@@ -122,7 +122,8 @@ Chú thích số không bao giờ viết chắc chắn hơn dữ liệu — nế
 
 - Màu sắc ngoài sepia/nâu
 - Font in máy hoàn toàn đều đặn (phá cảm giác handmade)
-- Emoji hoặc icon hiện đại
+- Emoji hoặc icon hiện đại — ba dấu 📖 👁 🔬 **vẽ tay** thành cuốn sách / con mắt / bình thí nghiệm bằng mực sepia
+- Tên đòn, tên hệ, tên nguồn game trên nhãn (`VINE WHIP`, `SOLAR BEAM`, `Gen I`): nhãn tả việc cơ quan làm (`VINE STRIKE`, `BEAM`)
 - Screenshot, ảnh chụp thật
 - Tên game, tên anime, từ ngữ của fandom
 

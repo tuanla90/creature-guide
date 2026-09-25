@@ -540,8 +540,17 @@ def check_draft(slug, which=None):
             if not fl.get(need):
                 err.append(f"beat {b}: thiếu {need}")
         # số đo trong ghi chú trang sổ cũng là số bịa — lần đầu chạy thật, Gemini ghi "2.1 m/s"
-        for m in re.finditer(r"\d+(?:[.,]\d+)?\s*(?:m/s|km/h|km|kg|cm|mm|%|°|m\b)", fl.get("SHOTS", "")):
-            err.append(f"beat {b}: số đo trong SHOTS/notes “{m.group(0)}” — số bịa, trang sổ chỉ ghi quan sát")
+        # DNA D15: số ƯỚC LƯỢNG có "~" (suy từ chiều cao/cân nặng canon, cách tính ghi trên trang) thì được
+        shots_txt = fl.get("SHOTS", "")
+        for m in re.finditer(r"\d+(?:[.,]\d+)?\s*(?:m/s|km/h|km|kg|cm|mm|%|°|k?W\b|k?J\b|N\b|m\b)", shots_txt):
+            if "%" not in m.group(0) and "~" in shots_txt[max(0, m.start() - 3):m.start()]:
+                continue
+            err.append(f"beat {b}: số đo trong SHOTS/notes “{m.group(0)}” — số bịa: chỉ được số ước lượng có “~” (DNA D15)")
+        from dna_lint import UNIT, APPROX                     # số vật lý trong lời dẫn phải là ước lượng
+        for lang, txt in (("VI", fl.get("VO_VI", "")), ("EN", fl.get("VO_EN", ""))):
+            for m in re.finditer(UNIT, txt, re.I):
+                if not re.search(APPROX, txt[max(0, m.start() - 14):m.start()], re.I):
+                    warn.append(f"DNA D15 beat {b} {lang}: “{m.group(0)}” — số ước lượng phải có “khoảng / about”")
         en, vi = fl.get("VO_EN", ""), fl.get("VO_VI", "")
         sys.path.insert(0, str(ROOT / "tools"))
         from voice_lint import lint_beat                      # docs/VOICE.md: câu cụt, đại từ trôi, từ trơ

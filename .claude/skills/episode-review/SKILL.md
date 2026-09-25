@@ -85,8 +85,8 @@ Rồi đọc tay những thứ linter chưa bắt được:
 
 ### 1.8 DNA: những lỗi đã từng lọt qua ([docs/DNA.md](../../../docs/DNA.md))
 
-`check-episode.py` tự soát các mã D1–D6 (chữ canon, chữ rào, chữ dành riêng, sự cố sớm, câu hứa,
-cài – trả, con có mã). Trước đó, plan phải có cờ `incident` · `promise` · `sets`/`pays` · `change`.
+`check-episode.py` tự soát các mã D1–D6, D13, D15–D18 (chữ canon, chữ rào, chữ dành riêng, sự cố sớm, câu hứa, con số, chữ trên hình, mở tập, loài khách,
+cài – trả, con có mã). Trước đó, plan phải có cờ `incident` · `promise` · `sets`/`pays` · `change` · `silent` · `guests`.
 Máy không đọc ra được những mục sau, nên người đọc:
 - [ ] **D1** Mỗi cá thể mang **một** đặc tính; đặc tính nói đúng phạm vi canon (Overgrow: đòn hệ
       Cỏ, không phải mọi đòn); màu Shiny tra riêng từng dạng.
@@ -95,6 +95,10 @@ Máy không đọc ra được những mục sau, nên người đọc:
 - [ ] **D8** Không mẹo nào dùng hai lần (người kể nhầm, tưởng chết, lạc mất…).
 - [ ] **D9** Không cảnh nào trước lần đổi hình trông giống lần đổi hình (củ mở, sáng, phồng).
 - [ ] **D11** Beat giới thiệu ≤ 20–25 giây.
+- [ ] **D15** Con số vật lý (nếu có): tính ra được từ chiều cao/cân nặng canon, cách tính nằm trên
+      trang sổ, lời dẫn tối đa hai số. Máy chỉ đếm và soát `~`; phép tính thì người đọc.
+- [ ] **D17** Hai shot mở không lời; câu móc rơi đúng shot 3; thẻ tên không lộ Shiny trước khi thấy màu.
+- [ ] **D18** Mỗi loài khách làm đúng vai của nó (kẻ săn đáng sợ vì ẩn danh, loài tương hỗ đều đặn).
 - [ ] **D14** Mỗi điều lạ có một lẽ đi kèm (không uống nước → nước đi đường nào; sống thành đàn →
       vì sao). Người kể chỉ đoán khi có căn cứ; không có căn cứ thì để người kể tò mò.
 

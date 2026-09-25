@@ -10,6 +10,8 @@
 | `p-k01-shiny-ivysaur` | Shiny Ivysaur K-01, nền trơn — thân xanh lá, nụ vàng | Sinh mới |
 | `n12-ivysaur-plate` | Ivysaur thường, nụ hồng | Có sẵn |
 | `s08-venusaur-pair-plate` | Venusaur đực và cái | Có sẵn |
+| `p-fearow` | Ảnh mẫu Fearow mắt đục — mỏ dài thẳng nhọn, mào đỏ hồng, cổ dài; mọi cảnh có Fearow lấy làm tham chiếu | Sinh mới |
+| `p-k04` | Ảnh mẫu K-04 — con Bulbasaur to hơn, vệt rách dài bên sườn; mọi cảnh có K-04 lấy làm tham chiếu | Sinh mới |
 
 # Hồi 1 · Nghịch lý
 
@@ -19,6 +21,8 @@
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
+| “” | SHOT 1 · ESTABLISH, không lời: trảng cỏ Viridian trống giữa trưa, tiếng rừng thuần · — · extreme-wide · thấp | Sinh mới `loc-viridian-clearing` | Ảnh tĩnh · camera lia |
+| “” | SHOT 2 · REVEAL, không lời: con vật nhỏ nằm im giữa lối mòn, chưa phán xét gì · K-01 · wide · thấp | Sinh mới `v4-k01-trail-noon` | Ảnh thở |
 | “small animal” | K-01 nằm bất động giữa lối mòn dưới nắng trưa, sườn phập phồng rất khẽ · K-01 · medium · ngang tầm mắt | Sinh mới `v4-k01-trail-noon` | Ảnh thở |
 | “swelled” | Bẹ củ co lại, lệch nhịp với nhịp thở của sườn — cả cái hook của tập · K-01 · macro · từ trên | Sinh lại `v4-macro-breath` ← `v2-s01-macro-breath` | Ảnh thở |
 
@@ -160,7 +164,7 @@
 
 | Lúc lời tới | Trên hình | Nguồn ảnh | Chuyển động |
 |---|---|---|---|
-| “fifty-third” | Con chim lớn lượn cao — điểm soi: một mắt đục màu tro · Fearow · wide · từ dưới lên | Có sẵn `v3-s10-ashen-eye` | Ảnh tĩnh · camera lia |
+| “fifty-third” | Đầu và cổ con Fearow đậu trên cành khô bìa rừng — điểm soi: một mắt đục màu tro · Fearow · close · ngang | Sinh lại `v4-fearow-eye` ← `v3-s10-ashen-eye` | Ảnh tĩnh · camera lia |
 | “does not” | Dưới tán dương xỉ, những con xanh lục lam tan vào bóng loang — hình ĐỨNG ở “does not”, soi da nhạt của K-01; thẻ kẹp ảnh quê nhà: bướm sâu đo nhạt trên vỏ cây sẫm · đàn thường + K-01 · medium · thấp | Sinh lại `v4-camouflage` ← `v3-s11-camouflage` + ảnh quê nhà: Biston betularia — bướm nhạt trên vỏ cây sẫm | Dừng hình |
 | “first dive” | Chim bổ nhào; K-01 ép sát dưới bụi dương xỉ, móng chim sượt qua · Fearow + K-01 · wide · thấp | Sinh lại `v4-n08-raptor-strike` ← `n08-raptor-strike` | Clip Seedance |
 | “second dive” | Bột mịn phụt ra từ khe giữa các bẹ củ — củ giữ nguyên hình, KHÔNG hé mở (tránh trông như đổi hình) · K-01 · close | Sinh lại `v4-n09-powder` ← `n09-sleep-powder` | Clip Veo |

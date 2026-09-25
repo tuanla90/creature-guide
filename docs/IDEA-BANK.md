@@ -84,7 +84,7 @@ CHARGING RATE: ~1.3 J/s        → mũi tên vào hộp BULB
 CAPACITY: ~17,000 J            → trong hộp BULB
 DISCHARGE: 0.5s · 34 kW        → mũi tên ra BEAM
 RECHARGE: ~3.7h full sun       → bên dưới hộp
-VINE WHIP: ~6J · 5s recharge   → ghi chú nhỏ góc dưới
+VINE STRIKE: ~6J · 5s recharge  → ghi chú nhỏ góc dưới
 ```
 
 ---
@@ -112,7 +112,7 @@ giờ. Bulb = tụ điện sinh học: nạp chậm, phóng nhanh.
 
 34 kilowatt trong nửa giây. Từ một con vật nặng 6.9 kg.
 
-📖 Bulbapedia · Solar Beam · Gen I · "charges on first turn"
+📖 danh lục · "cần một lượt nạp"   (nguồn thật ghi trong NGUON)
 ```
 
 ### Field notes — bản Anh
@@ -137,7 +137,7 @@ functions as a biological capacitor: slow charge, fast discharge.
 
 34 kilowatts for half a second. From a 6.9kg animal.
 
-📖 Bulbapedia · Solar Beam · Gen I · "charges on first turn"
+📖 danh lục · "cần một lượt nạp"   (nguồn thật ghi trong NGUON)
 ```
 
 ### Song ngữ — cách triển khai

@@ -168,6 +168,44 @@ Lỗi đã gặp (vòng 5):
 
 Ép ở **R** và **B**.
 
+## D15 · Con số vật lý: được nói, nhưng chỉ khi tính ra được
+
+Nguồn: nghiên cứu đối thủ + CREATURE-LENS trục 17 (2026-09-25). Luật cũ cấm hẳn số; nay chốt lại.
+
+**Luật:** số lực / năng lượng / công suất chỉ được dùng khi **suy từ chiều cao, cân nặng canon**, luôn
+viết là ước lượng (`~`, "khoảng", "about"), gắn 🔬, và **cách tính ghi trên trang sổ**. Lời dẫn nói **tối
+đa hai con số cả tập**, ưu tiên dạng quy đổi cảm được ("cả một buổi sáng nắng, tiêu trong nửa giây").
+Không phần trăm, không chỉ số.
+
+Ép ở **M** (`lint_numbers` mã D15 trong lời dẫn; `handoff.py --draft` nhận số có `~` trong ghi chú trang
+sổ, số không `~` vẫn là lỗi) và **B** (luật cứng 4).
+
+## D16 · Chữ trên hình không mang tên game
+
+Lỗi đã gặp (spec trang sổ mẫu): nhãn `VINE WHIP: ~6J`, nguồn `Bulbapedia · Gen I` ghi ngay trên trang.
+
+**Luật:** trang sổ, nhãn, chú thích tả **việc cơ quan làm** (`VINE STRIKE`, `BEAM`). Nguồn thật
+(Bulbapedia, bản game) chỉ nằm trong `NGUON`; trên trang ghi `📖 danh lục`. Ba dấu 📖 👁 🔬 vẽ tay bằng
+mực sepia, không phải emoji ([JOURNAL-STYLE.md](JOURNAL-STYLE.md) mục G).
+
+Ép ở **M** (`lint_onscreen` mã D16 quét mọi trường chữ trong `scenes.json`) và **B**.
+
+## D17 · Mở tập bốn shot, hai shot đầu không lời
+
+**Luật** ([SCENE-TYPES.md](SCENE-TYPES.md)): shot 1 establish (cực rộng hoặc cực cận, chưa thấy con vật) ·
+shot 2 reveal · shot 3 chi tiết / câu móc — **lời vào ở đây** · shot 4 thẻ tên loài. Thẻ tên chỉ ghi loài +
+nơi; mã và chữ Shiny hiện khi lời đã giải nghĩa và khán giả đã thấy màu (luật CAST).
+
+Ép ở **M** (`lint_opening_guests` mã D17: hai cảnh đầu của beat mở phải có `"silent": <giây>` trong plan).
+Engine cần hỗ trợ khoảng im lặng đầu beat.
+
+## D18 · Loài khách có vai sinh thái
+
+**Luật:** mỗi tập 2–4 loài khách, mỗi loài một vai: **predator · prey · competitor · mutualist**. Kẻ săn
+không có mã. Loài tương hỗ quay lại quá hai lần thì cho mã. Khai trong plan: `"guests": [{species, role}]`.
+
+Ép ở **M** (mã D18) và **R**.
+
 ## D12 · Bàn giao và công cụ
 
 | Lỗi đã gặp | Luật | Ép ở |

@@ -74,6 +74,12 @@ animals ("gã khổng lồ", "kẻ săn mồi"); no stage directions or [pause] 
   it").
 - **Nothing before the change may look like the change**: no bulb opening, glowing or swelling in an
   earlier beat. Powder puffs from the gaps between the leaf layers; the bulb keeps its shape.
+- **Notebook text never uses game words.** Labels name what the organ does ("VINE STRIKE", "BEAM"),
+  never an attack name; sources on the page read "catalogue", never a website or game version.
+- **The opening is four shots, the first two silent**: a very wide or very close establishing shot
+  without the animal, then the reveal. Narration starts on shot 3, on the strange detail.
+- **Two to four guest species, each with an ecological role**: predator, prey, competitor or
+  mutualist. They make the forest a working system, not a stage.
 - **The introduction beat stays short** (≤ 20–25 s): the question, the choice, what the code means.
 - **Plain words over coined ones**: "uses up energy", "what it can do / what it costs". No
   home-made terms ("spends sunlight") and no bookkeeping metaphor (income, expense).
@@ -96,9 +102,12 @@ animals ("gã khổng lồ", "kẻ săn mồi"); no stage directions or [pause] 
    - 👁 **observation**: the narrator saw or measured it himself;
    - 🔬 **hypothesis**: the narrator's own reasoning, **always tied to one real Earth species**;
    - 🎬 **locals' story**: comes from the anime. Tell it as "people here say…", never as fact.
-4. **No invented numbers.** No percentages, degrees, kilograms or calories. Numbers the narrator
-   counted himself (seven animals, day twenty-two, three hours) are fine, and they must agree with
-   one consistent timeline.
+4. **No invented numbers.** Numbers the narrator counted himself (seven animals, day twenty-two,
+   three hours) are fine, and they must agree with one consistent timeline. A **physical estimate**
+   (force, energy, power) is allowed only if it is derived from the catalogue's height and weight,
+   always written as an estimate ("about", "~"), labelled 🔬, and its working is shown on the
+   notebook page. At most **two** such numbers in the whole narration; prefer a comparison the
+   listener can feel ("a whole morning of sun, spent in half a second"). No percentages or stats.
 5. **Every ability has a cost.** When the animal uses something, say what it pays.
 6. **No shedding skin, no moulting, no transformation on camera.** A change of form is told only
    through swelling, weight, light, silhouette and traces left behind.

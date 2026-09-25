@@ -124,6 +124,9 @@ Attack stat, Speed stat, và mô tả Pokédex có ngụ ý con số khác khôn
 | 1–2 bậc | Đặt tên cho cơ chế bù trừ sinh học — ví dụ: "chất kích thích thần kinh tiết qua dây leo khiến cơ con mồi co giật mạnh hơn lực thật" |
 | > 2 bậc | Hạ xuống thành 🔬 giả thuyết, nêu rõ khoảng cách |
 
+**Chốt 2026-09-25 (DNA D15):** số chỉ được suy từ chiều cao/cân nặng canon, luôn có `~` và nhãn 🔬,
+cách tính ghi trên trang sổ; lời dẫn nói **tối đa hai con số cả tập**, ưu tiên dạng quy đổi.
+
 **Không được nâng con số vật lý lên để khớp stat.** Luôn tìm cơ chế sinh học giải thích khoảng cách — đó là nội dung, không phải vấn đề.
 
 **Quy đổi thân thiện để nói trong lời dẫn:**

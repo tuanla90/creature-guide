@@ -137,8 +137,74 @@ def lint_codes(c, order, central="K-01", plan=None):
     return out
 
 
-def lint_episode(c, plan, order, gap=2.2):
+# ---- D15 · con số vật lý: suy từ canon, luôn ước lượng, tối đa hai con số cả tập -----------------
+UNIT = r"\d[\d.,]*\s*(?:k?W\b|kJ\b|J\b|N\b|joule|newton|watt|kilowatt|oát|jun|niu-tơn|%|°|độ\b|phần trăm|percent)"
+APPROX = r"(~|khoảng|chừng|ước|độ chừng|about|roughly|around|some)\s*$"
+
+
+def lint_numbers(c, order):
+    out, hits = [], []
+    for bid in order:
+        for lang, text in (("vi", c.BEATS.get(bid, "")), ("en", getattr(c, "BEATS_EN", {}).get(bid, ""))):
+            for m in re.finditer(UNIT, text, re.I):
+                hits.append((bid, lang))
+                if re.search(r"%|phần trăm|percent", m.group(0), re.I):
+                    out.append(f"D15 beat {bid} {lang.upper()}: “{m.group(0)}” — không dùng phần trăm / chỉ số")
+                elif not re.search(APPROX, text[max(0, m.start() - 14):m.start()], re.I):
+                    out.append(f"D15 beat {bid} {lang.upper()}: “{m.group(0)}” — số ước lượng phải có “khoảng / ~ / about”")
+    for lang in ("vi", "en"):
+        n = sum(1 for _, lg in hits if lg == lang)
+        if n > 2:
+            out.append(f"D15 {lang.upper()}: {n} con số vật lý trong lời dẫn — tối đa 2 cả tập, còn lại để trên trang sổ")
+    return out
+
+
+# ---- D16 · chữ trên hình (trang sổ, nhãn, chú thích) không mang tên game --------------------------
+GAME_ONSCREEN = r"vine whip|solar ?beam|razor leaf|sleep powder|leech seed|bulbapedia|pok[eé]dex|pok[eé]mon|\bgen\s*[ivx\d]+\b|\bhp\b|\bstats?\b"
+TEXT_KEYS = {"text", "lines", "label", "caption", "title", "sub", "kicker", "body", "note"}
+
+
+def lint_onscreen(scenes):
     out = []
+
+    def walk(node, bid):
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if k in TEXT_KEYS and isinstance(v, (str, list)):
+                    for s in ([v] if isinstance(v, str) else v):
+                        if isinstance(s, str):
+                            for m in re.finditer(GAME_ONSCREEN, s, re.I):
+                                out.append(f"D16 beat {bid}: chữ trên hình “{m.group(0)}” — tả việc cơ quan làm, nguồn chỉ nằm ở NGUON")
+                walk(v, bid)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v, bid)
+    for bid, s in (scenes or {}).items():
+        if not bid.startswith("_"):
+            walk(s, bid)
+    return out
+
+
+# ---- D17 · mở tập bốn shot · D18 · loài khách có vai ---------------------------------------------
+ROLES = {"predator", "prey", "competitor", "mutualist"}
+
+
+def lint_opening_guests(plan, order):
+    out = []
+    if not plan or not order:
+        return out
+    first = plan["beats"].get(order[0], {}).get("scenes", [])
+    if sum(1 for s in first[:2] if s.get("silent")) < 2:
+        out.append(f"D17 beat {order[0]}: hai shot đầu phải không lời (\"silent\": giây) — establish rồi reveal, lời vào ở shot 3")
+    guests = [g for g in plan.get("guests", []) if g.get("role") in ROLES]
+    if len(guests) < 2:
+        have = ", ".join(f"{g['species']} ({g['role']})" for g in guests) or "chưa có"
+        out.append(f"D18 mới có {len(guests)} loài khách có vai sinh thái ({have}) — cần 2–4: predator · prey · competitor · mutualist")
+    return out
+
+
+def lint_episode(c, plan, order, gap=2.2, scenes=None):
+    out = lint_numbers(c, order) + lint_onscreen(scenes) + lint_opening_guests(plan, order)
     for bid in order:
         vi, en = c.BEATS.get(bid, ""), getattr(c, "BEATS_EN", {}).get(bid, "")
         out += lint_terms(bid, vi, "vi") + lint_hedge(bid, vi, "vi")

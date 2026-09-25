@@ -1,7 +1,7 @@
 {
  "pageTitle": "Kanto 001 · bản duyệt V4",
  "episode": "Ai đang nuôi ai? — bản duyệt V4",
- "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình). Cờ DNA (docs/DNA.md): incident (sự cố đầu tiên) · promise (câu hứa cuối hồi 1) · sets / pays (cài – trả) · change (cá thể trung tâm đổi hình).",
+ "_what": "Bản dự kiến cảnh cho V4 — để người duyệt, rồi thành bible/shots ở bước soạn shot. src.kind: reuse (ảnh có sẵn) · regen (sinh lại id cũ) · new (sinh mới) · earth (tải về, nguồn sạch). motion: still · breath (creature-motion, miễn phí) · veo · seedance · page (trang sổ) · freeze (dừng hình). Cờ DNA (docs/DNA.md): incident (sự cố đầu tiên) · promise (câu hứa cuối hồi 1) · sets / pays (cài – trả) · change (cá thể trung tâm đổi hình). guests: loài khách + vai (predator · prey · competitor · mutualist) — DNA D18.",
  "plates": [
   {
    "id": "loc-viridian-clearing",
@@ -73,6 +73,32 @@
    "caption": "Viridian Forest · Day 1",
    "scenes": [
     {
+     "at": "",
+     "silent": 4,
+     "el": "world",
+     "who": "—",
+     "shot": "extreme-wide · thấp",
+     "what": "SHOT 1 · ESTABLISH, không lời: trảng cỏ Viridian trống giữa trưa, tiếng rừng thuần",
+     "src": {
+      "kind": "new",
+      "id": "loc-viridian-clearing"
+     },
+     "motion": "still"
+    },
+    {
+     "at": "",
+     "silent": 4,
+     "el": "clip",
+     "who": "K-01",
+     "shot": "wide · thấp",
+     "what": "SHOT 2 · REVEAL, không lời: con vật nhỏ nằm im giữa lối mòn, chưa phán xét gì",
+     "src": {
+      "kind": "new",
+      "id": "v4-k01-trail-noon"
+     },
+     "motion": "breath"
+    },
+    {
      "at": "small animal",
      "el": "clip",
      "who": "K-01",
@@ -98,7 +124,8 @@
      },
      "motion": "breath"
     }
-   ]
+   ],
+   "_opening": "Quy ước mở tập bốn shot (SCENE-TYPES): 1–2 không lời, lời vào ở shot 3 (cận củ thở lệch nhịp), shot 4 là thẻ tên loài. Thẻ chỉ ghi tên loài + Viridian; mã K-01 hiện khi lời giải nghĩa ở beat 01, chữ Shiny sau khi đã thấy màu (beat 02). Engine cần hỗ trợ khoảng im lặng đầu beat (silent)."
   },
   "01": {
    "act": "Hồi 1 · Nghịch lý",
@@ -939,5 +966,23 @@
     }
    ]
   }
- }
+ },
+ "guests": [
+  {
+   "species": "fearow",
+   "role": "predator",
+   "beats": [
+    "03",
+    "08"
+   ]
+  },
+  {
+   "species": "venusaur",
+   "role": "elder",
+   "beats": [
+    "15"
+   ],
+   "_note": "ngoài bảng vai — cá thể già, không phải khách sinh thái"
+  }
+ ]
 }
